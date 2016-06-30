@@ -39,7 +39,7 @@ REQUIRE_TYPE = set((
 REQUIRE_TYPE.update(REQUIRE_PORTAL)
 
 #: The list of all possible portals.
-PORTAL_CHOICES = [basename(portal).split('.')[0] for portal in glob('config/dist/*.dist.toml')
+PORTAL_CHOICES = [basename(portal).split('.')[0] for portal in glob('in/config/dist/*.dist.toml')
                   if '_common.dist.toml' not in portal]
 
 
