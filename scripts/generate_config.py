@@ -93,7 +93,7 @@ class GenerateConfig:
         global_config = self._load_config_from_file('config/global.toml')
         self._update_config(self._config, global_config, section_check=False)
 
-        common_config = self._load_config_from_file('_common')
+        common_config = self._load_config_from_file('_common', prefix='in')
         config_section_errors = ConfigSectionErrors(section='common', errors=[])
         self._update_config(
             self._config,
@@ -103,7 +103,7 @@ class GenerateConfig:
         self.errors.append(config_section_errors)
 
         if self.portal is not None:
-            portal_config = self._load_config_from_file(self.portal, portal_file=True)
+            portal_config = self._load_config_from_file(self.portal, portal_file=True, prefix='in')
             config_section_errors = ConfigSectionErrors(section=self.portal, errors=[])
             self._update_config(
                 self._config,
@@ -122,7 +122,7 @@ class GenerateConfig:
         self._config['dest']['relative_output'] = self._config['dest']['output']
         self._config['dest']['output'] = path(self._config['mapinfra'], self._config['dest']['output'])
 
-    def _load_config_from_file(self, cfg_file, portal_file=False):
+    def _load_config_from_file(self, cfg_file, portal_file=False, prefix=''):
         '''Load the config file and override keys with those from prod or dev if needed.
 
         Args:
@@ -130,20 +130,20 @@ class GenerateConfig:
             protal_file (bool): if true, the config file will be checked against
                 _template.dist.toml.
         '''
-        dist = self._load_config_file(cfg_file)
+        dist = self._load_config_file(cfg_file, prefix=prefix)
         self._format_templates(dist)
         if portal_file:
             self._check_portal_config_with_portal_template(dist)
 
-        if exists(self._get_config_path(cfg_file, type='prod')):
-            prod = self._load_config_file(cfg_file, type='prod')
+        if exists(self._get_config_path(cfg_file, type='prod', prefix=prefix)):
+            prod = self._load_config_file(cfg_file, type='prod', prefix=prefix)
             self._format_templates(prod)
             config_file_errors = self._new_config_file_errors()
             self._update_config(dist, prod, errors=config_file_errors.errors)
             self.errors.append(config_file_errors)
 
-        if self.type == 'dev' and exists(self._get_config_path(cfg_file, type='dev')):
-            dev = self._load_config_file(cfg_file, type='dev')
+        if self.type == 'dev' and exists(self._get_config_path(cfg_file, type='dev', prefix=prefix)):
+            dev = self._load_config_file(cfg_file, type='dev', prefix=prefix)
             self._format_templates(dev)
             config_file_errors = self._new_config_file_errors()
             self._update_config(dist, dev, errors=config_file_errors.errors)
@@ -151,13 +151,13 @@ class GenerateConfig:
 
         return dist
 
-    def _load_config_file(self, cfg_file, type='dist'):
+    def _load_config_file(self, cfg_file, type='dist', prefix=''):
         '''Load the file from the disk and parse it with the toml module.
         '''
         if exists(cfg_file):
             cfg_path = cfg_file
         else:
-            cfg_path = self._get_config_path(cfg_file, type=type)
+            cfg_path = self._get_config_path(cfg_file, type=type, prefix=prefix)
 
         if type == 'dist':
             self._current_base_file = cfg_path
@@ -166,7 +166,7 @@ class GenerateConfig:
 
         return toml.load(cfg_path)
 
-    def _get_config_path(self, cfg_file, type='dist'):
+    def _get_config_path(self, cfg_file, type='dist', prefix=''):
         '''Transform a catogory of file like _common into an actual path we can open.
 
         Args:
@@ -174,7 +174,7 @@ class GenerateConfig:
             type (str): type of file to get (dest, dev or prod).
         '''
         ext = '.{type}.toml'.format(type=type)
-        return path('config', type, cfg_file, ext=ext)
+        return path(prefix, 'config', type, cfg_file, ext=ext)
 
     def _format_templates(self, locations):
         '''Replace {type} and {portal} by their value in each list or dict it finds.
