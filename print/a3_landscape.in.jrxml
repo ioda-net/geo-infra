@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-06-30T14:49:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="1190" pageHeight="842" orientation="Landscape" columnWidth="1134" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" isSummaryNewPage="true" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="mapSubReport" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="legend" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>
+	<parameter name="printLegend" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="legendSubReport" class="java.lang.String"/>
+	<parameter name="scale" class="java.lang.String">
+		<defaultValueExpression><![CDATA[5000]]></defaultValueExpression>
+	</parameter>
+	<parameter name="url" class="java.lang.String">
+		<defaultValueExpression><![CDATA["{{print.url}}"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="qrimage" class="java.lang.String">
+		<defaultValueExpression><![CDATA["http://api.sigeom.ch/qrcodegenerator?url={{print.url}}"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="northArrowSubReport" class="java.lang.String"/>
+	<parameter name="bottomLeftCornerCoords" class="java.lang.String"/>
+	<parameter name="attributions" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<field name="table" class="net.sf.jasperreports.engine.data.JRMapCollectionDataSource"/>
+	<field name="displayName" class="java.lang.String"/>
+	<field name="reportTemplate" class="java.lang.String"/>
+	<title>
+		<band height="766" splitType="Immediate">
+			<property name="local_mesure_unitheight" value="mm"/>
+			<subreport>
+				<reportElement x="73" y="20" width="1005" height="715" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+				</reportElement>
+				<subreportExpression><![CDATA[$P{mapSubReport}]]></subreportExpression>
+			</subreport>
+			<frame>
+				<reportElement x="73" y="20" width="1005" height="715" uuid="057a052e-6d44-4553-9cca-daa4f2626f7b">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textField>
+					<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="17" y="704" width="125" height="7" forecolor="#000000" backcolor="#FFFFFF" uuid="7a93b744-2b83-40ee-9d54-5d01e54e8913">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="DejaVu Sans" size="6"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{bottomLeftCornerCoords}]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement x="963" y="673" width="40" height="40" uuid="0039b7c0-2ebe-4244-8298-7e5d14a276b6">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<imageExpression><![CDATA[$P{qrimage}]]></imageExpression>
+				</image>
+			</frame>
+			<textField>
+				<reportElement x="21" y="20" width="36" height="260" uuid="1e3b98c9-5220-4fff-9ef5-b83aa512766d">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" rotation="Left">
+					<font fontName="DejaVu Sans" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="d/MM/yyyy h:mm a">
+				<reportElement stretchType="RelativeToBandHeight" x="61" y="20" width="10" height="75" uuid="f251a288-60dc-4d90-b6e2-bf538281dc23">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="Left">
+					<font fontName="DejaVu Sans" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="163" y="737" width="71" height="14" uuid="2f997cc1-6f42-49cf-917d-284e4ff15d09"/>
+				<textElement textAlignment="Left">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{scale}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="73" y="737" width="90" height="14" uuid="d3c1b5ec-98ee-45c7-96f9-566e203df086">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[Scale:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="775" y="737" width="100" height="10" uuid="15d47cd6-773b-4d13-8676-24649259c0f8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="7"/>
+				</textElement>
+				<text><![CDATA[{{print.url}}]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="75" y="22" width="50" height="50" uuid="1d02164e-87dc-4651-9695-4a22359c3c09">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<subreportExpression><![CDATA[$P{northArrowSubReport}]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+</jasperReport>

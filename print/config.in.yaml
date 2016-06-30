@@ -1,0 +1,67 @@
+pdfConfig: !pdfConfig
+  compressed: {{print.pdf_compression}}
+  author: "{{print.pdf_author}}"
+  subject: "{{print.pdf_subject}}"
+  creator: "{{print.pdf_creator}}"
+
+throwErrorOnExtraParameters: true
+
+templates:
+  {%- for format in print.formats %}
+  {%- for orientation in print.orientations %}
+  {{[format, orientation] | join(' ')}}: !template
+    pdfConfig: !pdfConfig
+      title: "{{print.defaultTitle}}"
+      keywords: ["map"]
+    outputFilename: "{{print.fileName}}-${yyyy-MM-dd-hh-ss}"
+    reportTemplate: {{[format, orientation] | join('_') | lower }}.jrxml
+    attributes:
+      name: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {}
+      map: !map
+        maxDpi: {{print.maxDpi}}
+        dpiSuggestions: {{print.dpiSuggestions}}
+        width: {{print.mapWidth[format][orientation]}}
+        height: {{print.mapHeight[format][orientation]}}
+        zoomLevels: !zoomLevels
+          scales: {{print.scales}}
+      northArrowDef: !northArrow
+        size: {{print.northArrowSize}}
+        default:
+          graphic: "{{print.northArrowGraphics}}"
+      legend: !legend {}
+      printLegend: !integer {}
+      bottomLeftCornerCoords: !string {}
+      commune: !string {}
+      username: !string {}
+      attributions: !string {}
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createNorthArrow
+        inputMapper: {map: map, northArrowDef: northArrow}
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+    - !configureHttpRequests
+        httpProcessors:
+          - !forwardHeaders
+            matchers:
+              - !dnsMatch
+                  host: '{{mapserver.PORTAL_BASE_OWS.split('/')[2]}}'
+            headers:
+              - Authorization
+          - !forwardHeaders
+            headers:
+              - Referer
+  {%- endfor %}
+  {%- endfor %}
