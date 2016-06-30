@@ -102,7 +102,7 @@ function test-map-files {
     local portal_type
     _set-portal-type "$@"
 
-    extent=$(cat "config/dist/${portal}.dist.toml" |
+    extent=$(cat "in/config/dist/${portal}.dist.toml" |
                     grep '^extent = ' |
                     cut -f 2 -d '=' |
                     sed 's/\"//g; s/\[//g; s/\]//g; s/,//g; s/^ //g')
