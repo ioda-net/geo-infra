@@ -1,0 +1,114 @@
+# Global configuration. These configuration parameters should be valid for all
+# portals. Don't edit unless you want to impact all the portals.
+
+[dest]
+translate = "{type}/{portal}/translations/"
+help = "{type}/{portal}/help/"
+print = "{type}/{portal}/print/"
+services = "{type}/{portal}/json/"
+help_texts = "{type}/{portal}/help/texts/"
+img = "{type}/{portal}/img/"
+json = "{type}/{portal}/json/"
+search_portal = "{type}/{portal}/search/"
+help_images = "{type}/{portal}/help/img/"
+map = "{type}/{portal}/map/"
+search = "{type}/search/"
+output = "{type}/{portal}"
+template_search_portal_locations = "{type}/{portal}/search/portal-{portal}.conf"
+template_translate_catalog = "{type}/{portal}/json/catalog_{{topic}}_{{lang}}.json"
+
+[dest.geo_front3]
+appcache = 'prod/{portal}/geoadmin.appcache'
+deps = 'test/deps'
+karma_conf = 'test/karma-conf.{type}.js'
+plugins_file = 'src/js/Gf3Plugins.js'
+protractor_conf = 'test/protractor-conf.{type}.js'
+template_cache_module = 'src/TemplateCacheModule.js'
+
+
+[print.mapHeight.A1]
+landscape = 1482
+portrait = 2175
+[print.mapWidth.A2]
+landscape = 1558
+portrait = 1064
+[print.mapHeight.A4]
+landscape = 525
+portrait = 725
+[print.mapHeight.A2]
+landscape = 985
+portrait = 1475
+[print.mapWidth.A0]
+landscape = 3241
+portrait = 2254
+[print.mapHeight.A0]
+landscape = 2173
+portrait = 3155
+[print.mapWidth.A4]
+landscape = 725
+portrait = 525
+[print.mapHeight.A3]
+landscape = 715
+portrait = 1005
+[print.mapWidth.A3]
+landscape = 1005
+portrait = 715
+[print.mapWidth.A1]
+landscape = 2255
+portrait = 1558
+
+
+[search.origins_to_ranks]
+# this part need to be in sync with geo-api3/config/config.dist.toml
+nomenclatures = 40
+sorted_parcels = 30
+sorted_buildings = 20
+communes = 10
+
+
+[src]
+base_include = "in/"
+map_path = "{type}/{portal}/map/portals/{portal}.map"
+print = "in/print/*.in"
+external_layers = "in/json/{portal}/external/*.json"
+img = [ "in/img/*.png", "in/img/*.gif", "in/img/*.jpg", "in/img/*.jpeg", "in/img/maki",]
+config_base_files = "config/*.toml.dist"
+config_files = "config/*.toml"
+print_logo = "in/print/{portal}/*.*"
+translate_catalog = "in/translations/catalog.csv"
+img_portal = "in/img/{portal}/*"
+topics = "in/json/{portal}/topics/*.json"
+search_config = "config/search-{type}.toml"
+help = "in/help/*"
+help_common_folder = "in/help/common"
+help_images_folder = "in/help/{portal}/img/"
+help_logo = "in/img/{portal}/{portal}.jpg"
+help_original_images_folder = "in/help/swisstopo/img/"
+help_original_texts_folder = "in/help/swisstopo/texts/"
+help_portal_folder = "in/help/{portal}"
+help_texts_folder = "in/help/{portal}/texts/"
+tomcat = "{type}/{portal}/print"
+search_portal_layers = "in/search/search-layers.conf.in"
+search_portal_locations = "in/search/portal-locations.conf.in"
+config_main_file = "config/geoportal.toml.dist"
+json_files = "in/json/{portal}/**/*.json"
+front_prod = "../geo-front3/prod/{portal}/*"
+config_file = "config/{portal}-{type}.toml"
+search = "in/search/*.in"
+tsv_files = "{type}/{portal}/search/*.tsv"
+translation_files = [
+    "https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0",
+    "in/translations/common.csv",
+    "in/translations/{portal}.csv"
+]
+translate_ignore = "in/translations/ignore.csv"
+
+[src.geo_front3]
+appcache = 'src/geoadmin.nunjucks.appcache'
+index = 'src/index.nunjucks.html'
+karma_conf_template = 'test/karma-conf.nunjucks.js'
+partials = 'src/components/**/partials/**/*.html'
+plugins = 'src/plugins/*.js'
+plugins_template = 'src/Gf3Plugins.nunjucks.js'
+protractor_conf_template = 'test/protractor-conf.nunjucks.js'
+template_cache_module = 'src/TemplateCacheModule.nunjucks.js'

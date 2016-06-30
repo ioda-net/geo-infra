@@ -1,0 +1,97 @@
+[front.default_values]
+# Default lists for WMS and WMTS
+# Comment the key to use the default lists. Use an empty array to not propose a list in the interface.
+# wms_list = []
+# wmts_list = []
+elevation_model = 'MNT50'
+external_wms_hostnames =  []
+lang = 'fr'
+plugins = []
+resolution = 50.0
+resolutions = []
+topic_id = 'my topic'
+
+
+[geoportal]
+epsg = "EPSG:21781"
+epsg_extent = [420000, 30000, 900000, 350000]
+extent = [550000, 210000, 620000, 245000]
+langs = ["fr", "de"]
+name = "geoportal"
+srid = 21781
+
+
+[mapserver]
+# sample file
+PORTAL_NAME = "geoportal"
+PORTAL_BASE_OWS = "http://geoportal-demo.local/ows/osm?"
+# Used for remote wms input
+PORTAL_IMAGEPATH = "/tmp"
+# EPSG 21781 -> CH1903+/MN03 (avec altitude)
+# EPSG 2056 -> CH1903+/MN95 (avec altitude)
+PORTAL_SRID = "21781"
+PORTAL_EPSG = "EPSG:21781"
+PORTAL_EPSG_MIN = "epsg:21781"
+# be carefull with extent and wms version
+PORTAL_EXTENT = "550000 210000 620000 245000"
+
+PORTAL_WMS_VERSION = "1.3.0"
+# For dev values, prod should allow everyone.
+# Important for prod put empty values in denied
+PORTAL_ALLOWED_IP = "127.0.0.1 ::1/128 192.168.50.0/24 10.168.50.0/24 217.213.200.216/29"
+PORTAL_DENIED_IP = "0.0.0.0/0 ::/0"
+# Typical values for prod
+#PORTAL_ALLOWED_IP = "0.0.0.0/0 ::/0"
+#PORTAL_DENIED_IP = ""
+PORTAL_USERNAME = "GEOPORTAL_USER"
+PORTAL_PASSWORD = "GEOPORTAL_PASSWD"
+
+PORTAL_DB_HOST = "localhost"
+PORTAL_DB_PORT = 5432
+PORTAL_DB_USER = "sit_mapserver"
+PORTAL_DB_PASSWORD = ""
+PORTAL_DB_NAME = "sit"
+
+
+[layers]
+background_layers_ids = []
+single_tiles_by_default = true
+default_tiling_exceptions = []
+default_background_opacity = 0.0
+default_layer_attribution = "Open Street Maps"
+default_layer_attribution_url = "https://www.openstreetmap.org"
+
+
+[print]
+defaultTitle = "geoportal"
+fileName = "geoportal"
+fileSuffix = "-${yyyy-MM-dd-hh-ss}"
+
+# formats must be capitalized
+formats = ["A4", "A3"]
+
+orientations = ["portrait", "landscape"]
+
+maxDpi = 400
+dpiSuggestions = [96, 150, 300, 400]
+
+scales = [500000, 100000, 50000, 25000, 10000, 5000, 2500, 1000, 500, 250, 100]
+
+northArrowSize = 50
+northArrowGraphics = "file://NorthArrow.svg"
+url = "https://map.geoportal.xyz"
+url_title = "map.geoportal.xyz"
+url_legends = ""
+
+logo_filename_A4_PO = "logo_print_A4_PO.png"
+logo_filename_A4_PA = "logo_print_A4_PA.png"
+logo_filename_A3_PO = "logo_print_A3_PO.png"
+logo_filename_A3_PA = "logo_print_A3_PA.png"
+
+portal_comments_fr = "www.geoportal.ch est un portail d'accès aux informations géolocalisées, données et services mis à disposition"
+portal_comments_de = "map.geoportal.xyz"
+
+
+[search]
+locations = []
+

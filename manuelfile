@@ -1,0 +1,175 @@
+#!/usr/bin/env bash
+
+# Exit on error
+set -e
+# Prevent usage of undefined variable
+set -u
+
+# Declare help
+declare -A HELP
+
+# Load config
+source config/config.dist.sh
+source config/config.sh 2> /dev/null || :
+
+# Load tasks
+source tasks/db.sh
+source tasks/deploy.sh
+source tasks/front.sh
+source tasks/front-build.sh
+source tasks/lint.sh
+source tasks/utils.sh
+
+
+
+HELP['dev']="manuel dev PORTAL1 [PORTAL2 [PORTAL3] …]
+
+Generate a development version of mapinfra for the targeted portals.
+"
+function dev {
+    local portal
+    echo "Linting JSON and CSV files"
+    lint
+    for portal in "$@"; do
+        echo "****** Processing: ${portal} *****"
+        generate --type "dev" \
+                 --portal "${portal}" \
+                 --verbose \
+                 --clean \
+                 --map \
+                 --json \
+                 --help-site \
+                 --print \
+                 --search \
+                 --copy-img
+        echo "***** Done: ${portal} *****"
+    done
+}
+
+
+HELP['dev-full']="manuel dev-full PORTAL1 [PORTAL2 [PORTAL3] …]
+
+Generate a development version of mapinfra and frontend for the targeted portals. It will also
+triger a reindex for sphinx, test the map files of each portal and copy tomcat configuration."
+function dev-full {
+    dev "$@"
+
+    for portal in "$@"; do
+        echo "***** Building front: ${portal}"
+        front dev "${portal}"
+        tomcat-copy-conf "dev" "${portal}"
+        test-map-files "dev" "${portal}"
+        echo "***** Done: ${portal} *****"
+    done
+
+    echo "Reindexing"
+    reindex
+    restart-service "tomcat"
+}
+
+
+HELP['prod']="manuel prod PORTAL1 [PORTAL2 [PORTAL3] …]
+
+Generate a production version of mapinfra and the frontend for targeted portals. To generate even
+with uncommited changes, add the --force option as first parameter."
+function prod {
+    echo "Linting JSON and CSV files"
+    lint
+    echo "Updating test configuration"
+    local force
+    if [[ "${1:-}" == "--force" ]]; then
+        force="$1"
+        shift
+    fi
+
+    front build-test-conf
+    for portal in "$@"; do
+        echo "***** PROCESSING: ${portal} *****"
+        clean 'prod' "${portal}"
+        generate --type "prod" \
+                 --portal "${portal}" \
+                 --verbose \
+                 --clean \
+                 --map \
+                 --json \
+                 --help-site \
+                 --print \
+                 --search \
+                 --copy-img
+        echo "Building the front end"
+        front prod ${force:-} "${portal}"
+        copy-front "${portal}"
+        echo "Launching unit tests"
+        front test-prod "${portal}"
+        echo "***** Done: ${portal} *****"
+    done
+}
+
+
+HELP['deploy']="manuel deploy PORTAL1 [PORTAL2 [PORTAL3] …]
+
+Generate a production version of mapinfra and the frontend for targeted portals and deploy it."
+function deploy {
+    sync-data
+    prod "$@"
+
+    for portal in "$@"; do
+        echo "***** DEPLOYING: ${portal} *****"
+        deploy-portal "${portal}"
+        echo "***** Done: ${portal} *****"
+    done
+
+    echo "Completing deployment on server: restarting services and reindexing."
+    execute-on-prod "$(declare -f _restart-apache) && \
+        $(declare -f restart-service) && \
+        $(declare -f reindex) && \
+        restart-service apache && \
+        restart-service tomcat && \
+        restart-service search && \
+        reindex"
+}
+
+
+HELP['help']="manuel help TASK
+
+Display the help for TASK."
+function help {
+    if [[ -z "${1:-}" ]]; then
+        help help
+    else
+        [[ -n "${HELP[$1]}" ]] && echo "${HELP[$1]}" || echo "No task named $1." >&2
+    fi
+}
+
+
+HELP['watch']="manuel watch PORTAL
+
+Watch and rebuild a portal on change. This is equivalent to 'manuel front watch PORTAL'"
+function watch {
+    front watch "$@"
+}
+
+
+HELP['launch-tests']="manuel launch-tests
+
+Launch the unit tests against the development code. This is equivalent to 'manuel front test'"
+function launch-tests {
+    front test
+}
+
+
+HELP['lint-code']="manuel lint-code
+
+Launch gslint on the javascript code. This is equivalent to 'manuel front lint'"
+function lint-code {
+    front lint
+}
+
+
+HELP['generate-tests-conf']="manuel generate-tests-conf
+
+Generate the configuration for units tests (dev and prod). This is equivalent to:
+'manuel front build-test-conf'"
+function generate-tests-conf {
+    front build-test-conf
+}
