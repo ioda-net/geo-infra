@@ -150,7 +150,6 @@ class GenerateHelpConfig(Generate):
             text = self.JEPG_TO_PNG_REGEXP.sub(r'.png', text)
             row[i] = text
 
-
     def _save_images(self, helpcontent):
         # Some images can be_fix_images_link present mutliple times in help content. We only
         # need to download them once.
@@ -171,6 +170,7 @@ class GenerateHelpConfig(Generate):
         images_folder = self.src['help_original_images_folder']
         os.makedirs(images_folder, exist_ok=True)
         for img in images:
+            img = self._correct_images_url(img)
             response = requests.get(img, verify=self.ssl_validation)
             if response.status_code != 200:
                 self.report_errors('Error for ' + img)
@@ -184,6 +184,9 @@ class GenerateHelpConfig(Generate):
             filename = self.path(images_folder, image_name)
             image = Image.open(img_content)
             image.save(filename, 'PNG')
+
+    def _correct_images_url(self, src):
+        return src.replace('////', '//')
 
     def generate(self):
         '''Generate the help website and its content.
