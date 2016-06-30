@@ -1,0 +1,31 @@
+# User config
+/config/config.sh
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Exclude kdevelop files
+*.kdev*
+
+# We don't store in git the content of data
+/*data
+/*in
+/*infra
+
+# Misc
+*.map
+!*.in.map
+*.old
+
+# Exclude output
+/dev
+/prod
+
+# Exclude frequently wrong way to do things
+*_copie*
