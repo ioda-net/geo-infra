@@ -19,7 +19,7 @@ HELP['jsonlint']="manuel jsonlint
 Launch lint for all json files and report errors."
 function jsonlint {
     ERRORS=false
-    for jsonfile in $(find in -name "*.json"); do
+    for jsonfile in $(find -L in -name "*.json"); do
         local output=$(python3 -m json.tool "${jsonfile}" 2>&1 > /dev/null)
         if [[ $? -ne 0 ]]; then
             echo "${jsonfile}"
@@ -40,7 +40,7 @@ function csvlint {
         return 0
     fi
 
-    for csvfile in $(find in -name "*.csv"); do
+    for csvfile in $(find -L in -name "*.csv"); do
         local output=$(csvclean -n "${csvfile}" 2>&1)
         if [[ "${output}" != "No errors." ]]; then
             echo "${csvfile}"
