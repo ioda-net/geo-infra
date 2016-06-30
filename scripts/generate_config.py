@@ -335,6 +335,10 @@ class GenerateConfig:
         '''
         template_config_path = 'config/_template.dist.toml'
         template_config = self._load_config_file(template_config_path)
+        # Override with client specific template if it exists
+        custom_template_config_path = 'in/config/_template.dist.toml'
+        if exists(custom_template_config_path):
+            template_config = self._load_config_file(custom_template_config_path)
         config_file_errors = ConfigFileErrors(
             base=template_config_path,
             file=self._get_config_path(self.portal),
