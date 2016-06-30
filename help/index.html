@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="helpApp" ng-controller="HelpCtrl as hc">
+    <head>
+        <title>{{ hc.currentText.title }}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/help/styles.css" />
+    </head>
+    <body>
+
+        <div id="page">
+            <div id="headingSection">
+                <div id="selectLang">
+                    <span ng-repeat="lang in hc.langs">
+                        <a href="#?id={{ hc.currentText.id }}&lang={{ lang }}">{{ lang }}</a>
+                        <a> | </a>
+                    </span>
+                </div>
+            </div>
+            <div id="Sections">
+
+                <div id="menuHelp">
+                    <span ng-repeat="text in hc.texts track by $index">
+                        <h3 ng-if="text.isTitle">{{ text.title }}</h3>
+                        <a ng-if="!text.isTitle" href="#?id={{ text.id }}&lang={{ hc.currentLang }}">{{ text.title }}</a>
+                        <br ng-if="!text.isTitle">
+                    </span>
+                </div>
+
+                <div id="helpSection">
+                    <h2>{{ hc.currentText.title}}</h2>
+
+                    <div bind-html-compile="hc.currentText.content"></div>
+
+                    <img ng-if="hc.currentText.image !== ''" ng-src="{{ hc.currentText.image }}" alt="{{ hc.currentText.title }}" />
+                </div>
+
+            </div>
+            <div id="footer">
+            </div>
+        </div>
+
+        <script src="/help/angular.min.js"></script>
+        <script src="/help/help.js"></script>
+    </body>
+</html>

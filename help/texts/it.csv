@@ -1,0 +1,385 @@
+id,sort,title,content,legend,image
+1,1,PAGINA INIZIALE,"<b>AIUTO CARTINA: FUNZIONI ED APPLICAZIONI PRATICHE</b>
+
+<b>La carta di geo.admin.ch è un’applicazione intuitiva che permette la ricerca, la visualizzazione e l’utilizzo di informazioni geografiche. Essa presenta delle carte e dei dati geografici specifici in modo interattivo e attraverso un navigatore Web standard.</b>
+ 
+L’utilizzatore può personalizzare numerosi parametri della carta, come ad esempio la zona illustrata e la grandezza dell’immagine o ancora le informazioni mostrate e gli sfondi.
+
+L’applicazione permette non soltanto la visualizzazione su schermo, ma anche una stampa su carta di alta qualità. è anche possibile, secondo i casi, accedere a informazioni complementari riguardanti gli oggetti geografici visualizzati.
+",,/help/img/00i.png
+10,2,FINESTRA,#,,
+11,3,Cambiare la lingua,"L’applicazione riconosce la lingua di default del navigatore. Se questa lingua non fa al caso vostro, potete cambiarla ciccando sul link in alto a destra.",,/help/img/11i.png
+12,4,Indicazione delle coordinate,"Quando il cursore si trova sulla mappa, le coordinate corrispondenti alla sua posizione (coordinate nazionali) sono visualizzate nella barra inferiore della finestra. Con un tasto destro del mouse sulla mappa, vengono visualizzati ulteriori informazioni riguardanti la posizione (a.e. l'altitudine).
+<br><img src=""/help/img/12i.png"">",,/help/img/12-2i.png
+20,5,NAVIGAZIONE & ORIENTAMENTO,#,,
+21,6,Cambiare la scala della carta,"Semplicemente cliccate sul tasto ""più"" e ""meno"" oppure direttamente sulla scala desiderata.",,/help/img/21i.png
+22,7,Zoom su una zona,"Mantenendo premuto il tasto Shift ed effettuando un click-trascinamento, è possibile definire una zona rettangolare sulla quale effettuare uno zoom. Lo zoom viene attivato quando si rilascia il tasto del mouse.",,/help/img/22i.png
+23,8,Spostamento (pan),È possibile spostarsi sulla mappa grazie a un click-trascinamento sull’area della cartina.,,/help/img/23i.png
+24,9,Centrare su delle coordinate,"Se si conoscono le coordinate di un luogo interessante, è possibile inserirle nel campo di ricerca geografica per centrare la mappa sul punto scelto. Ad esempio in coordinate nazionali: ""782543 186049"" oppure in Latitudine / Longitudine: ""46.8 9.83""",,/help/img/24i.png
+25,10,"Centrare su località, CAP, toponimo","Il campo di ricerca geografica permette di ritrovare i comuni, i cantoni ed in generale tutti i toponimi (cime, valli, regioni, corsi d’acqua ecc…). dopo aver inserito almeno 4 lettere del nome ricercato, i suggerimenti iniziano ad apparire ed è sufficiente ciccare sull’elemento desiderato per centrarlo nella vista principale.",,/help/img/25i.png
+26,11,Ritorno alla visualizzazione iniziale - reset,"Cliccare sul logo della confederazione svizzera, in alto a sinistra, permette di ritornare alla visualizzazione iniziale della mappa, cioè alla vista d’insieme della Svizzera.
+Il visualizzatore sarà reinizializzato.",,/help/img/26f.png
+27,12,Geolocalizzazione,"Il pulsante ""geolocalizzazione"" permette di individuare la vostra posizione geografica con GPS sulla carta. Cliccando sul pulsante, lo stesso diventa rosso ed appare un’icona di localizzazione sulla carta. 
+
+L’icona presenta una freccia indicante la direzione verso la quale si è orientati. L’icona, inoltre,  ruota in funzione della rotazione del vostro dispositivo.
+<img src=""/help/img/27a_i.png"">
+
+
+Cliccando ulteriormente sul pulsante ""geolocalizzazione"", la carta si orienta nella direzione del dispositivo. L’icona in alto a destra dello schermo indica la direzione del nord geografico. Cliccare di nuovo sul pulsante per uscire dalla modalità ""geolocalizzazione""
+
+<img src=""/help/img/27b_i.png"">",,
+30,13,SELEZIONE E VISUALIZZAZIONE DEI DATI,#,,
+31,14,Ricerca di dati grazie al testo,"Sotto “Ricerca”, un campo di testo vi permette di ricercare delle parole chiave (ad esempio “paludi”, “strada”, “comune”, ecc.) all’interno delle descrizioni dei dati geografici disponibili. Una volta selezionato un layer tra i risultati proposti, questo viene visualizzato sulla mappa. ",,/help/img/31i.png
+32,15,Ricerca di dati nel catalogo,"Sotto “Cambiare tema” trovate l’insieme di tutti i dati geografici disponibili, classificati per tema. Una volta selezionato un livello (ciccando sul cerchio a destra), esso viene visualizzato.",,/help/img/32f.png
+33,16,Cambiare lo sfondo,"Le fotografie aeree e le carte nazionali sono a disposizione come sfondi per la mappa. È possibile selezionare le carte nazionali a colori, in bianco e nero o uno sfondo uniforme bianco.",,/help/img/33i.png
+34,17,Cambiare la trasparenza dei dati visualizzati,Cliccare sull'icona (1). Spostando il cursore è possibile regolare individualmente l’opacità di ciascun livello visualizzato.,,/help/img/34f.png
+35,18,Cambiare l’ordine dei livelli selezionati,"Cliccare sull'icona (1). All’interno della sezione “Selezione”, l’ordine dei livelli visualizzati può esser modificato grazie alle frecce (2).",,/help/img/35f.png
+36,19,Cancellare i livelli,I livelli selezionati possono essere cancellati individualmente ciccando sulla “x” (1) nella sezione “Selezione”.,,/help/img/36i.png
+37,20,Vedere le informazioni riguardanti un livello,"
+La finestra che presenta le informazioni disponibili sui livelli, può essere aperta ciccando sull’icona “i” all’interno della sezione “Selezione” o della sezione “Catalogo”. 
+Questa finestra permette di informarsi sui limiti di validità del livello selezionato, la sua descrizione, i dati di riferimento, il geoportale tematico ed altri metadati come l’eventuale servizio WMS e gli aggiornamenti.",,/help/img/37i.png
+38,21,Informazioni su un oggetto sulla mappa,"È possibile interrogare gli oggetti di alcuni livelli d’informazione vettoriali (punti, linee, poligoni) ciccando su di essi. Se più di un livello vettoriale è attivo, con un solo click si riceveranno informazioni sugli elementi di ogni livello.",,/help/img/38i.png
+39,22,Acquisto dati,"I dati visibili sulla carta possono essere ordinati, se questa possibilità é prevista dall'ufficio federale competente. Aprendo la finestra delle informazioni concernenti 
+i dati (cliccando sul bottone ""i"") e selezionando il link ""dati di riferimento"" nella finestra delle informazioni si possono ordinare i dati.",,/help/img/39i.png
+40,23,Immagini aeree,"Utilizzando il visualizzatore di immagini LUBIS su <a href=""http://map.lubis.admin.ch""> map.lubis.admin.ch</a> tutte le immagini e le bande d'immagini disponibili nella banca dati delle immagini aere di swisstopo possono essere ricercate, consultate e ordinate. La banca dati viene 
+continuamente completata con nuove bande d'immagini aeree e storiche. I dati messi a disposizione sono attualizzati all'inizio di ogni trimestre.
+Potete trovare delle informazioni generali sulle immagini aeree di swisstopo al <a href=""http://www.swisstopo.admin.ch/internet/swisstopo/fr/home/products/images/aerial.html"">link</a> 
+
+1. Attivare l'applicazione su  <a href=""http://map.lubis.admin.ch"">map.lubis.admin.ch</a>.
+
+2. Effettuare una ricerca per luogo o per coordinate 
+
+<img src=""/help/img/luft2-fr.png"" />
+
+3. Scegliere il tipo di immagine (bianco e nero, colore, infrarosso o banda d'immagini)
+4. Effettuare una ricerca per anno: attivabile con il bottone <b1>""tempo""<b2>
+
+<img src=""/help/img/luft3.png"" />
+
+5. Cliccando su una sola immagine (punto) o su una banda di immagini (linea) si ottengono:
+- il contorno della fotografia (in giallo)
+- in una finestra le informazioni (vista completa/scheda tecnica) e possibilità di effetturare un'ordinazione
+
+<img src=""/help/img/luft4-fr.png"" />
+
+Nel seguente documento trovate tutte le istruzioni dettagliate:
+<iframe src=""https://docs.google.com/presentation/d/1cwtwJN1zzxs5js6jWfH2hlPn8Gx9YROYtRwf4NniuV4/embed?start=false&loop=false&delayms=5000"" frameborder=""0"" width=""570"" height=""456"" allowfullscreen=""true"" mozallowfullscreen=""true"" webkitallowfullscreen=""true""></iframe>",,/help/img/blank.png
+41,24,Stampare,"L'applicazione permette di produrre dei files in formato PDF a partire dalla cartina (é possibile aggiungere informazioni utili come la scala e la legenda).
+Questi files possono essere registrati e stampati. Cliccando sul bottone ""stampa"" si apre la finestra di dialogo nella quale é possibile cambiare
+i parametri come la scala desiderata e l'orientamento del documento pdf A4/A3. La zona selezionata può essere modificata muovendo la cartina con il mause. Le legende dei dati possono essere stampate dalla finestra di informationi, cliccando sul bottone ""stampa"". Attenzione, i files PDF possono essere molto pesanti,
+la loro trasmissione via internet può impiegare un tempo considerevole.","<b>Légende:</b> Les légendes de tous les jeux de données sont imprimées sur une seconde page.
+<b>Réseau de coordonnées:</b> Superposition d'un réseau de coordonnées suisse WGS84.
+<b><i>Optionnel</i> Série temporelle:</b> Pour les jeux de données avec plusieurs représentations temporelles disponibles: un nouveau PDF est généré pour chaque représentation temporelle du point milieu de la carte.",/help/img/40i.png
+42,25,Cursore del tempo,"È possibile visualizzare l’evoluzione temporale di alcuni set di dati. La disponibilità di tale funzionalità è indicata dalla presenza dell’icona “ tempo” tra gli strumenti di navigazione a destra dell’applicazione.<br>
+<img src=""/help/img/42i.png""><br>
+
+1. Scegliere un livello <b>raster</b> (ad esempio “Viaggio del tempo”) o <b>vettoriale</b> (ad esempio “Immagini aeree swisstopo”).<br>
+2. L’icona <b>“tempo”</b> appare a destra e:
+- è attivata di default per i livelli <b>raster</b> : appare il cursore del tempo ed i dati più recenti sono visualizzati. 
+- è disattivata di default per i livelli <b>vettoriali</b>: l’intera serie temporale è visualizzata. Cliccando sull’icona “tempo”, appare il cursore del tempo ed i dati più recenti sono visualizzati.<br>
+3. Selezionare un anno di interesse tramite il <b>cursore del tempo</b>.<br>
+4. L’anno selezionato è anche visualizzato in “Selezione”.",,/help/img/blank.png
+43,26,Copia layer/confronto temporale,"1) Scegliere un layer in formato raster con rappresentazione temporale (ad esempio “viaggio nel tempo – mappe”) o un layer vettoriale (esempio: “Immagini aereee swisstopo a colori”).
+2) Copiare il layer facendo click sull’icona <b>“Copia”</b> nella finestra di selezione. Il duplicato apparirà tra i layer visualizzati.
+3) Öffnen Sie das <b>Zeit-Auswahlfenster</b> durch Klicken auf das Datensatzjahr (in rot) und wählen Sie das gewünschte Jahr für jeden Datensatz.
+3) Aprire la <b>finestra di selezione temporale</b> facendo click sull’indicazione dell’anno (in rosso) per il layer e scegliere l’anno desiderato.
+
+4) Confrontare I due layer usando direttamente la trasparenza di quello superior, oppure grazie alla funzione <b>“confronta”</b> nel menu “strumenti”
+
+<img src=""/help/img/43i.png"">",,/help/img/blank.png
+44,27,Selezione di oggetti « Query Tool »,"<ol type=""1""><li>Scegliere un livello nel tema « Aviazione » (Ostacoli alla navigazione aerea, ad esempio). Possono essere utilizzati tutti i livelli designati come <a href=""//api3.geo.admin.ch/api/faq/index.html#which-layers-are-searchable"" target=""_blank"">« searchable »</a>.</li>
+<li>Selezionare « Informazione oggetto » in « Strumenti »</li>
+<li>Per visualizzare gli oggetti (max .200) in un perimetro definito, tracciare un rettangolo sulla zona di interesse attivando allo stesso tempo il tasto CTRL (cmd su Mac).</li><br /><img src=""/help/img/44a_i.png""><br /><br /><b><u>Selezione con filtri</u></b><br /><br /><li>Gli oggetti possono essere evidenziati tramite <b>filtri</b> predefiniti o personalizzati</li>
+<li>Le condizioni del filtro devono essere definite selezionando un livello,</li>
+<li>scegliendo un <b>parametro</b> ed un <b>operatore</b> di confronto</li>
+<li>ed introducendo un valore.</li>
+<li>È possibile utilizzare più filtri a cascata.</li><br />Cliccare su « Ricerca ». Gli oggetti filtrati vengono evidenziati.<br /><br /><img src=""/help/img/44b_i.png""><br /><br /><b><u>Selezione con attributo</u></b><br />Gli oggetti possono essere filtrati utilizzando gli attributi del livello selezionato.<br /><br /><li>Selezionare « Stato » nella lista dei parametri</li>
+<li>Selezionare il valore dell’attributo desiderato dalla lista dei valori</li>
+<li>Scegliere un operatore , « ilike » =  o « not ilike » != </li></ol>
+Cliccare su « Ricerca ». Gli oggetti filtrati vengono evidenziati.",,"/help/img/blank.png
+"
+50,28,LINK & INTEGRAZIONE,#,,
+52,29,Salvare/inviare/iFrame le impostazioni di una cartina ,"<b> Salvare o trasmettere le impostazioni di una cartina </b>
+
+La funzione “Link” permette di ottenere un URL che contiene tutte le informazioni necessarie a riprodurre esattamente la visuale attuale della mappa (dati visualizzati, luogo, scala). Questo link può essere copiato ed inviato tramite email.<br>
+<img src=""/help/img/52f.png"">
+
+<b>Integrare la carta in una pagina web tramite iFrame</b>
+
+Il codice da integrare nella vostra pagina web viene generato automaticamente. Cliccando su “dettagli” è possibile configurare le dimensioni della carta. Copiate il codice nella vostra pagina web.
+<br>
+<img src=""/help/img/52bf.png""><br>
+Il codice del nostro esempio:
+<p class=""test"" style=""text-align: left;font-style: italic; color: #069;"">&lt;iframe src='//map.geo.admin.ch/embed.html?X=171954.23&Y=640698.99&zoom=3&lang=it&topic=ech&bgLayer=ch.swisstopo.pixelkarte-grau' width='400' height='300' frameborder='0' style='border:0'&gt;&lt;/iframe&gt;</p><br> restituisce il seguente risultato:<br>
+<iframe src='//map.geo.admin.ch/embed.html?X=171954.23&Y=640698.99&zoom=3&lang=it&topic=ech&bgLayer=ch.swisstopo.pixelkarte-grau' width='400' height='300' frameborder='0' style='border:0'></iframe>
+",,/help/img/blank.png
+53,30,Salvare/trasmettere un link verso un oggetto,"<b1>Registrare o trasmettere per email un link verso un oggetto<b2>
+
+È possibile, per alcuni livelli d’informazione (punti, linee e poligoni), produrre un link (URL) che punti direttamente all’oggetto in questione. Una volta aperta la finestra d’informazione sull’oggetto cliccandoci sopra, l’ultima riga d’informazione contiene l’URL “Link verso l’oggetto”. Con un doppio click su questo link, una nuova finestra viene aperta con la visuale centrata sull’oggetto scelto. Un click solo centra invece l’oggetto nella mappa attualmente aperta. Si potrà poi utilizzare la funzione “Link” per registrare e trasmettere l’URL che mostri le impostazioni attuali.
+",,/help/img/53d.png
+54,31,Parametri del link verso la mappa,"Grazie ad un link contenente una serie di parametri, è possibile aprire l’applicazione con dei livelli d’informazione, una scala ed un centraggio già reimpostati:  api3.geo.admin.ch [//api3.geo.admin.ch]
+
+<table width=""570"">
+<tr>
+<td bgcolor=""#eeeeee"" valign=""top"" width=""100""><span style=""font-weight:bold; font-size:11px;"">Parameter</span></td>
+<td bgcolor=""#eeeeee"" valign=""top"" width=""150""><span style=""font-weight:bold; font-size:11px;"">Description</span></td>
+<td bgcolor=""#eeeeee"" valign=""top"" width=""310""><span style=""font-weight:bold; font-size:11px;"">Example</span></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">lang</td>
+<td valign=""top"" width=""150"">Language of the interface: de, fr, it, rm or en</td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?lang=rm"" target=""_blank"">http://map.geo.admin.ch/?lang=rm</a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">zoom</td>
+<td valign=""top"" width=""150"">Zoom level, from 0 to 13</td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?zoom=12"" target=""_blank"">http://map.geo.admin.ch?zoom=12</a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">Y, X</td>
+<td valign=""top"" width=""150"">Easting value (from 450‘000 to 900‘000) Northing value, ranging from 50‘000 to 350‘000 (always smaller than Y)</td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?Y=600000&amp;X=190000"" target=""_blank"">http://map.geo.admin.ch?Y=600000&amp;X;=190000</a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">topic</td>
+<td valign=""top"" width=""150"">Topics with corresponding datasets: blw, are, bafu, swisstopo, kgs, funksender, nga, ivs, sachplan, geol, luftbilder, wildruhezonen, vu, inspire, ech</td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?topic=vu"" target=""_blank"">http://map.geo.admin.ch?topic=vu</a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">bgLayer</td>
+<td valign=""top"" width=""150"">Base layer: one of ch.swisstopo.pixelkarte-farbe, ch.swisstopo.pixelkarte-grau ou voidLayer (fond blanc)</td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-grau"" target=""_blank"">http://map.geo.admin.ch?bgLayer=ch.swisstopo.pixelkarte-grau</a></td>
+</tr>
+<tr>
+<td height=""143"" valign=""top"" width=""100"">layers</td>
+<td valign=""top"" width=""150"">Layer to display, for a complete list KML layers are supported with a || separated list with: KML||kml url WMS layers are supported with a || separated list with: WMS||layer title||wms url||layer name</td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?layers=WMS||Geothermie||http://wms.geo.admin.ch/?||ch.swisstopo.geologie-geophysik-geothermie,ch.ensi.zonenplan-notfallschutz-kernanlagen,KML||http://www.meteoschweiz.admin.ch/web/de/klima/messsysteme/boden/google_earth.Par.0007.DownloadFile.ext.tmp/obs.kml"" target=""_blank"">
+http://map.geo.admin.ch/?layers=WMS<br/>
+||Geothermie||http://<br/>
+wms.geo.admin.ch/?||ch.<br/>
+swisstopo.geologie-geophysik-geothermie,
+<br/>ch.ensi.zonenplan-notfallschutz-<br/>
+kernanlagen,KML||http://<br/>
+www.meteoschweiz.admin.ch/web/de/klima<br/>
+/messsysteme/boden/google_earth.<br/>
+Par.0007.DownloadFile.ext.tmp/obs.kml</a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">layers_opacity</td>
+<td valign=""top"" width=""150"">Layers opaciy, should match number of layers (0-1.0)</td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?layers=ch.swisstopo.hiks-dufour&amp;layers_opacity=0.5"" target=""_blank"">http://map.geo.admin.ch?layers=ch.swisstopo.hiks-<br/>dufour&amp;layers_opacity=0.5</a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">layers_visibility</td>
+<td valign=""top"" width=""150"">Toggle the visibility of layers present in the tree</td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?layers=ch.swisstopo.hiks-dufour&amp;layers_visibility=False"" target=""_blank"">http://map.geo.admin.ch?layers=ch.swisstopo.hiks-<br/>dufour&amp;layers_visibility=False</a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">layers_timestamp</td>
+<td valign=""top"" width=""150"">Timestamp list (format  YYYYMMDD). One timestamp per Layer, empty if not a ""timeEnabled"" Layer.<br>
+Special case YYYYMMDD ""99991231"": all data of all years are displayed (default value).</br></td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?layers_timestamp=19971231,19991231,19981231,20001231,99991231,2014,&amp;X=190000.00&amp;Y=660000.00&amp;zoom=1&amp;lang=fr&amp;topic=luftbilder&amp;bgLayer=ch.swisstopo.pixelkarte-grau&amp;layers=ch.swisstopo.lubis-luftbilder_schwarzweiss,ch.swisstopo.lubis-luftbilder_farbe,ch.swisstopo.lubis-luftbilder_infrarot,ch.swisstopo.lubis-luftbilder-dritte-firmen,ch.swisstopo.lubis-luftbilder-dritte-kantone,ch.swisstopo.lubis-bildstreifen,ch.swisstopo.images-swissimage.metadata&amp;catalogNodes=1179,1180,1186,1184"" target=""_blank"">http://map.geo.admin.ch/?layers_timestamp=19971231,19991231,19981231,20001231,99991231,2014,&amp;X;=190000.00&amp;Y;=660000.00&amp;zoom;=1〈=fr&amp;topic;=luftbilder&amp;bgLayer;=ch.swisstopo.pixelkarte-grau&amp;layers;=ch.swisstopo.lubis-luftbilder_schwarzweiss,ch.swisstopo.lubis-luftbilder_farbe,ch.swisstopo.lubis-luftbilder_infrarot,ch.swisstopo.lubis-luftbilder-dritte-firmen,ch.swisstopo.lubis-luftbilder-dritte-kantone,ch.swisstopo.lubis-bildstreifen,ch.swisstopo.images-swissimage.metadata&amp;catalogNodes;=1179,1180,1186,1184</a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">time</td>
+<td valign=""top"" width=""150"">Year (format : YYYY). Can be used with all ""timeEnabled"" layers.<br>
+Special case WMS:  YYYY empty means that the data of all years are displayed (default value).</br></td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_farbe&amp;time=1981"" target=""_blank"">http://map.geo.admin.ch/ 
+		<br>?layers=ch.swisstopo.lubis-luftbilder_farbe&amp;time;=1981</br></a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">(layer    bod id)</td>
+<td valign=""top"" width=""150"">Layer bod id from which to highlight feature(s) with id</td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?ch.bafu.bundesinventare-moorlandschaften=212,213"" target=""_blank"">http://map.geo.admin.ch/?ch.bafu.bundesinventare-moorlandschaften=212,213</a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">crosshair</td>
+<td valign=""top"" width=""150"">crosshair=, possible type: cross, circle, bowl, point and marker</td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?Y=538700&amp;X=165890&amp;zoom=6&amp;crosshair=circle"" target=""_blank"">http://map.geo.admin.ch/?Y=538700&amp;<br/>X=165890&amp;zoom=6&amp;crosshair=circle</a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">swisssearch</td>
+<td valign=""top"" width=""150"">swisssearch=<br>Address or WGS84-Coordinates</br></td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?swisssearch=berges 37 payerne"" target=""_blank"">http://map.geo.admin.ch/?swisssearch=<br/>berges 37 payerne</a>
+<br><br>
+<a href=""http://map.geo.admin.ch/?swisssearch=7.04983,46.42928"" target=""_blank"">http://map.geo.admin.ch/?swisssearch=7.04983,46.42928</a></br></br></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">swipe_ratio</td>
+<td valign=""top"" width=""150"">Value between 0 and 1 defining the relative position of the swipe elements visible in the compare mode</td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?swipe_ratio=0.5&amp;bgLayer=ch.swisstopo.pixelkarte-farbe&amp;layers=ch.swisstopo.geologie-geotechnik-gk200"" target=""_blank"">http://map.geo.admin.ch/?swipe_ratio=0.5&amp;bgLayer;=ch.swisstopo.pixelkarte-farbe&amp;layers;=ch.swisstopo.geologie-geotechnik-gk200</a></td>
+</tr>
+</table>
+","(attualmente disponibile solamente in francese)
+
+",/help/img/54f.png
+55,32,Mode offline pour mobile,"Offline pour une zone d’intérêt de 10x10km, carte à l'échelle 1:25'000 sans tooltip. <br><u>Actuellement disponible uniquement sur appareils mobiles.</u>
+
+1. S’assurer d’avoir une connexion Internet stable, validez le téléchargement avec ""ok"".
+Ne fermez pas le navigateur. Ne verrouillez pas votre appareil . Si aucune progression n’est visible, ou des problèmes sont rencontrés, veuillez effacer le cache du navigateur de votre appareil. Désactivez le mode «privé». Attendre la fin du téléchargement, validez avec ""ok"".
+
+2. S'il n'y a pas de connexion Internet - l'application est en mode déconnecté
+3. Fonctions offline: accès et représentation de la zone d'intérêt stockée
+
+<b>Visualiser la zone d’intérêt:</b> les données situées dans le carré rouge sont disponibles
+<b>Zoom sur la zone d’intérêt:</b> centré sur la zone
+<b>Effacer la carte:</b> la zone d’intérêt peut être supprimée et en mode online un nouvel extrait de carte peut être stocké
+
+<b>Instructions sur Slideshare: </b> [http://fr.slideshare.net/swiss_geoportal/mobilegeoadminch-re1/32]",,/help/img/55.png
+59,33,FUNZIONI DISEGNARE & MISURARE,#,,
+66,34,"Tutte le funzioni ""disegnare/misurare""","1- <a href=""/help/?id=91&lang=it"" target=""_self"">Aggiungere un <b>simbolo</b></a><br>
+2- <a href=""/help/?id=92&lang=it"" target=""_self"">Aggiungere un <b>testo</b></a><br>
+3- <a href=""/help/?id=93&lang=it"" target=""_self"">Aggiungere un <b>tracciato / poligono</b></a><br>
+4- <a href=""/help/?id=94&lang=it"" target=""_self""><b>Misurare</b></a><br>
+5- <a href=""/help/?id=95&lang=it"" target=""_self""><b>Condividere</b> un disegno / KML</a>",,/help/img/90i.png
+91,35,Aggiungere un simbolo,"In « Disegnare & misurare sulla mappa », selezionare « Simbolo ». Cliccare con il tasto sinistro del mouse sul luogo desiderato per aggiungere il simbolo.
+
+Il simbolo può essere modificato (dimensione ed icona) e descritto con un testo (finestra in basso a sinistra). Il disegno può essere condiviso e visualizzato come KML: in questo caso il testo della descrizione viene visualizzato in seguito ad un click sul simbolo.
+
+Ogni elemento può essere modificato. È possibile selezionare più elementi da modificare/eliminare cliccando sugli stessi e tenendo premuto allo stesso tempo il tasto SHIFT oppure utilizzando le opzioni del menu “Mostra …”.","Il disegno è automaticamente salvato per un anno sui nostri server. Utilizzando il servizio, se ne accettano i termini di servizio.",/help/img/91i.png
+92,36,Aggiungere un testo,"In « Disegnare & misurare sulla mappa », selezionare « Testo ». Cliccare con il tasto sinistro del mouse sul luogo desiderato per aggiungere il testo.
+
+Una volta posizionato, il testo ed il colore possono essere modificati (finestra in basso a sinistra). 
+
+Ogni elemento può essere modificato. È possibile selezionare più elementi da modificare/eliminare cliccando sugli stessi e tenendo premuto allo stesso tempo il tasto SHIFT oppure utilizzando le opzioni del menu “Mostra …”.
+","Il disegno è automaticamente salvato per un anno sui nostri server. Utilizzando il servizio, se ne accettano i termini di servizio",/help/img/92i.png
+93,37,Aggiungere un tracciato / poligono,"In « Disegnare & misurare sulla mappa », selezionare « Linea ». Cliccare con il tasto sinistro del mouse per iniziare il tracciato, continuare a cliccare per aggiungere dei segmenti e fare un doppio-click per terminare il tracciato.
+
+È possibile aggiungere punti ad un segmento esistente : cliccare sul segmento e trascinare il nuovo punto nella posizione desiderata.
+La finestra in basso a sinistra permette di:
+-	Modificare il <b>colore</b> del tratto e fornire una <b>descrizione</b> (in formato testo o HTML) dello stesso. Il disegno può essere condiviso e visualizzato come KML: in questo caso il testo della descrizione viene visualizzato in seguito ad un click sul simbolo.
+-	Visualizzar il <b>profilo</b> del tracciato
+-	Effettuare <b>misurazioni</b> (distanza, superficie, azimut)
+
+Ogni elemento può essere modificato. È possibile selezionare più elementi da modificare/eliminare cliccando sugli stessi e tenendo premuto allo stesso tempo il tasto SHIFT oppure utilizzando le opzioni del menu “Mostra …”.","Il disegno è automaticamente salvato per un anno sui nostri server. Utilizzando il servizio, se ne accettano i termini di servizio.",/help/img/93i.png
+94,38,Misurare,"In « Disegnare & misurare sulla mappa », selezionare « Misurare ». Cliccare per definire il punto di partenza della misurazione e continuare a cliccare per aggiungere dei segmenti. Fare doppio-click per terminare la misurazione oppure cliccare sul punto di partenza per definire una superficie.
+
+La misura della distanza e della superficie ed il profilo sono automaticamente visualizzati.
+
+Ogni elemento può essere modificato. È possibile selezionare più elementi da modificare/eliminare cliccando sugli stessi e tenendo premuto allo stesso tempo il tasto SHIFT oppure utilizzando le opzioni del menu “Mostra …”.","Il disegno è automaticamente salvato per un anno sui nostri server. Utilizzando il servizio, se ne accettano i termini di servizio.",/help/img/94i.png
+95,39,Condividere un disegno / KML,"In « Disegnare & misurare sulla mappa » gli elementi (simboli, testi e tracciati) possono essere:
+
+- <b>Share Link</b>: Condivisi tramite permalink (1). 
+- <b>Admin Link</b>: Salvati sui nostri server ed ulteriormente modificati. Questo link deve essere salvato nel caso si voglia modificare il disegno successivamente (2). 
+- <b>Salvati</b> sul proprio computer in formato KML utilizzando le opzioni nel menu « Mostra… » (3).","Il disegno è automaticamente salvato per un anno sui nostri server. Utilizzando il servizio, se ne accettano i termini di servizio.",/help/img/95i.png
+60,40,FUNZIONI COMPLEMENTARI,#,,
+62,41,Importare WMS,"Possono essere rappresentati solamente i servizi WMS che supportano la ""Proiezione Svizzera EPSG 21781"" e che rispettano gli standard di <a href=""http://www.opengeospatial.org/standards/wms"">WMS OGC</a>. 
+Un semplice strumento di test é disponibile sul <a href =""//www.geo.admin.ch/internet/geoportal/fr/home/services/geoservices/ech0056.html"">sito</a>
+I dati WMS sono generalmente visibili solamente a una scala ben determinata, é quindi necessario centrare la porzione di cartina corrispondente e scegliere la scala appropriata.
+La rapidità di rappresentazione dei dati WMS e la loro disponibilità dipendono dai responsabili dei dati stessi.
+I dati possono essere salvati in formato PDF utilizzando la funzione ""stampa"".
+I dati possono inoltre essere trasmessi via email con la funzione permalink ""link"".
+E' necessario adattarsi alle condizioni di utilizzo dei dati.",,/help/img/63f.png
+63,42,Importare KML,"<p>È ora possibile visualizzare files KML salvati online (tramite URL) o localmente (quest’ultima funzionalità non è disponibile su IE)</p><p>Solamente i files KML privi di errori e che rispettano gli <a href=""http://opengeospatial.org/standards/kml""><b>standard KML OGC</b></a> possono essere rappresentati.</p><p>Un facile strumento di test é a vostra disposizione <a href=""http://kmlvalidator.com/home.htm""><b>Link</b><a></p><img src=""/help/img/64f.png""><br /><br /><h2>Generazione et messa online di file KML</h2><p><b>Come creare un file KML</b> </p><p><a href=""http://www.swisstopo.admin.ch/internet/swisstopo/de/home/apps/calc/kml.html"">Generatore di KML online</a><br>
+<a href=""/help/?id=67"">Disegnare</a></p><p><b>Come pubblicare un KML online</b><br />
+Se non si ha a disposizione un proprio server su cui memorizzare e rendere accessibili in Internet i propri file KML, è possibile utilizzare i seguenti servizi gratuiti per l'hosting e la distribuzione.</p><p><b>1. <u>Pubblicare con Google Docs</u></b></p><ul><li>Creare un account: <a href=""https://docs.google.com"">https://docs.google.com</a></li>
+<li>Caricare il proprio file (Uploader): cliccare su ""Upload > Files…""</li></ul>
+<img src=""/help/img/upload.png""><ul><li>Nella finestra ""File Upload"" selezionare il proprio file KML e cliccare su ""Open"".</li> 
+<li>Nella finestra ""Upload settings"" deselezionare ""Convert documents, presentations, spreadsheets, and drawings to the corresponding Google Docs format"" e ""Convert text from PDF and image files to Google documents"", quindi cliccare su ""Start upload""</li> 
+<li>Selezionare il proprio documento e cliccare su ""Share"". Nella finestra ""Sharing settings"" cliccare ""Change…"". Selezionare ""Public on the web"" oppure ""Anyone with the link"" e cliccare ""Save"". Copiare il ""Link to share"", quindi cliccare su ""Done"".</li> </ul>
+<img src=""/help/img/sharing.png""><p>Modificare il link copiato sostituendo ""leaf"" con ""uc"" tra ""https://docs.google.com/"" e ""?id=…""; il link è ora pronto ad essere utilizzato nella funzione ""Importare KML"" di map.geo.admin.ch</p><p>Esempio:<br /><a href=""//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||https://docs.google.com/uc?id=0B4uRuJ1hajZmZjJlZDNiMGItNmU0Zi00N2FlLWJiZDItM2UwZDA3YmQwYzk3&hl=fr&layers_opacity=1&layers_visibility=true"">//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||https://docs.google.com/uc?id=0B4uRuJ1hajZmZjJlZDNiMGItNmU0Zi00N2FlLWJiZDItM2UwZDA3YmQwYzk3&hl=fr&layers_opacity=1&layers_visibility=true</a></p><p><b>2. <u>Pubblicare con Dropbox</u></b></p><ul><li>Creare un account: <a href=""http://www.dropbox.com"">http://www.dropbox.com</a> (È possibile utilizzare l'applicazione desktop o direttamente l'interfaccia web)</li> 
+<li>Salvare il proprio KML nella cartella pubblica, cliccare sul file e nel successivo menu cliccare su ""Dropbox>Copiare collegamento pubblico"" (nella versione desktop) o ""Più>Copiare il collegamento pubblico"" (nell'interfaccia Web). (Ulteriori informazioni sulla condivisione di documenti con Dropbox: <a href=""http://www.dropbox.com/help/16"">http://www.dropbox.com/help/16</a>
+<p><li>Modificare il link: http://dl.dropbox.com/u/44486020/swisstopo.kml?<b>dl=1</b>. </li>
+<li>Il link può essere utilizzato nella funzione ""Importare KML"" di map.geo.admin.ch</li></ul><p>Esempio:<br /><a href=""//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||http://dl.dropbox.com/u/44486020/swisstopo.kml&layers_opacity=1&layers_visibility=true"">//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||http://dl.dropbox.com/u/44486020/swisstopo.kml&layers_opacity=1&layers_visibility=true</a></p><p><b>3. <u>Pubblicato con Gist</u></b></p><p>Se non si ha a disposizione un proprio server su cui memorizzare e rendere accessibili in Internet i propri file KML, si suggerisce l’utilizzo di <a href=""https://github.com/"">Github</a> eche grazie al servizio <a href=""https://gist.github.com/"">Gist</a>, offre la possibilità di gestire i file online.</p><ul><li>Creare un proprio account su Gist e copiare/incollare il testo del file KML nella finestra di testo si Gist: in alternativa, utilizzare la funzione drag-and-drop. La finestra di testo è ora riempita con il testo del proprio KML.(1)</li>
+<li>Cliccare su „Create Public Gist“ (2), quindi cliccare su „Raw“ (3) </li>
+<li>Nella finestra successiva: verrà generato un URL corrispondente alla versione online del file KML (4)</li>
+<li>Usare l’URL per importare e visualizzare il KML in map.geo.admin.ch (5). Tramite il permalink di map.geo.admin.ch è, inoltre, possibile condividere il KML.</li></ul>
+<img src=""/help/img/64all.png"">",,/help/img/blank.png
+65,43,Confrontare,"E' possibile confrontare due diversi set di dati. Selezionare  lo strumento ""confrontare"" e nel centro alla cartina comparirà un cursore rosso:
+<img src=""/help/img/65a.png"">
+Il primo layer selezionato comparirà a sinistra, mentre tutti gli altri a destra del cursore.
+Il confronto si può fare spostando con il mouse a destra e sinistra il cursore rosso:",,/help/img/65b.png
+68,44,Informazione oggetto,"Per ottenre delle informazioni su più di un oggetto alla volta, tracciate un rettangolo premendo CLRT e cliccando con il mouse. 
+Tutti gli oggetti inclusi nel rettangolo appena disegnato appariranno in una finestra d'informazione.",,/help/img/68.png
+69,45,Scorciatoia da tastiera,"
+<table align=""center"" width=""550"">
+<thead>
+<tr>
+<th>Browser</th>
+<th>Windows</th>
+<th>Linux</th>
+<th>Mac</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chrome</td>
+<td>[Alt] + accesskey</td>
+<td>[Alt] + accesskey</td>
+<td>[Control] [Alt] + accesskey</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>[Alt] [Shift] + accesskey</td>
+<td>[Alt] [Shift] + accesskey</td>
+<td>[Control] [Alt] + accesskey</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>[Alt] + accesskey</td>
+<td></td>
+<td>[Control] [Alt] + accesskey</td>
+</tr>
+<tr>
+<td>Opera 15 or newer</td>
+<td>[Alt] + accesskey</td>
+<td>[Alt] + accesskey</td>
+<td>[Alt] + accesskey</td>
+</tr>
+<tr>
+<td>Opera 12.1 or older</td>
+<td>[Shift] [Esc] + accesskey</td>
+<td>[Shift] [Esc] + accesskey</td>
+<td>[Shift] [Esc] + accesskey</td>
+</tr>
+</tbody>
+</table>
+<table width=""344"">
+<thead>
+<tr>
+<th width=""154"">Tools</th>
+<th width=""178"">Letter (accesskey)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WMS Import</td>
+<td>w</td>
+</tr>
+<tr>
+<td>KML Import</td>
+<td>k</td>
+</tr>
+<tr>
+<td>Compare</td>
+<td>c</td>
+</tr>
+<tr>
+<td>Measure</td>
+<td>m</td>
+</tr>
+<tr>
+<td>Draw</td>
+<td>r</td>
+</tr>
+<tr>
+<td>Information object</td>
+<td>s</td>
+</tr>
+<tr>
+<td>Print</td>
+<td>p   (with print menu already opened)</td>
+</tr>
+</tbody>
+</table>
+",,/help/img/blank.png
+70,46,Segnala un problema,"<p>Questo strumento permette di inviare segnalazioni e suggerimenti su map.geo.admin.ch. Segnalazioni di problemi e commenti in generale sono ben accetti.<br />Aprire map.geo.admin.ch ed ingrandire la zona (zoom in) rispetto alla quale si intende segnalare un problema: una strada, un indirizzo, un luogo. È possibile utilizzare lo strumento di ricerca per individuare la zona di proprio interesse. Cliccare in alto a destra su ""Segnala un problema"".</p><p><b>La sua e-mail</b><br />Inserire il proprio indirizzo email. Campo opzionale.</p><p><b>Inserisca qui il suo commento</b><br />Inserire qui il proprio commento o descrizione del problema rilevato. Campo obbligatorio.</p>
+<img src=""/help/img/70i.png""><p><b>Il suo disegno</b><br />È possibile creare un disegno da allegare al messaggio utilizzando gli strumenti di disegno. Il disegno viene automaticamente allegato al messaggio. Questa sezione è opzionale.</p><p><b>Aggiungere un allegato</b><br />È possibile fornire informazioni addizionali  (""Browse""). Questa sezione è opzionale.</p><p>Cliccare su ""Inviare""</p><p><b>Quale formato di file è possibile allegare?</b><br />Sono supportati i seguenti formati di file: .pdf, .zip, .png, .png, .kml, .kmz oder gpx.</p><p><b>Cosa avviene dopo l'invio della segnalazione?</b><br />Nel caso di segnalazioni riguardanti i dati, le informazioni vengono trasmesse al rispettivo responsabile.</p>",,/help/img/blank.png
+80,47,INFORMAZIONI TECNICHE E DISPOSIZIONI LEGALI,#,,
+81,48,Informazioni e condizioni,"<b1>Informazioni tecniche e supporto<b2>
+Particolarità concernenti lo stoccaggio dati: 
+api3.geo.admin.ch [//api3.geo.admin.ch]
+
+<b1>Menzioni legali / Condizioni di utilizzo<b2>
+Le disposizioni legali generali http://www.disclaimer.admin.ch si applicano per 
+map.geo.admin.ch [http://www.disclaimer.admin.ch]",,/help/img/81.png

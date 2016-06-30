@@ -1,0 +1,239 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-size:12px !important;
+    color:#000000;
+    font-family:Arial, Helvetica, sans-serif;
+    background:url('/help/help_bckgd.jpg') repeat;
+}
+
+a:link {
+    text-decoration: none;
+    color: #006699;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #006699;
+}
+
+a:hover {
+    text-decoration: underline;
+    color:#006699
+}
+
+a:active {
+    text-decoration: none;
+    color: #006699;
+}
+
+p{
+    margin-top:10px;
+}
+
+p > a:link{
+    margin-left:2px !important;
+    float:none !important;
+}
+
+h1{
+    color:#fff;
+    font-size:30px;
+    font-weight:bold;
+    margin-top:22px;
+    margin-right: 44px;
+    text-shadow: 0 0 4px #000;
+    float: right;
+}
+
+h2{
+    color:#000;
+    font-size:1.5em;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+h3{
+    color:#000;
+    font-size:0.9em;
+    font-weight:bold;
+    margin-top: 12px;
+    padding-left: 4px;
+    margin-bottom: 2px;
+    border: 1px solid #dedede;
+    width:280px;
+}
+
+#page{
+    width:960px;
+    margin:50px auto;
+    box-shadow: 10px 10px 5px #888888;
+    background-repeat:no-repeat;
+    background-position:right top;
+    background-color: #FFFFFF;
+}
+
+#headingSection{
+    background-image:url('/help/header_bckgd.jpg');
+    background-repeat:no-repeat;
+    background-position:right top;
+    position:relative;
+    border-bottom:none;
+    vertical-align:middle;
+    border: 1px solid #dedede;
+    height: 88px;
+}
+
+#selectLang{
+    color:#777;
+    font-weight:normal;
+    position:absolute;
+    top: 97px;
+    left:810px;
+    font-size:10px !important;
+    display:block;
+}
+
+#selectLang a, a:active, a:visited, a:focus{
+    color:#777;
+    text-decoration:none;
+    float:left;
+}
+
+#selectLang a:hover{
+    color:#ff0000;
+    font-size:10px !important;
+    margin: 0px !important;
+}
+
+#Sections{
+    padding-bottom: 85px;
+    overflow: hidden;
+    border: 1px solid #dedede;
+    background-color:#fff;
+    background-repeat:no-repeat;
+    background-position:right bottom;
+}
+
+#menuHelp{
+    float:left;
+    width:280px;
+    padding-top:30px;
+    padding-left:24px;
+    line-height: 16px;
+}
+
+#menuHelp a, a:visited, a:focus{
+    color:#000;
+    font-size:0.9em !important;
+    font-weight:normal !important;
+    margin-left:10px !important;
+
+    text-decoration: none;
+    float:left;
+}
+
+#menuHelp a:hover{
+    color:#ff0000;
+}
+
+#FAQ{
+    position: relative;
+    top: 700px;
+    border: 1px solid #dedede;
+    background-color: #EEEEEE;
+    width:204px;
+    height:16px;
+    font-weight:bold !important;
+}
+
+#FAQ:hover{
+    background-color:white;
+    cursor: pointer;
+    border: 1px solid #ffcccc;
+}
+
+#FAQ a, a:active, a:visited, a:focus{
+    color:#777;
+    text-decoration:none;
+    font-size:10px !important;
+    margin-left: -6px;
+    font-weight:bold !important;
+}
+
+#FAQ a:hover{
+    color:#000;
+}
+
+#helpSection{
+    float:right;
+    width:620px;
+    padding-top:40px;
+}
+
+#helpSection a, a:visited, a:focus{
+    color:#006699;
+    font-size:12px !important;
+    font-weight:normal;
+    text-decoration: none;
+}
+
+#helpSection a:hover{
+    text-decoration: underline;
+}
+
+dl{
+    width:570px;
+    word-wrap: break-word;
+    text-align:justify;
+}
+
+legend{
+    color:#777;
+    font-size:11px;
+    max-width: 570px;
+}
+
+#footer{
+    font-size:10px;
+    text-align:center;
+    padding-bottom:8px;
+}
+
+#footer a {
+    color:#777;
+    text-decoration:none;
+}
+
+#footer a:hover {
+    color:#ff0000;
+}
+
+td {
+    border: solid 2px #808080;
+    padding: 3px;
+}
+
+table {
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    margin-top: 15px;
+}
+
+[bind-html-compile] [ng-click*="hc.goto"] {
+    color: #006699;
+    font-size: 12px !important;
+    font-weight: normal;
+    text-decoration: none;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+[bind-html-compile] [ng-click*="hc.goto"]:hover {
+    color: #3af;
+}
