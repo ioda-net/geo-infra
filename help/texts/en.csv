@@ -28,6 +28,38 @@ The arrow, represented by the icon, shows the direction where you are looking at
 When you click on the ""geolocation"" button the second time, the map orientates itself depending upon the direction of the device. To exit the mode ""geolocation"", click once again on the button.
 
 <img src=""/help/img/27b_e.png"">",,
+28,12,2.5D / (3D ALPHA),"The viewer can also be activated in 2.5D / 3D mode. You can put all 2D data on the terrain model - with probable distortions for some areas. To enable this feature, the 2.5D button must be activated. Data can be added via the search or the catalog.<br><br>
+<b>IMPORTANT</b>: This feature is available in an alpha version, as an early stage of development. The availability of version alpha can not be guaranteed - they can be deactivated under certain circumstances.<br><br>
+
+
+<img src=""/help/img/28_e.png""><br><br>
+
+<b>Tilt up/down</b><br>
+PC + Mac: Shift or CTRL or ALT + left mouse button + drag up / down<br>
+Touch:
+<img style=""border:none !important;"" src=""/help/img/TouchTilt.png""><br>
+<i>Tilts the viewer toward ""horizon"" / ""top-down"" view.</i><br><br>
+
+<b>Look</b><br>
+PC: CTRL + left mouse button + drag	<br>
+Mac: Command/Open Apple Key + mouse button + drag<br>
+Touch:
+<img style=""border:none !important;""  src=""/help/img/TouchRotate.png""><br>
+<i>Perspective points in another direction, as if you are turning your head up, down, left or right.</i><br><br>
+
+<b>Zoom in/Zoom out</b><br>
+PC + Mac: Scroll wheel or right mouse + drag up / down<br>
+Touch:
+<img style=""border:none !important;""  src=""/help/img/TouchZoom.png""><br>
+<i>Zooms the viewer in and out.</i><br><br>
+
+<b>Move left / right</b><br>
+PC + Mac: Left / right arrow <br>
+Touch: One finger drag left / right<br><br>
+
+<b>Move forward / backward </b><br>
+PC + Mac: Up / down arrow <br>
+Touch: One finger drag forward / backward<br><br>",,/help/img/blank.png
 30,13,SELECTION AND DISPLAY OF DATA,#,,
 31,14,Full text search for data,"Under ""Search"" you can enter search terms (keywords such as marsh, road, commune, earthquake) in order to search through all centrally available digital geodata. When you select one of the results offered, it will be displayed on the map viewer, as a separate data layer ",,/help/img/31e.png
 32,15,Search for data (catalogue),"Under ""Change topic"" you will find all available digital data classified by theme. When you select a data-set (by clicking on the circle symbol to the right) it will be displayed directly by the map viewer, as a separate layer of data. ",,/help/img/32e.png
@@ -62,7 +94,7 @@ A document with further informations can be found here:
 <iframe src=""https://docs.google.com/presentation/d/1xiLNEWj0DaCbjNiInNxvn2qapFhpSBjCaZfT_BGMlic/embed?start=false&loop=false&delayms=5000"" frameborder=""0"" width=""570"" height=""456"" allowfullscreen=""true"" mozallowfullscreen=""true"" webkitallowfullscreen=""true""></iframe>",,/help/img/blank.png
 41,24,Print,"The “Print” function enables you to produce portable document format (.pdf) files containing an extract of the main map and any background data, together with information such as the map scale. You can save these files and print them out. The “Print” button opens a dialogue box for your choice of scale of the A4/A3 page to be downloaded and printed, independent of the scale of the map view on display. The printable area will be highlighted and the map canbe moved / panned with the mouse to fit the extired extent into the print area. The legend for selected thematic data-sets (layers) can also be printed to a second page by activating the corresponding checkbox. Actviate the ""Coordinate grid"" check box to superimpose a georeferencing information. CAUTION: pdf files can occupy several megabytes (MB) which may take a considerable time to download if your Internet connection is slow.","<b>Legend:</b> Legends of all active datasets will be printed on a second page.
 <b>Coordinate grid:</b> Superposition of the Swiss WGS84 coordinate system.
-<b><i>Optional</i> Time Series:</b> For datasets with several time representations: a new PDF is generated for each time representation of the middle of the map.",/help/img/40e.png
+<b><i>Optional</i> Time Series:</b> For datasets with several time representations: a new PDF is generated for each time representation of the middle of the map.",/help/img/41e.png
 42,25,Time slider,"Some geodata can be filtered by time. These datasets are identified by the ""time"" icon that is displayed on the viewer on the right side.
 <img src=""/help/img/42e.png""><br>
 
@@ -78,7 +110,9 @@ A document with further informations can be found here:
 
 4) Compare these two datasets by using directly the transparency slider of the upper layer or by using the <b>""Compare""</b> function in ""Tools"".
 
-<img src=""/help/img/43e.png"">",,/help/img/blank.png
+<img src=""/help/img/43e_1.png"">
+
+<img src=""/help/img/43e_2.png"">",,/help/img/blank.png
 44,27,How to select objects « Query Tool »,"<ol type=""1""><li>Choose a dataset from the topic « Aviation » (e.g. Air navigation obstacles). All datasets whose attributes are searchable, can be used in this tool. <a href=""//api3.geo.admin.ch/api/faq/index.html#which-layers-are-searchable"" target=""_blank"">Here’s an overview of those datasets</a>.</li>
 <li>Choose « Object information » from the « Tools » section</li>
 <li>To select all objects (200 as a maximum!) inside a map perimeter, use CTRL (cmd on Mac) and draw a rectangle on the map</li><br /><img src=""/help/img/44a_e.png""><br /><br /><b><u>Select objects by attributes with types date or numeric</u></b><br /><br /><li>Objects can be searched by predefined or user defined <b>queries</b></li>
@@ -92,11 +126,11 @@ A document with further informations can be found here:
 52,29,Send/save/iFrame of the current map,"<b> Save current map display or send it by e-mail send to other people </b>
 
 Using the ""Share"" function, the current map content (layers, location, zoom level) will be stored as link (URL) and can be send as e-mail or via social media.<br>
-<img src=""/help/img/52d.png""><br>
+<img src=""/help/img/52e_1.png""><br>
 <b>Map integration in a Web page using iFrame</b>
 
 The code to integrate in your web page is automatically generated. By clicking on ""show more"", you can configure the dimensions of the map. Then just copy the code in the web page.<br>
-<img src=""/help/img/52bd.png""><br>
+<img src=""/help/img/52e_2.png""><br>
 The code of our example:
 <p class=""test"" style=""text-align: left;font-style: italic; color: #069;"">&lt;iframe src='//map.geo.admin.ch/embed.html?X=171954.23&Y=640698.99&zoom=3&lang=en&topic=ech&bgLayer=ch.swisstopo.pixelkarte-grau' width='400' height='300' frameborder='0' style='border:0'&gt;&lt;/iframe&gt;</p>
 gives the following result:<br>
@@ -124,7 +158,7 @@ a double click opens it in a new window with the object centred. The “Link” 
 </tr>
 <tr>
 <td valign=""top"" width=""100"">Y, X</td>
-<td valign=""top"" width=""150"">Easting value (from 450‘000 to 900‘000) Northing value, ranging from 50‘000 to 350‘000 (always smaller than Y)</td>
+<td valign=""top"" width=""150"">Coordiantes in LV03 or LV95. Y/Easting, between (2‘)450‘000 and (2‘)900‘000), X/Northing, between (1‘0)50‘000 and (1‘0)350‘000 (always smaller thant Y/Easting)</td>
 <td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?Y=600000&amp;X=190000"" target=""_blank"">http://map.geo.admin.ch?Y=600000&amp;X;=190000</a></td>
 </tr>
 <tr>
@@ -139,7 +173,7 @@ a double click opens it in a new window with the object centred. The “Link” 
 </tr>
 <tr>
 <td height=""143"" valign=""top"" width=""100"">layers</td>
-<td valign=""top"" width=""150"">Layer to display, for a complete list KML layers are supported with a || separated list with: KML||kml url WMS layers are supported with a || separated list with: WMS||layer title||wms url||layer name</td>
+<td valign=""top"" width=""150"">Layer to display, for a complete list KML layers are supported with a || separated list with: KML||kml url WMS layers are supported with a || separated list with: WMS||layer title||wms url||layer name||wms version</td>
 <td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?layers=WMS||Geothermie||http://wms.geo.admin.ch/?||ch.swisstopo.geologie-geophysik-geothermie,ch.ensi.zonenplan-notfallschutz-kernanlagen,KML||http://www.meteoschweiz.admin.ch/web/de/klima/messsysteme/boden/google_earth.Par.0007.DownloadFile.ext.tmp/obs.kml"" target=""_blank"">
 http://map.geo.admin.ch/?layers=WMS<br/>
 ||Geothermie||http://<br/>
@@ -186,15 +220,27 @@ Special case WMS:  YYYY empty means that the data of all years are displayed (de
 </tr>
 <tr>
 <td valign=""top"" width=""100"">swisssearch</td>
-<td valign=""top"" width=""150"">swisssearch=<br>Address or WGS84-Coordinates</br></td>
+<td valign=""top"" width=""150"">swisssearch=<br>Address or WGS84-Coordinates<br><br>Available for iframe with a limit parameter</br></br></br></td>
 <td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?swisssearch=berges 37 payerne"" target=""_blank"">http://map.geo.admin.ch/?swisssearch=<br/>berges 37 payerne</a>
 <br><br>
-<a href=""http://map.geo.admin.ch/?swisssearch=7.04983,46.42928"" target=""_blank"">http://map.geo.admin.ch/?swisssearch=7.04983,46.42928</a></br></br></td>
+<a href=""http://map.geo.admin.ch/?swisssearch=7.04983,46.42928"" target=""_blank"">http://map.geo.admin.ch/?swisssearch=7.04983,46.42928</a><br><br>
+<a href=""https://map.geo.admin.ch/?layers=ch.bfs.gebaeude_wohnungs_register&amp;swisssearch=Holzikofenweg 36, 3007 Bern limit: 1&amp;topic=ech&amp;lang=en&amp;bgLayer=ch.swisstopo.pixelkarte-farbe&amp;X=198356.95&amp;Y=599896.94&amp;zoom=10"" target=""_blank"">&lt;iframe src=""https://map.geo.admin.ch/embed.html?layers=ch.bfs.gebaeude_wohnungs_register&amp;swisssearch;=Holzikofenweg 36, 3007 Bern limit: 1"" name=""IframeGeoadmin""&gt;&lt;/iframe&gt;</a>
+</br></br></br></br></td>
 </tr>
 <tr>
 <td valign=""top"" width=""100"">swipe_ratio</td>
 <td valign=""top"" width=""150"">Value between 0 and 1 defining the relative position of the swipe elements visible in the compare mode</td>
 <td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?swipe_ratio=0.5&amp;bgLayer=ch.swisstopo.pixelkarte-farbe&amp;layers=ch.swisstopo.geologie-geotechnik-gk200"" target=""_blank"">http://map.geo.admin.ch/?swipe_ratio=0.5&amp;bgLayer;=ch.swisstopo.pixelkarte-farbe&amp;layers;=ch.swisstopo.geologie-geotechnik-gk200</a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">showTooltip</td>
+<td valign=""top"" width=""150"">showTooltip=<br>true or false</br></td>
+<td valign=""top"" width=""310""><a href=""https://map.geo.admin.ch/?ch.bav.haltestellen-oev=8500010&amp;topic=ech&amp;showTooltip=true&amp;bgLayer=ch.swisstopo.pixelkarte-farbe&amp;layers=ch.bav.haltestellen-oev&amp;X=266309.00&amp;Y=611362.00&amp;zoom=9"" target=""_blank"">https://map.geo.admin.ch/?ch.bav.haltestellen-oev=8500010〈=fr<br>&amp;topic;=ech&amp;showTooltip;=true&amp;bgLayer;=ch.swisstopo.pixelkarte-farbe<br>&amp;layers;=ch.bav.haltestellen-oev&amp;X;=266309.00&amp;Y;=611362.00&amp;zoom;=9</br></br></a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">geolocation</td>
+<td valign=""top"" width=""150"">geolocation=true</td>
+<td valign=""top"" width=""310""><a href=""https://map.geo.admin.ch/?geolocation=true"" target=""_blank"">https://map.geo.admin.ch/?lang=fr&amp;geolocation;=true</a></td>
 </tr>
 </table>
 ",,/help/img/54d.png
@@ -241,7 +287,37 @@ Every element can be modified by clicking on it.  Several elements can be select
 
 The measurement of distance, surface and profile are automatically displayed.
 
-Every element can be modified by clicking on it.  Several elements can be selected to be modified/deleted by SHIFT + mouse-clicking on the objects, or deleted by using the options of the scrolling menu ""More..."".","Your drawing is automatically saved for one year. By using this service, you agree the Conditions of Use.",/help/img/94e.png
+Every element can be modified by clicking on it.  Several elements can be selected to be modified/deleted by SHIFT + mouse-clicking on the objects, or deleted by using the options of the scrolling menu ""More..."".
+
+<img src=""/help/img/94e.png"">
+<legend>Your drawing is automatically saved for one year. By using this service, you agree the Conditions of Use.</legend>
+
+<ol><li>altitude difference start - end<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/resize-vertical.png"">
+</li>
+<li>ascent<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/ga-elevation-up.png"">
+</li>
+<li>descent<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/ga-elevation-down.png"">
+</li>
+<li>highest point<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/chevron-up.png"">
+</li>
+<li>lowest point<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/chevron-down.png"">
+</li>
+<li>path distance<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/resize-horizontal.png"">
+</li>
+<li>linear distance<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/eye.png"">
+</li>
+<li>walking time<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/clock-o.png"">
+</li>
+</ol>
+",,
 95,39,Share drawing / KML,"In main menu item ""Draw & measure on map"", all drawing elements (symbols, lines, texts) can be:
 
 - <b>Share link</b>: shared with other users (1).
@@ -253,10 +329,10 @@ Generally the WMS datasets are visible in a given scale, that's why the right po
 The displaying speed of WMS datasets and their availability is under responsibility of the service owner.
 The WMS datasets can be saved as PDF through the ""Print"" function.
 A WMS dataset can be forwarded by email with Permalink ""Link"" function.
-Please, follow the use conditions of the WMS service provider.",,/help/img/63d.png
+Please, follow the use conditions of the WMS service provider.",,/help/img/62e.png
 63,42,KML import,"<p>It is now possible to display KML saved online (by using URL) or locally (this fonction is not possible with IE)</p><p>Only KML files without any error can be displayed. These files must be compliant with <a href=""http://opengeospatial.org/standards/kml""><b>the OGC KML format</b></a></p><p>An easy way to check your file is provided by <a href=""http://kmlvalidator.com/home.htm""><b>Link</b></a></p>
 <img src=""/help/img/64d.png""><br /><br /><h2>Generating KML file and using it online</h2><p><b>How to create a .kml file</b></p><p><a href=""http://www.swisstopo.admin.ch/internet/swisstopo/de/home/apps/calc/kml.html"">Online KML Generator</a><br>
-<a href=""/help/?id=67"">Drawing</a></p></p><p><b>How to publish a .kml file online</b><br />In order to distribute your own KML-files via a stable URL without setting up an own web server you can use the following free services for hosting and distributing:</p><p><b>1. <u>Publish with Google Docs</u></b></p>
+<a href=""/help/?id=66&lang=en"">Drawing</a></p></p><p><b>How to publish a .kml file online</b><br />In order to distribute your own KML-files via a stable URL without setting up an own web server you can use the following free services for hosting and distributing:</p><p><b>1. <u>Publish with Google Docs</u></b></p>
 <ul><li>Create your account: <a href=""https://docs.google.com"">https://docs.google.com</a></li>
 <li>Upload the file: click on the Upload button > Files… </li></ul>
 <img src=""/help/img/upload.png"">
@@ -275,9 +351,9 @@ Please, follow the use conditions of the WMS service provider.",,/help/img/63d.p
 <li>According to (5) you can now embed the KML-file via the URL in the map viewer. In addition you can create map.geo.admin.ch-permalinks with your KML and share your data with other users or on your own web page.</li></ul>  
 <img src=""/help/img/64all.png"">",,/help/img/blank.png
 65,43,Compare,"It is possible to compare two datasets. Select ""Compare"" in the Tools and the red cursor will appear on the middle of the map.
-<img src=""/help/img/65a_d.png"">
+<img src=""/help/img/65e_1.png"">
 The selected layer in first position is displayed on the left side, all other layers on the right side.
-The comparison can easily be done by sliding the red cursor with the mouse:",,/help/img/65d_b.png
+The comparison can easily be done by sliding the red cursor with the mouse:",,/help/img/65e_2.png
 68,44,Object information,"To get informations on several obects, trace a recangle with CTRL+ mouse click, all objects included in the rectangle will be collected in a single information window:",,/help/img/68d.png
 69,45,Keyboard Shortcuts,"
 <table align=""center"" width=""550"">

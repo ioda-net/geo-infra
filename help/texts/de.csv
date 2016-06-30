@@ -24,6 +24,37 @@ Der Pfeil oberhalb des Punktes zeigt die Richtung an, in welche Sie schauen. Wen
 Klicken Sie erneut auf die Schaltfläche ""Geolokalisierung"" wird die Karte entsprechend der Richtung des Gerätes orientiert. Nordrichtung wird durch das Symbol in der oberen rechten Bildschirmecke angezeigt. Um den ""Geolokalisierung"" Modus zu verlassen klicken Sie erneut auf die Schaltfläche. 
 
 <img src=""/help/img/27b_d.png"">",,
+28,12,2.5D / (3D ALPHA),"Der Viewer kann auch im 2.5D/3D Modus aktiviert werden. Es können alle 2D Daten über das Terrain Modell gelegt werde – mit entsprechenden Verzerrungen der Karten.  Um diese Funktion zu aktivieren, muss der 2.5D Knopf aktiviert werden. Daten können über die Suche oder den Katalog hinzugefügt werden.<br><br>
+ <b>WICHTIG</b>: Diese Funktion steht in einer ALPHA Version , als frühes Entwicklungsstadium zur Verfügung. Die Verfügbarkeit der Version ALPHA kann nicht gewährleistet werden – sie kann unter Umständen deaktiviert werden.<br><br>
+
+<img src=""/help/img/28_d.png"">
+
+<b>Nach oben/unten neigen</b><br>
+PC + Mac: Umschalt oder CTRL oder ALT + linke Maustaste + nach unten / oben ziehen<br>
+Touch: 
+<img style=""border:none !important;"" src=""/help/img/TouchTilt.png""><br>
+<i>Neigt den Viewer in Richtung Horizontalsicht / Draufsicht</i><br><br>
+
+<b>Umsehen</b><br>
+PC: Strg + linke Maustaste + ziehen<br>
+Mac: Befehlstaste + Maustaste + ziehen<br>
+Touch: 
+<img style=""border:none !important;""  src=""/help/img/TouchRotate.png""><br>
+<i>Die Perspektive zeigt in eine andere Richtung, so als ob Sie Ihren Kopf nach oben, unten, links oder rechts drehen würden.</i><br><br>
+
+<b>Heranzoomen/Herauszoomen</b><br>
+PC + Mac: Mausrad oder rechte Maustaste + nach unten / oben ziehen<br>
+Touch:
+<img style=""border:none !important;""  src=""/help/img/TouchZoom.png""><br>
+<i>Zoomt den Viewer heran und heraus.</i><br><br>
+
+<b>Nach links/rechts verschieben</b><br>
+PC + Mac: Linkspfeil / Rechtspfeil oder linke Maustaste + nach links / rechts ziehen<br>
+Touch: Mit einem Finger links / rechts ziehen <br><br>
+
+<b>Vorwärts/rückwärts verschieben</b><br>
+PC + Mac: Vorwärtspfeil / Rüchwärtspfeil oder linke Maustaste + nach vorne / rückwärts ziehen<br>
+Touch: Mit einem Finger vorwärts / rückwärts ziehen<br>",,/help/img/blank.png
 30,13,AUSWAHL & ANZEIGE VON DATEN,#,,
 31,14,Suche nach Daten (Volltextsuche),"Mit der ""Suche"" können Sie Suchbegriffe eingeben (z.B. ""Moor"", ""Strasse"", ""Erdbeben"" usw.) und nach Beschreibungen aller zentral verfügbaren elektronischen Geodaten suchen. Wenn Sie ein Resultat auswählen, wird es direkt im Kartenviewer dargestellt.",,/help/img/31d.png
 32,15,Suche nach Daten (Verzeichnisstruktur),"Unter ""Thema wechseln"" finden Sie ein nach Themen gegliedertes Verzeichnis aller digitalen Geodaten, die zentral verfügbar sind. Wenn Sie Datensätze auswählen, werden sie direkt im Kartenviewer angezeigt.",,/help/img/32d.png
@@ -59,7 +90,7 @@ Eine detaillierte Anleitung finden Sie in untenstehendem Dokument:
 <iframe src=""https://docs.google.com/presentation/d/1xiLNEWj0DaCbjNiInNxvn2qapFhpSBjCaZfT_BGMlic/embed?start=false&loop=false&delayms=5000"" frameborder=""0"" width=""570"" height=""456"" allowfullscreen=""true"" mozallowfullscreen=""true"" webkitallowfullscreen=""true""></iframe>",,/help/img/blank.png
 41,24,Ausdrucken,"Die Anwendung kann die Hauptkarte und Hintergrunddatensätze und die für deren Verständnis nötigen Elemente ( Massstab, usw.) als pdf-Dateien guter Qualität ausgeben. Diese Dateien können sodann gespeichert oder ausgedruckt werden. Die Funktion ""Drucken"" lässt ein Dialogfenster erscheinen, wo die Parameter für die Erzeugung der A4 pdf-Datei gewählt werden können. Diese Parameter sind der Kartenmasstab und A4/A3 Orientierung. Der Druckbereich der Karte wird Rot hervorgehoben und kann mit der Maus verschoben werden. Die Legende kann über den Info Button des jeweiligen Datensatzes ausgedruckt werden Achtung: pdf-Dateien ist mehrere MByte gross. Ihre Übermittlung, vor allem über Leitungen mit geringer Leistung, beansprucht infolgedessen viel Zeit.","<b>Legende:</b> Legenden aller aktivierter Datensätze werden auf einer zweiten Seite hinzugefügt.
 <b>Koordinatennetz:</b> Überlagern eines WGS84 und Schweizer Landeskoordinaten Gitters.
-<b><i>Optional</i> Zeitreihen:</b> Für Datensätze die über mehrere Zeitstände verfügen: für jeden Zeitstand des Kartenmittelpunktes wird eine neue PDF Seite erstellt.",/help/img/40d.png
+<b><i>Optional</i> Zeitreihen:</b> Für Datensätze die über mehrere Zeitstände verfügen: für jeden Zeitstand des Kartenmittelpunktes wird eine neue PDF Seite erstellt.",/help/img/41d.png
 42,25,Zeitregler,"Einige Geodaten können nach der Zeit gefiltert werden. Diese Datensätze werden durch das ""Zeit"" Symbol, das auf den Viewer auf der rechten Seite angezeigt wird identifiziert.<br>
 <img src=""/help/img/42d.png""><br>
 
@@ -75,7 +106,9 @@ Eine detaillierte Anleitung finden Sie in untenstehendem Dokument:
 
 4) Vergleichen Sie diese zwei Datensätze mit dem Transparenz-Reiter des oberen Layers oder mit der <b>""Vergleichen""</b> Funktion in ""Werkzeuge"".
 
-<img src=""/help/img/43d.png"">",,/help/img/blank.png
+<img src=""/help/img/43d_1.png"">
+
+<img src=""/help/img/43d_2.png"">",,/help/img/blank.png
 44,27,Objekte selektieren ,"<ol type=""1""><li>Datensatz aus dem Thema « Luftfahrt » auswählen (z.B. Luftfahrthindernisse). Alle Datensätze deren Attribute abfragbar sind, können in diesem Werkzeug genutzt werden. <a href=""//api3.geo.admin.ch/api/faq/index.html#which-layers-are-searchable"" target=""_blank"">Hier eine Übersicht über diese Datensätze</a>.</li>
 <li>Unter den Werkzeugen « Objekt-Information » wählen</li>
 <li>Um alle Objekte (maximal 200!) in einem bestimmten Kartenperimeter zu selektieren, mit CTRL (cmd für Mac) + linker Maustaste ein Rechteck über die Karte ziehen</li><br /><img src=""/help/img/44a_d.png""><br /><br /><b><u>Selektieren anhand von Datumsfeldern oder numerischen Attributen</u></b><br /><br /><li>Die Objekte können mit vordefinierten oder benutzerdefinierten <b>Abfragen</b> durchsucht werden</li>
@@ -90,11 +123,11 @@ Es kann auch nach Attributen mit Ausprägungen (Domänen wie zum Beispiel der St
 52,29,Kartendarstellung abspeichern/versenden/iFrame,"<b>Aktuelle Kartendarstellung abspeichern oder per e-mail weiterversenden</b>
 
 Über die Funktion ""Karte einbinden"" kann die aktuelle Darstellungen (Datensätze, Ort, Zoomstufe) als Link (URL) kopiert, abgespeichert und als e-mail oder andere Soziale Medien weiterversendet werden.<br>
-<img src=""/help/img/52d.png""><br>
+<img src=""/help/img/52d_1.png""><br>
 <b>Integration Karte in eine website mittels iFrame</b>
 
 Der HTML code für die Integration in ihre website wird automatisch generiert. Über „mehr anzeigen“  kann die Grösse des Kartenfensters angepasst werden. Es genügt, den generierten code in den source code ihrer website zu kopieren.<br>
-<img src=""/help/img/52bd.png""><br>
+<img src=""/help/img/52d_2.png""><br>
 Der Code unseres Beispiels:
 <p class=""test"" style=""text-align: left;font-style: italic; color: #069;"">&lt;iframe src='//map.geo.admin.ch/embed.html?X=171954.23&Y=640698.99&zoom=3&lang=de&topic=ech&bgLayer=ch.swisstopo.pixelkarte-grau' width='400' height='300' frameborder='0' style='border:0'&gt;&lt;/iframe&gt;</p>
 ergibt das folgende Resultat:<br>
@@ -122,7 +155,7 @@ Sofern vorhanden, kann bei Vektordatensätze (Punkt, Linien, Polygon) direkt ein
 </tr>
 <tr>
 <td valign=""top"" width=""100"">Y, X</td>
-<td valign=""top"" width=""150"">Easting (von 450‘000 bis    900‘000) Northing, Bereich von 50‘000 bis    350‘000 (Immer kleiner als  Y)</td>
+<td valign=""top"" width=""150"">Koordinaten in LV03 oder LV95. Y/Easting, von (2‘)450‘000 bis (2‘)900‘000), X/Northing, Bereich von (1‘0)50‘000 bis (1‘0)350‘000 (Immer kleiner als  Easting)</td>
 <td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?Y=600000&amp;X=190000"" target=""_blank"">http://map.geo.admin.ch?Y=600000&amp;X;=190000</a></td>
 </tr>
 <tr>
@@ -137,7 +170,7 @@ Sofern vorhanden, kann bei Vektordatensätze (Punkt, Linien, Polygon) direkt ein
 </tr>
 <tr>
 <td height=""143"" valign=""top"" width=""100"">layers</td>
-<td valign=""top"" width=""150"">Darstellung Layer, um eine    komplette Liste von KML Inhalten zu erhalten: layers sind unterstützt mit ||    separate Liste mit: KML||kml URL WMS Layers sind unterstützt mit || separate    Liste mit: WMS||layer title||wms url||layer name</td>
+<td valign=""top"" width=""150"">Darstellung Layer, um eine    komplette Liste von KML Inhalten zu erhalten: layers sind unterstützt mit ||    separate Liste mit: KML||kml URL WMS Layers sind unterstützt mit || separate    Liste mit: WMS||layer title||wms url||layer name||wms version</td>
 <td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?layers=WMS||Geothermie||http://wms.geo.admin.ch/?||ch.swisstopo.geologie-geophysik-geothermie,ch.ensi.zonenplan-notfallschutz-kernanlagen,KML||http://www.meteoschweiz.admin.ch/web/de/klima/messsysteme/boden/google_earth.Par.0007.DownloadFile.ext.tmp/obs.kml"" target=""_blank"">
 http://map.geo.admin.ch/?layers=WMS<br/>
 ||Geothermie||http://<br/>
@@ -189,14 +222,26 @@ Sonderfall WMS:  YYYY leer bedeutet, dass die Daten von allen Jahren werden ange
 </tr>
 <tr>
 <td valign=""top"" width=""100"">swisssearch</td>
-<td valign=""top"" width=""150"">swisssearch=<br>Adresse oder WGS84-Koordinaten</br></td>
+<td valign=""top"" width=""150"">swisssearch=<br>Adresse oder WGS84-Koordinaten<br><br>Verfügbar für iframe und mit einem Grenzwert</br></br></br></td>
 <td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?swisssearch=berges 37 payerne"" target=""_blank"">http://map.geo.admin.ch/?swisssearch=<br/>berges 37 payerne</a><br><br>
-<a href=""http://map.geo.admin.ch/?swisssearch=7.04983,46.42928"" target=""_blank"">http://map.geo.admin.ch/?swisssearch=7.04983,46.42928</a></br></br></td>
+<a href=""http://map.geo.admin.ch/?swisssearch=7.04983,46.42928"" target=""_blank"">http://map.geo.admin.ch/?swisssearch=7.04983,46.42928</a><br><br>
+<a href=""https://map.geo.admin.ch/?layers=ch.bfs.gebaeude_wohnungs_register&amp;swisssearch=Holzikofenweg 36, 3007 Bern limit: 1&amp;topic=ech&amp;lang=de&amp;bgLayer=ch.swisstopo.pixelkarte-farbe&amp;X=198356.95&amp;Y=599896.94&amp;zoom=10"" target=""_blank"">&lt;iframe src=""https://map.geo.admin.ch/embed.html?layers=ch.bfs.gebaeude_wohnungs_register&amp;swisssearch;=Holzikofenweg 36, 3007 Bern limit: 1"" name=""IframeGeoadmin""&gt;&lt;/iframe&gt;</a>
+</br></br></br></br></td>
 </tr>
 <tr>
 <td valign=""top"" width=""100"">swipe_ratio</td>
 <td valign=""top"" width=""150"">Wert zwischen 0 und 1 definiert    die relative Position des Swipe Elements in Modus  der Vergleichsfunktion (mindestens 2 layers)</td>
-<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?swipe_ratio=0.5&amp;bgLayer=ch.swisstopo.pixelkarte-farbe&amp;layers=ch.swisstopo.geologie-geotechnik-gk200"" target=""_blank"">http://map.geo.admin.ch/?swipe_ratio=0.5&amp;bgLayer;=ch.swisstopo.pixelkarte-farbe&amp;layers;=ch.swisstopo.geologie-geotechnik-gk200</a></td>
+<td valign=""top"" width=""310""><a href=""http://map.geo.admin.ch/?swipe_ratio=0.5&amp;bgLayer=ch.swisstopo.pixelkarte-farbe&amp;layers=ch.swisstopo.geologie-geotechnik-gk200"" target=""_blank"">http://map.geo.admin.ch/?swipe_ratio=0.5<br>&amp;bgLayer;=ch.swisstopo.pixelkarte-farbe<br>&amp;layers;=ch.swisstopo.geologie-geotechnik-gk200</br></br></a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">showTooltip</td>
+<td valign=""top"" width=""150"">showTooltip=<br>true oder false</br></td>
+<td valign=""top"" width=""310""><a href=""https://map.geo.admin.ch/?ch.bav.haltestellen-oev=8500010&amp;topic=ech&amp;showTooltip=true&amp;bgLayer=ch.swisstopo.pixelkarte-farbe&amp;layers=ch.bav.haltestellen-oev&amp;X=266309.00&amp;Y=611362.00&amp;zoom=9"" target=""_blank"">https://map.geo.admin.ch/?ch.bav.haltestellen-oev=8500010〈=fr<br>&amp;topic;=ech&amp;showTooltip;=true&amp;bgLayer;=ch.swisstopo.pixelkarte-farbe<br>&amp;layers;=ch.bav.haltestellen-oev&amp;X;=266309.00&amp;Y;=611362.00&amp;zoom;=9</br></br></a></td>
+</tr>
+<tr>
+<td valign=""top"" width=""100"">geolocation</td>
+<td valign=""top"" width=""150"">geolocation=true</td>
+<td valign=""top"" width=""310""><a href=""https://map.geo.admin.ch/?geolocation=true"" target=""_blank"">https://map.geo.admin.ch/?lang=fr&amp;geolocation;=true</a></td>
 </tr>
 </table>
 ",,/help/img/54d.png
@@ -242,22 +287,51 @@ Sie können jedes Element durch Mausklick ändern. Sie können mehrere Symbole �
 
 Die Messergebnisse  Distanz /Fläche und dem Profil werden automatisch angezeigt. 
 
-Sie können jedes Element durch Mausklick ändern. Sie können mehrere Symbole ändern / löschen, indem Sie sie mit Mausklick und gleichzeitigem drücken  der SHIFT-Taste auswählen. Gelöscht wird über die Option „Mehr“",Ihre Zeichnung wird automatisch für ein Jahr gespeichert. Durch die Nutzung dieses Dienstes stimmen Sie den Nutzungsbedingungen zu.,/help/img/94d.png
+Sie können jedes Element durch Mausklick ändern. Sie können mehrere Symbole ändern / löschen, indem Sie sie mit Mausklick und gleichzeitigem drücken  der SHIFT-Taste auswählen. Gelöscht wird über die Option „Mehr“
+
+<img src=""/help/img/94d.png"">
+<legend>Ihre Zeichnung wird automatisch für ein Jahr gespeichert. Durch die Nutzung dieses Dienstes stimmen Sie den Nutzungsbedingungen zu.</legend>
+
+<ol><li>Höhendifferenz Start-Ende<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/resize-vertical.png"">
+</li>
+<li>Aufstieg<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/ga-elevation-up.png"">
+</li>
+<li>Abstieg<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/ga-elevation-down.png"">
+</li>
+<li>Höchster Punkt <br>
+<img style=""height: 30px; border:none;"" src=""/help/img/chevron-up.png"">
+</li>
+<li>Tiefster Punkt <br>
+<img style=""height: 30px; border:none;"" src=""/help/img/chevron-down.png"">
+</li>
+<li>Wegstrecke<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/resize-horizontal.png"">
+</li>
+<li>Luftlinie<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/eye.png"">
+</li>
+<li>Marschzeit<br>
+<img style=""height: 30px; border:none;"" src=""/help/img/clock-o.png"">
+</li>
+</ol>",,
 95,39,Teilen einer Zeichnung /KML,"Im Menüpunkt « Zeichen & Messen auf der Karte » können die Zeichnungen ( Symbole, Texte, Linien):
 
 - <b>Share Link</b>: Mit weiteren Nutzer geteilt werden (1).
-- <b>Admin Link</b>: Später weiter editiert werden (2) .Sie sollten diesen linke abspeichern für den Fall, dass sie später die Zeichnung ändern/löschen wollen.
-- <b>Download</b> ihrer Zeichnung als KML Datensatz  über die Optionen über ""Mehr ..."" (3).",Ihre Zeichnung wird automatisch für ein Jahr gespeichert. Durch die Nutzung dieses Dienstes stimmen Sie den Nutzungsbedingungen zu.,/help/img/95d.png
+- <b>Admin Link</b>: Später weiter editiert werden (2) .Sie sollten diesen Link abspeichern für den Fall, dass sie später die Zeichnung ändern/löschen wollen.
+- <b>Download</b> ihrer Zeichnung als KML Datensatz  über die Optionen  ""Mehr ..."" (3).",Ihre Zeichnung wird automatisch für ein Jahr gespeichert. Durch die Nutzung dieses Dienstes stimmen Sie den Nutzungsbedingungen zu.,/help/img/95d.png
 60,40,ZUSATZFUNKTIONEN,#,,
 62,41,WMS Import,"Es können nur WMS Dienste dargestellt werden, die die „Schweizer Projektion EPSG 21781“ unterstützen und dem <a href=""http://www.opengeospatial.org/standards/wms"">WMS OGC Standard</a> entsprechen. Ein Einfaches tool zur Überprüfung bietet <a href=""//www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/ech0056.html"">Link</a>
 Die WMS Datensätze sind meistens erst ab einem bestimmtem Massstab sichtbar, deswegen muss in den entsprechenden Kartenausschnitt zentriert und ein entsprechender Massstab ausgewählt werden. 
 Die Geschwindigkeit der Darstellung des WMS Datensatzes, ebenso wie dessen Verfügbarkeit ist von der Infrastruktur des zuständigen Betreibers abhängig. 
 Die WMS Datensätze können über die Druckfunktionen als PDF gespeichert werden. 
 Ebenfalls kann ein WMS Datensatz über die Permalink funktion „Karte einbinden“ direkt per e-mail weitergeleitet werden. 
-Bitte beachten sie auch allfällige Datennutzungsbedingungen der einzelnen WMS Anbieter. Aktivation des Menüs duch Klick auf Zeichnen.",,/help/img/63d.png
+Bitte beachten sie auch allfällige Datennutzungsbedingungen der einzelnen WMS Anbieter. Aktivation des Menüs duch Klick auf Zeichnen.",,/help/img/62d.png
 63,42,KML Import,"<p>Es können jetzt online oder lokal (Ausnahme: bei der Nutzung von  InternetExplorer) gespeicherte KML files dargestellt werden.</p><p>Es können nur KML Dateien fehlerfrei dargestellt werden, die dem <a href=""http://www.opengeospatial.org/standards/kml""><b>KML OGC Standard</b></a> entsprechen.</p><p>Ein einfaches tool zur Überprüfung bietet <a href=""http://kmlvalidator.com/home.htm""><b>Link</b></a></p>
 <img src=""/help/img/64d.png""><br /><br /><h2>KML generieren und online bringen</h2><p><b>Erstellen einer KML-Datei</b></p><p><a href=""http://www.swisstopo.admin.ch/internet/swisstopo/de/home/apps/calc/kml.html"">Online KML Generator</a><br>
-<a href=""/help/?id=67"">Zeichnen</a></p>
+<a href=""/help/?id=66&lang=de"">Zeichnen</a></p>
 <p><b>KML online publizieren</b></p>
 <p>Für BenutzerInnen, welche ihre KML-Dateien im Internet über eine stabile URL visualisieren wollen und welche keinen eigenen Server zur Verfügung haben, gibt es folgende Möglichkeiten KML kostenlos zu hinterlegen und zu publizieren:</p><p><b>1. <u>Publizieren mit Google Docs</u></b></p>
 <ul><li>Account einrichten auf: <a href=""https://docs.google.com"">https://docs.google.com</a></li>
@@ -281,10 +355,10 @@ Bitte beachten sie auch allfällige Datennutzungsbedingungen der einzelnen WMS A
 <img src=""/help/img/64all.png"">",,/help/img/blank.png
 65,43,Vergleichen,"Es ist möglich zwei verschiedene Datensätze zu vergleichen. Wählt man unter Werkzeuge „Verglichen“ dann erscheint eine rote Linie mit einem Cursor in der Mitte der Karte, der beliebig verschoben werden kann:
 
-<img src=""/help/img/65d_a.png"">
+<img src=""/help/img/65d_1.png"">
 
 
-Der erst ausgewählte Datensatz erscheint auf der der linken Seite der roten Linie mit dem Cursor. Der zweite Datensatz erscheint auf der rechten Seite im Kartenfenster und wird im Feld „Auswahl“ unter dem erst gewählten Datensatz angefügt. Mit festhalten der linken Maustaste kann die rote Linie beliebig nach rechts oder links verschoben werden: ",,/help/img/65d_b.png
+Der erst ausgewählte Datensatz erscheint auf der der linken Seite der roten Linie mit dem Cursor. Der zweite Datensatz erscheint auf der rechten Seite im Kartenfenster und wird im Feld „Auswahl“ unter dem erst gewählten Datensatz angefügt. Mit festhalten der linken Maustaste kann die rote Linie beliebig nach rechts oder links verschoben werden: ",,/help/img/65d_2.png
 68,44,Objekt-Information,"Um die Informationen von mehreren Objekten zu erhalten, macht man ein Rechteck mit der Kombination CTRL + Festhalten der linken Maustaste über die gewünschten Objekte. Lässt man die Maustaste und CTRL los, erscheinen alle Objektinformationen, welche im Rechteck selektioniert wurden:",,/help/img/68d.png
 69,45,Tastatur Abkürzungen,"
 <table align=""center"" width=""550"">
