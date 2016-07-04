@@ -23,9 +23,5 @@ pids
 !*.in.map
 *.old
 
-# Exclude output
-/dev
-/prod
-
 # Exclude frequently wrong way to do things
 *_copie*

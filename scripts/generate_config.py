@@ -45,9 +45,10 @@ class GenerateConfig:
         'front.default_values': set(['wms_list', 'wmts_list']),
     }
 
-    def __init__(self, type=None, portal=None):
+    def __init__(self, type=None, portal=None, infra_dir=None):
         self.type = type
         self.portal = portal
+        self.infra_dir = infra_dir
         self._current_base_file = None
         self._current_file = None
         self._config = {}
@@ -87,13 +88,12 @@ class GenerateConfig:
             - portal
             - prod (bool)
             - mapinfra: the absolute path to mapinfra
-            - dest.relative_output: the relative path to the output dir
-            - dest.output: the absolute path of mapinfra's output dir
+            - dest.output: the absolute path of infra's output dir
         '''
         global_config = self._load_config_from_file('config/global.toml')
         self._update_config(self._config, global_config, section_check=False)
 
-        common_config = self._load_config_from_file('_common', prefix='in')
+        common_config = self._load_config_from_file('_common', prefix=self.infra_dir)
         config_section_errors = ConfigSectionErrors(section='common', errors=[])
         self._update_config(
             self._config,
@@ -103,7 +103,7 @@ class GenerateConfig:
         self.errors.append(config_section_errors)
 
         if self.portal is not None:
-            portal_config = self._load_config_from_file(self.portal, portal_file=True, prefix='in')
+            portal_config = self._load_config_from_file(self.portal, portal_file=True, prefix=self.infra_dir)
             config_section_errors = ConfigSectionErrors(section=self.portal, errors=[])
             self._update_config(
                 self._config,
@@ -119,8 +119,7 @@ class GenerateConfig:
         self._config['prod'] = self.type == 'prod'
         # Make output path absolute
         self._config['mapinfra'] = realpath(os.getcwd())
-        self._config['dest']['relative_output'] = self._config['dest']['output']
-        self._config['dest']['output'] = path(self._config['mapinfra'], self._config['dest']['output'])
+        self._config['dest']['output'] = realpath(path(self._config['mapinfra'], self._config['dest']['output']))
 
     def _load_config_from_file(self, cfg_file, portal_file=False, prefix=''):
         '''Load the config file and override keys with those from prod or dev if needed.
@@ -194,7 +193,8 @@ class GenerateConfig:
         if isinstance(location, str):
             return location.format(
                 type=self.type,
-                portal=self.portal)
+                portal=self.portal,
+                infra_dir=self.infra_dir)
         else:
             return location
 
@@ -336,7 +336,9 @@ class GenerateConfig:
         template_config_path = 'config/_template.dist.toml'
         template_config = self._load_config_file(template_config_path)
         # Override with client specific template if it exists
-        custom_template_config_path = 'in/config/_template.dist.toml'
+        custom_template_config_path = path(
+            self._config['src']['base_include'],
+            'config/_template.dist.toml')
         if exists(custom_template_config_path):
             template_config = self._load_config_file(custom_template_config_path)
         config_file_errors = ConfigFileErrors(

@@ -95,8 +95,12 @@ function _build-index {
     local portal_type
     local must_change_dir='false'
     _set-portal-type "$@"
+    local infra_dir=$(_get-infra-dir "${portal}")
 
-    render --type "${portal_type}" --portal "${portal}" --index
+    render --type "${portal_type}" \
+        --portal "${portal}" \
+        --infra-dir "${infra_dir}" \
+        --index
 }
 
 
@@ -104,8 +108,12 @@ function _build-plugins {
     local portal_type
     local portal
     _set-portal-type "$@"
+    local infra_dir=$(_get-infra-dir "${portal}")
 
-    render --plugins --type "${portal_type}" --portal "${portal}"
+    render --type "${portal_type}" \
+        --portal "${portal}" \
+        --infra-dir "${infra_dir}" \
+        --plugins
 }
 
 
@@ -118,8 +126,12 @@ function _build-appcache {
     local portal_type
     local portal
     _set-portal-type "$@"
+    local infra_dir=$(_get-infra-dir "${portal}")
 
-    render --appcache --type "${portal_type}" --portal "${portal}"
+    render --type "${portal_type}" \
+        --portal "${portal}" \
+        --infra-dir "${infra_dir}" \
+        --appcache
 }
 
 
@@ -211,7 +223,7 @@ function build-mfp {
     local path2mf="${1:-../forks/mapfish-print}"
     local mapinfra_dir="$(pwd)"
     local patchesdir="${mapinfra_dir}/patches"
-    local mapinfra_print_dir="${mapinfra_dir}/in/print"
+    local mapinfra_print_dir="${mapinfra_dir}/print"
     local output_dir="core/build/libs/"
 
     pushd "${path2mf}"

@@ -68,3 +68,7 @@ set-var DEFAULT_DB_REPO "~geoportal/geo-db"
 set-var RELOAD_FEATURES_URL "http://api.geoportal-demo.local/features_reload"
 ## Make sure SSH_CLIENT is set, even without a SSH connection
 SSH_CLIENT="${SSH_CLIENT:-localhost}"
+
+
+# Infra
+set-var CUSTOMERS_INFRA_DIR "../"

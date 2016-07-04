@@ -21,6 +21,10 @@ source tasks/lint.sh
 source tasks/utils.sh
 
 
+# Make sure CUSTOMERS_INFRA_DIR does not end with a '/'
+CUSTOMERS_INFRA_DIR="${CUSTOMERS_INFRA_DIR%/}"
+
+
 
 HELP['dev']="manuel dev PORTAL1 [PORTAL2 [PORTAL3] …]
 
@@ -28,12 +32,15 @@ Generate a development version of mapinfra for the targeted portals.
 "
 function dev {
     local portal
+    local infra_dir
     echo "Linting JSON and CSV files"
     lint
     for portal in "$@"; do
         echo "****** Processing: ${portal} *****"
+        infra_dir=$(_get-infra-dir "${portal}")
         generate --type "dev" \
                  --portal "${portal}" \
+                 --infra-dir "${infra_dir}" \
                  --verbose \
                  --clean \
                  --map \
@@ -77,6 +84,8 @@ function prod {
     lint
     echo "Updating test configuration"
     local force
+    local portal
+    local infra_dir
     if [[ "${1:-}" == "--force" ]]; then
         force="$1"
         shift
@@ -85,9 +94,11 @@ function prod {
     front build-test-conf
     for portal in "$@"; do
         echo "***** PROCESSING: ${portal} *****"
+        infra_dir=$(_get-infra-dir "${portal}")
         clean 'prod' "${portal}"
         generate --type "prod" \
                  --portal "${portal}" \
+                 --infra-dir "${infra_dir}" \
                  --verbose \
                  --clean \
                  --map \

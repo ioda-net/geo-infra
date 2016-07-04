@@ -11,7 +11,7 @@ import json
 import sys
 
 from glob import glob
-from os.path import basename
+from os.path import basename, join
 
 from generate_help import GenerateHelpConfig
 from generate_map_files import GenerateMapFiles
@@ -37,14 +37,30 @@ REQUIRE_TYPE = set((
     '--search-global',
 ))
 REQUIRE_TYPE.update(REQUIRE_PORTAL)
+REQUIRE_INFRA_DIR = set(REQUIRE_TYPE)
 
 #: The list of all possible portals.
-PORTAL_CHOICES = [basename(portal).split('.')[0] for portal in glob('in/config/dist/*.dist.toml')
-                  if '_common.dist.toml' not in portal]
+def fill_portal_choices():
+    index = -1
+    if '--infra-dir' in sys.argv:
+        index = sys.argv.index('--infra-dir')
+    elif '-d' in sys.argv:
+        index = sys.argv.index('-d')
+
+    infra_dir_index = index + 1
+    if index > 0 and infra_dir_index < len(sys.argv):
+        infra_dir = sys.argv[infra_dir_index]
+        return [basename(portal).split('.')[0] for portal in glob(join(infra_dir, 'config/dist/*.dist.toml'))
+                   if '_common.dist.toml' not in portal]
+
+    return []
+
+
+PORTAL_CHOICES = fill_portal_choices()
 
 
 def main(args):
-    config = GenerateConfig(portal=args.portal, type=args.type)
+    config = GenerateConfig(portal=args.portal, type=args.type, infra_dir=args.infra_dir)
     kwargs = {
         'type': args.type,
         'portal': args.portal,
@@ -61,7 +77,7 @@ def main(args):
         Generate(**kwargs).clean()
 
     # Prepare folder for portal
-    if args.portal is not None and args.type is not None:
+    if args.portal is not None and args.type is not None and args.infra_dir is not None:
         _verbose('Create output dirs', args)
         config.create_output_dirs()
 
@@ -128,6 +144,7 @@ if __name__ == "__main__":
     script_args = set(sys.argv)
     portal_required = len(REQUIRE_PORTAL & script_args) != 0
     type_required = len(REQUIRE_TYPE & script_args) != 0
+    infra_dir_required = len(REQUIRE_INFRA_DIR & script_args) != 0
 
     parser = argparse.ArgumentParser(description='Generate configuration files')
     parser.add_argument(
@@ -155,6 +172,10 @@ if __name__ == "__main__":
         dest='type',
         choices=['dev', 'prod'],
         required=type_required)
+    parser.add_argument(
+        '-d', '--infra-dir',
+        dest='infra_dir',
+        required=infra_dir_required)
     parser.add_argument(
         '--map', '-m',
         help=_complete_help('Generate map files.', '--map'),

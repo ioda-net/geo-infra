@@ -101,13 +101,14 @@ function test-map-files {
     local portal
     local portal_type
     _set-portal-type "$@"
+    local infra_dir=$(_get-infra-dir "${portal}")
 
-    extent=$(cat "in/config/dist/${portal}.dist.toml" |
+    extent=$(cat "${infra_dir}/config/dist/${portal}.dist.toml" |
                     grep '^extent = ' |
                     cut -f 2 -d '=' |
                     sed 's/\"//g; s/\[//g; s/\]//g; s/,//g; s/^ //g')
     # We must use eval for the extent to be 4 numbers as shp2img expects
-   shp2img="shp2img -m ${portal_type}/${portal}/map/portals/${portal}.map \
+   shp2img="shp2img -m ${infra_dir}/${portal_type}/${portal}/map/portals/${portal}.map \
             -all_debug 0 \
             -map_debug 1 \
             -s 1920 1080 \
@@ -128,6 +129,19 @@ function _set-portal-type {
         portal_type="$1"
         portal="$2"
     fi
+}
+
+
+function _get-infra-dir {
+    local portal="$1"; shift
+    local infra_dir
+    for infra_dir in $(ls "${CUSTOMERS_INFRA_DIR}"); do
+        if [[ -f "${infra_dir}/config/dist/${portal}.dist.toml" ]]; then
+            break
+        fi
+    done
+
+    echo "${CUSTOMERS_INFRA_DIR}/${infra_dir}"
 }
 
 
@@ -212,8 +226,12 @@ function help-site {
     local portal_type
     local portal
     _set-portal-type "$@"
+    local infra_dir=$(_get-infra-dir "${portal}")
 
-    generate --type "${portal_type}" --portal "${portal}" --help-site
+    generate --type "${portal_type}" \
+        --portal "${portal}" \
+        --infra-dir "${infra_dir}" \
+        --help-site
 }
 
 

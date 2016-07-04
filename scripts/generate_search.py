@@ -12,7 +12,7 @@ class GenerateSearchConfig(Generate):
     '''
 
     #: Regexp to exclude the layer config file when generating the global configuration.
-    layer_search_template = re.compile(r'in/search/search-layers.conf.in')
+    layer_search_template = re.compile(r'search/search-layers.in.conf')
     #: Regexp to exclude the portal config files when generating the global configuration.
     portal_search_template = re.compile(r'portal-.*\.in$')
 

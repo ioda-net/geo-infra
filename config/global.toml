@@ -2,23 +2,24 @@
 # portals. Don't edit unless you want to impact all the portals.
 
 [dest]
-translate = "{type}/{portal}/translations/"
-help = "{type}/{portal}/help/"
-print = "{type}/{portal}/print/"
-services = "{type}/{portal}/json/"
-help_texts = "{type}/{portal}/help/texts/"
-img = "{type}/{portal}/img/"
-json = "{type}/{portal}/json/"
-search_portal = "{type}/{portal}/search/"
-help_images = "{type}/{portal}/help/img/"
-map = "{type}/{portal}/map/"
-search = "{type}/search/"
-output = "{type}/{portal}"
-template_search_portal_locations = "{type}/{portal}/search/portal-{portal}.conf"
-template_translate_catalog = "{type}/{portal}/json/catalog_{{topic}}_{{lang}}.json"
+translate = "{infra_dir}/{type}/{portal}/translations/"
+help = "{infra_dir}/{type}/{portal}/help/"
+print = "{infra_dir}/{type}/{portal}/print/"
+services = "{infra_dir}/{type}/{portal}/json/"
+help_texts = "{infra_dir}/{type}/{portal}/help/texts/"
+img = "{infra_dir}/{type}/{portal}/img/"
+json = "{infra_dir}/{type}/{portal}/json/"
+search_portal = "{infra_dir}/{type}/{portal}/search/"
+help_images = "{infra_dir}/{type}/{portal}/help/img/"
+map = "{infra_dir}/{type}/{portal}/map/"
+search = "{infra_dir}/{type}/search/"
+output = "{infra_dir}/{type}/{portal}"
+relative_output = "{type}/{portal}"
+template_search_portal_locations = "{infra_dir}/{type}/{portal}/search/portal-{portal}.conf"
+template_translate_catalog = "{infra_dir}/{type}/{portal}/json/catalog_{{topic}}_{{lang}}.json"
 
 [dest.geo_front3]
-appcache = 'prod/{portal}/geoadmin.appcache'
+appcache = '{infra_dir}/prod/{portal}/geoadmin.appcache'
 deps = 'test/deps'
 karma_conf = 'test/karma-conf.{type}.js'
 plugins_file = 'src/js/Gf3Plugins.js'
@@ -67,41 +68,41 @@ communes = 10
 
 
 [src]
-base_include = "in/"
+base_include = "{infra_dir}/"
 map_path = "{type}/{portal}/map/portals/{portal}.map"
-print = "in/print/*.in"
-external_layers = "in/json/{portal}/external/*.json"
+print = "{infra_dir}/print/*.in"
+external_layers = "{infra_dir}/json/{portal}/external/*.json"
 img = [ "img/*.png", "img/*.gif", "img/*.jpg", "img/*.jpeg", "img/maki",]
 config_base_files = "config/*.toml.dist"
 config_files = "config/*.toml"
-print_logo = "in/print/{portal}/*.*"
-translate_catalog = "in/translations/catalog.csv"
-img_portal = "in/img/{portal}/*"
-topics = "in/json/{portal}/topics/*.json"
+print_logo = "{infra_dir}/print/{portal}/*.*"
+translate_catalog = "{infra_dir}/translations/catalog.csv"
+img_portal = "{infra_dir}/img/{portal}/*"
+topics = "{infra_dir}/json/{portal}/topics/*.json"
 search_config = "config/search-{type}.toml"
 help = "help/*"
-help_common_folder = "in/help/common"
-help_images_folder = "in/help/{portal}/img/"
-help_logo = "in/img/{portal}/{portal}.jpg"
+help_common_folder = "{infra_dir}/help/common"
+help_images_folder = "{infra_dir}/help/{portal}/img/"
+help_logo = "{infra_dir}/img/{portal}/{portal}.jpg"
 help_original_images_folder = "help/img/"
 help_original_texts_folder = "help/texts/"
-help_portal_folder = "in/help/{portal}"
-help_texts_folder = "in/help/{portal}/texts/"
+help_portal_folder = "{infra_dir}/help/{portal}"
+help_texts_folder = "{infra_dir}/help/{portal}/texts/"
 tomcat = "{type}/{portal}/print"
 search_portal_layers = "search/search-layers.in.conf"
-search_portal_locations = "in/search/portal-locations.in.conf"
+search_portal_locations = "{infra_dir}/search/portal-locations.in.conf"
 config_main_file = "config/geoportal.toml.dist"
-json_files = "in/json/{portal}/**/*.json"
+json_files = "{infra_dir}/json/{portal}/**/*.json"
 front_prod = "../geo-front3/prod/{portal}/*"
 config_file = "config/{portal}-{type}.toml"
-search = "in/search/*.in"
+search = "{infra_dir}/search/*.in"
 tsv_files = "{type}/{portal}/search/*.tsv"
 translation_files = [
     "https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0",
-    "in/translations/common.csv",
-    "in/translations/{portal}.csv"
+    "{infra_dir}/translations/common.csv",
+    "{infra_dir}/translations/{portal}.csv"
 ]
-translate_ignore = "in/translations/ignore.csv"
+translate_ignore = "{infra_dir}/translations/ignore.csv"
 
 [src.geo_front3]
 appcache = 'src/geoadmin.nunjucks.appcache'

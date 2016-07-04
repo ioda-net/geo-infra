@@ -38,10 +38,11 @@ REQUIRE_TYPE = set((
     '--test',
 ))
 REQUIRE_TYPE.update(REQUIRE_PORTAL)
+REQUIRE_INFRA_DIR = set(REQUIRE_TYPE)
 
 
 def main(args):
-    config = GenerateConfig(portal=args.portal, type=args.type)
+    config = GenerateConfig(portal=args.portal, type=args.type, infra_dir=args.infra_dir)
     config['version'] = str(datetime.now()).split(' ')[0]
     front_dir = args.front_dir
 
@@ -184,6 +185,7 @@ if __name__ == '__main__':
     script_args = set(sys.argv)
     portal_required = len(REQUIRE_PORTAL & script_args) != 0
     type_required = len(REQUIRE_TYPE & script_args) != 0
+    infra_dir_required = len(REQUIRE_INFRA_DIR & script_args) != 0
 
     parser = argparse.ArgumentParser(description='Generate configuration files')
     parser.add_argument(
@@ -198,6 +200,10 @@ if __name__ == '__main__':
         dest='type',
         choices=['dev', 'prod'],
         required=type_required)
+    parser.add_argument(
+        '-d', '--infra-dir',
+        dest='infra_dir',
+        required=True)
     parser.add_argument(
         '--front-dir',
         help='the path to the front directory',
