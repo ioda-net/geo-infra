@@ -2,7 +2,7 @@
 # portals. Don't edit unless you want to impact all the portals.
 
 [dest]
-translate = "{infra_dir}/{type}/{portal}/translations/"
+translate = "{infra_dir}/{type}/{portal}/locales/"
 help = "{infra_dir}/{type}/{portal}/help/"
 print = "{infra_dir}/{type}/{portal}/print/"
 services = "{infra_dir}/{type}/{portal}/json/"
