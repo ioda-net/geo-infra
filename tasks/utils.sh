@@ -27,7 +27,7 @@ Generate the global configuration for sphinx and restart searchd.
 - *type* dev"
 function generate-global-search-conf {
     local portal_type="${1:-dev}"
-    generate --search-global --type "${portal_type}"
+    generate --search-global --customer-infra-dir "${CUSTOMERS_INFRA_DIR}" --type "${portal_type}"
     restart-service "search"
 }
 

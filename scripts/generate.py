@@ -37,7 +37,11 @@ REQUIRE_TYPE = set((
     '--search-global',
 ))
 REQUIRE_TYPE.update(REQUIRE_PORTAL)
-REQUIRE_INFRA_DIR = set(REQUIRE_TYPE)
+REQUIRE_INFRA_DIR = set(REQUIRE_PORTAL)
+REQUIRE_SEARCH_GOLBAL = set((
+    '--customer-infra-dir',
+    '--search-global',
+))
 
 #: The list of all possible portals.
 def fill_portal_choices():
@@ -109,7 +113,7 @@ def main(args):
             search_generator.generate()
         if args.gen_search_global:
             _verbose('Generate global search config', args)
-            search_generator.generate_global()
+            search_generator.generate_global(args.customer_infra_dir)
 
     if args.gen_images:
         _verbose('Generate images', args)
@@ -145,6 +149,7 @@ if __name__ == "__main__":
     portal_required = len(REQUIRE_PORTAL & script_args) != 0
     type_required = len(REQUIRE_TYPE & script_args) != 0
     infra_dir_required = len(REQUIRE_INFRA_DIR & script_args) != 0
+    search_global_required = len(REQUIRE_SEARCH_GOLBAL & script_args) != 0
 
     parser = argparse.ArgumentParser(description='Generate configuration files')
     parser.add_argument(
@@ -211,6 +216,11 @@ if __name__ == "__main__":
         help=_complete_help('Generate global search configuration.', '--search-global'),
         dest='gen_search_global',
         action='store_true')
+    parser.add_argument(
+        '--customer-infra-dir',
+        help='Directory containing all the customer infrastructures.',
+        dest='customer_infra_dir',
+        required=search_global_required)
     parser.add_argument(
         '--copy-img', '-i',
         help=_complete_help('Copy the images.', '--copy-img'),

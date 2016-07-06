@@ -33,12 +33,10 @@ class GenerateSearchConfig(Generate):
 
         return langs
 
-    def generate_global(self):
+    def generate_global(self, customer_infra_dir):
         '''Generate the global configuration for search.
         '''
         os.makedirs(self.dest['search'], exist_ok=True)
+        self.config['search']['customer_infra_dir'] = customer_infra_dir
         for template in glob(self.src['search']):
-            if self.layer_search_template.search(template) or \
-                    self.portal_search_template.search(template):
-                continue
             self.render(template, self.dest['search'], self.config)

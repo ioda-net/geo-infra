@@ -1,6 +1,9 @@
 # User config
 /config/config.sh
 
+# Output
+dev
+
 # Logs
 logs
 *.log

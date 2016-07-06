@@ -1,0 +1,5 @@
+[search]
+sphinxhost = "localhost"
+sphinxport = 9312
+# No trailing slash
+conf_dir = "/var/lib/geoportal"

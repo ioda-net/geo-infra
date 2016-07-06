@@ -48,7 +48,8 @@ class GenerateConfig:
     def __init__(self, type=None, portal=None, infra_dir=None):
         self.type = type
         self.portal = portal
-        self.infra_dir = infra_dir
+        # This variable is used in path where None is not allowed.
+        self.infra_dir = infra_dir or ''
         self._current_base_file = None
         self._current_file = None
         self._config = {}
@@ -93,7 +94,7 @@ class GenerateConfig:
         global_config = self._load_config_from_file('config/global.toml')
         self._update_config(self._config, global_config, section_check=False)
 
-        common_config = self._load_config_from_file('_common', prefix=self.infra_dir)
+        common_config = self._load_config_from_file('_common', prefix=self.infra_dir, must_exists=False)
         config_section_errors = ConfigSectionErrors(section='common', errors=[])
         self._update_config(
             self._config,
@@ -121,7 +122,7 @@ class GenerateConfig:
         self._config['mapinfra'] = realpath(os.getcwd())
         self._config['dest']['output'] = realpath(path(self._config['mapinfra'], self._config['dest']['output']))
 
-    def _load_config_from_file(self, cfg_file, portal_file=False, prefix=''):
+    def _load_config_from_file(self, cfg_file, portal_file=False, prefix='', must_exists=True):
         '''Load the config file and override keys with those from prod or dev if needed.
 
         Args:
@@ -129,7 +130,14 @@ class GenerateConfig:
             protal_file (bool): if true, the config file will be checked against
                 _template.dist.toml.
         '''
-        dist = self._load_config_file(cfg_file, prefix=prefix)
+        try:
+            dist = self._load_config_file(cfg_file, prefix=prefix)
+        except FileNotFoundError as e:
+            if must_exists:
+                raise e
+            else:
+                dist = {}
+
         self._format_templates(dist)
         if portal_file:
             self._check_portal_config_with_portal_template(dist)
