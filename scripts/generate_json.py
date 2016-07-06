@@ -143,7 +143,7 @@ class GenerateJsonConfig(Generate):
         current_category = {
             'category': category['category'],
             'label': t(category['category']),
-            'selectedOpen': category['selectedOpen'],
+            'selectedOpen': category.get('selectedOpen', False),
             'children': []
         }
         for child in category['children']:
