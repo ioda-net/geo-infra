@@ -80,11 +80,15 @@ function reindex {
     if type "sudo_search_reindex" > /dev/null 2>&1; then
         sudo_search_reindex
     else
-        sudo /usr/bin/indexer \
-            --verbose \
-            --rotate \
-            --config /etc/sphinx/sphinx.conf \
-            --all
+        local cmd=(sudo /usr/bin/indexer
+            --verbose
+            --rotate
+            --config /etc/sphinx/sphinx.conf
+            --all)
+        if [[ "${QUIET}" == "true" ]]; then
+            cmd+=("--quiet")
+        fi
+        "${cmd[@]}"
     fi
     restart-service search
 }
