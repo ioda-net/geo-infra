@@ -2,6 +2,8 @@
 '''
 
 import json
+import requests
+import time
 
 from glob import glob
 from operator import xor
@@ -9,7 +11,7 @@ from os.path import basename, splitext
 from owslib.wms import WebMapService
 from requests.exceptions import ConnectionError
 
-from generate_utils import Generate, start_cgi_server
+from generate_utils import Generate, start_cgi_server, cgi_server
 from generate_translations import Translator, CatalogTranslator
 
 
@@ -19,9 +21,12 @@ class GenerateJsonConfig(Generate):
     In order to always use the lastest map file, we start a python CGI server in a thread. This
     server will be used for the GetCapabilities request.
     '''
+    MAX_CONNECTION_ATTEMPTS = 30
+    CONNECTION_ATTEMPTS_DELAY = 2
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        start_cgi_server()
+        self._start_cgi_server()
         translator = Translator(self.src['translation_files'], self.verbose)
         self.catalog_translator = CatalogTranslator(self.src['translate_catalog'])
         # This will both get and save the translations if output_folder is not None
@@ -31,6 +36,26 @@ class GenerateJsonConfig(Generate):
             pretty=self.pretty)
         ows_parser = OwsParser(**kwargs)
         self.layers_config = ows_parser.get_layers_config()
+
+    def _start_cgi_server(self):
+        start_cgi_server()
+        self._connection_attempts = 0
+        self._test_connection_to_cgi_server()
+
+    def _test_connection_to_cgi_server(self):
+        connection_url = self.config['mapserver']['OWS_STAGING_URL'].replace('?MAP=', '')
+        error = None
+        while self._connection_attempts < self.MAX_CONNECTION_ATTEMPTS:
+            try:
+                requests.get(connection_url)
+            except ConnectionError as e:
+                self._connection_attempts += 1
+                time.sleep(self.CONNECTION_ATTEMPTS_DELAY)
+            else:
+                break
+
+        if error:
+            raise error
 
     def generate(self):
         '''Generate the layers configuration and the catalog.
