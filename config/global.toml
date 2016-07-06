@@ -69,7 +69,7 @@ communes = 10
 [src]
 base_include = "{infra_dir}/"
 map_path = "{type}/{portal}/map/portals/{portal}.map"
-print = "{infra_dir}/print/*.in"
+print = "{infra_dir}/print/*.in*"
 external_layers = "{infra_dir}/json/{portal}/external/*.json"
 img = [ "img/*.png", "img/*.gif", "img/*.jpg", "img/*.jpeg", "img/maki",]
 config_base_files = "config/*.toml.dist"
