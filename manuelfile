@@ -33,11 +33,15 @@ Generate a development version of mapinfra for the targeted portals.
 function dev {
     local portal
     local infra_dir
-    echo "Linting JSON and CSV files"
-    lint
+    local linted_directories=()
     for portal in "$@"; do
-        echo "****** Processing: ${portal} *****"
         infra_dir=$(_get-infra-dir "${portal}")
+        if [[ ! ("${linted_directories[@]:-}" =~ "${infra_dir}") ]]; then
+            echo "Linting JSON and CSV files"
+            lint "${portal}"
+            linted_directories+=("${infra_dir}")
+        fi
+        echo "****** Processing: ${portal} *****"
         generate --type "dev" \
                  --portal "${portal}" \
                  --infra-dir "${infra_dir}" \
@@ -80,12 +84,11 @@ HELP['prod']="manuel prod PORTAL1 [PORTAL2 [PORTAL3] …]
 Generate a production version of mapinfra and the frontend for targeted portals. To generate even
 with uncommited changes, add the --force option as first parameter."
 function prod {
-    echo "Linting JSON and CSV files"
-    lint
     echo "Updating test configuration"
     local force
     local portal
     local infra_dir
+    local linted_directories=()
     if [[ "${1:-}" == "--force" ]]; then
         force="$1"
         shift
@@ -93,8 +96,13 @@ function prod {
 
     front build-test-conf
     for portal in "$@"; do
-        echo "***** PROCESSING: ${portal} *****"
         infra_dir=$(_get-infra-dir "${portal}")
+        if [[ ! ("${linted_directories[@]:-}" =~ "${infra_dir}") ]]; then
+            echo "Linting JSON and CSV files"
+            lint "${portal}"
+            linted_directories+=("${infra_dir}")
+        fi
+        echo "***** PROCESSING: ${portal} *****"
         clean 'prod' "${portal}"
         generate --type "prod" \
                  --portal "${portal}" \
