@@ -166,19 +166,6 @@ function _update-prod-repos {
 }
 
 
-HELP['copy-front']="manuel copy-front PORTAL
-
-Copy the frontend for the given portal into mapinfra's prod directory. Nothing is clean or
-generated."
-function copy-front {
-    local portal="$1"; shift;
-    local front_src="${FRONT_DIR}/prod/${portal}"
-    local front_dest="prod/${portal}"
-    # Leave front_src unquoted for glob expension
-    cp -a ${front_src}/* "${front_dest}/"
-}
-
-
 function _work-tree-clean {
     local git_status_output=$(git status --porcelain)
     if [ -z "${git_status_output}" ] ; then

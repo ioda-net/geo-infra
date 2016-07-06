@@ -48,7 +48,7 @@ def main(args):
 
     if args.index:
         template_path = os.path.abspath(os.path.join(front_dir, config['src']['geo_front3']['index']))
-        out_dir_path = os.path.abspath(os.path.join(front_dir, config['dest']['relative_output']))
+        out_dir_path = os.path.abspath(os.path.join(front_dir, config['dest']['output']))
 
         for device in config['front']['build']['devices']:
             config['device'] = device

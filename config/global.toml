@@ -14,7 +14,6 @@ help_images = "{infra_dir}/{type}/{portal}/help/img/"
 map = "{infra_dir}/{type}/{portal}/map/"
 search = "{infra_dir}/{type}/search/"
 output = "{infra_dir}/{type}/{portal}"
-relative_output = "{type}/{portal}"
 template_search_portal_locations = "{infra_dir}/{type}/{portal}/search/portal-{portal}.conf"
 template_translate_catalog = "{infra_dir}/{type}/{portal}/json/catalog_{{topic}}_{{lang}}.json"
 

@@ -144,7 +144,8 @@ function _build-test-conf {
 
 function _front-dev {
     local portal_type='dev'
-    local output="${portal_type}/${portal}"
+    local infra_dir=$(_get-infra-dir "${portal}")
+    local output="${infra_dir}/${portal_type}/${portal}"
     local js_deps_file="${output}/deps.js"
     local style_output="${output}/style"
     local css_file="${style_output}/app.css"
@@ -165,7 +166,8 @@ function _front-dev {
 function _front-prod {
     local tmp=$(mktemp -d -t geofront3.XXXXXXXXXX)
     local portal_type='prod'
-    local output="prod/${portal}"
+    local infra_dir=$(_get-infra-dir "${portal}")
+    local output="${infra_dir}/prod/${portal}"
     local build_js="${output}/lib/build.js"
     local build_closure="${tmp}/build-closure.js"
     local style_output="${output}/style"
@@ -203,7 +205,8 @@ function _front-watch {
     # $portal comes from front.
 
     local portal_type='dev'
-    local output="${portal_type}/${portal}"
+    local infra_dir=$(_get-infra-dir "${portal}")
+    local output="${infra_dir}/${portal_type}/${portal}"
     local js_deps_file="${output}/deps.js"
     local style_output="${output}/style"
     local css_file="${style_output}/app.css"

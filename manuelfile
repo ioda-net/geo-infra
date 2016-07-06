@@ -21,8 +21,9 @@ source tasks/lint.sh
 source tasks/utils.sh
 
 
-# Make sure CUSTOMERS_INFRA_DIR does not end with a '/'
+# Make sure CUSTOMERS_INFRA_DIR does not end with a '/' and is absolute.
 CUSTOMERS_INFRA_DIR="${CUSTOMERS_INFRA_DIR%/}"
+CUSTOMERS_INFRA_DIR=$(realpath "${CUSTOMERS_INFRA_DIR}")
 
 
 
@@ -46,7 +47,6 @@ function dev {
                  --portal "${portal}" \
                  --infra-dir "${infra_dir}" \
                  --verbose \
-                 --clean \
                  --map \
                  --json \
                  --help-site \
@@ -63,6 +63,20 @@ HELP['dev-full']="manuel dev-full PORTAL1 [PORTAL2 [PORTAL3] …]
 Generate a development version of mapinfra and frontend for the targeted portals. It will also
 triger a reindex for sphinx, test the map files of each portal and copy tomcat configuration."
 function dev-full {
+    local infra_dir
+    local portal
+
+    for portal in "$@"; do
+        echo "***** Cleaning ${portal} *****"
+        infra_dir=$(_get-infra-dir "${portal}")
+        generate --type "dev" \
+                 --portal "${portal}" \
+                 --infra-dir "${infra_dir}" \
+                 --clean \
+                 --verbose
+        echo "***** Done: ${portal} *****"
+    done
+
     dev "$@"
 
     for portal in "$@"; do
@@ -117,7 +131,6 @@ function prod {
                  --copy-img
         echo "Building the front end"
         front prod ${force:-} "${portal}"
-        copy-front "${portal}"
         echo "Launching unit tests"
         front test-prod "${portal}"
         echo "***** Done: ${portal} *****"
