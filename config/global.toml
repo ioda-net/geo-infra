@@ -98,6 +98,7 @@ search = "{infra_dir}/search/*.in"
 tsv_files = "{type}/{portal}/search/*.tsv"
 translation_files = [
     "https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0",
+    "translations/common.csv",
     "{infra_dir}/translations/common.csv",
     "{infra_dir}/translations/{portal}.csv"
 ]
