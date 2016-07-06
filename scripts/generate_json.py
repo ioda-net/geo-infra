@@ -131,7 +131,10 @@ class GenerateJsonConfig(Generate):
     def process_topic_catalog(self, catalog, topic, lang):
         for category in topic['catalog']:
             t = self.catalog_translator[lang]
-            new_category = self.process_category(category, t)
+            if isinstance(category, str):
+                new_category = self.process_layer(category, t)
+            else:
+                new_category = self.process_category(category, t)
             catalog['results']['root']['children'].append(new_category)
 
     def save_topic_catalog(self, catalog, lang, topic_file_name):
