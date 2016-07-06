@@ -73,11 +73,13 @@ class GenerateJsonConfig(Generate):
             background_layers = current_topic_config['backgroundLayers']
             self.check_layers_in_layers_config(background_layers, current_topic_config['name'])
             selected_layers = current_topic_config['selectedLayers']
+            activated_layers = current_topic_config.get('activatedLayers', [])
             self.check_layers_in_layers_config(selected_layers, current_topic_config['name'])
             topic = {
                 'langs': ','.join(current_topic_config['langs']),
                 'backgroundLayers': background_layers,
                 'id': self.get_topic_id(file_name),
+                'activatedLayers': activated_layers,
                 'selectedLayers': selected_layers,
                 'showCatalog': True,
             }
