@@ -221,7 +221,7 @@ class OwsParser(Generate):
         except AttributeError:
             self.report_errors(
                 'Cannot parse WMS content. Check that {} provides a proper '
-                'GetCapabilities file.'.format(self.ows_url))
+                'GetCapabilities file.'.format(self.ows_staging_url))
         else:
             self.process_wms_layers()
             self.process_external_layers()
