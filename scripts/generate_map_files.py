@@ -18,7 +18,10 @@ class GenerateMapFiles(Generate):
         self._generate_map_files(includes)
 
     def _get_map_to_include(self):
-        origin = self.path(self.src['base_include'], 'portals', self.portal, ext='.map.in')
+        portal_dir = self.path(self.src['base_include'], 'portals')
+        origin = self.path(portal_dir, self.portal, ext='.map.in')
+        if not exists(origin):
+            origin = self.path(portal_dir, self.portal, ext='.in.map')
         included_map = re.compile(r'''^\s*(?:(?!#))INCLUDE\s+["'](.*)["']''', re.M)
 
         files_to_parse = [MapInclude(name=origin, origin=origin)]
