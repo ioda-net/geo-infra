@@ -140,7 +140,7 @@ function _get-infra-dir {
     local portal="$1"; shift
     local infra_dir
     for infra_dir in $(ls "${CUSTOMERS_INFRA_DIR}"); do
-        if [[ -f "${infra_dir}/config/dist/${portal}.dist.toml" ]]; then
+        if [[ -f "${CUSTOMERS_INFRA_DIR}/${infra_dir}/config/dist/${portal}.dist.toml" ]]; then
             break
         fi
     done
