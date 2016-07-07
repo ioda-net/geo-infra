@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-HELP['lint']="manuel lint [PORTAL]
+HELP['lint']="manuel lint [INFRA_DIR]
 
 Launch lint for all json and csv files and report errors.
 If portal is given, only the files in the portal infra dir will be linted.
@@ -25,7 +25,7 @@ function jsonlint {
     ERRORS=false
     local lint_dir="${CUSTOMERS_INFRA_DIR}"
     if [[ -n "${1:-}" ]]; then
-        lint_dir=$(_get-infra-dir "$1")
+        lint_dir="$1"
     fi
 
     for jsonfile in $(find "${lint_dir}" -name "*.json" | grep -v 'infra/dev' | grep -v 'infra/prod'); do
@@ -48,7 +48,7 @@ function csvlint {
     ERRORS=false
     local lint_dir="${CUSTOMERS_INFRA_DIR}"
     if [[ -n "${1:-}" ]]; then
-        lint_dir=$(_get-infra-dir "$1")
+        lint_dir="$1"
     fi
 
     if ! type csvclean > /dev/null 2>&1; then

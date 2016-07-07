@@ -46,9 +46,11 @@ function front {
         force="$1"
         shift
     fi
+    local alias
     local portal
     if [[ -n "${1:-}" ]]; then
-        portal="$1"; shift
+        alias="$1"; shift
+        portal=$(_get-portal-name-from-alias "${alias}")
     fi
     local list='Available tasks for front
 - build-test-conf
@@ -144,14 +146,14 @@ function _build-test-conf {
 
 function _front-dev {
     local portal_type='dev'
-    local infra_dir=$(_get-infra-dir "${portal}")
+    local infra_dir=$(_get-infra-dir "${alias}")
     local output="${infra_dir}/${portal_type}/${portal}"
     local js_deps_file="${output}/deps.js"
     local style_output="${output}/style"
     local css_file="${style_output}/app.css"
 
-    _build-plugins "${portal_type}" "${portal}"
-    _build-index "${portal_type}" "${portal}"
+    _build-plugins "${portal_type}" "${alias}"
+    _build-index "${portal_type}" "${alias}"
 
     pushd "${FRONT_DIR}"
         _mkdir "${output}"

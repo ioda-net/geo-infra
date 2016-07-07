@@ -39,10 +39,11 @@ function dev {
         infra_dir=$(_get-infra-dir "${portal}")
         if [[ ! ("${linted_directories[@]:-}" =~ "${infra_dir}") ]]; then
             echo "Linting JSON and CSV files"
-            lint "${portal}"
+            lint "${infra_dir}"
             linted_directories+=("${infra_dir}")
         fi
         echo "****** Processing: ${portal} *****"
+        portal=$(_get-portal-name-from-alias "${portal}")
         generate --type "dev" \
                  --portal "${portal}" \
                  --infra-dir "${infra_dir}" \
@@ -69,6 +70,7 @@ function dev-full {
     for portal in "$@"; do
         echo "***** Cleaning ${portal} *****"
         infra_dir=$(_get-infra-dir "${portal}")
+        portal=$(_get-portal-name-from-alias "${portal}")
         generate --type "dev" \
                  --portal "${portal}" \
                  --infra-dir "${infra_dir}" \
@@ -113,7 +115,7 @@ function prod {
         infra_dir=$(_get-infra-dir "${portal}")
         if [[ ! ("${linted_directories[@]:-}" =~ "${infra_dir}") ]]; then
             echo "Linting JSON and CSV files"
-            lint "${portal}"
+            lint "${infra_dir}"
             linted_directories+=("${infra_dir}")
         fi
         echo "***** PROCESSING: ${portal} *****"
