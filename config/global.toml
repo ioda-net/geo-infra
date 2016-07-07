@@ -87,14 +87,15 @@ help_original_texts_folder = "help/texts/"
 help_portal_folder = "{infra_dir}/help/{portal}"
 help_texts_folder = "{infra_dir}/help/{portal}/texts/"
 tomcat = "{type}/{portal}/print"
-search_portal_layers = "search/search-layers.in.conf"
+search_portal_layers = "search/common/search-layers.in.conf"
 search_portal_locations = "{infra_dir}/search/portal-locations.in.conf"
 config_main_file = "config/geoportal.toml.dist"
 json_files = "{infra_dir}/json/{portal}/**/*.json"
 front_prod = "../geo-front3/prod/{portal}/*"
 config_file = "config/{portal}-{type}.toml"
 search = "search/*.in*"
-tsv_files = "{type}/{portal}/search/*.tsv"
+search_db = "search/common/db.in.conf"
+tsv_files = "{infra_dir}/{type}/{portal}/search/*.tsv"
 translation_files = [
     "https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0",
     "translations/common.csv",

@@ -20,7 +20,10 @@ class GenerateSearchConfig(Generate):
         '''Generate the search configuration for one portal.
         '''
         self.config['search']['langs'] = self._get_langs_tsv_files()
+        infra_dir = self.config['infra_dir'].split('/')[-1]
+        self.config['search']['customer'] = infra_dir.replace('-infra', '')
 
+        self.render(self.src['search_db'], self.dest['search_portal'], self.config)
         self.render(self.src['search_portal_layers'], self.dest['search_portal'], self.config)
         self.render(self.src['search_portal_locations'], self.dest['template_search_portal_locations'], self.config, dest_is_file=True)
 

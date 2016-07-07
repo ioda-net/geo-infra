@@ -88,8 +88,7 @@ class GenerateConfig:
             - type
             - portal
             - prod (bool)
-            - mapinfra: the absolute path to mapinfra
-            - dest.output: the absolute path of infra's output dir
+            - infra_dir: the absolute path to the current customer infra dir
         '''
         global_config = self._load_config_from_file('config/global.toml')
         self._update_config(self._config, global_config, section_check=False)
@@ -119,8 +118,7 @@ class GenerateConfig:
         self._config['portal'] = self.portal
         self._config['prod'] = self.type == 'prod'
         # Make output path absolute
-        self._config['mapinfra'] = realpath(os.getcwd())
-        self._config['dest']['output'] = realpath(path(self._config['mapinfra'], self._config['dest']['output']))
+        self._config['infra_dir'] = realpath(self.infra_dir)
 
     def _load_config_from_file(self, cfg_file, portal_file=False, prefix='', must_exists=True):
         '''Load the config file and override keys with those from prod or dev if needed.
