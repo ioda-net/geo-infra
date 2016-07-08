@@ -44,7 +44,8 @@ REQUIRE_INFRA_DIR = set(REQUIRE_TYPE)
 def main(args):
     config = GenerateConfig(portal=args.portal, type=args.type, infra_dir=args.infra_dir)
     config['version'] = str(datetime.now()).split(' ')[0]
-    config['geoportal']['alias'] = args.alias
+    if args.alias:
+        config['geoportal']['alias'] = args.alias
     front_dir = args.front_dir
 
     if args.index:
@@ -208,7 +209,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '-d', '--infra-dir',
         dest='infra_dir',
-        required=True)
+        required=infra_dir_required)
     parser.add_argument(
         '--front-dir',
         help='the path to the front directory',

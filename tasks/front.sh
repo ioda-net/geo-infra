@@ -98,11 +98,13 @@ function _launch-task-in-front-dir {
                        --params.portal="${portal:-${DEFAULT_PORTAL}}"|| : ;;
         'test-prod')
             local test_portal="${portal:-${DEFAULT_PORTAL}}"
-            output=$("${KARMA_CMD}" start test/karma-conf.prod.js --portal="${test_portal}" --single-run 2>&1) || {
+            local infra_dir=$(_get-infra-dir "${alias}")
+            output=$("${KARMA_CMD}" start test/karma-conf.prod.js --portal="${test_portal}" --infra-dir="${infra_dir}" --single-run 2>&1)
+            if [[ $? != 0 ]]; then
                 echo "Tests failed for ${test_portal}" >&2
                 echo "${output}"
                 return 1
-            };;
+            fi
     esac
 }
 
@@ -168,7 +170,7 @@ function _front-dev {
 function _front-prod {
     local tmp=$(mktemp -d -t geofront3.XXXXXXXXXX)
     local portal_type='prod'
-    local infra_dir=$(_get-infra-dir "${portal}")
+    local infra_dir=$(_get-infra-dir "${alias}")
     local output="${infra_dir}/prod/${portal}"
     local build_js="${output}/lib/build.js"
     local build_closure="${tmp}/build-closure.js"
@@ -184,7 +186,7 @@ function _front-prod {
         git checkout -q "${PROD_DEPLOY_BRANCH}"
     popd
 
-    _build-plugins "${portal_type}" "${portal}"
+    _build-plugins "${portal_type}" "${alias}"
     _build-index "${portal_type}" "${alias}"
     _build-template-cache
 
