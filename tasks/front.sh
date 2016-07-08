@@ -98,6 +98,9 @@ function _launch-task-in-front-dir {
                        --params.portal="${portal:-${DEFAULT_PORTAL}}"|| : ;;
         'test-prod')
             local test_portal="${portal:-${DEFAULT_PORTAL}}"
+            # This command may fail. We want to print its output in this case.
+            # So we prevent the interpreter to quit.
+            set +e
             local infra_dir=$(_get-infra-dir "${alias}")
             output=$("${KARMA_CMD}" start test/karma-conf.prod.js --portal="${test_portal}" --infra-dir="${infra_dir}" --single-run 2>&1)
             if [[ $? != 0 ]]; then
@@ -105,12 +108,14 @@ function _launch-task-in-front-dir {
                 echo "${output}"
                 return 1
             fi
+            set -e;;
     esac
 }
 
 
 function _build-test-conf {
     local tmp=$(mktemp -d)
+    local infra_dir=$(_get-infra-dir "${DEFAULT_PORTAL}")
 
     _build-template-cache
     _build-plugins "dev" ${DEFAULT_PORTAL}
@@ -139,8 +144,8 @@ function _build-test-conf {
         rm -f 'test/protractor-conf.prod.js'
     popd
 
-    render --type 'dev' --test
-    render --type 'prod' --test
+    render --type 'dev' --infra-dir "${infra_dir}" --test
+    render --type 'prod' --infra-dir "${infra_dir}" --test
 
     rm -rf "${tmp}"
 }

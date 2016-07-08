@@ -49,7 +49,7 @@ set-var MFP_APP_FOLDER "/srv/tomcat/webapps/print/print-apps/"
 
 # Front
 set-var FRONT_DIR '../geo-front3/'
-set-var DEFAULT_PORTAL 'demo'
+set-var DEFAULT_PORTAL 'geoportalxyz'
 
 
 # Databsase
