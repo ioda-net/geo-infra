@@ -162,7 +162,7 @@ function _get-infra-dir {
 
 
 function _get-alias-line {
-    echo $(cat .aliases | grep "^$1 ")
+    echo $(cat .aliases 2> /dev/null | grep "^$1 ")
 }
 
 
