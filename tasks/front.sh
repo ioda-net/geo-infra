@@ -185,7 +185,7 @@ function _front-prod {
     popd
 
     _build-plugins "${portal_type}" "${portal}"
-    _build-index "${portal_type}" "${portal}"
+    _build-index "${portal_type}" "${alias}"
     _build-template-cache
 
     pushd "${FRONT_DIR}"
@@ -204,10 +204,10 @@ function _front-prod {
 
 
 function _front-watch {
-    # $portal comes from front.
+    # $portal, $alias come from front.
 
     local portal_type='dev'
-    local infra_dir=$(_get-infra-dir "${portal}")
+    local infra_dir=$(_get-infra-dir "${alias}")
     local output="${infra_dir}/${portal_type}/${portal}"
     local js_deps_file="${output}/deps.js"
     local style_output="${output}/style"
@@ -216,7 +216,7 @@ function _front-watch {
 
     trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 
-    _build-plugins "${portal_type}" "${portal}"
+    _build-plugins "${portal_type}" "${alias}"
     _build-index "${portal_type}" "${portal}"
 
     pushd "${FRONT_DIR}"

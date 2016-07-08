@@ -206,7 +206,7 @@ function _watch {
         if [[ "${changed}" == *.nunjucks.html ]]; then
             echo "$(date) Rebuilding indexes"
             pushd "${mapinfra_dir}"
-                _build-index "${portal_type}" "${portal}"
+                _build-index "${portal_type}" "${alias}"
             popd
         elif [[ "${changed}" == *.less ]]; then
             echo "$(date) Rebuilding app.css"
