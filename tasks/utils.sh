@@ -229,14 +229,16 @@ Clone the prod repo from the git server (the repo must exists there) and commit 
 repo is then clone on the production server."
 function init-prod-repo {
     local bare_repo="${PROD_BARE_GIT_REPOS_LOCATION}/$1.git"
-    cd "prod/"
-    git clone "${bare_repo}"
-    cd "$1"
-    touch init
-    git add -A .
-    git commit -m "Init repository"
-    git push -u origin master
-    execute-on-prod "cd ${PROD_GIT_REPOS_LOCATION} && git clone ${bare_repo}"
+    infra_dir=$(_get-infra-dir "$1")
+    pushd "${infra_dir}/prod/"
+        git clone "${bare_repo}"
+        cd "$1"
+        touch init
+        git add -A .
+        git commit -m "Init repository"
+        git push -u origin master
+        execute-on-prod "cd ${PROD_GIT_REPOS_LOCATION} && git clone ${bare_repo}"
+    popd
 }
 
 
