@@ -189,15 +189,18 @@ function tomcat-copy-conf {
             exit 1
         fi
 
-        local infra_dir=$(_get-infra-dir "$2")
+        local type="$1"; shift
+        local alias="$1"; shift
+        local infra_dir=$(_get-infra-dir "${alias}")
+        local portal=$(_get-portal-name-from-alias "${alias}")
         pushd "${infra_dir}"
-            local mfp_portal_dest="${MFP_APP_FOLDER}/$2/"
+            local mfp_portal_dest="${MFP_APP_FOLDER}/${alias}/"
             if [[ ! -d "${mfp_portal_dest}" ]]; then
                 mkdir -p "${mfp_portal_dest}"
             fi
 
-            if [[ -d "$1/$2/print" ]]; then
-                /usr/bin/cp -av "$1/$2/print"/* "${mfp_portal_dest}" > /dev/null
+            if [[ -d "${type}/${portal}/print" ]]; then
+                /usr/bin/cp -av "${type}/${portal}/print"/* "${mfp_portal_dest}" > /dev/null
             else
                 /usr/bin/cp -av print/* "${mfp_portal_dest}" > /dev/null
             fi

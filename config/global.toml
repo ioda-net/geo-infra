@@ -113,3 +113,11 @@ plugins = 'src/plugins/*.js'
 plugins_template = 'src/Gf3Plugins.nunjucks.js'
 protractor_conf_template = 'test/protractor-conf.nunjucks.js'
 template_cache_module = 'src/TemplateCacheModule.nunjucks.js'
+
+
+[test.karma]
+browsers = ['Firefox', 'Chrome']
+
+[test.protractor]
+test_portal_address = 'http://cov.geojb'
+generate_coverage_report = true

@@ -46,9 +46,11 @@ function front {
         force="$1"
         shift
     fi
+    local alias
     local portal
     if [[ -n "${1:-}" ]]; then
-        portal="$1"; shift
+        alias="$1"; shift
+        portal=$(_get-portal-name-from-alias "${alias}")
     fi
     local list='Available tasks for front
 - build-test-conf
@@ -96,17 +98,24 @@ function _launch-task-in-front-dir {
                        --params.portal="${portal:-${DEFAULT_PORTAL}}"|| : ;;
         'test-prod')
             local test_portal="${portal:-${DEFAULT_PORTAL}}"
-            output=$("${KARMA_CMD}" start test/karma-conf.prod.js --portal="${test_portal}" --single-run 2>&1) || {
+            # This command may fail. We want to print its output in this case.
+            # So we prevent the interpreter to quit.
+            set +e
+            local infra_dir=$(_get-infra-dir "${alias}")
+            output=$("${KARMA_CMD}" start test/karma-conf.prod.js --portal="${test_portal}" --infra-dir="${infra_dir}" --single-run 2>&1)
+            if [[ $? != 0 ]]; then
                 echo "Tests failed for ${test_portal}" >&2
                 echo "${output}"
                 return 1
-            };;
+            fi
+            set -e;;
     esac
 }
 
 
 function _build-test-conf {
     local tmp=$(mktemp -d)
+    local infra_dir=$(_get-infra-dir "${DEFAULT_PORTAL}")
 
     _build-template-cache
     _build-plugins "dev" ${DEFAULT_PORTAL}
@@ -135,8 +144,8 @@ function _build-test-conf {
         rm -f 'test/protractor-conf.prod.js'
     popd
 
-    render --type 'dev' --test
-    render --type 'prod' --test
+    render --type 'dev' --infra-dir "${infra_dir}" --test
+    render --type 'prod' --infra-dir "${infra_dir}" --test
 
     rm -rf "${tmp}"
 }
@@ -144,14 +153,14 @@ function _build-test-conf {
 
 function _front-dev {
     local portal_type='dev'
-    local infra_dir=$(_get-infra-dir "${portal}")
+    local infra_dir=$(_get-infra-dir "${alias}")
     local output="${infra_dir}/${portal_type}/${portal}"
     local js_deps_file="${output}/deps.js"
     local style_output="${output}/style"
     local css_file="${style_output}/app.css"
 
-    _build-plugins "${portal_type}" "${portal}"
-    _build-index "${portal_type}" "${portal}"
+    _build-plugins "${portal_type}" "${alias}"
+    _build-index "${portal_type}" "${alias}"
 
     pushd "${FRONT_DIR}"
         _mkdir "${output}"
@@ -166,7 +175,7 @@ function _front-dev {
 function _front-prod {
     local tmp=$(mktemp -d -t geofront3.XXXXXXXXXX)
     local portal_type='prod'
-    local infra_dir=$(_get-infra-dir "${portal}")
+    local infra_dir=$(_get-infra-dir "${alias}")
     local output="${infra_dir}/prod/${portal}"
     local build_js="${output}/lib/build.js"
     local build_closure="${tmp}/build-closure.js"
@@ -182,8 +191,8 @@ function _front-prod {
         git checkout -q "${PROD_DEPLOY_BRANCH}"
     popd
 
-    _build-plugins "${portal_type}" "${portal}"
-    _build-index "${portal_type}" "${portal}"
+    _build-plugins "${portal_type}" "${alias}"
+    _build-index "${portal_type}" "${alias}"
     _build-template-cache
 
     pushd "${FRONT_DIR}"
@@ -202,10 +211,10 @@ function _front-prod {
 
 
 function _front-watch {
-    # $portal comes from front.
+    # $portal, $alias come from front.
 
     local portal_type='dev'
-    local infra_dir=$(_get-infra-dir "${portal}")
+    local infra_dir=$(_get-infra-dir "${alias}")
     local output="${infra_dir}/${portal_type}/${portal}"
     local js_deps_file="${output}/deps.js"
     local style_output="${output}/style"
@@ -214,7 +223,7 @@ function _front-watch {
 
     trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 
-    _build-plugins "${portal_type}" "${portal}"
+    _build-plugins "${portal_type}" "${alias}"
     _build-index "${portal_type}" "${portal}"
 
     pushd "${FRONT_DIR}"

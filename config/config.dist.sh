@@ -49,7 +49,7 @@ set-var MFP_APP_FOLDER "/srv/tomcat/webapps/print/print-apps/"
 
 # Front
 set-var FRONT_DIR '../geo-front3/'
-set-var DEFAULT_PORTAL 'demo'
+set-var DEFAULT_PORTAL 'geoportalxyz'
 
 
 # Databsase
@@ -67,6 +67,7 @@ set-var DEFAULT_DB_REPO "~geoportal/geo-db"
 # Misc
 set-var RELOAD_FEATURES_URL "http://api.geoportal-demo.local/features_reload"
 set-var QUIET "false"
+set-var ALIAS_FILE '.aliases'
 ## Make sure SSH_CLIENT is set, even without a SSH connection
 SSH_CLIENT="${SSH_CLIENT:-localhost}"
 
