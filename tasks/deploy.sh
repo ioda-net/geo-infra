@@ -25,8 +25,8 @@ function deploy-portal {
 function _prod-repo-release {
     # Takes one argument, the portal name.
     local portal="$1"; shift;
-
-    local portal_git_repo="prod/${portal}"
+    local infra_dir=$(_get-infra-dir "${portal}")
+    local portal_git_repo="${infra_dir}/prod/${portal}"
 
     # Get the id of the current commits
     local current_mapinfra_commit=$(git rev-parse HEAD 2> /dev/null)
@@ -191,20 +191,27 @@ function tomcat-copy-conf {
 
         local type="$1"; shift
         local alias="$1"; shift
-        local infra_dir=$(_get-infra-dir "${alias}")
-        local portal=$(_get-portal-name-from-alias "${alias}")
-        pushd "${infra_dir}"
-            local mfp_portal_dest="${MFP_APP_FOLDER}/${alias}/"
-            if [[ ! -d "${mfp_portal_dest}" ]]; then
-                mkdir -p "${mfp_portal_dest}"
-            fi
 
-            if [[ -d "${type}/${portal}/print" ]]; then
-                /usr/bin/cp -av "${type}/${portal}/print"/* "${mfp_portal_dest}" > /dev/null
+        local mfp_portal_dest="${MFP_APP_FOLDER}/${alias}/"
+        if [[ ! -d "${mfp_portal_dest}" ]]; then
+            mkdir -p "${mfp_portal_dest}"
+        fi
+
+        if [[ "${type}" == "prod" ]]; then
+            if [[ -d "${infra_dir}/${type}/${alias}/print" ]]; then
+                /usr/bin/cp -av ${type}/${alias}/print/* "${mfp_portal_dest}" > /dev/null
             else
                 /usr/bin/cp -av print/* "${mfp_portal_dest}" > /dev/null
             fi
-        popd
+        else
+            local infra_dir=$(_get-infra-dir "${alias}")
+            local portal=$(_get-portal-name-from-alias "${alias}")
+            if [[ -d "${infra_dir}/${type}/${portal}/print" ]]; then
+                /usr/bin/cp -av "${infra_dir}/${type}/${portal}/print"/* "${mfp_portal_dest}" > /dev/null
+            else
+                /usr/bin/cp -av print/* "${mfp_portal_dest}" > /dev/null
+            fi
+        fi
     fi
 }
 
@@ -213,8 +220,16 @@ HELP['deploy-global-search-conf']="manuel deploy-global-search-conf
 
 Deploy sphinx global configuration."
 function deploy-global-search-conf {
-    generate --type "prod" --search-global
-    _prod-repo-release "search"
+    generate --type "prod" --customer-infra-dir "${PROD_GIT_REPOS_LOCATION}" --search-global
+    pushd "prod/search"
+        local message="release search $(date +"%Y-%m-%d-%H-%M-%S")"
+        if git ci -am "${message}"; then
+            git tag -a -m "${message}" $(date +"%Y-%m-%d-%H-%M-%S")
+            git push
+            git push --tags
+        fi
+    popd
+
     execute-on-prod "cd \"${PROD_GIT_REPOS_LOCATION}/search\" && \
         git reset --hard && \
         git fetch && \

@@ -93,14 +93,18 @@ class GenerateConfig:
         global_config = self._load_config_from_file('config/global.toml')
         self._update_config(self._config, global_config, section_check=False)
 
-        common_config = self._load_config_from_file('_common', prefix=self.infra_dir, must_exists=False)
-        config_section_errors = ConfigSectionErrors(section='common', errors=[])
-        self._update_config(
-            self._config,
-            common_config,
-            section_check=False,
-            errors=config_section_errors.errors)
-        self.errors.append(config_section_errors)
+        # Always load common config from geo-infra to have search.conf_dir
+        common_config = self._load_config_from_file('_common', must_exists=False)
+        self._update_config(self._config, common_config, section_check=False)
+        if self.infra_dir:
+            common_config = self._load_config_from_file('_common', prefix=self.infra_dir, must_exists=False)
+            config_section_errors = ConfigSectionErrors(section='common', errors=[])
+            self._update_config(
+                self._config,
+                common_config,
+                section_check=False,
+                errors=config_section_errors.errors)
+            self.errors.append(config_section_errors)
 
         if self.portal is not None:
             portal_config = self._load_config_from_file(self.portal, portal_file=True, prefix=self.infra_dir)
