@@ -33,17 +33,18 @@ Generate a development version of mapinfra for the targeted portals.
 "
 function dev {
     local portal
+    local alias
     local infra_dir
     local linted_directories=()
-    for portal in "$@"; do
-        infra_dir=$(_get-infra-dir "${portal}")
+    for alias in "$@"; do
+        infra_dir=$(_get-infra-dir "${alias}")
         if [[ ! ("${linted_directories[@]:-}" =~ "${infra_dir}") ]]; then
             echo "Linting JSON and CSV files"
             lint "${infra_dir}"
             linted_directories+=("${infra_dir}")
         fi
-        echo "****** Processing: ${portal} *****"
-        portal=$(_get-portal-name-from-alias "${portal}")
+        echo "****** Processing: ${alias} *****"
+        portal=$(_get-portal-name-from-alias "${alias}")
         generate --type "dev" \
                  --portal "${portal}" \
                  --infra-dir "${infra_dir}" \
@@ -54,7 +55,7 @@ function dev {
                  --print \
                  --search \
                  --copy-img
-        echo "***** Done: ${portal} *****"
+        echo "***** Done: ${alias} *****"
     done
 }
 
@@ -66,27 +67,28 @@ triger a reindex for sphinx, test the map files of each portal and copy tomcat c
 function dev-full {
     local infra_dir
     local portal
+    local alias
 
-    for portal in "$@"; do
-        echo "***** Cleaning ${portal} *****"
-        infra_dir=$(_get-infra-dir "${portal}")
-        portal=$(_get-portal-name-from-alias "${portal}")
+    for alias in "$@"; do
+        echo "***** Cleaning ${alias} *****"
+        infra_dir=$(_get-infra-dir "${alias}")
+        portal=$(_get-portal-name-from-alias "${alias}")
         generate --type "dev" \
                  --portal "${portal}" \
                  --infra-dir "${infra_dir}" \
                  --clean \
                  --verbose
-        echo "***** Done: ${portal} *****"
+        echo "***** Done: ${alias} *****"
     done
 
     dev "$@"
 
-    for portal in "$@"; do
-        echo "***** Building front: ${portal}"
-        front dev "${portal}"
-        tomcat-copy-conf "dev" "${portal}"
-        test-map-files "dev" "${portal}"
-        echo "***** Done: ${portal} *****"
+    for alias in "$@"; do
+        echo "***** Building front: ${alias}"
+        front dev "${alias}"
+        tomcat-copy-conf "dev" "${alias}"
+        test-map-files "dev" "${alias}"
+        echo "***** Done: ${alias} *****"
     done
 
     echo "Reindexing"
