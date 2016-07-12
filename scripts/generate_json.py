@@ -296,7 +296,8 @@ class OwsParser(Generate):
                 'serverLayerName': layer.get('serverLayerName', layer_name),
                 'background': layer.get('background', False),
                 'singleTile': layer.get('singleTile', self.single_tiles_by_default),
-                'ratio': layer.get('ratio', self.default_ratio)
+                'ratio': layer.get('ratio', self.default_ratio),
+                'epsg': layer.get('epsg', None),
             }
             if layer_type == 'wms':
                 self._process_external_wms_layer(layer_config, layer)
