@@ -132,8 +132,8 @@ function _set-portal-type {
         portal_type=dev
         portal="$1"
     else
-        portal_type="$1"
-        portal="$2"
+        portal_type="$1"; shift
+        portal="$1"
     fi
 }
 
@@ -319,3 +319,30 @@ HELP['popd']="Silent version of builtin popd"
 function popd {
     command -p popd > /dev/null
 }
+
+
+HELP['vhost']="manuel vhost [TYPE] PORTAL...
+
+Create the vhost files for the given portals.
+"
+function vhost {
+    local portal_type
+    local portal
+    local infra_dir
+    _set-portal-type "$@"
+
+    for portal in "$@"; do
+        infra_dir=$(_get-infra-dir "${portal}")
+        generate --type "${portal_type}" \
+            --portal "${portal}" \
+            --infra-dir "${infra_dir}" \
+            --verbose \
+            --vhost
+    done
+
+    if sudo /usr/sbin/apachectl -t; then
+        echo 'restarting apache';
+        restart-service apache
+    fi
+}
+

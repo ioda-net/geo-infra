@@ -66,6 +66,7 @@ class GenerateConfig:
             # We don't have to create the dirs for keys associated with geo_front3 (in config.dest)
             if not isinstance(folder, dict) and \
                     not key.startswith('template_') and \
+                    not key == 'vhost' and \
                     not exists(folder):
                 os.makedirs(folder, exist_ok=True)
 

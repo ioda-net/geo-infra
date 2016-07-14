@@ -21,6 +21,7 @@ from generate_print import GeneratePrintConfig
 from generate_search import GenerateSearchConfig
 from generate_utils import Generate
 from generate_config import GenerateConfig
+from generate_vhosts import GenerateVhosts
 
 
 REQUIRE_PORTAL = set((
@@ -32,6 +33,7 @@ REQUIRE_PORTAL = set((
     '--copy-img', '-i',
     '--clean', '-c',
     '--config',
+    '--vhost',
 ))
 REQUIRE_TYPE = set((
     '--search-global',
@@ -118,6 +120,10 @@ def main(args):
     if args.gen_images:
         _verbose('Generate images', args)
         GenerateImages(**kwargs).generate()
+
+    if args.gen_vhosts:
+        _verbose('Generate vhosts', args)
+        GenerateVhosts(**kwargs).generate()
 
 
 def _verbose(task, args):
@@ -235,6 +241,11 @@ if __name__ == "__main__":
         '--config',
         help=_complete_help('Print the configuration on stdin', '--config'),
         dest='config',
+        action='store_true')
+    parser.add_argument(
+        '--vhost',
+        help=_complete_help('Generate the vhosts', '--vhost'),
+        dest='gen_vhosts',
         action='store_true')
 
     args = parser.parse_args()

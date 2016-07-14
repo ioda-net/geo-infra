@@ -16,6 +16,7 @@ search = "{type}/search/"
 output = "{infra_dir}/{type}/{portal}"
 template_search_portal_locations = "{infra_dir}/{type}/{portal}/search/portal-{portal}.conf"
 template_translate_catalog = "{infra_dir}/{type}/{portal}/json/catalog_{{topic}}_{{lang}}.json"
+vhost = '{infra_dir}/{type}/vhosts.d/{portal}.conf'
 
 [dest.geo_front3]
 appcache = '{infra_dir}/prod/{portal}/geoadmin.appcache'
@@ -103,6 +104,7 @@ translation_files = [
     "{infra_dir}/translations/{portal}.csv"
 ]
 translate_ignore = "{infra_dir}/translations/ignore.csv"
+vhost = 'apache/vhost.jinja2.conf'
 
 [src.geo_front3]
 appcache = 'src/geoadmin.nunjucks.appcache'
