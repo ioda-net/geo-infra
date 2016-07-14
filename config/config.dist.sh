@@ -62,6 +62,8 @@ set-var DEFAULT_DB_DUMP_FILE "/tmp/sit_full.backup"
 set-var DEFAULT_DB_API_DUMP_FILE "/tmp/sit_api3.backup"
 set-var DEFAULT_DB_SCHEMA_DUMP_FILE "/tmp/schema.sql"
 set-var DEFAULT_DB_REPO "~geoportal/geo-db"
+set-var DEFAULT_DB_SUPER_USER "root"
+set-var DEFAULT_DB_OWNER "sit_dba"
 
 
 # Misc
