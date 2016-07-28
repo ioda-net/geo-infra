@@ -326,10 +326,15 @@ HELP['vhost']="manuel vhost [TYPE] PORTAL...
 Create the vhost files for the given portals.
 "
 function vhost {
-    local portal_type
+    local portal_type='dev'
     local portal
     local infra_dir
-    _set-portal-type "$@"
+    if [[ "${1:-}" == 'prod' ]]; then
+        portal_type=prod
+        shift
+    elif [[ "${1:-}" == 'dev' ]]; then
+        shift
+    fi
 
     for portal in "$@"; do
         infra_dir=$(_get-infra-dir "${portal}")
