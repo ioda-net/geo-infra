@@ -1,5 +1,8 @@
 import os
-import pytoml
+try:
+    import pytoml as toml
+except ImportError:
+    import toml
 import sys
 
 from collections import namedtuple
@@ -175,7 +178,7 @@ class GenerateConfig:
             self._current_file = cfg_path
 
         with open(cfg_path, 'r') as cfg:
-            return pytoml.load(cfg)
+            return toml.load(cfg)
 
     def _get_config_path(self, cfg_file, type='dist', prefix=''):
         '''Transform a catogory of file like _common into an actual path we can open.
