@@ -54,8 +54,6 @@ class GenerateConfig:
         self.domain = None
         # This variable is used in path where None is not allowed.
         self.infra_dir = infra_dir or ''
-        self._current_base_file = None
-        self._current_file = None
         self._config = {}
         self.errors = []
         self._load_config()
@@ -108,14 +106,13 @@ class GenerateConfig:
         if self.type == 'dev':
             config_types_to_load.append('dev')
 
-        print(config_types_to_load, config_files_to_load)
         for config_type in config_types_to_load:
             for config_file in config_files_to_load:
                 # Always load common config from geo-infra to have search.conf_dir
                 common_config = self._load_config_from_file('_common', config_type, must_exists=False)
                 self._update_config(self._config, common_config, section_check=False)
 
-                portal_file = config_file != '_common'
+                portal_file = config_file != '_common' and config_type not in ('prod', 'dev')
                 section_check = config_type != 'dist'
                 cfg = self._load_config_from_file(
                     config_file,
@@ -159,7 +156,7 @@ class GenerateConfig:
                 cfg = {}
 
         if portal_file:
-            self._check_portal_config_with_portal_template(cfg)
+            self._check_portal_config_with_portal_template(cfg, cfg_file)
 
         return cfg
 
@@ -170,11 +167,6 @@ class GenerateConfig:
             cfg_path = cfg_file
         else:
             cfg_path = self._get_config_path(cfg_file, type=type, prefix=prefix)
-
-        if type == 'dist':
-            self._current_base_file = cfg_path
-        else:
-            self._current_file = cfg_path
 
         with open(cfg_path, 'r') as cfg:
             return toml.load(cfg)
@@ -342,12 +334,7 @@ class GenerateConfig:
                 errors=['{} from {} to {}'.format(src_key, type(dest[src_key]), type(src_value))])
             errors.append(cfg_errors)
 
-    def _new_config_file_errors(self):
-        '''Returns a new ConfigFileErrors instance based on the current file.
-        '''
-        return ConfigFileErrors(base=self._current_base_file, file=self._current_file, errors=[])
-
-    def _check_portal_config_with_portal_template(self, portal_config):
+    def _check_portal_config_with_portal_template(self, portal_config, cfg_file):
         '''Verify that a portal configuration file is coherent with the template.
         '''
         template_config_path = 'config/_template.dist.toml'
@@ -361,7 +348,7 @@ class GenerateConfig:
             template_config = self._load_config_file(custom_template_config_path)
         config_file_errors = ConfigFileErrors(
             base=template_config_path,
-            file=self._get_config_path(self.portal),
+            file=cfg_file,
             errors=[])
         self.errors.append(config_file_errors)
         self._update_config(template_config, portal_config, errors=config_file_errors.errors)
@@ -422,7 +409,6 @@ class GenerateConfig:
 
     def __getitem__(self, key):
         if key not in self._config:
-            print(key)
             return
         return self._config[key]
 
