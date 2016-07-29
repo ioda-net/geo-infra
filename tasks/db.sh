@@ -174,6 +174,17 @@ function db-dev2prod {
 
     # Restore api3 table shortcut and files with -c clean option.
     pg_restore --host "${host}" -U "${owner}" --no-password --dbname "${database}" -c --jobs 2 "${backup_api_file}"
+	# Need to recreate constraints 
+	psql --host "${host}" -U "${owner}" --no-password --dbname "${database}" -c '
+ALTER TABLE api3.files
+  ADD CONSTRAINT pk_file_id PRIMARY KEY(admin_id, file_id);
+ALTER TABLE api3.files
+  ADD CONSTRAINT files_file_id_key UNIQUE(file_id);
+ALTER TABLE api3.files
+  ADD CONSTRAINT files_admin_id_key UNIQUE(admin_id);
+ALTER TABLE api3.url_shortener
+  ADD CONSTRAINT url_shortener_pkey PRIMARY KEY(short_url);
+'
 }
 
 HELP['db-prod-patch']="manuel db-prod-patch [PATCH_FILE [HOST [DATABASE [DB_OWNER]]]]
