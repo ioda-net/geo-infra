@@ -95,31 +95,41 @@ class GenerateConfig:
             - prod (bool)
             - infra_dir: the absolute path to the current customer infra dir
         '''
-        global_config = self._load_config_from_file('config/global.toml')
+        global_config = self._load_config_from_file('config/global.toml', None)
         self._update_config(self._config, global_config, section_check=False)
 
-        # Always load common config from geo-infra to have search.conf_dir
-        common_config = self._load_config_from_file('_common', must_exists=False)
-        self._update_config(self._config, common_config, section_check=False)
+        config_files_to_load = []
         if self.infra_dir:
-            common_config = self._load_config_from_file('_common', prefix=self.infra_dir, must_exists=False)
-            config_section_errors = ConfigSectionErrors(section='common', errors=[])
-            self._update_config(
-                self._config,
-                common_config,
-                section_check=False,
-                errors=config_section_errors.errors)
-            self.errors.append(config_section_errors)
+            config_files_to_load.append('_common')
+        if self.portal:
+            config_files_to_load.append(self.portal)
 
-        if self.portal is not None:
-            portal_config = self._load_config_from_file(self.portal, portal_file=True, prefix=self.infra_dir)
-            config_section_errors = ConfigSectionErrors(section=self.portal, errors=[])
-            self._update_config(
-                self._config,
-                portal_config,
-                section_check=False,
-                errors=config_section_errors.errors)
-            self.errors.append(config_section_errors)
+        config_types_to_load = ['dist', 'prod']
+        if self.type == 'dev':
+            config_types_to_load.append('dev')
+
+        print(config_types_to_load, config_files_to_load)
+        for config_type in config_types_to_load:
+            for config_file in config_files_to_load:
+                # Always load common config from geo-infra to have search.conf_dir
+                common_config = self._load_config_from_file('_common', config_type, must_exists=False)
+                self._update_config(self._config, common_config, section_check=False)
+
+                portal_file = config_file != '_common'
+                section_check = config_type != 'dist'
+                cfg = self._load_config_from_file(
+                    config_file,
+                    config_type,
+                    portal_file=portal_file,
+                    prefix=self.infra_dir,
+                    must_exists=portal_file)
+                config_section_errors = ConfigSectionErrors(section=config_file, errors=[])
+                self._update_config(
+                    self._config,
+                    cfg,
+                    section_check=section_check,
+                    errors=config_section_errors.errors)
+                self.errors.append(config_section_errors)
 
         self._display_errors()
 
@@ -132,7 +142,7 @@ class GenerateConfig:
         # Make output path absolute
         self._config['infra_dir'] = realpath(self.infra_dir)
 
-    def _load_config_from_file(self, cfg_file, portal_file=False, prefix='', must_exists=True):
+    def _load_config_from_file(self, cfg_file, type, portal_file=False, prefix='', must_exists=True):
         '''Load the config file and override keys with those from prod or dev if needed.
 
         Args:
@@ -141,29 +151,17 @@ class GenerateConfig:
                 _template.dist.toml.
         '''
         try:
-            dist = self._load_config_file(cfg_file, prefix=prefix)
+            cfg = self._load_config_file(cfg_file, type, prefix=prefix)
         except FileNotFoundError as e:
             if must_exists:
                 raise e
             else:
-                dist = {}
+                cfg = {}
 
         if portal_file:
-            self._check_portal_config_with_portal_template(dist)
+            self._check_portal_config_with_portal_template(cfg)
 
-        if exists(self._get_config_path(cfg_file, type='prod', prefix=prefix)):
-            prod = self._load_config_file(cfg_file, type='prod', prefix=prefix)
-            config_file_errors = self._new_config_file_errors()
-            self._update_config(dist, prod, errors=config_file_errors.errors)
-            self.errors.append(config_file_errors)
-
-        if self.type == 'dev' and exists(self._get_config_path(cfg_file, type='dev', prefix=prefix)):
-            dev = self._load_config_file(cfg_file, type='dev', prefix=prefix)
-            config_file_errors = self._new_config_file_errors()
-            self._update_config(dist, dev, errors=config_file_errors.errors)
-            self.errors.append(config_file_errors)
-
-        return dist
+        return cfg
 
     def _load_config_file(self, cfg_file, type='dist', prefix=''):
         '''Load the file from the disk and parse it with the toml module.
