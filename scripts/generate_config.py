@@ -51,6 +51,7 @@ class GenerateConfig:
     def __init__(self, type=None, portal=None, infra_dir=None):
         self.type = type
         self.portal = portal
+        self.domain = None
         # This variable is used in path where None is not allowed.
         self.infra_dir = infra_dir or ''
         self._current_base_file = None
@@ -122,6 +123,9 @@ class GenerateConfig:
 
         self._display_errors()
 
+        # We need an object to initialize the recursion.
+        self._format_templates(self._config)
+
         self._config['type'] = self.type
         self._config['portal'] = self.portal
         self._config['prod'] = self.type == 'prod'
@@ -144,20 +148,17 @@ class GenerateConfig:
             else:
                 dist = {}
 
-        self._format_templates(dist)
         if portal_file:
             self._check_portal_config_with_portal_template(dist)
 
         if exists(self._get_config_path(cfg_file, type='prod', prefix=prefix)):
             prod = self._load_config_file(cfg_file, type='prod', prefix=prefix)
-            self._format_templates(prod)
             config_file_errors = self._new_config_file_errors()
             self._update_config(dist, prod, errors=config_file_errors.errors)
             self.errors.append(config_file_errors)
 
         if self.type == 'dev' and exists(self._get_config_path(cfg_file, type='dev', prefix=prefix)):
             dev = self._load_config_file(cfg_file, type='dev', prefix=prefix)
-            self._format_templates(dev)
             config_file_errors = self._new_config_file_errors()
             self._update_config(dist, dev, errors=config_file_errors.errors)
             self.errors.append(config_file_errors)
@@ -203,13 +204,16 @@ class GenerateConfig:
                 self._format_templates(value)
 
     def _format_template(self, location):
-        '''Replace the {type} and {portal} by their value.
+        '''Replace the {type}, {portal}, {domain} by their value.
         '''
+        self.domain = self._config.get('vhost', {}).get('domain', '')
         if isinstance(location, str):
             return location.format(
                 type=self.type,
                 portal=self.portal,
-                infra_dir=self.infra_dir)
+                infra_dir=self.infra_dir,
+                domain=self.domain,
+            )
         else:
             return location
 
@@ -354,6 +358,7 @@ class GenerateConfig:
         custom_template_config_path = path(
             self._config['src']['base_include'],
             'config/_template.dist.toml')
+        custom_template_config_path = self._format_template(custom_template_config_path)
         if exists(custom_template_config_path):
             template_config = self._load_config_file(custom_template_config_path)
         config_file_errors = ConfigFileErrors(
