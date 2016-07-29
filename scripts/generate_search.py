@@ -2,7 +2,7 @@ import os
 import re
 
 from glob import glob
-from os.path import exists, splitext
+from os.path import basename, exists, splitext
 
 from generate_utils import Generate
 
@@ -37,7 +37,7 @@ class GenerateSearchConfig(Generate):
     def _get_langs_tsv_files(self):
         langs = []
         for tsv in glob(self.src['tsv_files']):
-            name, _ = splitext(tsv)
+            name, _ = splitext(basename(tsv))
             _, lang = name.split('_')
             langs.append(lang)
 
