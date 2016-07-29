@@ -96,9 +96,7 @@ class GenerateConfig:
         global_config = self._load_config_from_file('config/global.toml', None)
         self._update_config(self._config, global_config, section_check=False)
 
-        config_files_to_load = []
-        if self.infra_dir:
-            config_files_to_load.append('_common')
+        config_files_to_load = ['_common']
         if self.portal:
             config_files_to_load.append(self.portal)
 
@@ -111,6 +109,8 @@ class GenerateConfig:
                 # Always load common config from geo-infra to have search.conf_dir
                 common_config = self._load_config_from_file('_common', config_type, must_exists=False)
                 self._update_config(self._config, common_config, section_check=False)
+                if not self.infra_dir and config_file == '_common':
+                    continue
 
                 portal_file = config_file != '_common' and config_type not in ('prod', 'dev')
                 section_check = config_type != 'dist'
