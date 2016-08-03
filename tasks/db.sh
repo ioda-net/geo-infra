@@ -37,7 +37,7 @@ EOF
 
 function _db-restore {
     local superuser="$1"
-    local owner="$2"
+    local db_owner="$2"
 
     echo "Restoring ${database}"
     # root superuser is needed to recreate extension
