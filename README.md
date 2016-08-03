@@ -32,8 +32,8 @@ You are now ready to lanch the API with `manuel serve`.
 
 1. Setup the configuration:
    1. Create a symlink in `cgi-bin` to you mapserver executable. It will be used to get the list of available layers from the generated map files.
-   2. `config/config.dist.sh` contains variable used by shell scripts. You can override any value by creating a `config/config.sh` file. To override a value, use the `set-var` function. It will only set the variable if it is not defined in your enviroment.
-   3. The toml files will contains variables used to generate configuration files. You probably want to create a `config/dev/_common.dev.toml` to override the `search.conf_dir`. It must point to the folder that will contains the generated search locations. For developement, the root of the geo-infra repo is a good value. See the note below to learn more about how the configuration system works.
+   2. `config/config.dist.sh` contains variable used by shell scripts. You can override any value by creating a `config/config.sh` file. To override a value, use the `set-var` function. It will only set the variable if it is not defined in your environment.
+   3. The toml files will contain variables used to generate the configuration of a portal. You probably want to create a `config/dev/_common.dev.toml` to override the `search.conf_dir`. It must point to the folder that will contains the generated search locations. For development, the root of the geo-infra repo is a good value. See the note below to learn more about how the configuration system works.
 
 
 The configuration system works as follow: the `global.toml` file is loaded, then `dist/_common.dist.toml`, then `prod/_common.prod.toml` (if present) and if you are using a task for development `dev/_common.dev.toml` is loaded (if present). Then the configuration from the portal infrastructure directory will be loaded following the same pattern. The configuration file named after the portal will be loaded last.
