@@ -46,6 +46,7 @@ env | grep -q 'RSYNC_RSH' || export RSYNC_RSH="ssh -l geo_prod"
 
 # Mapfish print configuration
 set-var MFP_APP_FOLDER "/srv/tomcat/webapps/print/print-apps/"
+set-var MFP_BUILD_BRANCH gf3
 
 
 # Front

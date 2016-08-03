@@ -232,7 +232,7 @@ function build-mfp {
 
     pushd "${path2mf}"
         rm -rf ${output_dir}/*.war
-        git checkout gf3
+        git checkout "${MFP_BUILD_BRANCH}"
 
         for mfp_patch in $patchesdir/mfp-*; do
             patch -p1 < "${mfp_patch}"
