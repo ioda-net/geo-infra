@@ -215,7 +215,7 @@ HELP['reload-features']="manuel reload-features
 Ask the API to reload the features."
 function reload-features {
     local body
-    if ! body=$(curl -f "${RELOAD_FEATURES_URL}" 2> /dev/null); then
+    if ! body=$(curl --netrc -f "${RELOAD_FEATURES_URL}" 2> /dev/null); then
         echo "Reload features failed:" >&2
         echo -e "${body}" >&2
         exit 1
