@@ -121,5 +121,5 @@ template_cache_module = 'src/TemplateCacheModule.nunjucks.js'
 browsers = ['Firefox', 'Chrome']
 
 [test.protractor]
-test_portal_address = 'http://cov.geojb'
+test_portal_address = 'http://localhost'
 generate_coverage_report = true
