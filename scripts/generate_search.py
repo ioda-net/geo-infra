@@ -47,8 +47,6 @@ class GenerateSearchConfig(Generate):
         self.config['search']['customer'] = infra_dir.replace('-infra', '')
         
         portal_name = self.config['geoportal']['name']
-        self.config['search']['name'] = portal_name
-        self._load_alias(infra_dir)
 
         self.render(self.src['search_db'], self.dest['search_portal'], self.config)
         self.render(self.src['search_portal_layers'], self.dest['search_portal'], self.config)
@@ -64,17 +62,6 @@ class GenerateSearchConfig(Generate):
             langs.append(lang)
 
         return langs
-
-    def _load_alias(self, infra_dir):
-        if exists('.aliases'):
-            find_alias_re = self.find_alias_re_template.format(
-                infra=infra_dir,
-                portal=self.config.portal)
-            with open('.aliases', 'r') as alias_file:
-                aliases = alias_file.read()
-            match = re.search(find_alias_re, aliases, re.M)
-            if match:
-                self.config['geoportal']['name'] = match.group(1)
 
     def generate_global(self):
         '''Generate the global configuration for search.
