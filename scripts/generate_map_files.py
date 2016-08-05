@@ -20,6 +20,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 ###############################################################################
 
+import logging
 import os
 import re
 import sys
@@ -55,14 +56,9 @@ class GenerateMapFiles(Generate):
             files_parsed.append(current_file)
 
             if not exists(current_file):
-                print(
-                    '** ERROR in file',
-                    origin,
-                    'include of',
-                    current_file,
-                    'which doen\'t exists',
-                    file=sys.stderr
-                )
+                msg = '** ERROR in file ' + origin + ' include of ' + current_file + \
+                    ' which doen\'t exists.'
+                logging.error(msg)
                 sys.exit(2)
 
             with open(current_file) as map_template:

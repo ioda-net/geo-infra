@@ -22,6 +22,7 @@
 
 import copy
 import csv
+import logging
 import os
 import re
 import requests
@@ -199,8 +200,7 @@ class GenerateHelpConfig(Generate):
                 continue
             img_content = BytesIO(response.content)
             image_name = img.split('/')[-1]
-            if self.verbose:
-                print('Getting : ' + image_name)
+            logging.info('Getting : ' + image_name)
             image_name, _ = splitext(image_name)
             image_name += '.png'
             filename = self.path(images_folder, image_name)

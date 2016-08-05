@@ -25,7 +25,7 @@ try:
     import pytoml as toml
 except ImportError:
     import toml
-import sys
+import logging
 
 from collections import namedtuple
 from os.path import exists, realpath
@@ -398,35 +398,35 @@ class GenerateConfig:
     def _display_config_file_errors(self, config_file_errors):
         '''Display the errors of one config file on stderr.
         '''
-        message = 'ERRORS between the base "{base}" and the file "{file}"'\
+        message = 'Difference between the base "{base}" and the file "{file}"'\
             .format(base=config_file_errors.base, file=config_file_errors.file)
-        print(message, file=sys.stderr)
+        logging.warn(message)
 
         for config_errors in config_file_errors.errors:
             self._display_config_errors(config_errors)
 
-        print('', file=sys.stderr)
+        logging.warn('')
 
     def _display_config_errors(self, config_errors):
         '''Display the errors on stderr'
         '''
         if config_errors.header:
-            print('* {header}'.format(header=config_errors.header), file=sys.stderr)
+            logging.warn('* {header}'.format(header=config_errors.header))
 
         for error in config_errors.errors:
-            print('** ERROR: {error}'.format(error=error), file=sys.stderr)
+            logging.warn('** ERROR: {error}'.format(error=error))
 
     def _display_config_section_errors(self, config_section_errors):
         '''Display the config section errors on stderr.
         '''
-        message = 'ERRORS while merging the file from the "{}" category in the main configuration'\
+        message = 'Difference while merging the file from the "{}" category in the main configuration'\
             .format(config_section_errors.section)
-        print(message, file=sys.stderr)
+        logging.warn(message)
 
         for config_errors in config_section_errors.errors:
             self._display_config_errors(config_errors)
 
-        print('', file=sys.stderr)
+        logging.warn('')
 
     @property
     def config(self):

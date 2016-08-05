@@ -26,6 +26,7 @@
 
 import collections
 import json
+import logging
 import os
 import shutil
 import sys
@@ -151,10 +152,10 @@ class Generate:
         '''
         if errors:
             if header:
-                print('** ' + header, file=sys.stderr)
+                logging.error('** ' + header)
             if isinstance(errors, list):
                 errors = '\n'.join(errors)
-            print(errors, file=sys.stderr)
+            logging.error(errors)
 
     def copy(self, src, dest, copy_dir=True, copy_dir_content=False):
         '''Copy files or directories from one location to another.
@@ -223,7 +224,7 @@ class Generate:
         else:
             message = '*** WARNING: Trying to remove {} which is not under {} or is hidden'\
                 .format(src, self.dest['output'])
-            print(message, file=sys.stderr)
+            logging.warn(message)
 
     def clean(self):
         '''Remove all files and directories in the ouput dir of the portal.

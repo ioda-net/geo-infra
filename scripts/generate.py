@@ -29,6 +29,7 @@ Call this script with the ``--help`` argument for more details.
 
 
 import argparse
+import logging
 import json
 import sys
 
@@ -88,6 +89,13 @@ PORTAL_CHOICES = fill_portal_choices()
 
 
 def main(args):
+    if args.debug:
+        logging.basicConfig(level=logging.DEBUG)
+    elif args.verbose:
+        logging.basicConfig(level=logging.INFO)
+    else:
+        logging.basicConfig(level=logging.WARNING)
+
     config = GenerateConfig(
         portal=args.portal,
         type=args.type,
@@ -103,7 +111,14 @@ def main(args):
     }
 
     if args.config:
-        print(json.dumps(config.config))
+        cfg = json.dumps(
+            config.config,
+            indent=4,
+            sort_keys=True,
+            ensure_ascii=False,
+            separators=(',', ': '))
+        print(cfg)
+        sys.exit(0)
 
     if args.clean:
         _verbose('Clean', args)
@@ -154,17 +169,15 @@ def main(args):
 
 
 def _verbose(task, args):
-    if args.verbose:
-        print(task, end='')
+    msg = task
 
-    if args.verbose and args.type:
-        print(' for type', args.type, end='')
+    if args.type:
+        msg += ' for type ' + args.type
 
-    if args.verbose and args.portal:
-        print(' for portal', args.portal, end='')
+    if args.portal:
+        msg += ' for portal ' + args.portal
 
-    if args.verbose:
-        print()
+    logging.info(msg)
 
 
 def _complete_help(help_message, argument):
@@ -189,10 +202,12 @@ if __name__ == "__main__":
         '-v', '--verbose',
         help='Verbose mode',
         dest='verbose',
-        nargs='?',
-        type=int,
-        const=1,
-        default=0)
+        action='store_true')
+    parser.add_argument(
+        '--debug',
+        help='Debug mode. Print debug messages.',
+        dest='debug',
+        action='store_true')
     parser.add_argument(
         '--no-ssl-verify',
         help='Disable SSL cert validation when fetching content',
@@ -271,7 +286,7 @@ if __name__ == "__main__":
         action='store_true')
     parser.add_argument(
         '--config',
-        help=_complete_help('Print the configuration on stdin', '--config'),
+        help=_complete_help('Print the configuration on stdin and exit', '--config'),
         dest='config',
         action='store_true')
     parser.add_argument(

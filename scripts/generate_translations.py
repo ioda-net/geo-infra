@@ -21,6 +21,7 @@
 ###############################################################################
 
 import csv
+import logging
 
 from io import StringIO
 from urllib.request import urlopen
@@ -82,9 +83,7 @@ class Translator(Generate):
 
     def _process_files(self, delimiter=',', quotechar='"'):
         for filename in self.files:
-            if self.verbose >= 2:
-                print ('Working on : ', filename)
-                print ('___________________________')
+            logging.debug('Working on : ', filename)
 
             csv_file, is_url = self._open_csv_file(filename)
             # file may not exists. In this case, csv_file is None
@@ -104,13 +103,13 @@ class Translator(Generate):
                 resp = urlopen(filename)
                 csv_file = StringIO(resp.read().decode('utf-8'))
             except:
-                print('Could not open {}'.format(filename))
+                logging.warn('Could not open {}'.format(filename))
                 csv_file = None
         else:
             try:
                 csv_file = open(filename, 'r')
             except FileNotFoundError:
-                print('Could not open {}'.format(filename))
+                logging.warn('Could not open {}'.format(filename))
                 csv_file = None
 
         return csv_file, is_url(filename)
