@@ -58,7 +58,7 @@ class GenerateSearchConfig(Generate):
 
     def _get_langs_tsv_files(self):
         langs = []
-        for tsv in glob(self.src['tsv_files']):
+        for tsv in glob(self.src['search_tsv_files']):
             name, _ = splitext(basename(tsv))
             _, lang = name.split('_')
             langs.append(lang)

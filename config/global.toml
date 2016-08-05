@@ -2,20 +2,20 @@
 # portals. Don't edit unless you want to impact all the portals.
 
 [dest]
-translate = "{infra_dir}/{type}/{portal}/locales/"
 help = "{infra_dir}/{type}/{portal}/help/"
-print = "{infra_dir}/{type}/{portal}/print/"
-services = "{infra_dir}/{type}/{portal}/json/"
 help_texts = "{infra_dir}/{type}/{portal}/help/texts/"
 img = "{infra_dir}/{type}/{portal}/img/"
 json = "{infra_dir}/{type}/{portal}/json/"
-search_portal = "{infra_dir}/{type}/{portal}/search/"
-help_images = "{infra_dir}/{type}/{portal}/help/img/"
 map = "{infra_dir}/{type}/{portal}/map/"
-search = "{type}/search/"
+help_images = "{infra_dir}/{type}/{portal}/help/img/"
 output = "{infra_dir}/{type}/{portal}"
+print = "{infra_dir}/{type}/{portal}/print/"
+search = "{type}/search/"
+search_portal = "{infra_dir}/{type}/{portal}/search/"
+services = "{infra_dir}/{type}/{portal}/json/"
 template_search_portal_locations = "{infra_dir}/{type}/{portal}/search/portal-{portal}.conf"
 template_translate_catalog = "{infra_dir}/{type}/{portal}/json/catalog_{{topic}}_{{lang}}.json"
+translate = "{infra_dir}/{type}/{portal}/locales/"
 vhost = '{infra_dir}/{type}/vhosts.d/{portal}.conf'
 
 [dest.geo_front3]
@@ -59,26 +59,11 @@ landscape = 2255
 portrait = 1558
 
 
-[search.origins_to_ranks]
-# this part need to be in sync with geo-api3/config/config.dist.toml
-nomenclatures = 40
-sorted_parcels = 30
-sorted_buildings = 20
-communes = 10
-
-
 [src]
 base_include = "{infra_dir}/"
-map_path = "{type}/{portal}/map/portals/{portal}.map"
-print = "{infra_dir}/print/*.in*"
 external_layers = "{infra_dir}/json/{portal}/external/*.json"
 img = [ "img/*.png", "img/*.gif", "img/*.jpg", "img/*.jpeg", "img/maki",]
-config_base_files = "config/*.toml.dist"
-config_files = "config/*.toml"
-print_logo = "{infra_dir}/print/{portal}/*.*"
-translate_catalog = "{infra_dir}/translations/catalog.csv"
 img_portal = "{infra_dir}/img/{portal}/*"
-topics = "{infra_dir}/json/{portal}/topics/*.json"
 help = "help/*"
 help_common_folder = "{infra_dir}/help/common"
 help_images_folder = "{infra_dir}/help/{portal}/img/"
@@ -87,16 +72,16 @@ help_original_images_folder = "help/img/"
 help_original_texts_folder = "help/texts/"
 help_portal_folder = "{infra_dir}/help/{portal}"
 help_texts_folder = "{infra_dir}/help/{portal}/texts/"
-tomcat = "{type}/{portal}/print"
-search_portal_layers = "search/common/search-layers.in.conf"
-search_portal_locations = "{infra_dir}/search/portal-locations.in.conf"
-config_main_file = "config/geoportal.toml.dist"
-json_files = "{infra_dir}/json/{portal}/**/*.json"
-front_prod = "../geo-front3/prod/{portal}/*"
-config_file = "config/{portal}-{type}.toml"
+map_path = "{type}/{portal}/map/portals/{portal}.map"
+print = "{infra_dir}/print/*.in*"
+print_logo = "{infra_dir}/print/{portal}/*.*"
 search = "search/*.in*"
 search_db = "search/common/db.in.conf"
-tsv_files = "{infra_dir}/{type}/{portal}/search/*.tsv"
+search_portal_layers = "search/common/search-layers.in.conf"
+search_portal_locations = "{infra_dir}/search/portal-locations.in.conf"
+search_tsv_files = "{infra_dir}/{type}/{portal}/search/*.tsv"
+topics = "{infra_dir}/json/{portal}/topics/*.json"
+translate_catalog = "{infra_dir}/translations/catalog.csv"
 translation_files = [
     "https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0",
     "translations/common.csv",
