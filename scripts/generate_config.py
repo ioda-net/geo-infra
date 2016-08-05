@@ -128,9 +128,11 @@ class GenerateConfig:
         if self.portal:
             config_files_to_load.append(self.portal)
 
-        config_types_to_load = ['dist', 'prod']
+        config_types_to_load = ['dist']
         if self.type == 'dev':
             config_types_to_load.append('dev')
+        elif self.type == 'prod':
+            config_types_to_load.append('prod')
 
         for config_type in config_types_to_load:
             for config_file in config_files_to_load:
