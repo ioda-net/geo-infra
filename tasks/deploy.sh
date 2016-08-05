@@ -264,3 +264,88 @@ function deploy-global-search-conf {
         restart-service search && \
         reindex"
 }
+
+
+HELP['reload-apache']="manuel reload-apache
+
+"
+function reload-apache {
+    local prod_cmd="sudo_apache2_reload"
+
+    if type "${prod_cmd}" > /dev/null 2>&1; then
+        "${pord_cmd}"
+    elif sudo /usr/sbin/apachectl -t; then
+        if [[ -e '/usr/lib/systemd/system/httpd.service' ]]; then
+            sudo /usr/bin/systemctl reload httpd.service
+        else
+            sudo /usr/bin/systemctl reload apache2.service
+        fi
+    fi
+}
+
+
+HELP['deploy-vhost']="manuel deploy-vhost [INFRA_DIR]
+
+Deploy the vhost generated in prod/vhost.d to the production server.
+**This doesn't generate the vhost for prod.**
+
+You can specify a specific If INFRA_DIR is not specified, it will loop over "
+function deploy-vhost {
+    local infra_dir="${1:-}"
+    local possible_infra_dir
+    local vhost_dir
+    local repos_to_deploy=()
+    local commit_message
+
+    if [[ -n "${infra_dir}" && -d "${INFRA_DIR}/${infra_dir}/${PROD_VHOST_OUTPUT}" ]]; then
+        repos_to_deploy+=("${INFRA_DIR}/${infra_dir}/${PROD_VHOST_OUTPUT}")
+    elif [[ -d "${INFRA_DIR}/${PROD_VHOST_OUTPUT}" ]]; then
+        repos_to_deploy+=("${INFRA_DIR}/${PROD_VHOST_OUTPUT}")
+    else
+        for possible_infra_dir in $(ls "${INFRA_DIR}"); do
+            if [[ -d "${INFRA_DIR}/${possible_infra_dir}/${PROD_VHOST_OUTPUT}" ]]; then
+                repos_to_deploy+=("${INFRA_DIR}/${possible_infra_dir}/${PROD_VHOST_OUTPUT}")
+            else
+                echo "No vhost to deploy in ${INFRA_DIR}/${possible_infra_dir}"
+            fi
+        done
+    fi
+
+    # Exit now if no vhosts, exit here:
+    if [[ "${#repos_to_deploy[@]}" -eq 0 ]]; then
+        echo "Found no vhosts to deploy."
+        return
+    fi
+
+    for vhost_dir in "${repos_to_deploy[@]}"; do
+        pushd "${vhost_dir}"
+            echo "Deploying vhosts for ${vhost_dir}"
+            _exit-current-dir-not-git-root
+            git add -A .
+            commit_message="Update production vhost $(date +"%Y-%m-%d-%H-%M-%S")
+
+    Added:
+$(git diff --name-only --diff-filter=A --cached)
+
+    Modified:
+$(git diff --name-only --diff-filter=M --cached)"
+            if ! git commit -am "${commit_message}"; then
+                echo "Nothing to commit in $(pwd)"
+                echo "Continuing."
+                continue
+            fi
+            git tag -a -m "Release production vhost $(date +"%Y-%m-%d-%H-%M-%S")" $(date +"%Y-%m-%d-%H-%M-%S")
+
+            git push
+            git push --tags
+            execute-on-prod "cd \"${PROD_GIT_REPOS_LOCATION}/vhosts.d\" && \
+                git reset --hard && \
+                git fetch && \
+                git checkout \$(git tag | sort -nr | head -n 1) && \
+                $(declare -f reload-apache) && \
+                reload-apache"
+            echo "Done"
+        popd
+    done
+}
+

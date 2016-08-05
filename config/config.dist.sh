@@ -50,6 +50,12 @@ set-var RENDER_CMD "./scripts/render.py"
 set-var GENERATE_CMD "./scripts/generate.py"
 
 
+# Path
+## Keep in sync with global.toml#dest.vhost This is used to know where are the vhosts we have to
+## deploy on the production server.
+set-var PROD_VHOST_OUTPUT "prod/vhosts.d"
+
+
 # Where are the git repos on the production server
 set-var PROD_HOST "demo.geoportal.prod"
 set-var PROD_USER "geo_prod"
