@@ -29,7 +29,7 @@ import logging
 import sys
 
 from collections import namedtuple
-from os.path import exists, realpath
+from os.path import basename, exists, realpath
 from urllib.parse import urlparse
 
 from generate_utils import path
@@ -136,9 +136,6 @@ class GenerateConfig:
 
         for config_type in config_types_to_load:
             for config_file in config_files_to_load:
-                # Always load common config from geo-infra to have search.conf_dir
-                common_config = self._load_config_from_file('_common', config_type, must_exists=False)
-                self._update_config(self._config, common_config, section_check=False)
                 if not self.infra_dir and config_file == '_common':
                     continue
 
@@ -377,9 +374,6 @@ class GenerateConfig:
     def _check_portal_config_with_portal_template(self, portal_config, cfg_file):
         '''Verify that a portal configuration file is coherent with the template.
         '''
-        template_config_path = 'config/_template.dist.toml'
-        template_config = self._load_config_file(template_config_path)
-        logging.debug('Loaded template file: ' + template_config_path)
         # Override with client specific template if it exists
         custom_template_config_path = path(
             self._config['src']['base_include'],
@@ -387,11 +381,11 @@ class GenerateConfig:
         custom_template_config_path = self._format_template(custom_template_config_path)
         if exists(custom_template_config_path):
             template_config = self._load_config_file(custom_template_config_path)
-            logging.debug('Loaded template file: ' + custom_template_config_path)
+            logging.debug('Loaded template file: ' + custom_template_config_path + ' (template, values not loaded)')
         else:
-            logging.debug('Template file not found: ' + custom_template_config_path)
+            logging.error('Template file not found: ' + custom_template_config_path)
         config_file_errors = ConfigFileErrors(
-            base=template_config_path,
+            base=custom_template_config_path,
             file=cfg_file,
             errors=[])
         self.errors.append(config_file_errors)
