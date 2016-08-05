@@ -43,9 +43,9 @@ source tasks/lint.sh
 source tasks/utils.sh
 
 
-# Make sure CUSTOMERS_INFRA_DIR does not end with a '/' and is absolute.
-CUSTOMERS_INFRA_DIR="${CUSTOMERS_INFRA_DIR%/}"
-CUSTOMERS_INFRA_DIR=$(realpath "${CUSTOMERS_INFRA_DIR}")
+# Make sure INFRA_DIR does not end with a '/' and is absolute.
+INFRA_DIR="${INFRA_DIR%/}"
+INFRA_DIR=$(realpath "${INFRA_DIR}")
 
 
 

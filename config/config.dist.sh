@@ -101,4 +101,8 @@ SSH_CLIENT="${SSH_CLIENT:-localhost}"
 
 
 # Infra
+# INFRA_DIR can point either to a specific infra directory, for instance:
+# set-var INFRA_DIR "../geoportal-infras/customer-infra"
+# or point to in the folder which contains all the infra directories. For instance:
+# set-var INFRA_DIR ".."
 set-var INFRA_DIR "../"

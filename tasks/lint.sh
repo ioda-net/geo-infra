@@ -26,7 +26,7 @@ HELP['lint']="manuel lint [INFRA_DIR]
 
 Launch lint for all json and csv files and report errors.
 If portal is given, only the files in the portal infra dir will be linted.
-Otherwise, all files in CUSTOMERS_INFRA_DIR are linted."
+Otherwise, all files in INFRA_DIR are linted."
 function lint {
     jsonlint "${1:-}"
     csvlint "${1:-}"
@@ -42,10 +42,10 @@ HELP['jsonlint']="manuel jsonlint [PORTAL]
 
 Launch lint for all json files and report errors.
 If portal is given, only the files in the portal infra dir will be linted.
-Otherwise, all files in CUSTOMERS_INFRA_DIR are linted."
+Otherwise, all files in INFRA_DIR are linted."
 function jsonlint {
     ERRORS=false
-    local lint_dir="${CUSTOMERS_INFRA_DIR}"
+    local lint_dir="${INFRA_DIR}"
     if [[ -n "${1:-}" ]]; then
         lint_dir="$1"
     fi
@@ -65,10 +65,10 @@ HELP['csvlint']="manuel csvlint [PORTAL]
 
 Launch lint for all csv files and report errors.
 If portal is given, only the files in the portal infra dir will be linted.
-Otherwise, all files in CUSTOMERS_INFRA_DIR are linted."
+Otherwise, all files in INFRA_DIR are linted."
 function csvlint {
     ERRORS=false
-    local lint_dir="${CUSTOMERS_INFRA_DIR}"
+    local lint_dir="${INFRA_DIR}"
     if [[ -n "${1:-}" ]]; then
         lint_dir="$1"
     fi

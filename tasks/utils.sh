@@ -49,7 +49,7 @@ Generate the global configuration for sphinx and restart searchd.
 - *type* dev"
 function generate-global-search-conf {
     local portal_type="${1:-dev}"
-    generate --search-global --customer-infra-dir "${CUSTOMERS_INFRA_DIR}" --type "${portal_type}"
+    generate --search-global --customer-infra-dir "${INFRA_DIR}" --type "${portal_type}"
     restart-service "search"
 }
 
@@ -162,6 +162,7 @@ function _set-portal-type {
 
 function _get-infra-dir {
     local portal="$1"; shift
+    local portal_cfg_file="config/dist/${portal}.dist.toml"
     local infra_dir
 
     if [[ -f "${ALIAS_FILE}" ]]; then
@@ -171,15 +172,22 @@ function _get-infra-dir {
         fi
     fi
 
-    if [[ -z "${infra_dir:-}" ]]; then
-        for infra_dir in $(ls "${CUSTOMERS_INFRA_DIR}"); do
-            if [[ -f "${CUSTOMERS_INFRA_DIR}/${infra_dir}/config/dist/${portal}.dist.toml" ]]; then
-                break
+    if [[ -z "${infra_dir:-}" && -f "${INFRA_DIR}/${portal_cfg_file}" ]]; then
+        infra_dir="${INFRA_DIR}"
+    elif [[ -z "${infra_dir:-}" ]]; then
+        for possible_infra_dir in $(ls "${INFRA_DIR}"); do
+            if [[ -f "${INFRA_DIR}/${possible_infra_dir}/${portal_cfg_file}" ]]; then
+                infra_dir="${INFRA_DIR}/${possible_infra_dir}"
             fi
         done
     fi
 
-    echo "${CUSTOMERS_INFRA_DIR}/${infra_dir}"
+    if [[ -z "${infra_dir:-}" ]]; then
+        echo "Failed to find infra_dir for ${portal} in ${INFRA_DIR}" >&2
+        exit 1
+    else
+        echo "${infra_dir}"
+    fi
 }
 
 
