@@ -78,10 +78,12 @@ Fix the right for DATABASE on HOST.
 
 **Default values**
 
-- *host* ${DEFAULT_DB_HOST}
-- *database* ${DEFAULT_DB_NAME}
-- *db_owner* ${DEFAULT_DB_OWNER}"
+- *host* \$DEFAULT_DB_HOST
+- *database* \$DEFAULT_DB_NAME
+- *db_owner* \$DEFAULT_DB_OWNER"
 function db-grant-update {
+    _load-prod-config
+
     local host=${1:-${DEFAULT_DB_HOST}}
     local database=${2:-${DEFAULT_DB_NAME}}
     local owner="${3:-${DEFAULT_DB_OWNER}}"
@@ -96,12 +98,14 @@ Update DATABASE on HOST from BACKUP_FILE.
 
 **Default values**
 
-- *host* ${DEFAULT_DB_HOST}
-- *database* ${DEFAULT_DB_NAME}
-- *backup_file* ${DEFAULT_DB_DUMP_FILE}
-- *db_user_user* ${DEFAULT_DB_SUPER_USER}
-- *db_owner* ${DEFAULT_DB_OWNER}"
+- *host* \$DEFAULT_DB_HOST
+- *database* \$DEFAULT_DB_NAME
+- *backup_file* \$DEFAULT_DB_DUMP_FILE
+- *db_user_user* \$DEFAULT_DB_SUPER_USER
+- *db_owner* \$DEFAULT_DB_OWNER"
 function db-update {
+    _load-prod-config
+
     local host=${1:-${DEFAULT_DB_HOST}}
     local database=${2:-${DEFAULT_DB_NAME}}
     local backup_file="${3:-${DEFAULT_DB_DUMP_FILE}}"
@@ -122,11 +126,13 @@ Dump DATABASE from HOST to BACKUP_FILE.
 
 **Default values**
 
-- *host* ${DEFAULT_DB_SOURCE_HOST}
-- *database* ${DEFAULT_DB_NAME}
-- *backup_file* ${DEFAULT_DB_DUMP_FILE}
-- *db_owner* ${DEFAULT_DB_OWNER}"
+- *host* \$DEFAULT_DB_SOURCE_HOST
+- *database* \$DEFAULT_DB_NAME
+- *backup_file* \$DEFAULT_DB_DUMP_FILE
+- *db_owner* \$DEFAULT_DB_OWNER"
 function db-dump {
+    _load-prod-config
+
     local host=${1:-${DEFAULT_DB_SOURCE_HOST}}
     local database=${2:-${DEFAULT_DB_NAME}}
     local backup_file="${3:-${DEFAULT_DB_DUMP_FILE}}"
@@ -151,8 +157,10 @@ Dump the roles know to a pg HOST to STDIN.
 
 **Default values**
 
-- *host* ${DEFAULT_DB_SOURCE_HOST}"
+- *host* \$DEFAULT_DB_SOURCE_HOST"
 function db-dump-roles {
+    _load-prod-config
+
     local host="${1:-${DEFAULT_DB_SOURCE_HOST}}"
     local superuser="${2:-${DEFAULT_DB_SUPER_USER}}"
     pg_dumpall -h "${host}" -U "${superuser}" --roles-only
@@ -166,13 +174,15 @@ BACKUP_API_FILE.
 
 **Default values**
 
-- *host* ${DEFAULT_DB_PROD_HOST}
-- *database* ${DEFAULT_DB_PROD_NAME}
-- *backup_file* ${DEFAULT_DB_DUMP_FILE}
-- *backup_api_file* ${DEFAULT_DB_API_DUMP_FILE}
-- *db_super_user* ${DEFAULT_DB_SUPER_USER}
-- *db_owner* ${DEFAULT_DB_OWNER}"
+- *host* \$DEFAULT_DB_PROD_HOST
+- *database* \$DEFAULT_DB_PROD_NAME
+- *backup_file* \$DEFAULT_DB_DUMP_FILE
+- *backup_api_file* \$DEFAULT_DB_API_DUMP_FILE
+- *db_super_user* \$DEFAULT_DB_SUPER_USER
+- *db_owner* \$DEFAULT_DB_OWNER"
 function db-dev2prod {
+    _load-prod-config
+
     local host=${1:-${DEFAULT_DB_PROD_HOST}}
     local database=${2:-${DEFAULT_DB_PROD_NAME}}
     local backup_file="${3:-${DEFAULT_DB_DUMP_FILE}}"
@@ -216,11 +226,13 @@ Update the production database with associated patch
 **Default values**
 
 - *patchfile* /var/tmp/patch.sql
-- *host* ${DEFAULT_DB_PROD_HOST}
-- *database* ${DEFAULT_DB_PROD_NAME}
-- *owner* ${DEFAULT_DB_OWNER}
+- *host* \$DEFAULT_DB_PROD_HOST
+- *database* \$DEFAULT_DB_PROD_NAME
+- *owner* \$DEFAULT_DB_OWNER
 "
 function db-prod-patch {
+    _load-prod-config
+
     local patch_file="${1:-/var/tmp/patch.sql}"
     local host=${2:-${DEFAULT_DB_PROD_HOST}}
     local database=${3:-${DEFAULT_DB_PROD_NAME}}
@@ -246,13 +258,15 @@ This task is normally run from cron
 
 **Default values**
 
-- *host* ${DEFAULT_DB_SOURCE_HOST}
-- *database* ${DEFAULT_DB_NAME}
-- *repo* ${DEFAULT_DB_REPO}
-- *dump file* ${DEFAULT_DB_SCHEMA_DUMP_FILE}
-- *db_owner* ${DEFAULT_DB_OWNER}
+- *host* \$DEFAULT_DB_SOURCE_HOST
+- *database* \$DEFAULT_DB_NAME
+- *repo* \$DEFAULT_DB_REPO
+- *dump file* \$DEFAULT_DB_SCHEMA_DUMP_FILE
+- *db_owner* \$DEFAULT_DB_OWNER
 "
 function db-ddl-track {
+    _load-prod-config
+
     local host=${1:-${DEFAULT_DB_SOURCE_HOST}}
     local database=${2:-${DEFAULT_DB_NAME}}
     local repo=${3:-${DEFAULT_DB_REPO}}

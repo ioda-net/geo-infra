@@ -122,9 +122,10 @@ function dev-full {
 HELP['prod']="manuel prod PORTAL1 [PORTAL2 [PORTAL3] …]
 
 Generate a production version of mapinfra and the frontend for targeted portals. To generate even
-with uncommited changes, add the --force option as first parameter."
+with uncommited changes or without changing branch, add the --force option as first parameter.
+
+This task can be launch with portals from different infrastructures if --force is given."
 function prod {
-    echo "Updating test configuration"
     local force
     local portal
     local alias
@@ -135,16 +136,26 @@ function prod {
         shift
     fi
 
-    front build-test-conf
+    # Load config will fail if INFRA_DIR is not a customer infra directory.
+    if [[ -z "${force:-}" ]]; then
+        _load-prod-config
+    fi
+
     for alias in "$@"; do
         infra_dir=$(_get-infra-dir "${alias}")
         portal=$(_get-portal-name-from-alias "${alias}")
         if [[ ! ("${linted_directories[@]:-}" =~ "${infra_dir}") ]]; then
             echo "Linting JSON and CSV files"
-            lint "${infra_dir}"
+            #lint "${infra_dir}"
             linted_directories+=("${infra_dir}")
         fi
+        if [[ -n "${force:-}" ]]; then
+            # If we are in force deploy, we set PROD_GIT_REPOS_LOCATION to infra dir for debug purposes.
+            PROD_GIT_REPOS_LOCATION="${infra_dir}"
+        fi
         echo "***** PROCESSING: ${alias} *****"
+        echo "Updating test configuration"
+        front build-test-conf "${portal}"
         clean 'prod' "${portal}"
         generate --type "prod" \
                  --portal "${portal}" \
@@ -171,6 +182,8 @@ HELP['deploy']="manuel deploy PORTAL1 [PORTAL2 [PORTAL3] …]
 
 Generate a production version of mapinfra and the frontend for targeted portals and deploy it."
 function deploy {
+    _load-prod-config
+
     sync-data
     prod "$@"
 

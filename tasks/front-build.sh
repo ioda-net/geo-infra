@@ -245,7 +245,7 @@ function _watch {
 
 
 function build-mfp {
-    local path2mf="${1:-../forks/mapfish-print}"
+    local path2mf="${1:-${MFP_SOURCE_PATH}}"
     local mapinfra_dir="$(pwd)"
     local patchesdir="${mapinfra_dir}/patches"
     local mapinfra_print_dir="${mapinfra_dir}/print"

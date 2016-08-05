@@ -138,17 +138,17 @@ function _launch-task-in-front-dir {
 function _build-test-conf {
     local tmp=$(mktemp -d)
     # We handle the case of inexisting portal later, no need to print error here.
-    local infra_dir=$(_get-infra-dir "${DEFAULT_PORTAL}" 2> /dev/null)
+    local infra_dir=$(_get-infra-dir "${portal:-${DEFAULT_PORTAL}}" 2> /dev/null)
 
     if [[ -z "${infra_dir:-}" ]]; then
-        echo "${DEFAULT_PORTAL} is not a valid portal. Thus we cannot generate the tests
+        echo "DEFAULT_PORTAL: ${DEFAULT_PORTAL} is not a valid portal. Thus we cannot generate the tests
 configuration correctly. Please use 'set-var' in your config/config.sh to set
 DEFAULT_PORTAL to an existing portal." >&2
         exit 1
     fi
 
     _build-template-cache
-    _build-plugins "dev" ${DEFAULT_PORTAL}
+    _build-plugins "dev" "${portal:-${DEFAULT_PORTAL}}"
     pushd "${FRONT_DIR}"
         cp -r --parent src/js/*.js \
            src/components/**/*.js \
@@ -218,7 +218,9 @@ function _front-prod {
             echo "Uncommited changes in geo-front3. Exiting."
             exit 1
         fi
-        git checkout -q "${PROD_DEPLOY_BRANCH}"
+        if [[ -z "${force:-}" ]]; then
+            git checkout -q "${PROD_DEPLOY_BRANCH}"
+        fi
     popd
 
     _build-plugins "${portal_type}" "${alias}"

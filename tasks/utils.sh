@@ -49,10 +49,18 @@ Generate the global configuration for sphinx and restart searchd.
 - *type* dev"
 function generate-global-search-conf {
     local portal_type="${1:-dev}"
+
+    if [[ "${portal_type}" == 'dev' ]]; then
+        # If we are on dev, we set PROD_GIT_REPOS_LOCATION.
+        PROD_GIT_REPOS_LOCATION="${INFRA_DIR}"
+    else
+        _load-prod-config
+    fi
+
     generate --search-global \
         --customer-infra-dir "${INFRA_DIR}" \
         --type "${portal_type}" \
-        --prod-git-repos-location "${PROD_GIT_REPOS_LOCATION}"
+        --prod-git-repos-location "${PROD_GIT_REPOS_LOCATION:-}"
     restart-service "search"
 }
 
@@ -383,5 +391,22 @@ function vhost {
         echo 'restarting apache';
         restart-service apache
     fi
+}
+
+
+function _load-prod-config {
+    local customer_config_file="${INFRA_DIR}/config/config.dist.sh"
+    local customer_override="${INFRA_DIR}/config/config.sh"
+
+    if [[ ! -f "${customer_config_file}" ]]; then
+        echo "Failed to load production configuration: ${INFRA_DIR}/config.dist.sh doesn't exists." >&2
+        echo "You may want to set INFRA_DIR in config/config.sh or in your environment to a customer infra dir" >&2
+        exit 1
+    fi
+
+    source config/config.dist.sh
+    source config/config.sh 2> /dev/null || echo "INFO: config/config.sh not found"
+    source "${customer_config_file}"
+    source "${customer_override}" || echo "INFO: ${customer_override} not found"
 }
 

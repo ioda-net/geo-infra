@@ -35,7 +35,8 @@ function set-var {
 }
 
 
-# Commands
+# Commands used to build geo-front3. They must be either absolute (or in the PATH) or relative to
+# the geo-front3 directory. Normally, this shouldn't be changed.
 set-var KARMA_CMD "./node_modules/karma/bin/karma"
 set-var PROTRACTOR_CMD 'protractor'
 set-var ISTANBUL_CMD "./node_modules/istanbul/lib/cli.js"
@@ -50,60 +51,35 @@ set-var RENDER_CMD "./scripts/render.py"
 set-var GENERATE_CMD "./scripts/generate.py"
 
 
-# Path
+# Pathes
 ## Keep in sync with global.toml#dest.vhost This is used to know where are the vhosts we have to
 ## deploy on the production server.
 set-var PROD_VHOST_OUTPUT "prod/vhosts.d"
+## Location of geo-front3
+set-var FRONT_DIR '../geo-front3/'
 
 
-# Where are the git repos on the production server
-set-var PROD_HOST "demo.geoportal.prod"
-set-var PROD_USER "geo_prod"
-set-var PROD_GIT_REPOS_LOCATION "~geo_prod/git"
-set-var PROD_BARE_GIT_REPOS_LOCATION "https://git.geoportal.prod/git/"
-set-var PROD_DEPLOY_BRANCH "devel"
-
-
-# Rsync options
-set-var BWL 84000
-set-var DATA_SRC "/var/geoportal/data/"
-set-var DATA_DEST "demo.geoportal.prod:/var/geoportal/data/"
-
-# To execute rsync commands on a remote shell, uncomment the line below
-# Never used set-var
-env | grep -q 'RSYNC_RSH' || export RSYNC_RSH="ssh -l geo_prod"
-
-
-# Mapfish print configuration
+# MapFish Print configuration
+## Where to copy generated MapFish Print applications (directory containing config.yaml, the
+## templates and the images).
 set-var MFP_APP_FOLDER "/srv/tomcat/webapps/print/print-apps/"
+## Where to look for the sources of MapFish Print. Used in 'manuel build-mfp' if no argument is given.
+set-var MFP_SOURCE_PATH "../forks/mapfish-print"
+## The branch to use to build MapFish Print
 set-var MFP_BUILD_BRANCH gf3
 
 
 # Front
-set-var FRONT_DIR '../geo-front3/'
 # DEFAULT_PORTAL is used to generate the test configuration with the proper plugins.
 set-var DEFAULT_PORTAL 'demo'
 
 
-# Databsase
-set-var DEFAULT_DB_NAME "geo_dev"
-set-var DEFAULT_DB_PROD_NAME "geo_prod"
-set-var DEFAULT_DB_HOST "localhost"
-set-var DEFAULT_DB_SOURCE_HOST "db.geoportal.local"
-set-var DEFAULT_DB_PROD_HOST "db.geoportal.prod"
-set-var DEFAULT_DB_DUMP_FILE "/var/tmp/geo_dev_full.backup"
-set-var DEFAULT_DB_API_DUMP_FILE "/var/tmp/geo_prod_api3.backup"
-set-var DEFAULT_DB_SCHEMA_DUMP_FILE "/var/tmp/geo_dev_schema.sql"
-set-var DEFAULT_DB_REPO "~geo_dev/git/geo-db"
-set-var DEFAULT_DB_SUPER_USER "root"
-set-var DEFAULT_DB_OWNER "geo_dba"
-
-
 # Misc
-set-var RELOAD_FEATURES_URL "http://demo.geoportal.local/api/features_reload"
+## If "true", some commands will be less verbose.
 set-var QUIET "false"
+## Where to search for aliases.
 set-var ALIAS_FILE '.aliases'
-## Make sure SSH_CLIENT is set, even without a SSH connection
+## Make sure SSH_CLIENT is set, even without a SSH connection.
 SSH_CLIENT="${SSH_CLIENT:-localhost}"
 
 
