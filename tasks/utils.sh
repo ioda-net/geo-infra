@@ -183,7 +183,7 @@ function _get-infra-dir {
     fi
 
     if [[ -z "${infra_dir:-}" ]]; then
-        echo "Failed to find infra_dir for ${portal} in ${INFRA_DIR}" >&2
+        echo "ERROR: Failed to find infra_dir for ${portal} in ${INFRA_DIR}" >&2
         exit 1
     else
         echo "${infra_dir}"
