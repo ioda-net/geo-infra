@@ -71,12 +71,13 @@ class GenerateConfig:
         'front.default_values': set(['wms_list', 'wmts_list']),
     }
 
-    def __init__(self, type=None, portal=None, infra_dir=None):
+    def __init__(self, type=None, portal=None, infra_dir=None, prod_git_repos_location=None):
         self.type = type
         self.portal = portal
         self.domain = None
         # This variable is used in path where None is not allowed.
         self.infra_dir = infra_dir or ''
+        self.prod_git_repos_location = prod_git_repos_location or ''
         self._config = {}
         self.errors = []
         self._load_config()
@@ -117,6 +118,7 @@ class GenerateConfig:
             - infra_dir: the absolute path to the current customer infra dir
             - mapserver_ows_host: the host of mapserver (used to generate the print configuration).
               **Only is portal is not None.**
+            - prod_git_repos_location: location of the productions git repositories on the server.
         '''
         global_config = self._load_config_from_file('config/global.toml', None)
         self._update_config(self._config, global_config, section_check=False)
@@ -167,6 +169,7 @@ class GenerateConfig:
             self._config['mapserver_ows_host'] = urlparse(self._config['mapserver']['PORTAL_BASE_OWS']).hostname
         # Make output path absolute
         self._config['infra_dir'] = realpath(self.infra_dir)
+        self._config['prod_git_repos_location'] = self.prod_git_repos_location
 
     def _load_config_from_file(self, cfg_file, type, portal_file=False, prefix='', must_exists=True):
         '''Load the config file and override keys with those from prod or dev if needed.

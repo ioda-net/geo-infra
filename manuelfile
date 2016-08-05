@@ -149,6 +149,7 @@ function prod {
         generate --type "prod" \
                  --portal "${portal}" \
                  --infra-dir "${infra_dir}" \
+                 --prod-git-repos-location "${PROD_GIT_REPOS_LOCATION}" \
                  --verbose \
                  --clean \
                  --map \

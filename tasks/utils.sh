@@ -49,7 +49,10 @@ Generate the global configuration for sphinx and restart searchd.
 - *type* dev"
 function generate-global-search-conf {
     local portal_type="${1:-dev}"
-    generate --search-global --customer-infra-dir "${INFRA_DIR}" --type "${portal_type}"
+    generate --search-global \
+        --customer-infra-dir "${INFRA_DIR}" \
+        --type "${portal_type}" \
+        --prod-git-repos-location "${PROD_GIT_REPOS_LOCATION}"
     restart-service "search"
 }
 
@@ -371,6 +374,7 @@ function vhost {
         generate --type "${portal_type}" \
             --portal "${portal}" \
             --infra-dir "${infra_dir}" \
+            --prod-git-repos-location "${PROD_GIT_REPOS_LOCATION:-}" \
             --verbose \
             --vhost
     done

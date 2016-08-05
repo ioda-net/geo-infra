@@ -88,7 +88,12 @@ PORTAL_CHOICES = fill_portal_choices()
 
 
 def main(args):
-    config = GenerateConfig(portal=args.portal, type=args.type, infra_dir=args.infra_dir)
+    config = GenerateConfig(
+        portal=args.portal,
+        type=args.type,
+        infra_dir=args.infra_dir,
+        prod_git_repos_location=args.prod_git_repos_location,
+    )
     kwargs = {
         'type': args.type,
         'portal': args.portal,
@@ -249,6 +254,11 @@ if __name__ == "__main__":
         help='Directory containing all the customer infrastructures.',
         dest='customer_infra_dir',
         required=search_global_required)
+    parser.add_argument(
+        '--prod-git-repos-location',
+        help='Location of the productions git repositories on the server. This is used to '
+             'generate production vhost and search.',
+        dest='prod_git_repos_location')
     parser.add_argument(
         '--copy-img', '-i',
         help=_complete_help('Copy the images.', '--copy-img'),

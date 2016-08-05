@@ -242,7 +242,10 @@ HELP['deploy-global-search-conf']="manuel deploy-global-search-conf
 
 Deploy sphinx global configuration."
 function deploy-global-search-conf {
-    generate --type "prod" --customer-infra-dir "${PROD_GIT_REPOS_LOCATION}" --search-global
+    generate --type "prod" \
+        --customer-infra-dir "${PROD_GIT_REPOS_LOCATION}" \
+        --prod-git-repos-location "${PROD_GIT_REPOS_LOCATION}" \
+        --search-global
     pushd "prod/search"
         local message="release search $(date +"%Y-%m-%d-%H-%M-%S")"
         if git ci -am "${message}"; then
