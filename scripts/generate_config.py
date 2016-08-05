@@ -29,6 +29,7 @@ import sys
 
 from collections import namedtuple
 from os.path import exists, realpath
+from urllib.parse import urlparse
 
 from generate_utils import path
 
@@ -114,6 +115,7 @@ class GenerateConfig:
             - portal
             - prod (bool)
             - infra_dir: the absolute path to the current customer infra dir
+            - mapserver_ows_host: the host of mapserver (used to generate the print configuration)
         '''
         global_config = self._load_config_from_file('config/global.toml', None)
         self._update_config(self._config, global_config, section_check=False)
@@ -158,6 +160,7 @@ class GenerateConfig:
         self._config['type'] = self.type
         self._config['portal'] = self.portal
         self._config['prod'] = self.type == 'prod'
+        self._config['mapserver_ows_host'] = urlparse(self._config['mapserver']['PORTAL_BASE_OWS']).hostname
         # Make output path absolute
         self._config['infra_dir'] = realpath(self.infra_dir)
 
