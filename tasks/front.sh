@@ -137,7 +137,15 @@ function _launch-task-in-front-dir {
 
 function _build-test-conf {
     local tmp=$(mktemp -d)
-    local infra_dir=$(_get-infra-dir "${DEFAULT_PORTAL}")
+    # We handle the case of inexisting portal later, no need to print error here.
+    local infra_dir=$(_get-infra-dir "${DEFAULT_PORTAL}" 2> /dev/null)
+
+    if [[ -z "${infra_dir:-}" ]]; then
+        echo "${DEFAULT_PORTAL} is not a valid portal. Thus we cannot generate the tests
+configuration correctly. Please use 'set-var' in your config/config.sh to set
+DEFAULT_PORTAL to an existing portal." >&2
+        exit 1
+    fi
 
     _build-template-cache
     _build-plugins "dev" ${DEFAULT_PORTAL}

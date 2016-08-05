@@ -75,6 +75,7 @@ set-var MFP_BUILD_BRANCH gf3
 
 # Front
 set-var FRONT_DIR '../geo-front3/'
+# DEFAULT_PORTAL is used to generate the test configuration with the proper plugins.
 set-var DEFAULT_PORTAL 'demo'
 
 
