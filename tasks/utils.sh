@@ -367,7 +367,7 @@ function vhost {
             --vhost
     done
 
-    if sudo /usr/sbin/apachectl -t; then
+    if [[ "${portal_type}" == "dev" ]] && sudo /usr/sbin/apachectl -t; then
         echo 'restarting apache';
         restart-service apache
     fi
