@@ -43,8 +43,6 @@ class GenerateSearchConfig(Generate):
         '''Generate the search configuration for one portal.
         '''
         self.config['search']['langs'] = self._get_langs_tsv_files()
-        infra_dir = self.config['infra_dir'].split('/')[-1]
-        self.config['search']['customer'] = infra_dir.replace('-infra', '')
         
         portal_name = self.config['geoportal']['name']
 
