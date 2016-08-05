@@ -55,16 +55,18 @@ REQUIRE_PORTAL = set((
     '--search', '-s',
     '--copy-img', '-i',
     '--clean', '-c',
-    '--config',
     '--vhost',
 ))
 REQUIRE_TYPE = set((
     '--search-global',
+    '--config',
 ))
 REQUIRE_TYPE.update(REQUIRE_PORTAL)
-REQUIRE_INFRA_DIR = set(REQUIRE_PORTAL)
+REQUIRE_INFRA_DIR = set((
+    '--search-global',
+))
+REQUIRE_INFRA_DIR.update(REQUIRE_PORTAL)
 REQUIRE_SEARCH_GOLBAL = set((
-    '--customer-infra-dir',
     '--search-global',
 ))
 
@@ -157,7 +159,7 @@ def main(args):
             search_generator.generate()
         if args.gen_search_global:
             _verbose('Generate global search config', args)
-            search_generator.generate_global(args.customer_infra_dir)
+            search_generator.generate_global()
 
     if args.gen_images:
         _verbose('Generate images', args)
@@ -264,11 +266,6 @@ if __name__ == "__main__":
         help=_complete_help('Generate global search configuration.', '--search-global'),
         dest='gen_search_global',
         action='store_true')
-    parser.add_argument(
-        '--customer-infra-dir',
-        help='Directory containing all the customer infrastructures.',
-        dest='customer_infra_dir',
-        required=search_global_required)
     parser.add_argument(
         '--prod-git-repos-location',
         help='Location of the productions git repositories on the server. This is used to '

@@ -117,6 +117,7 @@ class GenerateConfig:
             - portal
             - prod (bool)
             - infra_dir: the absolute path to the current customer infra dir
+            - infra_name: the base name of infra dir, eg customer-infra
             - mapserver_ows_host: the host of mapserver (used to generate the print configuration).
               **Only is portal is not None.**
             - prod_git_repos_location: location of the productions git repositories on the server.
@@ -169,6 +170,7 @@ class GenerateConfig:
             self._config['mapserver_ows_host'] = urlparse(self._config['mapserver']['PORTAL_BASE_OWS']).hostname
         # Make output path absolute
         self._config['infra_dir'] = realpath(self.infra_dir)
+        self._config['infra_name'] = basename(self._config['infra_dir'])
         self._config['prod_git_repos_location'] = self.prod_git_repos_location
 
     def _load_config_from_file(self, cfg_file, type, portal_file=False, prefix='', must_exists=True):

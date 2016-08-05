@@ -40,28 +40,45 @@ function render {
 }
 
 
-HELP['generate-global-search-conf']="manuel generate-global-search-conf [TYPE]
+HELP['generate-global-search-conf']="manuel generate-global-search-conf [TYPE] [INFRA_DIR]
 
-Generate the global configuration for sphinx and restart searchd.
+Generate the global configuration for sphinx and restart searchd (if type is 'dev').
 
 **Default values**
 
-- *type* dev"
+- *type* dev
+- *infra_dir* \$INFRA_DIR"
 function generate-global-search-conf {
-    local portal_type="${1:-dev}"
+    local portal_type="dev"
+    local infra_dir
 
-    if [[ "${portal_type}" == 'dev' ]]; then
+    if [[ "${1:-}" == 'prod' ]]; then
+        portal_type=prod
+        shift
+        _load-prod-config
+    elif [[ "${1:-}" == 'dev' ]]; then
+        shift
         # If we are on dev, we set PROD_GIT_REPOS_LOCATION.
         PROD_GIT_REPOS_LOCATION="${INFRA_DIR}"
+    fi
+
+    if [[ -d "${INFRA_DIR}/config/dist/_common.dist.toml" ]]; then
+        infra_dir="${INFRA_DIR}"
+    elif [[ -n "${1:-}" ]]; then
+        infra_dir="${INFRA_DIR}/$1"
     else
-        _load-prod-config
+        echo "You must specify an infra directory as an argument or set INFRA_DIR to a customer infra dir" >&2
+        exit 1
     fi
 
     generate --search-global \
-        --customer-infra-dir "${INFRA_DIR}" \
+        --infra-dir "${infra_dir}" \
         --type "${portal_type}" \
         --prod-git-repos-location "${PROD_GIT_REPOS_LOCATION:-}"
-    restart-service "search"
+
+    if [[ "${portal_type}" == 'dev' ]]; then
+        restart-service "search"
+    fi
 }
 
 

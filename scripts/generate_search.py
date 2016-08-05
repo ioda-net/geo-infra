@@ -76,10 +76,9 @@ class GenerateSearchConfig(Generate):
             if match:
                 self.config['geoportal']['name'] = match.group(1)
 
-    def generate_global(self, customer_infra_dir):
+    def generate_global(self):
         '''Generate the global configuration for search.
         '''
         os.makedirs(self.dest['search'], exist_ok=True)
-        self.config['search']['customer_infra_dir'] = customer_infra_dir
         for template in glob(self.src['search']):
             self.render(template, self.dest['search'], self.config)
