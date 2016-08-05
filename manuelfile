@@ -247,3 +247,29 @@ Generate the configuration for units tests (dev and prod). This is equivalent to
 function generate-tests-conf {
     front build-test-conf
 }
+
+
+HELP['config']="manuel config [TYPE] PORTAL
+
+Print the configuration for the given type and portal. It will also print the config files that
+are parsed in the order they are parsed. To only get the config, redirect error output to /dev/null.
+To discard the config, redirect the standard output to /dev/null.
+
+If you have jq installed, you can get any section from the JSON like that:
+manuel config geojb 2> /dev/null | jq '.mapserver'
+
+**Default values**
+
+- *type* dev"
+function config {
+    local portal
+    local portal_type
+    _set-portal-type "$@"
+
+    generate --type "${portal_type}" \
+        --portal "${portal}" \
+        --infra-dir $(_get-infra-dir "${portal}") \
+        --config \
+        --debug
+}
+

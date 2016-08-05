@@ -26,6 +26,7 @@ try:
 except ImportError:
     import toml
 import logging
+import sys
 
 from collections import namedtuple
 from os.path import exists, realpath
@@ -179,11 +180,20 @@ class GenerateConfig:
             protal_file (bool): if true, the config file will be checked against
                 _template.dist.toml.
         '''
+        if exists(cfg_file):
+            cfg_path = cfg_file
+        else:
+            cfg_path = self._get_config_path(cfg_file, type=type, prefix=prefix)
+
         try:
-            cfg = self._load_config_file(cfg_file, type, prefix=prefix)
+            cfg = self._load_config_file(cfg_path, type, prefix=prefix)
+            logging.debug('Loaded config file: ' + cfg_path)
         except FileNotFoundError as e:
+            logging.debug('Config file not found: ' + cfg_path)
             if must_exists:
-                raise e
+                logging.error('Config file must exist: ' + cfg_path)
+                logging.error('Exiting')
+                sys.exit(1)
             else:
                 cfg = {}
 
@@ -192,13 +202,9 @@ class GenerateConfig:
 
         return cfg
 
-    def _load_config_file(self, cfg_file, type='dist', prefix=''):
+    def _load_config_file(self, cfg_path, type='dist', prefix=''):
         '''Load the file from the disk and parse it with the toml module.
         '''
-        if exists(cfg_file):
-            cfg_path = cfg_file
-        else:
-            cfg_path = self._get_config_path(cfg_file, type=type, prefix=prefix)
 
         with open(cfg_path, 'r') as cfg:
             return toml.load(cfg)
@@ -371,6 +377,7 @@ class GenerateConfig:
         '''
         template_config_path = 'config/_template.dist.toml'
         template_config = self._load_config_file(template_config_path)
+        logging.debug('Loaded template file: ' + template_config_path)
         # Override with client specific template if it exists
         custom_template_config_path = path(
             self._config['src']['base_include'],
@@ -378,6 +385,9 @@ class GenerateConfig:
         custom_template_config_path = self._format_template(custom_template_config_path)
         if exists(custom_template_config_path):
             template_config = self._load_config_file(custom_template_config_path)
+            logging.debug('Loaded template file: ' + custom_template_config_path)
+        else:
+            logging.debug('Template file not found: ' + custom_template_config_path)
         config_file_errors = ConfigFileErrors(
             base=template_config_path,
             file=cfg_file,
