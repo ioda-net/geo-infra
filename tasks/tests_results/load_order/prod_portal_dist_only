@@ -1,0 +1,6 @@
+DEBUG:root:Loaded config file: config/global.toml
+DEBUG:root:Loaded config file: @INFRA_DIR@/config/dist/_common.dist.toml
+DEBUG:root:Loaded config file: @INFRA_DIR@/config/dist/demo.dist.toml
+DEBUG:root:Loaded template file: @INFRA_DIR@/config/_template.dist.toml (template, values not loaded)
+DEBUG:root:Config file not found: @INFRA_DIR@/config/prod/_common.prod.toml
+DEBUG:root:Config file not found: @INFRA_DIR@/config/prod/demo.prod.toml

@@ -14,10 +14,6 @@ function test-config-generation {
     local dist_types=(true false)
     local portal_types=(true false)
     local generate_config_cmd
-    local global_dist_file="config/global.toml"
-    local common_dist_file
-    local portal_dist_file
-    local template_dist_file
     local common_file
     local portal_file
 
@@ -31,9 +27,12 @@ function test-config-generation {
         exit 1
     fi
 
-    common_dist_file="${infra_dir}/config/dist/_common.dist.toml"
-    portal_dist_file="${infra_dir}/config/dist/demo.dist.toml"
-    template_dist_file="${infra_dir}/config/_template.dist.toml"
+    # Correct results
+    pushd "${TEST_CFG_LOAD_ORDER_RESULTS_DIR}"
+        for result_file in *; do
+            sed -i "s#@INFRA_DIR@#${infra_dir}#g" "${result_file}"
+        done
+    popd
 
     echo "---- Testing configuration ----"
     for type in "${types[@]}"; do
@@ -66,6 +65,9 @@ function test-config-generation {
         done
     done
 
+    # Revert results files
+    git checkout "${TEST_CFG_LOAD_ORDER_RESULTS_DIR}"
+
     if "${errors}"; then
         echo "FAILED" >&2
         exit 1
@@ -76,75 +78,22 @@ function test-config-generation {
 
 
 function _test-config-loaded-files {
-    # portal_file, portal_dist_file, common_dist_file, global_dist_file, common_file,
-    # error_output, dist_only, with_portal and errors must be set.
-    local n=1
+    local result_file_name="${type}"
+    local diff_output
 
-    # Test global.toml
-    grep -q "Loaded config file: ${global_dist_file}$" <<< $(cut -f$n -d$'\n' "${error_output}") || {
-        echo "FAILURE: ${global_dist_file} not loaded" >&2
-        errors=true
-    }
-    let "n++"
-
-    # Test common.dist.toml
-    grep -q "Loaded config file: ${common_dist_file}$" <<< $(cut -f$n -d$'\n' "${error_output}") || {
-        echo "FAILURE: ${common_dist_file} not loaded" >&2
-        errors=true
-    }
-    let "n++"
-
-    # Test portal.dist.toml
     if "${with_portal}"; then
-        grep -q "Loaded config file: ${portal_dist_file}$" <<< $(cut -f$n -d$'\n' "${error_output}") || {
-            echo "FAILURE: ${portal_dist_file} not loaded" >&2
-            errors=true
-        }
-        let "n++"
-
-        grep -q "Loaded template file: ${template_dist_file} (template, values not loaded)$" <<< $(cut -f$n -d$'\n' "${error_output}") || {
-            echo "FAILURE: ${template_dist_file} not loaded" >&2
-            errors=true
-        }
-        let "n++"
-    fi
-
-    # Test common.type.toml
-    if "${dist_only}"; then
-        grep -q "Config file not found: ${common_file}$" <<< $(cut -f$n -d$'\n' "${error_output}") || {
-            echo "FAILURE: ${common_file} was loaded. Expected not found." >&2
-            errors=true
-        }
+        result_file_name="${result_file_name}_portal"
     else
-        grep -q "Loaded config file: ${common_file}$" <<< $(cut -f$n -d$'\n' "${error_output}") || {
-            echo "FAILURE: ${common_file} not loaded" >&2
-            errors=true
-        }
-    fi
-    let "n++"
-
-    # Test portal.type.toml
-    if "${with_portal}"; then
-        if "${dist_only}"; then
-            grep -q "Config file not found: ${portal_file}$" <<< $(cut -f$n -d$'\n' "${error_output}") || {
-                echo "FAILURE: ${portal_file}$ was loaded. Expected not found." >&2
-                errors=true
-            }
-        else
-            grep -q "Loaded config file: ${portal_file}$" <<< $(cut -f$n -d$'\n' "${error_output}") || {
-                echo "FAILURE: ${portal_file} not loaded" >&2
-                errors=true
-            }
-        fi
-        let "n++"
+        result_file_name="${result_file_name}_no_portal"
     fi
 
-    # Since we increment n after each test, it should be higher than the number of lines.
-    # We correct this.
-    let "n--"
-    local number_lines=$(cat "${error_output}" | wc -l)
-    if [[ "$n" -ne "${number_lines}" ]]; then
-        echo "FAILURE: untested lines in ${error_output}. Stopped at ${n}/${number_lines}." >&2
+    if "${dist_only}"; then
+        result_file_name="${result_file_name}_dist_only"
+    fi
+
+    if ! cmp -s "${error_output}" "${TEST_CFG_LOAD_ORDER_RESULTS_DIR}/${result_file_name}"; then
+        echo "FAILURE:" >&2
+        diff -u "${error_output}" "${TEST_CFG_LOAD_ORDER_RESULTS_DIR}/${result_file_name}" >&2 || :
         errors=true
     fi
 }
