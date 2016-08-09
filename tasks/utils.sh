@@ -189,6 +189,7 @@ function _set-portal-type {
 
 
 function _get-infra-dir {
+    # Find the infrastructure directory from a portal name.
     local portal="$1"; shift
     local portal_cfg_file="config/dist/${portal}.dist.toml"
     local infra_dir
