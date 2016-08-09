@@ -459,6 +459,9 @@ function vhost {
 
 
 function _load-prod-config {
+    # When deploying on prod, we must do sync-data once. In order for that to work,
+    # we need to have SRC_DATA and DEST_DATA defined once. Hence the hard requirement
+    # on INFRA_DIR.
     local customer_config_file="${INFRA_DIR}/config/config.dist.sh"
     local customer_override="${INFRA_DIR}/config/config.sh"
 
@@ -468,9 +471,28 @@ function _load-prod-config {
         exit 1
     fi
 
+    _load-customer-config
+}
+
+
+function _load-dev-config {
+    local infra_dir=$(_get-infra-dir "${1}")
+    local customer_override="${infra_dir}/config/config.dist.sh"
+    local customer_config_file="${infra_dir}/config/config.sh"
+
+    _load-customer-config
+}
+
+
+function _load-customer-config {
+    # customer_config_file and customer_override must be set
     source config/config.dist.sh
     source config/config.sh 2> /dev/null || echo "INFO: config/config.sh not found"
     source "${customer_config_file}"
     source "${customer_override}" || echo "INFO: ${customer_override} not found"
+
+    # Make sure INFRA_DIR does not end with a '/' and is absolute.
+    INFRA_DIR="${INFRA_DIR%/}"
+    INFRA_DIR=$(realpath "${INFRA_DIR}")
 }
 

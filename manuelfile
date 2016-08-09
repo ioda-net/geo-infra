@@ -61,6 +61,7 @@ function dev {
     local linted_directories=()
     for alias in "$@"; do
         infra_dir=$(_get-infra-dir "${alias}")
+        _load-dev-config "${alias}"
         if [[ ! ("${linted_directories[@]:-}" =~ "${infra_dir}") ]]; then
             echo "Linting JSON and CSV files"
             lint "${infra_dir}"
@@ -96,6 +97,7 @@ function dev-full {
         echo "***** Cleaning ${alias} *****"
         infra_dir=$(_get-infra-dir "${alias}")
         portal=$(_get-portal-name-from-alias "${alias}")
+        _load-dev-config "${alias}"
         generate --type "dev" \
                  --portal "${portal}" \
                  --infra-dir "${infra_dir}" \
@@ -108,6 +110,7 @@ function dev-full {
 
     for alias in "$@"; do
         echo "***** Building front: ${alias}"
+        _load-dev-config "${alias}"
         front dev "${alias}"
         tomcat-copy-conf "dev" "${alias}"
         test-map-files "dev" "${alias}"
@@ -137,7 +140,8 @@ function prod {
         shift
     fi
 
-    # Load config will fail if INFRA_DIR is not a customer infra directory.
+    # Load config will fail if INFRA_DIR is not a customer infra directory. Prevent that if we
+    # force.
     if [[ -z "${force:-}" ]]; then
         _load-prod-config
     fi
