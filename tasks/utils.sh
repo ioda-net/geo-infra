@@ -436,6 +436,7 @@ function vhost {
     local infra_dir
     if [[ "${1:-}" == 'prod' ]]; then
         portal_type=prod
+        _load-prod-config
         shift
     elif [[ "${1:-}" == 'dev' ]]; then
         shift
