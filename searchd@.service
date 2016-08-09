@@ -1,0 +1,18 @@
+# searchd instance for each customer infra
+# Put this file in /etc/systemd/system/ and then reload systemd daemons with
+# systemctl daemon-reload.
+# Symlink the configuration for an infra with ln -s <infra-dir>/<type>/search/sphinx.conf /etc/sphinx/<infra-name>.conf
+# You can then start an instance with: systemctl searchd@<infra-name>.service.
+
+[Unit]
+Description=Sphinx - SQL Full Text Search Engine %i
+After=local-fs.target network.target mysqld.service
+
+[Service]
+User=sphinx
+Type=forking
+PIDFile=/run/sphinx/searchd-%i.pid
+ExecStart=/usr/bin/searchd --config /etc/sphinx/%i.conf
+
+[Install]
+WantedBy=multi-user.target

@@ -62,7 +62,7 @@ function generate-global-search-conf {
         PROD_GIT_REPOS_LOCATION="${INFRA_DIR}"
     fi
 
-    if [[ -d "${INFRA_DIR}/config/dist/_common.dist.toml" ]]; then
+    if [[ -f "${INFRA_DIR}/config/dist/_common.dist.toml" ]]; then
         infra_dir="${INFRA_DIR}"
     elif [[ -n "${1:-}" ]]; then
         infra_dir="${INFRA_DIR}/$1"
@@ -77,22 +77,34 @@ function generate-global-search-conf {
         --prod-git-repos-location "${PROD_GIT_REPOS_LOCATION:-}"
 
     if [[ "${portal_type}" == 'dev' ]]; then
-        restart-service "search"
+        restart-service "search" "$@"
     fi
 }
 
 
-HELP['restart-service']="manuel restart-service SERVICE
+HELP['restart-service']="manuel restart-service SERVICE [INFRAS]
 
-Restart the specified service."
+Restart the specified service.
+
+If the service is infrastructure specific, you can pass the list of infras for which it must be restarted."
 function restart-service {
     local prod_cmd="sudo_$1_restart"
+    local infra_names=()
     if type "${prod_cmd}"  > /dev/null 2>&1; then
         "${prod_cmd}"
     else
         case "$1" in
             apache|apache2|httpd)
                 _restart-apache
+                ;;
+            "search"|"searchd"|"sphinx")
+                # $1 is the service name. After shift we have the infra names in \$@.
+                shift
+                _get-infra-names "$@"
+
+                for infra_name in "${infra_names[@]}"; do
+                    sudo /usr/bin/systemctl restart "searchd@${infra_name}.service"
+                done
                 ;;
             *)
                 if [[ -e "/usr/lib/systemd/system/$1.service" ]]; then
@@ -118,29 +130,63 @@ function _restart-apache {
 }
 
 
-HELP['reindex']="manuel reindex
+HELP['reindex']="manuel reindex [INFRA_DIR]
 
 Launch a full reindexation of sphinx."
 function reindex {
+    local infra_names=()
+
     while ps aux | grep /usr/bin/indexer | grep -vq grep; do
         echo "WARNING: reindex already in progress. Waiting."
         sleep 10
     done
 
+    _get-infra-names "$@"
+
     if type "sudo_search_reindex" > /dev/null 2>&1; then
         sudo_search_reindex
     else
-        local cmd=(sudo /usr/bin/indexer
-            --verbose
-            --rotate
-            --config /etc/sphinx/sphinx.conf
-            --all)
-        if [[ "${QUIET}" == "true" ]]; then
-            cmd+=("--quiet")
-        fi
-        "${cmd[@]}"
+        for infra_name in "${infra_names[@]}"; do
+            local cmd=(sudo /usr/bin/indexer
+                --verbose
+                --rotate
+                --config "/etc/sphinx/${infra_name}.conf"
+                --all)
+            if [[ "${QUIET}" == "true" ]]; then
+                cmd+=("--quiet")
+            fi
+            "${cmd[@]}"
+        done
     fi
-    restart-service search
+    restart-service search "$@"
+}
+
+
+function _get-infra-names {
+    # Variable infra_names must come from the caller and be of type array.
+    local name
+
+    if [[ -f "${INFRA_DIR}/config/dist/_common.dist.toml" ]]; then
+        # INFRA_DIR points to an infrastructure directory
+        name=$(basename "${INFRA_DIR}")
+        infra_names+=("${name}")
+    elif [[ -n "${1:-}" ]]; then
+        # We passed an infra names as a parameters
+        infra_names+=$@
+    else
+        # Loop over all infras and reindex all.
+        for possible_infra_dir in $(ls "${INFRA_DIR}"); do
+            if [[ -f "${INFRA_DIR}/${possible_infra_dir}/config/dist/_common.dist.toml" ]]; then
+                name=$(basename "${INFRA_DIR}/${possible_infra_dir}")
+                infra_names+=("${name}")
+            fi
+        done
+    fi
+
+    if [[ "${#infra_names[@]}" -eq 0 ]]; then
+        echo "Found on infrastructure with \$INFRA_DIR=${INFRA_DIR} and params $@"
+        return
+    fi
 }
 
 
