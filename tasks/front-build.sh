@@ -117,12 +117,9 @@ function _build-index {
     local must_change_dir='false'
     _set-portal-type "$@"
     local infra_dir=$(_get-infra-dir "${portal}")
-    local alias="${portal}"
-    portal=$(_get-portal-name-from-alias "${portal}")
 
     render --type "${portal_type}" \
         --portal "${portal}" \
-        --alias "${alias}" \
         --infra-dir "${infra_dir}" \
         --index
 }
@@ -133,7 +130,6 @@ function _build-plugins {
     local portal
     _set-portal-type "$@"
     local infra_dir=$(_get-infra-dir "${portal}")
-    local portal=$(_get-portal-name-from-alias "${portal}")
 
     render --type "${portal_type}" \
         --portal "${portal}" \
@@ -227,7 +223,7 @@ function _watch {
         if [[ "${changed}" == *.nunjucks.html ]]; then
             echo "$(date) Rebuilding indexes"
             pushd "${mapinfra_dir}"
-                _build-index "${portal_type}" "${alias}"
+                _build-index "${portal_type}" "${portal}"
             popd
         elif [[ "${changed}" == *.less ]]; then
             echo "$(date) Rebuilding app.css"

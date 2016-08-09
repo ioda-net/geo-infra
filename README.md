@@ -150,14 +150,3 @@ Search relies on [sphinxsearch](http://sphinxsearch.com/). You can install it on
 ## Create a portal for dev
 
 You should be ready to create a portal with `./manuel dev-full geoportalxyz`. If you go at `geoportal-demo.local` you should see you newly created portal.
-
-
-## Alias System
-
-If two portals or more in different infra directories have the same name, you can create an alias for this portal.
-
-To do so, create a file `geo-infra/.aliases`. Put each alias on a line following this convention: `alias name-infra name`. For instance `demo ioda-infra geoportalxyz`.
-
-You can then run any command with the alias. For instance: `manuel dev-full demo`. The files will be generated in the proper infra directory under the name of the portal. Search indexes and print configuration will be named after the alias. The `portalAlias` key in `gaGlobalConf` will be set to the alias name. This name will be used to the API when doing search and print.
-
-Don't put any dash in the alias name and if possible only use letters and numbers. Any other character may prevent search to function properly in the API.

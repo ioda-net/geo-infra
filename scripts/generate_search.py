@@ -33,12 +33,6 @@ class GenerateSearchConfig(Generate):
     '''Generate either the search configuration for one portal or the global search configuration.
     '''
 
-    #: Regexp to exclude the layer config file when generating the global configuration.
-    layer_search_template = re.compile(r'search/search-layers.in.conf')
-    #: Regexp to exclude the portal config files when generating the global configuration.
-    portal_search_template = re.compile(r'portal-.*\.in$')
-    find_alias_re_template = r'(.+) {infra} {portal}$'
-
     def generate(self):
         '''Generate the search configuration for one portal.
         '''

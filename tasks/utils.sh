@@ -202,8 +202,6 @@ function test-map-files {
     local portal_type
     _set-portal-type "$@"
     local infra_dir=$(_get-infra-dir "${portal}")
-    local alias="${portal}"
-    portal=$(_get-portal-name-from-alias "${portal}")
 
     extent=$(cat "${infra_dir}/config/dist/${portal}.dist.toml" |
                     grep '^extent = ' |
@@ -217,7 +215,7 @@ function test-map-files {
             -e ${extent} \
             -o /tmp/${portal}.png"
     if ! eval "${shp2img}"; then
-        echo " ###***### test-map-files FAILED for ${portal_type} ${alias}"
+        echo " ###***### test-map-files FAILED for ${portal_type} ${portal}"
     fi
 }
 
@@ -240,14 +238,7 @@ function _get-infra-dir {
     local portal_cfg_file="config/dist/${portal}.dist.toml"
     local infra_dir
 
-    if [[ -f "${ALIAS_FILE}" ]]; then
-        local alias_line=$(_get-alias-line "${portal}")
-        if [[ -n "${alias_line}" ]]; then
-            infra_dir=$(echo "${alias_line}" | cut -d ' ' -f 2)
-        fi
-    fi
-
-    if [[ -z "${infra_dir:-}" && -f "${INFRA_DIR}/${portal_cfg_file}" ]]; then
+    if [[ -f "${INFRA_DIR}/${portal_cfg_file}" ]]; then
         infra_dir="${INFRA_DIR}"
     elif [[ -z "${infra_dir:-}" ]]; then
         for possible_infra_dir in $(ls "${INFRA_DIR}"); do
@@ -263,23 +254,6 @@ function _get-infra-dir {
     else
         echo "${infra_dir}"
     fi
-}
-
-
-function _get-alias-line {
-    echo $(cat .aliases 2> /dev/null | grep "^$1 ")
-}
-
-
-function _get-portal-name-from-alias {
-    local alias="$1"; shift
-    local portal="${alias}"
-    local alias_line=$(_get-alias-line "${portal}")
-    if [[ -n "${alias_line}" ]]; then
-        portal=$(echo "${alias_line}" | cut -d ' ' -f 3)
-    fi
-
-    echo "${portal}"
 }
 
 

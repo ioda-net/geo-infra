@@ -81,8 +81,6 @@ set-var DEFAULT_PORTAL 'demo'
 # Misc
 ## If "true", some commands will be less verbose.
 set-var QUIET "false"
-## Where to search for aliases.
-set-var ALIAS_FILE '.aliases'
 ## Make sure SSH_CLIENT is set, even without a SSH connection.
 SSH_CLIENT="${SSH_CLIENT:-localhost}"
 
