@@ -41,6 +41,7 @@ source tasks/front.sh
 source tasks/front-build.sh
 source tasks/lint.sh
 source tasks/utils.sh
+source tasks/test.sh
 
 
 # Make sure INFRA_DIR does not end with a '/' and is absolute.
