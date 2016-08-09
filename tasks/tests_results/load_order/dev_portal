@@ -1,4 +1,4 @@
-DEBUG:root:Loaded config file: config/global.toml*
+DEBUG:root:Loaded config file: config/global.toml
 DEBUG:root:Loaded config file: @INFRA_DIR@/config/dist/_common.dist.toml
 DEBUG:root:Loaded config file: @INFRA_DIR@/config/dist/demo.dist.toml
 DEBUG:root:Loaded template file: @INFRA_DIR@/config/_template.dist.toml (template, values not loaded)

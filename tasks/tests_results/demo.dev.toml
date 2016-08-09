@@ -1,0 +1,6 @@
+[front.default_values]
+topic_id = 'topic_dev'
+
+
+[search]
+conf_dir = "/var/lib/geoportal/dev/portal"

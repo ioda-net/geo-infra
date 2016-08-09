@@ -55,7 +55,10 @@ set-var GENERATE_CMD "./scripts/generate.py"
 ## Keep in sync with global.toml#dest.vhost This is used to know where are the vhosts we have to
 ## deploy on the production server.
 set-var PROD_VHOST_OUTPUT "prod/vhosts.d"
-set-var TEST_CFG_LOAD_ORDER_RESULTS_DIR "tasks/tests_results/load_order"
+## Path to sample results files used to tests command outputs.
+set-var TEST_CFG_RESULTS_DIR "tasks/tests_results"
+set-var TEST_CFG_LOAD_ORDER_RESULTS_DIR "${TEST_CFG_RESULTS_DIR}/load_order"
+set-var TEST_CFG_CONFIG_RESULTS_DIR "${TEST_CFG_RESULTS_DIR}/config"
 ## Location of geo-front3
 set-var FRONT_DIR '../geo-front3/'
 

@@ -1,0 +1,336 @@
+{
+    "dest": {
+        "geo_front3": {
+            "appcache": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/geoadmin.appcache",
+            "deps": "test/deps",
+            "karma_conf": "test/karma-conf.prod.js",
+            "plugins_file": "src/js/Gf3Plugins.js",
+            "protractor_conf": "test/protractor-conf.prod.js",
+            "template_cache_module": "src/TemplateCacheModule.js"
+        },
+        "help": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/help/",
+        "help_images": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/help/img/",
+        "help_texts": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/help/texts/",
+        "img": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/img/",
+        "json": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/json/",
+        "map": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/map/",
+        "output": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None",
+        "print": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/print/",
+        "search": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/search/",
+        "search_portal": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/search/",
+        "services": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/json/",
+        "template_search_portal_locations": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/search/portal-None.conf",
+        "template_translate_catalog": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/json/catalog_{topic}_{lang}.json",
+        "translate": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/locales/",
+        "vhost": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/vhosts.d/None.conf"
+    },
+    "front": {
+        "build": {
+            "apache_base_path": "/",
+            "api_url": "//None.geoportal.local/api",
+            "devices": [
+                "index",
+                "embed",
+                "mobile"
+            ],
+            "feedback_recipient": "support@example.com",
+            "public_resource_url": "http://resources.dev/",
+            "public_url": "//None.geoportal.local/api/files"
+        },
+        "default_values": {
+            "elevation_model": "MNT50",
+            "external_wms_hostnames": [],
+            "lang": "en",
+            "resolution": 500.0,
+            "resolutions": [
+                650.0,
+                500.0,
+                250.0,
+                100.0,
+                50.0,
+                20.0,
+                10.0,
+                5.0,
+                2.5,
+                2.0,
+                1.0,
+                0.5,
+                0.25,
+                0.1
+            ]
+        },
+        "gf3": {
+            "allow_infobox": false,
+            "allow_offline": false,
+            "allow_webdav": false,
+            "styles": {
+                "hlFill": {
+                    "color": [
+                        255.0,
+                        128.0,
+                        0.0,
+                        0.5
+                    ]
+                },
+                "hlStroke": {
+                    "color": [
+                        255.0,
+                        128.0,
+                        0.0,
+                        0.5
+                    ],
+                    "width": 3
+                }
+            }
+        }
+    },
+    "geoportal": {
+        "default_to_secondary_epsg_url": "https://geodesy.geo.admin.ch/reframe/lv95tolv03",
+        "epsg": "EPSG:2056",
+        "epsg_context_popup_title": "CH1903+ / LV95",
+        "epsg_extent": [
+            2485071.58,
+            1075346.31,
+            2828515.82,
+            1299941.79
+        ],
+        "imagetype": "PNG",
+        "langs": [
+            "fr",
+            "de",
+            "en"
+        ],
+        "maxsize": 4000,
+        "secondary_epsg": "EPSG:21781",
+        "secondary_epsg_context_popup_title": "CH1903 / LV03",
+        "secondary_epsg_extent": [
+            420000,
+            30000,
+            900000,
+            350000
+        ],
+        "size": [
+            800,
+            800
+        ],
+        "srid": 2056
+    },
+    "infra_dir": "/home/jenselme/Work/geoportal-infras/customer-infra",
+    "infra_name": "customer-infra",
+    "layers": {
+        "single_tiles_by_default": true
+    },
+    "mapserver": {
+        "OWS_STAGING_URL": "http://localhost:8888/cgi-bin/mapserv?MAP=",
+        "PORTAL_ALLOWED_IP": "0.0.0.0/0 ::/0",
+        "PORTAL_BASE_OWS": "http://None.geoportal.local/ows/None?",
+        "PORTAL_DB_HOST": "localhost",
+        "PORTAL_DB_NAME": "geoportal_demo",
+        "PORTAL_DB_PASSWORD": "azerty",
+        "PORTAL_DB_PORT": 5432,
+        "PORTAL_DB_USER": "geo_mapserver",
+        "PORTAL_DENIED_IP": "",
+        "PORTAL_IMAGEPATH": "/tmp",
+        "PORTAL_WMS_VERSION": "1.3.0",
+        "metadata": {
+            "contact": {
+                "email": "contact+None@geoportal.local",
+                "name": "Geoportal"
+            },
+            "ows_abstract": {
+                "de": "WMS server für None",
+                "en": "WMS server for None",
+                "fr": "Serveur WMS de démonstration pour None"
+            },
+            "ows_enable_request": [
+                "*"
+            ],
+            "ows_inspire_keyword": "infoMapAccessService",
+            "ows_inspire_resourcelocator": "",
+            "ows_languages": [
+                "en",
+                "fr",
+                "de"
+            ],
+            "ows_onlineresource": "http://None.geoportal.local/ows/None?",
+            "ows_srs": [
+                "EPSG:3857",
+                "EPSG:21781",
+                "EPSG:2056"
+            ],
+            "ows_title": {
+                "de": "WMS server für None",
+                "en": "WMS server for None",
+                "fr": "Serveur WMS de démonstration pour None"
+            }
+        }
+    },
+    "portal": null,
+    "print": {
+        "defaultTitle": "None",
+        "dpiSuggestions": [
+            300
+        ],
+        "fileName": "None",
+        "fileSuffix": "-${yyyy-MM-dd-hh-ss}",
+        "formats": [
+            "A4",
+            "A3"
+        ],
+        "mapHeight": {
+            "A0": {
+                "landscape": 2173,
+                "portrait": 3155
+            },
+            "A1": {
+                "landscape": 1482,
+                "portrait": 2175
+            },
+            "A2": {
+                "landscape": 985,
+                "portrait": 1475
+            },
+            "A3": {
+                "landscape": 715,
+                "portrait": 1005
+            },
+            "A4": {
+                "landscape": 525,
+                "portrait": 725
+            }
+        },
+        "mapWidth": {
+            "A0": {
+                "landscape": 3241,
+                "portrait": 2254
+            },
+            "A1": {
+                "landscape": 2255,
+                "portrait": 1558
+            },
+            "A2": {
+                "landscape": 1558,
+                "portrait": 1064
+            },
+            "A3": {
+                "landscape": 1005,
+                "portrait": 715
+            },
+            "A4": {
+                "landscape": 725,
+                "portrait": 525
+            }
+        },
+        "maxDpi": 300,
+        "northArrowGraphics": "file://NorthArrow.svg",
+        "northArrowSize": 50,
+        "orientations": [
+            "portrait",
+            "landscape"
+        ],
+        "pdf_author": "None",
+        "pdf_compression": true,
+        "pdf_creator": "MapFish Print",
+        "pdf_subject": "A Map",
+        "scales": [
+            75000,
+            50000,
+            20000,
+            10000,
+            7500,
+            5000,
+            2000,
+            1000,
+            500
+        ],
+        "url": "https://None.geoportal.local",
+        "url_title": "https://None.geoportal.local"
+    },
+    "prod": true,
+    "prod_git_repos_location": "",
+    "search": {
+        "conf_dir": "/var/lib/geoportal/prod",
+        "origins_to_ranks": {
+            "admin": 13,
+            "buildings": 9,
+            "places": 6
+        },
+        "sphinx_sql_host": "localhost",
+        "sphinx_sql_pass": "azerty",
+        "sphinx_sql_port": 5432,
+        "sphinx_sql_user": "geo_searchd",
+        "sphinxhost": "localhost",
+        "sphinxport": 9314
+    },
+    "src": {
+        "base_include": "/home/jenselme/Work/geoportal-infras/customer-infra/",
+        "external_layers": "/home/jenselme/Work/geoportal-infras/customer-infra/json/None/external/*.json",
+        "geo_front3": {
+            "appcache": "src/geoadmin.nunjucks.appcache",
+            "index": "src/index.nunjucks.html",
+            "karma_conf_template": "test/karma-conf.nunjucks.js",
+            "partials": "src/components/**/partials/**/*.html",
+            "plugins": "src/plugins/*.js",
+            "plugins_template": "src/Gf3Plugins.nunjucks.js",
+            "protractor_conf_template": "test/protractor-conf.nunjucks.js",
+            "template_cache_module": "src/TemplateCacheModule.nunjucks.js"
+        },
+        "help": "help/*",
+        "help_common_folder": "/home/jenselme/Work/geoportal-infras/customer-infra/help/common",
+        "help_images_folder": "/home/jenselme/Work/geoportal-infras/customer-infra/help/None/img/",
+        "help_logo": "/home/jenselme/Work/geoportal-infras/customer-infra/img/None/None.jpg",
+        "help_original_images_folder": "help/img/",
+        "help_original_texts_folder": "help/texts/",
+        "help_portal_folder": "/home/jenselme/Work/geoportal-infras/customer-infra/help/None",
+        "help_texts_folder": "/home/jenselme/Work/geoportal-infras/customer-infra/help/None/texts/",
+        "img": [
+            "img/*.png",
+            "img/*.gif",
+            "img/*.jpg",
+            "img/*.jpeg",
+            "img/maki"
+        ],
+        "img_portal": "/home/jenselme/Work/geoportal-infras/customer-infra/img/None/*",
+        "map_path": "prod/None/map/portals/None.map",
+        "print": "/home/jenselme/Work/geoportal-infras/customer-infra/print/*.in*",
+        "print_logo": "/home/jenselme/Work/geoportal-infras/customer-infra/print/None/*.*",
+        "search": "search/*.in*",
+        "search_db": "search/common/db.in.conf",
+        "search_portal_layers": "search/common/search-layers.in.conf",
+        "search_portal_locations": "/home/jenselme/Work/geoportal-infras/customer-infra/search/portal-locations.in.conf",
+        "search_tsv_files": "/home/jenselme/Work/geoportal-infras/customer-infra/prod/None/search/*.tsv",
+        "topics": "/home/jenselme/Work/geoportal-infras/customer-infra/json/None/topics/*.json",
+        "translate_catalog": "/home/jenselme/Work/geoportal-infras/customer-infra/translations/catalog.csv",
+        "translate_ignore": "/home/jenselme/Work/geoportal-infras/customer-infra/translations/ignore.csv",
+        "translation_files": [
+            "https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0",
+            "translations/common.csv",
+            "/home/jenselme/Work/geoportal-infras/customer-infra/translations/common.csv",
+            "/home/jenselme/Work/geoportal-infras/customer-infra/translations/None.csv"
+        ],
+        "vhost": "apache/vhost.jinja2.conf"
+    },
+    "test": {
+        "karma": {
+            "browsers": [
+                "Firefox",
+                "Chrome"
+            ]
+        },
+        "protractor": {
+            "generate_coverage_report": true,
+            "test_portal_address": "http://localhost"
+        }
+    },
+    "type": "prod",
+    "vhost": {
+        "api_proxy": "http://localhost:9080",
+        "certificate_chain_file": "",
+        "certificate_file": "",
+        "certificate_key_file": "",
+        "domain": "geoportal.local",
+        "ows_path": "/home/jenselme/Work/geoportal-infras/cgi-bin/",
+        "print_proxy": "ajp://localhost:8009",
+        "server_name": "None.geoportal.local"
+    }
+}

@@ -28,8 +28,8 @@ function test-config-generation {
     fi
 
     # Correct results
-    pushd "${TEST_CFG_LOAD_ORDER_RESULTS_DIR}"
-        for result_file in *; do
+    pushd "${TEST_CFG_RESULTS_DIR}"
+        for result_file in **/*; do
             sed -i "s#@INFRA_DIR@#${infra_dir}#g" "${result_file}"
         done
     popd
@@ -58,15 +58,13 @@ function test-config-generation {
                 "${generate_config_cmd[@]}" > "${output}" 2> "${error_output}"
                 _test-config-loaded-files
 
-                if "${dist_only}"; then
-                    _restaure-config-files-test
-                fi
+                _restaure-config-files-test
             done
         done
     done
 
     # Revert results files
-    git checkout "${TEST_CFG_LOAD_ORDER_RESULTS_DIR}"
+    git checkout "${TEST_CFG_RESULTS_DIR}"
 
     if "${errors}"; then
         echo "FAILED" >&2
@@ -96,6 +94,11 @@ function _test-config-loaded-files {
         diff -u "${error_output}" "${TEST_CFG_LOAD_ORDER_RESULTS_DIR}/${result_file_name}" >&2 || :
         errors=true
     fi
+
+    if ! cmp -s "${output}" "${TEST_CFG_CONFIG_RESULTS_DIR}/${result_file_name}.json"; then
+        echo "FAILURE:" >&2
+        diff -u "${output}" "${TEST_CFG_CONFIG_RESULTS_DIR}/${result_file_name}.json" >&2 || :
+    fi
 }
 
 
@@ -124,8 +127,8 @@ function _restaure-config-files-test {
 
 
 function _create-config-files-test {
-    # common_file, portal_file
-    touch "${common_file}"
-    touch "${portal_file}"
+    _backup-config-files-test
+    cp -a "${TEST_CFG_RESULTS_DIR}/_common.${type}.toml" "${common_file}"
+    cp -a "${TEST_CFG_RESULTS_DIR}/demo.${type}.toml" "${portal_file}"
 }
 
