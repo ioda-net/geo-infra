@@ -141,11 +141,10 @@ function reindex {
         sleep 10
     done
 
-    _get-infra-names "$@"
-
     if type "sudo_search_reindex" > /dev/null 2>&1; then
         sudo_search_reindex
     else
+        _get-infra-names "$@"
         for infra_name in "${infra_names[@]}"; do
             local cmd=(sudo /usr/bin/indexer
                 --verbose
