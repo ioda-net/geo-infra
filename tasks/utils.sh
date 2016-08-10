@@ -451,8 +451,8 @@ function _load-prod-config {
 
 function _load-dev-config {
     local infra_dir=$(_get-infra-dir "${1}")
-    local customer_override="${infra_dir}/config/config.dist.sh"
-    local customer_config_file="${infra_dir}/config/config.sh"
+    local customer_override="${infra_dir}/config/config.sh"
+    local customer_config_file="${infra_dir}/config/config.dist.sh"
 
     _load-customer-config
 }
@@ -463,7 +463,7 @@ function _load-customer-config {
     source config/config.dist.sh
     source config/config.sh 2> /dev/null || echo "INFO: config/config.sh not found"
     source "${customer_config_file}"
-    source "${customer_override}" || echo "INFO: ${customer_override} not found"
+    source "${customer_override}" 2> /dev/null || echo "INFO: ${customer_override} not found"
 
     # Make sure INFRA_DIR does not end with a '/' and is absolute.
     INFRA_DIR="${INFRA_DIR%/}"
