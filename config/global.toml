@@ -27,36 +27,36 @@ protractor_conf = 'test/protractor-conf.{type}.js'
 template_cache_module = 'src/TemplateCacheModule.js'
 
 
-[print.mapHeight.A1]
-landscape = 1482
-portrait = 2175
-[print.mapWidth.A2]
-landscape = 1558
-portrait = 1064
-[print.mapHeight.A4]
-landscape = 525
-portrait = 725
-[print.mapHeight.A2]
-landscape = 985
-portrait = 1475
-[print.mapWidth.A0]
-landscape = 3241
-portrait = 2254
 [print.mapHeight.A0]
 landscape = 2173
 portrait = 3155
-[print.mapWidth.A4]
-landscape = 725
-portrait = 525
+[print.mapWidth.A0]
+landscape = 3241
+portrait = 2254
+[print.mapHeight.A1]
+landscape = 1482
+portrait = 2175
+[print.mapWidth.A1]
+landscape = 2255
+portrait = 1558
+[print.mapHeight.A2]
+landscape = 985
+portrait = 1475
+[print.mapWidth.A2]
+landscape = 1558
+portrait = 1064
 [print.mapHeight.A3]
 landscape = 715
 portrait = 1005
 [print.mapWidth.A3]
 landscape = 1005
 portrait = 715
-[print.mapWidth.A1]
-landscape = 2255
-portrait = 1558
+[print.mapHeight.A4]
+landscape = 525
+portrait = 725
+[print.mapWidth.A4]
+landscape = 725
+portrait = 525
 
 
 [src]
