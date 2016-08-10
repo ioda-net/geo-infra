@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="description" content="[An example of getting started with Cytoscape.js]" />
+        <meta charset=utf-8 />
+        <title>Schéma d'interaction des composants</title>
+        <style>
+            body {
+                font: 14px helvetica neue, helvetica, arial, sans-serif;
+                width: 100%;
+                height: 100%;
+            }
+
+            #cy {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            #legend {
+              float: left;
+            }
+
+            .p2 {
+                background: red;
+            }
+
+            .p3 {
+                background: green;
+            }
+
+            .progress {
+                background: orange;
+            }
+
+            .drop {
+                background: purple;
+            }
+
+            .other {
+                color: white;
+                background: black;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="libs/jquery/jquery.qtip.css">
+        <script src="../libs/jquery/jquery-2.0.3.min.js"></script>
+        <script src="../libs/jquery/jquery.qtip.js"></script>
+        <script src="../libs/cytoscape/cytoscape.min.js"></script>
+        <script src="../libs/cytoscape/cytoscape-qtip.js"></script>
+    </head>
+
+    <body>
+        <p>Initial placement of nodes are random. You can reload to obtain a better display.</p>
+        <ul id="legend">
+            <li class="p2">Python 2 only</li>
+            <li class="p3">Python 3 compatible</li>
+            <li class="progress">Port to Python 3 in progress</li>
+            <li class="drop">Should be dropped in python3 (or is a dependency of a dependency and shouldn't appear in this graph).</li>
+            <li style="border-width: 2px; border-style: solid; margin: 5px; border-color: cyan">Uptodate at 21 July 2015</li>
+        </ul>
+        <div id="cy"></div>
+
+        <script>
+            $(function () { // on dom ready
+                var python2 = 'red';
+                var python3 = 'green';
+                var dropInP3 = 'purple';
+                var container = 'pink';
+
+                var cytoscapeConf = {
+                    style: cytoscape.stylesheet()
+                            .selector('node')
+                            .css({
+                                'content': 'data(id)',
+                                'shape': 'rectangle',
+                                //'width': 'data(width)',
+                                'text-valign': 'center',
+                                'color': 'white',
+                                'text-outline-width': 2,
+                                'text-outline-color': 'data(backgroundColor)',
+                                'border-color': 'data(borderColor)',
+                                'background-color': 'data(backgroundColor)',
+                                'border-width': '2px',
+                                'margin': '10px'
+                            })
+                            .selector('edge')
+                            .css({
+                                'target-arrow-color': '#AAA',
+                                'target-arrow-shape': 'triangle',
+                                'width': '3px',
+                                'line-color': '#AAA',
+                                'content': 'data(label)'
+                            })
+                            .selector(':selected')
+                            .css({
+                                'background-color': 'black',
+                                'line-color': 'black',
+                                'target-arrow-color': 'black',
+                                'source-arrow-color': 'black'
+                            })
+                            .selector('.faded')
+                            .css({
+                                'opacity': 0.25,
+                                'text-opacity': 0
+                            }),
+                    elements: {
+                        nodes: [
+                            {
+                                data: {
+                                    id: 'autopep8',
+                                    description: 'A tool that automatically formats Python code to conform to the PEP 8 style guide.',
+                                    backgroundColor: python3,
+                                    parent: 'debug',
+                                    borderColor: python3,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'Babel',
+                                    description: 'A collection of tools for internationalizing Python applications. Create the po files for API',
+                                    backgroundColor: python3,
+                                    parent: 'translations',
+                                    borderColor: python3,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'coverage',
+                                    description: 'Code coverage measurement for Python',
+                                    backgroundColor: python3,
+                                    parent: 'test',
+                                    borderColor: python3,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'geoalchemy2',
+                                    description: 'Using SQLAlchemy with Spatial Databases<br/><br/>0.2.5',
+                                    backgroundColor: python3,
+                                    parent: 'db',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'geojson',
+                                    description: 'Python bindings and utilities for GeoJSON<br/><br/>1.2.2',
+                                    backgroundColor: python3,
+                                    parent: 'geo',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'nose',
+                                    description: 'nose extends unittest to make testing easier',
+                                    backgroundColor: python3,
+                                    parent: 'test',
+                                    borderColor: python3,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'OWSLib',
+                                    description: 'OGC Web Service utility library<br><br>0.9.0',
+                                    backgroundColor: python3,
+                                    parent: 'geo',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'papyrus',
+                                    description: 'Geospatial Extensions for Pyramid<br><br>2.0dev4',
+                                    backgroundColor: python3,
+                                    parent: 'geo',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'pep8',
+                                    description: 'Python style guide checker',
+                                    backgroundColor: python3,
+                                    parent: 'debug',
+                                    borderColor: python3,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'psycopg2',
+                                    description: 'psycopg2 - Python-PostgreSQL Database Adapter<br><br>2.6.1',
+                                    backgroundColor: python3,
+                                    parent: 'db',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'Pygments',
+                                    description: 'Pygments is a syntax highlighting package written in Python.',
+                                    backgroundColor: python3,
+                                    parent: 'doc',
+                                    borderColor: python3,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'pyramid',
+                                    description: 'The Pyramid Web Framework, a Pylons project<br><br>1.5.7',
+                                    backgroundColor: python3,
+                                    parent: 'pyramidFramework',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'pyramid-debugtoolbar',
+                                    description: 'A package which provides an interactive HTML debugger for Pyramid application development<br><br>2.4',
+                                    backgroundColor: python3,
+                                    parent: 'pyramidFramework',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'pyramid-mako',
+                                    description: 'Mako template bindings for the Pyramid web framework<br><br>1.0.2',
+                                    backgroundColor: python3,
+                                    parent: 'pyramidFramework',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'pyramid_tm',
+                                    description: 'A package which allows Pyramid requests to join the active transaction<br><br>0.12',
+                                    backgroundColor: python3,
+                                    parent: 'pyramidFramework',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'pyflakes',
+                                    description: 'passive checker of Python programs',
+                                    backgroundColor: python3,
+                                    parent: 'debug',
+                                    borderColor: python3,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'qrcode',
+                                    description: 'QR Code image generator<br><br>5.1',
+                                    backgroundColor: python3,
+                                    parent: 'utils',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'requests',
+                                    description: 'Python HTTP for Humans.<br><br>2.7.0',
+                                    backgroundColor: python3,
+                                    parent: 'web',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'shapely',
+                                    description: 'Geometric objects, predicates, and operations<br><br>1.5.9',
+                                    backgroundColor: python3,
+                                    parent: 'geo',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'Sphinx',
+                                    description: 'Python documentation generator',
+                                    backgroundColor: python3,
+                                    parent: 'doc',
+                                    borderColor: python3,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'sphinx_rtd_theme',
+                                    description: 'ReadTheDocs.org theme for Sphinx, 2013 version',
+                                    backgroundColor: python3,
+                                    parent: 'doc',
+                                    borderColor: python3,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'SQLAchemy',
+                                    description: 'Database Abstraction Library<br><br>1.0.7',
+                                    backgroundColor: python3,
+                                    parent: 'db',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'waitress',
+                                    description: 'Waitress is meant to be a production-quality pure-Python WSGI server',
+                                    backgroundColor: python3,
+                                    parent: 'debug',
+                                    borderColor: python3,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'WebTest',
+                                    description: 'Helper to test WSGI applications<br><br>2.0.18',
+                                    backgroundColor: python3,
+                                    parent: 'test',
+                                    borderColor: 'cyan',
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'test',
+                                    backgroundColor: container,
+                                    borderColor: container,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'debug',
+                                    backgroundColor: container,
+                                    borderColor: container,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'translations',
+                                    backgroundColor: container,
+                                    borderColor: container,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'web',
+                                    backgroundColor: container,
+                                    borderColor: container,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'doc',
+                                    backgroundColor: container,
+                                    borderColor: container,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'pyramidFramework',
+                                    backgroundColor: container,
+                                    borderColor: container,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'db',
+                                    backgroundColor: container,
+                                    borderColor: container,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'geo',
+                                    backgroundColor: container,
+                                    borderColor: container,
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'utils',
+                                    backgroundColor: container,
+                                    borderColor: container,
+                                }
+                            }
+                        ],
+                        edges: [
+                            {data: {source: 'pyramid-debugtoolbar', target: 'pyramid'}},
+                            {data: {source: 'translationstring', target: 'pyramid'}},
+                            {data: {source: 'papyrus', target: 'pyramid'}},
+                            {data: {source: 'shapely', target: 'papyrus'}},
+                            {data: {source: 'pyramid-mako', target: 'pyramid'}},
+                            {data: {source: 'pyramid-mako', target: 'Mako'}},
+                            {data: {source: 'pyramid_tm', target: 'pyramid'}},
+                            {data: {source: 'pyramid', target: 'waitress'}},
+                            {data: {source: 'SQLAchemy', target: 'pyramid'}},
+                            {data: {source: 'geoalchemy2', target: 'SQLAchemy'}},
+                            {data: {source: 'psycopg2', target: 'SQLAchemy'}},
+                            {data: {source: 'sphinx_rtd_theme', target: 'Sphinx'}},
+                            {data: {source: 'Pygments', target: 'Sphinx'}},
+                        ]
+                    },
+                    layout: {
+                        name: 'cose',
+                        animate: false,
+                        randomize: true
+                   },
+                    // on graph initial layout done (could be async depending on layout...)
+                    ready: function () {
+                        window.cy = this;
+
+                        // giddy up...
+
+                        cy.elements().unselectify();
+
+                        cy.on('tap', 'node', function (e) {
+                            var node = e.cyTarget;
+                            var neighborhood = node.neighborhood().add(node);
+
+                            cy.elements().addClass('faded');
+                            neighborhood.removeClass('faded');
+                        });
+
+                        cy.on('tap', function (e) {
+                            if (e.cyTarget === cy) {
+                                cy.elements().removeClass('faded');
+                            }
+                        });
+
+                        cy.nodes("[description]").qtip({
+                            content: function () {
+                                return this.data('description');
+                            },
+                            position: {
+                                my: 'top center',
+                                at: 'bottom center'
+                            },
+                            style: {
+                                classes: 'qtip-bootstrap',
+                                tip: {
+                                    width: 16,
+                                    height: 8
+                                }
+                            }
+                        });
+                    }
+                };
+
+                $('#cy').cytoscape(cytoscapeConf);
+
+            }); // on dom ready
+        </script>
+    </body>
+</html>

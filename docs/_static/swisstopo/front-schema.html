@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="description" content="[An example of getting started with Cytoscape.js]" />
+        <meta charset=utf-8 />
+        <title>Schéma d'interaction des composants</title>
+        <style>
+            body {
+                font: 14px helvetica neue, helvetica, arial, sans-serif;
+                width: 100%;
+                height: 100%;
+            }
+
+            #cy {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+
+            #doc {
+              float: left;
+            }
+
+            #doc li {
+              border-width: 2px;
+              border-style: solid;
+              margin: 5px;
+            }
+
+            .ctrl {
+              border-color: red;
+            }
+
+            .dir {
+              border-color: blue;
+            }
+
+            .service {
+              border-color: green;
+            }
+
+            .other {
+              border-color: black;
+            }
+        </style>
+        <link rel="stylesheet" type="text/css" href="libs/jquery/jquery.qtip.css">
+        <script src="../libs/jquery/jquery-2.0.3.min.js"></script>
+        <script src="../libs/jquery/jquery.qtip.js"></script>
+        <script src="../libs/cytoscape/cytoscape.min.js"></script>
+        <script src="../libs/cytoscape/cytoscape-qtip.js"></script>
+    </head>
+
+    <body>
+        <ul id="doc">
+          <li class="ctrl">Controller</li>
+          <li class="dir">Directive</li>
+          <li class="service">Service</li>
+          <li class="other">Other</li>
+        </ul>
+        <div id="cy"></div>
+
+        <script>
+            $(function () { // on dom ready
+                var ctrlColor = 'red';
+                var directiveColor = 'blue';
+                var serviceColor = 'green';
+                var otherColor = 'black';
+
+                var cytoscapeConf = {
+                    style: cytoscape.stylesheet()
+                            .selector('node')
+                            .css({
+                                'content': 'data(id)',
+                                'shape': 'rectangle',
+                                'text-valign': 'center',
+                                'color': 'white',
+                                'text-outline-width': 2,
+                                'text-outline-color': '#888',
+                                'border-color': 'data(borderColor)',
+                                'border-width': '2px'
+                            })
+                            .selector('edge')
+                            .css({
+                                'target-arrow-color': '#AAA',
+                                'target-arrow-shape': 'triangle',
+                                'width': '3px',
+                                'line-color': '#AAA',
+                                'content': 'data(label)'
+                            })
+                            .selector(':selected')
+                            .css({
+                                'background-color': 'black',
+                                'line-color': 'black',
+                                'target-arrow-color': 'black',
+                                'source-arrow-color': 'black'
+                            })
+                            .selector('.faded')
+                            .css({
+                                'opacity': 0.25,
+                                'text-opacity': 0
+                            }),
+                    elements: {
+                        nodes: [
+                            {data: {id: 'GaMainController',
+                                    description: '<em>src/js/MainController.js</em><br><br>Crée la carte OpenLayer et la garde dans $scope.',
+                                    borderColor: ctrlColor
+                                }},
+                            {data: {id: 'gaMap',
+                                    description: '<em>src/components/map/MapDirective.js</em><br/><br/>Affiche les tuiles, la grille de fond, le copyright et les 5 boutons ronds à droite (zoom, voyage dans le temps, …). Prend un paramètre, la carte via le tag `ga-map-map`. Place la carte `OpenLayer` comme un de ses enfants avec `map.setTarget(element[0])`. Définit la bounding box et le zoom initiaux. Met à jour le permalien quand la vue est modifiée.',
+                                    borderColor: directiveColor
+                                }},
+                            {data: {id: 'gaBackgroundLayerSelector',
+                                    description: '<em>src/components/backgroundlayerselector/BackgroundLayerSelectorDirective.js</em>',
+                                    borderColor: directiveColor
+                                }},
+                            {data: {id: 'gaLayers',
+                                    description: '<em>src/components/map/MapService.js</em><br><br>Récupère les configurations des couches depuis l\'API. Les URLs donnant la configuration, les légendes sont configurés dans `index.html` avant le lancement de l\'application',
+                                    borderColor: serviceColor
+                                }},
+                            {data: {id: 'API',
+                                    borderColor: otherColor
+                                }},
+                            {data: {id: 'gaPreviewLayers',
+                                    description: '<em>src/components/map/MapService.js</em><br/><br/>Affiche l\'aperçu et ajoute une couche à la carte',
+                                    borderColor: serviceColor
+                                }},
+                            {data: {id: 'CatalogItemDirective',
+                                    description: '<em>src/components/catalogtree/CatalogitemDirective.js</em><br /><br />Ajoute les couches depuis la configuration à gaPreviewLayers',
+                                    borderColor: directiveColor
+                                }},
+                            {data: {id: 'TopicDirective',
+                                    description: '<em>src/components/topic/TopicDirective.js</em>',
+                                    borderColor: directiveColor
+                                }},
+                            {data: {id: 'GaTopicController',
+                                    description: '<em>src/js/TopicController.js</em>',
+                                    borderColor: ctrlColor
+                                }},
+                            {data: {id: 'gaMapUtils',
+                                    description: '<em>src/components/map/MapService.js</em><br /><br/>Gère entre autre la bounding box et le zoom',
+                                    borderColor: serviceColor
+                                }},
+                            {
+                                data: {
+                                    id: 'gaPermalink',
+                                    description: '<em>src/components/permalink/PermalinkService.js</em>',
+                                    borderColor: serviceColor
+                                }
+                            },
+                            {
+                                data: {
+                                    id: 'gaUrlUtils',
+                                    description: '<em>src/components/UrlUtilsService.js</em>',
+                                    borderColor: serviceColor
+                                }
+                            }
+                        ],
+                        edges: [
+                            {data: {source: 'GaMainController', target: 'gaMap', label: '2. Injecte la carte'}},
+                            {data: {source: 'GaMainController', target: 'gaBackgroundLayerSelector', label: '2. Injecte la carte'}},
+                            {data: {source: 'gaLayers', target: 'gaBackgroundLayerSelector', label: 'Donne accès aux couches'}},
+                            {data: {source: 'gaLayers', target: 'API', label: '0. Demande la liste des couches'}},
+                            {data: {source: 'gaLayers', target: 'gaPreviewLayers', label: '1. Injecte la configuration des couches'}},
+                            {data: {source: 'gaLayers', target: 'CatalogItemDirective', label: '1. Injecte la configuration des couches'}},
+                            {data: {source: 'gaLayers', target: 'TopicDirective'}},
+                            {data: {source: 'GaTopicController', target: 'TopicDirective', label: '2. Injecte le topic par défaut'}},
+                            {data: {source: 'TopicDirective', target: 'API', label: '0. Demande la liste des services'}},
+                            {data: {source: 'gaMap', target: 'gaPermalink', label: '4. Met à jour le centre et le zoom'}},
+                            {data: {source: 'gaMap', target: 'gaMapUtils', label: '3. Demande la bounding box par défaut'}},
+                            {data: {source: 'gaPermalink', target: 'gaUrlUtils', label: 'Utilise pour parser les Urls'}},
+                            {data: {source: 'gaBackgroundLayerSelector', target: 'gaPermalink', label: '4. Met à jour bgLayer'}}
+                        ]
+                    },
+                    layout: {
+                        name: 'cose',
+                        animate: false,
+                        gravity: 10,
+                        idealEdgeLength: 100
+                    },
+                    // on graph initial layout done (could be async depending on layout...)
+                    ready: function () {
+                        window.cy = this;
+
+                        // giddy up...
+
+                        cy.elements().unselectify();
+
+                        cy.on('tap', 'node', function (e) {
+                            var node = e.cyTarget;
+                            var neighborhood = node.neighborhood().add(node);
+
+                            cy.elements().addClass('faded');
+                            neighborhood.removeClass('faded');
+                        });
+
+                        cy.on('tap', function (e) {
+                            if (e.cyTarget === cy) {
+                                cy.elements().removeClass('faded');
+                            }
+                        });
+
+                        cy.nodes("[description]").qtip({
+                            content: function () {
+                                return this.data('description');
+                            },
+                            position: {
+                                my: 'top center',
+                                at: 'bottom center'
+                            },
+                            style: {
+                                classes: 'qtip-bootstrap',
+                                tip: {
+                                    width: 16,
+                                    height: 8
+                                }
+                            }
+                        });
+                    }
+                };
+
+                $('#cy').cytoscape(cytoscapeConf);
+
+            }); // on dom ready
+        </script>
+    </body>
+</html>
