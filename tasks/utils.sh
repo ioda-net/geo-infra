@@ -470,3 +470,13 @@ function _load-customer-config {
     INFRA_DIR=$(realpath "${INFRA_DIR}")
 }
 
+
+HELP['build-doc']="manuel build-doc
+
+Build the doc from the files in docs. The output will be in docs/_build/html"
+function build-doc {
+    python3 scripts/get-manuel-doc.py > docs/manuel.md
+    pushd "${DOC_DIR}"
+        "${SPHINX_CMD}" -b html -d "${DOC_BUILD_DIR}/doctrees" . "${DOC_BUILD_DIR}/html"
+    popd
+}

@@ -49,6 +49,7 @@ set-var LESSC_CMD "./node_modules/.bin/lessc"
 set-var UGLIFY_CMD "./node_modules/.bin/uglifyjs"
 set-var RENDER_CMD "./scripts/render.py"
 set-var GENERATE_CMD "./scripts/generate.py"
+set-var SPHINX_CMD sphinx-build
 
 
 # Pathes
@@ -80,6 +81,11 @@ set-var DEFAULT_PORTAL 'demo'
 set-var QUIET "false"
 ## Make sure SSH_CLIENT is set, even without a SSH connection.
 SSH_CLIENT="${SSH_CLIENT:-localhost}"
+
+# Doc
+set-var DOC_DIR "docs"
+# Relative to DOC_DIR
+set-var DOC_BUILD_DIR "_build"
 
 
 # Infra
