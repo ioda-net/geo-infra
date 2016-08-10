@@ -64,9 +64,6 @@ set-var FRONT_DIR '../geo-front3/'
 
 
 # MapFish Print configuration
-## Where to copy generated MapFish Print applications (directory containing config.yaml, the
-## templates and the images).
-set-var MFP_APP_FOLDER "/srv/tomcat/webapps/print/print-apps/"
 ## Where to look for the sources of MapFish Print. Used in 'manuel build-mfp' if no argument is given.
 set-var MFP_SOURCE_PATH "../forks/mapfish-print"
 ## The branch to use to build MapFish Print
@@ -89,5 +86,5 @@ SSH_CLIENT="${SSH_CLIENT:-localhost}"
 # INFRA_DIR can point either to a specific infra directory, for instance:
 # set-var INFRA_DIR "../geoportal-infras/customer-infra"
 # or point to in the folder which contains all the infra directories. For instance:
-# set-var INFRA_DIR ".."
+# set-var INFRA_DIR "../"
 set-var INFRA_DIR "../"
