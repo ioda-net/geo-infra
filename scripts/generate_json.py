@@ -320,6 +320,7 @@ class OwsParser(Generate):
                 'singleTile': layer.get('singleTile', self.single_tiles_by_default),
                 'ratio': layer.get('ratio', self.default_ratio),
                 'epsg': layer.get('epsg', None),
+                'crossOrigin': layer.get('crossOrigin', None),
             }
             if layer_type == 'wms':
                 self._process_external_wms_layer(layer_config, layer)
