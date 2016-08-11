@@ -49,7 +49,8 @@ def main():
         attributes['label'] = attributes.pop('name')
         attributes['origin'] = 'places'
         attributes['geom_quadindex'] = 0
-        attributes['geom_st_box2d'] = 'BOX({y} {x}, {y} {x})'.format(y=geom_2056.GetX(), x=geom_2056.GetY())
+        # No space after comma not to break extent parsing in frontend.
+        attributes['geom_st_box2d'] = 'BOX({y} {x},{y} {x})'.format(x=geom_2056.GetY(), y=geom_2056.GetX())
         attributes['rank'] = 10
         attributes['x'] = geom_2056.GetY()
         attributes['y'] = geom_2056.GetX()
