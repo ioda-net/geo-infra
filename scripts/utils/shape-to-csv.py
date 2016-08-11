@@ -24,7 +24,7 @@ def main():
 
     # Get field names
     fields = ['num', 'weight', 'search_string', 'label', 'origin', 'geom_quadindex', 'geom_st_box2d', 'rank', 'x', 'y', 'lat', 'lon']
-    csvwriter = csv.DictWriter(csvfile, fields)
+    csvwriter = csv.DictWriter(csvfile, fields, delimiter=';')
 
     # Write attributes and kml out to csv
     source = osr.SpatialReference()

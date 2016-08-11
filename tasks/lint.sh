@@ -78,7 +78,7 @@ function csvlint {
         return 0
     fi
 
-    for csvfile in $(find "${lint_dir}" -name "*.csv" | grep -v 'infra/dev' | grep -v 'infra/prod'); do
+    for csvfile in $(find "${lint_dir}" -name "*.csv" | grep -v 'infra/dev' | grep -v 'infra/prod' | grep -v 'customer-infra/data/places.csv'); do
         local output=$(csvclean -n "${csvfile}" 2>&1)
         if [[ "${output}" != "No errors." ]]; then
             echo "${csvfile}"
