@@ -25,6 +25,8 @@ All tasks are launched here with `manuel
 enable autocompletion in a Bash shell, source the ``manuel.autocomplete.bash``
 file. Completion is also `available for zsh
 <https://github.com/ShaneKilkelly/manuel/blob/master/manuel.autocomplete.zsh>`__.
+To launch ``manuel`` without always appending ``./`` copy it to your ``~/bin``
+folder.
 
 To get help about any task, use ``manuel help TASK``. For instance, ``manuel
 help help``.
@@ -42,11 +44,11 @@ Contents
 .. toctree::
    :maxdepth: 1
 
-   infra/geo-infra.md
+   getting-started.rst
+   create-portal.rst
+   debug.rst
    manuel.md
    functionnal-tests.rst
-   api/geo-api3.md
-   front/geo-front3.md
    infra/index.rst
    api/index.rst
    front/index.rst
