@@ -221,16 +221,16 @@ function tomcat-copy-conf {
 
         if [[ "${type}" == "prod" ]]; then
             if [[ -d "${infra_dir}/${type}/${portal}/print" ]]; then
-                /usr/bin/cp -av ${type}/${portal}/print/* "${mfp_portal_dest}" > /dev/null
+                "${CP_CMD}" -av ${type}/${portal}/print/* "${mfp_portal_dest}" > /dev/null
             else
-                /usr/bin/cp -av print/* "${mfp_portal_dest}" > /dev/null
+                "${CP_CMD}" -av print/* "${mfp_portal_dest}" > /dev/null
             fi
         else
             local infra_dir=$(_get-infra-dir "${portal}")
             if [[ -d "${infra_dir}/${type}/${portal}/print" ]]; then
-                /usr/bin/cp -av "${infra_dir}/${type}/${portal}/print"/* "${mfp_portal_dest}" > /dev/null
+                "${CP_CMD}" -av "${infra_dir}/${type}/${portal}/print"/* "${mfp_portal_dest}" > /dev/null
             else
-                /usr/bin/cp -av print/* "${mfp_portal_dest}" > /dev/null
+                "${CP_CMD}" -av print/* "${mfp_portal_dest}" > /dev/null
             fi
         fi
     fi

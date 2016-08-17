@@ -51,13 +51,24 @@ set-var RENDER_CMD "./scripts/render.py"
 set-var GENERATE_CMD "./scripts/generate.py"
 set-var SPHINX_CMD sphinx-build
 
-# systemctl commands (in /usr/bin/systemctl on most systems but in /bin/systemctl on Debian)
+# Some commands are in /usr/bin/systemctl on most systems but in /bin/systemctl on Debian. We need
+# to know where to search for them. Only commands used in sudo with absolute path are concerned.
+## systemctl
 if [[ -f "/usr/bin/systemctl" ]]; then
     set-var SYSTEMCTL_CMD "/usr/bin/systemctl"
 elif [[ -f "/bin/systemctl" ]]; then
     set-var SYSTEMCTL_CMD "/bin/systemctl"
 elif [[ -z "${SYSTEMCTL_CMD:-}" ]]; then
     echo "Cannot find systemctl on your system. Set SYSTEMCTL_CMD to the correct path in your environnement" >&2
+    exit 1
+fi
+## cp
+if [[ -f "/usr/bin/cp" ]]; then
+    set-var CP_CMD "/usr/bin/cp"
+elif [[ -f "/bin/cp" ]]; then
+    set-var CP_CMD "/bin/cp"
+elif [[ -z "${CP_CMD:-}" ]]; then
+    echo "Cannot find cp on your system. Set CP_CMD to the correct path in your environnement" >&2
     exit 1
 fi
 
