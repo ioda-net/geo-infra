@@ -193,7 +193,8 @@ function deploy {
     done
 
     echo "Completing deployment on server: restarting services and reindexing."
-    execute-on-prod "$(declare -f _restart-apache) && \
+    execute-on-prod "export SYSTEMCTL_CMD=\"${SYSTEMCTL_CMD}\" && \
+        $(declare -f _restart-apache) && \
         $(declare -f restart-service) && \
         $(declare -f reindex) && \
         restart-service apache && \

@@ -177,6 +177,7 @@ function _exit-current-dir-not-git-root {
 
 function _update-prod-repos {
     execute-on-prod "export MFP_APP_FOLDER=\"${MFP_APP_FOLDER}\" && \
+        export CP_CMD=\"${CP_CMD}\" && \
         $(declare -f tomcat-copy-conf) && \
         cd ${PROD_GIT_REPOS_LOCATION}/$1 && \
         echo \"Updating remote repo with new version\" && \
