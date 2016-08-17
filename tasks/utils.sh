@@ -108,6 +108,7 @@ function restart-service {
                 ;;
             "tomcat")
                 if ! sudo "${SYSTEMCTL_CMD}" restart tomcat.service; then
+                    echo "Trying tomcat8.service"
                     sudo "${SYSTEMCTL_CMD}" restart tomcat8.service
                 fi
                 ;;
