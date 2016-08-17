@@ -6,7 +6,7 @@
 
 [Unit]
 Description=Sphinx - SQL Full Text Search Engine %i
-After=local-fs.target network.target mysqld.service
+After=local-fs.target network.target
 
 [Service]
 User=sphinx
