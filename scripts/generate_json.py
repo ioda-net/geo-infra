@@ -261,7 +261,8 @@ class OwsParser(Generate):
         for layer_name, layer in self.wms.contents.items():
             label = getattr(layer, 'title', layer.name)
             legend = layer.styles.get('default', {}).get('legend', '')
-            queryable = bool(getattr(layer, 'queryable', False))
+            queryable = bool(getattr(layer, 'queryable', False)) and \
+                layer_name not in self.config['layers'].get('force_non_queryable', set())
             attribution = getattr(layer, 'attribution', self.default_layer_attribution)
             opacity = getattr(layer, 'opaque', 0) if layer_name not in self.background_layers_ids \
                 else self.default_background_opacity
