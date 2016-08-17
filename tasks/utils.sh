@@ -103,16 +103,16 @@ function restart-service {
                 _get-infra-names "$@"
 
                 for infra_name in "${infra_names[@]}"; do
-                    sudo /usr/bin/systemctl restart "searchd@${infra_name}.service"
+                    sudo "${SYSTEMCTL_CMD}" restart "searchd@${infra_name}.service"
                 done
                 ;;
             *)
                 if [[ -e "/usr/lib/systemd/system/$1.service" ]]; then
-                    sudo /usr/bin/systemctl restart "$1.service"
+                    sudo "${SYSTEMCTL_CMD}" restart "$1.service"
                 elif [[ -e "/usr/lib/systemd/system/${1}d.service" ]]; then
-                    sudo /usr/bin/systemctl restart "${1}d.service"
+                    sudo "${SYSTEMCTL_CMD}" restart "${1}d.service"
                 elif [[ -e "/usr/lib/systemd/system/${1}" ]]; then
-                    sudo /usr/bin/systemctl restart "$1.service"
+                    sudo "${SYSTEMCTL_CMD}" restart "$1.service"
                 else
                     echo '$1 service not found' >&2
                 fi
@@ -123,9 +123,9 @@ function restart-service {
 
 function _restart-apache {
     if [[ -e '/usr/lib/systemd/system/httpd.service' ]]; then
-        sudo /usr/bin/systemctl restart httpd.service
+        sudo "${SYSTEMCTL_CMD}" restart httpd.service
     else
-        sudo /usr/bin/systemctl restart apache2.service
+        sudo "${SYSTEMCTL_CMD}" restart apache2.service
     fi
 }
 

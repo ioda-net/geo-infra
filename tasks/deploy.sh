@@ -275,9 +275,9 @@ function reload-apache {
         "${pord_cmd}"
     elif sudo /usr/sbin/apachectl -t; then
         if [[ -e '/usr/lib/systemd/system/httpd.service' ]]; then
-            sudo /usr/bin/systemctl reload httpd.service
+            sudo "${SYSTEMCTL_CMD}" reload httpd.service
         else
-            sudo /usr/bin/systemctl reload apache2.service
+            sudo "${SYSTEMCTL_CMD}" reload apache2.service
         fi
     fi
 }

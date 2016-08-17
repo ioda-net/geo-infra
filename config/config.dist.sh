@@ -51,6 +51,16 @@ set-var RENDER_CMD "./scripts/render.py"
 set-var GENERATE_CMD "./scripts/generate.py"
 set-var SPHINX_CMD sphinx-build
 
+# systemctl commands (in /usr/bin/systemctl on most systems but in /bin/systemctl on Debian)
+if [[ -f "/usr/bin/systemctl" ]]; then
+    set-var SYSTEMCTL_CMD "/usr/bin/systemctl"
+elif [[ -f "/bin/systemctl" ]]; then
+    set-var SYSTEMCTL_CMD "/bin/systemctl"
+elif [[ -z "${SYSTEMCTL_CMD:-}" ]]; then
+    echo "Cannot find systemctl on your system. Set SYSTEMCTL_CMD to the correct path in your environnement" >&2
+    exit 1
+fi
+
 
 # Pathes
 ## Keep in sync with global.toml#dest.vhost This is used to know where are the vhosts we have to
