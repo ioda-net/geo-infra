@@ -106,6 +106,11 @@ function restart-service {
                     sudo "${SYSTEMCTL_CMD}" restart "searchd@${infra_name}.service"
                 done
                 ;;
+            "tomcat")
+                if ! sudo "${SYSTEMCTL_CMD}" restart tomcat.service; then
+                    sudo "${SYSTEMCTL_CMD}" restart tomcat8.service
+                fi
+                ;;
             *)
                 if [[ -e "/usr/lib/systemd/system/$1.service" ]]; then
                     sudo "${SYSTEMCTL_CMD}" restart "$1.service"
