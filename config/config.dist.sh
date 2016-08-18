@@ -92,11 +92,6 @@ set-var MFP_SOURCE_PATH "../forks/mapfish-print"
 set-var MFP_BUILD_BRANCH gf3
 
 
-# Front
-# DEFAULT_PORTAL is used to generate the test configuration with the proper plugins.
-set-var DEFAULT_PORTAL 'demo'
-
-
 # Misc
 ## If "true", some commands will be less verbose.
 set-var QUIET "false"
