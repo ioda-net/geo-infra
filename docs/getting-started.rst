@@ -3,10 +3,13 @@ Getting Started
 
 Estimated time to complete: 3/4 hours.
 
-.. Keep in sync with sysadmin/requirements.rst
+.. contents::
+
 
 Requirements
 ------------
+
+.. Keep in sync with sysadmin/requirements.rst
 
 - `Apache 2 <https://httpd.apache.org/>`__ with:
 
@@ -93,7 +96,7 @@ Setup the portal
 
 - Switch to ``geo-infra``:
 
-  - Install the python dependencies listed in ``requires.txt``. You can install them globally with ``sudo pip install -r requires.txt`` or in a venv. If a version of Python below 3.5, you'll also need glob2. You can install it this way: ``sudo pip install glob2``. To install the dependencies in a venv, follow the steps below:
+  - Install the python dependencies listed in ``requires.txt``. You can install them globally with ``sudo pip install -r requires.txt`` or in a venv. If you use a version of Python below 3.5, you'll also need glob2. You can install it this way: ``sudo pip install glob2``. To install the dependencies in a venv, follow the steps below:
 
     - Create it: ``python3 -m venv .venv``
     - Activate it: ``source .venv/bin/activate`` **This must be done once before launching any command with manuel.**

@@ -256,7 +256,7 @@ are parsed in the order they are parsed. To only get the config, redirect error 
 To discard the config, redirect the standard output to /dev/null.
 
 If you have jq installed, you can get any section from the JSON like that:
-manuel config geojb 2> /dev/null | jq '.mapserver'
+manuel config demo 2> /dev/null | jq '.mapserver'
 
 **Default values**
 
