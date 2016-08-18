@@ -40,7 +40,7 @@ Requirements
     USER ALL=(ALL) NOPASSWD: /usr/bin/indexer --verbose --rotate --config /etc/sphinx/customer-infra.conf --all
     USER ALL=(ALL) NOPASSWD: /usr/sbin/apachectl -t
 
-- The following libraries to correctly create the python venv: geos, geos-devel, postgresql-devel, libxml2-devel, libxslt-devel. On debian based system, use this list: libgeos-c1, libgeos-dev, python3-pip (needed to create the virtualenv for the API), libxml2-dev, libxslt-dev.
+- The following libraries to correctly create the python venv: geos, geos-devel, postgresql-devel, libxml2-devel, libxslt-devel. On debian based system, use this list: libgeos-c1, libgeos-dev, libxml2-dev, libxslt-dev.
 
 
 Before we start
