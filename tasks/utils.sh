@@ -31,7 +31,7 @@ function generate {
 }
 
 
-HELP['render']="manuel render OPITONS
+HELP['render']="manuel render OPTIONS
 
 Wrapper around scripts/render.py --front-dir \$FRONT_DIR. All the options are passed to the script.
 Use --help for more details."

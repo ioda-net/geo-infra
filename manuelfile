@@ -122,7 +122,7 @@ function dev-full {
 HELP['prod']="manuel prod PORTAL1 [PORTAL2 [PORTAL3] …]
 
 Generate a production version of mapinfra and the frontend for targeted portals. To generate even
-with uncommited changes or without changing branch, add the --force option as first parameter.
+with uncommitted changes or without changing branch, add the --force option as first parameter.
 
 This task can be launch with portals from different infrastructures if --force is given."
 function prod {
