@@ -3,6 +3,8 @@ Getting Started
 
 Estimated time to complete: 3/4 hours.
 
+.. Keep in sync with sysadmin/requirements.rst
+
 Requirements
 ------------
 
@@ -38,12 +40,22 @@ Requirements
 - The following libraries to correctly create the python venv: geos, geos-devel, postgresql-devel, libxml2-devel, libxslt-devel. On debian based system, use this list: libgeos-c1, libgeos-dev, python3-pip (needed to create the virtualenv for the API), libxml2-dev, libxslt-dev.
 
 
+Before we start
+---------------
+
+All tasks are launched here with `manuel <https://github.com/ShaneKilkelly/manuel>`__, a task runner written in Bash. To enable autocompletion in a Bash shell, source the ``geo-infra/manuel.autocomplete.bash`` file. Completion is also `available for zsh <https://github.com/ShaneKilkelly/manuel/blob/master/manuel.autocomplete.zsh>`__.
+
+To launch ``manuel`` without always appending ``./`` copy ``geo-infra/manuel`` to your ``~/bin`` folder.
+
+To get help about any task, use ``manuel help TASK``. For instance, ``manuel help help``.
+
+
 Setup the portal
 ----------------
 
-- Clone the repositories in the same folder (they can be aranged differently later if you override the proper values in ``geo-infra/config/config.sh``):
+- Clone the repositories in the same folder (they can be arranged differently later if you override the proper values in ``geo-infra/config/config.sh``):
 
-  - The main infrastrucute directory. All commands listed below must be launched in here: ``git clone https://github.com/ioda-net/geo-infra.git``
+  - The main infrastructure directory. All commands listed below must be launched in here: ``git clone https://github.com/ioda-net/geo-infra.git``
   - The API: ``git clone https://github.com/ioda-net/geo-api3.git``
   - The frontend: ``git clone https://github.com/ioda-net/geo-front3.git``
   - The sample customer infra: ``git clone https://github.com/ioda-net/customer-infra.git``
