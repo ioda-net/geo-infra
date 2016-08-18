@@ -2,8 +2,6 @@
 /config/config.sh
 
 # Output
-dev
-prod
 /docs/_build
 
 # Logs
