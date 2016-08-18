@@ -102,15 +102,7 @@ class GenerateConfig:
 
         It will:
 
-        #. Load the global configuration
-        #. Load the configuration common to all portal:
-
-            #. the _common.dist.toml file
-            #. the _common.prod.toml file if it exists
-            #. the _common.dev.toml file if ``self.type == 'dev'`` and if it exists
-
-        #. Load the portal specific configuration if ``self.portal is not None``. It follows the
-           same rules as the common file (dist -> prod -> dev).
+        #. Load the global configuration as explained in `the section about configuration <../infra.html#configuration>`__
         #. Add any complementary keys to self._config that are not in the config files:
 
             - type
@@ -119,7 +111,7 @@ class GenerateConfig:
             - infra_dir: the absolute path to the current customer infra dir
             - infra_name: the base name of infra dir, eg customer-infra
             - mapserver_ows_host: the host of mapserver (used to generate the print configuration).
-              **Only is portal is not None.**
+              **Only if portal is not None.**
             - prod_git_repos_location: location of the productions git repositories on the server.
         '''
         global_config = self._load_config_from_file('config/global.toml', None)

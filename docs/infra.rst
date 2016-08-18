@@ -27,7 +27,26 @@ They can be located in the following subfolders (in ``geo-infra`` or ``customer-
 - portals
 - search
 
-They are written in the `jinja2 template language <http://jinja.pocoo.org/>`__.
+They are written in the `jinja2 template language <http://jinja.pocoo.org/>`__. In order to ease the writing of templates, you can use special strings that will be replaced by the corresponding values:
+
+- ``type``: dev or prod
+- ``portal``: the name of the portal
+- ``infra_dir``: the absolute path to the current customer infra dir
+- ``infra_name``: the base name of infra dir, eg customer-infra
+- ``mapserver_ows_host``: the host of mapserver (used to generate the print configuration). Only is portal is not None.
+- ``prod_git_repos_location``: location of the productions git repositories on the server.
+
+They can be used like this to be replaced by the correct values:
+
+::
+
+  {{ infra_dir }}/{{ dev }}
+
+To use any other value, you must refer to the section and the key, like this:
+
+::
+
+  {{ search.sphinx_sql_host }}
 
 MapServer Templates
 +++++++++++++++++++
@@ -87,6 +106,39 @@ Configuration
 
 Configuration for the portals and templates
 +++++++++++++++++++++++++++++++++++++++++++
+
+The configuration files are written in `TOML <https://github.com/toml-lang/toml>`__. A toml file looks like:
+
+.. code:: ini
+
+  [section]
+  key_str_value = 'value'
+  key_bool_value = true
+  # This is a comment
+  key_nb_value = 78.0
+  [section.subsection]
+  key_array = [1, 2, 3]
+  key_obj = { k1 = 'Hello', k2 = 'World' }
+
+In order to ease the writing of some values, you can use special strings that will be replaced by their values:
+
+- ``{type}``: the type of deployment.
+- ``{portal}``: the name of the portal.
+- ``{domain}`` (from vhost.domain).
+
+They can be used like this:
+
+.. code:: ini
+
+  key = '{type}.{portal}.{domain}'
+
+For instance, with ``type = 'dev'``, ``portal = 'demo'`` and ``domain = 'geoportal.local'``, the value of key will be: ``'dev.demo.geoportal.local'``.
+
+If you want to insert curly braces in your string, you need to escape them like this:
+
+.. code:: ini
+
+  key_with_curly_brace = '{{toto}}'
 
 The configuration system is design to allow easy deployment on production while being able to override any value for development or tests purposes. In order to easy maintenance, everything that can be in a ``config/_common.<type>.toml`` file must be in it. Any value in the ``config/_common.<type>.toml`` files can be overridden in a portal specific file.
 
