@@ -10,53 +10,46 @@ Location: https://github.com/ioda-net/geo-infra
 
 This is the documentation for the following projects:
 
-- geo-api3
-- geo-front3
-- geo-infra
-
-Most of the files use either the markdown syntax, plain html or the Restructured
-Text syntax. Currently, the documentation is writtent partially in English and
-French.
-
-For new files, please use RST and English to write the doc.
-
-All tasks are launched here with `manuel
-<https://github.com/ShaneKilkelly/manuel>`__, a task runner written in Bash. To
-enable autocompletion in a Bash shell, source the ``manuel.autocomplete.bash``
-file. Completion is also `available for zsh
-<https://github.com/ShaneKilkelly/manuel/blob/master/manuel.autocomplete.zsh>`__.
-To launch ``manuel`` without always appending ``./`` copy it to your ``~/bin``
-folder.
-
-To get help about any task, use ``manuel help TASK``. For instance, ``manuel
-help help``.
-
-To build this documentation in HTML under ``_build/html``, use:
-
-.. code-block:: bash
-
-   manuel build-doc
+- `geo-api3 <https://github.com/ioda-net/geo-api3>`__
+- `geo-front3 <https://github.com/ioda-net/geo-front3>`__
+- `geo-infra <https://github.com/ioda-net/geo-infra>`__
 
 
-Contents
-========
+General
+=======
 
 .. toctree::
-   :maxdepth: 1
 
-   getting-started.rst
-   create-portal.rst
-   debug.rst
-   manuel.md
-   functionnal-tests.rst
-   infra/index.rst
-   api/index.rst
-   front/index.rst
-   misc.rst
+    getting-started.rst
+
+.. toctree::
+    :maxdepth: 1
+
+    infra.rst
+    manuel.md
+    debug.rst
+    misc.rst
 
 
-Swisstopo
-=========
+Content
+=======
+
+Who are you?
+
+- *Users*, in this documentation, are those who manage a specific customer infrastructure: creation of portal (configuration, help website, searches, definition of get features), deployment of the portals. They can be helped by the developers or the system administrators to perform some tasks.
+- *Developers* write code in `geo-api3 <https://github.com/ioda-net/geo-api3>`__, `geo-front3 <https://github.com/ioda-net/geo-front3>`__ and `geo-infra <https://github.com/ioda-net/geo-infra>`__. They may occasionally help the user or the system administrators to perform their tasks.
+- *System administrators* are in charge of the administration of the servers and databases. They are mostly present to help set up the infrastructure for the first time on their servers (installation of dependencies, configuration of system daemons, creation of the git repositories to deploy a portal to production). Once the setup is done, the users should be able to manage most of the things by themselves. They may still take action from times to time to update packages or redeploy the API.
+
+.. toctree::
+    :maxdepth: 1
+
+    user/index.rst
+    dev/index.rst
+    sysadmin/index.rst
+
+
+Notes on code from upstream
+===========================
 
 To learn more about how the code of `mf-geodamin3 <https://github.com/geoadmin/mf-geoadmin3>`__ and `mf-chsdi3 <https://github.com/geoadmin/mf-chsdi3>`__ from Swisstopo works, have a look at these sections:
 
@@ -64,6 +57,22 @@ To learn more about how the code of `mf-geodamin3 <https://github.com/geoadmin/m
     :maxdepth: 2
 
     swisstopo/swisstopo.rst
+
+
+About this documentation
+========================
+
+Most of the files use either the markdown syntax, plain html or the Restructured
+Text syntax. Currently, the documentation is written partially in English and
+French.
+
+For new files, please use RST and English unless you have a good reason not to.
+
+To build this documentation in HTML under ``_build/html``, use:
+
+.. code-block:: bash
+
+   manuel build-doc
 
 
 Indices and tables
