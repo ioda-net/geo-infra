@@ -88,7 +88,12 @@ function db-grant-update {
     local database=${2:-${DEFAULT_DB_NAME}}
     local owner="${3:-${DEFAULT_DB_OWNER}}"
     echo "Adjusting rights on ${database}"
-    psql -h "${host}" -d "${database}" -U "${owner}" --no-password -q -f ./scripts/slq/db-grant-update.sql > /dev/null 2>&1
+    local sql_statements=$(cat ./scripts/sql/db-grant-update.sql |
+        sed "s/DEFAULT_DB_OWNER/${DEFAULT_DB_OWNER}/g" |
+        sed "s/DEFAULT_DB_MAPSERVER_ROLE/${DEFAULT_DB_MAPSERVER_ROLE}/g" |
+        sed "s/DEFAULT_DB_SEARCH_ROLE/${DEFAULT_DB_SEARCH_ROLE}/g" |
+        sed "s/DEFAULT_DB_API_ROLE/${DEFAULT_DB_API_ROLE}/g")
+    psql -h "${host}" -d "${database}" -U "${owner}" --no-password -q -f - <<< "${sql_statements}"
 }
 
 
@@ -206,7 +211,7 @@ function db-dev2prod {
 
     # Restore api3 table shortcut and files with -c clean option.
     pg_restore --host "${host}" -U "${owner}" --no-password --dbname "${database}" -c --jobs 2 "${backup_api_file}"
-	# Need to recreate constraints 
+	# Need to recreate constraints
 	psql --host "${host}" -U "${owner}" --no-password --dbname "${database}" -c '
 ALTER TABLE api3.files
   ADD CONSTRAINT pk_file_id PRIMARY KEY(admin_id, file_id);
