@@ -130,6 +130,19 @@ In order to be sure that tomcat, apache, search can restart and that a reindex c
 
     sudo /usr/bin/indexer --verbose --rotate --config /etc/sphinx/customer-infra.conf --all
 
+- ``sudo_tomcat_copyconf``. It may contain:
+
+  .. code:: bash
+
+    set -u
+    set -e
+
+    MFP_PRINT_APPS='/srv/tomcat/webapps/print-ioda-infra/print-apps'
+    SOURCE_APP="/home/geop/ioda-infra/prod/$1/print"
+
+    mkdir -p "${MFP_PRINT_APPS}/$1"
+    /usr/bin/cp -av ${SOURCE_APP}/* "${MFP_PRINT_APPS}/$1/"
+
 vhosts
 ------
 
