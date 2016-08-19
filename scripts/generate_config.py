@@ -29,7 +29,7 @@ import logging
 import sys
 
 from collections import namedtuple
-from os.path import basename, exists, realpath
+from os.path import abspath, basename, exists
 from urllib.parse import urlparse
 
 from generate_utils import path
@@ -161,7 +161,7 @@ class GenerateConfig:
         if self.portal:
             self._config['mapserver_ows_host'] = urlparse(self._config['mapserver']['PORTAL_BASE_OWS']).hostname
         # Make output path absolute
-        self._config['infra_dir'] = realpath(self.infra_dir)
+        self._config['infra_dir'] = abspath(self.infra_dir)
         self._config['infra_name'] = basename(self._config['infra_dir'])
         self._config['prod_git_repos_location'] = self.prod_git_repos_location
 

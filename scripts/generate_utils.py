@@ -34,7 +34,7 @@ import sys
 from glob import glob
 from http.server import CGIHTTPRequestHandler, HTTPServer
 from jinja2cli.cli import render
-from os.path import basename, exists, isdir, join, realpath, samefile
+from os.path import abspath, basename, exists, isdir, join, samefile
 from threading import Thread
 from urllib.parse import urlparse
 
@@ -203,7 +203,7 @@ class Generate:
         will not remove the directory of the current portal. If you try to remove something else, a
         warning is printed instead.
         '''
-        src = realpath(src)
+        src = abspath(src)
 
         # Don't try to remove if src doesn't exist
         if not exists(src):
