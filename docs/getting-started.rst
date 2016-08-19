@@ -20,8 +20,8 @@ Requirements
   - ``mod_fcgid``. To enable ``mod_fcgid`` on Debian based systems install the ``libapache2-mod-fcgid`` package (``aptitude install libapache2-mod-fcgid``)
   - ``mod_proxy``, ``mod_proxy_ajp`` and ``mod_proxy_http``. To enable ``mod_proxy``, ``mod_proxy_ajp`` and ``mod_proxy_http`` on Debian based systems, use ``a2enmod proxy``, ``a2enmod proxy_ajp`` and ``a2enmod proxy_http``.
 
-- `Python <https://www.python.org/>`__ 3.4 or above with virtualenv capabilities (probably in the ``python3-venv`` package)
-- `nodejs <http://nodejs.org/>`__ 5.0 or above
+- `Python <https://www.python.org/>`__ 3.4 or above with virtualenv capabilities (probably in the ``python3-venv`` package or included with your Python 3 install)
+- `nodejs <http://nodejs.org/>`__ 4.0 or above
 - `MapServer <http://mapserver.org/>`__ 6.4.3+ (it will not work with 6.4.1) or 7.0.1+ (package commonly named ``mapserver`` on most distributions, on Debian based system, use ``cgi-mapserver`` and ``mapserver-bin``)
 - `GDAL <http://www.gdal.org>`__ 2.0 or above with Python3 bindings
 - `Sphinx search <http://sphinxsearch.com/>`__ or above for the search features (package commonly named ``sphinx`` on most distributions, on Debian system, use ``sphinxsearch`` in Jessie backports)
@@ -198,7 +198,7 @@ Switch to ``geo-infra``:
 
     On Debian based systems, before creating the symlink, you must (*as root*):
 
-      - Create the ``/et  c/sphinx/`` directory: ``mkdir /etc/sphinx/``
+      - Create the ``/etc/sphinx/`` directory: ``mkdir /etc/sphinx/``
       - Change its owner to ``sphinxsearch``: ``chown -R sphinxsearch:sphinxsearch /etc/sphinx``
 
 - Create sphinx infrastructure specific directories (*this must be done as root*):
