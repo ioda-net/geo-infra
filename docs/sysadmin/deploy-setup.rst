@@ -28,3 +28,4 @@ Deploy of a new portal
 
 #. Create the bare repository for the portal in ``$PROD_BARE_GIT_REPOS_LOCATION`` named like this ``<portal>.git``. This can be done with: ``git init --bare <portal>.git``
 #. Ask the user to init these repositories for production with (in ``geo-infra`` and ``$INFRA_DIR`` pointing to the proper infrastructure directory): ``manuel init-prod-repo <portal>``
+#. Create the symlink to your MapServe executable named like ``<portal>`` in the directory defined by ``vhost.ows_path`` from ``customer-infra/config/_common.dist.toml``

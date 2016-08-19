@@ -242,12 +242,12 @@ HELP['deploy-global-search-conf']="manuel deploy-global-search-conf
 
 Deploy sphinx global configuration."
 function deploy-global-search-conf {
-    generate --type "prod" \
-        --customer-infra-dir "${PROD_GIT_REPOS_LOCATION}" \
-        --prod-git-repos-location "${PROD_GIT_REPOS_LOCATION}" \
-        --search-global
-    pushd "prod/search"
+    _load-prod-config
+
+    generate-global-search-conf "prod"
+    pushd "${INFRA_DIR}/prod/search"
         local message="release search $(date +"%Y-%m-%d-%H-%M-%S")"
+        git add -A .
         if git ci -am "${message}"; then
             git tag -a -m "${message}" $(date +"%Y-%m-%d-%H-%M-%S")
             git push
@@ -291,6 +291,8 @@ Deploy the vhost generated in prod/vhost.d to the production server.
 
 You can specify a specific If INFRA_DIR is not specified, it will loop over "
 function deploy-vhost {
+    _load-prod-config
+
     local infra_dir="${1:-}"
     local possible_infra_dir
     local vhost_dir
