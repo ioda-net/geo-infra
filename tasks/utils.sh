@@ -312,9 +312,11 @@ HELP['init-prod-repo']="manuel init-prod-repo PORTAL
 Clone the prod repo from the git server (the repo must exists there) and commit a dummy file. The
 repo is then clone on the production server."
 function init-prod-repo {
+    _load-prod-config
+
     local bare_repo="${PROD_BARE_GIT_REPOS_LOCATION}/$1.git"
-    infra_dir=$(_get-infra-dir "$1")
-    pushd "${infra_dir}/prod/"
+
+    pushd "${INFRA_DIR}/prod/"
         git clone "${bare_repo}"
         cd "$1"
         touch init
