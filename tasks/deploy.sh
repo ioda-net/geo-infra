@@ -270,7 +270,7 @@ HELP['reload-apache']="manuel reload-apache
 
 "
 function reload-apache {
-    local prod_cmd="sudo_apache2_reload"
+    local prod_cmd="sudo_apache_reload"
 
     if type "${prod_cmd}" > /dev/null 2>&1; then
         "${pord_cmd}"

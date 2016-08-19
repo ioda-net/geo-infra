@@ -40,3 +40,9 @@ If the vhosts require an update:
 
 #. Generate them for the concerned portals: ``manuel vhost prod PORTAL1 PORTAL2 …``
 #. Deploy them to the server: ``manuel deploy-vhost``
+
+
+API
+---
+
+If the API need to be updated on production, ask your system administrator to do it. You can send the link `the relevant section of the documentation <../sysadmin/server-setup.html#api>`__.

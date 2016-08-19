@@ -24,6 +24,7 @@ Common Requirements
   - ``mod_filter``. To enable ``mod_filter`` on Debian based systems, use ``a2enmod filter``
   - ``mod_deflate``. To enable ``mod_deflate`` on Debian based systems, use ``a2enmod deflate``
   - ``mod_proxy``, ``mod_proxy_ajp`` and ``mod_proxy_http``. To enable ``mod_proxy``, ``mod_proxy_ajp`` and ``mod_proxy_http`` on Debian based systems, use ``a2enmod proxy``, ``a2enmod proxy_ajp`` and ``a2enmod proxy_http``.
+  - ``mod_wsgi``. This is most likely in a separate package named like ``python3-mod_wsgi``. To enable ``mod_wsgi`` on Debian based systems, use ``a2enmod wsgi``.
 
 - `Python <https://www.python.org/>`__ 3.4 or above with virtualenv capabilities (probably in the ``python3-venv`` package or included with your Python 3 install)
 - `nodejs <http://nodejs.org/>`__ 4.0 or above
@@ -85,6 +86,7 @@ You will need sudo to launch some commands with the user used to deploy the port
   ::
 
     USER ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart httpd.service  # Or /bin/systemctl restart apache2.service on Debian based system
+    USER ALL=(ALL) NOPASSWD: /usr/bin/systemctl reload httpd.service  # Or /bin/systemctl reload apache2.service on Debian based system
     USER ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart searchd@customer-infra.service # Or /bin/systemctl restart searchd@customer-infra.service on Debian based system
     USER ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart tomcat.service # Or /bin/systemctl restart tomcat.service on Debian based system
     USER ALL=(ALL) NOPASSWD: /bin/systemctl restart tomcat8.service  # Debian based system only, in addition to the previous line.
@@ -109,6 +111,12 @@ In order to be sure that tomcat, apache, search can restart and that a reindex c
   .. code:: bash
 
     sudo /usr/bin/systemctl restart httpd.service
+
+- ``sudo_apache_reload``. It may contain:
+
+  .. code:: bash
+
+    sudo /usr/bin/systemctl reload httpd.service
 
 - ``sudo_search_restart``. It may contain:
 
@@ -213,3 +221,27 @@ On `sphinx search <http://sphinxsearch.com/>`__ is correctly installed on your s
   - Reload systemd daemons: ``systemctl daemon-reload``
 
 - Enable the sphinx daemon: ``systemctl enable searchd@customer-infra.service``
+
+
+API
+---
+
+#. On the production server, either:
+
+   - Clone the api for the first deploy: ``git clone https://github.com/ioda-net/geo-api3.git``
+   - Update the API: ``git pull``
+
+   .. note::
+
+    Depending on who you are, you may:
+
+       - get the code of the API from another location
+       - need to switch to a custom branch.
+
+#. Update the configuration of the API for this deployment. To do this, create a file named ``geo-api3/config/config.<branchname>.toml`` and override any values necessary from the ``geo-api3/config/config.dist.toml`` config file.
+#. Override any commands necessary in ``geo-api3/config/config.dist.sh`` by creating a ``geo-api3/config/config.sh`` file.
+#. Deploy the API: on the production server, in the ``geo-api3`` folder, launch: ``./manuel deploy``
+#. Add a new vhost for the API. It should look like the vhost below. Adapt the user names and file paths to match those defined in the ``geo-api3/config/config.<branchname>.toml``.
+
+   .. literalinclude:: /_static/config/api-vhost.conf
+    :language: apache

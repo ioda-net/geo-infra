@@ -5,5 +5,4 @@ System administrator guide
 
     server-setup.rst
     deploy-setup.rst
-    api-deploy.rst
     db.rst
