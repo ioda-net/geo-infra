@@ -6,13 +6,13 @@
 
 [Unit]
 Description=Sphinx - SQL Full Text Search Engine %i
-After=local-fs.target network.target mysqld.service
+After=local-fs.target network.target
 
 [Service]
 User=sphinx
-Type=forking
+Group=sphinx
 PIDFile=/run/sphinx/searchd-%i.pid
-ExecStart=/usr/bin/searchd --config /etc/sphinx/%i.conf
+ExecStart=/usr/bin/searchd --nodetach --config /etc/sphinx/%i.conf
 
 [Install]
 WantedBy=multi-user.target
