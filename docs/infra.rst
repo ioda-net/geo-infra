@@ -51,6 +51,9 @@ To use any other value, you must refer to the section and the key, like this:
 MapServer Templates
 +++++++++++++++++++
 
+MapServer includes
+``````````````````
+
 You can split your MapServer files into various files to ease the creation of complex Map files. To do this, you can use the ``INCLUDE`` directive of MapServer. It is used like this:
 
 .. code::
@@ -59,6 +62,22 @@ You can split your MapServer files into various files to ease the creation of co
   INCLUDE "../layers/buildings.map"
 
 During the rendering phase, the ``customer-infra/portals/<portal>.in.map`` will be parsed for these includes. These included files will be rendered by jinja2, copied to ``customer-infra/dev/<portal>/map`` directory with the same structure as in the ``customer-infra`` directory. You can also include files with the ``INCLUDE`` directive in included files.
+
+Jinja2 includes
+```````````````
+
+You can also use jinja's ``include`` tag to include jinja files in your main templates. All included files can contain jinja2 markup. After the generation process, you will have only one MapServer file containing the content of all included files. This can be done like this:
+
+.. code::
+
+  {% include 'utils/symbols.in.map' %}
+
+.. note::
+
+  The paths in the ``include`` tag are relative to the main template file.
+
+Testing generated .map files
+````````````````````````````
 
 You can test the generated Map files with ``./manuel test-map-files dev PORTAL_NAME``
 
