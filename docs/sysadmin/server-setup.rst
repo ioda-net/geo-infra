@@ -155,7 +155,7 @@ Print
 
 Printing a map relies on `MapFish Print <https://github.com/mapfish/mapfish-print>`__ a Java servlet developed by `Camptocamp SA <http://www.camptocamp.com/en/>`__.
 
-You can either build it from scratch from `the source <https://github.com/mapfish/mapfish-print>`__ or use our `last build <https://files.geoportal.xyz/print.war>`__. Once you have the WAR, do the following actions as root:
+You can either build it from scratch from `the source <https://github.com/mapfish/mapfish-print>`__ or use our `last build </data/getting-started/print.war>`__. Once you have the WAR, do the following actions as root:
 
   - Copy the WAR in your tomcat webapps folder (eg ``/usr/share/tomcat/webapps``, ``/srv/tomcat/webapps/`` or ``/var/lib/tomcat8/webapps``) under the name ``print-customer-infra.war``.
   - Start tomcat: ``systemctl start tomcat``

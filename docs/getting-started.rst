@@ -155,7 +155,7 @@ Switch to ``geo-api3``:
     # This must be coherent with vhost.api_proxy from customer-infra. 9080 is the default value from _common.dist.toml
     port = 9080
 
-  - Download the `sample sqlite database file <https://files.geoportal.xyz/customer_infra.sqlite>`__ into the ``geo-api3`` folder.
+  - Download the `sample sqlite database file </data/getting-started/customer_infra.sqlite>`__ into the ``geo-api3`` folder.
   - Create the proper venv with ``./manuel venv``
   - Update the ini files used by Pyramid: ``./manuel ini-files``.
   - Launch the API: ``./manuel serve``.
@@ -227,7 +227,7 @@ Switch to ``geo-infra``:
 
   - Reload systemd daemons: ``systemctl daemon-reload``
 
-- Download the `data needed by sphinx to build its indexes <https://files.geoportal.xyz/places.csv>`__ and put in it ``customer-infra/data``.
+- Download the `data needed by sphinx to build its indexes </data/getting-started/places.csv>`__ and put in it ``customer-infra/data``.
 - Start sphinx: ``./manuel restart-service search customer-infra``
 - Trigger an reindex: ``./manuel reindex customer-infra``
 - Search should work as expected.
@@ -262,7 +262,7 @@ Print
 
 Switch to ``geo-infra``:
 
-- Download the `print WAR <https://files.geoportal.xyz/print.war>`__.
+- Download the `print WAR </data/getting-started/print.war>`__.
 - Do the following actions as root:
 
   - Copy the WAR in your tomcat webapps folder (eg ``/usr/share/tomcat/webapps``, ``/srv/tomcat/webapps/`` or ``/var/lib/tomcat8/webapps``) under the name ``print-customer-infra.war``.
