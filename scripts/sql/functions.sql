@@ -1,4 +1,4 @@
--- custom postgres sql function remove_accents
+-- remove_accents function
 CREATE OR REPLACE FUNCTION public.remove_accents(string character varying)
   RETURNS character varying AS
 $BODY$
@@ -24,9 +24,11 @@ $BODY$
 $BODY$
   LANGUAGE plpgsql IMMUTABLE
   COST 100;
+-- end remove_accents function
 
 
-﻿CREATE OR REPLACE FUNCTION public.quadindex(geom geometry)
+-- quadindex function
+CREATE OR REPLACE FUNCTION public.quadindex(geom geometry)
   RETURNS text AS
 $BODY$
 DECLARE
@@ -106,3 +108,4 @@ END;
 $BODY$
   LANGUAGE plpgsql VOLATILE
   COST 100;
+-- end quadindex function
