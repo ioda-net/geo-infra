@@ -61,3 +61,12 @@ Start a Python 3 shell in ``geo-infra`` and type:
     cgi_server()
 
 Then to the corresponding request, eg ``wget http://localhost:8888/cgi-bin/mapserv?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities``
+
+
+Print
+-----
+
+- *Image read failed*: Check that the API is working correctly and that you can have a QR code for the printed permalink.
+- *Target host is null*: Check that all the necessary images are present in MFP's ``print-apps`` folder.
+- Spring/authentication related: check that `this patch <https://github.com/ioda-net/geo-infra/blob/master/patches/mfp-remove-basic-auth-security.patch>`__ was correctly applied to your ``print-customer-infra/WEB-INF/web.xml``.
+- Max size related check that `this patch <https://github.com/ioda-net/geo-infra/blob/master/patches/mfp-correct-max-request-size.patch>`__ was correctly applied to your ``print-customer-infra/WEB-INF/web.xml``. If necessary, increase the max content length value.
