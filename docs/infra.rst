@@ -19,6 +19,8 @@ Setup a customer infrastructure
 - Review the TOML and shell configurations and override any value necessary for your need.
 
 
+.. _ref_infra_templates:
+
 Templates
 ~~~~~~~~~
 
@@ -185,7 +187,7 @@ If you are building the portal for development, the files below are loaded if th
     - All files ends by ``.<type>.toml`` to ease recognition when many of them are opened in a text editor.
     - Only the files in ``customer-infra/config/dist`` should be tracked by git to allow developers to override values for testing purposes. This means that the values contained in these files, should match those of production to easy deployment: no need to update the production configuration, a ``git pull`` is enough.
 
-To debug the configuration, see the :ref:`debug-configuration` section of the :ref:`debug` page.
+To debug the configuration, see the :ref:`configuration section <ref_debug_configuration>` section of the :ref:`ref_debug` page.
 
 Configuration for the shell scripts
 +++++++++++++++++++++++++++++++++++
@@ -279,7 +281,7 @@ In ``customer-infra``:
 
 - ``help`` *Optional*:
 
-  - ``help/<portal>/{img,texts}``: contain respectively the images and the help texts for the help website. You can only add images and texts you want changed from Swisstopo. See the `help section <user/help.html>`__ of the documentation for more information no this.
+  - ``help/<portal>/{img,texts}``: contain respectively the images and the help texts for the help website. You can only add images and texts you want changed from Swisstopo. See the :ref:`help section <ref_cfg-portal_help>` of the documentation for more information no this.
 
 - ``img/``: contains the images for all portals
 

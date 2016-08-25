@@ -10,7 +10,7 @@ In the API, all codes specific to a customer are grouped into ``chsdi/customers`
 
 - ``__init__.py`` to create the module.
 - ``models/`` to put models specific to a customer. They should only be used in ``chsdi/customers/views/``.
-- ``utils/`` for utilities. By default, it contains a ``search.py`` file in which all search keywords are stored. See `the section about keywords in the API page <./api.html#search-keywords>`__ to learn more how search keywords are handled.
+- ``utils/`` for utilities. By default, it contains a ``search.py`` file in which all search keywords are stored. See :ref:`the section about keywords in the API page <ref_dev_api_search-keywords>` to learn more how search keywords are handled.
 - ``views/`` for customer specific views. Create a file per view. When you add a view, update the ``register_customer_view`` function from ``__init__.py`` in order for the view to be registered by Pyramid. This should look like:
 
     .. code:: python
@@ -52,6 +52,8 @@ They can the be used with the ``gf3Plugins`` service. For instance, to use a plu
 To test if a plugin is enabled, test ``gf3Plugins.plugin_name !== undefined``.
 
 
+.. _ref_dev_customer_features:
+
 Features
 ~~~~~~~~
 
@@ -80,4 +82,4 @@ We will use this code:
 
 The template will then be used in ``geo-front3/src/components/features/FeaturesService.js`` as the template to render the cell in `Ultimate Data Table <http://ultimate-datatable.readthedocs.org/>`__.
 
-See the `What we handle <../user/features.html#what-we-handle>`__ section of the user documentation of features to see what is handled by default.
+See the :ref:`relevant section <ref_user_cfg-portal_identify-features_special-columns-features>` of the user documentation to see what is handled by default.

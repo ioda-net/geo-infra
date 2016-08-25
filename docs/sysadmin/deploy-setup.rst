@@ -1,3 +1,5 @@
+.. _ref_sysadmin_deploy-setup:
+
 Setup the server for the deploy of a portal
 ===========================================
 
@@ -7,7 +9,7 @@ Setup the server for the deploy of a portal
 First deploy on a server
 ------------------------
 
-#. Create the directories in which needed for the deploy. Reefer to `the section about production configurations in server setup <./server-setup.html#production-configurations>`__ to learn how to configure it.
+#. Create the directories in which needed for the deploy. Reefer to :ref:`the section about production configurations in server setup <ref_sysadmin_server-setup_production-cfg>` to learn how to configure it.
 
     - ``$PROD_GIT_REPOS_LOCATION``
     - ``$PROD_BARE_GIT_REPOS_LOCATION``: this may be on a different server and rely on HTTPS instead of SSH. git repositories accessible in this location must be clonable by the user.
@@ -22,6 +24,8 @@ First deploy on a server
     - ``manuel init-prod-repo search``
     - ``manuel init-prod-repo vhosts.d``
 
+
+.. _ref_sysadmin_deploy-setup_deploy-new-portal:
 
 Deploy of a new portal
 ----------------------

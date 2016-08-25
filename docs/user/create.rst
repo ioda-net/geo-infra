@@ -8,8 +8,8 @@ Create a new portal
 -------------------
 
 #. Create at least a dist config file for the portal named ``config/dist/<portal>.dist.toml``. You can view an example `here <https://github.com/ioda-net/customer-infra/blob/master/config/dist/demo.dist.toml>`__.
-#. Create the map files: you must at least create a map file named ``customer-infra/portals/<portal>.in.map``. This will be the main map file for the portal. You can use includes in this file and the `jinja2 template language <http://jinja.pocoo.org/>`__. To know more about that, referer to the `template section of the infrastructure page <../infra.html#templates>`__.
-#. Create the translations CSV files below. All these files must have this header: ``key,fr,de,en,commentaires``. The content of the ``commentaires`` column will be ignored. You can off course add/remove language columns. To learn more how translations work, see the section about translations from the `portal configuration page <./configuration-portal.html#translations>`__.
+#. Create the map files: you must at least create a map file named ``customer-infra/portals/<portal>.in.map``. This will be the main map file for the portal. You can use includes in this file and the `jinja2 template language <http://jinja.pocoo.org/>`__. To know more about that, referer to the :ref:`template section of the infrastructure page <ref_infra_templates>`.
+#. Create the translations CSV files below. All these files must have this header: ``key,fr,de,en,commentaires``. The content of the ``commentaires`` column will be ignored. You can off course add/remove language columns. To learn more how translations work, see the section about translations from the :ref:`portal configuration page <ref_user_cfg-portal_translations>`.
 
    - ``customer-infra/translations/catalog.csv``: the content of the catalog, common to all portals. This includes the layer names present in the catalog and the title of the section of the catalog.
    - ``customer-infra/translations/<portal-name>.csv``: everything else (*note:* the translation for the topic titles and the topic tooltip – *topic_<topic_name>_tooltip* – go here).
@@ -19,8 +19,8 @@ Create a new portal
 
     **At least one of the files below must contain a translation line.** Otherwise, no layers config will be created. Which means your portal won't work.
 
-#. Add the external layers (WMS or WMTS) by creating the relevant JSON files in ``customer-infra/json/<portal>/external`` (optional). To learn more about how to write these files, refer to the `proper section of the page about portal configuration <./configuration-portal.html#layers-from-external-sources>`__. You can view examples `here <https://github.com/ioda-net/customer-infra/tree/master/json/demo/external>`__.
-#. Create the JSON topic files in ``customer-infra/json/<portal>/topics``. They define for each topic its name, languages, background layers, selected layers and catalog. You can view examples `here <https://github.com/ioda-net/customer-infra/blob/master/json/demo/topics>`__. To learn more how topics work, see the section about topics from the `portal configuration page <./configuration-portal.html#topics>`__.
+#. Add the external layers (WMS or WMTS) by creating the relevant JSON files in ``customer-infra/json/<portal>/external`` (optional). To learn more about how to write these files, refer to the :ref:`proper section of the page about portal configuration <ref_user_cfg-portal_layers-external-sources>`. You can view examples `here <https://github.com/ioda-net/customer-infra/tree/master/json/demo/external>`__.
+#. Create the JSON topic files in ``customer-infra/json/<portal>/topics``. They define for each topic its name, languages, background layers, selected layers and catalog. You can view examples `here <https://github.com/ioda-net/customer-infra/blob/master/json/demo/topics>`__. To learn more how topics work, see the section about topics from the :ref:`portal configuration page <ref_cfg-portal_topics>`.
 #. Add the logo for prints in ``customer-infra/print/<portal>/``. This folder must contain:
 
    - `NorthArrow.svg <https://github.com/ioda-net/customer-infra/blob/master/print/demo/NorthArrow.svg>`__ if your templates have the north arrow.
@@ -32,7 +32,7 @@ Create a new portal
     - A JPEG file per topic. These files are named like this: ``<my_topic>.jpg``.
     - A logo per language. They are named like this: ``logo.ch.<lang>.png``.
 
-#. Prepare the help site (optional). General steps are detailed below. To learn more about help, look at `the page about help in the documentation <./help.html>`__.
+#. Prepare the help site (optional). General steps are detailed below. To learn more about help, look at :ref:`the page about help in the documentation <ref_cfg-portal_help>`.
 
    - Put any texts and images that are common to all portal in the ``customer-infra/help/common`` folder. Everything that is in this folder will be loaded before any portal data, which means you can override any value in the portal folder.
    - Put any texts and images specific to a portal in ``customer-infra/help/<portal>/``.

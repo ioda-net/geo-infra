@@ -305,7 +305,7 @@ Print
 
 Do the same tests with a portal protected by authentication. You must have the same results as before. If your templates allow this, the username used to connect to the portal must be printed.
 
-In case you encounter errors, please check the `print section the debug page <../debug.html#print>`__.
+In case you encounter errors, please check the :ref:`print section the debug page <ref_debug_print>`.
 
 
 Feedback

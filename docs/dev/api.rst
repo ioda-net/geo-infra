@@ -54,6 +54,8 @@ Deploy
 Use manuel, **on the production server**: ``manuel deploy``.
 
 
+.. _ref_dev_api_search-keywords:
+
 Search keywords
 ---------------
 

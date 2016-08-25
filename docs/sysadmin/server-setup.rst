@@ -51,13 +51,12 @@ Requirements without a virtualenv
 To view the full list of Python 3 packages necessary for the API, take a look at `this file <https://github.com/ioda-net/geo-api3/blob/devel/requirements.txt>`__.
 
 
+.. _ref_sysadmin_server-setup_production-cfg:
+
 Production configurations
 -------------------------
 
-Review the production configurations. The script containing the production values for deployment is located in ``customer-infra/config/config.dist.sh``. Here is a sample file with the variables that are used and how they are used.
-
-.. literalinclude:: /_static/config/config.dist.sh
-  :language: bash
+Review the production configurations. The script containing the production values for deployment is located in ``customer-infra/config/config.dist.sh``. Here is a sample file with the variables that are used and how they are used. You can view an example `here <https://github.com/ioda-net/customer-infra/blob/master/config/config.dist.sh>`__.
 
 You should also check that the configuration for the vhost are correct (domain, HTTPS certificates). This will be located in ``customer-infra/config/dist/_config.dist.toml``. Beware that these values can be overridden in portal specific files. The section looks like this:
 
@@ -235,6 +234,8 @@ On `sphinx search <http://sphinxsearch.com/>`__ is correctly installed on your s
 
 - Enable the sphinx daemon: ``systemctl enable searchd@customer-infra.service``
 
+
+.. _ref_sysadmin_server-setup_api:
 
 API
 ---

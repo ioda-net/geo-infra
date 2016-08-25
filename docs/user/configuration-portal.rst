@@ -4,6 +4,8 @@ Configuration of a portal
 .. contents::
 
 
+.. _ref_user_cfg-portal_layers-external-sources:
+
 Layers from external sources
 ----------------------------
 
@@ -86,6 +88,7 @@ Example JSON file for external WMTS layer
     }
 
 
+.. _ref_user_cfg-portal_translations:
 
 Translations
 ------------
@@ -103,6 +106,8 @@ Translation from Swisstopo are overridden by translations in ``common.csv`` and 
 
   **At least one of the files below must contain a translation line.** Otherwise, no layers config will be created. Which means your portal won't work.
 
+
+.. _ref_cfg-portal_topics:
 
 Topics
 ------
@@ -192,7 +197,7 @@ The configuration for sphinx is divided in two parts:
 - global configuration for an infrastructure: it configures the configuration of the sphinx daemon. It can be updated with ``manuel generate-search-conf``. The templates used to generate this configuration are located in ``geo-infra/search``.
 - portal configuration: it configures the layer and locations searches:
 
-  - locations searches: the configuration is created by a template located in ``customer-infra/search/portal-locations.in.conf``. To help you write this template, you can also create dedicated views in the database. See the `schema section in the database page <../sysadmin/db.html#schemas>`__ of the system administrator manuel for more information on this. This template can look like:
+  - locations searches: the configuration is created by a template located in ``customer-infra/search/portal-locations.in.conf``. To help you write this template, you can also create dedicated views in the database. See the :ref:`schema section in the database page <ref_sysadmin_db_schemas-functions_schemas>` of the system administrator manuel for more information on this. This template can look like:
 
   .. literalinclude:: /_static/search/portal-locations.in.conf
 
@@ -229,8 +234,10 @@ In order to enable a keyword, you must:
 
     {{ search.origins_to_ranks[location] }} as rank
 
-#. Add the keyword in the API in ``geo-api3/chsdi/customers/utils/search.py`` (ask a developer to do this). You can point them to `the relevant section of the developer guide <../dev/api.html#search-keywords>`__ if needed.
+#. Add the keyword in the API in ``geo-api3/chsdi/customers/utils/search.py`` (ask a developer to do this). You can point them to :ref:`the relevant section of the developer guide <ref_dev_api_search-keywords>` if needed.
 
+
+.. _ref_user_cfg-portal_identify-features:
 
 Identify features
 -----------------
@@ -241,7 +248,9 @@ In order to enable a feature view, for a portal, you need to enable it in the ``
 - In the column ``portal_names`` put the table of portals for which the feature view must be available. For instance: ``{demo}``.
 - In the column ``layer_names`` put the name of the layers for which the feature view must be requested. For instance: ``{roads}``.
 
-Referer to the `feature section of the database page <../sysadmin/db.html#features>`__ to learn more how this works in the database and how to create feature views.
+Referer to the :ref:`feature section of the database page <ref_sysadmin_db_features>` to learn more how this works in the database and how to create feature views.
+
+.. _ref_user_cfg-portal_identify-features_special-columns-features:
 
 Special columns for features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -254,8 +263,10 @@ To be able to render feature columns with another representation than the "raw" 
 
 To use these templates, name your columns like this: ``name<pattern>``, eg ``website_url`` or ``boring_hidden``.
 
-To add a new pattern, the code of the frontend needs to be updated. Ask a developer to do this. You can point to the `relevant section of the documentation <../dev/customer.html#features>`__.
+To add a new pattern, the code of the frontend needs to be updated. Ask a developer to do this. You can point to the :ref:`relevant section of the documentation <ref_dev_customer_features>`.
 
+
+.. _ref_cfg-portal_help:
 
 Help
 ----

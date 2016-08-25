@@ -29,6 +29,8 @@ You can find the code below and in the `functions.sql script <https://github.com
   :end-before: -- end quadindex function
 
 
+.. _ref_sysadmin_db_schemas-functions_schemas:
+
 Schemas
 ~~~~~~~
 
@@ -125,6 +127,8 @@ You set the permissions for each users with ``manuel db-grant-update``. Be sure 
     :language: sql
 
 
+.. _ref_sysadmin_db_features:
+
 Features
 --------
 
@@ -149,4 +153,4 @@ In order to work as expected, all the views must contain:
 
 - a column named ``the_geom`` containing the geometry of the feature.
 - a column named ``gid`` that can be used as a primary key.
-- columns you want to return in the identify request. For instance: ``name``, ``type``. We rely on some convention to automatically render some columns. See `the page about features <GetFeatures.html#special-columns-for-features>`__ from the user manual to learn more about this.
+- columns you want to return in the identify request. For instance: ``name``, ``type``. We rely on some convention to automatically render some columns. See :ref:`the page about features <ref_user_cfg-portal_identify-features>` from the user manual to learn more about this.
