@@ -31,7 +31,7 @@ function generate {
 }
 
 
-HELP['render']="manuel render OPITONS
+HELP['render']="manuel render OPTIONS
 
 Wrapper around scripts/render.py --front-dir \$FRONT_DIR. All the options are passed to the script.
 Use --help for more details."
@@ -103,16 +103,22 @@ function restart-service {
                 _get-infra-names "$@"
 
                 for infra_name in "${infra_names[@]}"; do
-                    sudo /usr/bin/systemctl restart "searchd@${infra_name}.service"
+                    sudo "${SYSTEMCTL_CMD}" restart "searchd@${infra_name}.service"
                 done
+                ;;
+            "tomcat")
+                if ! sudo "${SYSTEMCTL_CMD}" restart tomcat.service; then
+                    echo "Trying tomcat8.service"
+                    sudo "${SYSTEMCTL_CMD}" restart tomcat8.service
+                fi
                 ;;
             *)
                 if [[ -e "/usr/lib/systemd/system/$1.service" ]]; then
-                    sudo /usr/bin/systemctl restart "$1.service"
+                    sudo "${SYSTEMCTL_CMD}" restart "$1.service"
                 elif [[ -e "/usr/lib/systemd/system/${1}d.service" ]]; then
-                    sudo /usr/bin/systemctl restart "${1}d.service"
+                    sudo "${SYSTEMCTL_CMD}" restart "${1}d.service"
                 elif [[ -e "/usr/lib/systemd/system/${1}" ]]; then
-                    sudo /usr/bin/systemctl restart "$1.service"
+                    sudo "${SYSTEMCTL_CMD}" restart "$1.service"
                 else
                     echo '$1 service not found' >&2
                 fi
@@ -123,9 +129,9 @@ function restart-service {
 
 function _restart-apache {
     if [[ -e '/usr/lib/systemd/system/httpd.service' ]]; then
-        sudo /usr/bin/systemctl restart httpd.service
+        sudo "${SYSTEMCTL_CMD}" restart httpd.service
     else
-        sudo /usr/bin/systemctl restart apache2.service
+        sudo "${SYSTEMCTL_CMD}" restart apache2.service
     fi
 }
 
@@ -306,9 +312,11 @@ HELP['init-prod-repo']="manuel init-prod-repo PORTAL
 Clone the prod repo from the git server (the repo must exists there) and commit a dummy file. The
 repo is then clone on the production server."
 function init-prod-repo {
+    _load-prod-config
+
     local bare_repo="${PROD_BARE_GIT_REPOS_LOCATION}/$1.git"
-    infra_dir=$(_get-infra-dir "$1")
-    pushd "${infra_dir}/prod/"
+
+    pushd "${INFRA_DIR}/prod/"
         git clone "${bare_repo}"
         cd "$1"
         touch init
@@ -470,3 +478,23 @@ function _load-customer-config {
     INFRA_DIR=$(realpath "${INFRA_DIR}")
 }
 
+
+HELP['build-doc']="manuel build-doc
+
+Build the doc from the files in docs. The output will be in docs/_build/html"
+function build-doc {
+    python3 scripts/get-manuel-doc.py > docs/manuel.md
+    pushd "${DOC_DIR}"
+        "${SPHINX_CMD}" -b html -d "${DOC_BUILD_DIR}/doctrees" . "${DOC_BUILD_DIR}/html"
+    popd
+}
+
+
+HELP['clean-doc']="manuel clean-doc
+
+Remove the built files for the _build folder of the documentation"
+function clean-doc {
+    pushd "${DOC_DIR}/${DOC_BUILD_DIR}"
+        rm -rf html doctrees
+    popd
+}

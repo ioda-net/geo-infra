@@ -24,7 +24,7 @@
 
 HELP['sync-data']="manuel sync-data
 
-Synchronise mapinfra data."
+Synchronise the data."
 function sync-data {
     if [[ -d "${DATA_SRC}" ]] && [[ -n "${DATA_DEST}" ]]; then
         rsync --stats -avh -P --no-o --no-g --delete --bwlimit="${BWL}" "${DATA_SRC}" "${DATA_DEST}"
@@ -177,6 +177,7 @@ function _exit-current-dir-not-git-root {
 
 function _update-prod-repos {
     execute-on-prod "export MFP_APP_FOLDER=\"${MFP_APP_FOLDER}\" && \
+        export CP_CMD=\"${CP_CMD}\" && \
         $(declare -f tomcat-copy-conf) && \
         cd ${PROD_GIT_REPOS_LOCATION}/$1 && \
         echo \"Updating remote repo with new version\" && \
@@ -221,16 +222,16 @@ function tomcat-copy-conf {
 
         if [[ "${type}" == "prod" ]]; then
             if [[ -d "${infra_dir}/${type}/${portal}/print" ]]; then
-                /usr/bin/cp -av ${type}/${portal}/print/* "${mfp_portal_dest}" > /dev/null
+                "${CP_CMD}" -av ${type}/${portal}/print/* "${mfp_portal_dest}" > /dev/null
             else
-                /usr/bin/cp -av print/* "${mfp_portal_dest}" > /dev/null
+                "${CP_CMD}" -av print/* "${mfp_portal_dest}" > /dev/null
             fi
         else
             local infra_dir=$(_get-infra-dir "${portal}")
             if [[ -d "${infra_dir}/${type}/${portal}/print" ]]; then
-                /usr/bin/cp -av "${infra_dir}/${type}/${portal}/print"/* "${mfp_portal_dest}" > /dev/null
+                "${CP_CMD}" -av "${infra_dir}/${type}/${portal}/print"/* "${mfp_portal_dest}" > /dev/null
             else
-                /usr/bin/cp -av print/* "${mfp_portal_dest}" > /dev/null
+                "${CP_CMD}" -av print/* "${mfp_portal_dest}" > /dev/null
             fi
         fi
     fi
@@ -241,12 +242,12 @@ HELP['deploy-global-search-conf']="manuel deploy-global-search-conf
 
 Deploy sphinx global configuration."
 function deploy-global-search-conf {
-    generate --type "prod" \
-        --customer-infra-dir "${PROD_GIT_REPOS_LOCATION}" \
-        --prod-git-repos-location "${PROD_GIT_REPOS_LOCATION}" \
-        --search-global
-    pushd "prod/search"
+    _load-prod-config
+
+    generate-global-search-conf "prod"
+    pushd "${INFRA_DIR}/prod/search"
         local message="release search $(date +"%Y-%m-%d-%H-%M-%S")"
+        git add -A .
         if git ci -am "${message}"; then
             git tag -a -m "${message}" $(date +"%Y-%m-%d-%H-%M-%S")
             git push
@@ -269,15 +270,15 @@ HELP['reload-apache']="manuel reload-apache
 
 "
 function reload-apache {
-    local prod_cmd="sudo_apache2_reload"
+    local prod_cmd="sudo_apache_reload"
 
     if type "${prod_cmd}" > /dev/null 2>&1; then
         "${pord_cmd}"
     elif sudo /usr/sbin/apachectl -t; then
         if [[ -e '/usr/lib/systemd/system/httpd.service' ]]; then
-            sudo /usr/bin/systemctl reload httpd.service
+            sudo "${SYSTEMCTL_CMD}" reload httpd.service
         else
-            sudo /usr/bin/systemctl reload apache2.service
+            sudo "${SYSTEMCTL_CMD}" reload apache2.service
         fi
     fi
 }
@@ -288,8 +289,10 @@ HELP['deploy-vhost']="manuel deploy-vhost [INFRA_DIR]
 Deploy the vhost generated in prod/vhost.d to the production server.
 **This doesn't generate the vhost for prod.**
 
-You can specify a specific If INFRA_DIR is not specified, it will loop over "
+You can specify a specific INFRA_DIR. If INFRA_DIR is not specified, it will loop over all the infra directories it finds in INFRA_DIR."
 function deploy-vhost {
+    _load-prod-config
+
     local infra_dir="${1:-}"
     local possible_infra_dir
     local vhost_dir

@@ -49,6 +49,28 @@ set-var LESSC_CMD "./node_modules/.bin/lessc"
 set-var UGLIFY_CMD "./node_modules/.bin/uglifyjs"
 set-var RENDER_CMD "./scripts/render.py"
 set-var GENERATE_CMD "./scripts/generate.py"
+set-var SPHINX_CMD sphinx-build
+
+# Some commands are in /usr/bin/systemctl on most systems but in /bin/systemctl on Debian. We need
+# to know where to search for them. Only commands used in sudo with absolute path are concerned.
+## systemctl
+if [[ -f "/usr/bin/systemctl" ]]; then
+    set-var SYSTEMCTL_CMD "/usr/bin/systemctl"
+elif [[ -f "/bin/systemctl" ]]; then
+    set-var SYSTEMCTL_CMD "/bin/systemctl"
+elif [[ -z "${SYSTEMCTL_CMD:-}" ]]; then
+    echo "Cannot find systemctl on your system. Set SYSTEMCTL_CMD to the correct path in your environnement" >&2
+    exit 1
+fi
+## cp
+if [[ -f "/usr/bin/cp" ]]; then
+    set-var CP_CMD "/usr/bin/cp"
+elif [[ -f "/bin/cp" ]]; then
+    set-var CP_CMD "/bin/cp"
+elif [[ -z "${CP_CMD:-}" ]]; then
+    echo "Cannot find cp on your system. Set CP_CMD to the correct path in your environnement" >&2
+    exit 1
+fi
 
 
 # Pathes
@@ -70,16 +92,16 @@ set-var MFP_SOURCE_PATH "../forks/mapfish-print"
 set-var MFP_BUILD_BRANCH gf3
 
 
-# Front
-# DEFAULT_PORTAL is used to generate the test configuration with the proper plugins.
-set-var DEFAULT_PORTAL 'demo'
-
-
 # Misc
 ## If "true", some commands will be less verbose.
 set-var QUIET "false"
 ## Make sure SSH_CLIENT is set, even without a SSH connection.
 SSH_CLIENT="${SSH_CLIENT:-localhost}"
+
+# Doc
+set-var DOC_DIR "docs"
+# Relative to DOC_DIR
+set-var DOC_BUILD_DIR "_build"
 
 
 # Infra

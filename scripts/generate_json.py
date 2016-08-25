@@ -94,7 +94,7 @@ class GenerateJsonConfig(Generate):
                 current_topic_config = json.load(json_file)
             background_layers = current_topic_config['backgroundLayers']
             self.check_layers_in_layers_config(background_layers, current_topic_config['name'])
-            selected_layers = current_topic_config['selectedLayers']
+            selected_layers = current_topic_config.get('selectedLayers', [])
             activated_layers = current_topic_config.get('activatedLayers', [])
             self.check_layers_in_layers_config(selected_layers, current_topic_config['name'])
             topic = {
@@ -261,7 +261,8 @@ class OwsParser(Generate):
         for layer_name, layer in self.wms.contents.items():
             label = getattr(layer, 'title', layer.name)
             legend = layer.styles.get('default', {}).get('legend', '')
-            queryable = bool(getattr(layer, 'queryable', False))
+            queryable = bool(getattr(layer, 'queryable', False)) and \
+                layer_name not in self.config['layers'].get('force_non_queryable', set())
             attribution = getattr(layer, 'attribution', self.default_layer_attribution)
             opacity = getattr(layer, 'opaque', 0) if layer_name not in self.background_layers_ids \
                 else self.default_background_opacity
@@ -320,6 +321,7 @@ class OwsParser(Generate):
                 'singleTile': layer.get('singleTile', self.single_tiles_by_default),
                 'ratio': layer.get('ratio', self.default_ratio),
                 'epsg': layer.get('epsg', None),
+                'crossOrigin': layer.get('crossOrigin', None),
             }
             if layer_type == 'wms':
                 self._process_external_wms_layer(layer_config, layer)

@@ -29,7 +29,7 @@ import logging
 import sys
 
 from collections import namedtuple
-from os.path import basename, exists, realpath
+from os.path import abspath, basename, exists
 from urllib.parse import urlparse
 
 from generate_utils import path
@@ -84,7 +84,7 @@ class GenerateConfig:
         self._load_config()
 
     def create_output_dirs(self):
-        '''Create all the directories for mapinfra's output.
+        '''Create all the directories for a portal output.
 
         These directories correspond to the dest section of the config. Keys that start with
         '_template' and the geo_front3 subsection are ignored.
@@ -102,15 +102,7 @@ class GenerateConfig:
 
         It will:
 
-        #. Load the global configuration
-        #. Load the configuration common to all portal:
-
-            #. the _common.dist.toml file
-            #. the _common.prod.toml file if it exists
-            #. the _common.dev.toml file if ``self.type == 'dev'`` and if it exists
-
-        #. Load the portal specific configuration if ``self.portal is not None``. It follows the
-           same rules as the common file (dist -> prod -> dev).
+        #. Load the global configuration as explained in `the section about configuration <../infra.html#configuration>`__
         #. Add any complementary keys to self._config that are not in the config files:
 
             - type
@@ -119,7 +111,7 @@ class GenerateConfig:
             - infra_dir: the absolute path to the current customer infra dir
             - infra_name: the base name of infra dir, eg customer-infra
             - mapserver_ows_host: the host of mapserver (used to generate the print configuration).
-              **Only is portal is not None.**
+              **Only if portal is not None.**
             - prod_git_repos_location: location of the productions git repositories on the server.
         '''
         global_config = self._load_config_from_file('config/global.toml', None)
@@ -169,7 +161,7 @@ class GenerateConfig:
         if self.portal:
             self._config['mapserver_ows_host'] = urlparse(self._config['mapserver']['PORTAL_BASE_OWS']).hostname
         # Make output path absolute
-        self._config['infra_dir'] = realpath(self.infra_dir)
+        self._config['infra_dir'] = abspath(self.infra_dir)
         self._config['infra_name'] = basename(self._config['infra_dir'])
         self._config['prod_git_repos_location'] = self.prod_git_repos_location
 

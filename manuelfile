@@ -52,7 +52,7 @@ INFRA_DIR=$(realpath "${INFRA_DIR}")
 
 HELP['dev']="manuel dev PORTAL1 [PORTAL2 [PORTAL3] …]
 
-Generate a development version of mapinfra for the targeted portals.
+Generate a development version of the targeted portals.
 "
 function dev {
     local portal
@@ -84,7 +84,7 @@ function dev {
 
 HELP['dev-full']="manuel dev-full PORTAL1 [PORTAL2 [PORTAL3] …]
 
-Generate a development version of mapinfra and frontend for the targeted portals. It will also
+Generate a development version of the targeted portals. It will also
 triger a reindex for sphinx, test the map files of each portal and copy tomcat configuration."
 function dev-full {
     local infra_dir
@@ -121,8 +121,8 @@ function dev-full {
 
 HELP['prod']="manuel prod PORTAL1 [PORTAL2 [PORTAL3] …]
 
-Generate a production version of mapinfra and the frontend for targeted portals. To generate even
-with uncommited changes or without changing branch, add the --force option as first parameter.
+Generate a production version of the targeted portals. To generate even
+with uncommitted changes or without changing branch, add the --force option as first parameter.
 
 This task can be launch with portals from different infrastructures if --force is given."
 function prod {
@@ -179,7 +179,7 @@ function prod {
 
 HELP['deploy']="manuel deploy PORTAL1 [PORTAL2 [PORTAL3] …]
 
-Generate a production version of mapinfra and the frontend for targeted portals and deploy it."
+Generate a production version of the targeted portals and deploy it."
 function deploy {
     _load-prod-config
 
@@ -193,7 +193,8 @@ function deploy {
     done
 
     echo "Completing deployment on server: restarting services and reindexing."
-    execute-on-prod "$(declare -f _restart-apache) && \
+    execute-on-prod "export SYSTEMCTL_CMD=\"${SYSTEMCTL_CMD}\" && \
+        $(declare -f _restart-apache) && \
         $(declare -f restart-service) && \
         $(declare -f reindex) && \
         restart-service apache && \
@@ -255,7 +256,7 @@ are parsed in the order they are parsed. To only get the config, redirect error 
 To discard the config, redirect the standard output to /dev/null.
 
 If you have jq installed, you can get any section from the JSON like that:
-manuel config geojb 2> /dev/null | jq '.mapserver'
+manuel config demo 2> /dev/null | jq '.mapserver'
 
 **Default values**
 
