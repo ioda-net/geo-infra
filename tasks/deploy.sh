@@ -24,7 +24,7 @@
 
 HELP['sync-data']="manuel sync-data
 
-Synchronise mapinfra data."
+Synchronise the data."
 function sync-data {
     if [[ -d "${DATA_SRC}" ]] && [[ -n "${DATA_DEST}" ]]; then
         rsync --stats -avh -P --no-o --no-g --delete --bwlimit="${BWL}" "${DATA_SRC}" "${DATA_DEST}"
@@ -289,7 +289,7 @@ HELP['deploy-vhost']="manuel deploy-vhost [INFRA_DIR]
 Deploy the vhost generated in prod/vhost.d to the production server.
 **This doesn't generate the vhost for prod.**
 
-You can specify a specific If INFRA_DIR is not specified, it will loop over "
+You can specify a specific INFRA_DIR. If INFRA_DIR is not specified, it will loop over all the infra directories it finds in INFRA_DIR."
 function deploy-vhost {
     _load-prod-config
 

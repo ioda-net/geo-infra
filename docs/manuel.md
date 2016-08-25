@@ -4,21 +4,21 @@ To generate this file, use `python3 scripts/get-manuel-doc.py > docs/manuel.md`
 ## dev
 manuel dev PORTAL1 [PORTAL2 [PORTAL3] …]
 
-Generate a development version of mapinfra for the targeted portals.
+Generate a development version of the targeted portals.
 
 
 
 ## dev-full
 manuel dev-full PORTAL1 [PORTAL2 [PORTAL3] …]
 
-Generate a development version of mapinfra and frontend for the targeted portals. It will also
+Generate a development version of the targeted portals. It will also
 triger a reindex for sphinx, test the map files of each portal and copy tomcat configuration.
 
 
 ## prod
 manuel prod PORTAL1 [PORTAL2 [PORTAL3] …]
 
-Generate a production version of mapinfra and the frontend for targeted portals. To generate even
+Generate a production version of the targeted portals. To generate even
 with uncommitted changes or without changing branch, add the --force option as first parameter.
 
 This task can be launch with portals from different infrastructures if --force is given.
@@ -27,7 +27,7 @@ This task can be launch with portals from different infrastructures if --force i
 ## deploy
 manuel deploy PORTAL1 [PORTAL2 [PORTAL3] …]
 
-Generate a production version of mapinfra and the frontend for targeted portals and deploy it.
+Generate a production version of the targeted portals and deploy it.
 
 
 ## help
@@ -111,7 +111,7 @@ Otherwise, all files in INFRA_DIR are linted.
 ## sync-data
 manuel sync-data
 
-Synchronise mapinfra data.
+Synchronise the data.
 
 
 ## deploy-portal
@@ -145,7 +145,7 @@ manuel deploy-vhost [INFRA_DIR]
 Deploy the vhost generated in prod/vhost.d to the production server.
 **This doesn't generate the vhost for prod.**
 
-You can specify a specific If INFRA_DIR is not specified, it will loop over 
+You can specify a specific INFRA_DIR. If INFRA_DIR is not specified, it will loop over all the infra directories it finds in INFRA_DIR.
 
 
 ## generate

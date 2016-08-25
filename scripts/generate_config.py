@@ -84,7 +84,7 @@ class GenerateConfig:
         self._load_config()
 
     def create_output_dirs(self):
-        '''Create all the directories for mapinfra's output.
+        '''Create all the directories for a portal output.
 
         These directories correspond to the dest section of the config. Keys that start with
         '_template' and the geo_front3 subsection are ignored.

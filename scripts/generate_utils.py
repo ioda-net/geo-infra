@@ -20,7 +20,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 ###############################################################################
 
-'''Helper class and functions to generate mapinfra's configuration
+'''Helper class and functions to generate the configuration of a portal.
 '''
 
 

@@ -22,7 +22,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 ###############################################################################
 
-'''Main script used to generate the files for mapinfra.
+'''Main script used to generate the files for a portal.
 
 Call this script with the ``--help`` argument for more details.
 '''
