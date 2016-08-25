@@ -163,9 +163,9 @@ Voir ci-dessous pour les justifications.
 		format: 'PNG',
 		attributionUrl: '',
 		attribution: ''
-		label: ''COUVERTUREDUSOL',
-		type: 'wms'
-	}
+		label: 'COUVERTUREDUSOL',
+		type: 'wms',
+	};
 ```
 
 - Le label est utilisé pour l'affichage dans l'interface.
