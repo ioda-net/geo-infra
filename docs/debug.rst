@@ -3,7 +3,9 @@
 Debug
 =====
 
-Some information on how to debug some scripts.
+Some information on how to debug some scripts or tools.
+
+.. contents::
 
 
 .. _ref_debug_configuration:

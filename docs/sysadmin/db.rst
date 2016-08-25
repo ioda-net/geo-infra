@@ -29,50 +29,62 @@ You can find the code below and in the `functions.sql script <https://github.com
   :end-before: -- end quadindex function
 
 
-.. _ref_sysadmin_db_schemas-functions_schemas:
-
 Schemas
 ~~~~~~~
 
 In order for the API to work correctly, you will need the following schemas:
 
-- ``api3``: used by the API to store the shorten links and the id, type and access time of drawings. It must contains two tables:
+Schema api3
++++++++++++
 
-  #. ``url_shortener``
+It is used by the API to store the shorten links and the id, type and access time of drawings. It must contains two tables:
 
-     .. literalinclude:: ../../scripts/sql/api3_schema.sql
-      :language: postgresql
-      :start-after: -- start api3_url_shortener table
-      :end-before: -- end api3_url_shortener table
+#. ``url_shortener``
 
-  #. ``files``
+  .. literalinclude:: ../../scripts/sql/api3_schema.sql
+    :language: postgresql
+    :start-after: -- start api3_url_shortener table
+    :end-before: -- end api3_url_shortener table
 
-     .. literalinclude:: ../../scripts/sql/api3_schema.sql
-      :language: postgresql
-      :start-after: -- start api3_files table
-      :end-before: -- end api3_files table
+#. ``files``
 
-- ``features``: used by the API to make features request. It must at least contain the ``map_layers_features`` table described below. See the `features`_ section of this document to learn more.
+  .. literalinclude:: ../../scripts/sql/api3_schema.sql
+    :language: postgresql
+    :start-after: -- start api3_files table
+    :end-before: -- end api3_files table
+
+Schema features
++++++++++++++++
+
+It is used by the API to make features request. It must at least contain the ``map_layers_features`` table described below. See the `features`_ section of this document to learn more.
 
   .. literalinclude:: ../../scripts/sql/features_schema.sql
     :language: postgresql
     :start-after: -- start features_map_layers_features table
     :end-before: -- end features_map_layers_features table
 
+Optional schemas
+++++++++++++++++
+
 We also advise you to create the schemas below:
 
-- ``search`` to contain all tables/views used by sphinx to create its indexes. Instead of using custom SQL in your ``portal-locations.in.conf``, you can create views with the corrected columns:
+.. _ref_sysadmin_db_schemas-functions_schemas_optional-schemas_schema-search:
 
-   - ``id``
-   - ``search_label``: this will be displayed to the user in the frontend. It can be the union of multiple columns from the table.
-   - ``search_string``: this will be parsed by sphinx. It can be the union of multiple columns from the table.
-   - ``geom_st_box2d``: this will be used by the frontend to center the user on the returned geometry. **This must be in the main EPSG of the portal.**. It can be defined as ``box2d(the_geom) AS geom_st_box2d``.
-   - ``y``: this will be used by the frontend to put a marker on the searched location. **This must be in the main EPSG of the portal.** It can be defined as ``st_x(the_geom) AS y``.
-   - ``x``: this will be used by the frontend to put a marker on the searched location.  **This must be in the main EPSG of the portal.** It can be defined as ``st_y(the_geom) AS x``.
-   - ``lat``: the latitude of the searched location. It can be defined as ``st_y(st_transform(the_geom, 4326)) AS lat``.
-   - ``lon``: the longitude of the searched location. It can be defined as ``st_x(st_transform(the_geom, 4326)) AS lon``.
-   - ``geom_quadindex``: it can be used to filter the results. It can be defined as ``quadindex(the_geom) AS geom_quadindex``
-   - ``weight``: how to sort the results. Results with lower weights will come first. It can be defined as ``row_number() OVER (ORDER BY id) AS weight``.
+Schema search
+`````````````
+
+It can contain all tables/views used by sphinx to create its indexes. Instead of using custom SQL in your ``portal-locations.in.conf``, you can create views with the corrected columns:
+
+- ``id``
+- ``search_label``: this will be displayed to the user in the frontend. It can be the union of multiple columns from the table.
+- ``search_string``: this will be parsed by sphinx. It can be the union of multiple columns from the table.
+- ``geom_st_box2d``: this will be used by the frontend to center the user on the returned geometry. **This must be in the main EPSG of the portal.**. It can be defined as ``box2d(the_geom) AS geom_st_box2d``.
+- ``y``: this will be used by the frontend to put a marker on the searched location. **This must be in the main EPSG of the portal.** It can be defined as ``st_x(the_geom) AS y``.
+- ``x``: this will be used by the frontend to put a marker on the searched location.  **This must be in the main EPSG of the portal.** It can be defined as ``st_y(the_geom) AS x``.
+- ``lat``: the latitude of the searched location. It can be defined as ``st_y(st_transform(the_geom, 4326)) AS lat``.
+- ``lon``: the longitude of the searched location. It can be defined as ``st_x(st_transform(the_geom, 4326)) AS lon``.
+- ``geom_quadindex``: it can be used to filter the results. It can be defined as ``quadindex(the_geom) AS geom_quadindex``
+- ``weight``: how to sort the results. Results with lower weights will come first. It can be defined as ``row_number() OVER (ORDER BY id) AS weight``.
 
 Users and permissions
 ---------------------
@@ -147,7 +159,7 @@ These views will then be used in identify requests. These requests contain:
 - The name of the portal and the name of a layer. This allows us to select the appropriate views for a request.
 - A geometry that will be intersected with the one of the feature to find only the relevant features for this request.
 
-We then return a JSON representation of the row.
+We then return a JSON representation of the row. It will be presented to the user in a popup. This popup will contain a tab for each feature view and each tab will contain a table with a column per column in the feature view.
 
 In order to work as expected, all the views must contain:
 

@@ -16,7 +16,7 @@ In the API, all codes specific to a customer are grouped into ``chsdi/customers`
     .. code:: python
 
         def register_customer_view(config):
-            config.add_route('<route_name>', '/{portal}/communes')
+            config.add_route('<route_name>', '/{portal}/<route_name>')
 
 
 In the frontend
@@ -40,12 +40,7 @@ While writing the code of your plugin, keep in mind that it will be included in 
 .. literalinclude:: ../../../geo-front3/src/Gf3Plugins.nunjucks.js
     :language: jinja
 
-To enable a plugin on a portal, add it to the ``plugins`` list of the ``front.default_values`` section. For instance, to enable the plugin named ``test``, your portal config file should contain:
-
-.. code:: ini
-
-    [front.default_values]
-    plugins = ['test']
+See the :ref:`section about plugins <ref_user_cfg-protal_plugins>` in the user manual to know how to active them.
 
 They can the be used with the ``gf3Plugins`` service. For instance, to use a plugin named test plugin, use ``gf3Plugins.test()``. The arguments and behavior of the plugin depends on its definition.
 

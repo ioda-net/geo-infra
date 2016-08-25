@@ -314,7 +314,7 @@ Feedback
 - Click on the *Report problem link*.
 - Enter the required information.
 - Press the *Send* button.
-- **Results:** info@sigemo.ch must receive an email with the supplied information.
+- **Results:** the configured feedback email address must receive an email with the supplied information.
 
 
 Help

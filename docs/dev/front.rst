@@ -3,7 +3,7 @@ Front
 
 The front is written is JavaScript with the `AngularJS <https://angularjs.org/>`__ framework and rely on the `Google Closure Compiler <https://developers.google.com/closure/compiler/>`__ to work.
 
-The build process relies on `geo-infra <https://github.com/ioda-net/geo-infra>`__. Before building the project, you must run ``npm install`` in the directory in which you cloned ``geo-front3`` in order to download all the dependencies. This is required to have some commands in ``node_modules/.bin`` that are required to build the project.
+The build process relies on `geo-infra <https://github.com/ioda-net/geo-infra>`__. Before building the project, you must run ``npm install`` in the directory in which you cloned ``geo-front3`` in order to download all the dependencies. This is required to have some commands in ``node_modules/.bin`` that are needed to build the project.
 
 .. contents::
 

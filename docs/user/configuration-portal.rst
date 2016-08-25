@@ -100,11 +100,15 @@ Translations for a portal are located in the four files listed below. All these 
 #. ``customer-infra/translations/<portal-name>.csv``: everything else (*note:* the translation for the topic titles and the topic tooltip – *topic_<topic_name>_tooltip* – go here).
 #. ``customer-infra/translations/common.csv`` (optional): if you find redundancies between the translations for different portals, you can put them in this file. It will be loaded before the file for the portal, which means, you can override a translation from this file in a portal file.
 
+.. attention::
+
+  **At least one of the files above must contain a translation line.** Otherwise, no layers config will be created. Which means your portal won't work.
+
 Translation from Swisstopo are overridden by translations in ``common.csv`` and translation from both Swisstopo and ``common.csv`` are overridden by translations from ``<portal>.csv``. To ignore a translation from Swisstopo, put its id in the ``customer-infra/translations/ignore.csv`` file. This file must just contain the translation ids (one per line). You can view an example `here <https://github.com/ioda-net/customer-infra/blob/master/translations/ignore.csv>`__.
 
 .. attention::
 
-  **At least one of the files below must contain a translation line.** Otherwise, no layers config will be created. Which means your portal won't work.
+  ids present in ``ignore.csv`` will never get into a translation file.
 
 
 .. _ref_cfg-portal_topics:
@@ -120,7 +124,7 @@ Topics are defined in JSON files located in ``customer-infra/json/<portal>/topic
 
     "backgroundLayers": ["voidLayer", "landuse"]
 
-- ``langs``: the list of language for which this topic is available. For instance:
+- ``langs``: the list of languages for which this topic is available. For instance:
 
   .. code:: json
 
@@ -131,6 +135,8 @@ Topics are defined in JSON files located in ``customer-infra/json/<portal>/topic
   .. code:: json
 
     "name": "Topic 1"
+
+  This is what must be used in translation files to translate the topic name.
 
 - ``catalog``: defines the layers available for this topic and how they will be displayed. You can simply use a list of layer ids to have a catalog without depth. For instance:
 
@@ -148,7 +154,7 @@ Topics are defined in JSON files located in ``customer-infra/json/<portal>/topic
   - ``children``: it can be either:
 
     - a list of layer ids. In this case, the layers will be presented to the user at this level.
-    - a list of objects with the same properties as the ones in the catalog. This allows you to create subgroups.
+    - a list of objects with the same properties as the ones in the catalog. This allows you to create subcategories.
 
   For instance:
 
@@ -197,7 +203,7 @@ The configuration for sphinx is divided in two parts:
 - global configuration for an infrastructure: it configures the configuration of the sphinx daemon. It can be updated with ``manuel generate-search-conf``. The templates used to generate this configuration are located in ``geo-infra/search``.
 - portal configuration: it configures the layer and locations searches:
 
-  - locations searches: the configuration is created by a template located in ``customer-infra/search/portal-locations.in.conf``. To help you write this template, you can also create dedicated views in the database. See the :ref:`schema section in the database page <ref_sysadmin_db_schemas-functions_schemas>` of the system administrator manuel for more information on this. This template can look like:
+  - locations searches: the configuration is created by a template located in ``customer-infra/search/portal-locations.in.conf``. To help you write this template, you can also create dedicated views in the database. See the :ref:`schema section in the database page <ref_sysadmin_db_schemas-functions_schemas_optional-schemas_schema-search>` of the system administrator manuel for more information on this. This template can look like:
 
   .. literalinclude:: /_static/search/portal-locations.in.conf
 
@@ -215,7 +221,7 @@ For instance, if a portal have these indexes:
 - ``<portal>_parcels``: plain index built from a query in the database.
 - ``<portal>_locations``: distributed index regrouping the three indexes above.
 
-When you use the keyword ``address`` in the search bar, you want to search only in the ``portal_cities`` and ``portal_sorted_buildings`` indexes and not the whole ``<portal>_locations`` index since it also contains the parcels. Likewise, when you use the keyword ``parcel`` you want to search only in the ``portal_parcels`` index. This is what keywords are for: you specify a rank for each index and when a keyword is used, the API will filter the results to contain on the appropriate ranks.
+When you use the keyword ``address`` in the search bar, you want to search only in the ``portal_cities`` and ``portal_sorted_buildings`` indexes and not the whole ``<portal>_locations`` index since it also contains the parcels. Likewise, when you use the keyword ``parcel`` you want to search only in the ``portal_parcels`` index. This is what keywords are for: you specify a rank for each index and when a keyword is used, the API will filter the results to include only those with the appropriate ranks.
 
 In order to enable a keyword, you must:
 
@@ -259,7 +265,7 @@ To be able to render feature columns with another representation than the "raw" 
 
 - ``hidden``: if a column name ends with ``_hidden`` it will not be displayed by default. The user can choose to see it if necessary.
 - ``url``: if a column name ends with ``_url`` it will be rendered as an url (useful if the content has to be a valid clickable url). ``_url`` can be combined with ``_hidden`` to hide a URL type column by default like that ``_url_hidden``.
-- ``pdf``: if a column name ends with ``_pdf``, the content will be rendered as a link with a acrobat pdf icon as content. The link generally points to ``/files/FILE.pdf``. There should be only one column of this type per feature.
+- ``pdf``: if a column name ends with ``_pdf``, the content will be rendered as a link with a acrobat pdf icon as content. The link generally points to ``/files/FILE.pdf``.
 
 To use these templates, name your columns like this: ``name<pattern>``, eg ``website_url`` or ``boring_hidden``.
 
@@ -364,3 +370,27 @@ In order to insert link to another page of the website, you must use a ``button`
 
    <button ng-click="hc.goto(38)">More information</button>
 
+
+.. _ref_user_cfg-protal_plugins:
+
+Plugins
+-------
+
+For features may be available through plugins. To enable a plugin on a portal, add it to the ``plugins`` list of the ``front.default_values`` section. For instance, to enable the plugin named ``test``, your portal config file should contain:
+
+.. code:: ini
+
+    [front.default_values]
+    plugins = ['test']
+
+
+.. _ref_user_cfg-portal-print:
+
+Print
+-----
+
+Printing a map relies on `MapFish Print <https://github.com/mapfish/mapfish-print>`__ a Java servlet developed by `Camptocamp SA <http://www.camptocamp.com/en/>`__.
+
+You can either build it from scratch from `the source <https://github.com/mapfish/mapfish-print>`__ or use our `last build </data/getting-started/print.war>`__.
+
+You can view examples of print templates `here <https://github.com/ioda-net/customer-infra/tree/master/print>`__. You can create your print templates with `Jasper Studio <http://community.jaspersoft.com/project/jaspersoft-studio>`__ or directly by editing the jrxml files with a text editor.

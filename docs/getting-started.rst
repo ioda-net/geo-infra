@@ -13,7 +13,6 @@ Requirements
 
 - `Apache 2 <https://httpd.apache.org/>`__ with:
 
-  - ``mod_proxy``. To enable ``mod_proxy`` on Debian based systems, use ``a2enmod proxy``
   - ``mod_rewrite``. To enable ``mod_rewrite`` on Debian based systems, use ``a2enmod rewrite``
   - ``mod_expires``. To enable ``mod_expires`` on Debian based systems, use ``a2enmod expires``
   - ``mod_headers``. To enable ``mod_headers`` on Debian based systems, use ``a2enmod headers``
@@ -24,10 +23,10 @@ Requirements
 - `nodejs <http://nodejs.org/>`__ 4.0 or above
 - `MapServer <http://mapserver.org/>`__ 6.4.3+ (it will not work with 6.4.1) or 7.0.1+ (package commonly named ``mapserver`` on most distributions, on Debian based system, use ``cgi-mapserver`` and ``mapserver-bin``)
 - `GDAL <http://www.gdal.org>`__ 2.0 or above with Python3 bindings
-- `Sphinx search <http://sphinxsearch.com/>`__ or above for the search features (package commonly named ``sphinx`` on most distributions, on Debian system, use ``sphinxsearch`` in Jessie backports)
+- `Sphinx search <http://sphinxsearch.com/>`__ 2.2 or above for the search features (package commonly named ``sphinx`` on most distributions, on Debian system, use ``sphinxsearch`` in Jessie backports)
 - `tomcat <http://tomcat.apache.org/>`__ 8.0 or above to deploy the print component
 - `Bash <http://www.gnu.org/software/bash>`__ 4 or above to launch the tasks
-- `git <https://git-scm.com/>`__ 2.1 or above to get the code
+- `git <https://git-scm.com/>`__ 2.0 or above to get the code
 - sudo to launch some commands with your normal user. Your ``/etc/sudoers`` file must contains the following lines (edit it with ``visudo``):
 
   ::
@@ -40,25 +39,38 @@ Requirements
     USER ALL=(ALL) NOPASSWD: /usr/bin/indexer --verbose --rotate --config /etc/sphinx/customer-infra.conf --all
     USER ALL=(ALL) NOPASSWD: /usr/sbin/apachectl -t
 
-- The following libraries to correctly create the python venv: geos, geos-devel, postgresql-devel, libxml2-devel, libxslt-devel. On debian based system, use this list: libgeos-c1, libgeos-dev, libxml2-dev, libxslt-dev.
+- The following libraries to correctly create the Python venv:
+
+  - geos
+  - geos-devel
+  - postgresql-devel
+  - libxml2-devel
+  - libxslt-devel
+
+  On debian based system, use this list:
+
+  - libgeos-c1
+  - libgeos-dev
+  - libxml2-dev
+  - libxslt-dev
 
 
 Before we start
 ---------------
 
-All tasks are launched here with `manuel <https://github.com/ShaneKilkelly/manuel>`__, a task runner written in Bash. To enable autocompletion in a Bash shell, source the ``geo-infra/manuel.autocomplete.bash`` file. Completion is also `available for zsh <https://github.com/ShaneKilkelly/manuel/blob/master/manuel.autocomplete.zsh>`__.
+All tasks are launched here with `manuel <https://github.com/ShaneKilkelly/manuel>`__, a task runner written in Bash. To enable autocompletion in a Bash shell, source the ``geo-infra/manuel.autocomplete.bash`` file. `Completion is also available for zsh <https://github.com/ShaneKilkelly/manuel/blob/master/manuel.autocomplete.zsh>`__.
 
 To launch ``manuel`` without always appending ``./`` copy ``geo-infra/manuel`` to your ``~/bin`` folder.
 
-To get help about any task, use ``manuel help TASK``. For instance, ``manuel help help``.
+To get help about any task (description of what it does and its arguments), use ``manuel help TASK``. For instance, ``manuel help help``.
 
 
 Setup the portal
 ----------------
 
-- Clone the repositories in the same folder (they can be arranged differently later if you override the proper values in ``geo-infra/config/config.sh``):
+- Clone all the repositories listed below in the same folder [#clone_all_same_folder]_:
 
-  - The main infrastructure directory. All commands listed below must be launched in here: ``git clone https://github.com/ioda-net/geo-infra.git``
+  - The main infrastructure directory: ``git clone https://github.com/ioda-net/geo-infra.git``
   - The API: ``git clone https://github.com/ioda-net/geo-api3.git``
   - The frontend: ``git clone https://github.com/ioda-net/geo-front3.git``
   - The sample customer infra: ``git clone https://github.com/ioda-net/customer-infra.git``
@@ -83,16 +95,18 @@ Setup the portal
 
       ln -s /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf data/LiberationSans-Regular.ttf
 
-  - Update the configuration: in order to correctly test ``customer-infra`` for development, you only need to create ``customer-infra/config/dev/_common.dev.toml`` with the content below. In this folder, create a symlink to your mapserver executable named after the portal. For instance, using the values of ``config/dist/_common.dist.toml``, we have ``ln -s /usr/bin/mapserv ~/geoportal-infras/cgi-bin/demo``.
+  - Update the configuration: in order to correctly test ``customer-infra`` for development, you only need to create ``customer-infra/config/dev/_common.dev.toml`` with the content below.
 
   .. code:: ini
 
     [vhost]
     ows_path = '/path/to/folder/containing/symlinks/to/mapserver/executable/'
 
+  In this folder, create a symlink to your mapserver executable named after the portal. For instance, using the values of ``config/dist/_common.dist.toml``, we have ``ln -s /usr/bin/mapserv ~/geoportal-infras/cgi-bin/demo``.
+
 - Switch to ``geo-front3``:
 
-  - Launch ``npm install`` to insatll the node modules.
+  - Launch ``npm install`` to install the node modules.
 
 - Switch to ``geo-infra``:
 
@@ -117,6 +131,8 @@ Setup the portal
 
     Demo portal home page
 
+.. [#clone_all_same_folder] They can be arranged differently later if you override the proper values in ``geo-infra/config/config.sh``
+
 
 API
 ---
@@ -137,7 +153,7 @@ Switch to ``geo-api3``:
     [raster]
     # Optionnal. If you have bt for altitude, put their path here. If you don't, height and profile related features won't work.
     # It must contain a bt folder with the bt.
-    # dtm_base_path = '/run/media/jenselme/WDATA/sigeom/mapinfra/data/'
+    # dtm_base_path = '/var/lib/geoportal/data/'
 
     [search]
     port = 9314
@@ -155,7 +171,10 @@ Switch to ``geo-api3``:
     # This must be coherent with vhost.api_proxy from customer-infra. 9080 is the default value from _common.dist.toml
     port = 9080
 
-  - Download the `sample sqlite database file </data/getting-started/customer_infra.sqlite>`__ into the ``geo-api3`` folder.
+  - Download the `sample sqlite database file </data/getting-started/customer_infra.sqlite>`__ into the ``geo-api3`` folder:
+
+    - ``wget http://docs.ioda.local/data/getting-started/customer_infra.sqlite``
+
   - Create the proper venv with ``./manuel venv``
   - Update the ini files used by Pyramid: ``./manuel ini-files``.
   - Launch the API: ``./manuel serve``.
@@ -168,7 +187,7 @@ Switch to ``geo-api3``:
 
         export PYTHONPATH=".venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib/python3/dist-packages:$(pwd)"
 
-  - If you go to the portal, the QR codes and short link should work as expected:
+  - If you go to the portal, the QR codes, short link and features identification should work as expected. Search will be enable in the next section.
 
   .. figure:: /_static/img/getting-started/api-is-working.png
     :alt: Portal page with QR code and short link
@@ -177,7 +196,7 @@ Switch to ``geo-api3``:
 
 .. attention::
 
-  If you test the get features capability, you will only get a very basic presentation: it is what MapServer returns to the GetFeatures request. You improve this if you with access to the database. See the relevant section of the documentation.
+  If you test the get features capability, you will only get a very basic presentation: it is what MapServer returns to the GetFeatures request. You improve this if you with access to the database. See :ref:`the relevant section of the documentation <ref_sysadmin_db_features>`.
 
 
 Search
@@ -185,9 +204,13 @@ Search
 
 Switch to ``geo-infra``:
 
-- Create global search configuration: ``./manuel generate-global-search-conf customer-infra``. At this point, this command should return with this error:
-  ``Job for searchd@customer-infra.service failed because the control process
-  exited with error code.``. This is expected.
+- Create global search configuration:
+
+  .. code:: bash
+
+    ./manuel generate-global-search-conf customer-infra
+
+  At this point, this command should return with this error: ``Job for searchd@customer-infra.service failed because the control process exited with error code.`` This is expected.
 - Add a symlink to the newly created sphinx configuration (*this must be done as root*):
 
   .. code:: bash
@@ -223,11 +246,15 @@ Switch to ``geo-infra``:
 
     .. attention::
 
-      On Debian based systems, you must correct the user to ``sphinxsearch``
+      On Debian based systems, you must correct the user to ``sphinxsearch`` in the unit file.
 
   - Reload systemd daemons: ``systemctl daemon-reload``
 
-- Download the `data needed by sphinx to build its indexes </data/getting-started/places.csv>`__ and put in it ``customer-infra/data``.
+- Download the `data needed by sphinx to build its indexes </data/getting-started/places.csv>`__ and put in it ``customer-infra/data``:
+
+  - ``cd /path/to/customer-infra/data``
+  - ``wget http://docs.ioda.local/data/getting-started/places.csv``
+
 - Start sphinx: ``./manuel restart-service search customer-infra``
 - Trigger an reindex: ``./manuel reindex customer-infra``
 - Search should work as expected.
@@ -262,7 +289,10 @@ Print
 
 Switch to ``geo-infra``:
 
-- Download the `print WAR </data/getting-started/print.war>`__.
+- Download the `print WAR </data/getting-started/print.war>`__:
+
+  - ``wget http://docs.ioda.local/data/getting-started/print.war``
+
 - Do the following actions as root:
 
   - Copy the WAR in your tomcat webapps folder (eg ``/usr/share/tomcat/webapps``, ``/srv/tomcat/webapps/`` or ``/var/lib/tomcat8/webapps``) under the name ``print-customer-infra.war``.
@@ -274,7 +304,10 @@ Switch to ``geo-infra``:
 
   - Go to the tomcat webapps folder.
   - Check that ``print-customer-infra.war`` is correctly deployed.
-  - Create the ``print-customer-infra/print-apps`` directory and make it owned by tomcat: ``mkdir print-customer-infra/print-apps && chown tomcat:tomcat print-customer-infra/print-apps``.
+  - Create the ``print-customer-infra/print-apps`` directory and make it owned by tomcat:
+
+    - ``mkdir print-customer-infra/print-apps``
+    - ``chown tomcat:tomcat print-customer-infra/print-apps``
 
     .. attention::
 

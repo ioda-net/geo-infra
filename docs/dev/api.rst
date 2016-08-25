@@ -12,10 +12,24 @@ Setup
 Requirements
 ~~~~~~~~~~~~
 
-- The following libraries are needed to correctly create the python venv: geos, geos-devel, postgresql-devel, libxml2-devel, libxslt-devel. On debian based system, use this list: libgeos-c1, libgeos-dev, libxml2-dev, libxslt-dev.
+- The following libraries are needed to correctly create the python venv:
+
+   - geos
+   - geos-devel
+   - postgresql-devel
+   - libxml2-devel
+   - libxslt-devel
+
+   On debian based system, use this list:
+
+   - libgeos-c1
+   - libgeos-dev
+   - libxml2-dev
+   - libxslt-dev
+
 - `GDAL <http://www.gdal.org>`__ 2.0 or above with Python3 bindings
-- `Python <https://www.python.org/>`__ 3.4 or above with virtualenv capabilities (probably in the ``python3-venv`` package)
-- If you don't want to use a venv as suggested below to install the  other Python dependencies, you will find the list of packages to install on your system with their minimal version in the `requirements.txt <https://github.com/ioda-net/geo-api3/blob/devel/requirements.txt>`__.
+- `Python <https://www.python.org/>`__ 3.4 or above with virtualenv capabilities (probably in the ``python3-venv`` package or included in your Python 3 installation)
+- If you don't want to use a venv as suggested below to install the Python dependencies, you will find the list of packages to install on your system with their minimal version in the `requirements.txt <https://github.com/ioda-net/geo-api3/blob/devel/requirements.txt>`__.
 
 Configuration
 ~~~~~~~~~~~~~
@@ -180,4 +194,6 @@ Adapt your ``config.<branchname>.toml`` to get something like this in ``uwsgi.in
     pythonpath = /home/jenselme/Work/geo-api3
     socket = /run/uwsgi/geo-api3.sock
 
-**Note on permissions:** your ``production.ini`` and ``uwsgi.ini`` must be owned by the user ``uwsgi`` and by the group ``uwsgi``.
+.. note::
+
+    Your ``production.ini`` and ``uwsgi.ini`` must be owned by the user ``uwsgi`` and by the group ``uwsgi``.

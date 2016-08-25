@@ -6,13 +6,13 @@
 Documentation for geo-front3, geo-api3 and geo-infra
 ====================================================
 
-Location: https://github.com/ioda-net/geo-infra
-
 This is the documentation for the following projects:
 
 - `geo-api3 <https://github.com/ioda-net/geo-api3>`__
 - `geo-front3 <https://github.com/ioda-net/geo-front3>`__
 - `geo-infra <https://github.com/ioda-net/geo-infra>`__
+
+The source of this documentation is available `here <https://github.com/ioda-net/geo-infra>`__. It can be seen `here <https://docs.geoportal.xyz/>`__.
 
 
 General

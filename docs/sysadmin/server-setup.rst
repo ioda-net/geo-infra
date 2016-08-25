@@ -1,3 +1,5 @@
+.. _ref_sysadmin_server-setup:
+
 Server setup
 ============
 
@@ -16,7 +18,6 @@ Common Requirements
 
 - `Apache 2 <https://httpd.apache.org/>`__ with:
 
-  - ``mod_proxy``. To enable ``mod_proxy`` on Debian based systems, use ``a2enmod proxy``
   - ``mod_rewrite``. To enable ``mod_rewrite`` on Debian based systems, use ``a2enmod rewrite``
   - ``mod_expires``. To enable ``mod_expires`` on Debian based systems, use ``a2enmod expires``
   - ``mod_headers``. To enable ``mod_headers`` on Debian based systems, use ``a2enmod headers``
@@ -29,20 +30,31 @@ Common Requirements
 - `Python <https://www.python.org/>`__ 3.4 or above with virtualenv capabilities (probably in the ``python3-venv`` package or included with your Python 3 install)
 - `nodejs <http://nodejs.org/>`__ 4.0 or above
 - `GDAL <http://www.gdal.org>`__ 2.0 or above with Python3 bindings
-- `Sphinx search <http://sphinxsearch.com/>`__ or above for the search features (package commonly named ``sphinx`` on most distributions, on Debian system, use ``sphinxsearch`` in Jessie backports)
+- `Sphinx search <http://sphinxsearch.com/>`__ 2.2 or above for the search features (package commonly named ``sphinx`` on most distributions, on Debian system, use ``sphinxsearch`` in Jessie backports)
 - A WMS/WMTS server. For instance `MapServer <http://mapserver.org/>`__. The version depends on your needs and the Map files you will write but we recommend the last version.
 - `tomcat <http://tomcat.apache.org/>`__ 8.0 or above to deploy the print component
 - `Bash <http://www.gnu.org/software/bash>`__ 4 or above to launch the tasks
-- `git <https://git-scm.com/>`__ 2.1 or above to get the code
-- A database system. Currently, we only support `PostgreSQL <https://www.postgresql.org/>`__ on production setup.
+- `git <https://git-scm.com/>`__ 2.0 or above to get the code
+- A database system with GIS support. Currently, we only support `PostgreSQL <https://www.postgresql.org/>`__ with `PostGIS <http://postgis.net/>`__ for production usages.
 
 
 Requirements for a usage with a virtualenv
 ------------------------------------------
 
-The following libraries to correctly create the python venv of the API: geos, geos-devel, postgresql-devel, libxml2-devel, libxslt-devel.
+The following libraries to correctly create the python venv of the API:
 
-On debian based system, use this list: libgeos-c1, libgeos-dev, python3-pip (needed to create the virtualenv for the API), libxml2-dev, libxslt-dev.
+- geos
+- geos-devel
+- postgresql-devel
+- libxml2-devel
+- libxslt-devel
+
+On debian based system, use this list:
+
+- libgeos-c1
+- libgeos-dev
+- libxml2-dev
+- libxslt-dev
 
 
 Requirements without a virtualenv
@@ -56,9 +68,9 @@ To view the full list of Python 3 packages necessary for the API, take a look at
 Production configurations
 -------------------------
 
-Review the production configurations. The script containing the production values for deployment is located in ``customer-infra/config/config.dist.sh``. Here is a sample file with the variables that are used and how they are used. You can view an example `here <https://github.com/ioda-net/customer-infra/blob/master/config/config.dist.sh>`__.
+Review the production configurations. The script containing the production values for deployment is located in ``customer-infra/config/config.dist.sh``. You can view an example `here <https://github.com/ioda-net/customer-infra/blob/master/config/config.dist.sh>`__.
 
-You should also check that the configuration for the vhost are correct (domain, HTTPS certificates). This will be located in ``customer-infra/config/dist/_config.dist.toml``. Beware that these values can be overridden in portal specific files. The section looks like this:
+You should also check that the configuration for the vhost are correct (domain, HTTPS certificates). This will be located in ``customer-infra/config/dist/_common.dist.toml``. Be aware that these values can be overridden in portal specific files. The section looks like this:
 
 .. code:: ini
 
@@ -173,7 +185,7 @@ You can either build it from scratch from `the source <https://github.com/mapfis
 
   - Check and correct permissions on ``<tomcat-webapps>/print-customer-infra/print-apps``:
 
-    - Check that with the user defined by ``$PROD_USER`` you can access this directory. If ``ls <tomcat-webapps>/print-customer-infra/print-apps`` returns successfuly, you are good to go. If not, correct the permissions to give it read and execute access on all folders on the path.
+    - Check that with the user defined by ``$PROD_USER`` you can access this directory. If ``ls <tomcat-webapps>/print-customer-infra/print-apps`` runed with ``$PROD_USER`` returns successfuly, you are good to go. If not, correct the permissions to give it read and execute access on all folders on the path.
     - Setup ACL to give the user write permissions to the directory (**don't use standard unix permissions, it breaks tomcat's expectations**): ``setfacl -m u:<user>:rwx print-customer-infra/print-apps``.
 
   - Check that tomcat has an AJP connector defined on port 8009 in ``/etc/server.xml``. If not, add the line below in the ``<Service name="Catalina">`` section:
@@ -228,7 +240,7 @@ On `sphinx search <http://sphinxsearch.com/>`__ is correctly installed on your s
 
     .. attention::
 
-      On Debian based systems, you must correct the user to ``sphinxsearch``
+      On Debian based systems, you must correct the user to ``sphinxsearch`` in the unit file.
 
   - Reload systemd daemons: ``systemctl daemon-reload``
 

@@ -9,7 +9,7 @@ Setup geo-infra
 ~~~~~~~~~~~~~~~
 
 - You must add a symlink to the ``mapserv`` executable in cgi-bin. This allows the scripts to parse the generated Map files to create the most up to date configuration for the frontend.
-- Install the python dependencies listed in ``requires.txt``. You can install them globally with ``sudo pip install -r requires.txt`` or in a venv. If you use a version of Python below 3.5, you'll also need glob2. You can install it this way: ``sudo pip install glob2``.
+- Install the Python dependencies listed in ``requires.txt``. You can install them globally with ``sudo pip install -r requires.txt`` or in a venv. If you use a version of Python below 3.5, you'll also need glob2. You can install it this way: ``sudo pip install glob2``.
 
 
 Setup a customer infrastructure
@@ -35,7 +35,7 @@ They are written in the `jinja2 template language <http://jinja.pocoo.org/>`__. 
 - ``portal``: the name of the portal
 - ``infra_dir``: the absolute path to the current customer infra dir
 - ``infra_name``: the base name of infra dir, eg customer-infra
-- ``mapserver_ows_host``: the host of mapserver (used to generate the print configuration). Only is portal is not None.
+- ``mapserver_ows_host``: the host of mapserver (used to generate the print configuration). Only if portal is not None.
 - ``prod_git_repos_location``: location of the productions git repositories on the server.
 
 They can be used like this to be replaced by the correct values:
@@ -95,7 +95,7 @@ Templates for search are splitted in three categories:
 
 - global templates located in ``geo-infra``:
 
-  - ``search/sphinx.in.conf`` the entry point for sphinx
+  - ``search/sphinx.in.conf`` the entry point for sphinx. It includes all the other configuration files for sphinx.
   - ``search/global-base.in.conf`` the configuration of the daemon for sphinx.
 
 - templates common to all infrastructures located in ``geo-infra``:
@@ -161,11 +161,13 @@ If you want to insert curly braces in your string, you need to escape them like 
 
   key_with_curly_brace = '{{toto}}'
 
+Once the configuration is parsed, ``key_with_curly_brace`` will hold this value: ``'{toto}'``.
+
 The configuration system is design to allow easy deployment on production while being able to override any value for development or tests purposes. In order to easy maintenance, everything that can be in a ``config/_common.<type>.toml`` file must be in it. Any value in the ``config/_common.<type>.toml`` files can be overridden in a portal specific file.
 
 The configuration is loaded like this (**all these files are mandatory, if they don't exist, the task will fail**):
 
-1. ``geo-infra/config/global.toml`` file is loaded. This is the only TOML configuration file from ``geo-infra``. It contains general configuration values and paths. Normally, you shouldn't change keys present in it.
+1. ``geo-infra/config/global.toml`` This is the only TOML configuration file from ``geo-infra``. It contains general configuration values and paths. Normally, you shouldn't change keys present in it.
 2. ``customer-infra/config/dist/_common.dist.toml``
 3. ``customer-infra/config/dist/<portal>.dist.toml`` (unless you are doing a non portal specific task like building the global sphinx configuration).
 4. ``customer-infra/config/_template.dist.toml``: this is not a configuration file per see but the values that are allowed in portal specific configuration files. If a key or section is present in a portal file but not in the template, it will be reported as warning.
@@ -254,8 +256,8 @@ In ``geo-infra``:
 In ``customer-infra``:
 
 - ``config/dist/``: all dist files tracked by git. They should be directly usable on the production server.
-- ``config/prod``: all files used for prod builds, not tracked by git.
-- ``config/dev``: all files used for dev builds, not tracked by git.
+- ``config/prod/``: all files used for prod builds, not tracked by git.
+- ``config/dev/``: all files used for dev builds, not tracked by git.
 - ``config/config.dist.sh``: production variables for shell scripts **Required**.
 - ``config/config.sh``: *Optional*, not tracked by git.
 
@@ -285,9 +287,9 @@ In ``customer-infra``:
 
 - ``img/``: contains the images for all portals
 
-  - ``img/<portal>``: Any image in this folder with the same name as an image from the global folder will replace the image from the global folder.
+  - ``img/<portal>/``: Any image in this folder with the same name as an image from the global folder will replace the image from the global folder.
 
-- ``json/``: contains a subfolder for each portal. If this subfolder, there is an ``external`` subfolder which contains the JSON configuration files for the external layers and a ``topics`` subfolder which contains the JSON configuration files for the topics.
+- ``json/``: contains a subfolder for each portal. If this subfolder, there is an ``external`` subfolder which contains the JSON configuration files for the external layers and a ``topics`` subfolder which contains the JSON configuration files for the topics. Refer to the :ref:`topic section <ref_cfg-portal_topics>` or the :ref:`external layers section <ref_user_cfg-portal_layers-external-sources>` in the user manual to learn more about this.
 
 - ``portals/``: contain .map defining a geo-portal. You can organize you includes like this:
 
@@ -301,7 +303,7 @@ In ``customer-infra``:
   - ``customer-infra/mapserver``: contains .map related to pure MapServer instructions.
   - ``customer-infra/styles``: contains .map defining a layer class included in layers. Files will be named like ``TYPEOFSTYLE.style.map.in``
 
-- ``print/``: contains the template and configuration for MFP.
+- ``print/``: contains the template and configuration for MFP. See the :ref:`print section <ref_user_cfg-portal-print>` of the user manual to learn more about this.
 - ``search/``: contains the template for searches specific to this portal.
 - ``translations/``: contains the translation files.
 
@@ -319,7 +321,7 @@ The output is located in the ``customer-infra`` directory. You don't want these 
 - ``dev/``
 
   - ``dev/<portal>/``: contains the generated files for one portal. The content of each subfolder should be obvious given the name of the subfolder. This is the document root for the vhost of the current portal.
-  - ``dev/vhosts.d``: contains the generated vhosts.
-  - ``dev/search`` contains the generated global search configuration for this infrastructure.
+  - ``dev/vhosts.d/``: contains the generated vhosts.
+  - ``dev/search/`` contains the generated global search configuration for this infrastructure.
 
 - ``prod/``: same as ``dev``. It also contains the generated content for production. Each subfolder should be an autonomous git repository to ease deployment to production and rollback if necessary.
