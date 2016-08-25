@@ -54,6 +54,30 @@ Deploy
 Use manuel, **on the production server**: ``manuel deploy``.
 
 
+Search keywords
+---------------
+
+In order to add a keyword, you must edit ``geo-api3/chsdi/customers/utils/search.py``. If you edit the file on devel, then the keywords will be used for all customer (on next merge). If you edit it in a customer specific branch, then it will only be available for this customer.
+
+To add a keyword, you must add a ``SearchKeywords`` namedtuple to the ``SEARCH_KEYWORDS`` tuple, like this:
+
+.. code:: python
+
+    SEARCH_KEYWORDS = (
+        SearchKeywords(
+            keywords=('addresse', 'adresse', 'indirizzo', 'address'),
+            filter_keys=['places']
+        ),
+    )
+
+.. note::
+
+    The ``SearchKeywords`` namedtuple has two members:
+
+    - ``keywords``: the list of keywords that the user can use.
+    - ``filter_keys``: the list of index names associated with these keywords.
+
+
 Tests
 -----
 
