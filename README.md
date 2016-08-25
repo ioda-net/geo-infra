@@ -2,9 +2,9 @@
 
 This repository contains all scripts and template used to manage [geo-front3](https://github.com/ioda-net/geo-front3) and [geo-api3](https://github.com/ioda-net/geo-api3).
 
-It relies on a collection of Bash and Python3 scripts. Tasks are launched with [manuel](https://github.com/ShaneKilkelly/manuel) a task runner for Bash.
+It relies on a collection of Bash and Python 3 scripts. Tasks are launched with [manuel](https://github.com/ShaneKilkelly/manuel) a task runner for Bash.
 
-To get started go to the getting started section of the documentation.
+View the [getting started](https://docs.geoportal.xyz/getting-started.html) to start with this project. To learn more specifically about the infrastructure, look at the [infrastructure page of the documentation](https://docs.geoportal.xyz/infra.html). You can also look at [the documentation](https://docs.geoportal.xyz/).
 
 
 # Credits
