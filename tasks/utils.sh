@@ -488,3 +488,13 @@ function build-doc {
         "${SPHINX_CMD}" -b html -d "${DOC_BUILD_DIR}/doctrees" . "${DOC_BUILD_DIR}/html"
     popd
 }
+
+
+HELP['clean-doc']="manuel clean-doc
+
+Remove the built files for the _build folder of the documentation"
+function clean-doc {
+    pushd "${DOC_DIR}/${DOC_BUILD_DIR}"
+        rm -rf html doctrees
+    popd
+}

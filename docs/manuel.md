@@ -284,6 +284,12 @@ manuel build-doc
 Build the doc from the files in docs. The output will be in docs/_build/html
 
 
+## clean-doc
+manuel clean-doc
+
+Remove the built files for the _build folder of the documentation
+
+
 ## db-grant-update
 manuel db-grant-update [HOST [DATABASE [DB_OWNER]]]
 
