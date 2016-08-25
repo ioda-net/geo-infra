@@ -75,6 +75,27 @@ To build this documentation in HTML under ``_build/html``, use:
    manuel build-doc
 
 
+Credits
+=======
+
+`manuel <https://github.com/ShaneKilkelly/manuel>`__ is a task runner for Bash and was created by Shane Kilkelly. It is released under the MIT License.
+
+`geo-front3 <https://github.com/ioda-net/geo-front3>`__ and `geo-api3 <https://github.com/ioda-net/geo-api3>`__ are based on `mf-geoadmin3 <https://github.com/geoadmin/mf-geoadmin3>`__ and `mf-chsdi3 <https://github.com/geoadmin/mf-chsdi3>`__.
+Those two softwares were created by `swisstopo <https://www.swisstopo.admin.ch/>`__ the Federal Office of Topography of Switzerland for their geoportal `map.geo.admin.ch <https://map.geo.admin.ch>`__.
+They are released under the BSD licence.
+
+`geo-front3 <https://github.com/ioda-net/geo-front3>`__ and `geo-api3 <https://github.com/ioda-net/geo-api3>`__ were forked and adapted to modernize the geoportals proposed by `sigeom sa <https://www.sigeom.ch/>`__ a Swiss civil engineer, GIS specialist and land surveying company.
+The adaptation was performed by `Ioda-Net Sàrl <https://ioda-net.ch/>`__ a Swiss company specialized in Open Source software.
+
+The following companies give financial support, help to keep this software up to date with swisstopo code, and open source:
+
+- `sigeom sa <https://www.sigeom.ch>`__ 2740 Moutier, Switzerland
+- `Ioda-Net Sàrl <https://ioda-net.ch/>`__ CH-2947 Charmoille, Switzerland
+
+Want to help too? `contact (at) geoportal (dot) xyz <mailto:contact(at)geoportal.xyz>`__
+
+
+
 Indices and tables
 ==================
 

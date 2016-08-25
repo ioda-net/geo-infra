@@ -10,7 +10,7 @@ In the API, all codes specific to a customer are grouped into ``chsdi/customers`
 
 - ``__init__.py`` to create the module.
 - ``models/`` to put models specific to a customer. They should only be used in ``chsdi/customers/views/``.
-- ``utils/`` for utilities. By default, it contains a ``search.py`` file in which all search keywords are stored.
+- ``utils/`` for utilities. By default, it contains a ``search.py`` file in which all search keywords are stored. See `the section about keywords in the API page <./api.html#search-keywords>`__ to learn more how search keywords are handled.
 - ``views/`` for customer specific views. Create a file per view. When you add a view, update the ``register_customer_view`` function from ``__init__.py`` in order for the view to be registered by Pyramid. This should look like:
 
     .. code:: python
