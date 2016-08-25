@@ -94,7 +94,7 @@ class GenerateJsonConfig(Generate):
                 current_topic_config = json.load(json_file)
             background_layers = current_topic_config['backgroundLayers']
             self.check_layers_in_layers_config(background_layers, current_topic_config['name'])
-            selected_layers = current_topic_config['selectedLayers']
+            selected_layers = current_topic_config.get('selectedLayers', [])
             activated_layers = current_topic_config.get('activatedLayers', [])
             self.check_layers_in_layers_config(selected_layers, current_topic_config['name'])
             topic = {
