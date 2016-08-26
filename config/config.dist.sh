@@ -50,6 +50,7 @@ set-var UGLIFY_CMD "./node_modules/.bin/uglifyjs"
 set-var RENDER_CMD "./scripts/render.py"
 set-var GENERATE_CMD "./scripts/generate.py"
 set-var SPHINX_CMD sphinx-build
+set-var CSVCLEAN_CMD "/usr/bin/csvclean"
 
 # Some commands are in /usr/bin/systemctl on most systems but in /bin/systemctl on Debian. We need
 # to know where to search for them. Only commands used in sudo with absolute path are concerned.

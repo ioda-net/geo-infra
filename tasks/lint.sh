@@ -73,13 +73,13 @@ function csvlint {
         lint_dir="$1"
     fi
 
-    if ! type csvclean > /dev/null 2>&1; then
-        echo "WARNINGS: csvclean is not found on this system. CSV files won't be linted"
+    if ! type "${CSVCLEAN_CMD}" > /dev/null 2>&1; then
+        echo "WARNINGS: csvclean is not found on this system in ${CSVCLEAN_CMD}. CSV files won't be linted"
         return 0
     fi
 
     for csvfile in $(find "${lint_dir}" -name "*.csv" | grep -v 'infra/dev' | grep -v 'infra/prod' | grep -v 'customer-infra/data/places.csv'); do
-        local output=$(csvclean -n "${csvfile}" 2>&1)
+        local output=$("${CSVCLEAN_CMD}" -n "${csvfile}" 2>&1)
         if [[ "${output}" != "No errors." ]]; then
             echo "${csvfile}"
             echo -e "${output}"
