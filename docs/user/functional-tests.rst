@@ -152,6 +152,8 @@ KML import
 - **Results:** the KML is correctly added to the map and the view is centered on the KML.
 - Load a KML that is outside the portal extent (for instance `the New York KML </data/functionnal-tests/new-york.kml>`__)
 - **Results:** Nothing must happen.
+- Close the popup.
+- **Results:** the popup is successfully closed.
 
 
 Features highlight
@@ -160,7 +162,7 @@ Features highlight
 On click
 ~~~~~~~~
 
-- Check that you have an imported WMS layer.
+- Check that you have an imported WMS layer and a KML.
 - Click on the map.
 - **Results:**
 
