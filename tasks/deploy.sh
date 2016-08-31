@@ -99,15 +99,15 @@ function _get-previous-commit {
 
 function _get-mapinfra-changelog {
     local range="${previous_mapinfra_commit}..${current_mapinfra_commit}"
-    echo $(git log "${range}" --oneline |
-               grep -v "Merge branch '.*' into")
+    echo "$(git log "${range}" --oneline |
+               grep -v "Merge branch '.*' into")"
 }
 
 
 function _get-front-changelog {
     pushd "${FRONT_DIR}"
         local range="${previous_front_commit}..${current_front_commit}"
-        echo $(git log "${range}" --oneline --no-merges)
+        echo "$(git log "${range}" --oneline --no-merges)"
     popd
 }
 
