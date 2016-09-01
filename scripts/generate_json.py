@@ -35,6 +35,7 @@ from requests.exceptions import ConnectionError
 
 from generate_utils import Generate, start_cgi_server, cgi_server
 from generate_translations import Translator, CatalogTranslator
+from helpers import format_search_text
 
 
 class GenerateJsonConfig(Generate):
@@ -385,5 +386,8 @@ class OwsParser(Generate):
                     layer, label = name
                     if label not in label_filter:
                         label_filter.add(label)
-                        tsv_file.write('{id}\t{layer}\t{label}\n'
-                                       .format(id=id, layer=layer, label=t(label)))
+                        search_string = format_search_text(t(label))
+                        tsv_file.write(
+                            '{id}\t{layer}\t{search_string}\t{label}\n'
+                            .format(id=id, layer=layer, search_string=search_string, label=t(label))
+                        )
