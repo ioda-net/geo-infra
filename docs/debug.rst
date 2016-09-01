@@ -74,3 +74,13 @@ Print
 - *Target host is null*: Check that all the necessary images are present in MFP's ``print-apps`` folder.
 - Spring/authentication related: check that `this patch <https://github.com/ioda-net/geo-infra/blob/master/patches/mfp-remove-basic-auth-security.patch>`__ was correctly applied to your ``print-customer-infra/WEB-INF/web.xml``.
 - Max size related check that `this patch <https://github.com/ioda-net/geo-infra/blob/master/patches/mfp-correct-max-request-size.patch>`__ was correctly applied to your ``print-customer-infra/WEB-INF/web.xml``. If necessary, increase the max content length value.
+
+OWS Requests
+------------
+
+If all your OWS requests respond with a 404 error, check that you have a trailing slash in your value of ``vhost.ows_path`` like that:
+
+.. code:: ini
+
+   [vhost]
+   ows_path = '/var/lib/geoportal/cgi-bin/'
