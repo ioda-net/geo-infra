@@ -26,7 +26,8 @@ Deploying a new portal
 
 #. Generate the vhost for this portal: ``manuel vhost prod <portal>``
 #. Deploy the vhosts on the server: ``manuel deploy-vhost``
-#. Ask your system administrator to create the bare repository for the new portal. Point it to the :ref:`correct section of the system administrator documentation <ref_sysadmin_deploy-setup_deploy-new-portal>` if needed.
+#. Ask your system administrator to create the bare repository for the new portal. Point to the :ref:`correct section of the system administrator documentation <ref_sysadmin_deploy-setup_deploy-new-portal>` if needed.
+#. Create to proper symlink to MapServer at the location defined by ``vhost.ows_path``
 #. Initialize this repository with ``manuel init-prod-repo <portal>``
 #. Build and deploy the portal: ``manuel deploy <portal>``
 
