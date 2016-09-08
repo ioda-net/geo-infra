@@ -58,7 +58,7 @@ Launch gslint on the javascript code. This is equivalent to 'manuel front lint'
 manuel generate-tests-conf
 
 Generate the configuration for units tests (dev and prod). This is equivalent to:
-'manuel front build-test-conf'
+'manuel front build-test-conf'. DEFAULT_PORTAL must be set.
 
 
 ## config
