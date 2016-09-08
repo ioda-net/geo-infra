@@ -222,7 +222,7 @@ function _watch {
 
         if [[ "${changed}" == *.nunjucks.html ]]; then
             echo "$(date) Rebuilding indexes"
-            pushd "${mapinfra_dir}"
+            pushd "${geo_infra_dir}"
                 _build-index "${portal_type}" "${portal}"
             popd
         elif [[ "${changed}" == *.less ]]; then
@@ -242,9 +242,9 @@ function _watch {
 
 function build-mfp {
     local path2mf="${1:-${MFP_SOURCE_PATH}}"
-    local mapinfra_dir="$(pwd)"
-    local patchesdir="${mapinfra_dir}/patches"
-    local mapinfra_print_dir="${mapinfra_dir}/print"
+    local geo_infra_dir="$(pwd)"
+    local patchesdir="${geo_infra_dir}/patches"
+    local geo_infra_print_dir="${geo_infra_dir}/print.war"
     local output_dir="core/build/libs/"
 
     pushd "${path2mf}"
@@ -269,7 +269,7 @@ function build-mfp {
 
             zip -q -r print.war *
 
-            mv print.war "${mapinfra_print_dir}"
+            mv print.war "${geo_infra_print_dir}"
         popd
 
         git reset -q --hard

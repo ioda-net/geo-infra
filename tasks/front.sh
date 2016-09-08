@@ -249,7 +249,7 @@ function _front-watch {
     local js_deps_file="${output}/deps.js"
     local style_output="${output}/style"
     local css_file="${style_output}/app.css"
-    local mapinfra_dir=$(pwd)
+    local geo_infra_dir=$(pwd)
 
     trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 
@@ -269,7 +269,7 @@ function _front-watch {
 
 
 function _launch-test-integration {
-    # Prepare mapinfra
+    # Prepare coverage portal
     front dev coverage
 
     # Launch tests

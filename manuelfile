@@ -243,7 +243,7 @@ function lint-code {
 HELP['generate-tests-conf']="manuel generate-tests-conf
 
 Generate the configuration for units tests (dev and prod). This is equivalent to:
-'manuel front build-test-conf'"
+'manuel front build-test-conf'. DEFAULT_PORTAL must be set."
 function generate-tests-conf {
     front build-test-conf
 }

@@ -51,22 +51,22 @@ function _prod-repo-release {
     local portal_git_repo="${infra_dir}/prod/${portal}"
 
     # Get the id of the current commits
-    local current_mapinfra_commit=$(git rev-parse HEAD 2> /dev/null)
+    local current_geo_infra_commit=$(git rev-parse HEAD 2> /dev/null)
     pushd "${FRONT_DIR}"
         local current_front_commit=$(git rev-parse HEAD 2> /dev/null)
     popd
 
-    # Get the id of the last deployed commit from mapinfra and geo-front
+    # Get the id of the last deployed commit from geo-infra and geo-front
     pushd "${portal_git_repo}"
         local previous_tag=$(git tag | sort -nr | head -n 1)
-        local previous_mapinfra_commit=$(_get-previous-commit "- mapinfra commit:")
+        local previous_geo_infra_commit=$(_get-previous-commit "- (.+)infra commit:")
         local previous_front_commit=$(_get-previous-commit "- front commit:")
     popd
 
-    # Get the changelog for mapinfra
-    local mapinfra_changelog=''
-    if [[ -n "${previous_mapinfra_commit}" ]]; then
-        mapinfra_changelog=$(_get-mapinfra-changelog)
+    # Get the changelog for geo-infra
+    local geo_infra_changelog=''
+    if [[ -n "${previous_geo_infra_commit}" ]]; then
+        geo_infra_changelog=$(_get-geo-infra-changelog)
     fi
 
     # Get the changelog for front & updates from Swisstopo
@@ -90,15 +90,15 @@ function _get-previous-commit {
         echo ""
     else
         echo $(git show "${previous_tag}" |
-                      grep -- "$1" |
+                      grep -E -- "$1" |
                       head -n 1 |
                       awk '{print $4}')
     fi
 }
 
 
-function _get-mapinfra-changelog {
-    local range="${previous_mapinfra_commit}..${current_mapinfra_commit}"
+function _get-geo-infra-changelog {
+    local range="${previous_geo_infra_commit}..${current_geo_infra_commit}"
     echo "$(git log "${range}" --oneline |
                grep -v "Merge branch '.*' into")"
 }
@@ -138,11 +138,11 @@ function _commit-new-front {
     git add -A . &> /dev/null
     local commit_message="release ${portal} $(date +"%Y-%m-%d-%H-%M-%S") by ${USER} on ${HOSTNAME}  from ${SSH_CLIENT}
 
-- mapinfra commit: ${current_mapinfra_commit}
+- geo-infra commit: ${current_geo_infra_commit}
 - front commit: ${current_front_commit}
 
-MAPINFRA CHANGELOG:
-${mapinfra_changelog}
+GEO-INFRA CHANGELOG:
+${geo_infra_changelog}
 
 
 
