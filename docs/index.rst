@@ -48,6 +48,12 @@ Who are you?
     sysadmin/index.rst
 
 
+Future evolutions
+=================
+
+You can view the list of future evolutions and how we plan them to work on the dedicated page :ref:`here <rfc-index>`.
+
+
 Notes on code from upstream
 ===========================
 
