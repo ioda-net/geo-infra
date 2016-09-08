@@ -273,7 +273,7 @@ function reload-apache {
     local prod_cmd="sudo_apache_reload"
 
     if type "${prod_cmd}" > /dev/null 2>&1; then
-        "${pord_cmd}"
+        "${prod_cmd}"
     elif sudo /usr/sbin/apachectl -t; then
         if [[ -e '/usr/lib/systemd/system/httpd.service' ]]; then
             sudo "${SYSTEMCTL_CMD}" reload httpd.service
