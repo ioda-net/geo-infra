@@ -253,11 +253,11 @@ function db-prod-patch {
 }
 
 
-HELP['db-ddl-track']="manuel db-ddl-track
+HELP['db-ddl-track']="manuel db-ddl-track [DB_HOST [DB_NAME [REPO [SCHEMA_DUMP_FILE [DB_OWNER]]]]]
 
-Work with DDL sit_dev database, if any changes is detected from previous state
+Work with DDL database, if any changes is detected from previous state
 Download the db schema, and create a new git tag
-commit and push to specific repository ( sit/sit_db )
+commit and push to specific repository.
 
 This task is normally run from cron
 

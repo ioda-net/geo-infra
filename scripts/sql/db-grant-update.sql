@@ -2,8 +2,6 @@
 -- run this script with DEFAULT_DB_OWNER
 --
 
--- ALTER DATABASE sit_dev
---  SET search_path = userdata, public, postgis, topology, pg_catalog;
 
  GRANT ALL ON SCHEMA userdata TO DEFAULT_DB_OWNER;
  GRANT ALL ON SCHEMA api3 TO DEFAULT_DB_OWNER;

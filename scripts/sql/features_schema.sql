@@ -10,7 +10,7 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE features.map_layers_features
-  OWNER TO sit_dba;
-GRANT ALL ON TABLE features.map_layers_features TO sit_dba;
-GRANT SELECT, REFERENCES, TRIGGER ON TABLE features.map_layers_features TO sit_api3;
+  OWNER TO geo_dba;
+GRANT ALL ON TABLE features.map_layers_features TO geo_dba;
+GRANT SELECT, REFERENCES, TRIGGER ON TABLE features.map_layers_features TO geo_api3;
 -- end features_map_layers_features table

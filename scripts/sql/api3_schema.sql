@@ -12,9 +12,9 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE api3.url_shortener
-  OWNER TO sit_dba;
-GRANT ALL ON TABLE api3.url_shortener TO sit_dba;
-GRANT SELECT, UPDATE, INSERT, DELETE, REFERENCES, TRIGGER ON TABLE api3.url_shortener TO sit_api3;
+  OWNER TO geo_dba;
+GRANT ALL ON TABLE api3.url_shortener TO geo_dba;
+GRANT SELECT, UPDATE, INSERT, DELETE, REFERENCES, TRIGGER ON TABLE api3.url_shortener TO geo_api3;
 COMMENT ON TABLE api3.url_shortener
   IS 'Storage for url';
 COMMENT ON COLUMN api3.url_shortener.short_url IS 'The original URL with protocal and host';
@@ -39,9 +39,9 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE api3.files
-  OWNER TO sit_dba;
-GRANT ALL ON TABLE api3.files TO sit_dba;
-GRANT SELECT, UPDATE, INSERT, DELETE, REFERENCES, TRIGGER ON TABLE api3.files TO sit_api3;
+  OWNER TO geo_dba;
+GRANT ALL ON TABLE api3.files TO geo_dba;
+GRANT SELECT, UPDATE, INSERT, DELETE, REFERENCES, TRIGGER ON TABLE api3.files TO geo_api3;
 COMMENT ON TABLE api3.files
   IS 'Link between file and admin ids.';
 COMMENT ON COLUMN api3.files.mime_type IS 'The MIME Type of the stored file.';
