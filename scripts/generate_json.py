@@ -384,7 +384,8 @@ class OwsParser(Generate):
                 for id, name in enumerate(sorted(self.layers_names)):
                     id += 1  # sphinx-search doesn't support 0 as id
                     layer, label = name
-                    if label not in label_filter:
+                    is_group_of_all_layers = self.portal == layer and label.endswith('OWS Service')
+                    if label not in label_filter and not is_group_of_all_layers:
                         label_filter.add(label)
                         search_string = format_search_text(t(label))
                         tsv_file.write(
