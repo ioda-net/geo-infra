@@ -490,6 +490,24 @@ function build-doc {
 }
 
 
+HELP['build-doc-customer']="manuel build-doc-customer
+
+Build the documentation from the files in customer-infra/docs. The output will be in customer-infra/docs/_build/html"
+function build-doc-customer {
+    local customer_doc_dir="${INFRA_DIR}/docs"
+
+    if [[ ! -d "${customer_doc_dir}" ]]; then
+        echo "ERROR: folder ${customer_doc_dir} doesn't exist. Check that INFRA_DIR points to a
+specific infra directory and that it contains a doc folder." >&2
+        exit 1
+    fi
+
+    pushd "${customer_doc_dir}"
+        "${SPHINX_CMD}" -b html -d "${DOC_BUILD_DIR}/doctrees" . "${DOC_BUILD_DIR}/html"
+    popd
+}
+
+
 HELP['clean-doc']="manuel clean-doc
 
 Remove the built files for the _build folder of the documentation"
