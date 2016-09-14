@@ -19,6 +19,8 @@ Requirements
    - postgresql-devel
    - libxml2-devel
    - libxslt-devel
+   - python3-devel
+   - gcc
 
    On debian based system, use this list:
 
@@ -26,6 +28,8 @@ Requirements
    - libgeos-dev
    - libxml2-dev
    - libxslt-dev
+   - python3-dev
+   - gcc
 
 - `GDAL <http://www.gdal.org>`__ 2.0 or above with Python3 bindings
 - `Python <https://www.python.org/>`__ 3.4 or above with virtualenv capabilities (probably in the ``python3-venv`` package or included in your Python 3 installation)

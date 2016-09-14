@@ -46,6 +46,8 @@ Requirements
   - postgresql-devel
   - libxml2-devel
   - libxslt-devel
+  - python3-devel
+  - gcc
 
   On debian based system, use this list:
 
@@ -53,6 +55,8 @@ Requirements
   - libgeos-dev
   - libxml2-dev
   - libxslt-dev
+  - python3-dev
+  - gcc
 
 
 Before we start
