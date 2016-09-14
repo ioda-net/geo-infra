@@ -16,6 +16,7 @@ Requirements
   - ``mod_rewrite``. To enable ``mod_rewrite`` on Debian based systems, use ``a2enmod rewrite``
   - ``mod_expires``. To enable ``mod_expires`` on Debian based systems, use ``a2enmod expires``
   - ``mod_headers``. To enable ``mod_headers`` on Debian based systems, use ``a2enmod headers``
+  - ``mod_filter``. To enable ``mod_filter`` on Debian based systems, use ``a2enmode filter``
   - ``mod_fcgid``. To enable ``mod_fcgid`` on Debian based systems install the ``libapache2-mod-fcgid`` package (``aptitude install libapache2-mod-fcgid``)
   - ``mod_proxy``, ``mod_proxy_ajp`` and ``mod_proxy_http``. To enable ``mod_proxy``, ``mod_proxy_ajp`` and ``mod_proxy_http`` on Debian based systems, use ``a2enmod proxy``, ``a2enmod proxy_ajp`` and ``a2enmod proxy_http``.
 
