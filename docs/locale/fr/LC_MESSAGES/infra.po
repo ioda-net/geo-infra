@@ -1,0 +1,743 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../infra.rst:2
+msgid "How does the infrastructure work?"
+msgstr ""
+
+#: ../../infra.rst:4
+msgid ""
+"In this document, when we refer to ``customer-infra`` directory, we mean "
+"any directory contains the infrastructure for a specific customer. It can"
+" be named anything but must be placed in the path defined by the "
+"``$INFRA_DIR`` variable. The proper path will be determined by the "
+"scripts from the portal name and the content of this variable. See the "
+"`Configuration`_ section of this document for more details."
+msgstr ""
+
+#: ../../infra.rst
+msgid "Contents"
+msgstr ""
+
+#: ../../infra.rst:9
+msgid "Setup geo-infra"
+msgstr ""
+
+#: ../../infra.rst:11
+msgid ""
+"You must add a symlink to the ``mapserv`` executable in cgi-bin. This "
+"allows the scripts to parse the generated Map files to create the most up"
+" to date configuration for the frontend."
+msgstr ""
+
+#: ../../infra.rst:12
+msgid ""
+"Install the Python dependencies listed in ``requires.txt``. You can "
+"install them globally with ``sudo pip install -r requires.txt`` or in a "
+"venv. If you use a version of Python below 3.5, you'll also need glob2. "
+"You can install it this way: ``sudo pip install glob2``."
+msgstr ""
+
+#: ../../infra.rst:16
+msgid "Setup a customer infrastructure"
+msgstr ""
+
+#: ../../infra.rst:18
+msgid ""
+"Include all files in ``customer-infra/dev/vhosts.d`` in your apache "
+"configuration. This can be done be editing ``/etc/httpd/conf/httpd.conf``"
+" or ``/etc/apache2/apache2.conf`` depending on your system and appending "
+"this line at the end of the file: ``IncludeOptional /path/to/infra/dir"
+"/customer-infra/dev/vhosts.d/*.conf``."
+msgstr ""
+
+#: ../../infra.rst:19
+msgid ""
+"Review the TOML and shell configurations and override any value necessary"
+" for your need."
+msgstr ""
+
+#: ../../infra.rst:25
+msgid "Templates"
+msgstr ""
+
+#: ../../infra.rst:27
+msgid ""
+"They can be located in the following subfolders (in ``geo-infra`` or "
+"``customer-infra``):"
+msgstr ""
+
+#: ../../infra.rst:29
+msgid "portals"
+msgstr ""
+
+#: ../../infra.rst:30
+msgid "search"
+msgstr ""
+
+#: ../../infra.rst:32
+msgid ""
+"They are written in the `jinja2 template language "
+"<http://jinja.pocoo.org/>`__. In order to ease the writing of templates, "
+"you can use special strings that will be replaced by the corresponding "
+"values:"
+msgstr ""
+
+#: ../../infra.rst:34
+msgid "``type``: dev or prod"
+msgstr ""
+
+#: ../../infra.rst:35
+msgid "``portal``: the name of the portal"
+msgstr ""
+
+#: ../../infra.rst:36
+msgid "``infra_dir``: the absolute path to the current customer infra dir"
+msgstr ""
+
+#: ../../infra.rst:37
+msgid "``infra_name``: the base name of infra dir, eg customer-infra"
+msgstr ""
+
+#: ../../infra.rst:38
+msgid ""
+"``mapserver_ows_host``: the host of mapserver (used to generate the print"
+" configuration). Only if portal is not None."
+msgstr ""
+
+#: ../../infra.rst:39
+msgid ""
+"``prod_git_repos_location``: location of the productions git repositories"
+" on the server."
+msgstr ""
+
+#: ../../infra.rst:41
+msgid "They can be used like this to be replaced by the correct values:"
+msgstr ""
+
+#: ../../infra.rst:47
+msgid ""
+"To use any other value, you must refer to the section and the key, like "
+"this:"
+msgstr ""
+
+#: ../../infra.rst:54
+msgid "MapServer Templates"
+msgstr ""
+
+#: ../../infra.rst:57
+msgid "MapServer includes"
+msgstr ""
+
+#: ../../infra.rst:59
+msgid ""
+"You can split your MapServer files into various files to ease the "
+"creation of complex Map files. To do this, you can use the ``INCLUDE`` "
+"directive of MapServer. It is used like this:"
+msgstr ""
+
+#: ../../infra.rst:66
+msgid ""
+"During the rendering phase, the ``customer-"
+"infra/portals/<portal>.in.map`` will be parsed for these includes. These "
+"included files will be rendered by jinja2, copied to ``customer-"
+"infra/dev/<portal>/map`` directory with the same structure as in the "
+"``customer-infra`` directory. You can also include files with the "
+"``INCLUDE`` directive in included files."
+msgstr ""
+
+#: ../../infra.rst:69
+msgid "Jinja2 includes"
+msgstr ""
+
+#: ../../infra.rst:71
+msgid ""
+"You can also use jinja's ``include`` tag to include jinja files in your "
+"main templates. All included files can contain jinja2 markup. After the "
+"generation process, you will have only one MapServer file containing the "
+"content of all included files. This can be done like this:"
+msgstr ""
+
+#: ../../infra.rst:79
+msgid "The paths in the ``include`` tag are relative to the main template file."
+msgstr ""
+
+#: ../../infra.rst:82
+msgid "Testing generated .map files"
+msgstr ""
+
+#: ../../infra.rst:84
+msgid ""
+"You can test the generated Map files with ``./manuel test-map-files dev "
+"PORTAL_NAME``"
+msgstr ""
+
+#: ../../infra.rst:88
+msgid ""
+"Only visible layers will be completely tested, but the syntax of the "
+"files will be checked not matter what."
+msgstr ""
+
+#: ../../infra.rst:89
+msgid ""
+"Syntax checking is done automatically in the ``prod``, ``deploy`` and "
+"``dev-full`` tasks."
+msgstr ""
+
+#: ../../infra.rst:92
+msgid "Search templates"
+msgstr ""
+
+#: ../../infra.rst:94
+msgid "Templates for search are splitted in three categories:"
+msgstr ""
+
+#: ../../infra.rst:96
+msgid "global templates located in ``geo-infra``:"
+msgstr ""
+
+#: ../../infra.rst:98
+msgid ""
+"``search/sphinx.in.conf`` the entry point for sphinx. It includes all the"
+" other configuration files for sphinx."
+msgstr ""
+
+#: ../../infra.rst:99
+msgid "``search/global-base.in.conf`` the configuration of the daemon for sphinx."
+msgstr ""
+
+#: ../../infra.rst:101
+msgid "templates common to all infrastructures located in ``geo-infra``:"
+msgstr ""
+
+#: ../../infra.rst:103
+msgid ""
+"``search/common/db.in.conf`` included once for each portal, it configures"
+" the connection to the proper database for each portal."
+msgstr ""
+
+#: ../../infra.rst:104
+msgid ""
+"``search/common/search-layers.in.conf`` included once for each portal, it"
+" configures the search for the layers."
+msgstr ""
+
+#: ../../infra.rst:106
+msgid ""
+"customer specific templates in the relevant customer infrastructure "
+"directory in ``customer-infra/search/portal-locations.in.conf``."
+msgstr ""
+
+#: ../../infra.rst:108
+msgid ""
+"A typical ``search`` section in ``customer-"
+"infra/config/_common.dist.toml`` looks like:"
+msgstr ""
+
+#: ../../infra.rst:120
+msgid "A generic ``portal-locations.in.conf`` looks like:"
+msgstr ""
+
+#: ../../infra.rst:126
+msgid "Configuration"
+msgstr ""
+
+#: ../../infra.rst:129
+msgid "Configuration for the portals and templates"
+msgstr ""
+
+#: ../../infra.rst:131
+msgid ""
+"The configuration files are written in `TOML <https://github.com/toml-"
+"lang/toml>`__. A toml file looks like:"
+msgstr ""
+
+#: ../../infra.rst:144
+msgid ""
+"In order to ease the writing of some values, you can use special strings "
+"that will be replaced by their values:"
+msgstr ""
+
+#: ../../infra.rst:146
+msgid "``{type}``: the type of deployment."
+msgstr ""
+
+#: ../../infra.rst:147
+msgid "``{portal}``: the name of the portal."
+msgstr ""
+
+#: ../../infra.rst:148
+msgid "``{domain}`` (from vhost.domain)."
+msgstr ""
+
+#: ../../infra.rst:150
+msgid "They can be used like this:"
+msgstr ""
+
+#: ../../infra.rst:156
+msgid ""
+"For instance, with ``type = 'dev'``, ``portal = 'demo'`` and ``domain = "
+"'geoportal.local'``, the value of key will be: "
+"``'dev.demo.geoportal.local'``."
+msgstr ""
+
+#: ../../infra.rst:158
+msgid ""
+"If you want to insert curly braces in your string, you need to escape "
+"them like this:"
+msgstr ""
+
+#: ../../infra.rst:164
+msgid ""
+"Once the configuration is parsed, ``key_with_curly_brace`` will hold this"
+" value: ``'{toto}'``."
+msgstr ""
+
+#: ../../infra.rst:166
+msgid ""
+"The configuration system is design to allow easy deployment on production"
+" while being able to override any value for development or tests "
+"purposes. In order to easy maintenance, everything that can be in a "
+"``config/_common.<type>.toml`` file must be in it. Any value in the "
+"``config/_common.<type>.toml`` files can be overridden in a portal "
+"specific file."
+msgstr ""
+
+#: ../../infra.rst:168
+msgid ""
+"The configuration is loaded like this (**all these files are mandatory, "
+"if they don't exist, the task will fail**):"
+msgstr ""
+
+#: ../../infra.rst:170
+msgid ""
+"``geo-infra/config/global.toml`` This is the only TOML configuration file"
+" from ``geo-infra``. It contains general configuration values and paths. "
+"Normally, you shouldn't change keys present in it."
+msgstr ""
+
+#: ../../infra.rst:171
+msgid "``customer-infra/config/dist/_common.dist.toml``"
+msgstr ""
+
+#: ../../infra.rst:172
+msgid ""
+"``customer-infra/config/dist/<portal>.dist.toml`` (unless you are doing a"
+" non portal specific task like building the global sphinx configuration)."
+msgstr ""
+
+#: ../../infra.rst:173
+msgid ""
+"``customer-infra/config/_template.dist.toml``: this is not a "
+"configuration file per see but the values that are allowed in portal "
+"specific configuration files. If a key or section is present in a portal "
+"file but not in the template, it will be reported as warning."
+msgstr ""
+
+#: ../../infra.rst:175
+msgid ""
+"If you are building the portal for production, the files below are loaded"
+" if they exists after the files listed above:"
+msgstr ""
+
+#: ../../infra.rst:177
+msgid "``customer-infra/config/prod/_common.prod.toml``"
+msgstr ""
+
+#: ../../infra.rst:178
+msgid "``customer-infra/config/prod/<portal>.prod.toml``"
+msgstr ""
+
+#: ../../infra.rst:180
+msgid ""
+"If you are building the portal for development, the files below are "
+"loaded if they exists after the files listed above:"
+msgstr ""
+
+#: ../../infra.rst:182
+msgid "``customer-infra/config/dev/_common.dev.toml``"
+msgstr ""
+
+#: ../../infra.rst:183
+msgid "``customer-infra/config/dev/<portal>.dev.toml``"
+msgstr ""
+
+#: ../../infra.rst:187
+msgid "You should be aware that:"
+msgstr ""
+
+#: ../../infra.rst:189
+msgid ""
+"All files ends by ``.<type>.toml`` to ease recognition when many of them "
+"are opened in a text editor."
+msgstr ""
+
+#: ../../infra.rst:190
+msgid ""
+"Only the files in ``customer-infra/config/dist`` should be tracked by git"
+" to allow developers to override values for testing purposes. This means "
+"that the values contained in these files, should match those of "
+"production to easy deployment: no need to update the production "
+"configuration, a ``git pull`` is enough."
+msgstr ""
+
+#: ../../infra.rst:192
+msgid ""
+"To debug the configuration, see the :ref:`configuration section "
+"<ref_debug_configuration>` section of the :ref:`ref_debug` page."
+msgstr ""
+
+#: ../../infra.rst:195
+msgid "Configuration for the shell scripts"
+msgstr ""
+
+#: ../../infra.rst:197
+msgid ""
+"The general configuration is in ``geo-infra/config/config.dist.sh``. It "
+"contains mostly paths to commands and various locations of importance. It"
+" is loaded before any other shell configuration."
+msgstr ""
+
+#: ../../infra.rst:199
+msgid ""
+"You can override any value in ``geo-infra/config/config.sh``. All values "
+"must be set with the ``set-var VARIABLE_NAME VALUE`` function. This way, "
+"values will be overridden from the config file but you cat still force "
+"the value for a specific variable by setting it in your environment like "
+"this: ``export VARIABLE=\"VALUE\"``. This file is optional and shouldn't "
+"contain many values. A typical ``geo-infra/config/config.sh`` would be:"
+msgstr ""
+
+#: ../../infra.rst:211
+msgid ""
+"For some tasks, the shell configuration for the customer infrastructure "
+"will be loaded. This is done with either:"
+msgstr ""
+
+#: ../../infra.rst:213
+msgid ""
+"``_load-prod-config``: used in ``prod``, ``deploy``, ``init-prod-repo``, "
+"``deploy-global-search-conf`` and database related tasks. In these cases,"
+" ``$INFRA_DIR`` must point to a specific infrastructure directory (eg "
+"``/path/to/customer-infra``). If not, it will fail with an error message."
+" This way, when you deploy a portal, the production values in the script "
+"are always correct."
+msgstr ""
+
+#: ../../infra.rst:214
+msgid ""
+"``_load-dev-config``: used in ``dev`` and ``dev-full`` will load the "
+"customer shell configuration from the infrastructure of each portal."
+msgstr ""
+
+#: ../../infra.rst:216
+msgid ""
+"Both of these function will reload the full configuration to be sure "
+"proper values are set in the variable. This means, they load:"
+msgstr ""
+
+#: ../../infra.rst:218
+msgid "``geo-infra/config/config.dist.sh`` **Required**"
+msgstr ""
+
+#: ../../infra.rst:219
+msgid "``geo-infra/config/config.sh`` *if present*."
+msgstr ""
+
+#: ../../infra.rst:220
+msgid "``customer-infra/config/config.dist.sh`` **Required**"
+msgstr ""
+
+#: ../../infra.rst:221
+msgid "``customer-infra/config/config.sh`` *if present*."
+msgstr ""
+
+#: ../../infra.rst:223
+msgid ""
+"That mean ``customer-infra/config/config.dist.sh`` should contain "
+"deployment for production values. So, a ``customer-"
+"infra/config/config.sh`` shouldn't contain many keys. Typically, it "
+"should look like that:"
+msgstr ""
+
+#: ../../infra.rst:233
+msgid "Layouts"
+msgstr ""
+
+#: ../../infra.rst:236
+msgid "Layout for scripts"
+msgstr ""
+
+#: ../../infra.rst:238
+msgid "All scripts are located in ``geo-infra``:"
+msgstr ""
+
+#: ../../infra.rst:240
+msgid "``./scripts/``: directory containing build scripts (python and SQL)"
+msgstr ""
+
+#: ../../infra.rst:241
+msgid "``./tasks/``: directory containing shell files sourced by manuel."
+msgstr ""
+
+#: ../../infra.rst:242
+msgid ""
+"``./cgi-bin/``: must contain a symlink named ``mapserv`` to the MapServer"
+" executable. It is required for the generation of JSON configuration "
+"files   from ``GetCapabilities`` requests. Since we cannot know where it "
+"is on your specific configuration, **you must add this symlink "
+"yourself**."
+msgstr ""
+
+#: ../../infra.rst:246
+msgid "Layout for configuration files"
+msgstr ""
+
+#: ../../infra.rst:248
+msgid ""
+"To learn more how this works, see the `Configuration`_ section of this "
+"document."
+msgstr ""
+
+#: ../../infra.rst:250 ../../infra.rst:278
+msgid "In ``geo-infra``:"
+msgstr ""
+
+#: ../../infra.rst:252
+msgid "``config/global.toml``: the global configuration file."
+msgstr ""
+
+#: ../../infra.rst:253
+msgid "``config/config.dist.sh``: contains the configuration for shell scripts."
+msgstr ""
+
+#: ../../infra.rst:254 ../../infra.rst:262
+msgid "``config/config.sh``: *Optional*, not tracked by git."
+msgstr ""
+
+#: ../../infra.rst:256 ../../infra.rst:282
+msgid "In ``customer-infra``:"
+msgstr ""
+
+#: ../../infra.rst:258
+msgid ""
+"``config/dist/``: all dist files tracked by git. They should be directly "
+"usable on the production server."
+msgstr ""
+
+#: ../../infra.rst:259
+msgid "``config/prod/``: all files used for prod builds, not tracked by git."
+msgstr ""
+
+#: ../../infra.rst:260
+msgid "``config/dev/``: all files used for dev builds, not tracked by git."
+msgstr ""
+
+#: ../../infra.rst:261
+msgid ""
+"``config/config.dist.sh``: production variables for shell scripts "
+"**Required**."
+msgstr ""
+
+#: ../../infra.rst:265
+msgid "Layout for data"
+msgstr ""
+
+#: ../../infra.rst:267
+msgid ""
+"In ``customer-infra``, you will probably have a ``./data`` directory for "
+"global data & elements. It will most likely not be tracked by git. A "
+"possible organization is this:"
+msgstr ""
+
+#: ../../infra.rst:269
+msgid "``data/symbols.txt``"
+msgstr ""
+
+#: ../../infra.rst:270
+msgid "``data/fonts/``: directory for fonts (name/file.ttf|odf) all lowercase"
+msgstr ""
+
+#: ../../infra.rst:271
+msgid "``data/rasters/``: directory for rasters"
+msgstr ""
+
+#: ../../infra.rst:272
+msgid "``data/shapes/``: directory for shapes"
+msgstr ""
+
+#: ../../infra.rst:273
+msgid "``data/templates/``: html template for mapserver"
+msgstr ""
+
+#: ../../infra.rst:276
+msgid "Layout for includes"
+msgstr ""
+
+#: ../../infra.rst:280
+msgid ""
+"``help``: contains the help website (JS, HTML and CSS) and the texts and "
+"images for the help. It also contains the text and images from Swisstopo."
+msgstr ""
+
+#: ../../infra.rst:284
+msgid "``help`` *Optional*:"
+msgstr ""
+
+#: ../../infra.rst:286
+msgid ""
+"``help/<portal>/{img,texts}``: contain respectively the images and the "
+"help texts for the help website. You can only add images and texts you "
+"want changed from Swisstopo. See the :ref:`help section <ref_cfg-"
+"portal_help>` of the documentation for more information no this."
+msgstr ""
+
+#: ../../infra.rst:288
+msgid "``img/``: contains the images for all portals"
+msgstr ""
+
+#: ../../infra.rst:290
+msgid ""
+"``img/<portal>/``: Any image in this folder with the same name as an "
+"image from the global folder will replace the image from the global "
+"folder."
+msgstr ""
+
+#: ../../infra.rst:292
+msgid ""
+"``json/``: contains a subfolder for each portal. If this subfolder, there"
+" is an ``external`` subfolder which contains the JSON configuration files"
+" for the external layers and a ``topics`` subfolder which contains the "
+"JSON configuration files for the topics. Refer to the :ref:`topic section"
+" <ref_cfg-portal_topics>` or the :ref:`external layers section "
+"<ref_user_cfg-portal_layers-external-sources>` in the user manual to "
+"learn more about this."
+msgstr ""
+
+#: ../../infra.rst:294
+msgid ""
+"``portals/``: contain .map defining a geo-portal. You can organize you "
+"includes like this:"
+msgstr ""
+
+#: ../../infra.rst:296
+msgid ""
+"``customer-infra/layers/``: contains .map defining layers (included in "
+"geo-portals). Files will be named like:"
+msgstr ""
+
+#: ../../infra.rst:298
+msgid "``db.LAYERNAME.layer.map.in`` for database based"
+msgstr ""
+
+#: ../../infra.rst:299
+msgid "``shp.LAYERNAME.layer.map.in`` for shapes based"
+msgstr ""
+
+#: ../../infra.rst:300
+msgid "``rasters.LAYERNAME.layer.map.in`` for rasters based"
+msgstr ""
+
+#: ../../infra.rst:301
+msgid "``wms.LAYERNAME.layer.map.in`` for imported external WMS layers"
+msgstr ""
+
+#: ../../infra.rst:303
+msgid ""
+"``customer-infra/mapserver``: contains .map related to pure MapServer "
+"instructions."
+msgstr ""
+
+#: ../../infra.rst:304
+msgid ""
+"``customer-infra/styles``: contains .map defining a layer class included "
+"in layers. Files will be named like ``TYPEOFSTYLE.style.map.in``"
+msgstr ""
+
+#: ../../infra.rst:306
+msgid ""
+"``print/``: contains the template and configuration for MFP. See the "
+":ref:`print section <ref_user_cfg-portal-print>` of the user manual to "
+"learn more about this."
+msgstr ""
+
+#: ../../infra.rst:307
+msgid "``search/``: contains the template for searches specific to this portal."
+msgstr ""
+
+#: ../../infra.rst:308
+msgid "``translations/``: contains the translation files."
+msgstr ""
+
+#: ../../infra.rst:311
+msgid "Recommendations"
+msgstr ""
+
+#: ../../infra.rst:313
+msgid ""
+"Use of MapServer include instruction whenever you can, it will ease "
+"maintenance."
+msgstr ""
+
+#: ../../infra.rst:314
+msgid ""
+"Use convention, eg: *The file has to be started with: "
+"``mapserver.FUNCTION.map.in``*."
+msgstr ""
+
+#: ../../infra.rst:317
+msgid "Layout for output"
+msgstr ""
+
+#: ../../infra.rst:319
+msgid ""
+"The output is located in the ``customer-infra`` directory. You don't want"
+" these folders to be tracked by git."
+msgstr ""
+
+#: ../../infra.rst:321
+msgid "``dev/``"
+msgstr ""
+
+#: ../../infra.rst:323
+msgid ""
+"``dev/<portal>/``: contains the generated files for one portal. The "
+"content of each subfolder should be obvious given the name of the "
+"subfolder. This is the document root for the vhost of the current portal."
+msgstr ""
+
+#: ../../infra.rst:324
+msgid "``dev/vhosts.d/``: contains the generated vhosts."
+msgstr ""
+
+#: ../../infra.rst:325
+msgid ""
+"``dev/search/`` contains the generated global search configuration for "
+"this infrastructure."
+msgstr ""
+
+#: ../../infra.rst:327
+msgid ""
+"``prod/``: same as ``dev``. It also contains the generated content for "
+"production. Each subfolder should be an autonomous git repository to ease"
+" deployment to production and rollback if necessary."
+msgstr ""
+

@@ -12,7 +12,9 @@ This is the documentation for the following projects:
 - `geo-front3 <https://github.com/ioda-net/geo-front3>`__
 - `geo-infra <https://github.com/ioda-net/geo-infra>`__
 
-The source of this documentation is available `here <https://github.com/ioda-net/geo-infra>`__. It can be seen `here <https://docs.geoportal.xyz/>`__.
+It can be seen `here <https://docs.geoportal.xyz/>`__. The sources are available `here <https://github.com/ioda-net/geo-infra>`__.
+
+This documentation is also available in `French </fr>`__.
 
 
 General
@@ -68,17 +70,29 @@ To learn more about how the code of `mf-geodamin3 <https://github.com/geoadmin/m
 About this documentation
 ========================
 
-Most of the files use either the markdown syntax, plain html or the Restructured
-Text syntax. Currently, the documentation is written partially in English and
-French.
+Most of the files use either the markdown syntax, plain html or the `Restructured Text <http://docutils.sourceforge.net/docs/index.html>`__ syntax. Currently, the documentation is written partially in English and French.
 
 For new files, please use RST and English unless you have a good reason not to.
 
-To build this documentation in HTML under ``_build/html``, use:
+This documentation is built with `sphinx-doc <http://www.sphinx-doc.org/en/stable/>`__. In addition to sphinx, you will need the pulgins below to build the documentation:
+
+- The theme `sphinx_py3doc_enhanced_theme <https://pypi.python.org/pypi/sphinx_py3doc_enhanced_theme>`__.
+- `sphinx-intl <https://pypi.python.org/pypi/sphinx-intl>`__ to build in multiple languages and update the po files.
+- `recommonmark <https://pypi.python.org/pypi/recommonmark>`__ to build the files written in `Markdown <http://daringfireball.net/projects/markdown/>`__.
+
+To build this documentation in HTML under ``_build/html`` for all supported languages, use:
 
 .. code-block:: bash
 
    manuel build-doc
+
+To update the po files for the translations, use this:
+
+.. code-block:: bash
+
+    manuel update-doc-translations
+
+You can then edit the po to translate the documentation. Contributions are welcomed.
 
 
 Credits

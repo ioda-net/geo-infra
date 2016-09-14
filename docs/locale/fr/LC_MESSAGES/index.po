@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:38+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../index.rst:7
+msgid "Documentation for geo-front3, geo-api3 and geo-infra"
+msgstr "Documenation pour geo-front3, geo-api3 et geo-infra"
+
+#: ../../index.rst:9
+msgid "This is the documentation for the following projects:"
+msgstr "Cette documentation est pour les projets suivants :"
+
+#: ../../index.rst:11
+msgid "`geo-api3 <https://github.com/ioda-net/geo-api3>`__"
+msgstr ""
+
+#: ../../index.rst:12
+msgid "`geo-front3 <https://github.com/ioda-net/geo-front3>`__"
+msgstr ""
+
+#: ../../index.rst:13
+msgid "`geo-infra <https://github.com/ioda-net/geo-infra>`__"
+msgstr ""
+
+#: ../../index.rst:15
+msgid ""
+"It can be seen `here <https://docs.geoportal.xyz/>`__. The sources are "
+"available `here <https://github.com/ioda-net/geo-infra>`__."
+msgstr ""
+"Elle peut être consulté `ici <https://docs.geoportal.xyz/fr>`__. Les "
+"sources de cette documentation sont disponibles `ici <https://github.com"
+"/ioda-net/geo-infra>`__."
+
+#: ../../index.rst:17
+msgid "This documentation is also available in `French </fr>`__."
+msgstr "Cette documentation est aussi disponible en `anglais </>`__."
+
+#: ../../index.rst:21
+msgid "General"
+msgstr ""
+
+#: ../../index.rst:37
+msgid "Content"
+msgstr ""
+
+#: ../../index.rst:39
+msgid "Who are you?"
+msgstr ""
+
+#: ../../index.rst:41
+msgid ""
+"*Users*, in this documentation, are those who manage a specific customer "
+"infrastructure: creation of portal (configuration, help website, "
+"searches, definition of get features), deployment of the portals. They "
+"can be helped by the developers or the system administrators to perform "
+"some tasks."
+msgstr ""
+
+#: ../../index.rst:42
+msgid ""
+"*Developers* write code in `geo-api3 <https://github.com/ioda-net/geo-"
+"api3>`__, `geo-front3 <https://github.com/ioda-net/geo-front3>`__ and "
+"`geo-infra <https://github.com/ioda-net/geo-infra>`__. They may "
+"occasionally help the user or the system administrators to perform their "
+"tasks."
+msgstr ""
+
+#: ../../index.rst:43
+msgid ""
+"*System administrators* are in charge of the administration of the "
+"servers and databases. They are mostly present to help set up the "
+"infrastructure for the first time on their servers (installation of "
+"dependencies, configuration of system daemons, creation of the git "
+"repositories to deploy a portal to production). Once the setup is done, "
+"the users should be able to manage most of the things by themselves. They"
+" may still take action from times to time to update packages or redeploy "
+"the API."
+msgstr ""
+
+#: ../../index.rst:54
+msgid "Future evolutions"
+msgstr ""
+
+#: ../../index.rst:56
+msgid ""
+"You can view the list of future evolutions and how we plan them to work "
+"on the dedicated page :ref:`here <rfc-index>`."
+msgstr ""
+
+#: ../../index.rst:60
+msgid "Notes on code from upstream"
+msgstr ""
+
+#: ../../index.rst:62
+msgid ""
+"To learn more about how the code of `mf-geodamin3 "
+"<https://github.com/geoadmin/mf-geoadmin3>`__ and `mf-chsdi3 "
+"<https://github.com/geoadmin/mf-chsdi3>`__ from Swisstopo works, have a "
+"look at these sections:"
+msgstr ""
+
+#: ../../index.rst:71
+msgid "About this documentation"
+msgstr ""
+
+#: ../../index.rst:73
+msgid ""
+"Most of the files use either the markdown syntax, plain html or the "
+"`Restructured Text <http://docutils.sourceforge.net/docs/index.html>`__ "
+"syntax. Currently, the documentation is written partially in English and "
+"French."
+msgstr ""
+
+#: ../../index.rst:75
+msgid ""
+"For new files, please use RST and English unless you have a good reason "
+"not to."
+msgstr ""
+
+#: ../../index.rst:77
+msgid ""
+"This documentation is built with `sphinx-doc <http://www.sphinx-"
+"doc.org/en/stable/>`__. In addition to sphinx, you will need the pulgins "
+"below to build the documentation:"
+msgstr ""
+
+#: ../../index.rst:79
+msgid ""
+"The theme `sphinx_py3doc_enhanced_theme "
+"<https://pypi.python.org/pypi/sphinx_py3doc_enhanced_theme>`__."
+msgstr ""
+
+#: ../../index.rst:80
+msgid ""
+"`sphinx-intl <https://pypi.python.org/pypi/sphinx-intl>`__ to build in "
+"multiple languages and update the po files."
+msgstr ""
+
+#: ../../index.rst:81
+msgid ""
+"`recommonmark <https://pypi.python.org/pypi/recommonmark>`__ to build the"
+" files written in `Markdown "
+"<http://daringfireball.net/projects/markdown/>`__."
+msgstr ""
+
+#: ../../index.rst:83
+msgid ""
+"To build this documentation in HTML under ``_build/html`` for all "
+"supported languages, use:"
+msgstr ""
+
+#: ../../index.rst:89
+msgid "To update the po files for the translations, use this:"
+msgstr ""
+
+#: ../../index.rst:95
+msgid ""
+"You can then edit the po to translate the documentation. Contributions "
+"are welcomed."
+msgstr ""
+
+#: ../../index.rst:99
+msgid "Credits"
+msgstr ""
+
+#: ../../index.rst:101
+msgid ""
+"`manuel <https://github.com/ShaneKilkelly/manuel>`__ is a task runner for"
+" Bash and was created by Shane Kilkelly. It is released under the MIT "
+"License."
+msgstr ""
+
+#: ../../index.rst:103
+msgid ""
+"`geo-front3 <https://github.com/ioda-net/geo-front3>`__ and `geo-api3 "
+"<https://github.com/ioda-net/geo-api3>`__ are based on `mf-geoadmin3 "
+"<https://github.com/geoadmin/mf-geoadmin3>`__ and `mf-chsdi3 "
+"<https://github.com/geoadmin/mf-chsdi3>`__. Those two softwares were "
+"created by `swisstopo <https://www.swisstopo.admin.ch/>`__ the Federal "
+"Office of Topography of Switzerland for their geoportal `map.geo.admin.ch"
+" <https://map.geo.admin.ch>`__. They are released under the BSD licence."
+msgstr ""
+
+#: ../../index.rst:107
+msgid ""
+"`geo-front3 <https://github.com/ioda-net/geo-front3>`__ and `geo-api3 "
+"<https://github.com/ioda-net/geo-api3>`__ were forked and adapted to "
+"modernize the geoportals proposed by `sigeom sa "
+"<https://www.sigeom.ch/>`__ a Swiss civil engineer, GIS specialist and "
+"land surveying company. The adaptation was performed by `Ioda-Net Sàrl "
+"<https://ioda-net.ch/>`__ a Swiss company specialized in Open Source "
+"software."
+msgstr ""
+
+#: ../../index.rst:110
+msgid ""
+"The following companies give financial support, help to keep this "
+"software up to date with swisstopo code, and open source:"
+msgstr ""
+
+#: ../../index.rst:112
+msgid "`sigeom sa <https://www.sigeom.ch>`__ 2740 Moutier, Switzerland"
+msgstr ""
+
+#: ../../index.rst:113
+msgid "`Ioda-Net Sàrl <https://ioda-net.ch/>`__ CH-2947 Charmoille, Switzerland"
+msgstr ""
+
+#: ../../index.rst:115
+msgid ""
+"Want to help too? `contact (at) geoportal (dot) xyz "
+"<mailto:contact(at)geoportal.xyz>`__"
+msgstr ""
+
+#: ../../index.rst:120
+msgid "Indices and tables"
+msgstr ""
+
+#: ../../index.rst:122
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../../index.rst:123
+msgid ":ref:`modindex`"
+msgstr ""
+
+#: ../../index.rst:124
+msgid ":ref:`search`"
+msgstr ""
+

@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../swisstopo/api-structure.md
+msgid "Structure de l'API (mf-chsdi3)"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:3
+msgid "L'API est responsable de :"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "Lien API/Frontend"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "Entrée dans l'API"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:35
+msgid "Tout ce passe dans le module chsdi."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "init.py"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:39
+msgid "Contient la liste des routes et la vue associée. Points intéressants :"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "Fonctions utiles"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "layersConfig"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "topics"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:77
+msgid "Via l'URL /rest/services."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:79
+msgid ""
+"Lié à la table Topics. On ne prend que les topics pour lesquels on montre"
+" le catalogue et on les trie dans un ordre défini dans une colonne de la "
+"table. Ensuite, on les filtre avec filter_by_geodata_staging. Les "
+"résultats sont enfin mis en forme dans un tableau de dictionnaires."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "La table Topics"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "mapservice"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:96
+msgid ""
+"Fonctionnement analogue à layersConfig mais permet de faire des "
+"recherches textuelles."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "wmtscapabilities"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:108
+msgid ""
+"Donne la configuration des couches au frontend. Stocké dans une table "
+"LayersConfig. Actuellement, on utilise un script (initializedb.py) pour "
+"générer cette table automatiquement. Celle-ci est remplie à la main par "
+"swisstopo."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:113
+msgid "Les couches sont décrites dans le tag Layer du XML."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "Attributs récupérables via GetCapapilities"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:117
+msgid ""
+"Voir "
+"http://wms.geo.admin.ch/?REQUEST=GetCapabilities&SERVICE=WMS&VERSION=1.0.0"
+" et le JSON"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:120
+msgid ""
+"| Nom dans le XML | Nom dans la base | Remarque | "
+"|-----------------|------------------|----------| | <Name>          | "
+"layerId ou wmsLayer | | | <abstract> | label | Pas toujours le cas, "
+"parfois le label est beaucoup plus court que l'abstract | | <Layer "
+"queryable=\"1\"> | queryable | | | <Keywords> | topics | Je suppose une "
+"relation indirect, on a un identifiant dans le XML et une liste de mots "
+"dans topics | | <Format> | format | Rarement présent, PNG pour la "
+"plupart, rarement JPEG |"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "Autres attributs"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "Nos attributs GetCapabilities"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:149
+msgid "Les couches sont décrites dans le tag FeatureType du XML."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "Minimun requis pour mocker les topics"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:157
+msgid "Voir ci-dessous pour les justifications."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "ol.layer.Tile"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:176
+msgid "Voir : http://openlayers.org/en/master/apidoc/ol.layer.Tile.html"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "ol.layer.Image"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:190
+msgid "Voir : http://openlayers.org/en/master/apidoc/ol.layer.Image.html"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "Autres"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "Déploiement avec mod_wsgi"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:197
+msgid ""
+"En cas d'erreur d'import d'un module ou d'extraction ExtractionError: "
+"Can't extract file(s) to egg cache, ajouter au fichier wsgi de "
+"l'application :"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md
+msgid "Renderers"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:205
+msgid "Vers EsriJSON et CSV."
+msgstr ""
+

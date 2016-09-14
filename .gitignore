@@ -3,6 +3,9 @@
 
 # Output
 /docs/_build
+/docs/locale/.doctrees
+/docs/locale/pot
+*.mo
 
 # Logs
 logs

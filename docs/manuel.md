@@ -4,7 +4,20 @@ To generate this file, use `python3 scripts/get-manuel-doc.py > docs/manuel.md`
 ## build-doc
 manuel build-doc
 
-Build the doc from the files in docs. The output will be in docs/_build/html
+Build the doc from the files in docs for all languages. The output will be in docs/_build/html for
+English and docs/_build/html/<lang> This doesn't update the po files.
+
+
+## build-doc-all
+manuel build-doc-all
+
+This is equivalent to 'manuel clean-doc && manuel update-doc-translations && manuel build-doc'
+
+
+## build-doc-customer
+manuel build-doc-customer
+
+Build the documentation from the files in customer-infra/docs. The output will be in customer-infra/docs/_build/html
 
 
 ## clean
@@ -358,6 +371,12 @@ manuel tomcat-copy-conf TYPE PORTAL
 
 Copy the generated MFP configuration files into tomcat's MFP directory. Use the
 files from TYPE and PORTAL.
+
+
+## update-doc-translations
+manuel update-doc-translations
+
+Update the po files based on text from English documents. This will not build the documentation.
 
 
 ## verify-sphinx-conf

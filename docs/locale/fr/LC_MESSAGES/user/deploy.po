@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../user/deploy.rst:2
+msgid "Deploy a portal to production"
+msgstr ""
+
+#: ../../user/deploy.rst
+msgid "Contents"
+msgstr ""
+
+#: ../../user/deploy.rst:8
+msgid ""
+"For all commands in this section, ``$INFRA_DIR`` must point to the proper"
+" infrastructure directory you want to deploy."
+msgstr ""
+
+#: ../../user/deploy.rst:11
+msgid "Initializing infrastructure"
+msgstr ""
+
+#: ../../user/deploy.rst:13
+msgid ""
+"If the infrastructure was never deployed before, you must initialize it. "
+"To do that, you must clone ``search.d`` and ``vhosts.d`` in ``customer-"
+"infra/prod/``:"
+msgstr ""
+
+#: ../../user/deploy.rst:15
+msgid ""
+"Ask your system administrator to create the relevant bare repositories. "
+"Point it to the :ref:`correct section of the system administrator "
+"documentation <ref_sysadmin_deploy-setup>` if needed."
+msgstr ""
+
+#: ../../user/deploy.rst:16
+msgid "Use in ``geo-infra``:"
+msgstr ""
+
+#: ../../user/deploy.rst:18
+msgid "``manuel init-prod-repo search``"
+msgstr ""
+
+#: ../../user/deploy.rst:19
+msgid "``manuel init-prod-repo vhosts.d``"
+msgstr ""
+
+#: ../../user/deploy.rst:21
+msgid ""
+"Generate and deploy the global search configuration: ``manuel deploy-"
+"global-search-conf``. At this point, the restart will fail on the server."
+msgstr ""
+
+#: ../../user/deploy.rst:25
+msgid "Deploying a new portal"
+msgstr ""
+
+#: ../../user/deploy.rst:27
+msgid "Generate the vhost for this portal: ``manuel vhost prod <portal>``"
+msgstr ""
+
+#: ../../user/deploy.rst:28
+msgid "Deploy the vhosts on the server: ``manuel deploy-vhost``"
+msgstr ""
+
+#: ../../user/deploy.rst:29
+msgid ""
+"Ask your system administrator to create the bare repository for the new "
+"portal. Point to the :ref:`correct section of the system administrator "
+"documentation <ref_sysadmin_deploy-setup_deploy-new-portal>` if needed."
+msgstr ""
+
+#: ../../user/deploy.rst:30
+msgid ""
+"Create to proper symlink to MapServer at the location defined by "
+"``vhost.ows_path``"
+msgstr ""
+
+#: ../../user/deploy.rst:31
+msgid "Initialize this repository with ``manuel init-prod-repo <portal>``"
+msgstr ""
+
+#: ../../user/deploy.rst:32
+msgid "Build and deploy the portal: ``manuel deploy <portal>``"
+msgstr ""
+
+#: ../../user/deploy.rst:36
+msgid "Deploying existing portals"
+msgstr ""
+
+#: ../../user/deploy.rst:38
+msgid "Use ``manuel deploy PORTAL1 PORTAL2 …``."
+msgstr ""
+
+#: ../../user/deploy.rst:40
+msgid "If the vhosts require an update:"
+msgstr ""
+
+#: ../../user/deploy.rst:42
+msgid ""
+"Generate them for the concerned portals: ``manuel vhost prod PORTAL1 "
+"PORTAL2 …``"
+msgstr ""
+
+#: ../../user/deploy.rst:43
+msgid "Deploy them to the server: ``manuel deploy-vhost``"
+msgstr ""
+
+#: ../../user/deploy.rst:47
+msgid "API"
+msgstr ""
+
+#: ../../user/deploy.rst:49
+msgid ""
+"If the API need to be updated on production, ask your system "
+"administrator to do it. You can send the link :ref:`the relevant section "
+"of the documentation <ref_sysadmin_server-setup_api>`."
+msgstr ""
+

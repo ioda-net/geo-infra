@@ -1,0 +1,298 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../dev/api.rst:2
+msgid "API"
+msgstr ""
+
+#: ../../dev/api.rst:4
+msgid ""
+"The API is written in `Python 3 <https://python.org>`__ with the `Pyramid"
+" web framework <http://www.pylonsproject.org/>`__."
+msgstr ""
+
+#: ../../dev/api.rst
+msgid "Contents"
+msgstr ""
+
+#: ../../dev/api.rst:10
+msgid "Setup"
+msgstr ""
+
+#: ../../dev/api.rst:13
+msgid "Requirements"
+msgstr ""
+
+#: ../../dev/api.rst:15
+msgid "The following libraries are needed to correctly create the python venv:"
+msgstr ""
+
+#: ../../dev/api.rst:17
+msgid "geos"
+msgstr ""
+
+#: ../../dev/api.rst:18
+msgid "geos-devel"
+msgstr ""
+
+#: ../../dev/api.rst:19
+msgid "postgresql-devel"
+msgstr ""
+
+#: ../../dev/api.rst:20
+msgid "libxml2-devel"
+msgstr ""
+
+#: ../../dev/api.rst:21
+msgid "libxslt-devel"
+msgstr ""
+
+#: ../../dev/api.rst:23
+msgid "On debian based system, use this list:"
+msgstr ""
+
+#: ../../dev/api.rst:25
+msgid "libgeos-c1"
+msgstr ""
+
+#: ../../dev/api.rst:26
+msgid "libgeos-dev"
+msgstr ""
+
+#: ../../dev/api.rst:27
+msgid "libxml2-dev"
+msgstr ""
+
+#: ../../dev/api.rst:28
+msgid "libxslt-dev"
+msgstr ""
+
+#: ../../dev/api.rst:30
+msgid "`GDAL <http://www.gdal.org>`__ 2.0 or above with Python3 bindings"
+msgstr ""
+
+#: ../../dev/api.rst:31
+msgid ""
+"`Python <https://www.python.org/>`__ 3.4 or above with virtualenv "
+"capabilities (probably in the ``python3-venv`` package or included in "
+"your Python 3 installation)"
+msgstr ""
+
+#: ../../dev/api.rst:32
+msgid ""
+"If you don't want to use a venv as suggested below to install the Python "
+"dependencies, you will find the list of packages to install on your "
+"system with their minimal version in the `requirements.txt "
+"<https://github.com/ioda-net/geo-api3/blob/devel/requirements.txt>`__."
+msgstr ""
+
+#: ../../dev/api.rst:35
+msgid "Configuration"
+msgstr ""
+
+#: ../../dev/api.rst:37
+msgid ""
+"The configuration is written in the `TOML format <https://github.com"
+"/toml-lang/toml>`__. It is loaded like this:"
+msgstr ""
+
+#: ../../dev/api.rst:39
+msgid "``config/config.dist.toml``"
+msgstr ""
+
+#: ../../dev/api.rst:40
+msgid "``config/config.<branchname>.toml`` *optional*"
+msgstr ""
+
+#: ../../dev/api.rst:42
+msgid ""
+"You can customize the configuration for the branch you are on in "
+"``config/config.<branchname>.toml``. The keys used in it, will override "
+"any values loaded from ``config/config.dist.toml``. Without this "
+"configuration file, configuration will only come from "
+"``config/config.dist.toml``."
+msgstr ""
+
+#: ../../dev/api.rst:45
+msgid "Create the venv"
+msgstr ""
+
+#: ../../dev/api.rst:47
+msgid "Create the proper venv with ``./manuel venv``"
+msgstr ""
+
+#: ../../dev/api.rst:48
+msgid ""
+"Update the ini files used by Pyramid: ``./manuel ini-files``. You can "
+"check that the values in ``production.ini`` (contains database related "
+"configuration) and ``development.ini`` (imports the ``production.ini`` "
+"configuration file and contains development specific values) are correct."
+msgstr ""
+
+#: ../../dev/api.rst:52
+msgid "Serve"
+msgstr ""
+
+#: ../../dev/api.rst:54
+msgid "To launch ``pserve`` with the development configuration: ``manuel serve``"
+msgstr ""
+
+#: ../../dev/api.rst:58
+msgid ""
+"If the command fails due to ``ImportError: No module named 'osgeo'``, "
+"check that the osgeo module from system install is available in the "
+"``PYTHONPATH`` specificied in ``config/config.dist.sh``. If not, create a"
+" ``config/config.sh`` with the correct value for ``PYTHONPATH``. Eg for "
+"Debian, put this value:"
+msgstr ""
+
+#: ../../dev/api.rst:66
+msgid "Deploy"
+msgstr ""
+
+#: ../../dev/api.rst:68
+msgid "Use manuel, **on the production server**: ``manuel deploy``."
+msgstr ""
+
+#: ../../dev/api.rst:74
+msgid "Search keywords"
+msgstr ""
+
+#: ../../dev/api.rst:76
+msgid ""
+"In order to add a keyword, you must edit ``geo-"
+"api3/chsdi/customers/utils/search.py``. If you edit the file on devel, "
+"then the keywords will be used for all customer (on next merge). If you "
+"edit it in a customer specific branch, then it will only be available for"
+" this customer."
+msgstr ""
+
+#: ../../dev/api.rst:78
+msgid ""
+"To add a keyword, you must add a ``SearchKeywords`` namedtuple to the "
+"``SEARCH_KEYWORDS`` tuple, like this:"
+msgstr ""
+
+#: ../../dev/api.rst:91
+msgid "The ``SearchKeywords`` namedtuple has two members:"
+msgstr ""
+
+#: ../../dev/api.rst:93
+msgid "``keywords``: the list of keywords that the user can use."
+msgstr ""
+
+#: ../../dev/api.rst:94
+msgid "``filter_keys``: the list of index names associated with these keywords."
+msgstr ""
+
+#: ../../dev/api.rst:98
+msgid "Tests"
+msgstr ""
+
+#: ../../dev/api.rst:100
+msgid "To launch all the tests, use: ``manuel test``"
+msgstr ""
+
+#: ../../dev/api.rst:101
+msgid ""
+"To launch only some tests, pass the proper arguments to ``manuel test``. "
+"You can pass it as many files and   options recognized by `nose "
+"<https://nose.readthedocs.org/en/latest/>`__ as you want. For instance:"
+msgstr ""
+
+#: ../../dev/api.rst:109
+msgid "Lint"
+msgstr ""
+
+#: ../../dev/api.rst:111
+msgid "Use ``manuel lint``."
+msgstr ""
+
+#: ../../dev/api.rst:115
+msgid "Recommended hooks"
+msgstr ""
+
+#: ../../dev/api.rst:117
+msgid ""
+"git hooks allow you to launch a script before or after a git command. "
+"They are very handy to automatically perform checks. If the script exits "
+"with a non 0 status, the git command will be aborted. You must write them"
+" in the `.git/hooks/` folder in a file following the convention: "
+"``<pre|post>-<git-action>``. You must not forget to make them executable,"
+" eg: ``chmod +x .git/hooks/pre-commit``."
+msgstr ""
+
+#: ../../dev/api.rst:119
+msgid ""
+"In the case you don't want to launch the hooks, append the ``--no-"
+"verify`` option to the git command you want to use."
+msgstr ""
+
+#: ../../dev/api.rst:122
+msgid "pre-commit"
+msgstr ""
+
+#: ../../dev/api.rst:129
+msgid "pre-push"
+msgstr ""
+
+#: ../../dev/api.rst:137
+msgid "Launch with uWSGI and Unix sockets"
+msgstr ""
+
+#: ../../dev/api.rst:141
+msgid ""
+"this is still a work in progress. Use the standard WSGI and proxy pass on"
+" production."
+msgstr ""
+
+#: ../../dev/api.rst:144
+msgid "Apache Configuration"
+msgstr ""
+
+#: ../../dev/api.rst:146
+msgid "Replace:"
+msgstr ""
+
+#: ../../dev/api.rst:153
+msgid "By"
+msgstr ""
+
+#: ../../dev/api.rst:164
+msgid "uWSGI Configuration"
+msgstr ""
+
+#: ../../dev/api.rst:166
+msgid "In your ``/etc/uwsgi.ini``:"
+msgstr ""
+
+#: ../../dev/api.rst:177
+msgid ""
+"Adapt your ``config.<branchname>.toml`` to get something like this in "
+"``uwsgi.ini`` (generated with `manuel ini-files`):"
+msgstr ""
+
+#: ../../dev/api.rst:199
+msgid ""
+"Your ``production.ini`` and ``uwsgi.ini`` must be owned by the user "
+"``uwsgi`` and by the group ``uwsgi``."
+msgstr ""
+

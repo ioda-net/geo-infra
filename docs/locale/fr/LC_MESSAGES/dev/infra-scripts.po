@@ -1,0 +1,857 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../dev/infra-scripts.rst:2
+msgid "Scripts from geo-infra"
+msgstr ""
+
+#: ../../dev/infra-scripts.rst:5
+msgid "Generate Utils"
+msgstr ""
+
+#: generate_utils:1 of
+msgid "Helper class and functions to generate the configuration of a portal."
+msgstr ""
+
+#: generate_utils.Generate:1 of
+msgid "Utilitary class for all generate type classes."
+msgstr ""
+
+#: generate_utils.Generate:3 of
+msgid "the name of the portal used to generate."
+msgstr ""
+
+#: generate_utils.Generate:5 of
+msgid "the type for which to generate. Must be either dev or prod."
+msgstr ""
+
+#: generate_utils.Generate:7 of
+msgid "print verbose messages."
+msgstr ""
+
+#: generate_utils.Generate:9 of
+msgid "whether or not to verify certificates for https"
+msgstr ""
+
+#: generate_utils.Generate:11 of
+msgid "the configuration for the portal."
+msgstr ""
+
+#: generate_utils.Generate.DEFAULT_LANGS:1 of
+msgid "The languages to use if no languages are specified in the configuration."
+msgstr ""
+
+#: generate_utils.Generate.clean:1 of
+msgid "Remove all files and directories in the ouput dir of the portal."
+msgstr ""
+
+#: generate_utils.Generate.copy:1 of
+msgid "Copy files or directories from one location to another."
+msgstr ""
+
+#: generate_utils.Generate.copy:3 of
+msgid ""
+"the source of the copy. If it is iterable and not a string, the function "
+"will recurse for each element. If it is a string, each element in the "
+"resulting glob is copied."
+msgstr ""
+
+#: generate_utils.Generate.copy:7 of
+msgid "the path to destination folder."
+msgstr ""
+
+#: generate_utils.Generate.copy:9 of
+msgid ""
+"whether or not to copy directories. If this option is true and src is a "
+"directory, src will be copied as a directory (with all its content) into "
+"dest. The result of the copy will be dest/src/. Default: True."
+msgstr ""
+
+#: generate_utils.Generate.copy:13 of
+msgid ""
+"if this option is True and src is a directory, the content of src will be"
+" copied into dest. Default: False."
+msgstr ""
+
+#: generate_utils.Generate.path:1 of
+msgid "Alias to :func:`path`"
+msgstr ""
+
+#: generate_utils.Generate.remove:1 of
+msgid "Remove the given path (file or directory)."
+msgstr ""
+
+#: generate_utils.Generate.remove:3 of
+msgid ""
+"The source is only removed if it is under the output directory of the "
+"current portal. It will not remove the directory of the current portal. "
+"If you try to remove something else, a warning is printed instead."
+msgstr ""
+
+#: generate_utils.Generate.render:1 of
+msgid "Render a template with jinja2 and default markup."
+msgstr ""
+
+#: generate_utils.Generate.render:3 of
+msgid "the path to the template."
+msgstr ""
+
+#: generate_utils.Generate.render:5 of
+msgid "where to save the result."
+msgstr ""
+
+#: generate_utils.Generate.render:7 of
+msgid "data used to render the template."
+msgstr ""
+
+#: generate_utils.Generate.render:9 of
+msgid "indicate if dest_folder is a file. Default: False."
+msgstr ""
+
+#: generate_utils.Generate.render:11 of
+msgid "list of jinja2 extensions to use. Default: None."
+msgstr ""
+
+#: generate_utils.Generate.report_errors:1 of
+msgid "Print a list of errors to stderr."
+msgstr ""
+
+#: generate_utils.Generate.report_errors:3 of
+msgid "list of errors to display."
+msgstr ""
+
+#: generate_utils.Generate.report_errors:5 of
+msgid "an optional header to print before the errors. Default: None."
+msgstr ""
+
+#: generate_utils.Generate.save_json:1 of
+msgid "Alias to :func:`save_json`"
+msgstr ""
+
+#: generate_utils.SilentCGIHTTPRequestHandler:1 of
+msgid ""
+"Helper class to silence output of "
+"CGIHTTPRequestHandler.CGIHTTPRequestHandler."
+msgstr ""
+
+#: generate_utils.SilentCGIHTTPRequestHandler:3 of
+msgid "Prevent requests to be logged to stdout."
+msgstr ""
+
+#: generate_utils.cgi_server:1 of
+msgid "Start a silent cgi server forever."
+msgstr ""
+
+#: generate_utils.cgi_server:3 of
+msgid ""
+"If you call this function directly, it will block the main thread until "
+"you stop it with Ctl-C."
+msgstr ""
+
+#: generate_utils.is_url:1 of
+msgid "Return true if the argument has an 'http' or 'https' scheme."
+msgstr ""
+
+#: generate_utils.path:1 of
+msgid "Join path and append extension."
+msgstr ""
+
+#: generate_utils.path:3 of
+msgid "the list of path to join."
+msgstr ""
+
+#: generate_utils.path:4 of
+msgid "the extension to append at the end of the path. Default: ''."
+msgstr ""
+
+#: generate_utils.save_json:1 of
+msgid "Save a python dict in a json file."
+msgstr ""
+
+#: generate_utils.save_json:3 of
+msgid "the path of the file in which to save the content."
+msgstr ""
+
+#: generate_utils.save_json:5 of
+msgid "the python dict object to dump as json"
+msgstr ""
+
+#: generate_utils.save_json:7 of
+msgid "whether or not to save the json in a easily readable way. Default: False."
+msgstr ""
+
+#: generate_utils.start_cgi_server:1 of
+msgid "Start the cgi server in a dedicated thread."
+msgstr ""
+
+#: generate_utils.start_cgi_server:3 of
+msgid ":func:`cgi_server` the function used to start the cgi server."
+msgstr ""
+
+#: ../../dev/infra-scripts.rst:13
+msgid "Generate Config"
+msgstr ""
+
+#: generate_config.ConfigErrors:1 generate_config.ConfigFileErrors:1
+#: generate_config.ConfigSectionErrors:1 of
+msgid "Bases: :class:`tuple`"
+msgstr ""
+
+#: generate_config.ConfigErrors:1 of
+msgid "Store the configuration errors."
+msgstr ""
+
+#: generate_config.ConfigErrors:3 of
+msgid "a message to print before the errors."
+msgstr ""
+
+#: generate_config.ConfigErrors:5 generate_config.ConfigSectionErrors:5 of
+msgid "the list of found errors."
+msgstr ""
+
+#: generate_config.ConfigErrors._asdict:1
+#: generate_config.ConfigFileErrors._asdict:1
+#: generate_config.ConfigSectionErrors._asdict:1 of
+msgid "Return a new OrderedDict which maps field names to their values."
+msgstr ""
+
+#: generate_config.ConfigErrors._make:1 of
+msgid "Make a new ConfigErrors object from a sequence or iterable"
+msgstr ""
+
+#: generate_config.ConfigErrors._replace:1 of
+msgid ""
+"Return a new ConfigErrors object replacing specified fields with new "
+"values"
+msgstr ""
+
+#: generate_config.ConfigErrors.errors:1
+#: generate_config.ConfigFileErrors.file:1
+#: generate_config.ConfigSectionErrors.errors:1 of
+msgid "Alias for field number 1"
+msgstr ""
+
+#: generate_config.ConfigErrors.header:1
+#: generate_config.ConfigFileErrors.base:1
+#: generate_config.ConfigSectionErrors.section:1 of
+msgid "Alias for field number 0"
+msgstr ""
+
+#: generate_config.ConfigFileErrors:1 of
+msgid "Store errors of a config file."
+msgstr ""
+
+#: generate_config.ConfigFileErrors:3 of
+msgid "The name of the file against which the config is checked."
+msgstr ""
+
+#: generate_config.ConfigFileErrors:5 of
+msgid "The config file that is checked for errors."
+msgstr ""
+
+#: generate_config.ConfigFileErrors:7 of
+msgid "The list of found errors."
+msgstr ""
+
+#: generate_config.ConfigFileErrors._make:1 of
+msgid "Make a new ConfigFileErrors object from a sequence or iterable"
+msgstr ""
+
+#: generate_config.ConfigFileErrors._replace:1 of
+msgid ""
+"Return a new ConfigFileErrors object replacing specified fields with new "
+"values"
+msgstr ""
+
+#: generate_config.ConfigFileErrors.errors:1 of
+msgid "Alias for field number 2"
+msgstr ""
+
+#: generate_config.ConfigSectionErrors:1 of
+msgid "Store errors found in a section of a config file."
+msgstr ""
+
+#: generate_config.ConfigSectionErrors:3 of
+msgid "the section name in which the errors are found."
+msgstr ""
+
+#: generate_config.ConfigSectionErrors._make:1 of
+msgid "Make a new ConfigSectionErrors object from a sequence or iterable"
+msgstr ""
+
+#: generate_config.ConfigSectionErrors._replace:1 of
+msgid ""
+"Return a new ConfigSectionErrors object replacing specified fields with "
+"new values"
+msgstr ""
+
+#: generate_config.GenerateConfig:1 generate_translations.CatalogTranslator:1
+#: of
+msgid "Bases: :class:`object`"
+msgstr ""
+
+#: generate_config.GenerateConfig:1 of
+msgid ""
+"Read the config files and provide access to the generated config with a "
+"dict like interface."
+msgstr ""
+
+#: generate_config.GenerateConfig:3 of
+msgid "the type for which to generate the configuration. Default: None."
+msgstr ""
+
+#: generate_config.GenerateConfig:5 of
+msgid "portal for which to generate the configuration. Default: None."
+msgstr ""
+
+#: generate_config.GenerateConfig._check_config:1 of
+msgid ""
+"Check that the source is coherent with the destination. If incoherences "
+"are found, they are reported."
+msgstr ""
+
+#: generate_config.GenerateConfig._check_config:4
+#: generate_config.GenerateConfig._check_value_type:8
+#: generate_config.GenerateConfig._update_config:3 of
+msgid "the destination dict."
+msgstr ""
+
+#: generate_config.GenerateConfig._check_config:6
+#: generate_config.GenerateConfig._update_config:5 of
+msgid "the source dict."
+msgstr ""
+
+#: generate_config.GenerateConfig._check_config:8
+#: generate_config.GenerateConfig._update_config:7 of
+msgid "the current level of recursivity. Default: 0."
+msgstr ""
+
+#: generate_config.GenerateConfig._check_config:10
+#: generate_config.GenerateConfig._update_config:9 of
+msgid ""
+"whether or not to check for new config sections or new keys. If ``depth "
+"== 0`` it will report the additions as sections. If ``depth > 0`` it will"
+" report the additions as keys. Default: True."
+msgstr ""
+
+#: generate_config.GenerateConfig._check_config:14
+#: generate_config.GenerateConfig._update_config:13 of
+msgid ""
+"the name of the current section. Used to provide a more hepful message in"
+" case of errors. Default: None."
+msgstr ""
+
+#: generate_config.GenerateConfig._check_config:17
+#: generate_config.GenerateConfig._check_value_type:10
+#: generate_config.GenerateConfig._update_config:16 of
+msgid "the list of found errors. Default: None."
+msgstr ""
+
+#: generate_config.GenerateConfig._check_portal_config_with_portal_template:1
+#: of
+msgid "Verify that a portal configuration file is coherent with the template."
+msgstr ""
+
+#: generate_config.GenerateConfig._check_value_type:1 of
+msgid ""
+"Verify that to the source key correspond a value with the same type as "
+"the dest value for this key."
+msgstr ""
+
+#: generate_config.GenerateConfig._check_value_type:4 of
+msgid "the source key."
+msgstr ""
+
+#: generate_config.GenerateConfig._check_value_type:6 of
+msgid "the sourve value."
+msgstr ""
+
+#: generate_config.GenerateConfig._display_config_errors:1 of
+msgid "Display the errors on stderr'"
+msgstr ""
+
+#: generate_config.GenerateConfig._display_config_file_errors:1 of
+msgid "Display the errors of one config file on stderr."
+msgstr ""
+
+#: generate_config.GenerateConfig._display_config_section_errors:1 of
+msgid "Display the config section errors on stderr."
+msgstr ""
+
+#: generate_config.GenerateConfig._display_errors:1 of
+msgid "Display all the found errors for each config file on stderr."
+msgstr ""
+
+#: generate_config.GenerateConfig._format_template:1 of
+msgid "Replace the {type}, {portal}, {domain} by their value."
+msgstr ""
+
+#: generate_config.GenerateConfig._format_templates:1 of
+msgid "Replace {type} and {portal} by their value in each list or dict it finds."
+msgstr ""
+
+#: generate_config.GenerateConfig._get_config_path:1 of
+msgid "Transform a catogory of file like _common into an actual path we can open."
+msgstr ""
+
+#: generate_config.GenerateConfig._get_config_path:3 of
+msgid "category of file."
+msgstr ""
+
+#: generate_config.GenerateConfig._get_config_path:5 of
+msgid "type of file to get (dest, dev or prod)."
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config:1 of
+msgid "Load the configuration and store it into self._config."
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config:3 of
+msgid "It will:"
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config:5 of
+msgid ""
+"Load the global configuration as explained in `the section about "
+"configuration <../infra.html#configuration>`__"
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config:6 of
+msgid ""
+"Add any complementary keys to self._config that are not in the config "
+"files:"
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config:8 of
+msgid "type"
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config:9 of
+msgid "portal"
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config:10 of
+msgid "prod (bool)"
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config:11 of
+msgid "infra_dir: the absolute path to the current customer infra dir"
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config:12 of
+msgid "infra_name: the base name of infra dir, eg customer-infra"
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config:13 of
+msgid ""
+"mapserver_ows_host: the host of mapserver (used to generate the print "
+"configuration). **Only if portal is not None.**"
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config:15 of
+msgid ""
+"prod_git_repos_location: location of the productions git repositories on "
+"the server."
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config_file:1 of
+msgid "Load the file from the disk and parse it with the toml module."
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config_from_file:1 of
+msgid ""
+"Load the config file and override keys with those from prod or dev if "
+"needed."
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config_from_file:3 of
+msgid "either a path to an existing file or a category of files, eg _common."
+msgstr ""
+
+#: generate_config.GenerateConfig._load_config_from_file:5 of
+msgid "if true, the config file will be checked against _template.dist.toml."
+msgstr ""
+
+#: generate_config.GenerateConfig._update_config:1 of
+msgid "Recursively update a dict while checking for inconsistancies."
+msgstr ""
+
+#: generate_config.GenerateConfig.config:1 of
+msgid "Access to the row config dict."
+msgstr ""
+
+#: generate_config.GenerateConfig.create_output_dirs:1 of
+msgid "Create all the directories for a portal output."
+msgstr ""
+
+#: generate_config.GenerateConfig.create_output_dirs:3 of
+msgid ""
+"These directories correspond to the dest section of the config. Keys that"
+" start with '_template' and the geo_front3 subsection are ignored."
+msgstr ""
+
+#: generate_config.GenerateConfig.get:1 of
+msgid "Forward to self.config.get"
+msgstr ""
+
+#: generate_config.GenerateConfig.optional_values:1 of
+msgid ""
+"Optional keys in the configuration. If one of these keys is missing, no "
+"warning is reported."
+msgstr ""
+
+#: ../../dev/infra-scripts.rst:22
+msgid "Generate Help"
+msgstr ""
+
+#: generate_help.GenerateHelpConfig:1 generate_images.GenerateImages:1
+#: generate_map_files.GenerateMapFiles:1 generate_print.GeneratePrintConfig:1
+#: generate_search.GenerateSearchConfig:1 generate_translations.Translator:1 of
+msgid "Bases: :class:`generate_utils.Generate`"
+msgstr ""
+
+#: generate_help.GenerateHelpConfig:1 of
+msgid "Generate the help website and fetch texts and images from Swisstopo."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.FRONT_HELP_TEMPLATE:1 of
+msgid "The template for help files used in the front end to display help."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.HELP_GEO_ADMIN_REGEXP:1 of
+msgid ""
+"Regexp used to detect the links to the Swisstopo website so we can "
+"correct them."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.JEPG_TO_PNG_REGEXP:1 of
+msgid "Regexp used to convert images from jpg to png."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.SPECIAL_PAGES_NAME_TO_ID:1 of
+msgid "Convent the name of a special page to its id."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.SPECIAL_PAGES_URLS:1 of
+msgid "Where to download the special pages."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.TEXT_URLS:1 of
+msgid "URLS pointing to the text in each languages."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.fetch_original_content:1 of
+msgid "Fetch the help content (texts and images) from Swisstopo."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.fetch_original_content:3 of
+msgid "Fetch the special pages and format them for inclusion in the CSV files."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.fetch_original_content:4 of
+msgid "Fetch the texts."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.fetch_original_content:5 of
+msgid "Append the special pages."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.fetch_original_content:6 of
+msgid "Correct the link in the texts and save them in CSV files."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.fetch_original_content:7 of
+msgid "Fetch the images, convert them to PNG and save them."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.generate:1 of
+msgid "Generate the help website and its content."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.generate:3 of
+msgid "Copy the static files."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.generate:4 of
+msgid "Copy the image (swisstopo's then the ones of the portal)."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.generate:5 of
+msgid "Generate the help texts (for the website and for the frontend)."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.generate:6 of
+msgid ""
+"Generate the lang files which defines which langs are available on the "
+"website."
+msgstr ""
+
+#: generate_help.GenerateHelpConfig.ignores:1 of
+msgid "Contains the id of the help texts to ignore"
+msgstr ""
+
+#: ../../dev/infra-scripts.rst:31
+msgid "Generate images"
+msgstr ""
+
+#: generate_images.GenerateImages:1 of
+msgid "Copy the images for one portal."
+msgstr ""
+
+#: generate_images.GenerateImages:3 of
+msgid ""
+"It will fist copy the general images from src['img'] then the portal "
+"images from src['img_portal']. All the image will be copied in "
+"dest['img']."
+msgstr ""
+
+#: ../../dev/infra-scripts.rst:40
+msgid "Generate JSON"
+msgstr ""
+
+#: generate_json:1 of
+msgid ""
+"Contains classes to parse WMS GetCapabilities and generate JSON config "
+"files for the frontend."
+msgstr ""
+
+#: generate_json.GenerateJsonConfig:1 of
+msgid ""
+"Generate the layers configuration and the catalog from a GetCapabilities "
+"request."
+msgstr ""
+
+#: generate_json.GenerateJsonConfig:3 of
+msgid ""
+"In order to always use the lastest map file, we start a python CGI server"
+" in a thread. This server will be used for the GetCapabilities request."
+msgstr ""
+
+#: generate_json.GenerateJsonConfig.check_layers_in_layers_config:1 of
+msgid ""
+"Verify for each layer of a topic that is exists in the layers "
+"configuration."
+msgstr ""
+
+#: generate_json.GenerateJsonConfig.check_layers_in_layers_config:3 of
+msgid "Print the list of layers that don't have a configuration on stderr."
+msgstr ""
+
+#: generate_json.GenerateJsonConfig.create_catalog_json:1 of
+msgid "Create the configuration of the catalog for each topic."
+msgstr ""
+
+#: generate_json.GenerateJsonConfig.create_services_json:1 of
+msgid "Create the list of topics."
+msgstr ""
+
+#: generate_json.GenerateJsonConfig.generate:1 of
+msgid "Generate the layers configuration and the catalog."
+msgstr ""
+
+#: generate_json.GenerateJsonConfig.process_category:1 of
+msgid "Generate the configuration for a category of the catalog."
+msgstr ""
+
+#: generate_json.GenerateJsonConfig.process_layer:1 of
+msgid "Return the proper configuration for a layer in the catalog."
+msgstr ""
+
+#: generate_json.OwsParser:1 of
+msgid ""
+"Parse a WMS GetCapabilities and saves the configuration of the layers in "
+"a JSON files."
+msgstr ""
+
+#: generate_json.OwsParser.LAYERS_CONFIG_KEY_TO_TRANSLATE:1 of
+msgid "What information should we translate from the WMS server?"
+msgstr ""
+
+#: generate_json.OwsParser.get_ows_information:1 of
+msgid "Make the GetCapabilities request and process it."
+msgstr ""
+
+#: generate_json.OwsParser.process_external_layer_file:1 of
+msgid "Read the configuration of a layer from a JSON file."
+msgstr ""
+
+#: generate_json.OwsParser.process_external_layers:1 of
+msgid "Process each JSON file configuring an external layer."
+msgstr ""
+
+#: generate_json.OwsParser.process_wms_layers:1 of
+msgid ""
+"Process each WMS layer from from the GetCapabilities and store the "
+"revelant information for the configuration."
+msgstr ""
+
+#: generate_json.OwsParser.save_information:1 of
+msgid "Save the layers configuration and the search files."
+msgstr ""
+
+#: generate_json.OwsParser.save_layers_config:1 of
+msgid "Save the configuration for layers in a JSON file per language."
+msgstr ""
+
+#: generate_json.OwsParser.save_layers_search:1 of
+msgid "Save information required by sphinx to search for a layer in a tsv file."
+msgstr ""
+
+#: generate_json.OwsParser.save_layers_search:3 of
+msgid ""
+"The label of each layer is translated with "
+":class:`generate_translations.CatalogTranslator` so each user can search "
+"in his/her language."
+msgstr ""
+
+#: generate_json.OwsParser.translate:1 of
+msgid ""
+"Translate the value of the keys from "
+":attr:`OwsParser.LAYERS_CONFIG_KEY_TO_TRANSLATE`."
+msgstr ""
+
+#: ../../dev/infra-scripts.rst:48
+msgid "Generate map files"
+msgstr ""
+
+#: generate_map_files.GenerateMapFiles:1 of
+msgid ""
+"Create the mapfiles based on the template in the portal folder and the "
+"configuration."
+msgstr ""
+
+#: ../../dev/infra-scripts.rst:57
+msgid "Generate print"
+msgstr ""
+
+#: generate_print.GeneratePrintConfig:1 of
+msgid "Generate MFP configuration and copy the print logos."
+msgstr ""
+
+#: ../../dev/infra-scripts.rst:66
+msgid "Generate search"
+msgstr ""
+
+#: generate_search.GenerateSearchConfig:1 of
+msgid ""
+"Generate either the search configuration for one portal or the global "
+"search configuration."
+msgstr ""
+
+#: generate_search.GenerateSearchConfig.generate:1 of
+msgid "Generate the search configuration for one portal."
+msgstr ""
+
+#: generate_search.GenerateSearchConfig.generate_global:1 of
+msgid "Generate the global configuration for search."
+msgstr ""
+
+#: ../../dev/infra-scripts.rst:75
+msgid "Generate Translations"
+msgstr ""
+
+#: generate_translations.CatalogTranslator:1 of
+msgid "Allow the user to access function design to translate the layers catalog."
+msgstr ""
+
+#: generate_translations.CatalogTranslator:3 of
+msgid ""
+"To acces to the translate function for a language, use "
+"``catalogTranslatro[lang]``. This function will then take the text to "
+"translate as an argument and return its translation."
+msgstr ""
+
+#: generate_translations.CatalogTranslator:6 of
+msgid "path to the CSV file that contains the translations for the catalog."
+msgstr ""
+
+#: generate_translations.Translator:1 of
+msgid "Build the translation dictionnary used to translate the frontend."
+msgstr ""
+
+#: generate_translations.Translator.get_translations:1 of
+msgid ""
+"Read the content of the translations files (on disk on from a URL) and "
+"save the constructed dict of translations in the specified output folder."
+msgstr ""
+
+#: generate_translations.Translator.get_translations:4 of
+msgid ""
+"If a work is on the ignore list, it will not go into the constructed "
+"translation dict."
+msgstr ""
+
+#: generate_translations.Translator.save_translations:1 of
+msgid "Save the translation files in the JSON format for usage in the frontend."
+msgstr ""
+
+#: ../../dev/infra-scripts.rst:84
+msgid "Entry points"
+msgstr ""
+
+#: ../../dev/infra-scripts.rst:87
+msgid "Render"
+msgstr ""
+
+#: of render:1
+msgid "Render document with jinja2 and ``${var}`` as a template syntax."
+msgstr ""
+
+#: of render:3
+msgid "Call this script with ``--help`` to view the full help message."
+msgstr ""
+
+#: of render.render:1
+msgid "Render a template with specified variable start and variable end"
+msgstr ""
+
+#: of render.render:3
+msgid "The absolute path to the template."
+msgstr ""
+
+#: of render.render:4
+msgid "The absolute path to the output file."
+msgstr ""
+
+#: of render.render:5
+msgid "A :class:`generate_config.GenerateConfig` instance."
+msgstr ""
+
+#: of render.render:6
+msgid "The string to look for at the start of a variable. Default: '${'."
+msgstr ""
+
+#: of render.render:7
+msgid "The string to look for at the end of a variable. Default: '}'."
+msgstr ""
+
+#: ../../dev/infra-scripts.rst:95
+msgid "Generate"
+msgstr ""
+
+#: generate:1 of
+msgid "Main script used to generate the files for a portal."
+msgstr ""
+
+#: generate:3 of
+msgid "Call this script with the ``--help`` argument for more details."
+msgstr ""
+

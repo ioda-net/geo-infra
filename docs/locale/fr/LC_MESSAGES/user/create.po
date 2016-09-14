@@ -1,0 +1,255 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../user/create.rst:2
+msgid "Create"
+msgstr ""
+
+#: ../../user/create.rst
+msgid "Contents"
+msgstr ""
+
+#: ../../user/create.rst:8
+msgid "Create a new portal"
+msgstr ""
+
+#: ../../user/create.rst:10
+msgid ""
+"Create at least a dist config file for the portal named "
+"``config/dist/<portal>.dist.toml``. You can view an example `here "
+"<https://github.com/ioda-net/customer-"
+"infra/blob/master/config/dist/demo.dist.toml>`__."
+msgstr ""
+
+#: ../../user/create.rst:11
+msgid ""
+"Create the map files: you must at least create a map file named "
+"``customer-infra/portals/<portal>.in.map``. This will be the main map "
+"file for the portal. You can use includes in this file and the `jinja2 "
+"template language <http://jinja.pocoo.org/>`__. To know more about that, "
+"referer to the :ref:`template section of the infrastructure page "
+"<ref_infra_templates>`."
+msgstr ""
+
+#: ../../user/create.rst:12
+msgid ""
+"Create the translations CSV files below. All these files must have this "
+"header: ``key,fr,de,en,commentaires``. The content of the "
+"``commentaires`` column will be ignored. You can off course add/remove "
+"language columns. To learn more how translations work, see the section "
+"about translations from the :ref:`portal configuration page "
+"<ref_user_cfg-portal_translations>`."
+msgstr ""
+
+#: ../../user/create.rst:14
+msgid ""
+"``customer-infra/translations/catalog.csv``: the content of the catalog, "
+"common to all portals. This includes the layer names present in the "
+"catalog and the title of the section of the catalog."
+msgstr ""
+
+#: ../../user/create.rst:15
+msgid ""
+"``customer-infra/translations/<portal-name>.csv``: everything else "
+"(*note:* the translation for the topic titles and the topic tooltip – "
+"*topic_<topic_name>_tooltip* – go here)."
+msgstr ""
+
+#: ../../user/create.rst:16
+msgid ""
+"``customer-infra/translations/common.csv`` (optional): if you find "
+"redundancies between the translations for different portals, you can put "
+"them in this file. It will be loaded before the file for the portal, "
+"which means, you can override a translation from this file in a portal "
+"file."
+msgstr ""
+
+#: ../../user/create.rst:20
+msgid ""
+"**At least one of the files above must contain a translation line.** "
+"Otherwise, no layers config will be created. Which means your portal "
+"won't work."
+msgstr ""
+
+#: ../../user/create.rst:22
+msgid ""
+"Add the external layers (WMS or WMTS) by creating the relevant JSON files"
+" in ``customer-infra/json/<portal>/external`` (*optional*). To learn more"
+" about how to write these files, refer to the :ref:`proper section of the"
+" page about portal configuration <ref_user_cfg-portal_layers-external-"
+"sources>`. You can view examples `here <https://github.com/ioda-net"
+"/customer-infra/tree/master/json/demo/external>`__."
+msgstr ""
+
+#: ../../user/create.rst:23
+msgid ""
+"Create the JSON topic files in ``customer-infra/json/<portal>/topics``. "
+"They define for each topic its name, languages, background layers, "
+"selected layers and catalog. You can view examples `here "
+"<https://github.com/ioda-net/customer-"
+"infra/blob/master/json/demo/topics>`__. To learn more how topics work, "
+"see the section about topics from the :ref:`portal configuration page "
+"<ref_cfg-portal_topics>`."
+msgstr ""
+
+#: ../../user/create.rst:24
+msgid ""
+"Add the logo used in your print templates in ``customer-"
+"infra/print/<portal>/``. See the :ref:`print section <ref_user_cfg-"
+"portal-print>` of the portal configuration page to learn more about "
+"printing. This folder must contain:"
+msgstr ""
+
+#: ../../user/create.rst:26
+msgid ""
+"`NorthArrow.svg <https://github.com/ioda-net/customer-"
+"infra/blob/master/print/demo/NorthArrow.svg>`__ if your templates have "
+"the north arrow."
+msgstr ""
+
+#: ../../user/create.rst:27
+msgid "Any logo used in your print templates."
+msgstr ""
+
+#: ../../user/create.rst:29
+msgid ""
+"Add the images for a portal in ``customer-infra/img/<portal-name>/``. It "
+"must contain:"
+msgstr ""
+
+#: ../../user/create.rst:31
+msgid "The favicon in ``favicon.ico``."
+msgstr ""
+
+#: ../../user/create.rst:32
+msgid ""
+"A JPEG file per topic. These files are named like this: "
+"``<my_topic>.jpg``."
+msgstr ""
+
+#: ../../user/create.rst:33
+msgid "A logo per language. They are named like this: ``logo.ch.<lang>.png``."
+msgstr ""
+
+#: ../../user/create.rst:35
+msgid ""
+"Prepare the help site (*optional*). General steps are detailed below. To "
+"learn more about help, look at :ref:`the section about help <ref_cfg-"
+"portal_help>` in the portal configuration page."
+msgstr ""
+
+#: ../../user/create.rst:37
+msgid ""
+"Put any texts and images that are common to all portal in the ``customer-"
+"infra/help/common`` folder. Everything that is in this folder will be "
+"loaded before any portal data, which means you can override any value in "
+"the portal folder."
+msgstr ""
+
+#: ../../user/create.rst:38
+msgid ""
+"Put any texts and images specific to a portal in ``customer-"
+"infra/help/<portal>/``."
+msgstr ""
+
+#: ../../user/create.rst:40
+msgid ""
+"Enable searches in ``search.locations``. This key must contain the list "
+"of the names of the locations indexes that must be enabled for this "
+"portal. For instance:"
+msgstr ""
+
+#: ../../user/create.rst:49
+msgid "Create a new infrastructure"
+msgstr ""
+
+#: ../../user/create.rst:51
+msgid ""
+"You should use `this git repository <http://github.com/ioda-net/customer-"
+"infra>`__ as a template."
+msgstr ""
+
+#: ../../user/create.rst:53
+msgid ""
+"Create the ``config/config.dist.sh`` file with the values for deployment."
+" You can view an example `here <https://github.com/ioda-net/customer-"
+"infra/blob/master/config/config.dist.sh>`__."
+msgstr ""
+
+#: ../../user/create.rst:54
+msgid ""
+"Create the ``config/dist/_common.dist.toml`` which will hold all values "
+"shared between portals. You can view an example `here <https://github.com"
+"/ioda-net/customer-infra/blob/master/config/dist/_common.dist.toml>`__."
+msgstr ""
+
+#: ../../user/create.rst:55
+msgid ""
+"Prepare the ``config/_template.dist.toml`` file that will be used to "
+"validate the configuration files for each portals. It must contain the "
+"key that are allowed in each portal config file. You can view an example "
+"`here <https://github.com/ioda-net/customer-"
+"infra/blob/master/config/_template.dist.toml>`__."
+msgstr ""
+
+#: ../../user/create.rst:56
+msgid ""
+"Create the search templates for portal: ``customer-infra/search/portal-"
+"locations.in.conf``. Here is an example:"
+msgstr ""
+
+#: ../../user/create.rst:60
+msgid ""
+"Configure your ``.gitignore`` to ignore user specific configuration files"
+" and generated output. You can view an example `here <https://github.com"
+"/ioda-net/customer-infra/blob/master/.gitignore>`__."
+msgstr ""
+
+#: ../../user/create.rst:61
+msgid ""
+"Prepare you print templates. You can view examples of them `here "
+"<https://github.com/ioda-net/customer-infra/tree/master/print>`__. You "
+"can create your print templates with `Jasper Studio "
+"<http://community.jaspersoft.com/project/jaspersoft-studio>`__ or "
+"directly by editing the jrxml files with a text editor."
+msgstr ""
+
+#: ../../user/create.rst:62
+msgid ""
+"Prepare the ``translations`` folder by creating the ``ignore.csv`` file. "
+"This file will just contain the translation ids (one per line) you don't "
+"want included in JSON translation files. You probably want to exclude "
+"everything that deals with Swisstopo. You can view an example `here "
+"<https://github.com/ioda-net/customer-"
+"infra/blob/master/translations/ignore.csv>`__."
+msgstr ""
+
+#: ../../user/create.rst:63
+msgid ""
+"You can create a ``docs`` subdirectory and setup sphinx in it (see how it"
+" is done in the ``docs`` folder of ``geo-infra``). You can then build "
+"this doc with ``manuel build-doc-customer``."
+msgstr ""
+
+#: ../../user/create.rst:64
+msgid "`Create a new portal`_."
+msgstr ""
+

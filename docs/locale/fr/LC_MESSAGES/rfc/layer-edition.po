@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../rfc/layer-edition.rst:2
+msgid "Edit vectorial layers"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst
+msgid "Contents"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:7
+msgid "How does it work in other products"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:10
+msgid "GeoMapFish"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:13
+msgid "In the frontend"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:15
+msgid ""
+"You can find a demo `here <https://geomapfish-"
+"demo.camptocamp.net/1.6/edit>`__ (user: demo, password: demo). The "
+"analysis below is based on this demo and the network requests done while "
+"testing it."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:17
+msgid ""
+"The layers are write protected and the user must login with a username "
+"and a password. After the authentication is done, cookies are created and"
+" send to the server for each requests."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:21
+msgid ""
+"According to `the documentation "
+"<https://camptocamp.github.io/c2cgeoportal/2.0/administrator/editing.html"
+"#enabling-copy-to-functionality>`__ it is possible to copy an object from"
+" a layer to another if both layers have the same geometry."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:24
+msgid "Object Creation"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:26
+msgid ""
+"To create a new object, the user must choose the type (polygon, line or "
+"point) and than draw on the map. When the drawing is done, the user can "
+"save it by clicking on the save button. The object is then saved on the "
+"server like this:"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:28
+msgid ""
+"POST request to a URL like ``/layers/<id-layers>``. The cookies are "
+"transmitted. The request contains the drawing in the GeoJSON format. The "
+"server answers with the same GeoJSON with one key difference: the new "
+"object contains an id so the user can edit it."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:29 ../../rfc/layer-edition.rst:43
+#: ../../rfc/layer-edition.rst:59
+msgid "The layer is asked again to MapServer."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:30 ../../rfc/layer-edition.rst:44
+#: ../../rfc/layer-edition.rst:60
+msgid "This display of the layer is updated."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:35
+msgid "The dialog to create an object with GeoMapFish"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:38
+msgid "Object Edition"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:40
+msgid ""
+"To edit an object, the user need to click on it. Once this is done, the "
+"object switch to \"edition mode\". The user can then modify it and the "
+"modifications are displayed over the original object with a lighter color"
+" (see screenshot below). Once the editing is done, the user must click on"
+" the save button. The object is then stored like this:"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:42
+msgid ""
+"POST request to a URL like ``/layers/<id-layers>/<id-object>``. The "
+"cookies are transmitted. The request contains the drawing in the GeoJSON "
+"format. The server answers with the same GeoJSON."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:49
+msgid "The dialog to edit an object with GeoMapFish"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:51
+msgid ""
+"The edition tools contains some advanced features like the possibility to"
+" subtract polygons."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:54
+msgid "Object Deletion"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:56
+msgid ""
+"To delete an object, the user must click on the object and then select "
+"*Actions > Delete*. The deletion occurs like this:"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:58
+msgid ""
+"DELETE request to a URL like ``/layers/<id-layers>/<id-object>``. The "
+"cookies are transmitted."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:63
+msgid "In the backend"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:65
+msgid ""
+"According to `the documentation "
+"<https://camptocamp.github.io/c2cgeoportal/2.0/administrator/tinyows.html>`__,"
+" GeoMapFish will act as a proxy between the user and `TinyOWS "
+"<http://mapserver.org/tinyows/>`__ in order to check that the user is "
+"authenticated and has the right to edit this layer."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:67
+msgid ""
+"The edition feature is more detailed on `this page "
+"<https://camptocamp.github.io/c2cgeoportal/2.0/administrator/editing.html>`__."
+" To be editable, a layer must:"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:69
+msgid "Be accessible in WMS."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:70
+msgid ""
+"Be associated with a PostGIS table. This table must have a primary key "
+"that is incremented automatically when a data is inserted into it "
+"(``SERIAL`` or another type with a sequence)."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:71
+msgid "Be protected: only the users that can edit it must be able to edit it."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:73
+msgid ""
+"There must also be a mapping between the layer and the table (something "
+"like what we do with features requests)."
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:76
+msgid "QGis Server"
+msgstr ""
+
+#: ../../rfc/layer-edition.rst:78
+msgid ""
+"`3liz <http://www.3liz.com>`__ has a `demo of layer edition "
+"<http://demo.3liz.com/wfst/wfs-transaction-polygon.html>`__. It relies on"
+" QGis Server and OpenLayers 2 through `lizmap "
+"<http://www.3liz.com/lizmap.html>`__. QGis Server is configured as a "
+"WFS-T server and OpenLayers do the proper WFS requests when the user save"
+" his/her editions."
+msgstr ""
+

@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../sysadmin/deploy-setup.rst:4
+msgid "Setup the server for the deploy of a portal"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:6
+msgid ""
+"Before reading this document, you should read and follow the steps "
+"detailed in :ref:`server setup <ref_sysadmin_server-setup>`."
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst
+msgid "Contents"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:12
+msgid "First deploy on a server"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:14
+msgid ""
+"Create the directories needed for the deploy. Reefer to :ref:`the section"
+" about production configurations in server setup <ref_sysadmin_server-"
+"setup_production-cfg>` to learn how to configure it."
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:16
+msgid "``$PROD_GIT_REPOS_LOCATION``"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:17
+msgid ""
+"``$PROD_BARE_GIT_REPOS_LOCATION``: this may be on a different server and "
+"rely on HTTPS instead of SSH. git repositories accessible in this "
+"location must be clonable by the user."
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:19
+msgid ""
+"Create the global git repositories for search and vhosts in "
+"``$PROD_BARE_GIT_REPOS_LOCATION`` with the name ``search.git`` and "
+"``vhosts.d.git``. This can be done in ``$PROD_BARE_GIT_REPOS_LOCATION`` "
+"with:"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:21
+msgid "``git init --bare search.git``"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:22
+msgid "``git init --bare vhosts.d.git``"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:24
+msgid ""
+"Ask the user to init these repositories for production with (in ``geo-"
+"infra`` and ``$INFRA_DIR`` pointing to the proper infrastructure "
+"directory):"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:26
+msgid "``manuel init-prod-repo search``"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:27
+msgid "``manuel init-prod-repo vhosts.d``"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:33
+msgid "Deploy of a new portal"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:35
+msgid ""
+"Create the bare repository for the portal in "
+"``$PROD_BARE_GIT_REPOS_LOCATION`` named like this ``<portal>.git``. This "
+"can be done with: ``git init --bare <portal>.git``"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:36
+msgid ""
+"Ask the user to init these repositories for production with (in ``geo-"
+"infra`` and ``$INFRA_DIR`` pointing to the proper infrastructure "
+"directory): ``manuel init-prod-repo <portal>``"
+msgstr ""
+
+#: ../../sysadmin/deploy-setup.rst:37
+msgid ""
+"Create the symlink to your MapServe executable named like ``<portal>`` in"
+" the directory defined by ``vhost.ows_path`` from ``customer-"
+"infra/config/_common.dist.toml``"
+msgstr ""
+

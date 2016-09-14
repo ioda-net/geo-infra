@@ -481,12 +481,44 @@ function _load-customer-config {
 
 HELP['build-doc']="manuel build-doc
 
-Build the doc from the files in docs. The output will be in docs/_build/html"
+Build the doc from the files in docs for all languages. The output will be in docs/_build/html for
+English and docs/_build/html/<lang> This doesn't update the po files."
 function build-doc {
+    local lang
+
     python3 scripts/get-manuel-doc.py > docs/manuel.md
     pushd "${DOC_DIR}"
         "${SPHINX_CMD}" -b html -d "${DOC_BUILD_DIR}/doctrees" . "${DOC_BUILD_DIR}/html"
+        "${SPHINX_INT_CMD}" build
+        for lang in "${DOC_LANGUAGES[@]}"; do
+            "${SPHINX_CMD}" -b html -d "${DOC_BUILD_DIR}/doctrees" -D language=fr . "${DOC_BUILD_DIR}/html/${lang}"
+        done
     popd
+}
+
+
+HELP['update-doc-translations']="manuel update-doc-translations
+
+Update the po files based on text from English documents. This will not build the documentation."
+function update-doc-translations {
+    local lang
+
+    pushd "${DOC_DIR}"
+        echo "Extract strings to translate"
+        "${SPHINX_CMD}" -b gettext . locale/pot > /dev/null
+        for lang in "${DOC_LANGUAGES[@]}"; do
+            echo "Prepare po for ${lang}"
+            "${SPHINX_INT_CMD}" update -p locale/pot -l "${lang}" > /dev/null
+        done
+    popd
+}
+
+
+HELP['build-doc-all']="manuel build-doc-all
+
+This is equivalent to 'manuel clean-doc && manuel update-doc-translations && manuel build-doc'"
+function build-doc-all {
+    clean-doc && update-doc-translations && build-doc
 }
 
 

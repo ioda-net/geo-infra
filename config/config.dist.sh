@@ -35,6 +35,22 @@ function set-var {
 }
 
 
+HELP['set-array']="set-array variable_name VALUE1 [VALUE2 …]
+
+Set the global variable_name to an array of provided value if variable_name is not an env variable."
+function set-array {
+    local var="$1"; shift;
+    local value
+
+    if [[ -n "${var}" ]] && ! env | grep -q "${var}"; then
+            eval "${var}=()"
+            for value in "$@"; do
+                eval "${var}+=(${value})"
+            done
+    fi
+}
+
+
 # Commands used to build geo-front3. They must be either absolute (or in the PATH) or relative to
 # the geo-front3 directory. Normally, this shouldn't be changed.
 set-var KARMA_CMD "./node_modules/karma/bin/karma"
@@ -50,6 +66,7 @@ set-var UGLIFY_CMD "./node_modules/.bin/uglifyjs"
 set-var RENDER_CMD "./scripts/render.py"
 set-var GENERATE_CMD "./scripts/generate.py"
 set-var SPHINX_CMD sphinx-build
+set-var SPHINX_INT_CMD sphinx-intl
 set-var CSVCLEAN_CMD "/usr/bin/csvclean"
 
 # Some commands are in /usr/bin/systemctl on most systems but in /bin/systemctl on Debian. We need
@@ -103,6 +120,8 @@ SSH_CLIENT="${SSH_CLIENT:-localhost}"
 set-var DOC_DIR "docs"
 # Relative to DOC_DIR
 set-var DOC_BUILD_DIR "_build"
+# Languages for which the documentation must be built (in addition to English)
+set-array DOC_LANGUAGES 'fr'
 
 
 # Infra

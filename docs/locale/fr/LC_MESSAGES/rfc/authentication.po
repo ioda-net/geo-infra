@@ -1,0 +1,527 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../rfc/authentication.rst:2
+msgid "Authentication"
+msgstr ""
+
+#: ../../rfc/authentication.rst
+msgid "Contents"
+msgstr ""
+
+#: ../../rfc/authentication.rst:8
+msgid "How does it work in other products"
+msgstr ""
+
+#: ../../rfc/authentication.rst:11
+msgid "GeoMapFish"
+msgstr ""
+
+#: ../../rfc/authentication.rst:13
+msgid ""
+"This feature is detailed `here "
+"<https://camptocamp.github.io/c2cgeoportal/2.0/developer/webservices.html#authentication>`__"
+" . The developer guide is `here "
+"<https://camptocamp.github.io/c2cgeoportal/2.0/developer/index.html>`__ "
+"and the page about server development is `here "
+"<https://camptocamp.github.io/c2cgeoportal/2.0/developer/server_side.html>`__."
+" We can find this schema of the database model:"
+msgstr ""
+
+#: ../../rfc/authentication.rst:19
+msgid "The database model of GeoMapFish"
+msgstr ""
+
+#: ../../rfc/authentication.rst:21
+msgid ""
+"*It is not visible on this schema but the ``User`` of a child schema has "
+"a link (``parent_role``) to the ``Role`` of the parent schema.*"
+msgstr ""
+
+#: ../../rfc/authentication.rst:23
+msgid "The features protected by authentication are:"
+msgstr ""
+
+#: ../../rfc/authentication.rst:25
+msgid ""
+"search (*c2cgeoportal.views.fulltextsearch.py*): searches are handled in "
+"the database. The results are filtered like this:"
+msgstr ""
+
+#: ../../rfc/authentication.rst:27
+msgid "If the user is anonymous, add a filter ``public.is_(True)``"
+msgstr ""
+
+#: ../../rfc/authentication.rst:28
+msgid ""
+"If the user is authenticated, add a filter ``public.is_(True) or role_id "
+"== user.role.id``"
+msgstr ""
+
+#: ../../rfc/authentication.rst:30
+msgid ""
+"tinyowsproxy (*c2cgeoportal.views.tinyowsproxy.py*): if the user is not "
+"authenticated, it raises a 403 error. Otherwise, the list of layers the "
+"user can edit are fetched and the program checks that the layer the user "
+"is trying to edit is among them."
+msgstr ""
+
+#: ../../rfc/authentication.rst:31
+msgid ""
+"mapserverproxy (*c2cgeoportal.views.mapserverproxy.py*): to change some "
+"requests before forwarding them."
+msgstr ""
+
+#: ../../rfc/authentication.rst:32
+msgid ""
+"Features requests (*c2cgeoportal.views.layers.py*): they are protected in"
+" reading, creation, deletion and update."
+msgstr ""
+
+#: ../../rfc/authentication.rst:34
+msgid ""
+"Reading: if the layer is public, the results are send to the user. "
+"Otherwise, the following filters are applied:"
+msgstr ""
+
+#: ../../rfc/authentication.rst:36 ../../rfc/authentication.rst:41
+msgid "Do the roles of user allow him/her to see the layer?"
+msgstr ""
+
+#: ../../rfc/authentication.rst:37 ../../rfc/authentication.rst:42
+msgid "Is the layer in the protected area the user is seeing (geometric filter)?"
+msgstr ""
+
+#: ../../rfc/authentication.rst:39
+msgid "Creation: the following filters are applied:"
+msgstr ""
+
+#: ../../rfc/authentication.rst:43
+msgid "Is the layer read/write?"
+msgstr ""
+
+#: ../../rfc/authentication.rst:45
+msgid "Update: same as creation."
+msgstr ""
+
+#: ../../rfc/authentication.rst:46
+msgid "Deletion: same as creation."
+msgstr ""
+
+#: ../../rfc/authentication.rst:48
+msgid ""
+"GeoMapFish can also filter ``GetCapabilities`` requests for each user "
+"(see *c2cgeoportal.lib.filter_capabilities.py*)."
+msgstr ""
+
+#: ../../rfc/authentication.rst:51
+msgid "Details"
+msgstr ""
+
+#: ../../rfc/authentication.rst:54
+msgid "URLs"
+msgstr ""
+
+#: ../../rfc/authentication.rst:56
+msgid ""
+"``/login`` to connect. You must do a POST request with these parameters: "
+"login, password, came_from (URL to which the user must be redirected once"
+" logged in)."
+msgstr ""
+
+#: ../../rfc/authentication.rst:57
+msgid "``/logout`` to disconnect. A mere GET request is enough."
+msgstr ""
+
+#: ../../rfc/authentication.rst:58
+msgid ""
+"``/loginuser`` to get information about the current user (authenticated "
+"or anonymous). A GET request on this URL sends back information about the"
+" username, the role and the specific features available."
+msgstr ""
+
+#: ../../rfc/authentication.rst:59
+msgid ""
+"``/loginchange`` to change the password. A POST request on this URL with "
+"the relevant content (password, new_password, confirm_new_password) "
+"allows the user to change password."
+msgstr ""
+
+#: ../../rfc/authentication.rst:60
+msgid "``/loginresetpassword`` to reset the password."
+msgstr ""
+
+#: ../../rfc/authentication.rst:62
+msgid ""
+"More details can be found `here "
+"<https://camptocamp.github.io/c2cgeoportal/2.0/developer/webservices.html#authentication>`__."
+msgstr ""
+
+#: ../../rfc/authentication.rst:65
+msgid "Code"
+msgstr ""
+
+#: ../../rfc/authentication.rst:67
+msgid ""
+"In the Python/Pyramid backend, authentication rely on "
+"``AuthTktAuthenticationPolicy`` (requires cookies) or "
+"``BasicAuthAuthenticationPolicy``. These two methods come from Pyramid. "
+"It is possible to use both methods thanks to `pyramid_multiauth "
+"<https://pypi.python.org/pypi/pyramid_multiauth>`__. The user is then "
+"authenticated thanks to the ``User`` table and added to the ``request`` "
+"object to make it available to further processing."
+msgstr ""
+
+#: ../../rfc/authentication.rst:69
+msgid ""
+"`This page "
+"<https://camptocamp.github.io/c2cgeoportal/2.0/integrator/authentication.html>`__"
+" gives information and examples to configure another authentication "
+"policy (for instance a SSO like CAS) and to validate users from another "
+"data source (eg LDAP)."
+msgstr ""
+
+#: ../../rfc/authentication.rst:71
+msgid ""
+"Each user has exactly one role. A role is made of an id, a name, a "
+"description, an extent and a relation with features. Each layer and role "
+"is mapped with at least one spatial restriction."
+msgstr ""
+
+#: ../../rfc/authentication.rst:73
+msgid ""
+"The protection of a layer works like this: each layer is mapped to at "
+"least one ``RestrictionArea`` with the ``layer_ra`` relation. Each "
+"``RestrictionArea`` is mapped to a role with the ``role_ra`` relation. "
+"Each role is mapped to at least one user."
+msgstr ""
+
+#: ../../rfc/authentication.rst:77
+msgid ""
+"*c2cgeoportal* is not designed to be used directly. It's a template that "
+"must be used to create Pyramid applications."
+msgstr ""
+
+#: ../../rfc/authentication.rst:81
+msgid "How we can make it work"
+msgstr ""
+
+#: ../../rfc/authentication.rst:84
+msgid "Main Tables"
+msgstr ""
+
+#: ../../rfc/authentication.rst:86
+msgid ""
+"Ideally these tables should be in a different schema than ``files`` and "
+"``url_shortener`` in order to ease the restoration of those two tables "
+"when updating the production database."
+msgstr ""
+
+#: ../../rfc/authentication.rst:123
+msgid "How to configure the layers?"
+msgstr ""
+
+#: ../../rfc/authentication.rst:125
+msgid ""
+"The configuration of the topics, layers and catalog are loaded in the "
+"JSON format from the database with these URLs: ``/<portal>/services``, "
+"``/<portal>/layersConfig?lang=<lang>``, "
+"``/<portal>/catalog?lang=<lang>``. It can work in several ways:"
+msgstr ""
+
+#: ../../rfc/authentication.rst:127
+msgid ""
+"Build the files for each requests, even for anonymous users. This can be "
+"slow."
+msgstr ""
+
+#: ../../rfc/authentication.rst:128
+msgid ""
+"Build the files for each requests, even for anonymous users but cache the"
+" answer for anonymous users. This way we can avoid reading the database "
+"for each request. Swisstopo is doing something similar and it is quite "
+"easy."
+msgstr ""
+
+#: ../../rfc/authentication.rst:129
+msgid ""
+"Store the files for anonymous users in a dedicated cache table (eg "
+"``public_services``, ``public_layers_config``, ``public_catalog``). Each "
+"of these tables has a portal, language and content (in JSON) field. The "
+"cache can then be updated with PostgreSQL triggers or in Python."
+msgstr ""
+
+#: ../../rfc/authentication.rst:131
+msgid ""
+"The administrator has an admin page in ``/admin/layers``. On this "
+"interface, it is possible to add, update and delete layers."
+msgstr ""
+
+#: ../../rfc/authentication.rst:133
+msgid ""
+"The API has the URLs below accessible with POST requests. Each URL allows"
+" bulk updates. THe update and deletion can also be done with a specific "
+"id."
+msgstr ""
+
+#: ../../rfc/authentication.rst:135
+msgid "``/admin/layers/create``"
+msgstr ""
+
+#: ../../rfc/authentication.rst:136
+msgid "``/admin/layers/update``"
+msgstr ""
+
+#: ../../rfc/authentication.rst:137
+msgid "``/admin/layers/delete``"
+msgstr ""
+
+#: ../../rfc/authentication.rst:138
+msgid "``/admin/layers/create_or_update``"
+msgstr ""
+
+#: ../../rfc/authentication.rst:140
+msgid ""
+"Since all layers can also be created/updated with the cli, in order to "
+"avoid conflicts, each layer must have a special boolean attribute (eg "
+"``auto_filled``). If this field is truethy, then the layer cannot be "
+"edited *by default* with the interface. If the user chooses to edit the "
+"layer anyway, the field becomes falsey. Then, if the command line tool "
+"tries to update a layer with this field being falsey, a warning message "
+"is displayed and the layer is not changed."
+msgstr ""
+
+#: ../../rfc/authentication.rst:143
+msgid "Database"
+msgstr ""
+
+#: ../../rfc/authentication.rst:146
+msgid "Layer configuration"
+msgstr ""
+
+#: ../../rfc/authentication.rst:148
+msgid "There are several ways to store the configuration in the database:"
+msgstr ""
+
+#: ../../rfc/authentication.rst:150
+msgid ""
+"All WMS and WMTS layers in the same table like Swisstopo. See "
+"https://github.com/geoadmin/mf-"
+"chsdi3/blob/master/chsdi/models/bod.py#L53. Question: how to handle "
+"efficiently several languages (without the need to add/remove columns in "
+"the table)?"
+msgstr ""
+
+#: ../../rfc/authentication.rst:151
+msgid ""
+"In the JSON format as described below. Question: how to handle "
+"efficiently several languages (without the need to add/remove columns in "
+"the table)?"
+msgstr ""
+
+#: ../../rfc/authentication.rst:163
+msgid ""
+"By separating WMS and WMTS (and later WFS) layers. To do that, we put "
+"each type of layer in its own table. The columns of this table can map "
+"exactly to the field required for a layer (c2c is doing this). Since the "
+"primary key ``layerBodId`` must be unique across all those tables, we can"
+" use a solution detailed `here "
+"<http://stackoverflow.com/questions/10068033/postgresql-foreign-key-"
+"referencing-primary-keys-of-two-different-tables/10077883#10077883>`__ "
+"and use `with_polymorphic <with_polymorphic>`__ in our SQLAlchemy "
+"requests (like c2c). In this system, each relevant field is stored in a "
+"defined language and translated during JSON export thanks to a data "
+"source (in JSON or po files). The validation (are all required fields "
+"there?) is also easier: we rely on the database."
+msgstr ""
+
+#: ../../rfc/authentication.rst:166
+msgid "Link the role to layers"
+msgstr ""
+
+#: ../../rfc/authentication.rst:168
+msgid "We can:"
+msgstr ""
+
+#: ../../rfc/authentication.rst:170
+msgid ""
+"In the ``Role`` table associate a list of layers in a dedicated column "
+"like this: ``authorized_layers = Column(JSON, default='{}')``. The column"
+" will then contain for each ``layerBodId`` a subset of ``CRUD`` depending"
+" on the permissions of the role on the layer. Question: how to know "
+"easily if a layer is protected or not?"
+msgstr ""
+
+#: ../../rfc/authentication.rst:171
+msgid ""
+"Use (like c2c) intermediary tables: we map each layer to at least one "
+"restriction. We map each restriction to at least one role. If a layer is "
+"protected, then it is associated with at least a restriction. With joins,"
+" we can also easily find which layers are associated to which roles. This"
+" should look like (*code samples taken and adapted from c2cgeoportal*):"
+msgstr ""
+
+#: ../../rfc/authentication.rst:224
+msgid "Design of the interface"
+msgstr ""
+
+#: ../../rfc/authentication.rst:226
+msgid "TODO"
+msgstr ""
+
+#: ../../rfc/authentication.rst:229
+msgid "Protection of WMS requests"
+msgstr ""
+
+#: ../../rfc/authentication.rst:231
+msgid ""
+"In the layers configuration we send to the user, if a layer is protected,"
+" the attribute ``serverLayerName`` is replaced by ``<api-"
+"host>/mapproxy``. All the requests coming to that end point are "
+"protected. The API checks that the user can do the selected operation on "
+"the layer. If so, the API forwards the request to the true server by "
+"getting the true ``serverLayerName``. If not, the API responds with 403."
+msgstr ""
+
+#: ../../rfc/authentication.rst:233
+msgid ""
+"If ``GetCapabilities`` requests must be allowed, we need to build the "
+"result from the list of layers the user can interact with."
+msgstr ""
+
+#: ../../rfc/authentication.rst:236
+msgid "Features requests"
+msgstr ""
+
+#: ../../rfc/authentication.rst:238
+msgid ""
+"If we use something like c2c with the small modifications listed above, "
+"we just have to filter in mapproxy."
+msgstr ""
+
+#: ../../rfc/authentication.rst:241
+msgid "Searches"
+msgstr ""
+
+#: ../../rfc/authentication.rst:244
+msgid "Layer searches"
+msgstr ""
+
+#: ../../rfc/authentication.rst:246
+msgid ""
+"When the TSV files is generated, we add two fields: *public* (boolean) "
+"and *allowed_roles*. If the user is not authenticated, we send back "
+"everything that is public. If the user is authenticated, we send back "
+"everything that is public and that match his/her role."
+msgstr ""
+
+#: ../../rfc/authentication.rst:250
+msgid ""
+"This implies for the script that create the TSV file to access the "
+"database or the API to get this information."
+msgstr ""
+
+#: ../../rfc/authentication.rst:254
+msgid ""
+"We could also make the script fill the database. That would make indexing"
+" easier and more reliable."
+msgstr ""
+
+#: ../../rfc/authentication.rst:257
+msgid "Locations"
+msgstr ""
+
+#: ../../rfc/authentication.rst:259
+msgid ""
+"We add two fields: *public* (boolean) and *allowed_roles* in the search "
+"view. If the user is not authenticated, we send back everything that is "
+"public. If the user is authenticated, we send back everything that is "
+"public and that match his/her role."
+msgstr ""
+
+#: ../../rfc/authentication.rst:263
+msgid "Opened Questions"
+msgstr ""
+
+#: ../../rfc/authentication.rst:265
+msgid "Should we display the of layers available once authenticated?"
+msgstr ""
+
+#: ../../rfc/authentication.rst:267
+msgid "**Proposal:** no."
+msgstr ""
+
+#: ../../rfc/authentication.rst:269
+msgid ""
+"How to handle the permalink? Is it a problem if the list of all layers "
+"added to the portal (including the ones that requires authentication) is "
+"visible (we can always use obfuscated identifiers for protected layers)? "
+"How to detect if a layer is protected to propose to the user to log in "
+"and see it?"
+msgstr ""
+
+#: ../../rfc/authentication.rst:271
+msgid ""
+"**Proposal:** the protected layers are handled like any other layers by "
+"the permalink. If the user is not authenticated or cannot see the layer, "
+"it will be automatically removed by the frontend. If the user is "
+"connected and can see the layer, it will be displayed. We let the user "
+"not give a permalink with protected layers to anyone. Anyway, the "
+"receiver won't be able to do anything with just the name of the layer."
+msgstr ""
+
+#: ../../rfc/authentication.rst:273
+msgid ""
+"Print: how can MFP validate a user is authenticated and can access to the"
+" layers passed in the print request? Is there a simple way to use the "
+"user name already given? Should we use a validation proxy? Should we "
+"create a MFP plugin for this?"
+msgstr ""
+
+#: ../../rfc/authentication.rst:275
+msgid "Interface: where should we put the connection popup?"
+msgstr ""
+
+#: ../../rfc/authentication.rst:277
+msgid "**Proposal:** below the links to change language."
+msgstr ""
+
+#: ../../rfc/authentication.rst:279
+msgid ""
+"Should we have an history for the connections? **Yes for security "
+"reasons.** Of the layers they accessed?"
+msgstr ""
+
+#: ../../rfc/authentication.rst:281
+msgid ""
+"**Proposal:** add a table ``ConnectionLog``. Each time a user logs in, a "
+"row is added to this table. This row will contain the id, the name and "
+"the date of last connection. This table should contain a fixed number of "
+"elements or a max conservation time (avoid to hide a wrong connection "
+"just by logging many times). Old elements could be collected when a user "
+"logs in. We should to the same with ``AccessLog`` if we want to store the"
+" access to each layers."
+msgstr ""
+
+#: ../../rfc/authentication.rst:283
+msgid "How to handle translations for protected elements?"
+msgstr ""
+

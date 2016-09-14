@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../dev/front.rst:2
+msgid "Front"
+msgstr ""
+
+#: ../../dev/front.rst:4
+msgid ""
+"The front is written is JavaScript with the `AngularJS "
+"<https://angularjs.org/>`__ framework and rely on the `Google Closure "
+"Compiler <https://developers.google.com/closure/compiler/>`__ to work."
+msgstr ""
+
+#: ../../dev/front.rst:6
+msgid ""
+"The build process relies on `geo-infra <https://github.com/ioda-net/geo-"
+"infra>`__. Before building the project, you must run ``npm install`` in "
+"the directory in which you cloned ``geo-front3`` in order to download all"
+" the dependencies. This is required to have some commands in "
+"``node_modules/.bin`` that are needed to build the project."
+msgstr ""
+
+#: ../../dev/front.rst
+msgid "Contents"
+msgstr ""
+
+#: ../../dev/front.rst:12
+msgid "Update from map.geo.admin.ch"
+msgstr ""
+
+#: ../../dev/front.rst:14
+msgid ""
+"Go the the `master` branch and update it with the code of swisstopo. "
+"Typically this is done by:"
+msgstr ""
+
+#: ../../dev/front.rst:16
+msgid "``git checkout master``"
+msgstr ""
+
+#: ../../dev/front.rst:17
+msgid "``git fetch upstream master``"
+msgstr ""
+
+#: ../../dev/front.rst:18
+msgid "``git rebase upstream/master``"
+msgstr ""
+
+#: ../../dev/front.rst:20
+msgid "Go to the branch ``devel``: ``git checkout devel``"
+msgstr ""
+
+#: ../../dev/front.rst:21
+msgid "Merge ``master`` into ``devel``: ``git merge master``"
+msgstr ""
+
+#: ../../dev/front.rst:22
+msgid ""
+"Solve the merge conflicts. See `Some tips to resolve merge conflicts`_ "
+"for help."
+msgstr ""
+
+#: ../../dev/front.rst:23
+msgid "Update Open Layers. See `How to update Open Layer`_ for the procedure."
+msgstr ""
+
+#: ../../dev/front.rst:24
+msgid "Commit the result."
+msgstr ""
+
+#: ../../dev/front.rst:25
+msgid ""
+"Push the result. **If the push fails because you have unpulled changes, "
+"do not try a rebase**: a rebase will cancel your merge commit (and will "
+"loose your merge work, unless you do a ``git rebase --abort``) and you "
+"will have to handle conflict for each commit from swisstopo you are "
+"merging into the current branch. So if that happens, do:"
+msgstr ""
+
+#: ../../dev/front.rst:27
+msgid "``git fetch origin devel`` to get the changes."
+msgstr ""
+
+#: ../../dev/front.rst:28
+msgid ""
+"``git merge origin/devel`` to merge them with a merge commit into your "
+"local branch."
+msgstr ""
+
+#: ../../dev/front.rst:29
+msgid "``git push`` to push the result."
+msgstr ""
+
+#: ../../dev/front.rst:32
+msgid "Some tips to resolve merge conflicts"
+msgstr ""
+
+#: ../../dev/front.rst:35
+msgid "Components removed"
+msgstr ""
+
+#: ../../dev/front.rst:37
+msgid "You can safely remove any files related to these components:"
+msgstr ""
+
+#: ../../dev/front.rst:39
+msgid "tooltip"
+msgstr ""
+
+#: ../../dev/front.rst:40
+msgid "query"
+msgstr ""
+
+#: ../../dev/front.rst:43
+msgid "Components rewritten"
+msgstr ""
+
+#: ../../dev/front.rst:45
+msgid "You can safely checkout any files that belong to these components:"
+msgstr ""
+
+#: ../../dev/front.rst:47
+msgid "print"
+msgstr ""
+
+#: ../../dev/front.rst:48
+msgid "wmsimport (rewritten into owsimport)"
+msgstr ""
+
+#: ../../dev/front.rst:51
+msgid "New components"
+msgstr ""
+
+#: ../../dev/front.rst:53
+msgid "Normally, they should be in the merge conflicts:"
+msgstr ""
+
+#: ../../dev/front.rst:55
+msgid "features"
+msgstr ""
+
+#: ../../dev/front.rst:56
+msgid "importows"
+msgstr ""
+
+#: ../../dev/front.rst:57
+msgid "webdav"
+msgstr ""
+
+#: ../../dev/front.rst:61
+msgid "How to update Open Layer"
+msgstr ""
+
+#: ../../dev/front.rst:63
+msgid ""
+"We need to build our own version of ``ol.js`` since we need some exports "
+"that Swisstopo doesn't. In order to do this, we have a scrip called "
+"``update-open-layers.sh``. Before committing the merge result, please "
+"launch it (you must be in the root folder of geo-front3):"
+msgstr ""
+
+#: ../../dev/front.rst:69
+msgid ""
+"The script will do everything for you. If the ``Makefile`` was updated by"
+" Swisstopo, check whether it impacts how OpenLayers is updated. If so, "
+"update the script accordingly before launching it."
+msgstr ""
+

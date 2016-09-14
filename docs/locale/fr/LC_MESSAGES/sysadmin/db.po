@@ -1,0 +1,320 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../sysadmin/db.rst:2
+msgid "Database"
+msgstr ""
+
+#: ../../sysadmin/db.rst
+msgid "Contents"
+msgstr ""
+
+#: ../../sysadmin/db.rst:7
+msgid "Schemas and functions"
+msgstr ""
+
+#: ../../sysadmin/db.rst:9
+msgid ""
+"In order for the API to work properly, some functions and schemas "
+"detailed below are required."
+msgstr ""
+
+#: ../../sysadmin/db.rst:12
+msgid "Functions"
+msgstr ""
+
+#: ../../sysadmin/db.rst:14
+msgid "In order for the API to work correctly, two functions are needed:"
+msgstr ""
+
+#: ../../sysadmin/db.rst:16
+msgid ""
+"``remove_accents`` to remove all accents from strings when indexing the "
+"search string."
+msgstr ""
+
+#: ../../sysadmin/db.rst:17
+msgid ""
+"``quadindex`` to calculate the quadindex for a geometry. This is used to "
+"filter search results."
+msgstr ""
+
+#: ../../sysadmin/db.rst:19
+msgid ""
+"You can find the code below and in the `functions.sql script "
+"<https://github.com/ioda-net/geo-"
+"infra/blob/master/scripts/sql/functions.sql>`__:"
+msgstr ""
+
+#: ../../sysadmin/db.rst:33
+msgid "Schemas"
+msgstr ""
+
+#: ../../sysadmin/db.rst:35
+msgid ""
+"In order for the API to work correctly, you will need the following "
+"schemas:"
+msgstr ""
+
+#: ../../sysadmin/db.rst:38
+msgid "Schema api3"
+msgstr ""
+
+#: ../../sysadmin/db.rst:40
+msgid ""
+"It is used by the API to store the shorten links and the id, type and "
+"access time of drawings. It must contains two tables:"
+msgstr ""
+
+#: ../../sysadmin/db.rst:42
+msgid "``url_shortener``"
+msgstr ""
+
+#: ../../sysadmin/db.rst:49
+msgid "``files``"
+msgstr ""
+
+#: ../../sysadmin/db.rst:57
+msgid "Schema features"
+msgstr ""
+
+#: ../../sysadmin/db.rst:59
+msgid ""
+"It is used by the API to make features request. It must at least contain "
+"the ``map_layers_features`` table described below. See the `features`_ "
+"section of this document to learn more."
+msgstr ""
+
+#: ../../sysadmin/db.rst:67
+msgid "Optional schemas"
+msgstr ""
+
+#: ../../sysadmin/db.rst:69
+msgid "We also advise you to create the schemas below:"
+msgstr ""
+
+#: ../../sysadmin/db.rst:74
+msgid "Schema search"
+msgstr ""
+
+#: ../../sysadmin/db.rst:76
+msgid ""
+"It can contain all tables/views used by sphinx to create its indexes. "
+"Instead of using custom SQL in your ``portal-locations.in.conf``, you can"
+" create views with the corrected columns:"
+msgstr ""
+
+#: ../../sysadmin/db.rst:78
+msgid "``id``"
+msgstr ""
+
+#: ../../sysadmin/db.rst:79
+msgid ""
+"``search_label``: this will be displayed to the user in the frontend. It "
+"can be the union of multiple columns from the table."
+msgstr ""
+
+#: ../../sysadmin/db.rst:80
+msgid ""
+"``search_string``: this will be parsed by sphinx. It can be the union of "
+"multiple columns from the table."
+msgstr ""
+
+#: ../../sysadmin/db.rst:81
+msgid ""
+"``geom_st_box2d``: this will be used by the frontend to center the user "
+"on the returned geometry. **This must be in the main EPSG of the "
+"portal.**. It can be defined as ``box2d(the_geom) AS geom_st_box2d``."
+msgstr ""
+
+#: ../../sysadmin/db.rst:82
+msgid ""
+"``y``: this will be used by the frontend to put a marker on the searched "
+"location. **This must be in the main EPSG of the portal.** It can be "
+"defined as ``st_x(the_geom) AS y``."
+msgstr ""
+
+#: ../../sysadmin/db.rst:83
+msgid ""
+"``x``: this will be used by the frontend to put a marker on the searched "
+"location.  **This must be in the main EPSG of the portal.** It can be "
+"defined as ``st_y(the_geom) AS x``."
+msgstr ""
+
+#: ../../sysadmin/db.rst:84
+msgid ""
+"``lat``: the latitude of the searched location. It can be defined as "
+"``st_y(st_transform(the_geom, 4326)) AS lat``."
+msgstr ""
+
+#: ../../sysadmin/db.rst:85
+msgid ""
+"``lon``: the longitude of the searched location. It can be defined as "
+"``st_x(st_transform(the_geom, 4326)) AS lon``."
+msgstr ""
+
+#: ../../sysadmin/db.rst:86
+msgid ""
+"``geom_quadindex``: it can be used to filter the results. It can be "
+"defined as ``quadindex(the_geom) AS geom_quadindex``"
+msgstr ""
+
+#: ../../sysadmin/db.rst:87
+msgid ""
+"``weight``: how to sort the results. Results with lower weights will come"
+" first. It can be defined as ``row_number() OVER (ORDER BY id) AS "
+"weight``."
+msgstr ""
+
+#: ../../sysadmin/db.rst:90
+msgid "Users and permissions"
+msgstr ""
+
+#: ../../sysadmin/db.rst:92
+msgid ""
+"In order to give only the permissions on the database needed by the "
+"different components, we suggest that you create the users below:"
+msgstr ""
+
+#: ../../sysadmin/db.rst:94
+msgid "A role for admin tasks: ``geo_dba``:"
+msgstr ""
+
+#: ../../sysadmin/db.rst:103
+msgid "A role for MapServer: ``geo_mapserver``"
+msgstr ""
+
+#: ../../sysadmin/db.rst:112
+msgid "A role for sphinx search: ``geo_searchd``"
+msgstr ""
+
+#: ../../sysadmin/db.rst:121
+msgid "A role for the API: ``geo_api``"
+msgstr ""
+
+#: ../../sysadmin/db.rst:130
+msgid ""
+"Each username and password can be changed, it just has to be coherent "
+"with the documentation. You can override:"
+msgstr ""
+
+#: ../../sysadmin/db.rst:132
+msgid ""
+"``geo_searchd`` in ``search.sphinx_sql_user`` and "
+"``search.sphinx_sql_pass`` from ``customer-"
+"infra/config/_commmon.dist.toml``"
+msgstr ""
+
+#: ../../sysadmin/db.rst:133
+msgid ""
+"``geo_mapserver`` in ``mapserver.PORTAL_DB_USER`` and "
+"``mapserver.PORTAL_DB_PASSWORD`` from ``customer-"
+"infra/config/_commmon.dist.toml`` (or directly in your Map files)"
+msgstr ""
+
+#: ../../sysadmin/db.rst:134
+msgid ""
+"``geo_api`` in ``db.host`` from ``geo-"
+"api3/config/config.<branchname>.toml``"
+msgstr ""
+
+#: ../../sysadmin/db.rst:136
+msgid ""
+"You set the permissions for each users with ``manuel db-grant-update``. "
+"Be sure that the values of ``DEFAULT_DB_OWNER``, "
+"``DEFAULT_DB_MAPSERVER_ROLE``, ``DEFAULT_DB_SEARCH_ROLE``, "
+"``DEFAULT_DB_API_ROLE``, ``DEFAULT_DB_HOST`` and ``DEFAULT_DB_NAME`` in "
+"``customer-infra/config/config.dist.sh`` are correct. To override some "
+"values only temporarily, use ``manuel help db-grant-update`` to the what "
+"arguments are available for this task. You can also run the script below "
+"on the proper database (replace ``DEFAULT_DB_OWNER``, "
+"``DEFAULT_DB_MAPSERVER_ROLE``, ``DEFAULT_DB_SEARCH_ROLE``, "
+"``DEFAULT_DB_API_ROLE`` by their correct values):"
+msgstr ""
+
+#: ../../sysadmin/db.rst:145
+msgid "Features"
+msgstr ""
+
+#: ../../sysadmin/db.rst:147
+msgid ""
+"The point of the ``features.map_layers_features`` table is to map the "
+"name of each feature view to the portal for which it is active and the "
+"layers for which it should be interrogated. Thanks to this mapping, the "
+"API can then auto-load all the feature views and create the appropriate "
+"Python classes for interrogation automatically. This allows us not to "
+"explicitly declare them in a Python file. This means, you can modify "
+"these views as you like (adding and removing columns) without needing to "
+"bother about the code of API."
+msgstr ""
+
+#: ../../sysadmin/db.rst:151
+msgid ""
+"After you add or remove columns, you must ask the API to reload the views"
+" by doing in ``geo-infra``:"
+msgstr ""
+
+#: ../../sysadmin/db.rst:157
+msgid ""
+"These views will then be used in identify requests. These requests "
+"contain:"
+msgstr ""
+
+#: ../../sysadmin/db.rst:159
+msgid ""
+"The name of the portal and the name of a layer. This allows us to select "
+"the appropriate views for a request."
+msgstr ""
+
+#: ../../sysadmin/db.rst:160
+msgid ""
+"A geometry that will be intersected with the one of the feature to find "
+"only the relevant features for this request."
+msgstr ""
+
+#: ../../sysadmin/db.rst:162
+msgid ""
+"We then return a JSON representation of the row. It will be presented to "
+"the user in a popup. This popup will contain a tab for each feature view "
+"and each tab will contain a table with a column per column in the feature"
+" view."
+msgstr ""
+
+#: ../../sysadmin/db.rst:164
+msgid "In order to work as expected, all the views must contain:"
+msgstr ""
+
+#: ../../sysadmin/db.rst:166
+msgid "a column named ``the_geom`` containing the geometry of the feature."
+msgstr ""
+
+#: ../../sysadmin/db.rst:167
+msgid "a column named ``gid`` that can be used as a primary key."
+msgstr ""
+
+#: ../../sysadmin/db.rst:168
+msgid ""
+"columns you want to return in the identify request. For instance: "
+"``name``, ``type``. We rely on some convention to automatically render "
+"some columns. See :ref:`the page about features <ref_user_cfg-"
+"portal_identify-features>` from the user manual to learn more about this."
+msgstr ""
+

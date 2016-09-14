@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../dev/customer.rst:2
+msgid "How to deal with code specific to a customer"
+msgstr ""
+
+#: ../../dev/customer.rst
+msgid "Contents"
+msgstr ""
+
+#: ../../dev/customer.rst:7
+msgid "In the API"
+msgstr ""
+
+#: ../../dev/customer.rst:9
+msgid ""
+"In the API, all codes specific to a customer are grouped into "
+"``chsdi/customers``. This folder is organized like this:"
+msgstr ""
+
+#: ../../dev/customer.rst:11
+msgid "``__init__.py`` to create the module."
+msgstr ""
+
+#: ../../dev/customer.rst:12
+msgid ""
+"``models/`` to put models specific to a customer. They should only be "
+"used in ``chsdi/customers/views/``."
+msgstr ""
+
+#: ../../dev/customer.rst:13
+msgid ""
+"``utils/`` for utilities. By default, it contains a ``search.py`` file in"
+" which all search keywords are stored. See :ref:`the section about "
+"keywords in the API page <ref_dev_api_search-keywords>` to learn more how"
+" search keywords are handled."
+msgstr ""
+
+#: ../../dev/customer.rst:14
+msgid ""
+"``views/`` for customer specific views. Create a file per view. When you "
+"add a view, update the ``register_customer_view`` function from "
+"``__init__.py`` in order for the view to be registered by Pyramid. This "
+"should look like:"
+msgstr ""
+
+#: ../../dev/customer.rst:23
+msgid "In the frontend"
+msgstr ""
+
+#: ../../dev/customer.rst:26
+msgid "Plugin System"
+msgstr ""
+
+#: ../../dev/customer.rst:28
+msgid ""
+"Plugins are a way to have code specific to a customer without changing "
+"the rest of the code."
+msgstr ""
+
+#: ../../dev/customer.rst:30
+msgid ""
+"To create a plugin, create a javascript file in ``geo-front3/plugins/``. "
+"The file must be named like this: ``<plugin_name>.js``. In this file, put"
+" the code you need in your plugin (probably a function). For instance:"
+msgstr ""
+
+#: ../../dev/customer.rst:38
+msgid ""
+"While writing the code of your plugin, keep in mind that it will be "
+"included in an object in the template below."
+msgstr ""
+
+#: ../../dev/customer.rst:43
+msgid ""
+"See the :ref:`section about plugins <ref_user_cfg-protal_plugins>` in the"
+" user manual to know how to active them."
+msgstr ""
+
+#: ../../dev/customer.rst:45
+msgid ""
+"They can the be used with the ``gf3Plugins`` service. For instance, to "
+"use a plugin named test plugin, use ``gf3Plugins.test()``. The arguments "
+"and behavior of the plugin depends on its definition."
+msgstr ""
+
+#: ../../dev/customer.rst:47
+msgid ""
+"To test if a plugin is enabled, test ``gf3Plugins.plugin_name !== "
+"undefined``."
+msgstr ""
+
+#: ../../dev/customer.rst:53
+msgid "Features"
+msgstr ""
+
+#: ../../dev/customer.rst:55
+msgid ""
+"In ``geo-front3/src/components/features/FeaturesTemplatesService.js``, we"
+" defined how each features will be rendered. Templates available for all "
+"customers must be in the ``defaultTemplates`` object from the ``devel`` "
+"branch. You can set customer specific templates in the "
+"``customerTemplates`` object on their branch. Each of these object must "
+"follow this rule:"
+msgstr ""
+
+#: ../../dev/customer.rst:57
+msgid "The key will be how the name of the column must end"
+msgstr ""
+
+#: ../../dev/customer.rst:58
+msgid ""
+"The content must be the HTML used to render the cell within a string (so "
+"it is valid javascript)."
+msgstr ""
+
+#: ../../dev/customer.rst:60
+msgid ""
+"For instance to render a cell whose name ends in ``_url`` as a clickable "
+"link, we need this HTML:"
+msgstr ""
+
+#: ../../dev/customer.rst:70
+msgid "We will use this code:"
+msgstr ""
+
+#: ../../dev/customer.rst:78
+msgid ""
+"The template will then be used in ``geo-"
+"front3/src/components/features/FeaturesService.js`` as the template to "
+"render the cell in `Ultimate Data Table <http://ultimate-"
+"datatable.readthedocs.org/>`__."
+msgstr ""
+
+#: ../../dev/customer.rst:80
+msgid ""
+"See the :ref:`relevant section <ref_user_cfg-portal_identify-"
+"features_special-columns-features>` of the user documentation to see what"
+" is handled by default."
+msgstr ""
+
