@@ -290,6 +290,8 @@ In that case, you must configure the search in your ``config/_common.dist.toml``
   buildings = 9
   admin = 13
 
+View the :ref:`relevant page of the documentation for more information on this<ref_user_cfg-portal_search>`.
+
 
 Print
 -----

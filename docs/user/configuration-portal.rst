@@ -192,6 +192,7 @@ You can also use the optional keys below:
 
     "selectedLayers": ["places", "buildings"]
 
+.. _ref_user_cfg-portal_search:
 
 Search
 ------
