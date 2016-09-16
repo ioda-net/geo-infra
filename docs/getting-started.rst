@@ -29,6 +29,7 @@ Requirements
 - `tomcat <http://tomcat.apache.org/>`__ 8.0 or above to deploy the print component
 - `Bash <http://www.gnu.org/software/bash>`__ 4 or above to launch the tasks
 - `git <https://git-scm.com/>`__ 2.0 or above to get the code
+- `proj <https://github.com/OSGeo/proj.4>`__ the cartographic projection software
 - sudo to launch some commands with your normal user. Your ``/etc/sudoers`` file must contains the following lines (edit it with ``visudo``):
 
   ::
