@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"POT-Creation-Date: 2016-09-16 15:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -114,5 +114,50 @@ msgstr ""
 msgid ""
 "If all your OWS requests respond with a 404 error, check that you have a "
 "trailing slash in your value of ``vhost.ows_path`` like that:"
+msgstr ""
+
+#: ../../debug.rst:90
+msgid "Installing GDAL in a venv"
+msgstr ""
+
+#: ../../debug.rst:92
+msgid ""
+"If you don't want to install GDAL globally or just want to put everything"
+" in the virtual env, you can use the steps bellow to install GDAL in a "
+"virtual env:"
+msgstr ""
+
+#: ../../debug.rst:94
+msgid "Install ``gdal-devel`` to be able to build the module"
+msgstr ""
+
+#: ../../debug.rst:95
+msgid "Enable the virtual venv"
+msgstr ""
+
+#: ../../debug.rst:96
+msgid ""
+"Download GDAL ``pip download GDAL`` If you don't want to install the "
+"latest version you can specify it like this ``pip download GDAL==2.0.1``"
+msgstr ""
+
+#: ../../debug.rst:97
+msgid ""
+"Uncompress the archive: ``tar -xzf GDAL-2.1.0.tar.gz`` (adapt the version"
+" if needed)."
+msgstr ""
+
+#: ../../debug.rst:98
+msgid "Go to the decompressed folder ``cd GDAL-2.1.0``"
+msgstr ""
+
+#: ../../debug.rst:99
+msgid ""
+"Build it: ``python setup.py build_ext --include-dirs=/usr/include/gdal`` "
+"(adapt the include path if necessary)"
+msgstr ""
+
+#: ../../debug.rst:100
+msgid "Install it: ``python setup.py install -O1 --skip-build``"
 msgstr ""
 

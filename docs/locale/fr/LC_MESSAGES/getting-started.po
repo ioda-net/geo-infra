@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"POT-Creation-Date: 2016-09-16 15:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,12 +59,24 @@ msgstr ""
 
 #: ../../getting-started.rst:19
 msgid ""
-"``mod_fcgid``. To enable ``mod_fcgid`` on Debian based systems install "
-"the ``libapache2-mod-fcgid`` package (``aptitude install libapache2-mod-"
-"fcgid``)"
+"``mod_filter``. To enable ``mod_filter`` on Debian based systems, use "
+"``a2enmode filter``"
 msgstr ""
 
 #: ../../getting-started.rst:20
+msgid ""
+"``mod_deflate``. To enable ``mod_deflate`` on Debian based systems, use "
+"``a2enmod deflate``"
+msgstr ""
+
+#: ../../getting-started.rst:21
+msgid ""
+"``mod_fcgid``. To enable ``mod_fcgid`` on Debian based systems install "
+"the ``libapache2-mod-fcgid`` package (``aptitude install libapache2-mod-"
+"fcgid``) and on openSuse, install ``apache2-mod_fcgid``."
+msgstr ""
+
+#: ../../getting-started.rst:22
 msgid ""
 "``mod_proxy``, ``mod_proxy_ajp`` and ``mod_proxy_http``. To enable "
 "``mod_proxy``, ``mod_proxy_ajp`` and ``mod_proxy_http`` on Debian based "
@@ -72,18 +84,18 @@ msgid ""
 "proxy_http``."
 msgstr ""
 
-#: ../../getting-started.rst:22
+#: ../../getting-started.rst:24
 msgid ""
 "`Python <https://www.python.org/>`__ 3.4 or above with virtualenv "
 "capabilities (probably in the ``python3-venv`` package or included with "
 "your Python 3 install)"
 msgstr ""
 
-#: ../../getting-started.rst:23
+#: ../../getting-started.rst:25
 msgid "`nodejs <http://nodejs.org/>`__ 4.0 or above"
 msgstr ""
 
-#: ../../getting-started.rst:24
+#: ../../getting-started.rst:26
 msgid ""
 "`MapServer <http://mapserver.org/>`__ 6.4.3+ (it will not work with "
 "6.4.1) or 7.0.1+ (package commonly named ``mapserver`` on most "
@@ -91,86 +103,104 @@ msgid ""
 "``mapserver-bin``)"
 msgstr ""
 
-#: ../../getting-started.rst:25
+#: ../../getting-started.rst:27
 msgid "`GDAL <http://www.gdal.org>`__ 2.0 or above with Python3 bindings"
 msgstr ""
 
-#: ../../getting-started.rst:26
+#: ../../getting-started.rst:28
 msgid ""
 "`Sphinx search <http://sphinxsearch.com/>`__ 2.2 or above for the search "
 "features (package commonly named ``sphinx`` on most distributions, on "
 "Debian system, use ``sphinxsearch`` in Jessie backports)"
 msgstr ""
 
-#: ../../getting-started.rst:27
+#: ../../getting-started.rst:29
 msgid ""
 "`tomcat <http://tomcat.apache.org/>`__ 8.0 or above to deploy the print "
 "component"
 msgstr ""
 
-#: ../../getting-started.rst:28
+#: ../../getting-started.rst:30
 msgid "`Bash <http://www.gnu.org/software/bash>`__ 4 or above to launch the tasks"
 msgstr ""
 
-#: ../../getting-started.rst:29
+#: ../../getting-started.rst:31
 msgid "`git <https://git-scm.com/>`__ 2.0 or above to get the code"
 msgstr ""
 
-#: ../../getting-started.rst:30
+#: ../../getting-started.rst:32
+msgid ""
+"`proj <https://github.com/OSGeo/proj.4>`__ the cartographic projection "
+"software"
+msgstr ""
+
+#: ../../getting-started.rst:33
 msgid ""
 "sudo to launch some commands with your normal user. Your ``/etc/sudoers``"
 " file must contains the following lines (edit it with ``visudo``):"
 msgstr ""
 
-#: ../../getting-started.rst:42
+#: ../../getting-started.rst:45
 msgid "The following libraries to correctly create the Python venv:"
 msgstr ""
 
-#: ../../getting-started.rst:44
+#: ../../getting-started.rst:47
 msgid "geos"
 msgstr ""
 
-#: ../../getting-started.rst:45
+#: ../../getting-started.rst:48
 msgid "geos-devel"
 msgstr ""
 
-#: ../../getting-started.rst:46
+#: ../../getting-started.rst:49
 msgid "postgresql-devel"
 msgstr ""
 
-#: ../../getting-started.rst:47
+#: ../../getting-started.rst:50
 msgid "libxml2-devel"
 msgstr ""
 
-#: ../../getting-started.rst:48
+#: ../../getting-started.rst:51
 msgid "libxslt-devel"
 msgstr ""
 
-#: ../../getting-started.rst:50
-msgid "On debian based system, use this list:"
-msgstr ""
-
 #: ../../getting-started.rst:52
-msgid "libgeos-c1"
+msgid "python3-devel"
 msgstr ""
 
-#: ../../getting-started.rst:53
-msgid "libgeos-dev"
-msgstr ""
-
-#: ../../getting-started.rst:54
-msgid "libxml2-dev"
+#: ../../getting-started.rst:53 ../../getting-started.rst:62
+msgid "gcc"
 msgstr ""
 
 #: ../../getting-started.rst:55
-msgid "libxslt-dev"
+msgid "On debian based system, use this list:"
+msgstr ""
+
+#: ../../getting-started.rst:57
+msgid "libgeos-c1"
+msgstr ""
+
+#: ../../getting-started.rst:58
+msgid "libgeos-dev"
 msgstr ""
 
 #: ../../getting-started.rst:59
-msgid "Before we start"
+msgid "libxml2-dev"
+msgstr ""
+
+#: ../../getting-started.rst:60
+msgid "libxslt-dev"
 msgstr ""
 
 #: ../../getting-started.rst:61
+msgid "python3-dev"
+msgstr ""
+
+#: ../../getting-started.rst:66
+msgid "Before we start"
+msgstr ""
+
+#: ../../getting-started.rst:68
 msgid ""
 "All tasks are launched here with `manuel "
 "<https://github.com/ShaneKilkelly/manuel>`__, a task runner written in "
@@ -180,89 +210,89 @@ msgid ""
 "<https://github.com/ShaneKilkelly/manuel/blob/master/manuel.autocomplete.zsh>`__."
 msgstr ""
 
-#: ../../getting-started.rst:63
+#: ../../getting-started.rst:70
 msgid ""
 "To launch ``manuel`` without always appending ``./`` copy ``geo-"
 "infra/manuel`` to your ``~/bin`` folder."
 msgstr ""
 
-#: ../../getting-started.rst:65
+#: ../../getting-started.rst:72
 msgid ""
 "To get help about any task (description of what it does and its "
 "arguments), use ``manuel help TASK``. For instance, ``manuel help help``."
 msgstr ""
 
-#: ../../getting-started.rst:69
+#: ../../getting-started.rst:76
 msgid "Setup the portal"
 msgstr ""
 
-#: ../../getting-started.rst:71
+#: ../../getting-started.rst:78
 msgid ""
 "Clone all the repositories listed below in the same folder "
 "[#clone_all_same_folder]_:"
 msgstr ""
 
-#: ../../getting-started.rst:73
+#: ../../getting-started.rst:80
 msgid ""
 "The main infrastructure directory: ``git clone https://github.com/ioda-"
 "net/geo-infra.git``"
 msgstr ""
 
-#: ../../getting-started.rst:74
+#: ../../getting-started.rst:81
 msgid "The API: ``git clone https://github.com/ioda-net/geo-api3.git``"
 msgstr ""
 
-#: ../../getting-started.rst:75
+#: ../../getting-started.rst:82
 msgid "The frontend: ``git clone https://github.com/ioda-net/geo-front3.git``"
 msgstr ""
 
-#: ../../getting-started.rst:76
+#: ../../getting-started.rst:83
 msgid ""
 "The sample customer infra: ``git clone https://github.com/ioda-net"
 "/customer-infra.git``"
 msgstr ""
 
-#: ../../getting-started.rst:78 ../../getting-started.rst:336
+#: ../../getting-started.rst:85 ../../getting-started.rst:345
 msgid "Switch to ``customer-infra``:"
 msgstr ""
 
-#: ../../getting-started.rst:80
+#: ../../getting-started.rst:87
 msgid ""
 "Download the ShapeFiles for Swisstzerland from `geofabrik "
 "<http://download.geofabrik.de/europe/switzerland-latest.shp.zip>`__ and "
 "uncompress it in ``customer-infra/data``:"
 msgstr ""
 
-#: ../../getting-started.rst:82
+#: ../../getting-started.rst:89
 msgid "``wget http://download.geofabrik.de/europe/switzerland-latest.shp.zip``"
 msgstr ""
 
-#: ../../getting-started.rst:83
+#: ../../getting-started.rst:90
 msgid "``unzip -d data/osm-switzerland switzerland-latest.shp.zip``"
 msgstr ""
 
-#: ../../getting-started.rst:84
+#: ../../getting-started.rst:91
 msgid ""
 "You should now have a ``customer-infra/data/osm-swisstzeland`` folder "
 "containing various ShapeFiles."
 msgstr ""
 
-#: ../../getting-started.rst:86
+#: ../../getting-started.rst:93
 msgid "Add the symlink to the fonts:"
 msgstr ""
 
-#: ../../getting-started.rst:92
+#: ../../getting-started.rst:99
 msgid "or on Debian system:"
 msgstr ""
 
-#: ../../getting-started.rst:98
+#: ../../getting-started.rst:105
 msgid ""
 "Update the configuration: in order to correctly test ``customer-infra`` "
 "for development, you only need to create ``customer-"
 "infra/config/dev/_common.dev.toml`` with the content below."
 msgstr ""
 
-#: ../../getting-started.rst:105
+#: ../../getting-started.rst:112
 msgid ""
 "In this folder, create a symlink to your mapserver executable named after"
 " the portal. For instance, using the values of "
@@ -270,20 +300,20 @@ msgid ""
 "~/geoportal-infras/cgi-bin/demo``."
 msgstr ""
 
-#: ../../getting-started.rst:107
+#: ../../getting-started.rst:114
 msgid "Switch to ``geo-front3``:"
 msgstr ""
 
-#: ../../getting-started.rst:109
+#: ../../getting-started.rst:116
 msgid "Launch ``npm install`` to install the node modules."
 msgstr ""
 
-#: ../../getting-started.rst:111 ../../getting-started.rst:205
-#: ../../getting-started.rst:290
+#: ../../getting-started.rst:118 ../../getting-started.rst:212
+#: ../../getting-started.rst:299
 msgid "Switch to ``geo-infra``:"
 msgstr ""
 
-#: ../../getting-started.rst:113
+#: ../../getting-started.rst:120
 msgid ""
 "Install the python dependencies listed in ``requires.txt``. You can "
 "install them globally with ``sudo pip install -r requires.txt`` or in a "
@@ -292,25 +322,25 @@ msgid ""
 "dependencies in a venv, follow the steps below:"
 msgstr ""
 
-#: ../../getting-started.rst:115
+#: ../../getting-started.rst:122
 msgid "Create it: ``python3 -m venv .venv``"
 msgstr ""
 
-#: ../../getting-started.rst:116
+#: ../../getting-started.rst:123
 msgid ""
 "Activate it: ``source .venv/bin/activate`` **This must be done once "
 "before launching any command with manuel.**"
 msgstr ""
 
-#: ../../getting-started.rst:117
+#: ../../getting-started.rst:124
 msgid "Install the deps: ``pip install -r requires.txt``"
 msgstr ""
 
-#: ../../getting-started.rst:118
+#: ../../getting-started.rst:125
 msgid "Install ``glob2`` if needed: ``pip install glob2``"
 msgstr ""
 
-#: ../../getting-started.rst:120
+#: ../../getting-started.rst:127
 msgid ""
 "Include all files in ``customer-infra/dev/vhosts.d`` in your apache "
 "configuration. This can be done be editing ``/etc/httpd/conf/httpd.conf``"
@@ -319,33 +349,33 @@ msgid ""
 "/customer-infra/dev/vhosts.d/*.conf``."
 msgstr ""
 
-#: ../../getting-started.rst:121
+#: ../../getting-started.rst:128
 msgid "Create the vhost: ``./manuel vhost demo``."
 msgstr ""
 
-#: ../../getting-started.rst:122
+#: ../../getting-started.rst:129
 msgid ""
 "Create a symlink named ``mapserv`` to your MapServer executable in ``cgi-"
 "bin``. Eg: ``ln -s /usr/bin/mapserv cgi-bin/mapserv``."
 msgstr ""
 
-#: ../../getting-started.rst:123
+#: ../../getting-started.rst:130
 msgid "Generate the utility files: ``./manuel dev demo``."
 msgstr ""
 
-#: ../../getting-started.rst:124
+#: ../../getting-started.rst:131
 msgid "Generate the frontend: ``./manuel front dev demo``."
 msgstr ""
 
-#: ../../getting-started.rst:125
+#: ../../getting-started.rst:132
 msgid "Add ``demo.geoportal.local`` to you ``/etc/hosts``."
 msgstr ""
 
-#: ../../getting-started.rst:126
+#: ../../getting-started.rst:133
 msgid "Open http://demo.geoportal.local."
 msgstr ""
 
-#: ../../getting-started.rst:127
+#: ../../getting-started.rst:134
 msgid ""
 "You should see a portal. It should be similar to the image below. Please "
 "note that only map navigation is functionnal at this stage. The features "
@@ -353,54 +383,56 @@ msgid ""
 "print, will be enabled in the sections below."
 msgstr ""
 
-#: ../../getting-started.rst:132
+#: ../../getting-started.rst:139
 msgid "Demo portal home page"
 msgstr ""
 
-#: ../../getting-started.rst:134
+#: ../../getting-started.rst:141
 msgid ""
 "They can be arranged differently later if you override the proper values "
 "in ``geo-infra/config/config.sh``"
 msgstr ""
 
-#: ../../getting-started.rst:138
+#: ../../getting-started.rst:145
 msgid "API"
 msgstr ""
 
-#: ../../getting-started.rst:140
+#: ../../getting-started.rst:147
 msgid "Switch to ``geo-api3``:"
 msgstr ""
 
-#: ../../getting-started.rst:142
+#: ../../getting-started.rst:149
 msgid ""
 "Update the configuration. To do that, create a file named "
 "``config/config.devel.toml`` and adapt the content below to your use "
 "case:"
 msgstr ""
 
-#: ../../getting-started.rst:174
+#: ../../getting-started.rst:181
 msgid ""
 "Download the `sample sqlite database file </data/getting-"
 "started/customer_infra.sqlite>`__ into the ``geo-api3`` folder:"
 msgstr ""
 
-#: ../../getting-started.rst:176
-msgid "``wget http://docs.ioda.local/data/getting-started/customer_infra.sqlite``"
+#: ../../getting-started.rst:183
+msgid ""
+"``wget https://docs.geoportal.xyz/data/getting-"
+"started/customer_infra.sqlite``"
 msgstr ""
 
-#: ../../getting-started.rst:178
+#: ../../getting-started.rst:185
 msgid "Create the proper venv with ``./manuel venv``"
 msgstr ""
 
-#: ../../getting-started.rst:179
+#: ../../getting-started.rst:186
 msgid "Update the ini files used by Pyramid: ``./manuel ini-files``."
 msgstr ""
 
-#: ../../getting-started.rst:180
+#: ../../getting-started.rst:187
 msgid "Launch the API: ``./manuel serve``."
 msgstr ""
 
-#: ../../getting-started.rst:184
+#: ../../getting-started.rst:191
 msgid ""
 "If the command fails due to ``ImportError: No module named 'osgeo'``, "
 "check that the osgeo module from system install is available in the "
@@ -409,18 +441,18 @@ msgid ""
 "Debian, put this value:"
 msgstr ""
 
-#: ../../getting-started.rst:190
+#: ../../getting-started.rst:197
 msgid ""
 "If you go to the portal, the QR codes, short link and features "
 "identification should work as expected. Search will be enable in the next"
 " section."
 msgstr ""
 
-#: ../../getting-started.rst:195
+#: ../../getting-started.rst:202
 msgid "Portal page with QR code and short link"
 msgstr ""
 
-#: ../../getting-started.rst:199
+#: ../../getting-started.rst:206
 msgid ""
 "If you test the get features capability, you will only get a very basic "
 "presentation: it is what MapServer returns to the GetFeatures request. "
@@ -428,173 +460,179 @@ msgid ""
 "relevant section of the documentation <ref_sysadmin_db_features>`."
 msgstr ""
 
-#: ../../getting-started.rst:203
+#: ../../getting-started.rst:210
 msgid "Search"
 msgstr ""
 
-#: ../../getting-started.rst:207
+#: ../../getting-started.rst:214
 msgid "Create global search configuration:"
 msgstr ""
 
-#: ../../getting-started.rst:213
+#: ../../getting-started.rst:220
 msgid ""
 "At this point, this command should return with this error: ``Job for "
 "searchd@customer-infra.service failed because the control process exited "
 "with error code.`` This is expected."
 msgstr ""
 
-#: ../../getting-started.rst:214
+#: ../../getting-started.rst:221
 msgid ""
 "Add a symlink to the newly created sphinx configuration (*this must be "
 "done as root*):"
 msgstr ""
 
-#: ../../getting-started.rst:222
+#: ../../getting-started.rst:229
 msgid ""
 "On Debian based systems, before creating the symlink, you must (*as "
 "root*):"
 msgstr ""
 
-#: ../../getting-started.rst:224
+#: ../../getting-started.rst:231
 msgid "Create the ``/etc/sphinx/`` directory: ``mkdir /etc/sphinx/``"
 msgstr ""
 
-#: ../../getting-started.rst:225
+#: ../../getting-started.rst:232
 msgid ""
 "Change its owner to ``sphinxsearch``: ``chown -R "
 "sphinxsearch:sphinxsearch /etc/sphinx``"
 msgstr ""
 
-#: ../../getting-started.rst:227
+#: ../../getting-started.rst:234
 msgid ""
 "Create sphinx infrastructure specific directories (*this must be done as "
 "root*):"
 msgstr ""
 
-#: ../../getting-started.rst:229
+#: ../../getting-started.rst:236
 msgid "Create: ``mkdir -p /var/lib/sphinx/customer-infra/{binlog,index}``"
 msgstr ""
 
-#: ../../getting-started.rst:230
+#: ../../getting-started.rst:237
 msgid ""
 "Set proper owner: ``chown -R sphinx:sphinx /var/lib/sphinx/customer-"
 "infra``"
 msgstr ""
 
-#: ../../getting-started.rst:231
+#: ../../getting-started.rst:238
 msgid "Create log dir: ``mkdir -p /var/log/sphinx``"
 msgstr ""
 
-#: ../../getting-started.rst:232
+#: ../../getting-started.rst:239
 msgid "Set proper owner: ``chown -R sphinx:sphinx /var/log/sphinx``"
 msgstr ""
 
-#: ../../getting-started.rst:233
+#: ../../getting-started.rst:240
 msgid "Create run dir for PID: ``mkdir -p /var/run/sphinx``"
 msgstr ""
 
-#: ../../getting-started.rst:234
+#: ../../getting-started.rst:241
 msgid "Set proper owner: ``chown -R sphinx:sphinx /var/run/sphinx``"
 msgstr ""
 
-#: ../../getting-started.rst:238
+#: ../../getting-started.rst:245
 msgid "On Debian based system:"
 msgstr ""
 
-#: ../../getting-started.rst:240
+#: ../../getting-started.rst:247
 msgid "The correct user is ``sphinxsearch``"
 msgstr ""
 
-#: ../../getting-started.rst:241
+#: ../../getting-started.rst:248
 msgid ""
 "Don't attempt to create the directories above in "
 "``/var/lib/sphinxsearch`` the process will be configured to look in "
 "``/var/lib/sphinx``"
 msgstr ""
 
-#: ../../getting-started.rst:243
+#: ../../getting-started.rst:250
 msgid ""
 "Deploy the unit files for this infrastructure (*this must be done as "
 "root*):"
 msgstr ""
 
-#: ../../getting-started.rst:245
+#: ../../getting-started.rst:252
 msgid ""
 "Copy the service files: ``cp /path/to/geo-infra/searchd@.service "
 "/etc/systemd/system/``"
 msgstr ""
 
-#: ../../getting-started.rst:249
+#: ../../getting-started.rst:256
 msgid ""
 "On Debian based systems, you must correct the user to ``sphinxsearch`` in"
 " the unit file."
 msgstr ""
 
-#: ../../getting-started.rst:251
+#: ../../getting-started.rst:258
 msgid "Reload systemd daemons: ``systemctl daemon-reload``"
 msgstr ""
 
-#: ../../getting-started.rst:253
+#: ../../getting-started.rst:260
 msgid ""
 "Download the `data needed by sphinx to build its indexes </data/getting-"
 "started/places.csv>`__ and put in it ``customer-infra/data``:"
 msgstr ""
 
-#: ../../getting-started.rst:255
+#: ../../getting-started.rst:262
 msgid "``cd /path/to/customer-infra/data``"
 msgstr ""
 
-#: ../../getting-started.rst:256
-msgid "``wget http://docs.ioda.local/data/getting-started/places.csv``"
-msgstr ""
-
-#: ../../getting-started.rst:258
-msgid "Start sphinx: ``./manuel restart-service search customer-infra``"
-msgstr ""
-
-#: ../../getting-started.rst:259
-msgid "Trigger an reindex: ``./manuel reindex customer-infra``"
-msgstr ""
-
-#: ../../getting-started.rst:260
-msgid "Search should work as expected."
-msgstr ""
-
 #: ../../getting-started.rst:263
-msgid "Search with a database"
+msgid "``wget https://docs.geoportal.xyz/data/getting-started/places.csv``"
 msgstr ""
 
 #: ../../getting-started.rst:265
+msgid "Start sphinx: ``./manuel restart-service search customer-infra``"
+msgstr ""
+
+#: ../../getting-started.rst:266
+msgid "Trigger an reindex: ``./manuel reindex customer-infra``"
+msgstr ""
+
+#: ../../getting-started.rst:267
+msgid "Search should work as expected."
+msgstr ""
+
+#: ../../getting-started.rst:270
+msgid "Search with a database"
+msgstr ""
+
+#: ../../getting-started.rst:272
 msgid ""
 "In real case senario, you probably want the locations to come from your "
 "database and not some CSV file. To do that, you can use the template "
 "below as ``customer-infra/search/portal-locations.in.conf``:"
 msgstr ""
 
-#: ../../getting-started.rst:269
+#: ../../getting-started.rst:276
 msgid ""
 "In that case, you must configure the search in your "
 "``config/_common.dist.toml`` to have access to the database and to "
 "convert origins to ranks:"
 msgstr ""
 
-#: ../../getting-started.rst:288
+#: ../../getting-started.rst:293
+msgid ""
+"View the :ref:`relevant page of the documentation for more information on"
+" this<ref_user_cfg-portal_search>`."
+msgstr ""
+
+#: ../../getting-started.rst:297
 msgid "Print"
 msgstr ""
 
-#: ../../getting-started.rst:292
+#: ../../getting-started.rst:301
 msgid "Download the `print WAR </data/getting-started/print.war>`__:"
 msgstr ""
 
-#: ../../getting-started.rst:294
-msgid "``wget http://docs.ioda.local/data/getting-started/print.war``"
+#: ../../getting-started.rst:303
+msgid "``wget https://docs.geoportal.xyz/data/getting-started/print.war``"
 msgstr ""
 
-#: ../../getting-started.rst:296
+#: ../../getting-started.rst:305
 msgid "Do the following actions as root:"
 msgstr ""
 
-#: ../../getting-started.rst:298
+#: ../../getting-started.rst:307
 msgid ""
 "Copy the WAR in your tomcat webapps folder (eg "
 "``/usr/share/tomcat/webapps``, ``/srv/tomcat/webapps/`` or "
@@ -602,47 +640,47 @@ msgid ""
 "infra.war``."
 msgstr ""
 
-#: ../../getting-started.rst:299
+#: ../../getting-started.rst:308
 msgid "Start tomcat: ``systemctl start tomcat``"
 msgstr ""
 
-#: ../../getting-started.rst:303
+#: ../../getting-started.rst:312
 msgid "On Debian based systems, the target is named ``tomcat8``"
 msgstr ""
 
-#: ../../getting-started.rst:305
+#: ../../getting-started.rst:314
 msgid "Go to the tomcat webapps folder."
 msgstr ""
 
-#: ../../getting-started.rst:306
+#: ../../getting-started.rst:315
 msgid "Check that ``print-customer-infra.war`` is correctly deployed."
 msgstr ""
 
-#: ../../getting-started.rst:307
+#: ../../getting-started.rst:316
 msgid ""
 "Create the ``print-customer-infra/print-apps`` directory and make it "
 "owned by tomcat:"
 msgstr ""
 
-#: ../../getting-started.rst:309
+#: ../../getting-started.rst:318
 msgid "``mkdir print-customer-infra/print-apps``"
 msgstr ""
 
-#: ../../getting-started.rst:310
+#: ../../getting-started.rst:319
 msgid "``chown tomcat:tomcat print-customer-infra/print-apps``"
 msgstr ""
 
-#: ../../getting-started.rst:314
+#: ../../getting-started.rst:323
 msgid "On Debian based systems, the correct user is ``tomcat8``."
 msgstr ""
 
-#: ../../getting-started.rst:316
+#: ../../getting-started.rst:325
 msgid ""
 "Check and correct permissions on ``<tomcat-webapps>/print-customer-infra"
 "/print-apps``:"
 msgstr ""
 
-#: ../../getting-started.rst:318
+#: ../../getting-started.rst:327
 msgid ""
 "Check that with the user you are using to run ``./manuel`` in ``geo-"
 "infra`` you can access this directory. If ``ls <tomcat-webapps>/print-"
@@ -651,29 +689,29 @@ msgid ""
 "folders on the path."
 msgstr ""
 
-#: ../../getting-started.rst:319
+#: ../../getting-started.rst:328
 msgid ""
 "Setup ACL to give the user write permissions to the directory (**don't "
 "use standard unix permissions, it breaks tomcat's expectations**): "
 "``setfacl -m u:<user>:rwx print-customer-infra/print-apps``."
 msgstr ""
 
-#: ../../getting-started.rst:321
+#: ../../getting-started.rst:330
 msgid ""
 "Check that tomcat has an AJP connector defined on port 8009 in "
 "``/etc/server.xml``. If not, add the line below in the ``<Service "
 "name=\"Catalina\">`` section:"
 msgstr ""
 
-#: ../../getting-started.rst:327
+#: ../../getting-started.rst:336
 msgid "Restart tomcat ``systemctl resart tomcat``"
 msgstr ""
 
-#: ../../getting-started.rst:329
+#: ../../getting-started.rst:338
 msgid "Go to ``geo-infra``"
 msgstr ""
 
-#: ../../getting-started.rst:330
+#: ../../getting-started.rst:339
 msgid ""
 "Export your value of MPF_APP_FOLDER to allow manuel to copy it to the "
 "correct location. For instance: ``export "
@@ -681,25 +719,25 @@ msgid ""
 "apps/\"``"
 msgstr ""
 
-#: ../../getting-started.rst:331
+#: ../../getting-started.rst:340
 msgid "Copy print configuration: ``./manuel tomcat-copy-conf \"dev\" demo``"
 msgstr ""
 
-#: ../../getting-started.rst:332
+#: ../../getting-started.rst:341
 msgid ""
 "Check that you have a ``demo`` folder in ``<tomcat-webapps>/print-"
 "customer-infra/print-apps``."
 msgstr ""
 
-#: ../../getting-started.rst:333
+#: ../../getting-started.rst:342
 msgid "If so, try to print in the portal. It should work as expected."
 msgstr ""
 
-#: ../../getting-started.rst:334
+#: ../../getting-started.rst:343
 msgid "Unset the MFP_APP_FOLDER variable: ``unset MFP_APP_FOLDER``"
 msgstr ""
 
-#: ../../getting-started.rst:338
+#: ../../getting-started.rst:347
 msgid ""
 "In ``config/config.sh`` add a line like this: ``set-var MFP_APP_FOLDER "
 "\"/usr/share/tomcat/webapps/print-customer-infra/print-apps/\"`` that "
@@ -707,14 +745,32 @@ msgid ""
 "automatically by the scripts."
 msgstr ""
 
-#: ../../getting-started.rst:342
+#: ../../getting-started.rst:351
 msgid "Conclusion"
 msgstr ""
 
-#: ../../getting-started.rst:344
+#: ../../getting-started.rst:353
 msgid ""
 "Everything should work correctly now. You can now rebuild the "
 "configuration of the portal with ``./manuel dev demo`` or rebuild "
 "everything with ``./manuel dev-full demo``."
 msgstr ""
+
+#~ msgid ""
+#~ "``mod_fcgid``. To enable ``mod_fcgid`` on "
+#~ "Debian based systems install the "
+#~ "``libapache2-mod-fcgid`` package (``aptitude "
+#~ "install libapache2-mod-fcgid``)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``wget http://docs.ioda.local/data/getting-"
+#~ "started/customer_infra.sqlite``"
+#~ msgstr ""
+
+#~ msgid "``wget http://docs.ioda.local/data/getting-started/places.csv``"
+#~ msgstr ""
+
+#~ msgid "``wget http://docs.ioda.local/data/getting-started/print.war``"
+#~ msgstr ""
 

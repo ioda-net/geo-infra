@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"POT-Creation-Date: 2016-09-16 15:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,7 +65,7 @@ msgstr ""
 msgid ""
 "``mod_fcgid``. To enable ``mod_fcgid`` on Debian based systems install "
 "the ``libapache2-mod-fcgid`` package (``aptitude install libapache2-mod-"
-"fcgid``)"
+"fcgid``) and on openSuse, install ``apache2-mod_fcgid``."
 msgstr ""
 
 #: ../../sysadmin/server-setup.rst:25
@@ -140,75 +140,81 @@ msgstr ""
 
 #: ../../sysadmin/server-setup.rst:38
 msgid ""
+"`proj <https://github.com/OSGeo/proj.4>`__ the cartographic projection "
+"software"
+msgstr ""
+
+#: ../../sysadmin/server-setup.rst:39
+msgid ""
 "A database system with GIS support. Currently, we only support "
 "`PostgreSQL <https://www.postgresql.org/>`__ with `PostGIS "
 "<http://postgis.net/>`__ for production usages."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:42
+#: ../../sysadmin/server-setup.rst:43
 msgid "Requirements for a usage with a virtualenv"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:44
+#: ../../sysadmin/server-setup.rst:45
 msgid "The following libraries to correctly create the python venv of the API:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:46
+#: ../../sysadmin/server-setup.rst:47
 msgid "geos"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:47
+#: ../../sysadmin/server-setup.rst:48
 msgid "geos-devel"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:48
+#: ../../sysadmin/server-setup.rst:49
 msgid "postgresql-devel"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:49
+#: ../../sysadmin/server-setup.rst:50
 msgid "libxml2-devel"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:50
+#: ../../sysadmin/server-setup.rst:51
 msgid "libxslt-devel"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:52
+#: ../../sysadmin/server-setup.rst:53
 msgid "On debian based system, use this list:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:54
+#: ../../sysadmin/server-setup.rst:55
 msgid "libgeos-c1"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:55
+#: ../../sysadmin/server-setup.rst:56
 msgid "libgeos-dev"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:56
+#: ../../sysadmin/server-setup.rst:57
 msgid "libxml2-dev"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:57
+#: ../../sysadmin/server-setup.rst:58
 msgid "libxslt-dev"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:61
+#: ../../sysadmin/server-setup.rst:62
 msgid "Requirements without a virtualenv"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:63
+#: ../../sysadmin/server-setup.rst:64
 msgid ""
 "To view the full list of Python 3 packages necessary for the API, take a "
 "look at `this file <https://github.com/ioda-net/geo-"
 "api3/blob/devel/requirements.txt>`__."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:69
+#: ../../sysadmin/server-setup.rst:70
 msgid "Production configurations"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:71
+#: ../../sysadmin/server-setup.rst:72
 msgid ""
 "Review the production configurations. The script containing the "
 "production values for deployment is located in ``customer-"
@@ -217,7 +223,7 @@ msgid ""
 "infra/blob/master/config/config.dist.sh>`__."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:73
+#: ../../sysadmin/server-setup.rst:74
 msgid ""
 "You should also check that the configuration for the vhost are correct "
 "(domain, HTTPS certificates). This will be located in ``customer-"
@@ -225,11 +231,11 @@ msgid ""
 "overridden in portal specific files. The section looks like this:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:93
+#: ../../sysadmin/server-setup.rst:94
 msgid "sudo"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:95
+#: ../../sysadmin/server-setup.rst:96
 msgid ""
 "You will need sudo to launch some commands with the user used to deploy "
 "the portals. Your ``/etc/sudoers`` file must contains the lines below. "
@@ -238,46 +244,46 @@ msgid ""
 "``$PROD_USER``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:110
+#: ../../sysadmin/server-setup.rst:111
 msgid "Production scripts"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:112
+#: ../../sysadmin/server-setup.rst:113
 msgid ""
 "In order to be sure that tomcat, apache, search can restart and that a "
 "reindex can be triggered, we invite you to create scripts available in "
 "the PATH of the user that will do the deployment. These scripts are:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:114
+#: ../../sysadmin/server-setup.rst:115
 msgid "``sudo_tomcat_restart``. It may contain:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:120
+#: ../../sysadmin/server-setup.rst:121
 msgid "``sudo_apache_restart``. It may contain:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:126
+#: ../../sysadmin/server-setup.rst:127
 msgid "``sudo_apache_reload``. It may contain:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:132
+#: ../../sysadmin/server-setup.rst:133
 msgid "``sudo_search_restart``. It may contain:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:138
+#: ../../sysadmin/server-setup.rst:139
 msgid "``sudo_search_reindex``. It may contain:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:144
+#: ../../sysadmin/server-setup.rst:145
 msgid "``sudo_tomcat_copyconf``. It may contain:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:158
+#: ../../sysadmin/server-setup.rst:159
 msgid "vhosts"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:160
+#: ../../sysadmin/server-setup.rst:161
 msgid ""
 "Include all files in ``$PROD_GIT_REPOS_LOCATION/vhosts.d`` in your apache"
 " configuration. This can be done be editing "
@@ -288,18 +294,18 @@ msgid ""
 " about ``$PROD_GIT_REPOS_LOCATION``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:163
+#: ../../sysadmin/server-setup.rst:164
 msgid "Print"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:167
+#: ../../sysadmin/server-setup.rst:168
 msgid ""
 "Printing a map relies on `MapFish Print <https://github.com/mapfish"
 "/mapfish-print>`__ a Java servlet developed by `Camptocamp SA "
 "<http://www.camptocamp.com/en/>`__."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:169
+#: ../../sysadmin/server-setup.rst:170
 msgid ""
 "You can either build it from scratch from `the source "
 "<https://github.com/mapfish/mapfish-print>`__ or use our `last build "
@@ -307,7 +313,7 @@ msgid ""
 "following actions as root:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:171
+#: ../../sysadmin/server-setup.rst:172
 msgid ""
 "Copy the WAR in your tomcat webapps folder (eg "
 "``/usr/share/tomcat/webapps``, ``/srv/tomcat/webapps/`` or "
@@ -315,40 +321,40 @@ msgid ""
 "infra.war``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:172
+#: ../../sysadmin/server-setup.rst:173
 msgid "Start tomcat: ``systemctl start tomcat``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:176
+#: ../../sysadmin/server-setup.rst:177
 msgid "On Debian based systems, the target is named ``tomcat8``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:178
+#: ../../sysadmin/server-setup.rst:179
 msgid "Go to the tomcat webapps folder."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:179
+#: ../../sysadmin/server-setup.rst:180
 msgid "Check that ``print-customer-infra.war`` is correctly deployed."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:180
+#: ../../sysadmin/server-setup.rst:181
 msgid ""
 "Create the ``print-customer-infra/print-apps`` directory and make it "
 "owned by tomcat: ``mkdir print-customer-infra/print-apps && chown "
 "tomcat:tomcat print-customer-infra/print-apps``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:184
+#: ../../sysadmin/server-setup.rst:185
 msgid "On Debian based systems, the correct user is ``tomcat8``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:186
+#: ../../sysadmin/server-setup.rst:187
 msgid ""
 "Check and correct permissions on ``<tomcat-webapps>/print-customer-infra"
 "/print-apps``:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:188
+#: ../../sysadmin/server-setup.rst:189
 msgid ""
 "Check that with the user defined by ``$PROD_USER`` you can access this "
 "directory. If ``ls <tomcat-webapps>/print-customer-infra/print-apps`` "
@@ -357,39 +363,39 @@ msgid ""
 "folders on the path."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:189
+#: ../../sysadmin/server-setup.rst:190
 msgid ""
 "Setup ACL to give the user write permissions to the directory (**don't "
 "use standard unix permissions, it breaks tomcat's expectations**): "
 "``setfacl -m u:<user>:rwx print-customer-infra/print-apps``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:191
+#: ../../sysadmin/server-setup.rst:192
 msgid ""
 "Check that tomcat has an AJP connector defined on port 8009 in "
 "``/etc/server.xml``. If not, add the line below in the ``<Service "
 "name=\"Catalina\">`` section:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:197
+#: ../../sysadmin/server-setup.rst:198
 msgid "Restart tomcat ``systemctl resart tomcat``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:198
+#: ../../sysadmin/server-setup.rst:199
 msgid "Enable tomcat ``systemctl enable tomcat``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:202
+#: ../../sysadmin/server-setup.rst:203
 msgid "Search"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:206
+#: ../../sysadmin/server-setup.rst:207
 msgid ""
 "On `sphinx search <http://sphinxsearch.com/>`__ is correctly installed on"
 " your system, do the following actons as root to configure it:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:208
+#: ../../sysadmin/server-setup.rst:209
 msgid ""
 "Add a symlink to the global sphinx configuration. Depending when you set "
 "it up, this file may not exist yet. It will be in "
@@ -398,124 +404,124 @@ msgid ""
 "``$PROD_GIT_REPOS_LOCATION``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:216
+#: ../../sysadmin/server-setup.rst:217
 msgid ""
 "On Debian based systems, before creating the symlink, you must (*as "
 "root*):"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:218
+#: ../../sysadmin/server-setup.rst:219
 msgid "Create the ``/etc/sphinx/`` directory: ``mkdir /etc/sphinx/``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:219
+#: ../../sysadmin/server-setup.rst:220
 msgid ""
 "Change its owner to ``sphinxsearch``: ``chown -R "
 "sphinxsearch:sphinxsearch /etc/sphinx``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:221
+#: ../../sysadmin/server-setup.rst:222
 msgid "Create sphinx infrastructure specific directories:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:223
+#: ../../sysadmin/server-setup.rst:224
 msgid "Create: ``mkdir -p /var/lib/sphinx/customer-infra/{binlog,index}``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:224
+#: ../../sysadmin/server-setup.rst:225
 msgid ""
 "Set proper owner: ``chown -R sphinx:sphinx /var/lib/sphinx/customer-"
 "infra``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:225
+#: ../../sysadmin/server-setup.rst:226
 msgid "Create log dir: ``mkdir -p /var/log/sphinx``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:226
+#: ../../sysadmin/server-setup.rst:227
 msgid "Set proper owner: ``chown -R sphinx:sphinx /var/log/sphinx``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:227
+#: ../../sysadmin/server-setup.rst:228
 msgid "Create run dir for PID: ``mkdir -p /var/run/sphinx``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:228
+#: ../../sysadmin/server-setup.rst:229
 msgid "Set proper owner: ``chown -R sphinx:sphinx /var/run/sphinx``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:232
+#: ../../sysadmin/server-setup.rst:233
 msgid "On Debian based system:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:234
+#: ../../sysadmin/server-setup.rst:235
 msgid "The correct user is ``sphinxsearch``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:235
+#: ../../sysadmin/server-setup.rst:236
 msgid ""
 "Don't attempt to create the directories above in "
 "``/var/lib/sphinxsearch`` the process will be configured to look in "
 "``/var/lib/sphinx``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:237
+#: ../../sysadmin/server-setup.rst:238
 msgid "Deploy the unit files for this infrastructure:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:239
+#: ../../sysadmin/server-setup.rst:240
 msgid ""
 "Copy the ``searchd@.service`` service file from ``geo-infra`` to "
 "``/etc/systemd/system/``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:243
+#: ../../sysadmin/server-setup.rst:244
 msgid ""
 "On Debian based systems, you must correct the user to ``sphinxsearch`` in"
 " the unit file."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:245
+#: ../../sysadmin/server-setup.rst:246
 msgid "Reload systemd daemons: ``systemctl daemon-reload``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:247
+#: ../../sysadmin/server-setup.rst:248
 msgid ""
 "Enable the sphinx daemon: ``systemctl enable searchd@customer-"
 "infra.service``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:253
+#: ../../sysadmin/server-setup.rst:254
 msgid "API"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:255
+#: ../../sysadmin/server-setup.rst:256
 msgid "On the production server, either:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:257
+#: ../../sysadmin/server-setup.rst:258
 msgid ""
 "Clone the api for the first deploy: ``git clone https://github.com/ioda-"
 "net/geo-api3.git``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:258
+#: ../../sysadmin/server-setup.rst:259
 msgid "Update the API: ``git pull``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:262
+#: ../../sysadmin/server-setup.rst:263
 msgid "Depending on who you are, you may:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:264
+#: ../../sysadmin/server-setup.rst:265
 msgid "get the code of the API from another location"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:265
+#: ../../sysadmin/server-setup.rst:266
 msgid "need to switch to a custom branch."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:267
+#: ../../sysadmin/server-setup.rst:268
 msgid ""
 "Update the configuration of the API for this deployment. To do this, "
 "create a file named ``geo-api3/config/config.<branchname>.toml`` and "
@@ -523,22 +529,29 @@ msgid ""
 "api3/config/config.dist.toml`` config file."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:268
+#: ../../sysadmin/server-setup.rst:269
 msgid ""
 "Override any commands necessary in ``geo-api3/config/config.dist.sh`` by "
 "creating a ``geo-api3/config/config.sh`` file."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:269
+#: ../../sysadmin/server-setup.rst:270
 msgid ""
 "Deploy the API: on the production server, in the ``geo-api3`` folder, "
 "launch: ``./manuel deploy``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:270
+#: ../../sysadmin/server-setup.rst:271
 msgid ""
 "Add a new vhost for the API. It should look like the vhost below. Adapt "
 "the user names and file paths to match those defined in the ``geo-"
 "api3/config/config.<branchname>.toml``."
 msgstr ""
+
+#~ msgid ""
+#~ "``mod_fcgid``. To enable ``mod_fcgid`` on "
+#~ "Debian based systems install the "
+#~ "``libapache2-mod-fcgid`` package (``aptitude "
+#~ "install libapache2-mod-fcgid``)"
+#~ msgstr ""
 
