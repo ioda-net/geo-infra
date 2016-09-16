@@ -180,7 +180,7 @@ Switch to ``geo-api3``:
 
   - Download the `sample sqlite database file </data/getting-started/customer_infra.sqlite>`__ into the ``geo-api3`` folder:
 
-    - ``wget http://docs.ioda.local/data/getting-started/customer_infra.sqlite``
+    - ``wget https://docs.geoportal.xyz/data/getting-started/customer_infra.sqlite``
 
   - Create the proper venv with ``./manuel venv``
   - Update the ini files used by Pyramid: ``./manuel ini-files``.
@@ -260,7 +260,7 @@ Switch to ``geo-infra``:
 - Download the `data needed by sphinx to build its indexes </data/getting-started/places.csv>`__ and put in it ``customer-infra/data``:
 
   - ``cd /path/to/customer-infra/data``
-  - ``wget http://docs.ioda.local/data/getting-started/places.csv``
+  - ``wget https://docs.geoportal.xyz/data/getting-started/places.csv``
 
 - Start sphinx: ``./manuel restart-service search customer-infra``
 - Trigger an reindex: ``./manuel reindex customer-infra``
@@ -298,7 +298,7 @@ Switch to ``geo-infra``:
 
 - Download the `print WAR </data/getting-started/print.war>`__:
 
-  - ``wget http://docs.ioda.local/data/getting-started/print.war``
+  - ``wget https://docs.geoportal.xyz/data/getting-started/print.war``
 
 - Do the following actions as root:
 
