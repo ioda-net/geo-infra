@@ -103,7 +103,7 @@ template_cache_module = 'src/TemplateCacheModule.nunjucks.js'
 
 
 [test.karma]
-browsers = ['Firefox', 'Chrome']
+browsers = ['PhantomJS']
 
 [test.protractor]
 test_portal_address = 'http://localhost'
