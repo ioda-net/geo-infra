@@ -84,3 +84,17 @@ If all your OWS requests respond with a 404 error, check that you have a trailin
 
    [vhost]
    ows_path = '/var/lib/geoportal/cgi-bin/'
+
+
+Installing GDAL in a venv
+-------------------------
+
+If you don't want to install GDAL globally or just want to put everything in the virtual env, you can use the steps bellow to install GDAL in a virtual env:
+
+#. Install ``gdal-devel`` to be able to build the module
+#. Enable the virtual venv
+#. Download GDAL ``pip download GDAL`` If you don't want to install the latest version you can specify it like this ``pip download GDAL==2.0.1``
+#. Uncompress the archive: ``tar -xzf GDAL-2.1.0.tar.gz`` (adapt the version if needed).
+#. Go to the decompressed folder ``cd GDAL-2.1.0``
+#. Build it: ``python setup.py build_ext --include-dirs=/usr/include/gdal`` (adapt the include path if necessary)
+#. Install it: ``python setup.py install -O1 --skip-build``
