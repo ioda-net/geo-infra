@@ -189,7 +189,7 @@ You can either build it from scratch from `the source <https://github.com/mapfis
     - Check that with the user defined by ``$PROD_USER`` you can access this directory. If ``ls <tomcat-webapps>/print-customer-infra/print-apps`` runed with ``$PROD_USER`` returns successfuly, you are good to go. If not, correct the permissions to give it read and execute access on all folders on the path.
     - Setup ACL to give the user write permissions to the directory (**don't use standard unix permissions, it breaks tomcat's expectations**): ``setfacl -m u:<user>:rwx print-customer-infra/print-apps``.
 
-  - Check that tomcat has an AJP connector defined on port 8009 in ``/etc/server.xml``. If not, add the line below in the ``<Service name="Catalina">`` section:
+  - Check that tomcat has an AJP connector defined on port 8009 in ``/etc/tomcat/server.xml``. If not, add the line below in the ``<Service name="Catalina">`` section:
 
     .. code:: xml
 
