@@ -476,11 +476,11 @@ msgstr ""
 
 #: ../../getting-started.rst:145
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: ../../getting-started.rst:147
 msgid "Switch to ``geo-api3``:"
-msgstr ""
+msgstr "Aller sur ``geo-api3``:"
 
 #: ../../getting-started.rst:149
 msgid ""
@@ -488,6 +488,9 @@ msgid ""
 "``config/config.devel.toml`` and adapt the content below to your use "
 "case:"
 msgstr ""
+"Mettre à jour la configuration. Pour faire ça, créer un fichier appelé "
+"``config/config.devel.toml`` et adapter son contenu à votre propre "
+"cas:"
 
 #: ../../getting-started.rst:181
 msgid ""
