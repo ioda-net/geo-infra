@@ -21,53 +21,63 @@ msgstr ""
 
 #: ../../getting-started.rst:2
 msgid "Getting Started"
-msgstr ""
+msgstr "Démarrage"
 
 #: ../../getting-started.rst:4
 msgid "Estimated time to complete: 3/4 hours."
-msgstr ""
+msgstr "Temps estimé pour effectuer la tâche : 3/4 h"
 
 #: ../../getting-started.rst
 msgid "Contents"
-msgstr ""
+msgstr "Tabledes matières"
 
 #: ../../getting-started.rst:10
 msgid "Requirements"
-msgstr ""
+msgstr "De quoi a-t-on besoin"
 
 #: ../../getting-started.rst:14
 msgid "`Apache 2 <https://httpd.apache.org/>`__ with:"
-msgstr ""
+msgstr "Apache 2 <https://httpd.apache.org/>`__ avec:"
 
 #: ../../getting-started.rst:16
 msgid ""
 "``mod_rewrite``. To enable ``mod_rewrite`` on Debian based systems, use "
 "``a2enmod rewrite``"
 msgstr ""
+"``mod_rewrite``. Pour activer ``mod_rewrite`` sur des systèmes basés sur Debian, utiliser "
+"``a2enmod rewrite``"
 
 #: ../../getting-started.rst:17
 msgid ""
 "``mod_expires``. To enable ``mod_expires`` on Debian based systems, use "
 "``a2enmod expires``"
 msgstr ""
+"``mod_expires``. Pour activer ``mod_expires`` sur des systèmes basés sur Debian, utiliser "
+"``a2enmod expires``"
 
 #: ../../getting-started.rst:18
 msgid ""
 "``mod_headers``. To enable ``mod_headers`` on Debian based systems, use "
 "``a2enmod headers``"
 msgstr ""
+"``mod_headers``. Pour activer ``mod_headers`` sur des systèmes basés sur Debian, utiliser "
+"``a2enmod headers``"
 
 #: ../../getting-started.rst:19
 msgid ""
 "``mod_filter``. To enable ``mod_filter`` on Debian based systems, use "
 "``a2enmode filter``"
 msgstr ""
+"``mod_filter``. Pour activer ``mod_filter`` sur des systèmes basés sur Debian, utiliser "
+"``a2enmode filter``"
 
 #: ../../getting-started.rst:20
 msgid ""
 "``mod_deflate``. To enable ``mod_deflate`` on Debian based systems, use "
 "``a2enmod deflate``"
 msgstr ""
+"``mod_deflate``. Pour activer ``mod_deflate`` sur des systèmes basés sur Debian, utiliser  "
+"``a2enmod deflate``"
 
 #: ../../getting-started.rst:21
 msgid ""
@@ -75,6 +85,9 @@ msgid ""
 "the ``libapache2-mod-fcgid`` package (``aptitude install libapache2-mod-"
 "fcgid``) and on openSuse, install ``apache2-mod_fcgid``."
 msgstr ""
+"``mod_fcgid``. Pour activer ``mod_fcgid`` sur des systèmes basés sur Debian, installer "
+"le paquet ``libapache2-mod-fcgid`` (``aptitude install libapache2-mod-"
+"fcgid``) et pour OpenSuse, installer ``apache2-mod_fcgid``."
 
 #: ../../getting-started.rst:22
 msgid ""
@@ -83,6 +96,10 @@ msgid ""
 "systems, use ``a2enmod proxy``, ``a2enmod proxy_ajp`` and ``a2enmod "
 "proxy_http``."
 msgstr ""
+"``mod_proxy``, ``mod_proxy_ajp`` et ``mod_proxy_http``. Pour activer "
+"``mod_proxy``, ``mod_proxy_ajp`` et ``mod_proxy_http`` sur des systèmes basés "
+"sur Debian, utiliser ``a2enmod proxy``, ``a2enmod proxy_ajp`` et ``a2enmod "
+"proxy_http``."
 
 #: ../../getting-started.rst:24
 msgid ""
@@ -90,10 +107,13 @@ msgid ""
 "capabilities (probably in the ``python3-venv`` package or included with "
 "your Python 3 install)"
 msgstr ""
+"`Python <https://www.python.org/>`__ 3.4 ou plus avec les capacités "
+"virtualenv (sûrement dans le paquet ``python3-venv`` ou inclus avec "
+"votre Python 3 install)"
 
 #: ../../getting-started.rst:25
 msgid "`nodejs <http://nodejs.org/>`__ 4.0 or above"
-msgstr ""
+msgstr "`nodejs <http://nodejs.org/>`__ 4.0 ou plus"
 
 #: ../../getting-started.rst:26
 msgid ""
@@ -102,10 +122,14 @@ msgid ""
 "distributions, on Debian based system, use ``cgi-mapserver`` and "
 "``mapserver-bin``)"
 msgstr ""
+"`MapServer <http://mapserver.org/>`__ 6.4.3+ (ça ne fonctionnera pas avec "
+"6.4.1) ou 7.0.1+ (paquet généralement appelé ``mapserver`` sur la plupart "
+"des distributions, sur les systèmes basés sur Debian, utiliser ``cgi-mapserver`` et "
+"``mapserver-bin``)"
 
 #: ../../getting-started.rst:27
 msgid "`GDAL <http://www.gdal.org>`__ 2.0 or above with Python3 bindings"
-msgstr ""
+msgstr "`GDAL <http://www.gdal.org>`__ 2.0 ou plus avec les liaisons à Python3"
 
 #: ../../getting-started.rst:28
 msgid ""
@@ -113,92 +137,101 @@ msgid ""
 "features (package commonly named ``sphinx`` on most distributions, on "
 "Debian system, use ``sphinxsearch`` in Jessie backports)"
 msgstr ""
+"`Sphinx search <http://sphinxsearch.com/>`__ 2.2 ou plus pour la recherche "
+"d'éléments (paquet généralement appelé ``sphinx`` pour la plupart des distributions, sur "
+"les systèmes Debian, utiliser ``sphinxsearch`` sur les backports de Jessie)"
 
 #: ../../getting-started.rst:29
 msgid ""
 "`tomcat <http://tomcat.apache.org/>`__ 8.0 or above to deploy the print "
 "component"
 msgstr ""
+"`tomcat <http://tomcat.apache.org/>`__ 8.0 ou plus pour activer le composant "
+"d'impression"
 
 #: ../../getting-started.rst:30
 msgid "`Bash <http://www.gnu.org/software/bash>`__ 4 or above to launch the tasks"
-msgstr ""
+msgstr "`Bash <http://www.gnu.org/software/bash>`__ 4 ou plus pour lancer les tâches"
 
 #: ../../getting-started.rst:31
 msgid "`git <https://git-scm.com/>`__ 2.0 or above to get the code"
-msgstr ""
+msgstr "`git <https://git-scm.com/>`__ 2.0 ou plus pour obtenir le code"
 
 #: ../../getting-started.rst:32
 msgid ""
 "`proj <https://github.com/OSGeo/proj.4>`__ the cartographic projection "
 "software"
 msgstr ""
+"`proj <https://github.com/OSGeo/proj.4>`__ le logiciel de projections "
+"cartographiques"
 
 #: ../../getting-started.rst:33
 msgid ""
 "sudo to launch some commands with your normal user. Your ``/etc/sudoers``"
 " file must contains the following lines (edit it with ``visudo``):"
 msgstr ""
+"sudo pour lancer certaines commandes avec un utilisateur normal. Votrte fichier ``/etc/sudoers``"
+" doit contenir les lignes suivantes (à éditer avec ``visudo``):"
 
 #: ../../getting-started.rst:45
 msgid "The following libraries to correctly create the Python venv:"
-msgstr ""
+msgstr "Les librairies suivantes pour créer correctement le venv Python:"
 
 #: ../../getting-started.rst:47
 msgid "geos"
-msgstr ""
+msgstr "geos"
 
 #: ../../getting-started.rst:48
 msgid "geos-devel"
-msgstr ""
+msgstr "geos-devel"
 
 #: ../../getting-started.rst:49
 msgid "postgresql-devel"
-msgstr ""
+msgstr "postgresql-devel"
 
 #: ../../getting-started.rst:50
 msgid "libxml2-devel"
-msgstr ""
+msgstr "libxml2-devel"
 
 #: ../../getting-started.rst:51
 msgid "libxslt-devel"
-msgstr ""
+msgstr "libxslt-devel"
 
 #: ../../getting-started.rst:52
 msgid "python3-devel"
-msgstr ""
+msgstr "python3-devel"
 
 #: ../../getting-started.rst:53 ../../getting-started.rst:62
 msgid "gcc"
-msgstr ""
+msgstr "gcc"
 
 #: ../../getting-started.rst:55
 msgid "On debian based system, use this list:"
-msgstr ""
+msgstr "Sur les systèmes basés sur Debian, utiliser cette liste:"
 
 #: ../../getting-started.rst:57
 msgid "libgeos-c1"
-msgstr ""
+msgstr "libgeos-c1"
 
 #: ../../getting-started.rst:58
 msgid "libgeos-dev"
-msgstr ""
+msgstr "libgeos-dev"
 
 #: ../../getting-started.rst:59
 msgid "libxml2-dev"
-msgstr ""
+msgstr "libxml2-dev"
 
 #: ../../getting-started.rst:60
 msgid "libxslt-dev"
-msgstr ""
+msgstr "libxslt-dev"
 
 #: ../../getting-started.rst:61
 msgid "python3-dev"
-msgstr ""
+msgstr "python3-dev"
 
 #: ../../getting-started.rst:66
 msgid "Before we start"
-msgstr ""
+msgstr "Avantz de démarrer"
 
 #: ../../getting-started.rst:68
 msgid ""
@@ -209,18 +242,28 @@ msgid ""
 "zsh "
 "<https://github.com/ShaneKilkelly/manuel/blob/master/manuel.autocomplete.zsh>`__."
 msgstr ""
+"Toutes les tâches sont lancées ici avec `manuel "
+"<https://github.com/ShaneKilkelly/manuel>`__, un task runner écrit en "
+"Bash. Pour permettre son exécution dans un shell Bash, utiliser le fichier "
+"``geo-infra/manuel.autocomplete.bash``. `L'exécution dest aussi disponible pour "
+"zsh "
+"<https://github.com/ShaneKilkelly/manuel/blob/master/manuel.autocomplete.zsh>`__."
 
 #: ../../getting-started.rst:70
 msgid ""
 "To launch ``manuel`` without always appending ``./`` copy ``geo-"
 "infra/manuel`` to your ``~/bin`` folder."
 msgstr ""
+"Pour lancer ``manuel`` sans avoir à toujours ajouter ``./`` copier ``geo-"
+"infra/manuel`` dans votre fichier ``~/bin``."
 
 #: ../../getting-started.rst:72
 msgid ""
 "To get help about any task (description of what it does and its "
 "arguments), use ``manuel help TASK``. For instance, ``manuel help help``."
 msgstr ""
+"Pour obtenir de l'aide sur une tâche (description de ce qui est fait et "
+"des options), utiliser ``manuel help TASK``. par exemple, ``manuel help help``."
 
 #: ../../getting-started.rst:76
 msgid "Setup the portal"
