@@ -497,24 +497,28 @@ msgid ""
 "Download the `sample sqlite database file </data/getting-"
 "started/customer_infra.sqlite>`__ into the ``geo-api3`` folder:"
 msgstr ""
+"Télécharger le fichier d'exemple de la base de données sqlite </data/getting-"
+"started/customer_infra.sqlite>`__ dans le dossier ``geo-api3`` :"
 
 #: ../../getting-started.rst:183
 msgid ""
 "``wget https://docs.geoportal.xyz/data/getting-"
 "started/customer_infra.sqlite``"
 msgstr ""
+"``wget https://docs.geoportal.xyz/data/getting-"
+"started/customer_infra.sqlite``"
 
 #: ../../getting-started.rst:185
 msgid "Create the proper venv with ``./manuel venv``"
-msgstr ""
+msgstr "Créer le bon venv avec ``./manuel venv``"
 
 #: ../../getting-started.rst:186
 msgid "Update the ini files used by Pyramid: ``./manuel ini-files``."
-msgstr ""
+msgstr "Mettre àjour les fichiers ini utilisés par Pyramid: ``./manuel ini-files``."
 
 #: ../../getting-started.rst:187
 msgid "Launch the API: ``./manuel serve``."
-msgstr ""
+msgstr "Lancer l'API: ``./manuel serve``."
 
 #: ../../getting-started.rst:191
 msgid ""
@@ -524,6 +528,11 @@ msgid ""
 " ``config/config.sh`` with the correct value for ``PYTHONPATH``. Eg for "
 "Debian, put this value:"
 msgstr ""
+"Si la commande échoue à cause de ``ImportError: No module named 'osgeo'``, "
+"vérifier que le module osgeo du système est disponible dans le "
+"``PYTHONPATH`` spécifié dans ``config/config.dist.sh``. Si ce n'est pas le cas, créer un"
+" ``config/config.sh`` avec la valeur correcte pour ``PYTHONPATH``. "
+"Par exemple pour Debian, mettre cette valeur:"
 
 #: ../../getting-started.rst:197
 msgid ""
@@ -531,10 +540,13 @@ msgid ""
 "identification should work as expected. Search will be enable in the next"
 " section."
 msgstr ""
+"Si vous aller surle géoportail, le QR code, l'URL raccourcie et l'interrogation d'attributs "
+"devraient fonctionner. La recherche sera mise en place dans la"
+" section suivante."
 
 #: ../../getting-started.rst:202
 msgid "Portal page with QR code and short link"
-msgstr ""
+msgstr "Page du géoportail avec le QR code et l'url raccourcie"
 
 #: ../../getting-started.rst:206
 msgid ""
@@ -543,14 +555,18 @@ msgid ""
 "You improve this if you with access to the database. See :ref:`the "
 "relevant section of the documentation <ref_sysadmin_db_features>`."
 msgstr ""
+"Si vous testez l'interrogation d'attributs, vous aurez seulement une présentation "
+"très basique: c'est ce que MapServer retourne lors de la requête GetFeatures. "
+"Vous pouvez améliorez ça avec l'accès à la base de données. Voir :ref:`la "
+"parte traitant de ce sujet dans la documentation <ref_sysadmin_db_features>`."
 
 #: ../../getting-started.rst:210
 msgid "Search"
-msgstr ""
+msgstr "Recherche"
 
 #: ../../getting-started.rst:214
 msgid "Create global search configuration:"
-msgstr ""
+msgstr "Créer une configuration globale de recherche"
 
 #: ../../getting-started.rst:220
 msgid ""
@@ -558,68 +574,81 @@ msgid ""
 "searchd@customer-infra.service failed because the control process exited "
 "with error code.`` This is expected."
 msgstr ""
+"À ce point de la mise en place du géoportail, cette commande devrait retourner une erreur: ``Job for "
+"searchd@customer-infra.service failed because the control process exited "
+"with error code.`` C'est normal."
 
 #: ../../getting-started.rst:221
 msgid ""
 "Add a symlink to the newly created sphinx configuration (*this must be "
 "done as root*):"
 msgstr ""
+"Ajouter un symlink àlatoute nouvelle configuration sphinx qui a été créée (*cecit doit être "
+"effectué en tant que root*):"
 
 #: ../../getting-started.rst:229
 msgid ""
 "On Debian based systems, before creating the symlink, you must (*as "
 "root*):"
 msgstr ""
+"Pour les systèmes basés sur Debian, avant de créer le symlink, vous devez (*en tant que "
+"root*):"
 
 #: ../../getting-started.rst:231
 msgid "Create the ``/etc/sphinx/`` directory: ``mkdir /etc/sphinx/``"
-msgstr ""
+msgstr "Créer le dossier ``/etc/sphinx/``: ``mkdir /etc/sphinx/``"
 
 #: ../../getting-started.rst:232
 msgid ""
 "Change its owner to ``sphinxsearch``: ``chown -R "
 "sphinxsearch:sphinxsearch /etc/sphinx``"
 msgstr ""
+"Mettre ``sphinxsearch`` comme propriétaire : ``chown -R "
+"sphinxsearch:sphinxsearch /etc/sphinx``"
 
 #: ../../getting-started.rst:234
 msgid ""
 "Create sphinx infrastructure specific directories (*this must be done as "
 "root*):"
 msgstr ""
+"Créer les dossiers spécifiques à l'infrastructure de sphinx (*ceci doit être fait en tant que "
+"root*):"
 
 #: ../../getting-started.rst:236
 msgid "Create: ``mkdir -p /var/lib/sphinx/customer-infra/{binlog,index}``"
-msgstr ""
+msgstr "Créer: ``mkdir -p /var/lib/sphinx/customer-infra/{binlog,index}``"
 
 #: ../../getting-started.rst:237
 msgid ""
 "Set proper owner: ``chown -R sphinx:sphinx /var/lib/sphinx/customer-"
 "infra``"
 msgstr ""
+"Paramétrer le bon propriétairer: ``chown -R sphinx:sphinx /var/lib/sphinx/customer-"
+"infra``"
 
 #: ../../getting-started.rst:238
 msgid "Create log dir: ``mkdir -p /var/log/sphinx``"
-msgstr ""
+msgstr "Créer le dossier pour les logs: ``mkdir -p /var/log/sphinx``"
 
 #: ../../getting-started.rst:239
 msgid "Set proper owner: ``chown -R sphinx:sphinx /var/log/sphinx``"
-msgstr ""
+msgstr "Lui attribuer le bon propriétaire: ``chown -R sphinx:sphinx /var/log/sphinx``"
 
 #: ../../getting-started.rst:240
 msgid "Create run dir for PID: ``mkdir -p /var/run/sphinx``"
-msgstr ""
+msgstr "Créer le dossier run pour PID: ``mkdir -p /var/run/sphinx``"
 
 #: ../../getting-started.rst:241
 msgid "Set proper owner: ``chown -R sphinx:sphinx /var/run/sphinx``"
-msgstr ""
+msgstr "Lui attribuer le bon propriétaire: ``chown -R sphinx:sphinx /var/run/sphinx``"
 
 #: ../../getting-started.rst:245
 msgid "On Debian based system:"
-msgstr ""
+msgstr "Pour les systèmes basés sur Debian:"
 
 #: ../../getting-started.rst:247
 msgid "The correct user is ``sphinxsearch``"
-msgstr ""
+msgstr "Le bon utilisateur est ``sphinxsearch``"
 
 #: ../../getting-started.rst:248
 msgid ""
@@ -627,58 +656,69 @@ msgid ""
 "``/var/lib/sphinxsearch`` the process will be configured to look in "
 "``/var/lib/sphinx``"
 msgstr ""
+"N'essayez pas de créer les dossiers ci-dessus dans "
+"``/var/lib/sphinxsearch`` le processus sera configuré pour regarder dans "
+"``/var/lib/sphinx``"
 
 #: ../../getting-started.rst:250
 msgid ""
 "Deploy the unit files for this infrastructure (*this must be done as "
 "root*):"
 msgstr ""
+"Deployer les fichiers unit pour cette infrastructure (*ceci doit être fait en tant que "
+"root*):"
 
 #: ../../getting-started.rst:252
 msgid ""
 "Copy the service files: ``cp /path/to/geo-infra/searchd@.service "
 "/etc/systemd/system/``"
 msgstr ""
+"Copier les fichiers service: ``cp /path/to/geo-infra/searchd@.service "
+"/etc/systemd/system/``"
 
 #: ../../getting-started.rst:256
 msgid ""
 "On Debian based systems, you must correct the user to ``sphinxsearch`` in"
 " the unit file."
 msgstr ""
+"Pour les systèmes basés sur Debian, il changer l'utilisateur pour ``sphinxsearch`` dans"
+" le fichier unit."
 
 #: ../../getting-started.rst:258
 msgid "Reload systemd daemons: ``systemctl daemon-reload``"
-msgstr ""
+msgstr "Recharger les démons systemd: ``systemctl daemon-reload``"
 
 #: ../../getting-started.rst:260
 msgid ""
 "Download the `data needed by sphinx to build its indexes </data/getting-"
 "started/places.csv>`__ and put in it ``customer-infra/data``:"
 msgstr ""
+"Télécharger les `données nécessairesà sphinx pour construire ses indexes </data/getting-"
+"started/places.csv>`__ et les placer dans ``customer-infra/data``:"
 
 #: ../../getting-started.rst:262
 msgid "``cd /path/to/customer-infra/data``"
-msgstr ""
+msgstr "``cd /path/to/customer-infra/data``"
 
 #: ../../getting-started.rst:263
 msgid "``wget https://docs.geoportal.xyz/data/getting-started/places.csv``"
-msgstr ""
+msgstr "``wget https://docs.geoportal.xyz/data/getting-started/places.csv``"
 
 #: ../../getting-started.rst:265
 msgid "Start sphinx: ``./manuel restart-service search customer-infra``"
-msgstr ""
+msgstr "Démarrer sphinx: ``./manuel restart-service search customer-infra``"
 
 #: ../../getting-started.rst:266
 msgid "Trigger an reindex: ``./manuel reindex customer-infra``"
-msgstr ""
+msgstr "Lancer un reindexage: ``./manuel reindex customer-infra``"
 
 #: ../../getting-started.rst:267
 msgid "Search should work as expected."
-msgstr ""
+msgstr "Search devrait maintenant fonctionner."
 
 #: ../../getting-started.rst:270
 msgid "Search with a database"
-msgstr ""
+msgstr "Search avec une base de données"
 
 #: ../../getting-started.rst:272
 msgid ""
@@ -686,6 +726,9 @@ msgid ""
 "database and not some CSV file. To do that, you can use the template "
 "below as ``customer-infra/search/portal-locations.in.conf``:"
 msgstr ""
+"Dans des cas concrets, vous voudrez sûrement que les localisation proviennent de votre "
+"base de donnéeset pas d'un fichier csv. Pour faire ça, vous pouvez utiliser les modèles "
+"ci-dessous dans ``customer-infra/search/portal-locations.in.conf``:"
 
 #: ../../getting-started.rst:276
 msgid ""
@@ -693,28 +736,33 @@ msgid ""
 "``config/_common.dist.toml`` to have access to the database and to "
 "convert origins to ranks:"
 msgstr ""
+"Dans ce cas, vous devrez configurer la recherche dans votre fichier "
+"``config/_common.dist.toml`` pour avoir accès à la base de données et pour "
+"convertir les origines en rangs:"
 
 #: ../../getting-started.rst:293
 msgid ""
 "View the :ref:`relevant page of the documentation for more information on"
 " this<ref_user_cfg-portal_search>`."
 msgstr ""
+"Aller sur la :ref:`page y relative de la documentation pour plus d'information"
+" à ce sujet<ref_user_cfg-portal_search>`."
 
 #: ../../getting-started.rst:297
 msgid "Print"
-msgstr ""
+msgstr "Impression"
 
 #: ../../getting-started.rst:301
 msgid "Download the `print WAR </data/getting-started/print.war>`__:"
-msgstr ""
+msgstr "Télécharger le `print WAR </data/getting-started/print.war>`__:"
 
 #: ../../getting-started.rst:303
 msgid "``wget https://docs.geoportal.xyz/data/getting-started/print.war``"
-msgstr ""
+msgstr "``wget https://docs.geoportal.xyz/data/getting-started/print.war``"
 
 #: ../../getting-started.rst:305
 msgid "Do the following actions as root:"
-msgstr ""
+msgstr "Faire les actions suivantes en tant que root:"
 
 #: ../../getting-started.rst:307
 msgid ""
@@ -723,46 +771,54 @@ msgid ""
 "``/var/lib/tomcat8/webapps``) under the name ``print-customer-"
 "infra.war``."
 msgstr ""
+"Copier le WAR dans votre dosser tomcat webapps (par exemple "
+"``/usr/share/tomcat/webapps``, ``/srv/tomcat/webapps/`` or "
+"``/var/lib/tomcat8/webapps``) en utilisant le nom ``print-customer-"
+"infra.war``."
 
 #: ../../getting-started.rst:308
 msgid "Start tomcat: ``systemctl start tomcat``"
-msgstr ""
+msgstr "Démarrer tomcat: ``systemctl start tomcat``"
 
 #: ../../getting-started.rst:312
 msgid "On Debian based systems, the target is named ``tomcat8``"
-msgstr ""
+msgstr "Pour les systèmes basés sur Debian, la cible est appelée ``tomcat8``"
 
 #: ../../getting-started.rst:314
 msgid "Go to the tomcat webapps folder."
-msgstr ""
+msgstr "Aller au dossier tomcat webapps."
 
 #: ../../getting-started.rst:315
 msgid "Check that ``print-customer-infra.war`` is correctly deployed."
-msgstr ""
+msgstr "Vérifier que ``print-customer-infra.war`` est correctement déployé."
 
 #: ../../getting-started.rst:316
 msgid ""
 "Create the ``print-customer-infra/print-apps`` directory and make it "
 "owned by tomcat:"
 msgstr ""
+"Créer le dossier ``print-customer-infra/print-apps`` et donner lui comme propriétaire "
+"tomcat:"
 
 #: ../../getting-started.rst:318
 msgid "``mkdir print-customer-infra/print-apps``"
-msgstr ""
+msgstr "``mkdir print-customer-infra/print-apps``"
 
 #: ../../getting-started.rst:319
 msgid "``chown tomcat:tomcat print-customer-infra/print-apps``"
-msgstr ""
+msgstr "``chown tomcat:tomcat print-customer-infra/print-apps``"
 
 #: ../../getting-started.rst:323
 msgid "On Debian based systems, the correct user is ``tomcat8``."
-msgstr ""
+msgstr "Pour les systèmes basés sur Debian, le nom de l'utilisateur est ``tomcat8``."
 
 #: ../../getting-started.rst:325
 msgid ""
 "Check and correct permissions on ``<tomcat-webapps>/print-customer-infra"
 "/print-apps``:"
 msgstr ""
+"Contrôler et corriger les permissions pour ``<tomcat-webapps>/print-customer-infra"
+"/print-apps``:"
 
 #: ../../getting-started.rst:327
 msgid ""
@@ -772,6 +828,11 @@ msgid ""
 "not, correct the permissions to give it read and execute access on all "
 "folders on the path."
 msgstr ""
+"Contrôler que, avec l'utilisateur que vous utilisez pour lancer ``./manuel`` dans ``geo-"
+"infra`` vouspouvez accéder à ce dossier. Si ``ls <tomcat-webapps>/print-"
+"customer-infra/print-apps`` donne une réponse positive, vous pouvez continuer. Si ce n'est "
+"pas le cas, corriger les permissions pour avoir un accès en lecture et execution sur tous "
+"les dossiers dans le chemin."
 
 #: ../../getting-started.rst:328
 msgid ""
@@ -779,6 +840,9 @@ msgid ""
 "use standard unix permissions, it breaks tomcat's expectations**): "
 "``setfacl -m u:<user>:rwx print-customer-infra/print-apps``."
 msgstr ""
+"Configurer ACL pour donner à l'utilisateur les permissions d'écrire dans le dossier (**ne pas "
+"utiliser les permissions standards d'Unix, ça ne va pas fonctionenr avec tomcat**): "
+"``setfacl -m u:<user>:rwx print-customer-infra/print-apps``."
 
 #: ../../getting-started.rst:330
 msgid ""
@@ -786,14 +850,17 @@ msgid ""
 "``/etc/tomcat/server.xml``. If not, add the line below in the ``<Service "
 "name=\"Catalina\">`` section:"
 msgstr ""
+"Contrôler que tomcat a un connecteur AJP défini dans le port 8009 dans "
+"``/etc/tomcat/server.xml``. Sinon, ajouter la ligne ci-dessous dans la section ``<Service "
+"name=\"Catalina\">`` :"
 
 #: ../../getting-started.rst:336
 msgid "Restart tomcat ``systemctl resart tomcat``"
-msgstr ""
+msgstr "Redémarrer tomcat ``systemctl resart tomcat``"
 
 #: ../../getting-started.rst:338
 msgid "Go to ``geo-infra``"
-msgstr ""
+msgstr "Aller dans ``geo-infra``"
 
 #: ../../getting-started.rst:339
 msgid ""
@@ -802,24 +869,30 @@ msgid ""
 "MFP_APP_FOLDER=\"/usr/share/tomcat/webapps/print-customer-infra/print-"
 "apps/\"``"
 msgstr ""
+"Exporter votre valeur de MPF_APP_FOLDER pour permettre à manuel de le copier au "
+"bon endroit. Par exemple: ``export "
+"MFP_APP_FOLDER=\"/usr/share/tomcat/webapps/print-customer-infra/print-"
+"apps/\"``"
 
 #: ../../getting-started.rst:340
 msgid "Copy print configuration: ``./manuel tomcat-copy-conf \"dev\" demo``"
-msgstr ""
+msgstr "Copier la configuration d'impression: ``./manuel tomcat-copy-conf \"dev\" demo``"
 
 #: ../../getting-started.rst:341
 msgid ""
 "Check that you have a ``demo`` folder in ``<tomcat-webapps>/print-"
 "customer-infra/print-apps``."
 msgstr ""
+"Contrôler que vous avez un dossier ``demo`` dans ``<tomcat-webapps>/print-"
+"customer-infra/print-apps``."
 
 #: ../../getting-started.rst:342
 msgid "If so, try to print in the portal. It should work as expected."
-msgstr ""
+msgstr "Si c'est bien le cas, essayer d'imprimer depuis votre géoportail. Tout devrait fonctionner."
 
 #: ../../getting-started.rst:343
 msgid "Unset the MFP_APP_FOLDER variable: ``unset MFP_APP_FOLDER``"
-msgstr ""
+msgstr "Retirer la variable MFP_APP_FOLDER: ``unset MFP_APP_FOLDER``"
 
 #: ../../getting-started.rst:347
 msgid ""
@@ -828,10 +901,14 @@ msgid ""
 "corresponds to the correct path to MapFish Print. It will now be used "
 "automatically by the scripts."
 msgstr ""
+"Dans ``config/config.sh`` ajouter une ligne comme ceci: ``set-var MFP_APP_FOLDER "
+"\"/usr/share/tomcat/webapps/print-customer-infra/print-apps/\"`` qui "
+"correspond au bon chemin de MapFish Print. C'est ce qui sera dorénavant utilisé "
+"automatiquement par les scripts."
 
 #: ../../getting-started.rst:351
 msgid "Conclusion"
-msgstr ""
+msgstr "Conclusion"
 
 #: ../../getting-started.rst:353
 msgid ""
@@ -839,15 +916,18 @@ msgid ""
 "configuration of the portal with ``./manuel dev demo`` or rebuild "
 "everything with ``./manuel dev-full demo``."
 msgstr ""
+"Tout devrait fonctionner correctement maintenant. Vous pouvez reconstruire la "
+"configuration du géoportail avec ``./manuel dev demo`` ou tout reconstruire "
+"avec ``./manuel dev-full demo``."
 
 #~ msgid ""
 #~ msgstr ""
 
 #~ msgid "``wget http://docs.ioda.local/data/getting-started/places.csv``"
-#~ msgstr ""
+#~ msgstr "``wget http://docs.ioda.local/data/getting-started/places.csv``"
 
 #~ msgid "``wget http://docs.ioda.local/data/getting-started/print.war``"
-#~ msgstr ""
+#~ msgstr "``wget http://docs.ioda.local/data/getting-started/print.war``"
 
 #~ msgid ""
 #~ "Check that tomcat has an AJP "
@@ -856,4 +936,9 @@ msgstr ""
 #~ "line below in the ``<Service "
 #~ "name=\"Catalina\">`` section:"
 #~ msgstr ""
+#~ "Contrôler que tomcat a un connecteur AJP "
+#~ "défini sur le port 8009 dans "
+#~ "``/etc/server.xml``. Si ce n'est pas le cas, ajouter la "
+#~ "ligne ci-dessous dans la section ``<Service "
+#~ "name=\"Catalina\">`` :"
 
