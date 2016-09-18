@@ -29,7 +29,7 @@ msgstr "Temps estimé pour effectuer la tâche : 3/4 h"
 
 #: ../../getting-started.rst
 msgid "Contents"
-msgstr "Tabledes matières"
+msgstr "Table des matières"
 
 #: ../../getting-started.rst:10
 msgid "Requirements"
@@ -170,7 +170,7 @@ msgid ""
 "sudo to launch some commands with your normal user. Your ``/etc/sudoers``"
 " file must contains the following lines (edit it with ``visudo``):"
 msgstr ""
-"sudo pour lancer certaines commandes avec un utilisateur normal. Votrte fichier ``/etc/sudoers``"
+"sudo pour lancer certaines commandes avec un utilisateur normal. Votre fichier ``/etc/sudoers``"
 " doit contenir les lignes suivantes (à éditer avec ``visudo``):"
 
 #: ../../getting-started.rst:45
@@ -231,7 +231,7 @@ msgstr "python3-dev"
 
 #: ../../getting-started.rst:66
 msgid "Before we start"
-msgstr "Avantz de démarrer"
+msgstr "Avant de démarrer"
 
 #: ../../getting-started.rst:68
 msgid ""
@@ -245,7 +245,7 @@ msgstr ""
 "Toutes les tâches sont lancées ici avec `manuel "
 "<https://github.com/ShaneKilkelly/manuel>`__, un task runner écrit en "
 "Bash. Pour permettre son exécution dans un shell Bash, utiliser le fichier "
-"``geo-infra/manuel.autocomplete.bash``. `L'exécution dest aussi disponible pour "
+"``geo-infra/manuel.autocomplete.bash``. `L'exécution est aussi disponible pour "
 "zsh "
 "<https://github.com/ShaneKilkelly/manuel/blob/master/manuel.autocomplete.zsh>`__."
 
@@ -333,7 +333,7 @@ msgstr ""
 
 #: ../../getting-started.rst:93
 msgid "Add the symlink to the fonts:"
-msgstr "Ajouter le symlink pour les polices:"
+msgstr "Ajouter le symlink pour les polices de caractères:"
 
 #: ../../getting-started.rst:99
 msgid "or on Debian system:"
@@ -397,7 +397,7 @@ msgid ""
 "Activate it: ``source .venv/bin/activate`` **This must be done once "
 "before launching any command with manuel.**"
 msgstr ""
-"Activer le: ``source .venv/bin/activate`` **Ceci doit être fait une première fois "
+"Activer-le: ``source .venv/bin/activate`` **Ceci doit être fait une première fois "
 "avant de lancer n'importe quelle commande avec manuel.**"
 
 #: ../../getting-started.rst:124
@@ -417,7 +417,7 @@ msgid ""
 "/customer-infra/dev/vhosts.d/*.conf``."
 msgstr ""
 "Inclure tous les fichiers de ``customer-infra/dev/vhosts.d`` dans votre configuration "
-"capache. Ceci peut être fait en éditant ``/etc/httpd/conf/httpd.conf``"
+"apache. Ceci peut être fait en éditant ``/etc/httpd/conf/httpd.conf``"
 " ou ``/etc/apache2/apache2.conf`` selon votre système et en ajoutant "
 "cette ligne à la fin du fichier: ``IncludeOptional /path/to/infra/dir"
 "/customer-infra/dev/vhosts.d/*.conf``."
@@ -459,8 +459,8 @@ msgid ""
 msgstr ""
 "Vous devriez voir votre géoportail, semblable à l'image ci-dessous "
 "Pour le moment, seule la navigation dans la carte est fonctionnelle. Les éléments "
-"dépendants de l'API (recherches, QR code, lien abrégé, informations sur les éléments) ainsi que "
-"l'impression seront mis en place dans les explications suivantes."
+"dépendants de l'API (recherches, QR code, URL abrégée, informations sur les éléments) ainsi que "
+"l'impression seront mis en place dans la suite de cette documentation."
 
 #: ../../getting-started.rst:139
 msgid "Demo portal home page"
@@ -490,14 +490,14 @@ msgid ""
 msgstr ""
 "Mettre à jour la configuration. Pour faire ça, créer un fichier appelé "
 "``config/config.devel.toml`` et adapter son contenu à votre propre "
-"cas:"
+"cas de figure:"
 
 #: ../../getting-started.rst:181
 msgid ""
 "Download the `sample sqlite database file </data/getting-"
 "started/customer_infra.sqlite>`__ into the ``geo-api3`` folder:"
 msgstr ""
-"Télécharger le fichier d'exemple de la base de données sqlite </data/getting-"
+"Télécharger le fichier d'exemple de la `base de données sqlite </data/getting-"
 "started/customer_infra.sqlite>`__ dans le dossier ``geo-api3`` :"
 
 #: ../../getting-started.rst:183
@@ -514,7 +514,7 @@ msgstr "Créer le bon venv avec ``./manuel venv``"
 
 #: ../../getting-started.rst:186
 msgid "Update the ini files used by Pyramid: ``./manuel ini-files``."
-msgstr "Mettre àjour les fichiers ini utilisés par Pyramid: ``./manuel ini-files``."
+msgstr "Mettre à jour les fichiers ini utilisés par Pyramid: ``./manuel ini-files``."
 
 #: ../../getting-started.rst:187
 msgid "Launch the API: ``./manuel serve``."
@@ -540,13 +540,13 @@ msgid ""
 "identification should work as expected. Search will be enable in the next"
 " section."
 msgstr ""
-"Si vous aller surle géoportail, le QR code, l'URL raccourcie et l'interrogation d'attributs "
+"Si vous aller sur le géoportail, le QR code, l'URL abrégée et l'interrogation d'attributs "
 "devraient fonctionner. La recherche sera mise en place dans la"
 " section suivante."
 
 #: ../../getting-started.rst:202
 msgid "Portal page with QR code and short link"
-msgstr "Page du géoportail avec le QR code et l'url raccourcie"
+msgstr "Page du géoportail avec le QR code et l'URL abrégée"
 
 #: ../../getting-started.rst:206
 msgid ""
@@ -557,8 +557,8 @@ msgid ""
 msgstr ""
 "Si vous testez l'interrogation d'attributs, vous aurez seulement une présentation "
 "très basique: c'est ce que MapServer retourne lors de la requête GetFeatures. "
-"Vous pouvez améliorez ça avec l'accès à la base de données. Voir :ref:`la "
-"parte traitant de ce sujet dans la documentation <ref_sysadmin_db_features>`."
+"Vous pouvez l'améliorer avec l'accès à la base de données. Voir :ref:`la "
+"partie traitant de ce sujet dans la documentation <ref_sysadmin_db_features>`."
 
 #: ../../getting-started.rst:210
 msgid "Search"
@@ -583,7 +583,7 @@ msgid ""
 "Add a symlink to the newly created sphinx configuration (*this must be "
 "done as root*):"
 msgstr ""
-"Ajouter un symlink àlatoute nouvelle configuration sphinx qui a été créée (*cecit doit être "
+"Ajouter un symlink à a toute nouvelle configuration sphinx qui a été créée (*ceci doit être "
 "effectué en tant que root*):"
 
 #: ../../getting-started.rst:229
@@ -623,7 +623,7 @@ msgid ""
 "Set proper owner: ``chown -R sphinx:sphinx /var/lib/sphinx/customer-"
 "infra``"
 msgstr ""
-"Paramétrer le bon propriétairer: ``chown -R sphinx:sphinx /var/lib/sphinx/customer-"
+"Paramétrer le bon propriétaire: ``chown -R sphinx:sphinx /var/lib/sphinx/customer-"
 "infra``"
 
 #: ../../getting-started.rst:238
@@ -693,7 +693,7 @@ msgid ""
 "Download the `data needed by sphinx to build its indexes </data/getting-"
 "started/places.csv>`__ and put in it ``customer-infra/data``:"
 msgstr ""
-"Télécharger les `données nécessairesà sphinx pour construire ses indexes </data/getting-"
+"Télécharger les `données nécessaires à sphinx pour construire ses index </data/getting-"
 "started/places.csv>`__ et les placer dans ``customer-infra/data``:"
 
 #: ../../getting-started.rst:262
@@ -714,11 +714,11 @@ msgstr "Lancer un reindexage: ``./manuel reindex customer-infra``"
 
 #: ../../getting-started.rst:267
 msgid "Search should work as expected."
-msgstr "Search devrait maintenant fonctionner."
+msgstr "La recherche devrait maintenant fonctionner."
 
 #: ../../getting-started.rst:270
 msgid "Search with a database"
-msgstr "Search avec une base de données"
+msgstr "Recherche avec une base de données"
 
 #: ../../getting-started.rst:272
 msgid ""
@@ -726,8 +726,8 @@ msgid ""
 "database and not some CSV file. To do that, you can use the template "
 "below as ``customer-infra/search/portal-locations.in.conf``:"
 msgstr ""
-"Dans des cas concrets, vous voudrez sûrement que les localisation proviennent de votre "
-"base de donnéeset pas d'un fichier csv. Pour faire ça, vous pouvez utiliser les modèles "
+"Dans des cas concrets, vous voudrez sûrement que les localisations proviennent de votre "
+"base de données et pas d'un fichier csv. Pour faire ça, vous pouvez utiliser les modèles "
 "ci-dessous dans ``customer-infra/search/portal-locations.in.conf``:"
 
 #: ../../getting-started.rst:276
@@ -829,7 +829,7 @@ msgid ""
 "folders on the path."
 msgstr ""
 "Contrôler que, avec l'utilisateur que vous utilisez pour lancer ``./manuel`` dans ``geo-"
-"infra`` vouspouvez accéder à ce dossier. Si ``ls <tomcat-webapps>/print-"
+"infra`` vous pouvez accéder à ce dossier. Si ``ls <tomcat-webapps>/print-"
 "customer-infra/print-apps`` donne une réponse positive, vous pouvez continuer. Si ce n'est "
 "pas le cas, corriger les permissions pour avoir un accès en lecture et execution sur tous "
 "les dossiers dans le chemin."
@@ -841,7 +841,7 @@ msgid ""
 "``setfacl -m u:<user>:rwx print-customer-infra/print-apps``."
 msgstr ""
 "Configurer ACL pour donner à l'utilisateur les permissions d'écrire dans le dossier (**ne pas "
-"utiliser les permissions standards d'Unix, ça ne va pas fonctionenr avec tomcat**): "
+"utiliser les permissions standards d'Unix, ça ne va pas fonctionner avec tomcat**): "
 "``setfacl -m u:<user>:rwx print-customer-infra/print-apps``."
 
 #: ../../getting-started.rst:330
@@ -850,7 +850,7 @@ msgid ""
 "``/etc/tomcat/server.xml``. If not, add the line below in the ``<Service "
 "name=\"Catalina\">`` section:"
 msgstr ""
-"Contrôler que tomcat a un connecteur AJP défini dans le port 8009 dans "
+"Contrôler que tomcat a un connecteur AJP défini pour le port 8009 dans "
 "``/etc/tomcat/server.xml``. Sinon, ajouter la ligne ci-dessous dans la section ``<Service "
 "name=\"Catalina\">`` :"
 
@@ -869,7 +869,7 @@ msgid ""
 "MFP_APP_FOLDER=\"/usr/share/tomcat/webapps/print-customer-infra/print-"
 "apps/\"``"
 msgstr ""
-"Exporter votre valeur de MPF_APP_FOLDER pour permettre à manuel de le copier au "
+"Exporter votre valeur de MPF_APP_FOLDER pour permettre à manuel de la copier au "
 "bon endroit. Par exemple: ``export "
 "MFP_APP_FOLDER=\"/usr/share/tomcat/webapps/print-customer-infra/print-"
 "apps/\"``"
@@ -888,7 +888,7 @@ msgstr ""
 
 #: ../../getting-started.rst:342
 msgid "If so, try to print in the portal. It should work as expected."
-msgstr "Si c'est bien le cas, essayer d'imprimer depuis votre géoportail. Tout devrait fonctionner."
+msgstr "Si c'est bien le cas, essayez d'imprimer depuis votre géoportail. Tout devrait fonctionner."
 
 #: ../../getting-started.rst:343
 msgid "Unset the MFP_APP_FOLDER variable: ``unset MFP_APP_FOLDER``"
@@ -937,7 +937,7 @@ msgstr ""
 #~ "name=\"Catalina\">`` section:"
 #~ msgstr ""
 #~ "Contrôler que tomcat a un connecteur AJP "
-#~ "défini sur le port 8009 dans "
+#~ "défini pour le port 8009 dans "
 #~ "``/etc/server.xml``. Si ce n'est pas le cas, ajouter la "
 #~ "ligne ci-dessous dans la section ``<Service "
 #~ "name=\"Catalina\">`` :"
