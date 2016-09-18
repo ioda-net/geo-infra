@@ -267,37 +267,43 @@ msgstr ""
 
 #: ../../getting-started.rst:76
 msgid "Setup the portal"
-msgstr ""
+msgstr "Paramétrisation du géoportail"
 
 #: ../../getting-started.rst:78
 msgid ""
 "Clone all the repositories listed below in the same folder "
 "[#clone_all_same_folder]_:"
 msgstr ""
+"Cloner tous les dépôts listés ci-dessus dans le même dossier "
+"[#clone_all_same_folder]_:"
 
 #: ../../getting-started.rst:80
 msgid ""
 "The main infrastructure directory: ``git clone https://github.com/ioda-"
 "net/geo-infra.git``"
 msgstr ""
+"Le dossier de l'infrastructure principale: ``git clone https://github.com/ioda-"
+"net/geo-infra.git``"
 
 #: ../../getting-started.rst:81
 msgid "The API: ``git clone https://github.com/ioda-net/geo-api3.git``"
-msgstr ""
+msgstr "L'API: ``git clone https://github.com/ioda-net/geo-api3.git``"
 
 #: ../../getting-started.rst:82
 msgid "The frontend: ``git clone https://github.com/ioda-net/geo-front3.git``"
-msgstr ""
+msgstr "L'interface frontale: ``git clone https://github.com/ioda-net/geo-front3.git``"
 
 #: ../../getting-started.rst:83
 msgid ""
 "The sample customer infra: ``git clone https://github.com/ioda-net"
 "/customer-infra.git``"
 msgstr ""
+"L'infrastructure client servant d'exemple: ``git clone https://github.com/ioda-net"
+"/customer-infra.git``"
 
 #: ../../getting-started.rst:85 ../../getting-started.rst:345
 msgid "Switch to ``customer-infra``:"
-msgstr ""
+msgstr "Passer sur ``customer-infra``:"
 
 #: ../../getting-started.rst:87
 msgid ""
@@ -305,28 +311,33 @@ msgid ""
 "<http://download.geofabrik.de/europe/switzerland-latest.shp.zip>`__ and "
 "uncompress it in ``customer-infra/data``:"
 msgstr ""
+"Télécharger les fichiers Shape pour la Suisse depuis `geofabrik "
+"<http://download.geofabrik.de/europe/switzerland-latest.shp.zip>`__ et "
+"les décompresser dans le dossier ``customer-infra/data``:"
 
 #: ../../getting-started.rst:89
 msgid "``wget http://download.geofabrik.de/europe/switzerland-latest.shp.zip``"
-msgstr ""
+msgstr "``wget http://download.geofabrik.de/europe/switzerland-latest.shp.zip``"
 
 #: ../../getting-started.rst:90
 msgid "``unzip -d data/osm-switzerland switzerland-latest.shp.zip``"
-msgstr ""
+msgstr "``unzip -d data/osm-switzerland switzerland-latest.shp.zip``"
 
 #: ../../getting-started.rst:91
 msgid ""
 "You should now have a ``customer-infra/data/osm-swisstzeland`` folder "
 "containing various ShapeFiles."
 msgstr ""
+"Vous avez maintenant un dossier ``customer-infra/data/osm-swisstzeland`` "
+"contenant différents fichiers Shape."
 
 #: ../../getting-started.rst:93
 msgid "Add the symlink to the fonts:"
-msgstr ""
+msgstr "Ajouter le symlink pour les polices:"
 
 #: ../../getting-started.rst:99
 msgid "or on Debian system:"
-msgstr ""
+msgstr "ou sur un système Debian :"
 
 #: ../../getting-started.rst:105
 msgid ""
@@ -334,6 +345,9 @@ msgid ""
 "for development, you only need to create ``customer-"
 "infra/config/dev/_common.dev.toml`` with the content below."
 msgstr ""
+"Mettre à jour la configuration: afin de pouvoir tester ``customer-infra`` "
+"en développement, vous devez seulement créer ``customer-"
+"infra/config/dev/_common.dev.toml`` avec le contenu suivant."
 
 #: ../../getting-started.rst:112
 msgid ""
@@ -342,19 +356,23 @@ msgid ""
 "``config/dist/_common.dist.toml``, we have ``ln -s /usr/bin/mapserv "
 "~/geoportal-infras/cgi-bin/demo``."
 msgstr ""
+"Dans ce dossier, créer un symlink vers votre exécutable mapserver, nommé selon"
+" le géoportail. Par exemple en utilisant les valeurs de "
+"``config/dist/_common.dist.toml``, nous aurons ``ln -s /usr/bin/mapserv "
+"~/geoportal-infras/cgi-bin/demo``."
 
 #: ../../getting-started.rst:114
 msgid "Switch to ``geo-front3``:"
-msgstr ""
+msgstr "Aller sur ``geo-front3``:"
 
 #: ../../getting-started.rst:116
 msgid "Launch ``npm install`` to install the node modules."
-msgstr ""
+msgstr "Lancer ``npm install`` pour installer les modules node."
 
 #: ../../getting-started.rst:118 ../../getting-started.rst:212
 #: ../../getting-started.rst:299
 msgid "Switch to ``geo-infra``:"
-msgstr ""
+msgstr "Aller sur ``geo-infra``:"
 
 #: ../../getting-started.rst:120
 msgid ""
@@ -364,24 +382,31 @@ msgid ""
 "You can install it this way: ``sudo pip install glob2``. To install the "
 "dependencies in a venv, follow the steps below:"
 msgstr ""
+"Installer les dépendances python listées dans ``requires.txt``. Vous pouvez "
+"les installer toutes d'un coup avec ``sudo pip install -r requires.txt`` ou dans un "
+"venv. Si vous utiliser une version de Python inférieure à 3.5, vous aurez aussi besoin de glob2. "
+"Vous pouvez l'installer de cette manière: ``sudo pip install glob2``. Pour installer les "
+"dépendances dans un venv, suivez les étapes décrites ci-dessous:"
 
 #: ../../getting-started.rst:122
 msgid "Create it: ``python3 -m venv .venv``"
-msgstr ""
+msgstr "Créer le venv: ``python3 -m venv .venv``"
 
 #: ../../getting-started.rst:123
 msgid ""
 "Activate it: ``source .venv/bin/activate`` **This must be done once "
 "before launching any command with manuel.**"
 msgstr ""
+"Activer le: ``source .venv/bin/activate`` **Ceci doit être fait une première fois "
+"avant de lancer n'importe quelle commande avec manuel.**"
 
 #: ../../getting-started.rst:124
 msgid "Install the deps: ``pip install -r requires.txt``"
-msgstr ""
+msgstr "Installer les dépendances: ``pip install -r requires.txt``"
 
 #: ../../getting-started.rst:125
 msgid "Install ``glob2`` if needed: ``pip install glob2``"
-msgstr ""
+msgstr "Installer ``glob2`` si nécessaire: ``pip install glob2``"
 
 #: ../../getting-started.rst:127
 msgid ""
@@ -391,32 +416,39 @@ msgid ""
 "this line at the end of the file: ``IncludeOptional /path/to/infra/dir"
 "/customer-infra/dev/vhosts.d/*.conf``."
 msgstr ""
+"Inclure tous les fichiers de ``customer-infra/dev/vhosts.d`` dans votre configuration "
+"capache. Ceci peut être fait en éditant ``/etc/httpd/conf/httpd.conf``"
+" ou ``/etc/apache2/apache2.conf`` selon votre système et en ajoutant "
+"cette ligne à la fin du fichier: ``IncludeOptional /path/to/infra/dir"
+"/customer-infra/dev/vhosts.d/*.conf``."
 
 #: ../../getting-started.rst:128
 msgid "Create the vhost: ``./manuel vhost demo``."
-msgstr ""
+msgstr "Créer le vhost vhost: ``./manuel vhost demo``."
 
 #: ../../getting-started.rst:129
 msgid ""
 "Create a symlink named ``mapserv`` to your MapServer executable in ``cgi-"
 "bin``. Eg: ``ln -s /usr/bin/mapserv cgi-bin/mapserv``."
 msgstr ""
+"Créer un symlink appelé ``mapserv`` dans votre executable MapServer dans ``cgi-"
+"bin``. Par exemple: ``ln -s /usr/bin/mapserv cgi-bin/mapserv``."
 
 #: ../../getting-started.rst:130
 msgid "Generate the utility files: ``./manuel dev demo``."
-msgstr ""
+msgstr "Générer les fichiers utilitaires du géoportail: ``./manuel dev demo``."
 
 #: ../../getting-started.rst:131
 msgid "Generate the frontend: ``./manuel front dev demo``."
-msgstr ""
+msgstr "Générer l'interface de front du géoportail: ``./manuel front dev demo``."
 
 #: ../../getting-started.rst:132
 msgid "Add ``demo.geoportal.local`` to you ``/etc/hosts``."
-msgstr ""
+msgstr "Ajouter ``demo.geoportal.local`` à vos ``/etc/hosts``."
 
 #: ../../getting-started.rst:133
 msgid "Open http://demo.geoportal.local."
-msgstr ""
+msgstr "Ouvrir http://demo.geoportal.local."
 
 #: ../../getting-started.rst:134
 msgid ""
@@ -425,16 +457,22 @@ msgid ""
 "that rely on the API (searches, QR code, shortener, get features) and "
 "print, will be enabled in the sections below."
 msgstr ""
+"Vous devriez voir votre géoportail, semblable à l'image ci-dessous "
+"Pour le moment, seule la navigation dans la carte est fonctionnelle. Les éléments "
+"dépendants de l'API (recherches, QR code, lien abrégé, informations sur les éléments) ainsi que "
+"l'impression seront mis en place dans les explications suivantes."
 
 #: ../../getting-started.rst:139
 msgid "Demo portal home page"
-msgstr ""
+msgstr "Page d'accueil du géoportail Demo"
 
 #: ../../getting-started.rst:141
 msgid ""
 "They can be arranged differently later if you override the proper values "
 "in ``geo-infra/config/config.sh``"
 msgstr ""
+"Ils peuvent être arrangés différement plus tard en ré-écrivant vos propres valeurs "
+"dans ``geo-infra/config/config.sh``"
 
 #: ../../getting-started.rst:145
 msgid "API"
