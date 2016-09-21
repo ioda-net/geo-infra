@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../index.rst:7
 msgid "Documentation for geo-front3, geo-api3 and geo-infra"
-msgstr "Documenation pour geo-front3, geo-api3 et geo-infra"
+msgstr "Documentation pour geo-front3, geo-api3 et geo-infra"
 
 #: ../../index.rst:9
 msgid "This is the documentation for the following projects:"
