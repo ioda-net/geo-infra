@@ -129,7 +129,7 @@ Setup the portal
   - Create a symlink named ``mapserv`` to your MapServer executable in ``cgi-bin``. Eg: ``ln -s /usr/bin/mapserv cgi-bin/mapserv``.
   - Generate the utility files: ``./manuel dev demo``.
   - Generate the frontend: ``./manuel front dev demo``.
-  - Add ``demo.geoportal.local`` to you ``/etc/hosts``.
+  - Add ``demo.geoportal.local`` to your ``/etc/hosts``.
   - Open http://demo.geoportal.local.
   - You should see a portal. It should be similar to the image below. Please note that only map navigation is functionnal at this stage. The features that rely on the API (searches, QR code, shortener, get features) and print, will be enabled in the sections below.
 
@@ -263,7 +263,7 @@ Switch to ``geo-infra``:
   - ``wget https://docs.geoportal.xyz/data/getting-started/places.csv``
 
 - Start sphinx: ``./manuel restart-service search customer-infra``
-- Trigger an reindex: ``./manuel reindex customer-infra``
+- Trigger a reindex: ``./manuel reindex customer-infra``
 - Search should work as expected.
 
 Search with a database
