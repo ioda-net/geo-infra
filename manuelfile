@@ -113,8 +113,9 @@ function dev-full {
         echo "***** Done: ${portal} *****"
     done
 
-    echo "Reindexing"
-    reindex
+    echo "***** Reindexing *****"
+    reindex -p "$@"
+    echo "***** Done reindexing *****"
     restart-service "tomcat"
 }
 

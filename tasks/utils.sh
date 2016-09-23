@@ -136,11 +136,20 @@ function _restart-apache {
 }
 
 
-HELP['reindex']="manuel reindex [INFRA_DIR]
+HELP['reindex']="manuel reindex [-i INFRA_DIR] [-p PORTALS]
 
-Launch a full reindexation of sphinx."
+Launch a reindexation of sphinx. Use one and only one of these options:
+
+- -i INFRA_DIR to reindex everything for the specified infrastructure.
+- -p PORTALS to reindex only these portals. The infrastructure directory will be determined
+  automatically.
+
+If launched without parameters, it will reindex everything."
 function reindex {
     local infra_names=()
+    local portal
+    local reindex_type
+    local index
 
     while ps aux | grep /usr/bin/indexer | grep -vq grep; do
         echo "WARNING: reindex already in progress. Waiting."
@@ -150,20 +159,29 @@ function reindex {
     if type "sudo_search_reindex" > /dev/null 2>&1; then
         sudo_search_reindex
     else
-        _get-infra-names "$@"
-        for infra_name in "${infra_names[@]}"; do
-            local cmd=(sudo /usr/bin/indexer
-                --verbose
-                --rotate
-                --config "/etc/sphinx/${infra_name}.conf"
-                --all)
-            if [[ "${QUIET}" == "true" ]]; then
-                cmd+=("--quiet")
+        if [[ -z "${1:-}" || "$1" == "-i" ]]; then
+            # Remove -i from args list
+            if [[ "${1:-}" == "-i" ]]; then
+                shift
             fi
-            "${cmd[@]}"
-        done
+            _get-infra-names "$@"
+            reindex_type="infras"
+        elif [[ "${1:-}" == "-p" ]]; then
+            # Remove -p from args list
+            shift
+            reindex_type="portals"
+        else
+            echo "You passed invalid arguments to reindex: $@" >&2
+            echo "${HELP[reindex]}" >&2
+            exit 1
+        fi
+        case "${reindex_type}" in
+            "infras")
+                _reindex-infras;;
+            "portals")
+                _reindex-portals "$@";;
+        esac
     fi
-    restart-service search "$@"
 }
 
 
@@ -192,6 +210,79 @@ function _get-infra-names {
         echo "Found on infrastructure with \$INFRA_DIR=${INFRA_DIR} and params $@"
         return
     fi
+}
+
+
+function _reindex-infras {
+    # Variable infra_names must come from the caller and be of type array.
+    local infra_name
+
+    for infra_name in "${infra_names[@]}"; do
+        local cmd=(sudo /usr/bin/indexer
+            --verbose
+            --rotate
+            --config "/etc/sphinx/${infra_name}.conf"
+            --all)
+        if [[ "${QUIET}" == "true" ]]; then
+            cmd+=("--quiet")
+        fi
+        "${cmd[@]}"
+    done
+
+    restart-service search "$@"
+}
+
+
+function _reindex-portals {
+    local indexes=()
+    local infra_names=()
+    local infra_name
+
+    for portal in "$@"; do
+        indexes=()
+        infra_name=$(basename $(_get-infra-dir "${portal}"))
+        if [[ ! ("${infra_names[@]:-}" =~ "${infra_name}") ]]; then
+            infra_names+=("${infra_name}")
+        fi
+        local cmd=(sudo /usr/bin/indexer
+            --verbose
+            --rotate
+            --config "/etc/sphinx/${infra_name}.conf")
+        if [[ "${QUIET}" == "true" ]]; then
+            cmd+=("--quiet")
+        fi
+        _get-indexes "${portal}"
+        for index in "${indexes[@]}"; do
+            cmd+=("${index}")
+        done
+        echo "Reindexing ${portal}"
+        "${cmd[@]}"
+    done
+
+    for infra_name in "${infra_names[@]}"; do
+        restart-service search "${infra_name}"
+    done
+}
+
+
+function _get-indexes {
+    # Variable indexes must come from the caller and be of type array.
+    local portal="$1"
+    local portal_type='dev'
+    local infra_dir=$(_get-infra-dir "${portal}")
+    local search_conf_dir="${infra_dir}/${portal_type}/${portal}/search"
+    local index
+
+    pushd "${search_conf_dir}"
+        # When computing the list of indexes, we need to exclude the {portal}_locations index
+        # which is not plain. If we don't, the reindex command will exit with a non zero status
+        # code.
+        for index in $(grep -E --only-matching --no-filename "^index (${portal}_[^{]+)$" *.conf |
+                cut -d ' ' -f 2 |
+                grep -v "${portal}_locations"); do
+            indexes+=("${index}")
+        done
+    popd
 }
 
 
