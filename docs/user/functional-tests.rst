@@ -258,12 +258,13 @@ Draw
   - delete selected features (in *More*)
   - delete all features (in *More*)
 
-- Click on *More > Download as KML*.
+- Click on *Export*.
 - **Results:** You must be asked to download your drawing as a KML
 
 Share Drawing
 ~~~~~~~~~~~~~
 
+- Click on the share button.
 - Copy the link named *Link to share your drawing*.
 - Open it in a new tab.
 - **Results:** You see you drawing as you left it.
@@ -271,6 +272,7 @@ Share Drawing
 Edit Drawing
 ~~~~~~~~~~~~
 
+- Click on the share button.
 - Copy the link named *Link to edit your drawing later*.
 - Open it in a new tab.
 - **Results:** You see you drawing as you left it.
