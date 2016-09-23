@@ -157,7 +157,7 @@ function reindex {
     done
 
     if type "sudo_search_reindex" > /dev/null 2>&1; then
-        sudo_search_reindex
+        sudo_search_reindex "$@"
     else
         if [[ -z "${1:-}" || "$1" == "-i" ]]; then
             # Remove -i from args list

@@ -201,7 +201,7 @@ function deploy {
         restart-service apache && \
         restart-service tomcat && \
         restart-service search && \
-        reindex"
+        reindex '$*'"
 }
 
 

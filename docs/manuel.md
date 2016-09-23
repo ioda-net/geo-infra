@@ -305,9 +305,15 @@ Silent version of builtin pushd
 
 
 ## reindex
-manuel reindex [INFRA_DIR]
+manuel reindex [-i INFRA_DIR] [-p PORTALS]
 
-Launch a full reindexation of sphinx.
+Launch a reindexation of sphinx. Use one and only one of these options:
+
+- -i INFRA_DIR to reindex everything for the specified infrastructure.
+- -p PORTALS to reindex only these portals. The infrastructure directory will be determined
+  automatically.
+
+If launched without parameters, it will reindex everything.
 
 
 ## reload-apache

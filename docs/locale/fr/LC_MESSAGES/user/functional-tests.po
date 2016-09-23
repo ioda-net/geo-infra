@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"POT-Creation-Date: 2016-09-23 17:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -653,7 +653,7 @@ msgid "delete all features (in *More*)"
 msgstr ""
 
 #: ../../user/functional-tests.rst:261
-msgid "Click on *More > Download as KML*."
+msgid "Click on *Export*."
 msgstr ""
 
 #: ../../user/functional-tests.rst:262
@@ -664,176 +664,183 @@ msgstr ""
 msgid "Share Drawing"
 msgstr ""
 
-#: ../../user/functional-tests.rst:267
+#: ../../user/functional-tests.rst:267 ../../user/functional-tests.rst:275
+msgid "Click on the share button."
+msgstr ""
+
+#: ../../user/functional-tests.rst:268
 msgid "Copy the link named *Link to share your drawing*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:268 ../../user/functional-tests.rst:275
+#: ../../user/functional-tests.rst:269 ../../user/functional-tests.rst:277
 msgid "Open it in a new tab."
 msgstr ""
 
-#: ../../user/functional-tests.rst:269 ../../user/functional-tests.rst:276
+#: ../../user/functional-tests.rst:270 ../../user/functional-tests.rst:278
 msgid "**Results:** You see you drawing as you left it."
 msgstr ""
 
-#: ../../user/functional-tests.rst:272
+#: ../../user/functional-tests.rst:273
 msgid "Edit Drawing"
 msgstr ""
 
-#: ../../user/functional-tests.rst:274
+#: ../../user/functional-tests.rst:276
 msgid "Copy the link named *Link to edit your drawing later*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:277
+#: ../../user/functional-tests.rst:279
 msgid "Edit the drawing."
 msgstr ""
 
-#: ../../user/functional-tests.rst:278
+#: ../../user/functional-tests.rst:280
 msgid "Refresh the page on the original page."
 msgstr ""
 
-#: ../../user/functional-tests.rst:279
+#: ../../user/functional-tests.rst:281
 msgid "**Results:** You see your edit."
 msgstr ""
 
-#: ../../user/functional-tests.rst:282
+#: ../../user/functional-tests.rst:284
 msgid "End"
 msgstr ""
 
-#: ../../user/functional-tests.rst:284
+#: ../../user/functional-tests.rst:286
 msgid "Click on *Back / Finish drawing*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:285
+#: ../../user/functional-tests.rst:287
 msgid "**Results:** You must be back in standard mode."
 msgstr ""
 
-#: ../../user/functional-tests.rst:289
+#: ../../user/functional-tests.rst:291
 msgid "Print"
 msgstr ""
 
-#: ../../user/functional-tests.rst:291
+#: ../../user/functional-tests.rst:293
 msgid "Make sure you have:"
 msgstr ""
 
-#: ../../user/functional-tests.rst:293
+#: ../../user/functional-tests.rst:295
 msgid "an imported WMS layer"
 msgstr ""
 
-#: ../../user/functional-tests.rst:294
+#: ../../user/functional-tests.rst:296
 msgid "an imported WMTS layer"
 msgstr ""
 
-#: ../../user/functional-tests.rst:295
+#: ../../user/functional-tests.rst:297
 msgid "an external WMS layer"
 msgstr ""
 
-#: ../../user/functional-tests.rst:296
+#: ../../user/functional-tests.rst:298
 msgid "an external WMTS layer"
 msgstr ""
 
-#: ../../user/functional-tests.rst:297
+#: ../../user/functional-tests.rst:299
 msgid "a drawing"
 msgstr ""
 
-#: ../../user/functional-tests.rst:298
+#: ../../user/functional-tests.rst:300
 msgid "local layers"
 msgstr ""
 
-#: ../../user/functional-tests.rst:300
+#: ../../user/functional-tests.rst:302
 msgid "Open the print panel."
 msgstr ""
 
-#: ../../user/functional-tests.rst:301
+#: ../../user/functional-tests.rst:303
 msgid "Wait for the configuration to load."
 msgstr ""
 
-#: ../../user/functional-tests.rst:302
+#: ../../user/functional-tests.rst:304
 msgid "Enter a title"
 msgstr ""
 
-#: ../../user/functional-tests.rst:303
+#: ../../user/functional-tests.rst:305
 msgid "Click on *Create PDF for print*"
 msgstr ""
 
-#: ../../user/functional-tests.rst:304
+#: ../../user/functional-tests.rst:306
 msgid "Wait for the PDF"
 msgstr ""
 
-#: ../../user/functional-tests.rst:305
+#: ../../user/functional-tests.rst:307
 msgid ""
 "**Results:** You should be able to download the PDF, view the selected "
 "layers and drawing and your title."
 msgstr ""
 
-#: ../../user/functional-tests.rst:308
+#: ../../user/functional-tests.rst:310
 msgid ""
 "Do the same tests with a portal protected by authentication. You must "
 "have the same results as before. If your templates allow this, the "
 "username used to connect to the portal must be printed."
 msgstr ""
 
-#: ../../user/functional-tests.rst:310
+#: ../../user/functional-tests.rst:312
 msgid ""
 "In case you encounter errors, please check the :ref:`print section the "
 "debug page <ref_debug_print>`."
 msgstr ""
 
-#: ../../user/functional-tests.rst:314
+#: ../../user/functional-tests.rst:316
 msgid "Feedback"
 msgstr ""
 
-#: ../../user/functional-tests.rst:316
+#: ../../user/functional-tests.rst:318
 msgid "Click on the *Report problem link*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:317
+#: ../../user/functional-tests.rst:319
 msgid "Enter the required information."
 msgstr ""
 
-#: ../../user/functional-tests.rst:318
+#: ../../user/functional-tests.rst:320
 msgid "Press the *Send* button."
 msgstr ""
 
-#: ../../user/functional-tests.rst:319
+#: ../../user/functional-tests.rst:321
 msgid ""
 "**Results:** the configured feedback email address must receive an email "
 "with the supplied information."
 msgstr ""
 
-#: ../../user/functional-tests.rst:323
+#: ../../user/functional-tests.rst:325
 msgid "Help"
 msgstr ""
 
-#: ../../user/functional-tests.rst:326
+#: ../../user/functional-tests.rst:328
 msgid "Integrated"
 msgstr ""
 
-#: ../../user/functional-tests.rst:328
+#: ../../user/functional-tests.rst:330
 msgid "Click on various help icons in the geoportal."
 msgstr ""
 
-#: ../../user/functional-tests.rst:329
+#: ../../user/functional-tests.rst:331
 msgid "**Results:** the corresponding help popup must appear."
 msgstr ""
 
-#: ../../user/functional-tests.rst:332
+#: ../../user/functional-tests.rst:334
 msgid "Help site"
 msgstr ""
 
-#: ../../user/functional-tests.rst:334
+#: ../../user/functional-tests.rst:336
 msgid "Click on the *Help* link."
 msgstr ""
 
-#: ../../user/functional-tests.rst:335
+#: ../../user/functional-tests.rst:337
 msgid "**Results:** a new tab to the help site must open."
 msgstr ""
 
-#: ../../user/functional-tests.rst:336
+#: ../../user/functional-tests.rst:338
 msgid "Navigate in the help site."
 msgstr ""
 
-#: ../../user/functional-tests.rst:337
+#: ../../user/functional-tests.rst:339
 msgid "**Results:** everything must be fine."
 msgstr ""
+
+#~ msgid "Click on *More > Download as KML*."
+#~ msgstr ""
 

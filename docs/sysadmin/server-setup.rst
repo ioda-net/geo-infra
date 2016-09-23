@@ -104,6 +104,8 @@ You will need sudo to launch some commands with the user used to deploy the port
     USER ALL=(ALL) NOPASSWD: /bin/systemctl restart tomcat8.service  # Debian based system only, in addition to the previous line.
     USER ALL=(ALL) NOPASSWD: /usr/bin/indexer --verbose --rotate --config /etc/sphinx/customer-infra.conf --all --quiet
     USER ALL=(ALL) NOPASSWD: /usr/bin/indexer --verbose --rotate --config /etc/sphinx/customer-infra.conf --all
+    USER ALL=(ALL) NOPASSWD: /usr/bin/indexer --verbose --rotate --config /etc/sphinx/sigeom-infra.conf --quiet *
+    USER ALL=(ALL) NOPASSWD: /usr/bin/indexer --verbose --rotate --config /etc/sphinx/sigeom-infra.conf *
     USER ALL=(ALL) NOPASSWD: /usr/sbin/apachectl -t
 
 
@@ -140,7 +142,26 @@ In order to be sure that tomcat, apache, search can restart and that a reindex c
 
   .. code:: bash
 
-    sudo /usr/bin/indexer --verbose --rotate --config /etc/sphinx/customer-infra.conf --all
+    # If launched without arguments, rebuild all indexes, otherwise, rebuild indexes only for the
+    # specified portals.
+    if [[ -z "${1:-}" ]]; then
+        sudo /usr/bin/indexer --verbose --rotate --config /etc/sphinx/sigeom-infra.conf --all
+    else
+        # Don't put quotes around $@ for the loop to work correctly.
+        for portal in $@; do
+            indexes=()
+            pushd "/home/jenselme/prod/${portal}/search" > /dev/null
+                for index in $(grep -E --only-matching --no-filename "^index (${portal}_[^{]+)$" *.conf |
+                        cut -d ' ' -f 2 |
+                        grep -v "${portal}_locations"); do
+                    indexes+=("${index}")
+                done
+            popd > /dev/null
+            echo "++++++ Reindexing ${portal} ++++++"
+            sudo /usr/bin/indexer --verbose --rotate --config /etc/sphinx/sigeom-infra.conf "${indexes[@]}"
+            echo "++++++ Done ++++++"
+        done
+    fi
 
 - ``sudo_tomcat_copyconf``. It may contain:
 
