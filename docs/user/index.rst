@@ -7,4 +7,5 @@ User guide
     create.rst
     configuration-portal.rst
     deploy.rst
+    print.rst
     functional-tests.rst

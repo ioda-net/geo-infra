@@ -1,0 +1,282 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015, Julien Enselme, Bruno Friedmann, Véronique Herzl
+# This file is distributed under the same license as the Documentation for
+# geo-front3, geo-api3 and geo-infra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
+"1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-23 11:03+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../user/print.rst:4
+msgid "Print"
+msgstr ""
+
+#: ../../user/print.rst
+msgid "Contents"
+msgstr ""
+
+#: ../../user/print.rst:8
+msgid ""
+"This page explains how to configure MapFish Print for the impression "
+"feature of the portal."
+msgstr ""
+
+#: ../../user/print.rst:10
+msgid ""
+"You can find a WAR `here </data/getting-started/print.war>`__ or you can "
+"build `from the source <https://github.com/mapfish/mapfish-print/>`__."
+msgstr ""
+
+#: ../../user/print.rst:12
+msgid ""
+"You can view examples of print templates `here <https://github.com/ioda-"
+"net/customer-infra/tree/master/print>`__. You can create your print "
+"templates with `Jasper Studio <http://community.jaspersoft.com/project"
+"/jaspersoft-studio>`__ or directly by editing the jrxml files with a text"
+" editor."
+msgstr ""
+
+#: ../../user/print.rst:14
+msgid ""
+"The offical documentaton is `here <https://mapfish.github.io/mapfish-"
+"print-doc/>`__."
+msgstr ""
+
+#: ../../user/print.rst:18
+msgid "Scalebar"
+msgstr ""
+
+#: ../../user/print.rst:20
+msgid ""
+"You will find below the list of available options for the scalebar "
+"subreport. This list of available options is taken from "
+"`ScalebarAttributer.java <https://github.com/mapfish/mapfish-"
+"print/blob/master/core/src/main/java/org/mapfish/print/attribute/ScalebarAttribute.java>`__."
+msgstr ""
+
+#: ../../user/print.rst:22
+msgid ""
+"To enable the scalebar, you must add the scalebar section in the "
+"``config.yaml`` file and add the scalebar subreport in your JRXML "
+"template."
+msgstr ""
+
+#: ../../user/print.rst:24
+msgid "``type``: The scalebar type. Can be any of:"
+msgstr ""
+
+#: ../../user/print.rst:26
+msgid ""
+"``bar`` (*default*): A thick bar with alternating black and white zones "
+"marking the intervals. The colors can be customized by changing the "
+"properties ``color`` and ``barBgColor``."
+msgstr ""
+
+#: ../../user/print.rst:27
+msgid "``line``: A simple line with graduations."
+msgstr ""
+
+#: ../../user/print.rst:28
+msgid "``bar_sub``: Like \"bar\", but with little ticks for the labels."
+msgstr ""
+
+#: ../../user/print.rst:30
+msgid "``unit``: The unit to use. Can be any of:"
+msgstr ""
+
+#: ../../user/print.rst:32
+msgid "m (mm, cm, m or km)"
+msgstr ""
+
+#: ../../user/print.rst:33
+msgid "ft (in, ft, yd, mi)"
+msgstr ""
+
+#: ../../user/print.rst:34
+msgid "degrees (min, sec, °)"
+msgstr ""
+
+#: ../../user/print.rst:36
+msgid ""
+"If the value is too big or too small, the module will switch to one of "
+"the unit in parenthesis (the same unit is used for every interval). If "
+"this behaviour is not desired, the ``lockUnits`` parameter will force the"
+" declared unit (or map unit if no unit is declared) to be used for the "
+"scalebar."
+msgstr ""
+
+#: ../../user/print.rst:38
+msgid ""
+"``geodetic``: Use geodetic measurement calculations for the scalebar "
+"(*default*: false). Can be either ``true`` or ``false``."
+msgstr ""
+
+#: ../../user/print.rst:39
+msgid ""
+"``lockUnits``: Force that the given unit is used (*default*: false). For "
+"example if the unit is set to meters and `lockUnits` is enabled, then "
+"meters is always used, even when kilometers would create nicer values. "
+"Can be either ``true`` or ``false``."
+msgstr ""
+
+#: ../../user/print.rst:40
+msgid ""
+"``intervals``: The number of intervals. This must be an integer greater "
+"than 2 (*default*: 3). **There must be at least two intervals.**"
+msgstr ""
+
+#: ../../user/print.rst:41
+msgid ""
+"``subIntervals``:  Should sub-intervals be shown? (*default*: false) The "
+"main intervals are divided into additional sub-intervals to provide "
+"visual guidance. The number of sub-intervals depends on the length of an "
+"interval. Can be either ``true`` or ``false``."
+msgstr ""
+
+#: ../../user/print.rst:42
+msgid ""
+"``barSize``: The thickness of the bar or the height of the tick marks on "
+"the line (in pixel). This must be an integer."
+msgstr ""
+
+#: ../../user/print.rst:43
+msgid ""
+"``lineWidth``: The thickness of the lines or the bar border (in pixel). "
+"This must be an integer."
+msgstr ""
+
+#: ../../user/print.rst:44
+msgid ""
+"``labelDistance``: The distance between scalebar and labels (in pixel). "
+"This must be an integer."
+msgstr ""
+
+#: ../../user/print.rst:45
+msgid ""
+"``padding``: The padding around the scalebar (in pixel). This must be an "
+"integer."
+msgstr ""
+
+#: ../../user/print.rst:46
+msgid "``font``: The font used for the labels (*default*: Helvetica)."
+msgstr ""
+
+#: ../../user/print.rst:47
+msgid "``fontSize``: The font size (in pt) of the labels (*default*: 12)."
+msgstr ""
+
+#: ../../user/print.rst:48
+msgid ""
+"``fontColor``: The font color of the labels (*default*: black). This can "
+"be a color name (eg ``\"black\"``, ``\"white\"``), an hexadecimal value "
+"(eg ``#000000``) or an RGBA value (eg ``rgba(0, 0, 0, 0)``)"
+msgstr ""
+
+#: ../../user/print.rst:49
+msgid ""
+"``color``: The color used to draw the bar and lines (*default*: black). "
+"This can be a color name (eg ``\"black\"``, ``\"white\"``), an "
+"hexadecimal value (eg ``#000000``) or an RGBA value (eg ``rgba(0, 0, 0, "
+"0)``)"
+msgstr ""
+
+#: ../../user/print.rst:50
+msgid ""
+"``barBgColor``: The color used to draw the alternating blocks for style "
+"\"bar\" and \"bar_sub\" (*default*: white). This can be a color name (eg "
+"``\"black\"``, ``\"white\"``), an hexadecimal value (eg ``#000000``) or "
+"an RGBA value (eg ``rgba(0, 0, 0, 0)``)"
+msgstr ""
+
+#: ../../user/print.rst:51
+msgid ""
+"``backgroundColor``: The background color for the scalebar graphic "
+"(*default*: rgba(255, 255, 255, 0)). This can be a color name (eg "
+"``\"black\"``, ``\"white\"``), an hexadecimal value (eg ``#000000``) or "
+"an RGBA value (eg ``rgba(0, 0, 0, 0)``)"
+msgstr ""
+
+#: ../../user/print.rst:52
+msgid "``orientation``: The scalebar orientation. Available options:"
+msgstr ""
+
+#: ../../user/print.rst:54
+msgid ""
+"``\"horizontalLabelsBelow\"`` (*default*): Horizontal scalebar and the "
+"labels are shown below the bar."
+msgstr ""
+
+#: ../../user/print.rst:55
+msgid ""
+"``\"horizontalLabelsAbove\"``: Horizontal scalebar and the labels are "
+"shown above the bar."
+msgstr ""
+
+#: ../../user/print.rst:56
+msgid ""
+"``\"verticalLabelsLeft\"``: Vertical scalebar and the labels are shown "
+"left of the bar."
+msgstr ""
+
+#: ../../user/print.rst:57
+msgid ""
+"``\"verticalLabelsRight\"``: Vertical scalebar and the labels are shown "
+"right of the bar."
+msgstr ""
+
+#: ../../user/print.rst:59
+msgid ""
+"``align``: The horizontal alignment of the scalebar inside the scalebar "
+"graphic. Can be any of:"
+msgstr ""
+
+#: ../../user/print.rst:61
+msgid "``left`` (*default*)."
+msgstr ""
+
+#: ../../user/print.rst:62
+msgid "``right``"
+msgstr ""
+
+#: ../../user/print.rst:64
+msgid ""
+"``verticalAlign``: The vertical alignment of the scalebar inside the "
+"scalebar graphic. Can be any of:"
+msgstr ""
+
+#: ../../user/print.rst:66
+msgid "``bottom`` (*default*)"
+msgstr ""
+
+#: ../../user/print.rst:67
+msgid "``top``"
+msgstr ""
+
+#: ../../user/print.rst:69
+msgid ""
+"``renderAsSvg``: Indicates if the scalebar graphic is rendered as SVG "
+"(*default*: false). Can be either ``true`` or ``false``."
+msgstr ""
+
+#: ../../user/print.rst:70
+msgid ""
+"``size``: The size of the scalebar graphic in the Jasper report (in "
+"pixels). This must be an integer."
+msgstr ""
+
+#: ../../user/print.rst:72
+msgid "Example:"
+msgstr ""
+

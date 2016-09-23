@@ -395,3 +395,5 @@ Printing a map relies on `MapFish Print <https://github.com/mapfish/mapfish-prin
 You can either build it from scratch from `the source <https://github.com/mapfish/mapfish-print>`__ or use our `last build </data/getting-started/print.war>`__.
 
 You can view examples of print templates `here <https://github.com/ioda-net/customer-infra/tree/master/print>`__. You can create your print templates with `Jasper Studio <http://community.jaspersoft.com/project/jaspersoft-studio>`__ or directly by editing the jrxml files with a text editor.
+
+To learn more about the available options, see :ref:`the proper page of the documentation <ref_user_print>`.
