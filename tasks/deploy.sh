@@ -207,7 +207,7 @@ function tomcat-copy-conf {
     if type sudo_tomcat_copyconf > /dev/null 2>&1; then
         sudo_tomcat_copyconf "$2"
     else
-        if [[ -z "$1" || -z "$2" ]]; then
+        if [[ -z "${1:-}" || -z "${2:-}" ]]; then
             echo "You must specify a portal and a type for tomcat-copy-conf to work" >&2
             exit 1
         fi
