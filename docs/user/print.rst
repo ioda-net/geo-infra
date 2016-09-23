@@ -21,6 +21,10 @@ You will find below the list of available options for the scalebar subreport. Th
 
 To enable the scalebar, you must add the scalebar section in the ``config.yaml`` file and add the scalebar subreport in your JRXML template.
 
+.. attention::
+
+    If the scalebar section exist in the ``config.yaml`` and the subreport is not in the JRXML, everything will work fine. However, if **the subreport is in the JRXML** but the section **is not in config.yaml** you will get an error and the **print will fail**.
+
 - ``type``: The scalebar type. Can be any of:
 
   - ``bar`` (*default*): A thick bar with alternating black and white zones marking the intervals. The colors can be customized by changing the properties ``color`` and ``barBgColor``.

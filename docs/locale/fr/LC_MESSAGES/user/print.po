@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-23 11:03+0200\n"
+"POT-Creation-Date: 2016-09-23 11:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,42 +73,50 @@ msgid ""
 "template."
 msgstr ""
 
-#: ../../user/print.rst:24
+#: ../../user/print.rst:26
+msgid ""
+"If the scalebar section exist in the ``config.yaml`` and the subreport is"
+" not in the JRXML, everything will work fine. However, if **the subreport"
+" is in the JRXML** but the section **is not in config.yaml** you will get"
+" an error and the **print will fail**."
+msgstr ""
+
+#: ../../user/print.rst:28
 msgid "``type``: The scalebar type. Can be any of:"
 msgstr ""
 
-#: ../../user/print.rst:26
+#: ../../user/print.rst:30
 msgid ""
 "``bar`` (*default*): A thick bar with alternating black and white zones "
 "marking the intervals. The colors can be customized by changing the "
 "properties ``color`` and ``barBgColor``."
 msgstr ""
 
-#: ../../user/print.rst:27
+#: ../../user/print.rst:31
 msgid "``line``: A simple line with graduations."
 msgstr ""
 
-#: ../../user/print.rst:28
+#: ../../user/print.rst:32
 msgid "``bar_sub``: Like \"bar\", but with little ticks for the labels."
 msgstr ""
 
-#: ../../user/print.rst:30
+#: ../../user/print.rst:34
 msgid "``unit``: The unit to use. Can be any of:"
 msgstr ""
 
-#: ../../user/print.rst:32
+#: ../../user/print.rst:36
 msgid "m (mm, cm, m or km)"
 msgstr ""
 
-#: ../../user/print.rst:33
+#: ../../user/print.rst:37
 msgid "ft (in, ft, yd, mi)"
 msgstr ""
 
-#: ../../user/print.rst:34
+#: ../../user/print.rst:38
 msgid "degrees (min, sec, °)"
 msgstr ""
 
-#: ../../user/print.rst:36
+#: ../../user/print.rst:40
 msgid ""
 "If the value is too big or too small, the module will switch to one of "
 "the unit in parenthesis (the same unit is used for every interval). If "
@@ -117,13 +125,13 @@ msgid ""
 "scalebar."
 msgstr ""
 
-#: ../../user/print.rst:38
+#: ../../user/print.rst:42
 msgid ""
 "``geodetic``: Use geodetic measurement calculations for the scalebar "
 "(*default*: false). Can be either ``true`` or ``false``."
 msgstr ""
 
-#: ../../user/print.rst:39
+#: ../../user/print.rst:43
 msgid ""
 "``lockUnits``: Force that the given unit is used (*default*: false). For "
 "example if the unit is set to meters and `lockUnits` is enabled, then "
@@ -131,13 +139,13 @@ msgid ""
 "Can be either ``true`` or ``false``."
 msgstr ""
 
-#: ../../user/print.rst:40
+#: ../../user/print.rst:44
 msgid ""
 "``intervals``: The number of intervals. This must be an integer greater "
 "than 2 (*default*: 3). **There must be at least two intervals.**"
 msgstr ""
 
-#: ../../user/print.rst:41
+#: ../../user/print.rst:45
 msgid ""
 "``subIntervals``:  Should sub-intervals be shown? (*default*: false) The "
 "main intervals are divided into additional sub-intervals to provide "
@@ -145,46 +153,46 @@ msgid ""
 "interval. Can be either ``true`` or ``false``."
 msgstr ""
 
-#: ../../user/print.rst:42
+#: ../../user/print.rst:46
 msgid ""
 "``barSize``: The thickness of the bar or the height of the tick marks on "
 "the line (in pixel). This must be an integer."
 msgstr ""
 
-#: ../../user/print.rst:43
+#: ../../user/print.rst:47
 msgid ""
 "``lineWidth``: The thickness of the lines or the bar border (in pixel). "
 "This must be an integer."
 msgstr ""
 
-#: ../../user/print.rst:44
+#: ../../user/print.rst:48
 msgid ""
 "``labelDistance``: The distance between scalebar and labels (in pixel). "
 "This must be an integer."
 msgstr ""
 
-#: ../../user/print.rst:45
+#: ../../user/print.rst:49
 msgid ""
 "``padding``: The padding around the scalebar (in pixel). This must be an "
 "integer."
 msgstr ""
 
-#: ../../user/print.rst:46
+#: ../../user/print.rst:50
 msgid "``font``: The font used for the labels (*default*: Helvetica)."
 msgstr ""
 
-#: ../../user/print.rst:47
+#: ../../user/print.rst:51
 msgid "``fontSize``: The font size (in pt) of the labels (*default*: 12)."
 msgstr ""
 
-#: ../../user/print.rst:48
+#: ../../user/print.rst:52
 msgid ""
 "``fontColor``: The font color of the labels (*default*: black). This can "
 "be a color name (eg ``\"black\"``, ``\"white\"``), an hexadecimal value "
 "(eg ``#000000``) or an RGBA value (eg ``rgba(0, 0, 0, 0)``)"
 msgstr ""
 
-#: ../../user/print.rst:49
+#: ../../user/print.rst:53
 msgid ""
 "``color``: The color used to draw the bar and lines (*default*: black). "
 "This can be a color name (eg ``\"black\"``, ``\"white\"``), an "
@@ -192,7 +200,7 @@ msgid ""
 "0)``)"
 msgstr ""
 
-#: ../../user/print.rst:50
+#: ../../user/print.rst:54
 msgid ""
 "``barBgColor``: The color used to draw the alternating blocks for style "
 "\"bar\" and \"bar_sub\" (*default*: white). This can be a color name (eg "
@@ -200,7 +208,7 @@ msgid ""
 "an RGBA value (eg ``rgba(0, 0, 0, 0)``)"
 msgstr ""
 
-#: ../../user/print.rst:51
+#: ../../user/print.rst:55
 msgid ""
 "``backgroundColor``: The background color for the scalebar graphic "
 "(*default*: rgba(255, 255, 255, 0)). This can be a color name (eg "
@@ -208,75 +216,75 @@ msgid ""
 "an RGBA value (eg ``rgba(0, 0, 0, 0)``)"
 msgstr ""
 
-#: ../../user/print.rst:52
+#: ../../user/print.rst:56
 msgid "``orientation``: The scalebar orientation. Available options:"
 msgstr ""
 
-#: ../../user/print.rst:54
+#: ../../user/print.rst:58
 msgid ""
 "``\"horizontalLabelsBelow\"`` (*default*): Horizontal scalebar and the "
 "labels are shown below the bar."
 msgstr ""
 
-#: ../../user/print.rst:55
+#: ../../user/print.rst:59
 msgid ""
 "``\"horizontalLabelsAbove\"``: Horizontal scalebar and the labels are "
 "shown above the bar."
 msgstr ""
 
-#: ../../user/print.rst:56
+#: ../../user/print.rst:60
 msgid ""
 "``\"verticalLabelsLeft\"``: Vertical scalebar and the labels are shown "
 "left of the bar."
 msgstr ""
 
-#: ../../user/print.rst:57
+#: ../../user/print.rst:61
 msgid ""
 "``\"verticalLabelsRight\"``: Vertical scalebar and the labels are shown "
 "right of the bar."
 msgstr ""
 
-#: ../../user/print.rst:59
+#: ../../user/print.rst:63
 msgid ""
 "``align``: The horizontal alignment of the scalebar inside the scalebar "
 "graphic. Can be any of:"
 msgstr ""
 
-#: ../../user/print.rst:61
+#: ../../user/print.rst:65
 msgid "``left`` (*default*)."
 msgstr ""
 
-#: ../../user/print.rst:62
+#: ../../user/print.rst:66
 msgid "``right``"
 msgstr ""
 
-#: ../../user/print.rst:64
+#: ../../user/print.rst:68
 msgid ""
 "``verticalAlign``: The vertical alignment of the scalebar inside the "
 "scalebar graphic. Can be any of:"
 msgstr ""
 
-#: ../../user/print.rst:66
+#: ../../user/print.rst:70
 msgid "``bottom`` (*default*)"
 msgstr ""
 
-#: ../../user/print.rst:67
+#: ../../user/print.rst:71
 msgid "``top``"
 msgstr ""
 
-#: ../../user/print.rst:69
+#: ../../user/print.rst:73
 msgid ""
 "``renderAsSvg``: Indicates if the scalebar graphic is rendered as SVG "
 "(*default*: false). Can be either ``true`` or ``false``."
 msgstr ""
 
-#: ../../user/print.rst:70
+#: ../../user/print.rst:74
 msgid ""
 "``size``: The size of the scalebar graphic in the Jasper report (in "
 "pixels). This must be an integer."
 msgstr ""
 
-#: ../../user/print.rst:72
+#: ../../user/print.rst:76
 msgid "Example:"
 msgstr ""
 
