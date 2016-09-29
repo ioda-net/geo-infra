@@ -126,7 +126,7 @@ function _launch-task-in-front-dir {
             if [[ $? != 0 ]]; then
                 echo "Tests failed for ${test_portal}" >&2
                 echo "${output}"
-                return 1
+                exit 1
             fi
             set -e;;
     esac
