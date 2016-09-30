@@ -82,6 +82,25 @@ Topic Switch
   topic are removed from the layer selector.
 
 
+Time selector
+-------------
+
+**If you have time enabled layers on your portal.**
+
+- Add this map, for instance *Journey through time - Maps*
+- **Results:** there should be a year at the right of the name of the name and a button named *Enable and disable representation of data time stamps* must appear below the other map button on the right of the screen.
+- Click on the year.
+- **Results:** a selector must appear with all the available years for this map.
+- Change the year.
+- **Results:** the map must be updated.
+- Click on the *Enable and disable representation of data time stamps* button.
+- **Results:** the time selector must appear.
+- Use the time selector to change the date.
+- **Results:** the map must be updated.
+- Click on the play button
+- **Results:** the time must change automatically and the map must be updated accordingly.
+
+
 WMS import
 ----------
 
@@ -138,6 +157,12 @@ WMTS import
   the permalink.
 - Close the popup.
 - **Results:** the popup is successfully closed.
+
+WMTS import with time series
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Import a WMTS layer that support time series, for instance *Journey through time - Maps*.
+- Do the test case for `Time selector`_
 
 
 KML import
