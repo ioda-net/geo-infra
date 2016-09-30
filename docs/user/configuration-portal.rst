@@ -34,6 +34,7 @@ They can have the following optional attributes:
 - crossOrigin: (default: null, possible: ``"undefined"`` WMS only). If the value is set to ``"undefined"``, this will force OpenLayers to discard cross origin information. This can be useful when you import an external WMS layer and encounter cross origin problems.
 - background (default: false)
 - timeBehaviour (default: last, WMTS only)
+- templateUrl (default: null, WMTS only)
 
 Example JSON file for external WMS layer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

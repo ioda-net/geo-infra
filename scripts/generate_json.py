@@ -342,6 +342,7 @@ class OwsParser(Generate):
         layer_config['timestamps'] = layer.get('timestamps', [])
         layer_config['timeBehaviour'] = layer.get('timeBehaviour', 'last')
         layer_config['matrixSet'] = layer['matrixSet']
+        layer_config['templateUrl'] = layer.get('templateUrl', None)
 
     def save_information(self):
         '''Save the layers configuration and the search files.
