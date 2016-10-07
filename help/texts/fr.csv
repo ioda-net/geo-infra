@@ -93,10 +93,11 @@ Vous trouverez des informations générales sur les images aériennes de swissto
 Vous trouverez dans le document ci-dessous des instructions détaillées :
 
 <iframe src=""https://docs.google.com/presentation/d/1cwtwJN1zzxs5js6jWfH2hlPn8Gx9YROYtRwf4NniuV4/embed?start=false&loop=false&delayms=5000"" frameborder=""0"" width=""570"" height=""456"" allowfullscreen=""true"" mozallowfullscreen=""true"" webkitallowfullscreen=""true""></iframe>",,/help/img/blank.png
-41,24,Imprimer,"L'application permet de produire des fichiers PDF à partir de la carte (munie de quelques informations utiles, telle que l'échelle). Ces fichiers peuvent être enregistrés et imprimés. En appuyant sur le bouton ""imprimer"", la fenêtre de dialogue dans laquelle on peut paramétrer l'échelle désirée et l'orientation du document PDF A4/A3 s'ouvre. La zone qui apparaîtra sur le document est en surbrillance sur la carte et peut être déplacée avec la souris. Les légendes des jeux de données peuvent être imprimées à partir des fenêtres d'information en appuyant sur le bouton ""Imprimer"". Attention, les fichiers PDF peuvent faire plusieurs mégaoctets. Leur transmission, notamment par le biais de lignes à faible puissance, peut prendre un certain temps.","<b>Légende:</b> Les légendes de tous les jeux de données sont imprimées sur une seconde page.
+45,24,Aviation,"Dans le cadre de la préparation de leur vol, les pilotes ont la possibilité de s‘informer via  l’application en ligne WeGOM (Web-GIS Obstacle Map) de la présence sur leur itinéraire d‘obstacles à la navigation aérienne au sens de l’art. 63, let. a et b de l’ordonnance sur l’infrastructure aéronautique (OSIA). <br><br>L’application consiste en une carte interactive des obstacles à la navigation aérienne qui est actualisée chaque semaine. D’autres informations aéronautiques comme les zones protégées définies à l’art. 19 de l’ordonnance sur les atterrissages en campagne (OSAC) ou les cartes aéronautiques peuvent également être consultées au moyen de l‘application.<br><br><iframe src=""https://docs.google.com/presentation/d/15ZBcDLeKQazKmigtK9sNwqlLGJ1aMoRm8drO2ppwLGk/embed?start=false&loop=false&delayms=5000"" frameborder=""0"" width=""570"" height=""456"" allowfullscreen=""true"" mozallowfullscreen=""true"" webkitallowfullscreen=""true""></iframe>",,/help/img/blank.png
+41,25,Imprimer,"L'application permet de produire des fichiers PDF à partir de la carte (munie de quelques informations utiles, telle que l'échelle). Ces fichiers peuvent être enregistrés et imprimés. En appuyant sur le bouton ""imprimer"", la fenêtre de dialogue dans laquelle on peut paramétrer l'échelle désirée et l'orientation du document PDF A4/A3 s'ouvre. La zone qui apparaîtra sur le document est en surbrillance sur la carte et peut être déplacée avec la souris. Les légendes des jeux de données peuvent être imprimées à partir des fenêtres d'information en appuyant sur le bouton ""Imprimer"". Attention, les fichiers PDF peuvent faire plusieurs mégaoctets. Leur transmission, notamment par le biais de lignes à faible puissance, peut prendre un certain temps.","<b>Légende:</b> Les légendes de tous les jeux de données sont imprimées sur une seconde page.
 <b>Réseau de coordonnées:</b> Superposition d'un réseau de coordonnées suisse WGS84.
 <b><i>Optionnel</i> Série temporelle:</b> Pour les jeux de données avec plusieurs représentations temporelles disponibles: un nouveau PDF est généré pour chaque représentation temporelle du point milieu de la carte.",/help/img/41f.png
-42,25,Curseur de temps,"Certaines géodonnées peuvent être visualisées dans le temps. Ces jeux de données sont reconnaissables par l'icône ""temps"" qui apparait sur le visualiseur à droite.<br>
+42,26,Curseur de temps,"Certaines géodonnées peuvent être visualisées dans le temps. Ces jeux de données sont reconnaissables par l'icône ""temps"" qui apparait sur le visualiseur à droite.<br>
 <img src=""/help/img/42f.png""><br>
 
 1. Choisir une couche <b>Raster</b> (""Voyage dans le temps"" dans le thème swisstopo, par exemple) ou <b>vectorielle</b> (""Images aériennes swisstopo"", par exemple).<br>
@@ -105,7 +106,7 @@ Vous trouverez dans le document ci-dessous des instructions détaillées :
 - est désactivée par défaut si c'est une couche <b>vectorielle</b> : les données de toutes les années disponibles sont affichées. En cliquant sur l'icône ""temps"", le curseur de temps apparait et les données les plus récentes sont affichées.<br>
 3. Au moyen du <b>curseur de temps</b>, sélectionner une année à visualiser.<br>
 4. l'année choisie est également affichée dans ""Sélection de couches"".",,/help/img/blank.png
-43,26,Copier/comparer données temporelles,"1. Choisir une couche Raster (""Voyage dans le temps"" dans le thème swisstopo, par exemple) ou vectorielle (""Images aériennes swisstopo"", par exemple).
+43,27,Copier/comparer données temporelles,"1. Choisir une couche Raster (""Voyage dans le temps"" dans le thème swisstopo, par exemple) ou vectorielle (""Images aériennes swisstopo"", par exemple).
 2) Copier ce jeu de données en cliquant sur l'icône <b>""Copie""</b> dans la fenêtre ""Sélection de couches"". La couche dupliquée apparait.
 3) Ouvrir la <b>fenêtre de sélection temporelle</b> en cliquant sur l'année indiquée pour le jeu de données (en rouge) et choisir l'année désirée pour chaque couche.
 
@@ -114,7 +115,7 @@ Vous trouverez dans le document ci-dessous des instructions détaillées :
 <img src=""/help/img/43f_1.png"">
 
 <img src=""/help/img/43f_2.png"">",,/help/img/blank.png
-44,27,Sélection d'objets ,"<ol type=""1""><li>Choisir un jeu de données du thème « Aviation » (Obstacles à la navigation aérienne, p.ex.). Toutes les couches dites « searchable » peuvent être utilisées dans le query tool (voir <a href=""//api3.geo.admin.ch/api/faq/index.html#which-layers-are-searchable"" target=""_blank"">info</a> ).<br /></li>
+44,28,Sélection d'objets ,"<ol type=""1""><li>Choisir un jeu de données du thème « Aviation » (Obstacles à la navigation aérienne, p.ex.). Toutes les couches dites « searchable » peuvent être utilisées dans le query tool (voir <a href=""//api3.geo.admin.ch/api/faq/index.html#which-layers-are-searchable"" target=""_blank"">info</a> ).<br /></li>
 <li>Dans « Outils » sélectionner « Information objet ».</li>
 <li>Pour afficher  tous les objets (max. 200) dans un périmètre défini, tracer un rectangle dans la zone d’intérêt en maintenant la touche CTRL enfoncée (cmd sur Mac). </li><br /><img src=""/help/img/44a_f.png""><br /><br /><b><u>Sélection par filtres</u></b><br /><br /><li>Les objets peuvent être affichés au moyen de <b>filtres</b> pré-définis ou personnalisés</li>
 <li>Les conditions de filtrage doivent être définies en sélectionnant un jeu de données,</li>
@@ -124,8 +125,8 @@ Vous trouverez dans le document ci-dessous des instructions détaillées :
 L’affichage d’objets peut être filtré en utilisant les attributs disponibles pour le jeu de données choisi.<br /><br /><li>Sélectionner « Statut » dans la liste de paramètres de filtrage</li>
 <li>Faire apparaître les <b>attributs disponibles</b> puis sélectionner dans la liste déroulante</li>
 <li>Choisir une opération  « ilike » =  ou « not ilike » !=</li></ol><br />Cliquer sur « Rechercher ». Les objets filtrés par attribut apparaissent.",,/help/img/blank.png
-50,28,LIEN & INTEGRATION,#,,
-52,29,Enregistrer/ transmettre / iFrame le contexte de la carte,"<b>Enregistrer ou transmettre par email le contexte actuel de la carte</b>
+50,29,LIEN & INTEGRATION,#,,
+52,30,Enregistrer/ transmettre / iFrame le contexte de la carte,"<b>Enregistrer ou transmettre par email le contexte actuel de la carte</b>
 
 La fonction ""Lien"" permet d'obtenir un lien (URL) contenant le contexte du moment (jeux de données, lieu, échelle). Celui-ci peut être copié et envoyé par Email, ou partagé au moyen de divers médias sociaux.<br>
 <img src=""/help/img/52f_1.png"">
@@ -137,10 +138,10 @@ Le code à intégrer dans votre page web est automatiquement généré. En cliqu
 Le code de notre exemple:
 <p class=""test"" style=""text-align: left;font-style: italic; color: #069;"">&lt;iframe src='//map.geo.admin.ch/embed.html?X=171954.23&Y=640698.99&zoom=3&lang=fr&topic=ech&bgLayer=ch.swisstopo.pixelkarte-grau' width='400' height='300' frameborder='0' style='border:0'&gt;&lt;/iframe&gt;</p><br> donne le résultat suivant:<br>
 <iframe src='//map.geo.admin.ch/embed.html?X=171954.23&Y=640698.99&zoom=3&lang=fr&topic=ech&bgLayer=ch.swisstopo.pixelkarte-grau' width='400' height='300' frameborder='0' style='border:0'></iframe>",,/help/img/blank.png
-53,30,Enregistrer/transmettre un lien vers un objet,"<b>Enregistrer ou transmettre par email un lien vers un objet</b>
+53,31,Enregistrer/transmettre un lien vers un objet,"<b>Enregistrer ou transmettre par email un lien vers un objet</b>
 
 Il est possible avec certains jeux de données vectoriels (points, lignes et polygones) de produire un lien (URL) directement sur un objet de la carte. Lorsqu'on ouvre la fenêtre d'information sur un objet en cliquant sur celui-ci, la dernière information qu'elle contient est l'URL ""Lien vers objet"". Ce lien va centrer l'objet correspondant dans la fenêtre actuelle par clic ou dans une nouvelle fenêtre par double clic. On peut ensuite utiliser la fonction ""Lien"" pour enregistrer ou transmettre l'URL.",,/help/img/53f.png
-54,31,Paramétrer le lien vers la carte,"Par le biais d'un lien avec des paramètres il est possible d'ouvrir l'application avec des jeux de données, une langue, en cadrage et une échelle prédéfinis:  api3.geo.admin.ch [//api3.geo.admin.ch]
+54,32,Paramétrer le lien vers la carte,"Par le biais d'un lien avec des paramètres il est possible d'ouvrir l'application avec des jeux de données, une langue, en cadrage et une échelle prédéfinis:  api3.geo.admin.ch [//api3.geo.admin.ch]
 <table width=""570"">
 <tr>
 <td bgcolor=""#eeeeee"" valign=""top"" width=""100""><span style=""font-weight:bold; font-size:11px;"">Paramètre</span></td>
@@ -245,7 +246,7 @@ Cas spécial WMS:  YYYY vide signifie que les données de toute les années s’
 </tr>
 </table>
 ",,/help/img/54f.png
-55,32,Mode offline pour mobile,"Offline pour une zone d’intérêt de 10x10km, carte à l'échelle 1:25'000 sans tooltip. <br><u>Actuellement disponible uniquement sur appareils mobiles.</u>
+55,33,Mode offline pour mobile,"Offline pour une zone d’intérêt de 10x10km, carte à l'échelle 1:25'000 sans tooltip. <br><u>Actuellement disponible uniquement sur appareils mobiles.</u>
 
 1. S’assurer d’avoir une connexion Internet stable, validez le téléchargement avec ""ok"".
 Ne fermez pas le navigateur. Ne verrouillez pas votre appareil . Si aucune progression n’est visible, ou des problèmes sont rencontrés, veuillez effacer le cache du navigateur de votre appareil. Désactivez le mode «privé». Attendre la fin du téléchargement, validez avec ""ok"".
@@ -258,23 +259,23 @@ Ne fermez pas le navigateur. Ne verrouillez pas votre appareil . Si aucune progr
 <b>Effacer la carte:</b> la zone d’intérêt peut être supprimée et en mode online un nouvel extrait de carte peut être stocké
 
 <b>Instructions sur Slideshare: </b> [http://fr.slideshare.net/swiss_geoportal/mobilegeoadminch-re1/32]",,/help/img/55.png
-59,33,FONCTIONS MESURER & DESSINER,#,,
-66,34,"Toutes les fonctions ""dessiner/mesurer""","1- <a href=""/help/?id=91&lang=fr"" target=""_self"">Ajouter un <b>symbole</b></a><br>
+59,34,FONCTIONS MESURER & DESSINER,#,,
+66,35,"Toutes les fonctions ""dessiner/mesurer""","1- <a href=""/help/?id=91&lang=fr"" target=""_self"">Ajouter un <b>symbole</b></a><br>
 2- <a href=""/help/?id=92&lang=fr"" target=""_self"">Ajouter du <b>texte</b></a><br>
 3- <a href=""/help/?id=93&lang=fr"" target=""_self"">Ajouter un <b>tracé / polygone</b></a><br>
 4- <a href=""/help/?id=94&lang=fr"" target=""_self""><b>Mesurer</b></a><br>
 5- <a href=""/help/?id=95&lang=fr"" target=""_self""><b>Partager</b> un dessin / KML</a>",,/help/img/90f.png
-91,35,Ajouter un symbole,"Dans « Dessiner & mesurer sur la carte », sélectionner « Symbole ». Cliquer avec la souris sur l'endroit désiré pour ajouter un symbole.
+91,36,Ajouter un symbole,"Dans « Dessiner & mesurer sur la carte », sélectionner « Symbole ». Cliquer avec la souris sur l'endroit désiré pour ajouter un symbole.
 
 Une fois placé, le symbole peut être modifié (taille et icône) et recevoir une description au format HTML ou texte  (fenêtre placée en bas à gauche). Cette description est affichée lorsqu'un clic est fait sur le symbole quand le dessin est partagé ou affiché par KML.
 
 On peut modifier tout élément en cliquant dessus. On peut sélectionner plusieurs éléments à modifier/supprimer en cliquant sur les objets avec la souris en maintenant la touche SHIFT, ou les supprimer en utilisant les options du menu déroulant « Plus… » .","Votre dessin est automatiquement stocké pour une année, vous acceptez ainsi les conditions d’utilisation.",/help/img/91f.png
-92,36,Ajouter du texte,"Dans ""Dessiner & mesurer sur la carte"", sélectionner ""Texte"". Cliquer avec la souris sur l'endroit désiré pour ajouter du  texte.
+92,37,Ajouter du texte,"Dans ""Dessiner & mesurer sur la carte"", sélectionner ""Texte"". Cliquer avec la souris sur l'endroit désiré pour ajouter du  texte.
 
-Une fois placé, le texte et sa couleur peuvent être modifiés (fenêtre placée en bas à gauche). 
+Une fois placé, le texte et sa couleur peuvent être modifiés (fenêtre). 
 
 On peut modifier tout élément en cliquant dessus. On peut sélectionner plusieurs éléments à modifier/supprimer en cliquant sur les objets avec la souris en maintenant la touche SHIFT, ou les supprimer en utilisant les options du menu déroulant « Plus… » .","Votre dessin est automatiquement stocké pour une année, vous acceptez ainsi les conditions d’utilisation.",/help/img/92f.png
-93,37,Ajouter un tracé / polygone,"Dans ""Dessiner & mesurer sur la carte"", sélectionner ""Trait"". Cliquer avec la souris pour commencer le tracé, les clics suivants ajoutent des segments, double-clic pour terminer.
+93,38,Ajouter un tracé / polygone,"Dans ""Dessiner & mesurer sur la carte"", sélectionner ""Trait"". Cliquer avec la souris pour commencer le tracé, les clics suivants ajoutent des segments, double-clic pour terminer.
 
 De nouveaux points peuvent être ajoutés au tracé : cliquer sur un segment, positionner le nouveau point et relâcher la souris pour valider sa position.
 La fenêtre en bas à gauche, permet de:
@@ -282,12 +283,12 @@ La fenêtre en bas à gauche, permet de:
 -	afficher le <b>profil</b> du tracé 
 -	afficher les <b>mesures</b> du tracé (distance, surface, azimut)
 
-On peut modifier tout élément en cliquant dessus. On peut sélectionner plusieurs éléments à modifier/supprimer en cliquant sur les objets avec la souris en maintenant la touche SHIFT, ou les supprimer en utilisant les options du menu déroulant ""Plus…"" .","Votre dessin est automatiquement stocké pour une année, vous acceptez ainsi les conditions d’utilisation.",/help/img/93f.png
-94,38,Mesurer,"Dans ""Dessiner & mesurer sur la carte"", sélectionner ""Mesurer"". Cliquer avec la souris pour définir le point de départ de la mesure, clics suivants pour ajouter des segments ou créer une surface. Double-clic pour terminer un tracé ou clic sur le point de départ pour fermer une surface. 
+On peut modifier tout élément en cliquant dessus. On peut sélectionner plusieurs éléments à modifier/supprimer en cliquant sur les objets avec la souris en maintenant la touche SHIFT, ou les supprimer en utilisant les options du menu déroulant ""Plus…"" .<b>Appuyer sur DEL pour effacer le dernier point.</b>","Votre dessin est automatiquement stocké pour une année, vous acceptez ainsi les conditions d’utilisation.",/help/img/93f.png
+94,39,Mesurer,"Dans ""Dessiner & mesurer sur la carte"", sélectionner ""Mesurer"". Cliquer avec la souris pour définir le point de départ de la mesure, clics suivants pour ajouter des segments ou créer une surface. Double-clic pour terminer un tracé ou clic sur le point de départ pour fermer une surface. 
 
 La mesure de la distance, de la surface et du profil sont automatiquement affichés.
 
-On peut modifier tout élément en cliquant dessus. On peut sélectionner plusieurs éléments à modifier/supprimer en cliquant sur les objets avec la souris en maintenant la touche SHIFT, ou les supprimer en utilisant les options du menu déroulant ""Plus…"" .
+On peut modifier tout élément en cliquant dessus. On peut sélectionner plusieurs éléments à modifier/supprimer en cliquant sur les objets avec la souris en maintenant la touche SHIFT, ou les supprimer en utilisant les options du menu déroulant ""Plus…"" . <b>Appuyer sur DEL pour effacer le dernier point.</b>
 
 <img src=""http:///help/img/94f.png"">
 <legend>Votre dessin est automatiquement stocké pour une année, vous acceptez ainsi les conditions d’utilisation.</legend>
@@ -317,21 +318,21 @@ On peut modifier tout élément en cliquant dessus. On peut sélectionner plusie
 <img style=""height: 30px; border:none;"" src=""/help/img/clock-o.png"">
 </li>
 </ol>",,
-95,39,Partager un dessin / KML,"Dans ""Dessiner & mesurer sur la carte"", les éléments de dessin (symboles, textes, tracés) peuvent être :
+95,40,Partager un dessin / KML,"Dans ""Dessiner & mesurer sur la carte"", les éléments de dessin (symboles, textes, tracés) peuvent être :
 
 - <b>Share Link</b>: partagés avec d’autres utilisateurs (1).
 - <b>Admin Link</b> : être à nouveau édités ultérieurement. Ce lien doit être sauvegardé, dans le cas où vous désirez modifier/supprimer vos éléments de dessin (2).
 - <b>Télécharger</b> vos éléments de dessin sous la forme d’un jeu de données au format KML, en utilisant l’option du menu déroulant « Plus… » (3).","Votre dessin est automatiquement stocké pour une année, vous acceptez ainsi les conditions d’utilisation.",/help/img/95f.png
-60,40,FONCTIONS COMPLEMENTAIRES,#,,
-62,41,WMS Import,"Seuls des services WMS qui supportent la ""Projection Suisse EPSG 21781"" et qui respectent le standard <a href=""http://www.opengeospatial.org/standards/wms"">WMS OGC</a> peuvent être représentés. Un outil de test simple est à disposition sur le site suivant: <a href=""//www.geo.admin.ch/internet/geoportal/fr/home/services/geoservices/ech0056.html"">Checkservice</a>
+60,41,FONCTIONS COMPLEMENTAIRES,#,,
+62,42,WMS Import,"Seuls des services WMS qui supportent la ""Projection Suisse EPSG 21781"" et qui respectent le standard <a href=""http://www.opengeospatial.org/standards/wms"">WMS OGC</a> peuvent être représentés. Un outil de test simple est à disposition sur le site suivant: <a href=""//www.geo.admin.ch/internet/geoportal/fr/home/services/geoservices/ech0056.html"">Checkservice</a>
 Les jeux de données WMS sont généralement visible à une échelle déterminée, de ce fait, il faut être centré dans la portion de carte correspondante et également choisir l'échelle appropriée.
 La rapidité de représentation des jeux de données WMS, de même que leur disponibilité, sont dépendantes des responsables de ces jeux de données.
 Les jeux de données peuvent être sauvegardés au format PDF en utilisant la fonction ""Impression"".
 De même, un jeux de données peut être transmis par email au moyen de la fonction Permalink ""Lien"".
 Veuillez vous conformer aux conditions d'utilisation des jeux de données du fournisseur.",,/help/img/62f.png
-63,42,KML Import,"<p>Il est désormais possible de visualiser des fichers KML enregistré online (via URL) ou localement (cette fonctionalité n’est pas disponible avec IE).</p><p>Seuls les fichiers KML ne contenant aucune erreur et qui respectent le   
+63,43,KML Import,"<p>Il est désormais possible de visualiser des fichers KML enregistré online (via URL) ou localement (cette fonctionalité n’est pas disponible avec IE).</p><p>Seuls les fichiers KML ne contenant aucune erreur et qui respectent le   
 <a href =""http://opengeospatial.org/standards/kml""><b>standard KML OGC</b></a></b> peuvent être représentés.</p><p>Un outil de test simple à disposition: <a href=""http://kmlvalidator.com/home.htm""><b>Lien</b></a></p>
-<img src=""/help/img/64f.png""><br /><br /><h2>Generation de KML et mise en ligne</h2><p><b>Comment créer un fichier .kml</b></p><p><a href=""http://www.swisstopo.admin.ch/internet/swisstopo/de/home/apps/calc/kml.html"">Générateur de fichier KML en ligne</a><br>
+<img src=""/help/img/64f.png""><br /><br /><h2>Generation de KML et mise en ligne</h2><p><b>Comment créer un fichier .kml</b></p><p><a href=""https://www.swisstopo.admin.ch/fr/cartes-donnees-en-ligne/calculation-services/kml.html"">Générateur de fichier KML en ligne</a><br>
 <a href=""/help/?id=66&lang=fr"">Dessin</a></p>
 </p><p><b>Comment publier un fichier .kml en ligne</b><br />Afin de distribuer vos propres fichiers KML au moyen d’un URL stable sans avoir votre propre serveur, vous pouvez utiliser les services libres suivants:</p><p><b>1. <u>Publier avec Google Docs</u></b></p>
 <ul><li>Créer un acompte: <a href=""https://docs.google.com"">https://docs.google.com</a></li>
@@ -352,13 +353,13 @@ Veuillez vous conformer aux conditions d'utilisation des jeux de données du fou
 <li>Un URL avec votre fichier KML a été généré</li>
 <li>Vous pouvez maintenant importer et visualiser votre KML dans map.geo.admin.ch en utilisant cet URL (5). De plus vous pouvez créer des permaliens map.geo.admin.ch avec votre KML et le partager avec d’autres utilisateurs ou sur votre propre page web.</li></ul>
 <img src=""/help/img/64all.png"">",,/help/img/blank.png
-65,43,Comparer,"Il est possible de comparer deux jeux de données. Sélectionner ""Comparer"" dans les outils et le curseur apparait en rouge au centre de la carte: 
+65,44,Comparer,"Il est possible de comparer deux jeux de données. Sélectionner ""Comparer"" dans les outils et le curseur apparait en rouge au centre de la carte: 
 
 <img src=""/help/img/65f_1.png"">
 
 La couche sélectionnée qui est en première position dans la liste du choix de jeux de données est présentée à gauche, toutes les autres couches sont à droite. La comparaison se fait en glissant le curseur rouge à gauche ou à droite au moyen de la souris:",,/help/img/65f_2.png
-68,44,Information objet,"Pour obtenir les informations sur plusieurs objets, tracer un rectangle avec CTRL + clic souris, tous les objets inclus seront rassemblés dans une seule fenêtre d'information:",,/help/img/68.png
-69,45,Raccourcis clavier,"
+68,45,Information objet,"Pour obtenir les informations sur plusieurs objets, tracer un rectangle avec CTRL + clic souris, tous les objets inclus seront rassemblés dans une seule fenêtre d'information:",,/help/img/68.png
+69,46,Raccourcis clavier,"
 <table align=""center"" width=""550"">
 <thead>
 <tr>
@@ -440,10 +441,10 @@ La couche sélectionnée qui est en première position dans la liste du choix de
 </tbody>
 </table>
 ",,/help/img/blank.png
-70,46,Annoncer un problème,"<p>Cet outil vous permet d'envoyer des commentaires, et des suggestions ou des signalisations de problèmes sur map.geo.admin.ch. Ceux-ci sont tous bienvenus.<br />Ouvrez map.geo.admin.ch et effectuez un zoom sur la zone présentant un problème. Il peut s'agir d'une route, une adresse, un endroit. Il est possible d'utiliser le champ de saisie de recherche pour situer la zone. Cliquez en-haut à droite sur ""Annoncer un problème"".</p><p><b>Votre e-mail</b><br />Saisissez votre adresse email. Champ optionnel.</p><p><b>Saisissez votre feedback ici…</b><br />Saisissez votre commentaire au description du problème. Champ obligatoire.</p>
+70,47,Annoncer un problème,"<p>Cet outil vous permet d'envoyer des commentaires, et des suggestions ou des signalisations de problèmes sur map.geo.admin.ch. Ceux-ci sont tous bienvenus.<br />Ouvrez map.geo.admin.ch et effectuez un zoom sur la zone présentant un problème. Il peut s'agir d'une route, une adresse, un endroit. Il est possible d'utiliser le champ de saisie de recherche pour situer la zone. Cliquez en-haut à droite sur ""Annoncer un problème"".</p><p><b>Votre e-mail</b><br />Saisissez votre adresse email. Champ optionnel.</p><p><b>Saisissez votre feedback ici…</b><br />Saisissez votre commentaire au description du problème. Champ obligatoire.</p>
 <img src=""/help/img/70f.png""><p><b>Votre dessin</b><br />Il est possible d'ajouter un dessin au moyen des outils mis à disposition. Vos éléments graphiques sont automatiquement attachés au message. Champ optionnel.</p><p><b>Joindre un fichier</b><br />Vous pouvez ajouter des informations supplémentaires en attachant un fichier au moyen du champ  (""Browse""). Champ optionnel.</p><p>Cliquez sur ""Envoyer""</p><p><b>Quel format de fichier peut être attaché ?</b><br />Les formats suivants sont supportés: .pdf, .zip, .png, .png, .kml, .kmz oder gpx. </p><p><b>Quelle suite est donnée à mon rapport ?</b><br />En cas de problèmes liés aux données, vos informations sont transmises au responsable des données concernées.</p>",,/help/img/blank.png
-80,47,INFOS TECHNIQUES ET LÉGALES,#,,
-81,48,Informations & conditions,"<b1>Informations techniques et support<b2>
+80,48,INFOS TECHNIQUES ET LÉGALES,#,,
+81,49,Informations & conditions,"<b1>Informations techniques et support<b2>
 Spécifications concernant le stockage de données: 
 api3.geo.admin.ch [//api3.geo.admin.ch]
 

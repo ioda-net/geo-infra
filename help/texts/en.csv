@@ -95,7 +95,8 @@ A document with further informations can be found here:
 41,24,Print,"The “Print” function enables you to produce portable document format (.pdf) files containing an extract of the main map and any background data, together with information such as the map scale. You can save these files and print them out. The “Print” button opens a dialogue box for your choice of scale of the A4/A3 page to be downloaded and printed, independent of the scale of the map view on display. The printable area will be highlighted and the map canbe moved / panned with the mouse to fit the extired extent into the print area. The legend for selected thematic data-sets (layers) can also be printed to a second page by activating the corresponding checkbox. Actviate the ""Coordinate grid"" check box to superimpose a georeferencing information. CAUTION: pdf files can occupy several megabytes (MB) which may take a considerable time to download if your Internet connection is slow.","<b>Legend:</b> Legends of all active datasets will be printed on a second page.
 <b>Coordinate grid:</b> Superposition of the Swiss WGS84 coordinate system.
 <b><i>Optional</i> Time Series:</b> For datasets with several time representations: a new PDF is generated for each time representation of the middle of the map.",/help/img/41e.png
-42,25,Time slider,"Some geodata can be filtered by time. These datasets are identified by the ""time"" icon that is displayed on the viewer on the right side.
+45,24,Aviation,"As part of their flight preparation, pilots use WeGOM (the Web-GIS Obstacle Map) to familiarise themselves with the latest published aviation obstacles in terms of Art. 63 para. a/b of the Aviation Infrastructure Ordinance.<br><br>An interactive digital aviation obstacle map, WeGOM is updated each week to show the latest obstacle situation. Other aviation-related data, such as protected zones under Art. 19 of the Off-Aerodrome Landing Ordinance (OALO) or aviation maps, can also be displayed if required.<br><br><iframe src=""https://docs.google.com/presentation/d/1pJY4HxJOr7TyXIBMB8NXae53DacFqd3hi5XuIG6I8V8/embed?start=false&loop=false&delayms=5000"" frameborder=""0"" width=""570"" height=""456"" allowfullscreen=""true"" mozallowfullscreen=""true"" webkitallowfullscreen=""true""></iframe>",,/help/img/blank.png
+42,26,Time slider,"Some geodata can be filtered by time. These datasets are identified by the ""time"" icon that is displayed on the viewer on the right side.
 <img src=""/help/img/42e.png""><br>
 
 1) Select a <b>raster</b> dataset (eg. As ""Journey through time - Maps"") or a <b>vector</b> dataset (eg. ""Aerial Images swisstopo color"").<br>
@@ -104,7 +105,7 @@ A document with further informations can be found here:
  - in the case of <b>vector</b> dataset, it is disabled by default: the data of all years are displayed. When activating the icon ""time"", the time slider appears and only the data of the most recent year is displayed.<br>
 3) Use the <b>time slider</b> to select the data of a particular year.<br>
 4) The selected year is also mentioned in the selection window.",,/help/img/blank.png
-43,26,Time copy/compare,"1) Select a raster dataset with time representation (eg. As ""Journey through time - Maps"") or a vector dataset (eg. ""Aerial Images swisstopo color"").
+43,27,Time copy/compare,"1) Select a raster dataset with time representation (eg. As ""Journey through time - Maps"") or a vector dataset (eg. ""Aerial Images swisstopo color"").
 2) Copy this dataset by clicking the icon <b>""Copy""</b> in the selection window: the duplicate layer appears.
 3) Open the <b>year selection window</b> by clicking on the year number of the dataset (in red) and choose the needed year for each layer.
 
@@ -113,7 +114,7 @@ A document with further informations can be found here:
 <img src=""/help/img/43e_1.png"">
 
 <img src=""/help/img/43e_2.png"">",,/help/img/blank.png
-44,27,How to select objects « Query Tool »,"<ol type=""1""><li>Choose a dataset from the topic « Aviation » (e.g. Air navigation obstacles). All datasets whose attributes are searchable, can be used in this tool. <a href=""//api3.geo.admin.ch/api/faq/index.html#which-layers-are-searchable"" target=""_blank"">Here’s an overview of those datasets</a>.</li>
+44,28,How to select objects « Query Tool »,"<ol type=""1""><li>Choose a dataset from the topic « Aviation » (e.g. Air navigation obstacles). All datasets whose attributes are searchable, can be used in this tool. <a href=""//api3.geo.admin.ch/api/faq/index.html#which-layers-are-searchable"" target=""_blank"">Here’s an overview of those datasets</a>.</li>
 <li>Choose « Object information » from the « Tools » section</li>
 <li>To select all objects (200 as a maximum!) inside a map perimeter, use CTRL (cmd on Mac) and draw a rectangle on the map</li><br /><img src=""/help/img/44a_e.png""><br /><br /><b><u>Select objects by attributes with types date or numeric</u></b><br /><br /><li>Objects can be searched by predefined or user defined <b>queries</b></li>
 <li>Set the query parameters by choosing a dataset,</li>
@@ -122,8 +123,8 @@ A document with further informations can be found here:
 <li>Several queries can be combined with an AND operation.</li><br />Finish your query by clicking « Search ». The objects corresponding to the query are highlighted in the map and appear inside the result list. A maximum of 200 objects can be selected.<br /><br /><img src=""/help/img/44b_e.png""><br /><br /><b><u>Select objects by attributes with type domain</u></b><br />It is possible to search by attributes with domain values (e.g. the status of Air navigation obstacles).<br /><br /><li>Choose the attribute « Status » from the dropdown menu</li>
 <li>Click here in order to display all <b>occurring values</b> of the attribute</li>
 <li>Choose operator  « ilike » =  or « not ilike » !=</li></ol>Finish your query by clicking « Search ». The objects corresponding to the query are highlighted in the map and appear inside the result list. A maximum of 200 objects can be selected.",,/help/img/blank.png
-50,28,LINKING & INTEGRATION,#,,
-52,29,Send/save/iFrame of the current map,"<b> Save current map display or send it by e-mail send to other people </b>
+50,29,LINKING & INTEGRATION,#,,
+52,30,Send/save/iFrame of the current map,"<b> Save current map display or send it by e-mail send to other people </b>
 
 Using the ""Share"" function, the current map content (layers, location, zoom level) will be stored as link (URL) and can be send as e-mail or via social media.<br>
 <img src=""/help/img/52e_1.png""><br>
@@ -136,10 +137,10 @@ The code of our example:
 gives the following result:<br>
 <iframe src='//map.geo.admin.ch/embed.html?X=171954.23&Y=640698.99&zoom=3&lang=en&topic=ech&bgLayer=ch.swisstopo.pixelkarte-grau' width='400' height='300' frameborder='0' style='border:0'></iframe>
 ",,/help/img/blank.png
-53,30,Save/send a link to an object,"With some vector data-sets (points, lines and areas) it is possible to generate a link (URL) direct to an object on the map. 
+53,31,Save/send a link to an object,"With some vector data-sets (points, lines and areas) it is possible to generate a link (URL) direct to an object on the map. 
 When “Object information” is viewed, the bottom line is “Link to object”. One click centres the object in the current window; 
 a double click opens it in a new window with the object centred. The “Link” function can then be used to copy the URL then save it or send it in an e-mail.",,/help/img/53d.png
-54,31,Use parameters to call up a map,"Preset parameters can be used to call up the map viewer with predefined data-sets (layers), language, location of centre of view and scale: api3.geo.admin.ch [//api3.geo.admin.ch]
+54,32,Use parameters to call up a map,"Preset parameters can be used to call up the map viewer with predefined data-sets (layers), language, location of centre of view and scale: api3.geo.admin.ch [//api3.geo.admin.ch]
 <table width=""570"">
 <tr>
 <td bgcolor=""#eeeeee"" valign=""top"" width=""100""><span style=""font-weight:bold; font-size:11px;"">Parameter</span></td>
@@ -244,7 +245,7 @@ Special case WMS:  YYYY empty means that the data of all years are displayed (de
 </tr>
 </table>
 ",,/help/img/54d.png
-55,32,Offline mode for mobile,"Offline for a map extent of 10x10km up to a scale of 1:25’000, no tooltips. <br><u>Currently available only on mobile devices.</u>
+55,33,Offline mode for mobile,"Offline for a map extent of 10x10km up to a scale of 1:25’000, no tooltips. <br><u>Currently available only on mobile devices.</u>
 
 1. Use a stable internet connection, hit «ok» to validate the download
 Don’t close the browser or lock your device. If you encounter problems/no progress during the process: delete the browsercache of your device. Deactivate «Private» mode
@@ -258,23 +259,23 @@ Wait until download has been completed, hit «ok»
 <b>Delete saved map extent:</b> ensure Internet connection and use the delete map function and a new map extent for offline can be added
 
 <b>Instructions on Slideshare:</b> [http://de.slideshare.net/swiss_geoportal/mobilegeoadminch-re1/32]",,/help/img/55d.png
-59,33,DRAW & MEASURE FUNCTIONS,#,,
-66,34,"All ""draw/measure"" functions","1- <a href=""/help/?id=91&lang=en"" target=""_self"">Add <b>symbol</b></a><br>
+59,34,DRAW & MEASURE FUNCTIONS,#,,
+66,35,"All ""draw/measure"" functions","1- <a href=""/help/?id=91&lang=en"" target=""_self"">Add <b>symbol</b></a><br>
 2- <a href=""/help/?id=92&lang=en"" target=""_self"">Add <b>text</b></a><br>
 3- <a href=""/help/?id=93&lang=en"" target=""_self"">Add <b>line / polygon</b></a><br>
 4- <a href=""/help/?id=94&lang=en"" target=""_self""><b>Measure</b></a><br>
 5- <a href=""/help/?id=95&lang=en"" target=""_self""><b>Share</b> drawing / KML</a>",,/help/img/90e.png
-91,35,Add symbol,"In main menu item ""Draw & measure on map"" select ""Symbol"". Click the mouse on the desired location to add a symbol.
+91,36,Add symbol,"In main menu item ""Draw & measure on map"" select ""Symbol"". Click the mouse on the desired location to add a symbol.
 
 Once placed, the symbol can be modified (size and icon) and receive a description in HTML format or text (left down window). This description is displayed when the symbol is mouse-clicked while the drawing is shared or displayed through KML. 
 
 Every element can be modified by clicking on it.  Several elements can be selected to be modified/deleted by SHIFT + mouse-clicking on the objects, or deleted by using the options of the scrolling menu ""More..."".","Your drawing is automatically saved for one year. By using this service, you agree the Conditions of Use.",/help/img/91e.png
-92,36,Add text,"In main menu item ""Draw & measure on map"" select ""Text"". Click the mouse on the desired location to add text.
+92,37,Add text,"In main menu item ""Draw & measure on map"" select ""Text"". Click the mouse on the desired location to add text.
 
-Once placed, the text and its colour can be modified (left down window).  
+Once placed, the text and its colour can be modified (window).  
 
 Every element can be modified by clicking on it.  Several elements can be selected to be modified/deleted by SHIFT + mouse-clicking on the objects, or deleted by using the options of the scrolling menu ""More..."".","Your drawing is automatically saved for one year. By using this service, you agree the Conditions of Use.",/help/img/92d.png
-93,37,Add line / polygon,"In main menu item ""Draw & measure on map"" select ""Line"". Click the mouse to start the line, the next clicks add new line segments. Double-click to finish.
+93,38,Add line / polygon,"In main menu item ""Draw & measure on map"" select ""Line"". Click the mouse to start the line, the next clicks add new line segments. Double-click to finish.
 
 New points can be added to the drawing: click on a segment and move the new point, then release the mouse to validate its position.
 The left down window allows to:
@@ -282,12 +283,12 @@ The left down window allows to:
 - display the drawing's <b>profile</b>
 - display the <b>measurements</b> of the line (distance, surface, azimut)
 
-Every element can be modified by clicking on it.  Several elements can be selected to be modified/deleted by SHIFT + mouse-clicking on the objects, or deleted by using the options of the scrolling menu ""More..."".","Your drawing is automatically saved for one year. By using this service, you agree the Conditions of Use.",/help/img/93e.png
-94,38,Measure,"In main menu item ""Draw & measure on map"" select ""Measure"". Click the mouse to define the start of the measurement, next clicks to add new line segments or create a surface. Double-click to finish the line or click on the start point to close the surface.
+Every element can be modified by clicking on it.  Several elements can be selected to be modified/deleted by SHIFT + mouse-clicking on the objects, or deleted by using the options of the scrolling menu ""More..."". <b>Press DEL to remove the last point drawn</b>","Your drawing is automatically saved for one year. By using this service, you agree the Conditions of Use.",/help/img/93e.png
+94,39,Measure,"In main menu item ""Draw & measure on map"" select ""Measure"". Click the mouse to define the start of the measurement, next clicks to add new line segments or create a surface. Double-click to finish the line or click on the start point to close the surface.
 
 The measurement of distance, surface and profile are automatically displayed.
 
-Every element can be modified by clicking on it.  Several elements can be selected to be modified/deleted by SHIFT + mouse-clicking on the objects, or deleted by using the options of the scrolling menu ""More..."".
+Every element can be modified by clicking on it.  Several elements can be selected to be modified/deleted by SHIFT + mouse-clicking on the objects, or deleted by using the options of the scrolling menu ""More..."". <b>Press DEL to remove the last point drawn</b>
 
 <img src=""/help/img/94e.png"">
 <legend>Your drawing is automatically saved for one year. By using this service, you agree the Conditions of Use.</legend>
@@ -318,44 +319,48 @@ Every element can be modified by clicking on it.  Several elements can be select
 </li>
 </ol>
 ",,
-95,39,Share drawing / KML,"In main menu item ""Draw & measure on map"", all drawing elements (symbols, lines, texts) can be:
+95,40,Share drawing / KML,"In main menu item ""Draw & measure on map"", all drawing elements (symbols, lines, texts) can be:
 
 - <b>Share link</b>: shared with other users (1).
 - <b>Admin link</b>: edited later. This link shall be saved, if you need to modify/delete your drawing elements (2).
 - <b>Download</b> your drawing elements as a dataset in KML format, by using the option in the scrolling menu ""More...""(3).","Your drawing is automatically saved for one year. By using this service, you agree the Conditions of Use.",/help/img/95e.png
-60,40,ADVANCED FUNCTIONS,#,,
-62,41,WMS import,"Only WMS services compliant with ""Swiss Projection EPSG 21781"" and following the <a href=""http://www.opengeospatial.org/standards/wms""> WMS OGC Standard</a>  can be displayed. An easy tool to check this is provided by <a href =""//www.geo.admin.ch/internet/geoportal/en/home/services/geoservices/ech0056.html"">Link</a>
+60,41,ADVANCED FUNCTIONS,#,,
+62,42,WMS import,"Only WMS services compliant with ""Swiss Projection EPSG 21781"" and following the <a href=""http://www.opengeospatial.org/standards/wms""> WMS OGC Standard</a>  can be displayed. An easy tool to check this is provided by <a href =""//www.geo.admin.ch/internet/geoportal/en/home/services/geoservices/ech0056.html"">Link</a>
 Generally the WMS datasets are visible in a given scale, that's why the right portion of the map has to be selected and appropriate scale too.
 The displaying speed of WMS datasets and their availability is under responsibility of the service owner.
 The WMS datasets can be saved as PDF through the ""Print"" function.
 A WMS dataset can be forwarded by email with Permalink ""Link"" function.
 Please, follow the use conditions of the WMS service provider.",,/help/img/62e.png
-63,42,KML import,"<p>It is now possible to display KML saved online (by using URL) or locally (this fonction is not possible with IE)</p><p>Only KML files without any error can be displayed. These files must be compliant with <a href=""http://opengeospatial.org/standards/kml""><b>the OGC KML format</b></a></p><p>An easy way to check your file is provided by <a href=""http://kmlvalidator.com/home.htm""><b>Link</b></a></p>
-<img src=""/help/img/64d.png""><br /><br /><h2>Generating KML file and using it online</h2><p><b>How to create a .kml file</b></p><p><a href=""http://www.swisstopo.admin.ch/internet/swisstopo/de/home/apps/calc/kml.html"">Online KML Generator</a><br>
-<a href=""/help/?id=66&lang=en"">Drawing</a></p></p><p><b>How to publish a .kml file online</b><br />In order to distribute your own KML-files via a stable URL without setting up an own web server you can use the following free services for hosting and distributing:</p><p><b>1. <u>Publish with Google Docs</u></b></p>
-<ul><li>Create your account: <a href=""https://docs.google.com"">https://docs.google.com</a></li>
-<li>Upload the file: click on the Upload button > Files… </li></ul>
+63,43,KML Import,"<p>Es können jetzt online oder lokal (Ausnahme: bei der Nutzung von  InternetExplorer) gespeicherte KML files dargestellt werden.</p><p>Es können nur KML Dateien fehlerfrei dargestellt werden, die dem <a href=""http://www.opengeospatial.org/standards/kml""><b>KML OGC Standard</b></a> entsprechen.</p><p>Ein einfaches tool zur Überprüfung bietet <a href=""http://kmlvalidator.com/home.htm""><b>Link</b></a></p>
+<img src=""/help/img/64d.png""><br /><br /><h2>KML generieren und online bringen</h2><p><b>Erstellen einer KML-Datei</b></p><p><a href=""https://www.swisstopo.admin.ch/de/karten-daten-online/calculation-services/kml.html"">Online KML Generator</a><br>
+<a href=""/help/?id=66&lang=de"">Zeichnen</a></p>
+<p><b>KML online publizieren</b></p>
+<p>Für BenutzerInnen, welche ihre KML-Dateien im Internet über eine stabile URL visualisieren wollen und welche keinen eigenen Server zur Verfügung haben, gibt es folgende Möglichkeiten KML kostenlos zu hinterlegen und zu publizieren:</p><p><b>1. <u>Publizieren mit Google Docs</u></b></p>
+<ul><li>Account einrichten auf: <a href=""https://docs.google.com"">https://docs.google.com</a></li>
+<li>Datei hochladen: click auf ""Upload > Files…""</li></ul>
 <img src=""/help/img/upload.png"">
-<ul><li>In the window ""File Upload"" select your KML file and ""Open""</li> 
-<li>In the window ""Upload settings ""Uncheck ""Convert documents, presentations, spreadsheets, and drawings to the corresponding Google Docs format"" and ""Convert text from PDF and image files to Google documents"" and click ""Start upload""</li> 
-<li>Select the document by clicking in the checkbox on the left and click on the share button and then on ""Change…"" in the ""Sharing settings"" widows. Select ""Public on the web"" or ""Anyone with the link"" and click ""Save"", copy the ""Link to share"" then ""Done"".</li> </ul>
-<img src=""/help/img/sharing.png""><ul><li>Modify the copied Link by changing the word ""leaf"" by ""uc"" between ""https://docs.google.com/"" and ""?id=…"", the link can be use in the ""KML import"" in map.geo.admin.ch</li></ul><p>Example:<br /> 
-<a href=""//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||https://docs.google.com/uc?id=0B4uRuJ1hajZmZjJlZDNiMGItNmU0Zi00N2FlLWJiZDItM2UwZDA3YmQwYzk3&hl=fr&layers_opacity=1&layers_visibility=true"">//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||https://docs.google.com/uc?id=0B4uRuJ1hajZmZjJlZDNiMGItNmU0Zi00N2FlLWJiZDItM2UwZDA3YmQwYzk3&hl=fr&layers_opacity=1&layers_visibility=true</a></p><p><b>2. <u>Publish with Dropbox</u></b></p>
-<ul><li>Create your account: <a href=""http://www.dropbox.com"">http://www.dropbox.com</a> (You can install it or only use the web interface on this website)</li> 
-<li>Move your KML File in the public folder once the file is in your Public folder, simply right-click it once to open a menu. Choose ""Dropbox > Copy public link"" (Dropbox installed on your computer) or ""Copy public link"" (Web interface).(More information about Shared document in Dropbox: <a href=""http://www.dropbox.com/help/16"">http://www.dropbox.com/help/16</a><br>
-<li>Modify the copied Link by adding  ""dl=1"": http://dl.dropbox.com/u/44486020/swisstopo.kml?<b>dl=1</b>.</li>
-<li>The link can be used in the ""KML import"" in map.geo.admin.ch</li></ul><p>Example:<br /><a href=""//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||http://dl.dropbox.com/u/44486020/swisstopo.kml&layers_opacity=1&layers_visibility=true"">//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||http://dl.dropbox.com/u/44486020/swisstopo.kml&layers_opacity=1&layers_visibility=true</a></p><p><b>3. <u>Publish with Gist</u></b></p><p><a href=""https://gist.github.com/"">Gist</a>, a feature made available by <a href=""https://github.com"">Github</a></p><ul><li>Drag your KML-file into the text field of Gist (1). After that, the code of the KML-file is visible in the text field</li>
-<li>Push “Create Public Gist” (2)</li>
-<li>Push “Raw” (3)</li>
-<li>As visible in (4), an URL with your KML-file has been generated</li>
-<li>According to (5) you can now embed the KML-file via the URL in the map viewer. In addition you can create map.geo.admin.ch-permalinks with your KML and share your data with other users or on your own web page.</li></ul>  
+
+<ul><li>Im Fenster “File Upload” die gewünschte KML-Datei auswählen und “Open” drücken.</li> 
+<li>Im Fenster “Upload settings” die Häkchen bei “Convert documents, presentations, spreadsheets and drawings to the corresponding Google Docs format” und “Convert text from PDF and image files to Google documents” entfernen und “Start upload” drücken.</li> 
+<li>In der Checkbox auf der linken Seite das Dokument auswählen und dann “Share” drücken. Anschliessend muss unter „Sharing settings“ -> „Change…“ entweder „Public on the web“ oder „Anyone with the link“ gewählt und mit „Save“ bestätigt werden. Dann kann der „Link to share“ in die Zwischenablage kopiert werden.</li> </ul>
+<img src=""/help/img/sharing.png"">
+<ul><li>Die kopierte URL muss dann noch wie folgt abgeändert werden, damit die KML-Datei über das KML-Import Tool auf map.geo.admin.ch importiert werden kann: zwischen „https://docs.google.com/“ und „?id=…“ den String „leaf“ durch „uc“ ersetzen.</li></ul>
+<p>Beispiel:<br /><a href=""//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||https://docs.google.com/uc?id=0B4uRuJ1hajZmZjJlZDNiMGItNmU0Zi00N2FlLWJiZDItM2UwZDA3YmQwYzk3&hl=fr&layers_opacity=1&layers_visibility=true"">//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||https://docs.google.com/uc?id=0B4uRuJ1hajZmZjJlZDNiMGItNmU0Zi00N2FlLWJiZDItM2UwZDA3YmQwYzk3&hl=fr&layers_opacity=1&layers_visibility=true</a></p><p><b>2. <u>Publizieren mit Dropbox</u></b></p>
+<ul><li>Account eröffnen auf: <a href=""http://www.dropbox.com"">http://www.dropbox.com</a> (es ist möglich, die Applikation für Desktop zu installieren oder aber direkt die Webapplikation zu verwenden)</li> 
+<li>KML-Datei in den “public” Ordner ziehen, danach Rechtsklick auf die Datei um das Menü zu öffnen. Danach entweder in der Desktop Applikation „Dropbox -> Copy public link“ oder in der Web-Applikation „Copy public link“ drücken. Erfahren Sie hier mehr über die Publikation via Dropbox: <a href=""http://www.dropbox.com/help/16"">http://www.dropbox.com/help/16</a>
+<li>Die kopierte URL muss dann noch mit dl=1 ergänzt werden, damit die KML-Datei über das KML-Import Tool auf map.geo.admin.ch importiert werden kann: http://dl.dropbox.com/u/44486020/swisstopo.kml?<b>dl=1</b>.</li>
+<li>Die resultierende URL kann via “KML Import“ auf map.geo.admin.ch verwendet werden.</li></ul> 
+<p>Beispiel:<br /><a href=""//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||http://dl.dropbox.com/u/44486020/swisstopo.kml&layers_opacity=1&layers_visibility=true"">//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||http://dl.dropbox.com/u/44486020/swisstopo.kml&layers_opacity=1&layers_visibility=true</a></p><p><b>3. <u>Publizieren mit Gist</u></b></p><p><a href=""https://gist.github.com/"">Gist</a>, eine Funktion von <a href=""https://github.com"">Github</a>:</p><ul><li>Kreieren Sie Ihre URL, indem Sie Ihre KML-Datei mittels Drag-and-drop ins Textfenster von Gist ziehen (1)</li>
+<li>Sie sehen nun den Code Ihrer KML-Datei im Textfenster. Drücken Sie den Knopf „Create Public Gist“ (2) und danach den Knopf „Raw“ (3)</li>
+<li>Es wird wie in (4) ersichtlich eine URL mit Ihrer KML-Datei generiert</li>
+<li>Gemäss (5) können Sie diese URL in den Kartenviewer einbinden und insbesondere auch als Permalink anderen BenutzerInnen zur Verfügung stellen oder auf einer eigenen Webseite verlinken.</li></ul>  
 <img src=""/help/img/64all.png"">",,/help/img/blank.png
-65,43,Compare,"It is possible to compare two datasets. Select ""Compare"" in the Tools and the red cursor will appear on the middle of the map.
+65,44,Compare,"It is possible to compare two datasets. Select ""Compare"" in the Tools and the red cursor will appear on the middle of the map.
 <img src=""/help/img/65e_1.png"">
 The selected layer in first position is displayed on the left side, all other layers on the right side.
 The comparison can easily be done by sliding the red cursor with the mouse:",,/help/img/65e_2.png
-68,44,Object information,"To get informations on several obects, trace a recangle with CTRL+ mouse click, all objects included in the rectangle will be collected in a single information window:",,/help/img/68d.png
-69,45,Keyboard Shortcuts,"
+68,45,Object information,"To get informations on several obects, trace a recangle with CTRL+ mouse click, all objects included in the rectangle will be collected in a single information window:",,/help/img/68d.png
+69,46,Keyboard Shortcuts,"
 <table align=""center"" width=""550"">
 <thead>
 <tr>
@@ -437,10 +442,10 @@ The comparison can easily be done by sliding the red cursor with the mouse:",,/h
 </tbody>
 </table>
 ",,/help/img/blank.png
-70,46,Report problem,"<p>This tool enables you to send suggestions on map.geo.admin.ch. We welcome problem reports as well as general comments.<br />Open map.geo.admin.ch and zoom in an area of interest: a street, an address, a place. Use the search tool to directly search your area of interest. Click top-right on ""Report problem"".</p><p><b>Your e-mail</b><br />Fill in the field with your e-mail address. The field is not mandatory.</p><p><b>Your feedback to the current map extent </b><br />Fill in with your comments or problem report.</p>
+70,47,Report problem,"<p>This tool enables you to send suggestions on map.geo.admin.ch. We welcome problem reports as well as general comments.<br />Open map.geo.admin.ch and zoom in an area of interest: a street, an address, a place. Use the search tool to directly search your area of interest. Click top-right on ""Report problem"".</p><p><b>Your e-mail</b><br />Fill in the field with your e-mail address. The field is not mandatory.</p><p><b>Your feedback to the current map extent </b><br />Fill in with your comments or problem report.</p>
 <img src=""/help/img/70e.png""><p><b>Your drawing</b><br />You can additionally provide a drawing by using the drawing tools. The drawing will be automatically attached to the report. This section is not mandatory.</p><p><b>Attach a file</b><br />You can provide additional information by attaching a file (""Browse""). This section is not mandatory.</p><p>Click ""Send""</p><p><b>What file formats can be attached?</b><br />The following formats are supported: .pdf, .zip, .png, .png, .kml, .kmz oder gpx.</p><p><b>What happens to my report?</b><br />In case of problems related to data, the information will be forwarded to the respective data owner.</p>",,/help/img/blank.png
-80,47,TECHNICAL AND LEGAL INFORMATION,#,,
-81,48,Informations and conditions,"<b1>Technical informations and support<b2>
+80,48,TECHNICAL AND LEGAL INFORMATION,#,,
+81,49,Informations and conditions,"<b1>Technical informations and support<b2>
  Information on data storage
 api3.geo.admin.ch [//api3.geo.admin.ch]
 
