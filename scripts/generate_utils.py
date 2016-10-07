@@ -105,6 +105,35 @@ def save_json(filename, content, pretty=False):
             separators=(',', ': '))
 
 
+def get_timestamps(user='', host='localhost', passwd='', port=5432, db='', type='postgresql', schema='public', table='', time_col=None):
+    from sqlalchemy import BigInteger, Column, create_engine, MetaData, Table
+    from sqlalchemy.orm import sessionmaker
+    # Create query from table metadata
+    conn_str = '{type}://{user}:{passwd}@{host}:{port}/{db}'.format(
+        type=type,
+        user=user,
+        passwd=passwd,
+        host=host,
+        port=port,
+        db=db
+    )
+    engine = create_engine(conn_str)
+    metadata = MetaData()
+    metadata.reflect(engine, only=[table], schema=schema)
+    t = Table(table, metadata, Column('id', BigInteger, primary_key=True), autoload=True, autoload_with=engine)
+
+    # Do the query
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    results = session.query(t).all()
+    timestamps = []
+    for r in results:
+        start = getattr(r, time_col)
+        timestamps.append(start.strftime('%Y-%m-%d'))
+
+    return timestamps
+
+
 class Generate:
     '''Utilitary class for all generate type classes.
 

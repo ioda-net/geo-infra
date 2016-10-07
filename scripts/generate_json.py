@@ -24,6 +24,7 @@
 '''
 
 import json
+import logging
 import requests
 import time
 
@@ -33,7 +34,7 @@ from os.path import basename, splitext
 from owslib.wms import WebMapService
 from requests.exceptions import ConnectionError
 
-from generate_utils import Generate, start_cgi_server, cgi_server
+from generate_utils import Generate, start_cgi_server, get_timestamps
 from generate_translations import Translator, CatalogTranslator
 from helpers import format_search_text
 
@@ -270,6 +271,28 @@ class OwsParser(Generate):
             single_tile = xor(
               self.single_tiles_by_default,
               layer_name in self.default_tiling_exceptions)
+            if layer.timepositions:
+                try:
+                    schema, table, time_col = self.config['mapserver'].get('time', {}).get(layer_name, None)
+                except TypeError:
+                    logging.warn('Cannot find timestamps for layer {}'.format(layer_name))
+                    time_enabled = False
+                    timestamps = []
+                else:
+                    time_enabled = True
+                    timestamps = get_timestamps(
+                        user=self.config['mapserver']['PORTAL_DB_USER'],
+                        passwd=self.config['mapserver']['PORTAL_DB_PASSWORD'],
+                        host=self.config['mapserver']['PORTAL_DB_HOST'],
+                        port=self.config['mapserver']['PORTAL_DB_PORT'],
+                        db=self.config['mapserver']['PORTAL_DB_NAME'],
+                        schema=schema,
+                        table=table,
+                        time_col=time_col
+                    )
+            else:
+                time_enabled = False
+                timestamps = []
             self.layers_config[layer_name] = {
                 'layerBodId': layer_name,
                 'label': label,
@@ -288,6 +311,8 @@ class OwsParser(Generate):
                 'background': layer_name in self.background_layers_ids,
                 'singleTile': single_tile,
                 'ratio': 1 if single_tile else 0,
+                'timeEnabled': time_enabled,
+                'timestamps': timestamps,
             }
             self.layers_names.append((layer_name, label))
 
