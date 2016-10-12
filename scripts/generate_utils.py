@@ -120,7 +120,14 @@ def get_timestamps(user='', host='localhost', passwd='', port=5432, db='', type=
     engine = create_engine(conn_str)
     metadata = MetaData()
     metadata.reflect(engine, only=[table], schema=schema)
-    t = Table(table, metadata, Column('id', BigInteger, primary_key=True), autoload=True, autoload_with=engine)
+    t = Table(
+        table,
+        metadata,
+        Column('id', BigInteger, primary_key=True),
+        autoload=True,
+        autoload_with=engine,
+        schema=schema,
+        extend_existing=True)
 
     # Do the query
     Session = sessionmaker(bind=engine)
