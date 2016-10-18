@@ -265,6 +265,13 @@ class OwsParser(Generate):
             legend = layer.styles.get('default', {}).get('legend', '')
             queryable = bool(getattr(layer, 'queryable', False)) and \
                 layer_name not in self.config['layers'].get('force_non_queryable', set())
+            # Make layer queryable if one of its children is queryable.
+            # Currently not the case in MapServer.
+            # See https://github.com/mapserver/mapserver/pull/5220
+            sub_layer_queryable = 0
+            for sub_layer in layer.children:
+                sub_layer_queryable += sub_layer.queryable
+            queryable = queryable or sub_layer_queryable > 0
             attribution = getattr(layer, 'attribution', self.default_layer_attribution)
             opacity = getattr(layer, 'opaque', 0) if layer_name not in self.background_layers_ids \
                 else self.default_background_opacity
