@@ -379,6 +379,8 @@ function revert {
         exit 1
     fi
 
+    _load-prod-config
+
     execute-on-prod "cd \"${PROD_GIT_REPOS_LOCATION}/$1\" && \
         git fetch && \
         git checkout \$(git tag | sort -nr | head -n 2 | tail -n 1)"

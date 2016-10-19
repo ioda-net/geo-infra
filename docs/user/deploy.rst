@@ -47,3 +47,9 @@ API
 ---
 
 If the API need to be updated on production, ask your system administrator to do it. You can send the link :ref:`the relevant section of the documentation <ref_sysadmin_server-setup_api>`.
+
+
+Revert
+------
+
+If you have a problem after a deploy on a portal, you can revert to the previous version with ``manuel revert PORTAL``.

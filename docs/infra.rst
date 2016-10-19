@@ -210,7 +210,7 @@ You can override any value in ``geo-infra/config/config.sh``. All values must be
 
 For some tasks, the shell configuration for the customer infrastructure will be loaded. This is done with either:
 
-- ``_load-prod-config``: used in ``prod``, ``deploy``, ``init-prod-repo``, ``deploy-global-search-conf`` and database related tasks. In these cases, ``$INFRA_DIR`` must point to a specific infrastructure directory (eg ``/path/to/customer-infra``). If not, it will fail with an error message. This way, when you deploy a portal, the production values in the script are always correct.
+- ``_load-prod-config``: used in ``prod``, ``deploy``, ``init-prod-repo``, ``deploy-global-search-conf``, ``revert`` and database related tasks. In these cases, ``$INFRA_DIR`` must point to a specific infrastructure directory (eg ``/path/to/customer-infra``). If not, it will fail with an error message. This way, when you deploy a portal, the production values in the script are always correct.
 - ``_load-dev-config``: used in ``dev`` and ``dev-full`` will load the customer shell configuration from the infrastructure of each portal.
 
 Both of these function will reload the full configuration to be sure proper values are set in the variable. This means, they load:
