@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-16 15:00+0200\n"
+"POT-Creation-Date: 2016-10-27 09:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -124,7 +124,7 @@ msgstr ""
 
 #: ../../manuel.md:49 ../../manuel.md:71 ../../manuel.md:86 ../../manuel.md:99
 #: ../../manuel.md:109 ../../manuel.md:121 ../../manuel.md:135
-#: ../../manuel.md:220 ../../manuel.md:244 ../../manuel.md:364
+#: ../../manuel.md:220 ../../manuel.md:244 ../../manuel.md:370
 msgid "Default values"
 msgstr ""
 
@@ -530,18 +530,22 @@ msgid "reindex"
 msgstr ""
 
 #: ../../manuel.md:308
-msgid "manuel reindex [INFRA_DIR]"
+msgid "manuel reindex [-i INFRA_DIR] [-p PORTALS]"
 msgstr ""
 
 #: ../../manuel.md:310
-msgid "Launch a full reindexation of sphinx."
+msgid "Launch a reindexation of sphinx. Use one and only one of these options:"
+msgstr ""
+
+#: ../../manuel.md:316
+msgid "If launched without parameters, it will reindex everything."
 msgstr ""
 
 #: ../../manuel.md
 msgid "reload-apache"
 msgstr ""
 
-#: ../../manuel.md:314
+#: ../../manuel.md:320
 msgid "manuel reload-apache"
 msgstr ""
 
@@ -549,11 +553,11 @@ msgstr ""
 msgid "reload-features"
 msgstr ""
 
-#: ../../manuel.md:320
+#: ../../manuel.md:326
 msgid "manuel reload-features"
 msgstr ""
 
-#: ../../manuel.md:322
+#: ../../manuel.md:328
 msgid "Ask the API to reload the features."
 msgstr ""
 
@@ -561,11 +565,11 @@ msgstr ""
 msgid "render"
 msgstr ""
 
-#: ../../manuel.md:326
+#: ../../manuel.md:332
 msgid "manuel render OPTIONS"
 msgstr ""
 
-#: ../../manuel.md:328
+#: ../../manuel.md:334
 msgid ""
 "Wrapper around scripts/render.py --front-dir $FRONT_DIR. All the options "
 "are passed to the script. Use --help for more details."
@@ -575,15 +579,15 @@ msgstr ""
 msgid "restart-service"
 msgstr ""
 
-#: ../../manuel.md:333
+#: ../../manuel.md:339
 msgid "manuel restart-service SERVICE [INFRAS]"
 msgstr ""
 
-#: ../../manuel.md:335
+#: ../../manuel.md:341
 msgid "Restart the specified service."
 msgstr ""
 
-#: ../../manuel.md:337
+#: ../../manuel.md:343
 msgid ""
 "If the service is infrastructure specific, you can pass the list of "
 "infras for which it must be restarted."
@@ -593,11 +597,11 @@ msgstr ""
 msgid "revert"
 msgstr ""
 
-#: ../../manuel.md:341
+#: ../../manuel.md:347
 msgid "manuel revert PORTAL"
 msgstr ""
 
-#: ../../manuel.md:343
+#: ../../manuel.md:349
 msgid "Revert the given portal to the previous release on production."
 msgstr ""
 
@@ -605,11 +609,11 @@ msgstr ""
 msgid "sync-data"
 msgstr ""
 
-#: ../../manuel.md:347
+#: ../../manuel.md:353
 msgid "manuel sync-data"
 msgstr ""
 
-#: ../../manuel.md:349
+#: ../../manuel.md:355
 msgid "Synchronise the data."
 msgstr ""
 
@@ -617,11 +621,11 @@ msgstr ""
 msgid "test-config-generation"
 msgstr ""
 
-#: ../../manuel.md:353
+#: ../../manuel.md:359
 msgid "manuel test-config-generation"
 msgstr ""
 
-#: ../../manuel.md:355
+#: ../../manuel.md:361
 msgid ""
 "Check that the configuration are correctly generated. It relies on the "
 "demo portal from customer-infra (https://github.com/ioda-net/customer-"
@@ -632,11 +636,11 @@ msgstr ""
 msgid "test-map-files"
 msgstr ""
 
-#: ../../manuel.md:360
+#: ../../manuel.md:366
 msgid "manuel test-map-files [TYPE] PORTAL"
 msgstr ""
 
-#: ../../manuel.md:362
+#: ../../manuel.md:368
 msgid "Test the map files of given type for the specified portal."
 msgstr ""
 
@@ -644,11 +648,11 @@ msgstr ""
 msgid "tomcat-copy-conf"
 msgstr ""
 
-#: ../../manuel.md:370
+#: ../../manuel.md:376
 msgid "manuel tomcat-copy-conf TYPE PORTAL"
 msgstr ""
 
-#: ../../manuel.md:372
+#: ../../manuel.md:378
 msgid ""
 "Copy the generated MFP configuration files into tomcat's MFP directory. "
 "Use the files from TYPE and PORTAL."
@@ -658,11 +662,11 @@ msgstr ""
 msgid "update-doc-translations"
 msgstr ""
 
-#: ../../manuel.md:377
+#: ../../manuel.md:383
 msgid "manuel update-doc-translations"
 msgstr ""
 
-#: ../../manuel.md:379
+#: ../../manuel.md:385
 msgid ""
 "Update the po files based on text from English documents. This will not "
 "build the documentation."
@@ -672,11 +676,11 @@ msgstr ""
 msgid "verify-sphinx-conf"
 msgstr ""
 
-#: ../../manuel.md:383
+#: ../../manuel.md:389
 msgid "manuel verify-sphinx-conf"
 msgstr ""
 
-#: ../../manuel.md:385
+#: ../../manuel.md:391
 msgid "Check the configuration of sphinx."
 msgstr ""
 
@@ -684,11 +688,11 @@ msgstr ""
 msgid "vhost"
 msgstr ""
 
-#: ../../manuel.md:389
+#: ../../manuel.md:395
 msgid "manuel vhost [TYPE] PORTAL..."
 msgstr ""
 
-#: ../../manuel.md:391
+#: ../../manuel.md:397
 msgid "Create the vhost files for the given portals."
 msgstr ""
 
@@ -696,16 +700,22 @@ msgstr ""
 msgid "watch"
 msgstr ""
 
-#: ../../manuel.md:396
+#: ../../manuel.md:402
 msgid "manuel watch PORTAL"
 msgstr ""
 
-#: ../../manuel.md:398
+#: ../../manuel.md:404
 msgid ""
 "Watch and rebuild a portal on change. This is equivalent to 'manuel front"
 " watch PORTAL'"
 msgstr ""
 
 #~ msgid ""
+#~ msgstr ""
+
+#~ msgid "manuel reindex [INFRA_DIR]"
+#~ msgstr ""
+
+#~ msgid "Launch a full reindexation of sphinx."
 #~ msgstr ""
 

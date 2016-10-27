@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-23 17:20+0200\n"
+"POT-Creation-Date: 2016-10-27 09:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -226,621 +226,703 @@ msgid ""
 msgstr ""
 
 #: ../../user/functional-tests.rst:86
-msgid "WMS import"
+msgid "Time selector"
 msgstr ""
 
-#: ../../user/functional-tests.rst:89
-msgid "from the list"
+#: ../../user/functional-tests.rst:88
+msgid "**If you have time enabled layers on your portal.**"
 msgstr ""
 
-#: ../../user/functional-tests.rst:91 ../../user/functional-tests.rst:107
-#: ../../user/functional-tests.rst:126 ../../user/functional-tests.rst:146
-msgid "Open the *Advanced tools* panel."
+#: ../../user/functional-tests.rst:90
+msgid "Add this map, for instance *Journey through time - Maps*"
 msgstr ""
 
-#: ../../user/functional-tests.rst:92 ../../user/functional-tests.rst:108
-msgid "Click on *WMS import*."
+#: ../../user/functional-tests.rst:91
+msgid ""
+"**Results:** there should be a year at the right of the name of the name "
+"and a button named *Enable and disable representation of data time "
+"stamps* must appear below the other map button on the right of the "
+"screen."
 msgstr ""
 
-#: ../../user/functional-tests.rst:93 ../../user/functional-tests.rst:109
-msgid "**Results:** the WMS import popup must appear."
+#: ../../user/functional-tests.rst:92
+msgid "Click on the year."
+msgstr ""
+
+#: ../../user/functional-tests.rst:93
+msgid ""
+"**Results:** a selector must appear with all the available years for this"
+" map."
 msgstr ""
 
 #: ../../user/functional-tests.rst:94
+msgid "Change the year."
+msgstr ""
+
+#: ../../user/functional-tests.rst:95 ../../user/functional-tests.rst:99
+msgid "**Results:** the map must be updated."
+msgstr ""
+
+#: ../../user/functional-tests.rst:96
+msgid ""
+"Click on the *Enable and disable representation of data time stamps* "
+"button."
+msgstr ""
+
+#: ../../user/functional-tests.rst:97
+msgid "**Results:** the time selector must appear."
+msgstr ""
+
+#: ../../user/functional-tests.rst:98
+msgid "Use the time selector to change the date."
+msgstr ""
+
+#: ../../user/functional-tests.rst:100
+msgid "Click on the play button"
+msgstr ""
+
+#: ../../user/functional-tests.rst:101
+msgid ""
+"**Results:** the time must change automatically and the map must be "
+"updated accordingly."
+msgstr ""
+
+#: ../../user/functional-tests.rst:105
+msgid "WMS import"
+msgstr ""
+
+#: ../../user/functional-tests.rst:108
+msgid "from the list"
+msgstr ""
+
+#: ../../user/functional-tests.rst:110 ../../user/functional-tests.rst:126
+#: ../../user/functional-tests.rst:145 ../../user/functional-tests.rst:171
+msgid "Open the *Advanced tools* panel."
+msgstr ""
+
+#: ../../user/functional-tests.rst:111 ../../user/functional-tests.rst:127
+msgid "Click on *WMS import*."
+msgstr ""
+
+#: ../../user/functional-tests.rst:112 ../../user/functional-tests.rst:128
+msgid "**Results:** the WMS import popup must appear."
+msgstr ""
+
+#: ../../user/functional-tests.rst:113
 msgid ""
 "In the URL list, select a WMS, for instance: *https://wms.geo.admin.ch/* "
 "or "
-"*http://www.geoservice.apps.be.ch/geoservice/services/a4p/a4p_basiswms_d_fk_s/MapServer/WMSServer?*."
+"*http://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_basiswms_d_fk/MapServer/WMSServer?*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:95 ../../user/functional-tests.rst:112
+#: ../../user/functional-tests.rst:114 ../../user/functional-tests.rst:131
 msgid ""
 "**Results:** The GetCapalities response is correctly parsed and you see "
 "the list of the available layers."
 msgstr ""
 
-#: ../../user/functional-tests.rst:96
+#: ../../user/functional-tests.rst:115
 msgid "Pass your mouse over *2km2 sub catchment areas* or *UP5*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:97 ../../user/functional-tests.rst:114
-#: ../../user/functional-tests.rst:134
+#: ../../user/functional-tests.rst:116 ../../user/functional-tests.rst:133
+#: ../../user/functional-tests.rst:153
 msgid "**Results:** layer is previewed on the map."
 msgstr ""
 
-#: ../../user/functional-tests.rst:98
+#: ../../user/functional-tests.rst:117
 msgid "Select *2km2 sub catchment areas* or *UP5*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:99 ../../user/functional-tests.rst:136
+#: ../../user/functional-tests.rst:118 ../../user/functional-tests.rst:155
 msgid "Click on *Add to map*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:100 ../../user/functional-tests.rst:118
-#: ../../user/functional-tests.rst:137
+#: ../../user/functional-tests.rst:119 ../../user/functional-tests.rst:137
+#: ../../user/functional-tests.rst:156
 msgid ""
 "**Results:** the selected layer is added to the map, the layer selector "
 "and the permalink."
 msgstr ""
 
-#: ../../user/functional-tests.rst:101 ../../user/functional-tests.rst:119
-#: ../../user/functional-tests.rst:139 ../../user/functional-tests.rst:155
+#: ../../user/functional-tests.rst:120 ../../user/functional-tests.rst:138
+#: ../../user/functional-tests.rst:158 ../../user/functional-tests.rst:180
 msgid "Close the popup."
 msgstr ""
 
-#: ../../user/functional-tests.rst:102 ../../user/functional-tests.rst:120
-#: ../../user/functional-tests.rst:140 ../../user/functional-tests.rst:156
+#: ../../user/functional-tests.rst:121 ../../user/functional-tests.rst:139
+#: ../../user/functional-tests.rst:159 ../../user/functional-tests.rst:181
 msgid "**Results:** the popup is successfully closed."
 msgstr ""
 
-#: ../../user/functional-tests.rst:105
+#: ../../user/functional-tests.rst:124
 msgid "Other WMS"
 msgstr ""
 
-#: ../../user/functional-tests.rst:110
+#: ../../user/functional-tests.rst:129
 msgid "In the input, enter *https://map.geoportal.xyz/ows/geoportalxyz*"
 msgstr ""
 
-#: ../../user/functional-tests.rst:111
+#: ../../user/functional-tests.rst:130
 msgid "Click on *Connect*"
 msgstr ""
 
-#: ../../user/functional-tests.rst:113
+#: ../../user/functional-tests.rst:132
 msgid "Pass your mouse over *Transports*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:115
+#: ../../user/functional-tests.rst:134
 msgid "Click on the plus sign on the left of *Transports*"
 msgstr ""
 
-#: ../../user/functional-tests.rst:116
+#: ../../user/functional-tests.rst:135
 msgid ""
 "**Results:** you should see a list of WMS layers including Aeroways and "
 "Roads"
 msgstr ""
 
-#: ../../user/functional-tests.rst:117
+#: ../../user/functional-tests.rst:136
 msgid "Select Roads"
 msgstr ""
 
-#: ../../user/functional-tests.rst:124
+#: ../../user/functional-tests.rst:143
 msgid "WMTS import"
 msgstr ""
 
-#: ../../user/functional-tests.rst:127
+#: ../../user/functional-tests.rst:146
 msgid "Click on *WMTS import*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:128
+#: ../../user/functional-tests.rst:147
 msgid "**Results:** the WMTS import popup must appear."
 msgstr ""
 
-#: ../../user/functional-tests.rst:129
+#: ../../user/functional-tests.rst:148
 msgid ""
 "In the URL list, select "
 "*https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:131
+#: ../../user/functional-tests.rst:150
 msgid ""
 "**Results:** the WMTS capabilities.xml must be correctly parsed and the "
 "list of all available layers must appear."
 msgstr ""
 
-#: ../../user/functional-tests.rst:133
+#: ../../user/functional-tests.rst:152
 msgid "Pass your mouse over *Anomalies de Bouguer 500*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:135
+#: ../../user/functional-tests.rst:154
 msgid "Select *Anomalies de Bouguer 500*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:144
+#: ../../user/functional-tests.rst:162
+msgid "WMTS import with time series"
+msgstr ""
+
+#: ../../user/functional-tests.rst:164
+msgid ""
+"Import a WMTS layer that support time series, for instance *Journey "
+"through time - Maps*."
+msgstr ""
+
+#: ../../user/functional-tests.rst:165
+msgid "Do the test case for `Time selector`_"
+msgstr ""
+
+#: ../../user/functional-tests.rst:169
 msgid "KML import"
 msgstr ""
 
-#: ../../user/functional-tests.rst:147
+#: ../../user/functional-tests.rst:172
 msgid "Click on *KML import*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:148
+#: ../../user/functional-tests.rst:173
 msgid "**Results:** The KML import popup appears."
 msgstr ""
 
-#: ../../user/functional-tests.rst:149
+#: ../../user/functional-tests.rst:174
 msgid "Load a KML for your disk"
 msgstr ""
 
-#: ../../user/functional-tests.rst:150
+#: ../../user/functional-tests.rst:175
 msgid "**Results:** the KML is correctly added to the map."
 msgstr ""
 
-#: ../../user/functional-tests.rst:151
+#: ../../user/functional-tests.rst:176
 msgid ""
 "Load a KML from a URL, eg for Switzerland `this one </data/functionnal-"
 "tests/switzerland.kml>`__."
 msgstr ""
 
-#: ../../user/functional-tests.rst:152
+#: ../../user/functional-tests.rst:177
 msgid ""
 "**Results:** the KML is correctly added to the map and the view is "
 "centered on the KML."
 msgstr ""
 
-#: ../../user/functional-tests.rst:153
+#: ../../user/functional-tests.rst:178
 msgid ""
 "Load a KML that is outside the portal extent (for instance `the New York "
 "KML </data/functionnal-tests/new-york.kml>`__)"
 msgstr ""
 
-#: ../../user/functional-tests.rst:154 ../../user/functional-tests.rst:249
+#: ../../user/functional-tests.rst:179 ../../user/functional-tests.rst:274
 msgid "**Results:** Nothing must happen."
 msgstr ""
 
-#: ../../user/functional-tests.rst:160
+#: ../../user/functional-tests.rst:185
 msgid "Features highlight"
 msgstr ""
 
-#: ../../user/functional-tests.rst:163
+#: ../../user/functional-tests.rst:188
 msgid "On click"
 msgstr ""
 
-#: ../../user/functional-tests.rst:165
+#: ../../user/functional-tests.rst:190
 msgid "Check that you have an imported WMS layer and a KML."
 msgstr ""
 
-#: ../../user/functional-tests.rst:166 ../../user/functional-tests.rst:248
+#: ../../user/functional-tests.rst:191 ../../user/functional-tests.rst:273
 msgid "Click on the map."
 msgstr ""
 
-#: ../../user/functional-tests.rst:167
+#: ../../user/functional-tests.rst:192
 msgid "**Results:**"
 msgstr ""
 
-#: ../../user/functional-tests.rst:169
+#: ../../user/functional-tests.rst:194
 msgid "The features that are returned must be highlighted in yellow."
 msgstr ""
 
-#: ../../user/functional-tests.rst:170
+#: ../../user/functional-tests.rst:195
 msgid ""
 "The table of all features appears: each layer has its own tab, in each "
 "tab there is the table of features for this layer."
 msgstr ""
 
-#: ../../user/functional-tests.rst:171
+#: ../../user/functional-tests.rst:196
 msgid "There is a tab for each external WMS and KML layer."
 msgstr ""
 
-#: ../../user/functional-tests.rst:173
+#: ../../user/functional-tests.rst:198
 msgid "Put the mouse over a line in the features table."
 msgstr ""
 
-#: ../../user/functional-tests.rst:174
+#: ../../user/functional-tests.rst:199
 msgid "**Results:** The feature of this line must be highlighted in orange."
 msgstr ""
 
-#: ../../user/functional-tests.rst:175
+#: ../../user/functional-tests.rst:200
 msgid "Click on the CSV export button."
 msgstr ""
 
-#: ../../user/functional-tests.rst:176
+#: ../../user/functional-tests.rst:201
 msgid ""
 "**Results:** You can download a CSV file containing the features for the "
 "selected tab."
 msgstr ""
 
-#: ../../user/functional-tests.rst:178
+#: ../../user/functional-tests.rst:203
 msgid "Switch the language."
 msgstr ""
 
-#: ../../user/functional-tests.rst:179
+#: ../../user/functional-tests.rst:204
 msgid ""
 "**Results:** The columns of the table and some of its content are "
 "translated."
 msgstr ""
 
-#: ../../user/functional-tests.rst:180
+#: ../../user/functional-tests.rst:205
 msgid "Click on the close button."
 msgstr ""
 
-#: ../../user/functional-tests.rst:181
+#: ../../user/functional-tests.rst:206
 msgid "**Results:** The features popup must be closed correctly."
 msgstr ""
 
-#: ../../user/functional-tests.rst:184
+#: ../../user/functional-tests.rst:209
 msgid "Rectangle selection"
 msgstr ""
 
-#: ../../user/functional-tests.rst:186
+#: ../../user/functional-tests.rst:211
 msgid "Draw a rectangle with CTR + left click."
 msgstr ""
 
-#: ../../user/functional-tests.rst:187
+#: ../../user/functional-tests.rst:212
 msgid "**Results:** Same behaviour as `On click`_."
 msgstr ""
 
-#: ../../user/functional-tests.rst:191
+#: ../../user/functional-tests.rst:216
 msgid "Share"
 msgstr ""
 
-#: ../../user/functional-tests.rst:193
+#: ../../user/functional-tests.rst:218
 msgid "Open the *share* panel."
 msgstr ""
 
-#: ../../user/functional-tests.rst:194
+#: ../../user/functional-tests.rst:219
 msgid ""
 "**Results:** You should see a short link looking like "
 "``https?://HOST/api/shorten/[a-z0-9]*``."
 msgstr ""
 
-#: ../../user/functional-tests.rst:195
+#: ../../user/functional-tests.rst:220
 msgid "Copy paste that link in a new tab."
 msgstr ""
 
-#: ../../user/functional-tests.rst:196
+#: ../../user/functional-tests.rst:221
 msgid ""
 "**Results:** The geoportal is opened with exactly the same parameters as "
 "before."
 msgstr ""
 
-#: ../../user/functional-tests.rst:200
+#: ../../user/functional-tests.rst:225
 msgid "Contextual popup"
 msgstr ""
 
-#: ../../user/functional-tests.rst:202
+#: ../../user/functional-tests.rst:227
 msgid "Right click on the map."
 msgstr ""
 
-#: ../../user/functional-tests.rst:203
+#: ../../user/functional-tests.rst:228
 msgid ""
 "**Results:** the contextual popup must appear with your position, "
 "altitude and QR code. On some portals, other information may appear "
 "(commune, …)."
 msgstr ""
 
-#: ../../user/functional-tests.rst:207
+#: ../../user/functional-tests.rst:232
 msgid "Search"
 msgstr ""
 
-#: ../../user/functional-tests.rst:210
+#: ../../user/functional-tests.rst:235
 msgid "Layers"
 msgstr ""
 
-#: ../../user/functional-tests.rst:212
+#: ../../user/functional-tests.rst:237
 msgid "In the search bar, type *Couverture du sol*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:213
+#: ../../user/functional-tests.rst:238
 msgid ""
 "**Results:** You must see many layers whose name contains *Couverture du "
 "sol* under *Add to map*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:214
+#: ../../user/functional-tests.rst:239
 msgid "Select *Couverture du sol en couleur*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:215
+#: ../../user/functional-tests.rst:240
 msgid ""
 "**Results:** the selected layer is added to the map, the layer selector "
 "and the permalink. The search results disappear."
 msgstr ""
 
-#: ../../user/functional-tests.rst:219
+#: ../../user/functional-tests.rst:244
 msgid "Locations"
 msgstr ""
 
-#: ../../user/functional-tests.rst:221
+#: ../../user/functional-tests.rst:246
 msgid "In the search bar, type *Moutier*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:222
+#: ../../user/functional-tests.rst:247
 msgid ""
 "**Results:** You must see under *Go to*, *Moutier* and a list of "
 "addresses in Moutier."
 msgstr ""
 
-#: ../../user/functional-tests.rst:223
+#: ../../user/functional-tests.rst:248
 msgid "Pass your mouse over *Moutier*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:224
+#: ../../user/functional-tests.rst:249
 msgid "**Results:** You must see a marker at the location of *Moutier*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:225
+#: ../../user/functional-tests.rst:250
 msgid "Click on *Moutier*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:226
+#: ../../user/functional-tests.rst:251
 msgid "**Results:** The map must now be centered on the city of Moutier."
 msgstr ""
 
-#: ../../user/functional-tests.rst:229
+#: ../../user/functional-tests.rst:254
 msgid "With keywords"
 msgstr ""
 
-#: ../../user/functional-tests.rst:231
+#: ../../user/functional-tests.rst:256
 msgid "If available on your portal:"
 msgstr ""
 
-#: ../../user/functional-tests.rst:233
+#: ../../user/functional-tests.rst:258
 msgid "In the search bar, type *parcelle 3*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:234
+#: ../../user/functional-tests.rst:259
 msgid "**Results:** You should only see results of type parcels."
 msgstr ""
 
-#: ../../user/functional-tests.rst:237
+#: ../../user/functional-tests.rst:262
 msgid "With tokens"
 msgstr ""
 
-#: ../../user/functional-tests.rst:239
+#: ../../user/functional-tests.rst:264
 msgid "In the search bar, type *limit: 2 moutier*"
 msgstr ""
 
-#: ../../user/functional-tests.rst:240
+#: ../../user/functional-tests.rst:265
 msgid "**Results:** You should only see two search results concerning Moutier."
 msgstr ""
 
-#: ../../user/functional-tests.rst:244
+#: ../../user/functional-tests.rst:269
 msgid "Draw"
 msgstr ""
 
-#: ../../user/functional-tests.rst:246
+#: ../../user/functional-tests.rst:271
 msgid "Open the draw panel."
 msgstr ""
 
-#: ../../user/functional-tests.rst:247
+#: ../../user/functional-tests.rst:272
 msgid "**Results:** you should now be in drawing mode."
 msgstr ""
 
-#: ../../user/functional-tests.rst:250
+#: ../../user/functional-tests.rst:275
 msgid "Use the measure tools. Check:"
 msgstr ""
 
-#: ../../user/functional-tests.rst:252
+#: ../../user/functional-tests.rst:277
 msgid "lines"
 msgstr ""
 
-#: ../../user/functional-tests.rst:253
+#: ../../user/functional-tests.rst:278
 msgid "polygons"
 msgstr ""
 
-#: ../../user/functional-tests.rst:254
+#: ../../user/functional-tests.rst:279
 msgid "measure"
 msgstr ""
 
-#: ../../user/functional-tests.rst:255
+#: ../../user/functional-tests.rst:280
 msgid "profile"
 msgstr ""
 
-#: ../../user/functional-tests.rst:256
+#: ../../user/functional-tests.rst:281
 msgid "text"
 msgstr ""
 
-#: ../../user/functional-tests.rst:257
+#: ../../user/functional-tests.rst:282
 msgid "icons"
 msgstr ""
 
-#: ../../user/functional-tests.rst:258
+#: ../../user/functional-tests.rst:283
 msgid "delete selected features (in *More*)"
 msgstr ""
 
-#: ../../user/functional-tests.rst:259
+#: ../../user/functional-tests.rst:284
 msgid "delete all features (in *More*)"
 msgstr ""
 
-#: ../../user/functional-tests.rst:261
+#: ../../user/functional-tests.rst:286
 msgid "Click on *Export*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:262
+#: ../../user/functional-tests.rst:287
 msgid "**Results:** You must be asked to download your drawing as a KML"
 msgstr ""
 
-#: ../../user/functional-tests.rst:265
+#: ../../user/functional-tests.rst:290
 msgid "Share Drawing"
 msgstr ""
 
-#: ../../user/functional-tests.rst:267 ../../user/functional-tests.rst:275
+#: ../../user/functional-tests.rst:292 ../../user/functional-tests.rst:300
 msgid "Click on the share button."
 msgstr ""
 
-#: ../../user/functional-tests.rst:268
+#: ../../user/functional-tests.rst:293
 msgid "Copy the link named *Link to share your drawing*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:269 ../../user/functional-tests.rst:277
+#: ../../user/functional-tests.rst:294 ../../user/functional-tests.rst:302
 msgid "Open it in a new tab."
 msgstr ""
 
-#: ../../user/functional-tests.rst:270 ../../user/functional-tests.rst:278
+#: ../../user/functional-tests.rst:295 ../../user/functional-tests.rst:303
 msgid "**Results:** You see you drawing as you left it."
 msgstr ""
 
-#: ../../user/functional-tests.rst:273
+#: ../../user/functional-tests.rst:298
 msgid "Edit Drawing"
 msgstr ""
 
-#: ../../user/functional-tests.rst:276
+#: ../../user/functional-tests.rst:301
 msgid "Copy the link named *Link to edit your drawing later*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:279
+#: ../../user/functional-tests.rst:304
 msgid "Edit the drawing."
 msgstr ""
 
-#: ../../user/functional-tests.rst:280
+#: ../../user/functional-tests.rst:305
 msgid "Refresh the page on the original page."
 msgstr ""
 
-#: ../../user/functional-tests.rst:281
+#: ../../user/functional-tests.rst:306
 msgid "**Results:** You see your edit."
 msgstr ""
 
-#: ../../user/functional-tests.rst:284
+#: ../../user/functional-tests.rst:309
 msgid "End"
 msgstr ""
 
-#: ../../user/functional-tests.rst:286
+#: ../../user/functional-tests.rst:311
 msgid "Click on *Back / Finish drawing*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:287
+#: ../../user/functional-tests.rst:312
 msgid "**Results:** You must be back in standard mode."
 msgstr ""
 
-#: ../../user/functional-tests.rst:291
+#: ../../user/functional-tests.rst:316
 msgid "Print"
 msgstr ""
 
-#: ../../user/functional-tests.rst:293
+#: ../../user/functional-tests.rst:318
 msgid "Make sure you have:"
 msgstr ""
 
-#: ../../user/functional-tests.rst:295
+#: ../../user/functional-tests.rst:320
 msgid "an imported WMS layer"
 msgstr ""
 
-#: ../../user/functional-tests.rst:296
+#: ../../user/functional-tests.rst:321
 msgid "an imported WMTS layer"
 msgstr ""
 
-#: ../../user/functional-tests.rst:297
+#: ../../user/functional-tests.rst:322
 msgid "an external WMS layer"
 msgstr ""
 
-#: ../../user/functional-tests.rst:298
+#: ../../user/functional-tests.rst:323
 msgid "an external WMTS layer"
 msgstr ""
 
-#: ../../user/functional-tests.rst:299
+#: ../../user/functional-tests.rst:324
 msgid "a drawing"
 msgstr ""
 
-#: ../../user/functional-tests.rst:300
+#: ../../user/functional-tests.rst:325
 msgid "local layers"
 msgstr ""
 
-#: ../../user/functional-tests.rst:302
+#: ../../user/functional-tests.rst:327
 msgid "Open the print panel."
 msgstr ""
 
-#: ../../user/functional-tests.rst:303
+#: ../../user/functional-tests.rst:328
 msgid "Wait for the configuration to load."
 msgstr ""
 
-#: ../../user/functional-tests.rst:304
+#: ../../user/functional-tests.rst:329
 msgid "Enter a title"
 msgstr ""
 
-#: ../../user/functional-tests.rst:305
+#: ../../user/functional-tests.rst:330
 msgid "Click on *Create PDF for print*"
 msgstr ""
 
-#: ../../user/functional-tests.rst:306
+#: ../../user/functional-tests.rst:331
 msgid "Wait for the PDF"
 msgstr ""
 
-#: ../../user/functional-tests.rst:307
+#: ../../user/functional-tests.rst:332
 msgid ""
 "**Results:** You should be able to download the PDF, view the selected "
 "layers and drawing and your title."
 msgstr ""
 
-#: ../../user/functional-tests.rst:310
+#: ../../user/functional-tests.rst:335
 msgid ""
 "Do the same tests with a portal protected by authentication. You must "
 "have the same results as before. If your templates allow this, the "
 "username used to connect to the portal must be printed."
 msgstr ""
 
-#: ../../user/functional-tests.rst:312
+#: ../../user/functional-tests.rst:337
 msgid ""
 "In case you encounter errors, please check the :ref:`print section the "
 "debug page <ref_debug_print>`."
 msgstr ""
 
-#: ../../user/functional-tests.rst:316
+#: ../../user/functional-tests.rst:341
 msgid "Feedback"
 msgstr ""
 
-#: ../../user/functional-tests.rst:318
+#: ../../user/functional-tests.rst:343
 msgid "Click on the *Report problem link*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:319
+#: ../../user/functional-tests.rst:344
 msgid "Enter the required information."
 msgstr ""
 
-#: ../../user/functional-tests.rst:320
+#: ../../user/functional-tests.rst:345
 msgid "Press the *Send* button."
 msgstr ""
 
-#: ../../user/functional-tests.rst:321
+#: ../../user/functional-tests.rst:346
 msgid ""
 "**Results:** the configured feedback email address must receive an email "
 "with the supplied information."
 msgstr ""
 
-#: ../../user/functional-tests.rst:325
+#: ../../user/functional-tests.rst:350
 msgid "Help"
 msgstr ""
 
-#: ../../user/functional-tests.rst:328
+#: ../../user/functional-tests.rst:353
 msgid "Integrated"
 msgstr ""
 
-#: ../../user/functional-tests.rst:330
+#: ../../user/functional-tests.rst:355
 msgid "Click on various help icons in the geoportal."
 msgstr ""
 
-#: ../../user/functional-tests.rst:331
+#: ../../user/functional-tests.rst:356
 msgid "**Results:** the corresponding help popup must appear."
 msgstr ""
 
-#: ../../user/functional-tests.rst:334
+#: ../../user/functional-tests.rst:359
 msgid "Help site"
 msgstr ""
 
-#: ../../user/functional-tests.rst:336
+#: ../../user/functional-tests.rst:361
 msgid "Click on the *Help* link."
 msgstr ""
 
-#: ../../user/functional-tests.rst:337
+#: ../../user/functional-tests.rst:362
 msgid "**Results:** a new tab to the help site must open."
 msgstr ""
 
-#: ../../user/functional-tests.rst:338
+#: ../../user/functional-tests.rst:363
 msgid "Navigate in the help site."
 msgstr ""
 
-#: ../../user/functional-tests.rst:339
+#: ../../user/functional-tests.rst:364
 msgid "**Results:** everything must be fine."
 msgstr ""
 
 #~ msgid "Click on *More > Download as KML*."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the URL list, select a WMS, "
+#~ "for instance: *https://wms.geo.admin.ch/* or "
+#~ "*http://www.geoservice.apps.be.ch/geoservice/services/a4p/a4p_basiswms_d_fk_s/MapServer/WMSServer?*."
 #~ msgstr ""
 

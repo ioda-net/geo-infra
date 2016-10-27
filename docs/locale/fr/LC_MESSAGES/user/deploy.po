@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"POT-Creation-Date: 2016-10-27 09:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,5 +133,15 @@ msgid ""
 "If the API need to be updated on production, ask your system "
 "administrator to do it. You can send the link :ref:`the relevant section "
 "of the documentation <ref_sysadmin_server-setup_api>`."
+msgstr ""
+
+#: ../../user/deploy.rst:53
+msgid "Revert"
+msgstr ""
+
+#: ../../user/deploy.rst:55
+msgid ""
+"If you have a problem after a deploy on a portal, you can revert to the "
+"previous version with ``manuel revert PORTAL``."
 msgstr ""
 

@@ -55,7 +55,7 @@ Example JSON file for external WMS layer
        "queryable": false,
        "serverLayerName": "UP5",
        "wmsLayers": "GEODB.UP5_SITU5_MOSAIC",
-       "wmsUrl": "//www.geoservice.apps.be.ch/geoservice/services/a4p/a4p_basiswms_d_fk_s/MapServer/WMSServer?"
+       "wmsUrl": "//www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_basiswms_d_fk/MapServer/WMSServer?"
    }
 
 Example JSON file for external WMTS layer

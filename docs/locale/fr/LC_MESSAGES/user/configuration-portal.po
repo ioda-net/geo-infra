@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-23 11:03+0200\n"
+"POT-Creation-Date: 2016-10-27 09:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -126,19 +126,23 @@ msgstr ""
 msgid "timeBehaviour (default: last, WMTS only)"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:39
+#: ../../user/configuration-portal.rst:37
+msgid "templateUrl (default: null, WMTS only)"
+msgstr ""
+
+#: ../../user/configuration-portal.rst:40
 msgid "Example JSON file for external WMS layer"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:61
+#: ../../user/configuration-portal.rst:62
 msgid "Example JSON file for external WMTS layer"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:94
+#: ../../user/configuration-portal.rst:95
 msgid "Translations"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:96
+#: ../../user/configuration-portal.rst:97
 msgid ""
 "Translations for a portal are located in the four files listed below. All"
 " these files must have this header: ``key,fr,de,en,commentaires``. The "
@@ -146,27 +150,27 @@ msgid ""
 "course add/remove language columns."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:98
+#: ../../user/configuration-portal.rst:99
 msgid ""
 "`The translation document managed by Swisstopo "
 "<https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/edit?pli=1#gid=0>`__."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:99
+#: ../../user/configuration-portal.rst:100
 msgid ""
 "``customer-infra/translations/catalog.csv``: the content of the catalog, "
 "common to all portals. This includes the layer names present in the "
 "catalog and the title of the section of the catalog."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:100
+#: ../../user/configuration-portal.rst:101
 msgid ""
 "``customer-infra/translations/<portal-name>.csv``: everything else "
 "(*note:* the translation for the topic titles and the topic tooltip – "
 "*topic_<topic_name>_tooltip* – go here)."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:101
+#: ../../user/configuration-portal.rst:102
 msgid ""
 "``customer-infra/translations/common.csv`` (optional): if you find "
 "redundancies between the translations for different portals, you can put "
@@ -175,14 +179,14 @@ msgid ""
 "file."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:105
+#: ../../user/configuration-portal.rst:106
 msgid ""
 "**At least one of the files above must contain a translation line.** "
 "Otherwise, no layers config will be created. Which means your portal "
 "won't work."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:107
+#: ../../user/configuration-portal.rst:108
 msgid ""
 "Translation from Swisstopo are overridden by translations in "
 "``common.csv`` and translation from both Swisstopo and ``common.csv`` are"
@@ -194,92 +198,92 @@ msgid ""
 "infra/blob/master/translations/ignore.csv>`__."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:111
+#: ../../user/configuration-portal.rst:112
 msgid "ids present in ``ignore.csv`` will never get into a translation file."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:117
+#: ../../user/configuration-portal.rst:118
 msgid "Topics"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:119
+#: ../../user/configuration-portal.rst:120
 msgid ""
 "Topics are defined in JSON files located in ``customer-"
 "infra/json/<portal>/topics/<topic_name>.json``. They must contains the "
 "keys below:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:121
+#: ../../user/configuration-portal.rst:122
 msgid ""
 "``backgroundLayers``: the list of background layer ids for this topic in "
 "the order they will appear in the background selector. For instance:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:127
+#: ../../user/configuration-portal.rst:128
 msgid ""
 "``langs``: the list of languages for which this topic is available. For "
 "instance:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:133
+#: ../../user/configuration-portal.rst:134
 msgid "``name``: the name of the topic. For instance:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:139
+#: ../../user/configuration-portal.rst:140
 msgid ""
 "This is what must be used in translation files to translate the topic "
 "name."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:141
+#: ../../user/configuration-portal.rst:142
 msgid ""
 "``catalog``: defines the layers available for this topic and how they "
 "will be displayed. You can simply use a list of layer ids to have a "
 "catalog without depth. For instance:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:150
+#: ../../user/configuration-portal.rst:151
 msgid ""
 "But you can also use a list of objects to group layers into categories. "
 "These objects must have the following keys:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:152
+#: ../../user/configuration-portal.rst:153
 msgid "``category`` (string): can be anything but ``root`` and ``layer``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:153
+#: ../../user/configuration-portal.rst:154
 msgid ""
 "``selectedOpen`` (boolean): if it is true, then the group will be opened "
 "by default when the user expands the catalog for this topic."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:154
+#: ../../user/configuration-portal.rst:155
 msgid "``children``: it can be either:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:156
+#: ../../user/configuration-portal.rst:157
 msgid ""
 "a list of layer ids. In this case, the layers will be presented to the "
 "user at this level."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:157
+#: ../../user/configuration-portal.rst:158
 msgid ""
 "a list of objects with the same properties as the ones in the catalog. "
 "This allows you to create subcategories."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:159
-#: ../../user/configuration-portal.rst:325
+#: ../../user/configuration-portal.rst:160
+#: ../../user/configuration-portal.rst:326
 msgid "For instance:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:181
+#: ../../user/configuration-portal.rst:182
 msgid "You can also use the optional keys below:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:183
+#: ../../user/configuration-portal.rst:184
 msgid ""
 "``activatedLayers`` (default: empty list): the layers whose id is listed "
 "here will be in the *Map Displayed* selector by won't be selected. This "
@@ -287,28 +291,28 @@ msgid ""
 "For instance:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:189
+#: ../../user/configuration-portal.rst:190
 msgid ""
 "``selectedLayers`` (default: empty list): the layers whose id is listed "
 "here will be in the *Map Displayed* selector and will be selected. This "
 "allows you to preselect some layers for a topic. For instance:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:198
+#: ../../user/configuration-portal.rst:199
 msgid "Search"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:200
+#: ../../user/configuration-portal.rst:201
 msgid ""
 "Searches are performed by the API and `Sphinx search "
 "<http://sphinxsearch.com/>`__ a full text search engine."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:202
+#: ../../user/configuration-portal.rst:203
 msgid "The configuration for sphinx is divided in two parts:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:204
+#: ../../user/configuration-portal.rst:205
 msgid ""
 "global configuration for an infrastructure: it configures the "
 "configuration of the sphinx daemon. It can be updated with ``manuel "
@@ -316,11 +320,11 @@ msgid ""
 " are located in ``geo-infra/search``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:205
+#: ../../user/configuration-portal.rst:206
 msgid "portal configuration: it configures the layer and locations searches:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:207
+#: ../../user/configuration-portal.rst:208
 msgid ""
 "locations searches: the configuration is created by a template located in"
 " ``customer-infra/search/portal-locations.in.conf``. To help you write "
@@ -331,7 +335,7 @@ msgid ""
 " like:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:211
+#: ../../user/configuration-portal.rst:212
 msgid ""
 "layers searches: the configuration is created by a template located in "
 "``geo-infra/search/common/search-layers.in.conf``. The information used "
@@ -340,11 +344,11 @@ msgid ""
 "automatically when you build a portal."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:214
+#: ../../user/configuration-portal.rst:215
 msgid "Configure search keywords"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:216
+#: ../../user/configuration-portal.rst:217
 msgid ""
 "By default, when the user does a search, the ``portal_locations`` index "
 "will be used. So the results will come from all your location indexes. "
@@ -353,29 +357,29 @@ msgid ""
 "allows your users to get more precise results."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:218
+#: ../../user/configuration-portal.rst:219
 msgid "For instance, if a portal have these indexes:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:220
+#: ../../user/configuration-portal.rst:221
 msgid "``<portal>_cities``: plain index built from a query in the database."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:221
+#: ../../user/configuration-portal.rst:222
 msgid "``<portal>_buildings``: plain index built from a query in the database."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:222
+#: ../../user/configuration-portal.rst:223
 msgid "``<portal>_parcels``: plain index built from a query in the database."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:223
+#: ../../user/configuration-portal.rst:224
 msgid ""
 "``<portal>_locations``: distributed index regrouping the three indexes "
 "above."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:225
+#: ../../user/configuration-portal.rst:226
 msgid ""
 "When you use the keyword ``address`` in the search bar, you want to "
 "search only in the ``portal_cities`` and ``portal_sorted_buildings`` "
@@ -387,26 +391,26 @@ msgid ""
 "appropriate ranks."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:227
+#: ../../user/configuration-portal.rst:228
 msgid "In order to enable a keyword, you must:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:229
+#: ../../user/configuration-portal.rst:230
 msgid "Defined a rank for each location index."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:230
+#: ../../user/configuration-portal.rst:231
 msgid ""
 "Map the index with their rank in ``customer-"
 "infra/config/_common.dist.toml`` and ``geo-"
 "api3/config/config.<branchname>.toml`` like this:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:238
+#: ../../user/configuration-portal.rst:239
 msgid "Use this code when you build the search query:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:244
+#: ../../user/configuration-portal.rst:245
 msgid ""
 "Add the keyword in the API in ``geo-"
 "api3/chsdi/customers/utils/search.py`` (ask a developer to do this). You "
@@ -414,45 +418,45 @@ msgid ""
 "<ref_dev_api_search-keywords>` if needed."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:250
+#: ../../user/configuration-portal.rst:251
 msgid "Identify features"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:252
+#: ../../user/configuration-portal.rst:253
 msgid ""
 "In order to enable a feature view, for a portal, you need to enable it in"
 " the ``features.map_layers_features`` table. To do this, add or update a "
 "row like this:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:254
+#: ../../user/configuration-portal.rst:255
 msgid "In the column ``feature`` put the name of the feature view."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:255
+#: ../../user/configuration-portal.rst:256
 msgid ""
 "In the column ``portal_names`` put the table of portals for which the "
 "feature view must be available. For instance: ``{demo}``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:256
+#: ../../user/configuration-portal.rst:257
 msgid ""
 "In the column ``layer_names`` put the name of the layers for which the "
 "feature view must be requested. For instance: ``{roads}``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:258
+#: ../../user/configuration-portal.rst:259
 msgid ""
 "Referer to the :ref:`feature section of the database page "
 "<ref_sysadmin_db_features>` to learn more how this works in the database "
 "and how to create feature views."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:263
+#: ../../user/configuration-portal.rst:264
 msgid "Special columns for features"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:265
+#: ../../user/configuration-portal.rst:266
 msgid ""
 "To be able to render feature columns with another representation than the"
 " \"raw\" content coming from the database, it is possible to create "
@@ -460,13 +464,13 @@ msgid ""
 "special cases are handled automatically by default:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:267
+#: ../../user/configuration-portal.rst:268
 msgid ""
 "``hidden``: if a column name ends with ``_hidden`` it will not be "
 "displayed by default. The user can choose to see it if necessary."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:268
+#: ../../user/configuration-portal.rst:269
 msgid ""
 "``url``: if a column name ends with ``_url`` it will be rendered as an "
 "url (useful if the content has to be a valid clickable url). ``_url`` can"
@@ -474,37 +478,37 @@ msgid ""
 "that ``_url_hidden``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:269
+#: ../../user/configuration-portal.rst:270
 msgid ""
 "``pdf``: if a column name ends with ``_pdf``, the content will be "
 "rendered as a link with a acrobat pdf icon as content. The link generally"
 " points to ``/files/FILE.pdf``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:271
+#: ../../user/configuration-portal.rst:272
 msgid ""
 "To use these templates, name your columns like this: ``name<pattern>``, "
 "eg ``website_url`` or ``boring_hidden``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:273
+#: ../../user/configuration-portal.rst:274
 msgid ""
 "To add a new pattern, the code of the frontend needs to be updated. Ask a"
 " developer to do this. You can point to the :ref:`relevant section of the"
 " documentation <ref_dev_customer_features>`."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:279
+#: ../../user/configuration-portal.rst:280
 msgid "Help"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:281
+#: ../../user/configuration-portal.rst:282
 msgid ""
 "This section explains how the help website and the help available from "
 "``geo-front3`` is generated."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:283
+#: ../../user/configuration-portal.rst:284
 msgid ""
 "The help website is a small static website written using `AngularJS "
 "<http://angularjs.org/>`__. It is design to show help to the user of a "
@@ -513,11 +517,11 @@ msgid ""
 "https://map.geoportal.xyz/help."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:287
+#: ../../user/configuration-portal.rst:288
 msgid "Update the help (images and texts) from Swisstopo"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:289
+#: ../../user/configuration-portal.rst:290
 msgid ""
 "This rely on the ``scripts/generate_help.py`` python script (not usable "
 "directly). This will download the texts for each language supported by "
@@ -526,7 +530,7 @@ msgid ""
 "``in/help/swisstopo/texts``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:291
+#: ../../user/configuration-portal.rst:292
 msgid ""
 "While fetching the texts, the content is scanned by beautiful soup in "
 "order to find all images (these images are used with the ``a`` tag with a"
@@ -535,49 +539,49 @@ msgid ""
 "images are converted to PNG and saved in ``in/help/swisstopo/img``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:293
+#: ../../user/configuration-portal.rst:294
 msgid "To do this, use in ``geo-infra``:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:301
+#: ../../user/configuration-portal.rst:302
 msgid ""
 "There is no particular way to know if the help was updated by Swisstopo. "
 "Launch the update task and git will tell you if anything changed."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:305
+#: ../../user/configuration-portal.rst:306
 msgid "Generate the help for a portal"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:307
+#: ../../user/configuration-portal.rst:308
 msgid "The script will output the help in two formats:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:309
+#: ../../user/configuration-portal.rst:310
 msgid ""
 "One for the help website. The files used are in "
 "``<type>/<portal>/help/texts/<lang>.json``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:310
+#: ../../user/configuration-portal.rst:311
 msgid ""
 "One for the use within ``geo-front3`` in "
 "``<type>/<portal>/help/texts/<id>-<lang>.json``"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:312
+#: ../../user/configuration-portal.rst:313
 msgid "All the images are saved in ``<type>/<portal>/help/img``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:314
+#: ../../user/configuration-portal.rst:315
 msgid "In order to generate the texts, the script will:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:316
+#: ../../user/configuration-portal.rst:317
 msgid "Parse the texts from ``geo-infra/help/texts/<lang>.csv``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:317
+#: ../../user/configuration-portal.rst:318
 msgid ""
 "Parse the texts from ``customer-infra/help/<portal>/texts/<lang>.csv``. "
 "So in order to change a text from Swisstopo, you simply must add a row "
@@ -589,63 +593,63 @@ msgid ""
 "the one used by Swisstopo. For instance:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:323
+#: ../../user/configuration-portal.rst:324
 msgid ""
 "You can ignore a page by putting its id in "
 "``in/help/<portal_name>/ignore.csv``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:332
+#: ../../user/configuration-portal.rst:333
 msgid ""
 "To create a new language file for a portal, create a ``<lang>.csv`` file "
 "in ``customer-infra/help/<portal>/texts`` and put the following header:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:338
+#: ../../user/configuration-portal.rst:339
 msgid "In order to generate the images, the script will:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:340
+#: ../../user/configuration-portal.rst:341
 msgid "Copy the images from ``geo-infra/help/img``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:341
+#: ../../user/configuration-portal.rst:342
 msgid ""
 "Copy the images from ``customer-infra/help/<portal>/img``. So to replace "
 "an image from Swisstopo, you must add an image with the same name (this "
 "include the extension) in ``customer-infra/help/<portal>/img``."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:343
+#: ../../user/configuration-portal.rst:344
 msgid ""
 "To build the help website (static site and files needed for the help "
 "within ``geo-front3``), use in ``geo-infra``:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:350
+#: ../../user/configuration-portal.rst:351
 msgid "Help generation in short"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:352
+#: ../../user/configuration-portal.rst:353
 msgid "The content of the site is generated as follows:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:354
+#: ../../user/configuration-portal.rst:355
 msgid "The images from Swisstopo are copied in the destination directory."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:355
+#: ../../user/configuration-portal.rst:356
 msgid ""
 "The images for the current portal are copied in the destination "
 "directory. This means that if an image has the same name as an image from"
 " Swisstopo, it will replace it."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:356
+#: ../../user/configuration-portal.rst:357
 msgid "The texts from Swisstopo are parsed from their respective csv files."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:357
+#: ../../user/configuration-portal.rst:358
 msgid ""
 "The texts for a current portal are parsed from its csv files. If a text "
 "has the same id as a text from Swisstopo it will replace it. This means "
@@ -653,33 +657,33 @@ msgid ""
 "CSV."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:361
+#: ../../user/configuration-portal.rst:362
 msgid "Writing help texts"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:363
+#: ../../user/configuration-portal.rst:364
 msgid ""
 "We advise you to use `LibreOffice <https://www.libreoffice.org/>`__ or "
 "equivalent to edit the CSV files. This way you can be sure that the CSV "
 "file you save is valid. It will also make editing of big texts easier."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:366
+#: ../../user/configuration-portal.rst:367
 msgid "Create links in the help website"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:368
+#: ../../user/configuration-portal.rst:369
 msgid ""
 "In order to insert link to another page of the website, you must use a "
 "``button`` tag with an attribute ``ng-click=\"hc.goto(<id>)\"``. For "
 "instance, to insert a link to the page with id 38:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:378
+#: ../../user/configuration-portal.rst:379
 msgid "Plugins"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:380
+#: ../../user/configuration-portal.rst:381
 msgid ""
 "For features may be available through plugins. To enable a plugin on a "
 "portal, add it to the ``plugins`` list of the ``front.default_values`` "
@@ -687,25 +691,25 @@ msgid ""
 "config file should contain:"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:391
+#: ../../user/configuration-portal.rst:392
 msgid "Print"
 msgstr ""
 
-#: ../../user/configuration-portal.rst:393
+#: ../../user/configuration-portal.rst:394
 msgid ""
 "Printing a map relies on `MapFish Print <https://github.com/mapfish"
 "/mapfish-print>`__ a Java servlet developed by `Camptocamp SA "
 "<http://www.camptocamp.com/en/>`__."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:395
+#: ../../user/configuration-portal.rst:396
 msgid ""
 "You can either build it from scratch from `the source "
 "<https://github.com/mapfish/mapfish-print>`__ or use our `last build "
 "</data/getting-started/print.war>`__."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:397
+#: ../../user/configuration-portal.rst:398
 msgid ""
 "You can view examples of print templates `here <https://github.com/ioda-"
 "net/customer-infra/tree/master/print>`__. You can create your print "
@@ -714,7 +718,7 @@ msgid ""
 " editor."
 msgstr ""
 
-#: ../../user/configuration-portal.rst:399
+#: ../../user/configuration-portal.rst:400
 msgid ""
 "To learn more about the available options, see :ref:`the proper page of "
 "the documentation <ref_user_print>`."

@@ -110,7 +110,7 @@ from the list
 - Open the *Advanced tools* panel.
 - Click on *WMS import*.
 - **Results:** the WMS import popup must appear.
-- In the URL list, select a WMS, for instance: *https://wms.geo.admin.ch/* or *http://www.geoservice.apps.be.ch/geoservice/services/a4p/a4p_basiswms_d_fk_s/MapServer/WMSServer?*.
+- In the URL list, select a WMS, for instance: *https://wms.geo.admin.ch/* or *http://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_basiswms_d_fk/MapServer/WMSServer?*.
 - **Results:** The GetCapalities response is correctly parsed and you see the list of the available layers.
 - Pass your mouse over *2km2 sub catchment areas* or *UP5*.
 - **Results:** layer is previewed on the map.
