@@ -182,6 +182,7 @@ function _update-prod-repos {
         cd ${PROD_GIT_REPOS_LOCATION}/$1 && \
         echo \"Updating remote repo with new version\" && \
         git reset --hard --quiet && \
+        git clean --force -d --quiet && \
         git fetch --quiet && \
         git checkout \$(git tag | sort -nr | head -n 1) --quiet && \
         echo \"Copy tomcat's configuration\" && \
