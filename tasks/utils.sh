@@ -382,8 +382,12 @@ function revert {
     _load-prod-config
 
     execute-on-prod "cd \"${PROD_GIT_REPOS_LOCATION}/$1\" && \
+        current_tag=\$(git tag -l --points-at HEAD) && \
+        new_tag=\$(git tag | sort -nr | head -n 2 | tail -n 1) && \
+        echo \"Reverting $1 from \${current_tag} to \${new_tag}\" && \
         git fetch && \
-        git checkout \$(git tag | sort -nr | head -n 2 | tail -n 1)"
+        git checkout \"\${new_tag}\" && \
+        echo \"Done\""
 }
 
 
