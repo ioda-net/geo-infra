@@ -240,8 +240,21 @@ function _watch {
 }
 
 
+HELP['build-mfp']="manuel build-mfp [PATH_TO_SOURCE [BUILD_BRANCH]]
+
+Build a new WAR for MapFish Print. It will:
+
+- Apply the pathes prefixed with mfp and located in geo-infra/patches before building.
+- Remove the default print apps from the WAR.
+- Unapply the patches once done.
+
+**Default values**
+
+- PATH_TO_SOURCE: \$MFP_SOURCE_PATH
+- BUILD_BRANCH: \$MFP_BUILD_BRANCH"
 function build-mfp {
     local path2mf="${1:-${MFP_SOURCE_PATH}}"
+    local build_branch="${2:-${MFP_BUILD_BRANCH}}"
     local geo_infra_dir="$(pwd)"
     local patchesdir="${geo_infra_dir}/patches"
     local geo_infra_print_dir="${geo_infra_dir}/print.war"
@@ -249,7 +262,7 @@ function build-mfp {
 
     pushd "${path2mf}"
         rm -rf ${output_dir}/*.war
-        git checkout "${MFP_BUILD_BRANCH}"
+        git checkout "${build_branch}"
 
         for mfp_patch in $patchesdir/mfp-*; do
             patch -p1 < "${mfp_patch}"
@@ -257,6 +270,7 @@ function build-mfp {
 
         echo "Building MFP"
         ./gradlew clean > /dev/null 2>&1
+        # Don't trust output of gradlew build: some tests fail.
         ./gradlew build > /dev/null 2>&1 || :
         echo "Done building"
 
