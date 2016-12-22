@@ -20,6 +20,21 @@ manuel build-doc-customer
 Build the documentation from the files in customer-infra/docs. The output will be in customer-infra/docs/_build/html
 
 
+## build-mfp
+manuel build-mfp [PATH_TO_SOURCE [BUILD_BRANCH]]
+
+Build a new WAR for MapFish Print. It will:
+
+- Apply the pathes prefixed with mfp and located in geo-infra/patches before building.
+- Remove the default print apps from the WAR.
+- Unapply the patches once done.
+
+**Default values**
+
+- PATH_TO_SOURCE: \$MFP_SOURCE_PATH
+- BUILD_BRANCH: \$MFP_BUILD_BRANCH
+
+
 ## clean
 manuel clean [TYPE] PORTAL
 

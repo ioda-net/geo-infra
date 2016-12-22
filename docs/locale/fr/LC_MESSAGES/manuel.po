@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-27 09:41+0200\n"
+"POT-Creation-Date: 2016-12-22 16:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,18 +73,37 @@ msgid ""
 msgstr ""
 
 #: ../../manuel.md
-msgid "clean"
+msgid "build-mfp"
 msgstr ""
 
 #: ../../manuel.md:24
-msgid "manuel clean [TYPE] PORTAL"
+msgid "manuel build-mfp [PATH_TO_SOURCE [BUILD_BRANCH]]"
 msgstr ""
 
 #: ../../manuel.md:26
+msgid "Build a new WAR for MapFish Print. It will:"
+msgstr ""
+
+#: ../../manuel.md:32 ../../manuel.md:64 ../../manuel.md:86 ../../manuel.md:101
+#: ../../manuel.md:114 ../../manuel.md:124 ../../manuel.md:136
+#: ../../manuel.md:150 ../../manuel.md:235 ../../manuel.md:259
+#: ../../manuel.md:385
+msgid "Default values"
+msgstr ""
+
+#: ../../manuel.md
+msgid "clean"
+msgstr ""
+
+#: ../../manuel.md:39
+msgid "manuel clean [TYPE] PORTAL"
+msgstr ""
+
+#: ../../manuel.md:41
 msgid "Clean the generated files for the given type and portal."
 msgstr ""
 
-#: ../../manuel.md:28
+#: ../../manuel.md:43
 msgid "Default Values"
 msgstr ""
 
@@ -92,11 +111,11 @@ msgstr ""
 msgid "clean-doc"
 msgstr ""
 
-#: ../../manuel.md:34
+#: ../../manuel.md:49
 msgid "manuel clean-doc"
 msgstr ""
 
-#: ../../manuel.md:36
+#: ../../manuel.md:51
 msgid "Remove the built files for the _build folder of the documentation"
 msgstr ""
 
@@ -104,11 +123,11 @@ msgstr ""
 msgid "config"
 msgstr ""
 
-#: ../../manuel.md:40
+#: ../../manuel.md:55
 msgid "manuel config [TYPE] PORTAL"
 msgstr ""
 
-#: ../../manuel.md:42
+#: ../../manuel.md:57
 msgid ""
 "Print the configuration for the given type and portal. It will also print"
 " the config files that are parsed in the order they are parsed. To only "
@@ -116,27 +135,21 @@ msgid ""
 "config, redirect the standard output to /dev/null."
 msgstr ""
 
-#: ../../manuel.md:46
+#: ../../manuel.md:61
 msgid ""
 "If you have jq installed, you can get any section from the JSON like "
 "that: manuel config demo 2> /dev/null | jq '.mapserver'"
-msgstr ""
-
-#: ../../manuel.md:49 ../../manuel.md:71 ../../manuel.md:86 ../../manuel.md:99
-#: ../../manuel.md:109 ../../manuel.md:121 ../../manuel.md:135
-#: ../../manuel.md:220 ../../manuel.md:244 ../../manuel.md:370
-msgid "Default values"
 msgstr ""
 
 #: ../../manuel.md
 msgid "csvlint"
 msgstr ""
 
-#: ../../manuel.md:55
+#: ../../manuel.md:70
 msgid "manuel csvlint [PORTAL]"
 msgstr ""
 
-#: ../../manuel.md:57
+#: ../../manuel.md:72
 msgid ""
 "Launch lint for all csv files and report errors. If portal is given, only"
 " the files in the portal infra dir will be linted. Otherwise, all files "
@@ -147,20 +160,20 @@ msgstr ""
 msgid "db-ddl-track"
 msgstr ""
 
-#: ../../manuel.md:63
+#: ../../manuel.md:78
 msgid ""
 "manuel db-ddl-track [DB_HOST [DB_NAME [REPO [SCHEMA_DUMP_FILE "
 "[DB_OWNER]]]]]"
 msgstr ""
 
-#: ../../manuel.md:65
+#: ../../manuel.md:80
 msgid ""
 "Work with DDL database, if any changes is detected from previous state "
 "Download the db schema, and create a new git tag commit and push to "
 "specific repository."
 msgstr ""
 
-#: ../../manuel.md:69
+#: ../../manuel.md:84
 msgid "This task is normally run from cron"
 msgstr ""
 
@@ -168,11 +181,11 @@ msgstr ""
 msgid "db-dump"
 msgstr ""
 
-#: ../../manuel.md:82
+#: ../../manuel.md:97
 msgid "manuel db-dump [HOST [DATABASE [BACKUP_FILE [DB_OWNER]]]]"
 msgstr ""
 
-#: ../../manuel.md:84
+#: ../../manuel.md:99
 msgid "Dump DATABASE from HOST to BACKUP_FILE."
 msgstr ""
 
@@ -180,11 +193,11 @@ msgstr ""
 msgid "db-dump-roles"
 msgstr ""
 
-#: ../../manuel.md:95
+#: ../../manuel.md:110
 msgid "manuel db-dump-roles [HOST [SUPER_USER]]"
 msgstr ""
 
-#: ../../manuel.md:97
+#: ../../manuel.md:112
 msgid "Dump the roles know to a pg HOST to STDIN."
 msgstr ""
 
@@ -192,11 +205,11 @@ msgstr ""
 msgid "db-grant-update"
 msgstr ""
 
-#: ../../manuel.md:105
+#: ../../manuel.md:120
 msgid "manuel db-grant-update [HOST [DATABASE [DB_OWNER]]]"
 msgstr ""
 
-#: ../../manuel.md:107
+#: ../../manuel.md:122
 msgid "Fix the right for DATABASE on HOST."
 msgstr ""
 
@@ -204,11 +217,11 @@ msgstr ""
 msgid "db-prod-patch"
 msgstr ""
 
-#: ../../manuel.md:117
+#: ../../manuel.md:132
 msgid "manuel db-prod-patch [PATCH_FILE [HOST [DATABASE [DB_OWNER]]]]"
 msgstr ""
 
-#: ../../manuel.md:119
+#: ../../manuel.md:134
 msgid "Update the production database with associated patch"
 msgstr ""
 
@@ -216,13 +229,13 @@ msgstr ""
 msgid "db-update"
 msgstr ""
 
-#: ../../manuel.md:131
+#: ../../manuel.md:146
 msgid ""
 "manuel db-update [HOST [DATABASE [BACKUP_FILE [DB_SUPER_USER "
 "[DB_OWNER]]]]]"
 msgstr ""
 
-#: ../../manuel.md:133
+#: ../../manuel.md:148
 msgid "Update DATABASE on HOST from BACKUP_FILE."
 msgstr ""
 
@@ -230,11 +243,11 @@ msgstr ""
 msgid "deploy"
 msgstr ""
 
-#: ../../manuel.md:145
+#: ../../manuel.md:160
 msgid "manuel deploy PORTAL1 [PORTAL2 [PORTAL3] …]"
 msgstr ""
 
-#: ../../manuel.md:147
+#: ../../manuel.md:162
 msgid "Generate a production version of the targeted portals and deploy it."
 msgstr ""
 
@@ -242,11 +255,11 @@ msgstr ""
 msgid "deploy-global-search-conf"
 msgstr ""
 
-#: ../../manuel.md:151
+#: ../../manuel.md:166
 msgid "manuel deploy-global-search-conf"
 msgstr ""
 
-#: ../../manuel.md:153
+#: ../../manuel.md:168
 msgid "Deploy sphinx global configuration."
 msgstr ""
 
@@ -254,11 +267,11 @@ msgstr ""
 msgid "deploy-portal"
 msgstr ""
 
-#: ../../manuel.md:157
+#: ../../manuel.md:172
 msgid "manuel deploy-portal PORTAL"
 msgstr ""
 
-#: ../../manuel.md:159
+#: ../../manuel.md:174
 msgid "Deploy the given portal on production. Don't build anything."
 msgstr ""
 
@@ -266,17 +279,17 @@ msgstr ""
 msgid "deploy-vhost"
 msgstr ""
 
-#: ../../manuel.md:163
+#: ../../manuel.md:178
 msgid "manuel deploy-vhost [INFRA_DIR]"
 msgstr ""
 
-#: ../../manuel.md:165
+#: ../../manuel.md:180
 msgid ""
 "Deploy the vhost generated in prod/vhost.d to the production server. This"
 " doesn't generate the vhost for prod."
 msgstr ""
 
-#: ../../manuel.md:168
+#: ../../manuel.md:183
 msgid ""
 "You can specify a specific INFRA_DIR. If INFRA_DIR is not specified, it "
 "will loop over all the infra directories it finds in INFRA_DIR."
@@ -286,11 +299,11 @@ msgstr ""
 msgid "dev"
 msgstr ""
 
-#: ../../manuel.md:172
+#: ../../manuel.md:187
 msgid "manuel dev PORTAL1 [PORTAL2 [PORTAL3] …]"
 msgstr ""
 
-#: ../../manuel.md:174
+#: ../../manuel.md:189
 msgid "Generate a development version of the targeted portals."
 msgstr ""
 
@@ -298,11 +311,11 @@ msgstr ""
 msgid "dev-full"
 msgstr ""
 
-#: ../../manuel.md:179
+#: ../../manuel.md:194
 msgid "manuel dev-full PORTAL1 [PORTAL2 [PORTAL3] …]"
 msgstr ""
 
-#: ../../manuel.md:181
+#: ../../manuel.md:196
 msgid ""
 "Generate a development version of the targeted portals. It will also "
 "triger a reindex for sphinx, test the map files of each portal and copy "
@@ -313,15 +326,15 @@ msgstr ""
 msgid "execute-on-prod"
 msgstr ""
 
-#: ../../manuel.md:186
+#: ../../manuel.md:201
 msgid "manuel execute-on-prod CMD"
 msgstr ""
 
-#: ../../manuel.md:188
+#: ../../manuel.md:203
 msgid "Execute the given command on the production server."
 msgstr ""
 
-#: ../../manuel.md:190
+#: ../../manuel.md:205
 msgid "It's possible to run the following commands:"
 msgstr ""
 
@@ -329,11 +342,11 @@ msgstr ""
 msgid "front"
 msgstr ""
 
-#: ../../manuel.md:201
+#: ../../manuel.md:216
 msgid "manuel front TASK [PORTAL]"
 msgstr ""
 
-#: ../../manuel.md:203
+#: ../../manuel.md:218
 msgid "Execute TASK for the frontend. Use:"
 msgstr ""
 
@@ -341,11 +354,11 @@ msgstr ""
 msgid "generate"
 msgstr ""
 
-#: ../../manuel.md:209
+#: ../../manuel.md:224
 msgid "manuel generate OPTIONS"
 msgstr ""
 
-#: ../../manuel.md:211
+#: ../../manuel.md:226
 msgid ""
 "Wrapper around scripts/generate.py. All the options are passed to the "
 "python script. Use --help for more details."
@@ -355,11 +368,11 @@ msgstr ""
 msgid "generate-global-search-conf"
 msgstr ""
 
-#: ../../manuel.md:216
+#: ../../manuel.md:231
 msgid "manuel generate-global-search-conf [TYPE] [INFRA_DIR]"
 msgstr ""
 
-#: ../../manuel.md:218
+#: ../../manuel.md:233
 msgid ""
 "Generate the global configuration for sphinx and restart searchd (if type"
 " is 'dev')."
@@ -369,11 +382,11 @@ msgstr ""
 msgid "generate-tests-conf"
 msgstr ""
 
-#: ../../manuel.md:227
+#: ../../manuel.md:242
 msgid "manuel generate-tests-conf"
 msgstr ""
 
-#: ../../manuel.md:229
+#: ../../manuel.md:244
 msgid ""
 "Generate the configuration for units tests (dev and prod). This is "
 "equivalent to: 'manuel front build-test-conf'. DEFAULT_PORTAL must be "
@@ -384,11 +397,11 @@ msgstr ""
 msgid "help"
 msgstr ""
 
-#: ../../manuel.md:234
+#: ../../manuel.md:249
 msgid "manuel help TASK"
 msgstr ""
 
-#: ../../manuel.md:236
+#: ../../manuel.md:251
 msgid "Display the help for TASK."
 msgstr ""
 
@@ -396,11 +409,11 @@ msgstr ""
 msgid "help-site"
 msgstr ""
 
-#: ../../manuel.md:240
+#: ../../manuel.md:255
 msgid "manuel help-site [TYPE] PORTAL"
 msgstr ""
 
-#: ../../manuel.md:242
+#: ../../manuel.md:257
 msgid "Generate the help website for PORTAL and TYPE."
 msgstr ""
 
@@ -408,11 +421,11 @@ msgstr ""
 msgid "help-update"
 msgstr ""
 
-#: ../../manuel.md:250
+#: ../../manuel.md:265
 msgid "manuel help-update"
 msgstr ""
 
-#: ../../manuel.md:252
+#: ../../manuel.md:267
 msgid "Update help texts and images from the help website from Swisstopo."
 msgstr ""
 
@@ -420,11 +433,11 @@ msgstr ""
 msgid "init-prod-repo"
 msgstr ""
 
-#: ../../manuel.md:256
+#: ../../manuel.md:271
 msgid "manuel init-prod-repo PORTAL"
 msgstr ""
 
-#: ../../manuel.md:258
+#: ../../manuel.md:273
 msgid ""
 "Clone the prod repo from the git server (the repo must exists there) and "
 "commit a dummy file. The repo is then clone on the production server."
@@ -434,11 +447,11 @@ msgstr ""
 msgid "jsonlint"
 msgstr ""
 
-#: ../../manuel.md:263
+#: ../../manuel.md:278
 msgid "manuel jsonlint [PORTAL]"
 msgstr ""
 
-#: ../../manuel.md:265
+#: ../../manuel.md:280
 msgid ""
 "Launch lint for all json files and report errors. If portal is given, "
 "only the files in the portal infra dir will be linted. Otherwise, all "
@@ -449,11 +462,11 @@ msgstr ""
 msgid "launch-tests"
 msgstr ""
 
-#: ../../manuel.md:271
+#: ../../manuel.md:286
 msgid "manuel launch-tests"
 msgstr ""
 
-#: ../../manuel.md:273
+#: ../../manuel.md:288
 msgid ""
 "Launch the unit tests against the development code. This is equivalent to"
 " 'manuel front test'"
@@ -463,11 +476,11 @@ msgstr ""
 msgid "lint"
 msgstr ""
 
-#: ../../manuel.md:277
+#: ../../manuel.md:292
 msgid "manuel lint [INFRA_DIR]"
 msgstr ""
 
-#: ../../manuel.md:279
+#: ../../manuel.md:294
 msgid ""
 "Launch lint for all json and csv files and report errors. If portal is "
 "given, only the files in the portal infra dir will be linted. Otherwise, "
@@ -478,11 +491,11 @@ msgstr ""
 msgid "lint-code"
 msgstr ""
 
-#: ../../manuel.md:285
+#: ../../manuel.md:300
 msgid "manuel lint-code"
 msgstr ""
 
-#: ../../manuel.md:287
+#: ../../manuel.md:302
 msgid ""
 "Launch gslint on the javascript code. This is equivalent to 'manuel front"
 " lint'"
@@ -492,7 +505,7 @@ msgstr ""
 msgid "popd"
 msgstr ""
 
-#: ../../manuel.md:291
+#: ../../manuel.md:306
 msgid "Silent version of builtin popd"
 msgstr ""
 
@@ -500,18 +513,18 @@ msgstr ""
 msgid "prod"
 msgstr ""
 
-#: ../../manuel.md:295
+#: ../../manuel.md:310
 msgid "manuel prod PORTAL1 [PORTAL2 [PORTAL3] …]"
 msgstr ""
 
-#: ../../manuel.md:297
+#: ../../manuel.md:312
 msgid ""
 "Generate a production version of the targeted portals. To generate even "
 "with uncommitted changes or without changing branch, add the --force "
 "option as first parameter."
 msgstr ""
 
-#: ../../manuel.md:300
+#: ../../manuel.md:315
 msgid ""
 "This task can be launch with portals from different infrastructures if "
 "--force is given."
@@ -521,7 +534,7 @@ msgstr ""
 msgid "pushd"
 msgstr ""
 
-#: ../../manuel.md:304
+#: ../../manuel.md:319
 msgid "Silent version of builtin pushd"
 msgstr ""
 
@@ -529,15 +542,15 @@ msgstr ""
 msgid "reindex"
 msgstr ""
 
-#: ../../manuel.md:308
+#: ../../manuel.md:323
 msgid "manuel reindex [-i INFRA_DIR] [-p PORTALS]"
 msgstr ""
 
-#: ../../manuel.md:310
+#: ../../manuel.md:325
 msgid "Launch a reindexation of sphinx. Use one and only one of these options:"
 msgstr ""
 
-#: ../../manuel.md:316
+#: ../../manuel.md:331
 msgid "If launched without parameters, it will reindex everything."
 msgstr ""
 
@@ -545,7 +558,7 @@ msgstr ""
 msgid "reload-apache"
 msgstr ""
 
-#: ../../manuel.md:320
+#: ../../manuel.md:335
 msgid "manuel reload-apache"
 msgstr ""
 
@@ -553,11 +566,11 @@ msgstr ""
 msgid "reload-features"
 msgstr ""
 
-#: ../../manuel.md:326
+#: ../../manuel.md:341
 msgid "manuel reload-features"
 msgstr ""
 
-#: ../../manuel.md:328
+#: ../../manuel.md:343
 msgid "Ask the API to reload the features."
 msgstr ""
 
@@ -565,11 +578,11 @@ msgstr ""
 msgid "render"
 msgstr ""
 
-#: ../../manuel.md:332
+#: ../../manuel.md:347
 msgid "manuel render OPTIONS"
 msgstr ""
 
-#: ../../manuel.md:334
+#: ../../manuel.md:349
 msgid ""
 "Wrapper around scripts/render.py --front-dir $FRONT_DIR. All the options "
 "are passed to the script. Use --help for more details."
@@ -579,15 +592,15 @@ msgstr ""
 msgid "restart-service"
 msgstr ""
 
-#: ../../manuel.md:339
+#: ../../manuel.md:354
 msgid "manuel restart-service SERVICE [INFRAS]"
 msgstr ""
 
-#: ../../manuel.md:341
+#: ../../manuel.md:356
 msgid "Restart the specified service."
 msgstr ""
 
-#: ../../manuel.md:343
+#: ../../manuel.md:358
 msgid ""
 "If the service is infrastructure specific, you can pass the list of "
 "infras for which it must be restarted."
@@ -597,11 +610,11 @@ msgstr ""
 msgid "revert"
 msgstr ""
 
-#: ../../manuel.md:347
+#: ../../manuel.md:362
 msgid "manuel revert PORTAL"
 msgstr ""
 
-#: ../../manuel.md:349
+#: ../../manuel.md:364
 msgid "Revert the given portal to the previous release on production."
 msgstr ""
 
@@ -609,11 +622,11 @@ msgstr ""
 msgid "sync-data"
 msgstr ""
 
-#: ../../manuel.md:353
+#: ../../manuel.md:368
 msgid "manuel sync-data"
 msgstr ""
 
-#: ../../manuel.md:355
+#: ../../manuel.md:370
 msgid "Synchronise the data."
 msgstr ""
 
@@ -621,11 +634,11 @@ msgstr ""
 msgid "test-config-generation"
 msgstr ""
 
-#: ../../manuel.md:359
+#: ../../manuel.md:374
 msgid "manuel test-config-generation"
 msgstr ""
 
-#: ../../manuel.md:361
+#: ../../manuel.md:376
 msgid ""
 "Check that the configuration are correctly generated. It relies on the "
 "demo portal from customer-infra (https://github.com/ioda-net/customer-"
@@ -636,11 +649,11 @@ msgstr ""
 msgid "test-map-files"
 msgstr ""
 
-#: ../../manuel.md:366
+#: ../../manuel.md:381
 msgid "manuel test-map-files [TYPE] PORTAL"
 msgstr ""
 
-#: ../../manuel.md:368
+#: ../../manuel.md:383
 msgid "Test the map files of given type for the specified portal."
 msgstr ""
 
@@ -648,11 +661,11 @@ msgstr ""
 msgid "tomcat-copy-conf"
 msgstr ""
 
-#: ../../manuel.md:376
+#: ../../manuel.md:391
 msgid "manuel tomcat-copy-conf TYPE PORTAL"
 msgstr ""
 
-#: ../../manuel.md:378
+#: ../../manuel.md:393
 msgid ""
 "Copy the generated MFP configuration files into tomcat's MFP directory. "
 "Use the files from TYPE and PORTAL."
@@ -662,11 +675,11 @@ msgstr ""
 msgid "update-doc-translations"
 msgstr ""
 
-#: ../../manuel.md:383
+#: ../../manuel.md:398
 msgid "manuel update-doc-translations"
 msgstr ""
 
-#: ../../manuel.md:385
+#: ../../manuel.md:400
 msgid ""
 "Update the po files based on text from English documents. This will not "
 "build the documentation."
@@ -676,11 +689,11 @@ msgstr ""
 msgid "verify-sphinx-conf"
 msgstr ""
 
-#: ../../manuel.md:389
+#: ../../manuel.md:404
 msgid "manuel verify-sphinx-conf"
 msgstr ""
 
-#: ../../manuel.md:391
+#: ../../manuel.md:406
 msgid "Check the configuration of sphinx."
 msgstr ""
 
@@ -688,11 +701,11 @@ msgstr ""
 msgid "vhost"
 msgstr ""
 
-#: ../../manuel.md:395
+#: ../../manuel.md:410
 msgid "manuel vhost [TYPE] PORTAL..."
 msgstr ""
 
-#: ../../manuel.md:397
+#: ../../manuel.md:412
 msgid "Create the vhost files for the given portals."
 msgstr ""
 
@@ -700,11 +713,11 @@ msgstr ""
 msgid "watch"
 msgstr ""
 
-#: ../../manuel.md:402
+#: ../../manuel.md:417
 msgid "manuel watch PORTAL"
 msgstr ""
 
-#: ../../manuel.md:404
+#: ../../manuel.md:419
 msgid ""
 "Watch and rebuild a portal on change. This is equivalent to 'manuel front"
 " watch PORTAL'"
