@@ -212,7 +212,7 @@ function help {
     if [[ -z "${1:-}" ]]; then
         help help
     else
-        [[ -n "${HELP[$1]}" ]] && echo "${HELP[$1]}" || echo "No task named $1." >&2
+        [[ -n "${HELP[$1]:-}" ]] && echo "${HELP[$1]}" || echo "No task named $1." >&2
     fi
 }
 
