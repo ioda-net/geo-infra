@@ -647,3 +647,13 @@ function clean-doc {
         rm -rf html doctrees
     popd
 }
+
+
+HELP['update-translations-swisstopo']="manuel update-translations-swisstopo
+
+Update translations/swisstopo.csv from Swisstopo's google doc."
+function update-translations-swisstopo {
+    curl --silent \
+        --output "${SWISSTOPO_TRANSLATIONS}" \
+        https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0
+}

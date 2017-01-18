@@ -124,6 +124,10 @@ set-var DOC_BUILD_DIR "_build"
 set-array DOC_LANGUAGES 'fr'
 
 
+# Translations
+set-var SWISSTOPO_TRANSLATIONS "translations/swisstopo.csv"
+
+
 # Infra
 # INFRA_DIR can point either to a specific infra directory, for instance:
 # set-var INFRA_DIR "../geoportal-infras/customer-infra"

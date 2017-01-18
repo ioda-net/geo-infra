@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"POT-Creation-Date: 2017-01-18 10:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -110,67 +110,73 @@ msgstr ""
 msgid "``git push`` to push the result."
 msgstr ""
 
-#: ../../dev/front.rst:32
+#: ../../dev/front.rst:31
+msgid ""
+"Update the translations from swisstopo with (in geo-infra) ``manuel "
+"update-translations-swisstopo``."
+msgstr ""
+
+#: ../../dev/front.rst:34
 msgid "Some tips to resolve merge conflicts"
 msgstr ""
 
-#: ../../dev/front.rst:35
+#: ../../dev/front.rst:37
 msgid "Components removed"
 msgstr ""
 
-#: ../../dev/front.rst:37
+#: ../../dev/front.rst:39
 msgid "You can safely remove any files related to these components:"
 msgstr ""
 
-#: ../../dev/front.rst:39
+#: ../../dev/front.rst:41
 msgid "tooltip"
 msgstr ""
 
-#: ../../dev/front.rst:40
+#: ../../dev/front.rst:42
 msgid "query"
 msgstr ""
 
-#: ../../dev/front.rst:43
+#: ../../dev/front.rst:45
 msgid "Components rewritten"
 msgstr ""
 
-#: ../../dev/front.rst:45
+#: ../../dev/front.rst:47
 msgid "You can safely checkout any files that belong to these components:"
 msgstr ""
 
-#: ../../dev/front.rst:47
+#: ../../dev/front.rst:49
 msgid "print"
 msgstr ""
 
-#: ../../dev/front.rst:48
+#: ../../dev/front.rst:50
 msgid "wmsimport (rewritten into owsimport)"
 msgstr ""
 
-#: ../../dev/front.rst:51
+#: ../../dev/front.rst:53
 msgid "New components"
 msgstr ""
 
-#: ../../dev/front.rst:53
+#: ../../dev/front.rst:55
 msgid "Normally, they should be in the merge conflicts:"
 msgstr ""
 
-#: ../../dev/front.rst:55
+#: ../../dev/front.rst:57
 msgid "features"
 msgstr ""
 
-#: ../../dev/front.rst:56
+#: ../../dev/front.rst:58
 msgid "importows"
 msgstr ""
 
-#: ../../dev/front.rst:57
+#: ../../dev/front.rst:59
 msgid "webdav"
 msgstr ""
 
-#: ../../dev/front.rst:61
+#: ../../dev/front.rst:63
 msgid "How to update Open Layer"
 msgstr ""
 
-#: ../../dev/front.rst:63
+#: ../../dev/front.rst:65
 msgid ""
 "We need to build our own version of ``ol.js`` since we need some exports "
 "that Swisstopo doesn't. In order to do this, we have a scrip called "
@@ -178,7 +184,7 @@ msgid ""
 "launch it (you must be in the root folder of geo-front3):"
 msgstr ""
 
-#: ../../dev/front.rst:69
+#: ../../dev/front.rst:71
 msgid ""
 "The script will do everything for you. If the ``Makefile`` was updated by"
 " Swisstopo, check whether it impacts how OpenLayers is updated. If so, "

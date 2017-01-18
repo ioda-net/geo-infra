@@ -28,6 +28,8 @@ Update from map.geo.admin.ch
    #. ``git merge origin/devel`` to merge them with a merge commit into your local branch.
    #. ``git push`` to push the result.
 
+#. Update the translations from swisstopo with (in geo-infra) ``manuel update-translations-swisstopo``.
+
 Some tips to resolve merge conflicts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

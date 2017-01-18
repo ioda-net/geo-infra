@@ -83,7 +83,7 @@ search_tsv_files = "{infra_dir}/{type}/{portal}/search/*.tsv"
 topics = "{infra_dir}/json/{portal}/topics/*.json"
 translate_catalog = "{infra_dir}/translations/catalog.csv"
 translation_files = [
-    "https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0",
+    "translations/swisstopo.csv",
     "translations/common.csv",
     "{infra_dir}/translations/common.csv",
     "{infra_dir}/translations/{portal}.csv"
