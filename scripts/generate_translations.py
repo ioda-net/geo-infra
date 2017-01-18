@@ -125,7 +125,7 @@ class Translator(Generate):
 
     def _process_row(self, row):
         json_key = row.get('key', None) or row.get('msgid', None) or row.get('', None)
-        if json_key not in self.ignore_list:
+        if json_key is not None and json_key not in self.ignore_list:
             langs_translations = [(key.lower(), value)
                                   for key, value in row.items()
                                   if self._is_language_key(key)]
