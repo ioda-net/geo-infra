@@ -333,7 +333,7 @@ class OwsParser(Generate):
             layer = json.load(layer_data)
             layer_name = layer['name']
             label = layer.get('label', layer_name)
-            layer_type = layer['type']
+            layer_type = layer['type'].lower()
             layer_config = {
                 'layerBodId': layer_name,
                 'label': label,
@@ -357,6 +357,8 @@ class OwsParser(Generate):
                 self._process_external_wms_layer(layer_config, layer)
             elif layer_type == 'wmts':
                 self._process_external_wmts_layer(layer_config, layer)
+            elif layer_type == 'wfs':
+                self._process_external_wfs_layer(layer_config, layer)
 
             self.layers_config[layer_name] = layer_config
             self.layers_names.append((layer_name, label))
@@ -372,6 +374,14 @@ class OwsParser(Generate):
         layer_config['timeBehaviour'] = layer.get('timeBehaviour', 'last')
         layer_config['matrixSet'] = layer['matrixSet']
         layer_config['templateUrl'] = layer.get('templateUrl', None)
+
+    def _process_external_wfs_layer(self, layer_config, layer):
+        layer_config['editable'] = layer.get('editable', False)
+        layer_config['featurePrefix'] = layer.get('featurePrefix', None)
+        layer_config['version'] = layer.get('version', '1.1.0')
+        layer_config['typeGeometry'] = layer.get('typeGeometry', 'GEOMETRY').upper()
+        layer_config['wfsUrl'] = layer['wfsUrl']
+        layer_config['featureNS'] = layer['featureNS']
 
     def save_information(self):
         '''Save the layers configuration and the search files.

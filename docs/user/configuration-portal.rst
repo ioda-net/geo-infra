@@ -16,8 +16,11 @@ In ``customer-infra/json/<portal_name>/external``, you can add JSON files descri
 - timeEnabled (WMTS only)
 - timestamps (WMTS only)
 - type
+- epsg (must be like: ``EPSG:2056``)
 - wmsUrl (WMS only)
 - matrixSet (WMTS only)
+- wfsUrl (WFS only)
+- featureNS (WFS only)
 
 They can have the following optional attributes:
 
@@ -35,6 +38,10 @@ They can have the following optional attributes:
 - background (default: false)
 - timeBehaviour (default: last, WMTS only)
 - templateUrl (default: null, WMTS only)
+- featurePrefix (default: empty, WFS only)
+- version (default: 1.1.0, WFS only)
+- typeGeometry (default: Geometry, the geometry of the layer (eg POINT, POLYGON, LINE), WFS only)
+- editable (default: false, WFS only)
 
 Example JSON file for external WMS layer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -87,6 +94,26 @@ Example JSON file for external WMTS layer
        ],
        "timeBehaviour": "last"
     }
+
+Example JSON file for external WFS layer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: json
+
+  {
+      "type": "wfs",
+      "attribution": "Ioda-Net SÀRL",
+      "epsg": "EPSG:2056",
+      "editable": true,
+      "wfsUrl": "http://geoserver.local/geoserver/test_wfs/ows",
+      "name": "Points from WFS",
+      "serverLayerName": "points",
+      "queryable": true,
+      "featureNS": "http://localhost:8080/geoserver/wfs",
+      "featurePrefix": "test_wfs",
+      "version": "1.1.0",
+      "typeGeometry": "POINT"
+  }
 
 
 .. _ref_user_cfg-portal_translations:
