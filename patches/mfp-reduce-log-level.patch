@@ -1,0 +1,13 @@
+diff --git i/core/src/main/resources/logback.xml w/core/src/main/resources/logback.xml
+index adcc481..4190fe8 100644
+--- i/core/src/main/resources/logback.xml
++++ w/core/src/main/resources/logback.xml
+@@ -8,7 +8,7 @@
+         </encoder>
+     </appender>
+ 
+-    <logger name="org.mapfish" level="ALL" />
++    <logger name="org.mapfish" level="INFO" />
+     <!-- Set spec logger to INFO to log all print spec json data -->
+     <logger name="org.mapfish.print.servlet.BaseMapServlet.spec" level="OFF" />
+     <logger name="com.codahale.metrics.JmxReporter" level="INFO" />
