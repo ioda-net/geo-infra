@@ -498,3 +498,7 @@ offline_show,Zeige Offline Menu,Show offline menu,Afficher le menu hors-ligne,Mo
 import_online_placeholder,WMS KML URL ,WMS KML URL,WMS KML URL,WMS KML URL,WMS KML URL
 import_tooltip,Importieren Sie externe WMS KML Datenquellen,Import external WMS KML sources,Importer des données WMS KML externes,Importare  dati WMS KML esterni,Agiuntar in unitad da datas WMS KML externa
 import,Importieren,Import,Importer,Importare,Importar
+geodesy,Geodäsie,Geodesy,Géodesie,Geodesia,Geodäsie
+geodesy_service_link_href,https://www.swisstopo.admin.ch/de/wissen-fakten/geodaesie-vermessung.html,https://www.swisstopo.admin.ch/en/knowledge-facts/surveying-geodesy.html,https://www.swisstopo.admin.ch/fr/connaissances-faits/mensuration-geodesie.html,https://www.swisstopo.admin.ch/it/conoscenze-fatti/misurazione-geodesia.html,https://www.swisstopo.admin.ch/de/wissen-fakten/geodaesie-vermessung.html
+geodesy_service_link_label,Geodäsie,Geodesy,Géodesie,Geodesia,Geodäsie
+topic_geodesy_tooltip,Geodäsie,Geodesy,Géodesie,Geodesia,Geodäsie
