@@ -412,7 +412,9 @@ class OwsParser(Generate):
             if type is not None and not is_geometry and not is_id:
                 layer_config['attributes'].append({
                     'type': self._normalize_wfs_attribute_type(type),
-                    'nillable': elt.get('nillable', False),
+                    # This attribute is a string since it comes from a XML document. We need to
+                    # convert it to a boolean to use it correctly in the frontend.
+                    'nillable': elt.get('nillable', 'false') == 'true',
                     'name': name,
                 })
 
