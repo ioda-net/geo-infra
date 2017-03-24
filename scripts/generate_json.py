@@ -31,7 +31,15 @@ import time
 from glob import glob
 from operator import xor
 from os.path import basename, splitext
+# In the schema package, there is a get_schema to do and parse DescribeFeatureType but
+# it doesn't always work. Import relevant function and do this ourselves.
+from owslib.etree import etree
+from owslib.feature.schema import _get_describefeaturetype_url as get_describefeaturetype_url
 from owslib.wms import WebMapService
+from owslib.util import (
+    findall,
+    openURL,
+)
 from requests.exceptions import ConnectionError
 
 from generate_timeseries import get_timestamps
@@ -382,6 +390,38 @@ class OwsParser(Generate):
         layer_config['typeGeometry'] = layer.get('typeGeometry', 'GEOMETRY').upper()
         layer_config['wfsUrl'] = layer['wfsUrl']
         layer_config['featureNS'] = layer['featureNS']
+        self._add_wfs_attributes_info_for_edition(layer_config)
+
+    def _add_wfs_attributes_info_for_edition(self, layer_config):
+        describe_feature_type_url = get_describefeaturetype_url(
+            layer_config['wfsUrl'],
+            layer_config['version'],
+            layer_config['serverLayerName']
+        )
+        layer_config['attributes'] = []
+        res = openURL(describe_feature_type_url)
+        root = etree.fromstring(res.read())
+        attributes_sequence = root.findall('.//{http://www.w3.org/2001/XMLSchema}sequence')[0]
+        for elt in findall(attributes_sequence, '{http://www.w3.org/2001/XMLSchema}element'):
+            type = elt.get('type')
+            name = elt.get('name')
+            # If the type starts with gml, it is the geometry, not an atttribute.
+            is_geometry = type is not None and type.startswith('gml:')
+            # Some server like QGis returns the id as an attribute. We ignore this.
+            is_id = name == 'id'
+            if type is not None and not is_geometry and not is_id:
+                layer_config['attributes'].append({
+                    'type': self._normalize_wfs_attribute_type(type),
+                    'nillable': elt.get('nillable', False),
+                    'name': name,
+                })
+
+    def _normalize_wfs_attribute_type(self, type):
+        # Geoserver adds xsd: in front of all types
+        type = type.replace('xsd:', '')
+        if type == 'long' or type == 'integer':
+            type = 'int'
+        return type
 
     def save_information(self):
         '''Save the layers configuration and the search files.
