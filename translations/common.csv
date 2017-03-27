@@ -27,6 +27,39 @@ draw_webdav_options_failed,Erreur lors de l'initialisation de la requête. Conta
 draw_webdav_password_help,Mot de passe de votre compte Webdav,Password of your Webdav account,Password of your Webdav account
 draw_webdav_url_help,Url de votre serveur webdav,Url of your webdav server,Url of your webdav server
 draw_webdav_user_help,Nom d'utilisateur de votre compte Webdav,Username of your Webdav account,Username of your Webdav account
+edit_add_feature_line,Cliquer pour commencer une ligne,Klicke um eine Linie zu zeichnen,Click to start a line
+edit_add_feature_next_line,Cliquer pour ajouter un nouveau point (double-clique pour terminer),Klicke um weiteren Punkt hinzuzufügen (Doppelklick um zu beenden),Click to add another point (double-click to finish)
+edit_add_feature_next_point,Cliquer pour ajouter un point,Klicke um ein Punkt zu hinzufügen,Click to add a point
+edit_add_feature_next_polygon,Cliquer pour ajouter un nouveau point (double-clique pour terminer),Klicke um weiteren Punkt hinzuzufügen (Doppelklick um zu beenden),Click to add another point (double-click to finish)
+edit_add_feature_point,Cliquer pour ajouter un point,Klicke um ein Punkt zu hinzufügen,Click to add a point
+edit_add_feature_polygon,Cliquer pour commencer une surface,Klicke um eine Fläche zu zeichnen,Click to start a surface
+edit_back,Retour / Terminer l’édition,Zurück / Ausgabe beenden,Back / Finish edit
+edit_cannot_switch_edit_mode,Seules les couches visibles sur la carte peuvent être modifiées,Only layers visible on the map can be edited,Only layers visible on the map can be edited
+edit_confirm_delete,Voulez-vous vraiment effacer les objets sélectionnés?,Wollen Sie wirklich alle selektierten Objekte löschen?,Do you really want to delete the selected features?
+edit_delete_last_point,Appuyer sur DEL pour effacer le dernier point,Letzter Punkt löschen: DEL Taste,Press DEL to remove the last point drawn
+edit_feature_attributes_no_attr,Aucun attribut pour cette couche,No attribute for this layer,No attribute for this layer
+edit_mode_title,Édtion,Editing,Editing
+edit_modify_existing_vertex_line,Cliquer pour supprimer le point (2 points min.)<br/>Cliquer puis bouger le curseur pour déplacer le point ,Klick um Punkt zu löschen (2 Punkte im Minimum).<br/> Verschieben Punkt: klick und ziehen ,Click to delete the point (2 points min.)<br/>Click then drag to move the point
+edit_modify_existing_vertex_point,Cliquer puis bouger le curseur pour déplacer le point,Verschieben Punkt: klick und ziehen ,Click then drag to move the point
+edit_modify_existing_vertex_polygon,Cliquer pour supprimer le point (3 points min.)<br/>Cliquer puis bouger le curseur pour déplacer le point ,Klick um Punkt zu löschen (3 Punkte im Minimum).<br/> Verschieben Punkt: klick und ziehen ,Click to delete the point (3 points min.)<br/>Click then drag to move the point
+edit_modify_feature_line,Cliquer sur un point ou une arête pour modifier la ligne,Click on an edge or a vertex to modify the line,Click on an edge or a vertex to modify the line
+edit_modify_feature_point,Cliquer puis bouger le curseur pour déplacer le point,Verschieben Punkt: klick und ziehen ,Click then drag to move the point
+edit_modify_feature_polygon,Cliquer sur un point ou une arête pour modifier le polygone,Click on an edge or a vertex to modify the surface,Click on an edge or a vertex to modify the surface
+edit_modify_new_vertex_line,Cliquer pour ajouter un point<br/>Cliquer puis bouger le curseur pour déplacer le point,Klick um Punkt hinzuzufügen.<br/> Verschieben Punkt: klick und ziehen ,Click to add a point<br/>Click then drag to move the point
+edit_modify_new_vertex_point,Cliquer pour ajouter un point<br/>Cliquer puis bouger le curseur pour déplacer le point,Klick um Punkt hinzuzufügen.<br/> Verschieben Punkt: klick und ziehen ,Click to add a point<br/>Click then drag to move the point
+edit_modify_new_vertex_polygon,Cliquer pour ajouter un point<br/>Cliquer puis bouger le curseur pour déplacer le point,Klick um Punkt hinzuzufügen.<br/> Verschieben Punkt: klick und ziehen ,Click to add a point<br/>Click then drag to move the point
+edit_popup_title_feature,Édition des attributs,Editing attributes,Editing attributes
+edit_quit_unsaved_changes,Vous avez des changements non enregistrés. Voulez-vous vraiment les annuler ?,You have unchanged changes. Do you really want to cancel them?,You have unchanged changes. Do you really want to cancel them?
+edit_save_error,Une erreur s’est produite lors de la sauvegarde,An error occured while saving,An error occured while saving
+edit_save_success,Sauvegarde réussie,Save successful,Save successful
+edit_saving,Sauvegarde en cours…,Saving…,Saving…
+edit_select_feature_line,Cliquer pour selectionner la ligne,Klick für Selektion Linie,Click to select the line
+edit_select_feature_point,Cliquer pour selectionner le point,Klick für Selektion Punkte,Click to select the point
+edit_select_feature_polygon,Cliquer pour selectionner la surface,Klick für Selektion Flächen,Click to select the surface
+edit_select_no_feature,Rien à sélectionner,Nothing to select,Nothing to select
+edit_switch_edit_mode,Éditer cette couche,Edit this layer,Edit this layer
+edit_unknown_save_error,Une erreur inattendue s’est produite lors de la sauvegarde,An unexpected error occured while saving,An unexpected error occured while saving
+edit_unsaved_changes,Changements non sauvegardés,Unsaved changes,Unsaved changes
 feedback_subject,Sujet,Thema,Subject
 file,Fichier,File,File
 import_wmts,WMTS import,WMTS Import,WMTS Import
