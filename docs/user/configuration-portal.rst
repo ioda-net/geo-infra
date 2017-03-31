@@ -40,7 +40,7 @@ They can have the following optional attributes:
 - templateUrl (default: null, WMTS only)
 - featurePrefix (default: empty, WFS only)
 - version (default: 1.1.0, WFS only)
-- typeGeometry (default: Geometry, the geometry of the layer (eg POINT, POLYGON, LINE), WFS only)
+- typeGeometry (default: Geometry, WFS only): the geometry of the layer (eg POINT, POLYGON, LINE)
 - editable (default: false, WFS only)
 
 Example JSON file for external WMS layer
