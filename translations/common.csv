@@ -6,6 +6,12 @@ A4 portrait,A4 portrait,A4 Hochformat,A4 portrait
 add_layer,Ajouter une couche,Layer hinzufügen,Add a layer
 add_wmts_layer_failed,Erreur au chargement de la couche WMTS,Fehler beim Laden WMTS Layer,Error while loading WMTS layer
 add_wmts_layer_succeeded,Couche WMTS chargée avec succès,WMTS Layer erfolgreich geladen,WMTS layer successfully added
+auth_connect,Se connecter,Login,Login
+auth_invalid_login,Identifiants (nom d’utilisateur ou mot de passe) invalides,Password or username invalid,Password or username invalid
+auth_password,Mot de passe,Passwort,Password
+auth_required,Vous devez vous connecter,Please log in,Please log in
+auth_unknown_error,Erreur inconnue lors de l’authentification,Unknown error while connecting,Unknown error while connecting
+auth_username,Nom d'utilisateur,Benutzername ,Username
 background,Fond de carte,Hintergrund,Background
 description_instructions_wmts,Description des couches WMTS,Beschreibung des WMTS Layers,Description of WMTS layers
 draw_delete_error,Erreur lors de la suppression du dessin,Fail to delete the drawing,Fail to delete the drawing
