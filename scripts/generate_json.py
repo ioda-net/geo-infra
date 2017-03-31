@@ -390,7 +390,10 @@ class OwsParser(Generate):
         layer_config['typeGeometry'] = layer.get('typeGeometry', 'GEOMETRY').upper()
         layer_config['wfsUrl'] = layer['wfsUrl']
         layer_config['featureNS'] = layer['featureNS']
-        self._add_wfs_attributes_info_for_edition(layer_config)
+        try:
+            self._add_wfs_attributes_info_for_edition(layer_config)
+        except Exception as e:
+            logging.error('Error while retrieving attributes information for layer "{}": {}'.format(layer_config['label'], e))
 
     def _add_wfs_attributes_info_for_edition(self, layer_config):
         describe_feature_type_url = get_describefeaturetype_url(
