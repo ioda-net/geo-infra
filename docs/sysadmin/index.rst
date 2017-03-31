@@ -6,3 +6,4 @@ System administrator guide
     server-setup.rst
     deploy-setup.rst
     db.rst
+    wfs-t.rst
