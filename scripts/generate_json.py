@@ -390,6 +390,7 @@ class OwsParser(Generate):
         layer_config['typeGeometry'] = layer.get('typeGeometry', 'GEOMETRY').upper()
         layer_config['wfsUrl'] = layer['wfsUrl']
         layer_config['featureNS'] = layer['featureNS']
+        layer_config['authRequired'] = layer.get('authRequired', False)
         try:
             self._add_wfs_attributes_info_for_edition(layer_config)
         except Exception as e:
