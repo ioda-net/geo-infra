@@ -34,7 +34,8 @@ from os.path import basename, splitext
 from owslib.wms import WebMapService
 from requests.exceptions import ConnectionError
 
-from generate_utils import Generate, start_cgi_server, get_timestamps
+from generate_timeseries import get_timestamps
+from generate_utils import Generate, start_cgi_server
 from generate_translations import Translator, CatalogTranslator
 from helpers import format_search_text
 
@@ -287,23 +288,10 @@ class OwsParser(Generate):
               layer_name in self.default_tiling_exceptions)
             if time_enabled:
                 try:
-                    schema, table, time_col = self.config['mapserver'].get('time', {}).get(layer_name, None)
-                except TypeError:
-                    logging.warn('Cannot find timestamps for layer {}'.format(layer_name))
-                    # Failed to fetch timestamps, layer cannot be timeenabled.
-                    time_enabled = False
-                    timestamps = []
-                else:
-                    timestamps = get_timestamps(
-                        user=self.config['mapserver']['PORTAL_DB_USER'],
-                        passwd=self.config['mapserver']['PORTAL_DB_PASSWORD'],
-                        host=self.config['mapserver']['PORTAL_DB_HOST'],
-                        port=self.config['mapserver']['PORTAL_DB_PORT'],
-                        db=self.config['mapserver']['PORTAL_DB_NAME'],
-                        schema=schema,
-                        table=table,
-                        time_col=time_col
-                    )
+                    timestamps = get_timestamps(self.portal, self.config, layer_name)
+                except Exception as e:
+                    logging.error('Failed to find time values for {}: {}'.format(layer_name, e))
+                    raise e
             else:
                 timestamps = []
             self.layers_config[layer_name] = {
