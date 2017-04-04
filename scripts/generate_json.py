@@ -265,28 +265,35 @@ class OwsParser(Generate):
             legend = layer.styles.get('default', {}).get('legend', '')
             queryable = bool(getattr(layer, 'queryable', False)) and \
                 layer_name not in self.config['layers'].get('force_non_queryable', set())
+            time_enabled = bool(getattr(layer, 'timepositions', False))
             # Make layer queryable if one of its children is queryable.
             # Currently not the case in MapServer.
             # See https://github.com/mapserver/mapserver/pull/5220
             sub_layer_queryable = 0
+            # Make layer timeenabled if one of its children is timeenabled. This allows
+            # group of layers to be timeenabled.
+            sub_layer_time_enabled = False
             for sub_layer in layer.children:
                 sub_layer_queryable += sub_layer.queryable
+                sub_layer_time_enabled = sub_layer_time_enabled or \
+                    bool(getattr(sub_layer, 'timepositions', False))
             queryable = queryable or sub_layer_queryable > 0
+            time_enabled = time_enabled or sub_layer_time_enabled
             attribution = getattr(layer, 'attribution', self.default_layer_attribution)
             opacity = getattr(layer, 'opaque', 0) if layer_name not in self.background_layers_ids \
                 else self.default_background_opacity
             single_tile = xor(
               self.single_tiles_by_default,
               layer_name in self.default_tiling_exceptions)
-            if layer.timepositions:
+            if time_enabled:
                 try:
                     schema, table, time_col = self.config['mapserver'].get('time', {}).get(layer_name, None)
                 except TypeError:
                     logging.warn('Cannot find timestamps for layer {}'.format(layer_name))
+                    # Failed to fetch timestamps, layer cannot be timeenabled.
                     time_enabled = False
                     timestamps = []
                 else:
-                    time_enabled = True
                     timestamps = get_timestamps(
                         user=self.config['mapserver']['PORTAL_DB_USER'],
                         passwd=self.config['mapserver']['PORTAL_DB_PASSWORD'],
@@ -298,7 +305,6 @@ class OwsParser(Generate):
                         time_col=time_col
                     )
             else:
-                time_enabled = False
                 timestamps = []
             self.layers_config[layer_name] = {
                 'layerBodId': layer_name,
