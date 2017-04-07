@@ -225,12 +225,20 @@ Design of the interface
 
 TODO
 
-Protection of WMS requests
+Protection of OWS requests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the layers configuration we send to the user, if a layer is protected, the attribute ``serverLayerName`` is replaced by ``<api-host>/mapproxy``. All the requests coming to that end point are protected. The API checks that the user can do the selected operation on the layer. If so, the API forwards the request to the true server by getting the true ``serverLayerName``. If not, the API responds with 403.
 
 If ``GetCapabilities`` requests must be allowed, we need to build the result from the list of layers the user can interact with.
+
+Protecting requests with basic auth
++++++++++++++++++++++++++++++++++++
+
+We can also protect most requests with Basic Auth. There are two possibilities:
+
+- Protect the whole portal by Basic Auth and put the layers on the same domain. This way, the browser will ask the user to authenticate before viewing anything on the portal. The credentials will be forwarded to the OWS server by the browser. This is what we currently have.
+- Put the protected layers on a dedicated domain. We will need to use a custom loader to load the images from the server with ``setTileLoadFunction``, ``setImageLoadFunction`` or directly with the ``loader`` property when creating the source. Since we are using our functions, we will be able to pass the credentials to the server by adding the proper header. The user will be asked to authenticate either because the layer has the ``authRequired`` attribute set to ``true`` or because a request will fail with a ``401`` or ``403`` status code. The credentials will come from ``gf3AuthService``. See: https://github.com/openlayers/openlayers/issues/4213 for the background.
 
 Features requests
 +++++++++++++++++
