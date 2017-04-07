@@ -422,6 +422,10 @@ class OwsParser(Generate):
                     'nillable': elt.get('nillable', 'false') == 'true',
                     'name': name,
                 })
+            # The geometry column may have any name. OpenLayers will use geometry by default but
+            # it may be wrong.
+            elif name is not None and is_geometry:
+                layer_config['geometryName'] = name
 
     def _normalize_wfs_attribute_type(self, type):
         # Geoserver adds xsd: in front of all types
