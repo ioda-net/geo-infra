@@ -366,3 +366,62 @@ Help site
 - **Results:** a new tab to the help site must open.
 - Navigate in the help site.
 - **Results:** everything must be fine.
+
+
+.. _ref_user_functional-tests_layer-edition:
+
+Layer Edition
+-------------
+
+Edition button in the layer selector
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Add a layer that can be edited.
+- Open the layer selector panel.
+- **Results:** you must see the *edit* button.
+- Click on the layer so it is not visible on the map.
+- **Results:** the *edit* button must be disabled.
+- Click on the layer so it is visible again on the map.
+- **Results:** the *edit* button is enabled again.
+
+Deletion of a feature
+~~~~~~~~~~~~~~~~~~~~~
+
+- Select a feature.
+- Click on the *delete* button or press the *delete* key.
+- **Results:** the feature is deleted from the map.
+
+Edition of a feature
+~~~~~~~~~~~~~~~~~~~~
+
+- Click on a feature.
+- **Results:** a popup appears to allow you to edit its attributes.
+- Modify the geometry.
+- **Results:** the popup disappear during the edition and re-appear afterwards, the geometry is updated.
+
+Creation of a feature
+~~~~~~~~~~~~~~~~~~~~~
+
+- Click on the *add* button.
+- Add a feature.
+- **Results:** the feature is added on the map, selected and a popup appears to allow you to enter its attributes.
+
+Save modifications
+~~~~~~~~~~~~~~~~~~
+
+- Do some modifications.
+- Click on the *save* button.
+- Refresh the page.
+- **Results:** the modifications are correctly saved.
+
+Cancel modifications
+~~~~~~~~~~~~~~~~~~~~
+
+- Do some modifications.
+- Click on the *cancel* button.
+- **Results:** a confirmation popup appear. The modifications are canceled if and only if you click *OK* in this popup.
+
+Edition tooltip
+~~~~~~~~~~~~~~~
+
+The help tooltips must be available all the time, relevant and similar to those of the drawing tool.

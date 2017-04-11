@@ -9,3 +9,4 @@ User guide
     deploy.rst
     print.rst
     functional-tests.rst
+    edition.rst
