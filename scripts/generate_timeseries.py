@@ -67,9 +67,9 @@ def find_time_values(config, layers_to_query):
     port = config['mapserver']['PORTAL_DB_PORT']
     db = config['mapserver']['PORTAL_DB_NAME']
 
-    timestamps = []
+    timestamps = set()
     for layer in layers_to_query:
-        timestamps.extend(fetch_timestamps_from_db(
+        timestamps.update(fetch_timestamps_from_db(
             user=user,
             host=host,
             password=password,
@@ -80,7 +80,8 @@ def find_time_values(config, layers_to_query):
             pkey_column=get_pkey_column_from_layer_definition(layer)
         ))
 
-    return timestamps
+    # Convert the set to a list to include the result in a JSON file.
+    return list(timestamps)
 
 
 def get_pkey_column_from_layer_definition(layer):
@@ -167,5 +168,4 @@ def fetch_timestamps_from_db(
             logging.warning('Time for row {} of table {} is NULL'
                             .format(getattr(r, pkey_column), table))
 
-    # Convert the set to a list to include the result in a JSON file.
-    return list(timestamps)
+    return timestamps
