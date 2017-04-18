@@ -182,11 +182,26 @@ def get_table_from_layer_definition(layer):
 def get_time_column_from_layer_definition(layer):
     '''Extract the name of the "time column" from the layer definition.'''
     metadata = layer['metadata']
-    for key in POSSIBLE_TIMEITEM_KEYS:
-        time_column = metadata.get(key, None)
-        if time_column is not None:
-            # The parsed name of the column may contain additionnal quotes. We remove them.
-            return time_column.replace('"', '')
+    return get_one_key(metadata, POSSIBLE_TIMEITEM_KEYS)\
+        .replace('"', '')
+
+
+def get_one_key(dictionnary, keys):
+    '''Returns the value from ``dictionnary`` for one key provided in ``keys``.
+
+    Raises:
+        KeyError: if ``dictionnary`` contains none of the keys listed in ``keys``.
+    '''
+    dict_keys = set(dictionnary.keys())
+    keys = set(keys)
+
+    common_keys = dict_keys.intersection(keys)
+    if len(common_keys) == 0:
+        raise KeyError('No key listed in {keys} in provided dictionnary {dictionnary}'
+                       .format(keys=keys, dictionnary=dictionnary))
+
+    key = common_keys.pop()
+    return dictionnary[key]
 
 
 def fetch_timestamps_from_db(
