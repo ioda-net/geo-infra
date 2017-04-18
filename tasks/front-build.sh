@@ -81,6 +81,7 @@ function _build-deps-js {
 
     "${DEPSWRITER_CMD}" \
            --root_with_prefix="src/components components" \
+           --root_with_prefix="src/ngeo ngeo" \
            --root_with_prefix="src/js js" > "${output_file}"
 }
 
