@@ -53,6 +53,7 @@ def get_timestamps(portal, config, layer_name):
     Raises:
         ``ValueError`` if no timestamps are found.
     '''
+    logging.debug('%%%% Getting timestmaps for {} %%%%'.format(layer_name))
     mapfile = path(config['dest']['map'], 'portals', portal, ext='.map')
     mapfile_content = mappyfile.load(mapfile)
     layers = mapfile_content['layers']
@@ -62,6 +63,10 @@ def get_timestamps(portal, config, layer_name):
     timestamps = find_time_values(config, layers_to_query)
     if len(timestamps) == 0:
         raise ValueError('{} is neither a layer nor a group in {}'.format(layer_name, mapfile))
+    else:
+        logging.debug('Timestamps: {}'.format(timestamps))
+
+    logging.debug('%%%% Done %%%%')
 
     return timestamps
 
@@ -121,15 +126,31 @@ def find_time_values(config, layers_to_query):
 
     timestamps = set()
     for layer in layers_to_query:
+        table = get_table_from_layer_definition(layer)
+        time_column = get_time_column_from_layer_definition(layer)
+        pkey_column = get_pkey_column_from_layer_definition(layer)
+
+        if table is None or time_column is None or pkey_column is None:
+            msg = 'Invalid layer definition. Cannot find time values for layer "{layer}": '\
+                  'table "{table}", time column "{time_column}", '\
+                  'pkey_column "{pkey_column}". Skipping.'\
+                  .format(
+                      layer=layer['name'],
+                      table=table,
+                      time_column=time_column,
+                      pkey_column=pkey_column
+                  )
+            logging.error(msg)
+
         timestamps.update(fetch_timestamps_from_db(
             user=user,
             host=host,
             password=password,
             port=port,
             db=db,
-            table=get_table_from_layer_definition(layer),
-            time_column=get_time_column_from_layer_definition(layer),
-            pkey_column=get_pkey_column_from_layer_definition(layer)
+            table=table,
+            time_column=time_column,
+            pkey_column=pkey_column
         ))
 
     # Convert the set to a list to include the result in a JSON file.
@@ -175,9 +196,9 @@ def fetch_timestamps_from_db(
     port=5432,
     db='',
     type='postgresql',
-    table='',
+    table=None,
     time_column=None,
-    pkey_column='id'
+    pkey_column=None
 ):
     '''Query the database with the proper parameters to find a list of timestamps.
 
