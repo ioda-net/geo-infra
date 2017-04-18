@@ -189,7 +189,7 @@ function _uglify-libs {
     local libs=( 'src/lib/jquery.js'
                  'src/lib/bootstrap.js'
                  'src/lib/moment-with-customlocales.js'
-                 'src/lib/typeahead-0.9.3.js'
+                 'src/lib/typeahead.jquery.min.js'
                  'src/lib/angular.js'
                  'src/lib/proj4js-compressed.js'
                  'src/lib/EPSG21781.js'
