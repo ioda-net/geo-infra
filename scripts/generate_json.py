@@ -286,14 +286,12 @@ class OwsParser(Generate):
             single_tile = xor(
               self.single_tiles_by_default,
               layer_name in self.default_tiling_exceptions)
+            timestamps = []
             if time_enabled:
                 try:
                     timestamps = get_timestamps(self.portal, self.config, layer_name)
                 except Exception as e:
                     logging.error('Failed to find time values for {}: {}'.format(layer_name, e))
-                    raise e
-            else:
-                timestamps = []
             self.layers_config[layer_name] = {
                 'layerBodId': layer_name,
                 'label': label,
