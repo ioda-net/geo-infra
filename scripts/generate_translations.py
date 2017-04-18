@@ -83,7 +83,7 @@ class Translator(Generate):
 
     def _process_files(self, delimiter=',', quotechar='"'):
         for filename in self.files:
-            logging.debug('Working on : ', filename)
+            logging.debug('Working on : ' + filename)
 
             csv_file, is_url = self._open_csv_file(filename)
             # file may not exists. In this case, csv_file is None
