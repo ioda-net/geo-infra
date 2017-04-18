@@ -26,6 +26,8 @@
 import logging
 import mappyfile
 
+from sqlalchemy import create_engine, MetaData, Table
+from sqlalchemy.orm import sessionmaker
 from generate_utils import path
 
 
@@ -132,8 +134,6 @@ def fetch_timestamps_from_db(
 
     It will find the table information dynamically based on the supplied parameters.
     '''
-    from sqlalchemy import BigInteger, Column, create_engine, MetaData, Table
-    from sqlalchemy.orm import sessionmaker
     # Create query from table metadata
     conn_str = '{type}://{user}:{passwd}@{host}:{port}/{db}'.format(
         type=type,
