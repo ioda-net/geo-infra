@@ -657,3 +657,34 @@ function update-translations-swisstopo {
         --output "${SWISSTOPO_TRANSLATIONS}" \
         https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0
 }
+
+
+HELP['update']="manuel update
+
+Update the dependencies of the project (OpenLayers, node modules, ngeo, translations). This must
+be launched after each merge from upstream and on first clone."
+function update {
+    update-translations-swisstopo
+    update-ngeo
+
+    pushd "${FRONT_DIR}"
+        npm install
+        ./scripts/update-open-layers.sh
+    popd
+}
+
+
+HELP['update-ngeo']="manuel update-ngeo
+
+Update ngeo to the correct version. The commit to update to is read from the Makefile of the
+frontend."
+function update-ngeo {
+    pushd "${FRONT_DIR}"
+        local ngeo_version=$(grep 'NGEO_VERSION ?=' Makefile | cut -f 3 -d ' ')
+        git submodule update --init
+        pushd src/ngeo
+            git checkout "${ngeo_version}"
+        popd
+    popd
+}
+

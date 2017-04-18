@@ -20,7 +20,7 @@ Update from map.geo.admin.ch
 #. Go to the branch ``devel``: ``git checkout devel``
 #. Merge ``master`` into ``devel``: ``git merge master``
 #. Solve the merge conflicts. See `Some tips to resolve merge conflicts`_ for help.
-#. Update Open Layers. See `How to update Open Layer`_ for the procedure.
+#. Update the dependencies: launch from ``geo-infra``: ``manuel update``.
 #. Commit the result.
 #. Push the result. **If the push fails because you have unpulled changes, do not try a rebase**: a rebase will cancel your merge commit (and will loose your merge work, unless you do a ``git rebase --abort``) and you will have to handle conflict for each commit from swisstopo you are merging into the current branch. So if that happens, do:
 
