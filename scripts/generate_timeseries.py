@@ -34,6 +34,7 @@ from generate_utils import path
 
 
 POSSIBLE_TIMEITEM_KEYS = ('ows_timeitem', '"ows_timeitem"', 'wms_timeitem', '"wms_timeitem"')
+POSSIBLE_TIMEEXTENT_KEYS = ('ows_timeextent', '"ows_timeextent"', 'wms_timeextent', '"wms_timeextent"')
 
 
 # SQLAlchemy may fail to detect the type of geometry columns. We ignore this warning.
@@ -56,17 +57,57 @@ def get_timestamps(portal, config, layer_name):
     mapfile_content = mappyfile.load(mapfile)
     layers = mapfile_content['layers']
     # layer_name can be a group or a layer. We take both case into account.
-    layers_to_query = [mappyfile.find(layers, 'NAME', layer_name)]
-    layers_to_query.extend(mappyfile.findall(layers, 'GROUP', layer_name))
-    # If a layer is not found by group or name, it will be None. We remove them
-    # from the list of layers to query.
-    layers_to_query = [layer for layer in layers_to_query if layer is not None]
+    layers_to_query = get_layers_to_query(layer_name, layers)
 
     timestamps = find_time_values(config, layers_to_query)
     if len(timestamps) == 0:
         raise ValueError('{} is neither a layer nor a group in {}'.format(layer_name, mapfile))
 
     return timestamps
+
+
+def get_layers_to_query(root_layer_name, layers):
+    '''Find layers that should be queried for timestamps.
+
+    Params:
+        root_layer_name: the name of the layer to search for (group or layer).
+        layers: the definition of the layers.
+
+    Returns:
+        A list of time enabled layer that are in the ``root_layer_name``.
+    '''
+    possible_layers_to_query = [mappyfile.find(layers, 'NAME', root_layer_name)]
+    possible_layers_to_query.extend(mappyfile.findall(layers, 'GROUP', root_layer_name))
+
+    layers_to_query = []
+    for layer in possible_layers_to_query:
+        # If a layer is not found by group or name, it will be None. We remove them
+        # from the list of layers to query.
+        if layer is None:
+            continue
+
+        # We only query layers that are timeeanbled.
+        metadata = layer['metadata']
+        if has_one_key(metadata, POSSIBLE_TIMEITEM_KEYS) and \
+                has_one_key(metadata, POSSIBLE_TIMEEXTENT_KEYS):
+            layers_to_query.append(layer)
+        else:
+            logging.debug('(Sub-)layer {} is not time enabled: no timeitem/timeextent in definition. '
+                          'Skipping it.'.format(layer['name']))
+
+    layer_names = [layer['name'] for layer in layers_to_query]
+    logging.debug('Will query (sub-)layers {}'.format(layer_names))
+
+    return layers_to_query
+
+
+def has_one_key(dictionnary, keys):
+    '''Returns true if ``dictionnary`` has at least one key from the ``keys`` iterator.
+    '''
+    dict_keys = set(dictionnary.keys())
+    keys = set(keys)
+
+    return len(dict_keys.intersection(keys)) > 0
 
 
 def find_time_values(config, layers_to_query):
