@@ -94,7 +94,10 @@ vhost = 'apache/vhost.jinja2.conf'
 appcache = 'src/geoadmin.nunjucks.appcache'
 index = 'src/index.nunjucks.html'
 karma_conf_template = 'test/karma-conf.nunjucks.js'
-partials = 'src/components/**/partials/**/*.html'
+partials = [
+    'src/components/**/partials/**/*.html',
+    'src/ngeo/src/modules/import/partials/**/*.html'
+]
 plugins = 'src/plugins/*.js'
 plugins_template = 'src/Gf3Plugins.nunjucks.js'
 protractor_conf_template = 'test/protractor-conf.nunjucks.js'

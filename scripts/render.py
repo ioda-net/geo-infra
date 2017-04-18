@@ -179,9 +179,16 @@ def _get_available_plugins(front_dir, config):
 
 def _get_partials(front_dir, config):
     partials = {}
-    partials_path = os.path.join(front_dir, config['src']['geo_front3']['partials'])
+    partials_pathes = []
     path_to_replace = os.path.join(front_dir, 'src/')
-    for partial in glob(partials_path):
+    for path in config['src']['geo_front3']['partials']:
+        partials_pathes.append(os.path.join(front_dir, path))
+
+    partials_files = []
+    for path in partials_pathes:
+        partials_files.extend(glob(path))
+
+    for partial in partials_files:
         with open(partial, 'r') as partial_file:
             partial_content = partial_file.read()
             partial_content = re.sub(r"'", r"\'", partial_content)
