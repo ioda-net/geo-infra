@@ -154,7 +154,8 @@ def find_time_values(config, layers_to_query):
         ))
 
     # Convert the set to a list to include the result in a JSON file.
-    return list(timestamps)
+    # Sort the list so the timestamps are displayed from the older ones to the newer ones.
+    return sorted(list(timestamps))
 
 
 def get_pkey_column_from_layer_definition(layer):
