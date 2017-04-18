@@ -20,7 +20,6 @@ vhost = '{infra_dir}/{type}/vhosts.d/{portal}.conf'
 
 [dest.geo_front3]
 appcache = '{infra_dir}/prod/{portal}/geoadmin.appcache'
-deps = 'test/deps'
 karma_conf = 'test/karma-conf.{type}.js'
 plugins_file = 'src/js/Gf3Plugins.js'
 protractor_conf = 'test/protractor-conf.{type}.js'

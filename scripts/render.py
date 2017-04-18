@@ -147,12 +147,6 @@ def _render_karma_conf(front_dir, config):
         front_dir,
         karma_config['dest']['geo_front3']['karma_conf'])
     out_file_path = os.path.abspath(out_file_path)
-    if args.type == 'dev':
-        deps_file_name = os.path.join(
-            front_dir,
-            karma_config['dest']['geo_front3']['deps'])
-        with open(deps_file_name, 'r') as deps:
-            karma_config['js_files'] = deps.read()
 
     render(template_path, out_file_path, karma_config)
 

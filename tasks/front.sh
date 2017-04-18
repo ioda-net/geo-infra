@@ -111,6 +111,10 @@ function _launch-task-in-front-dir {
         'lint')
             "${GJSLINT_CMD}" -r src/components src/js --jslint_error=all;;
         'test')
+            eval "${CLOSURE_CMD}" $(cat test/deps) \
+                --compilation_level WHITESPACE_ONLY \
+                --formatting PRETTY_PRINT \
+                --js_output_file test/app-whitespace.js
             "${KARMA_CMD}" start test/karma-conf.dev.js --single-run;;
         'test-integration-prod')
             "${PROTRACTOR_CMD}" test/protractor-conf.prod.js \
@@ -151,7 +155,12 @@ DEFAULT_PORTAL to an existing portal." >&2
         cp -r --parent src/js/*.js \
            src/components/**/*.js \
            src/components/*.js \
+           $(_find-proper-ngeo-files) \
            src/TemplateCacheModule.js "${tmp}/"
+
+        # ngeo uses goog.require('ol.*') at multiple place. We remove that: we don't need it and
+        # it break the closure compiler.
+        _remove-ol-requires "$(find "${tmp}/src/ngeo" -name *.js)"
 
         "${CLOSUREBUILDER_CMD}" \
                 --root="${tmp}" \
@@ -159,12 +168,9 @@ DEFAULT_PORTAL to an existing portal." >&2
                 --namespace="geoadmin" \
                 --namespace="__ga_template_cache__" \
                 --output_mode=list |
-            tr ' ' '\n' |
-            grep -v '\-\-js' |
-            sed "s#${tmp}/src/##" |
-            awk -v q="'" -v t=',' '{print q $1 q t}' |
-            sed 's#node_modules#../node_modules#g' |
-            grep -v "''," > test/deps
+            sed "s#${tmp}/##" |
+            awk NF=NF RS= OFS=' --js ' |
+            sed 's/^/--js /' > test/deps
 
         rm -f 'test/karma-conf.dev.js'
         rm -f 'test/karma-conf.prod.js'
@@ -176,6 +182,16 @@ DEFAULT_PORTAL to an existing portal." >&2
     render --type 'prod' --infra-dir "${infra_dir}" --test
 
     rm -rf "${tmp}"
+}
+
+
+function _remove-ol-requires {
+    sed -i "/goog\.require('ol.*/d" $1
+}
+
+
+function _find-proper-ngeo-files {
+    find src/ngeo -name *.js -not -iwholename '*/examples/*' -not -iwholename '*.mako.js'
 }
 
 
