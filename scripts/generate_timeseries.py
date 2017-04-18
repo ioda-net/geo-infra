@@ -25,10 +25,15 @@
 
 import logging
 import mappyfile
+import warnings
 
 from sqlalchemy import create_engine, MetaData, Table
 from sqlalchemy.orm import sessionmaker
 from generate_utils import path
+
+
+# SQLAlchemy may fail to detect the type of geometry columns. We ignore this warning.
+warnings.filterwarnings('ignore', message="Did not recognize type 'geometry' of column 'the_geom'")
 
 
 def get_timestamps(portal, config, layer_name):
