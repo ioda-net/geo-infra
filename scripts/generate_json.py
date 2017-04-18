@@ -262,6 +262,11 @@ class OwsParser(Generate):
         for the configuration.
         '''
         for layer_name, layer in self.wms.contents.items():
+            # The root layer is a "false" group that contains all other group and layers.
+            # We don't need it so we ignore it.
+            if self.is_root_layer(layer):
+                continue
+
             label = getattr(layer, 'title', layer.name)
             legend = layer.styles.get('default', {}).get('legend', '')
             queryable = bool(getattr(layer, 'queryable', False)) and \
@@ -409,11 +414,13 @@ class OwsParser(Generate):
                 for id, name in enumerate(sorted(self.layers_names)):
                     id += 1  # sphinx-search doesn't support 0 as id
                     layer, label = name
-                    is_group_of_all_layers = self.portal == layer and label.endswith('OWS Service')
-                    if label not in label_filter and not is_group_of_all_layers:
+                    if label not in label_filter:
                         label_filter.add(label)
                         search_string = format_search_text(t(label))
                         tsv_file.write(
                             '{id}\t{layer}\t{search_string}\t{label}\n'
                             .format(id=id, layer=layer, search_string=search_string, label=t(label))
                         )
+
+    def is_root_layer(self, layer):
+        return layer.parent is None
