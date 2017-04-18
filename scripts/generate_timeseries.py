@@ -33,6 +33,9 @@ from sqlalchemy.orm import sessionmaker
 from generate_utils import path
 
 
+POSSIBLE_TIMEITEM_KEYS = ('ows_timeitem', '"ows_timeitem"', 'wms_timeitem', '"wms_timeitem"')
+
+
 # SQLAlchemy may fail to detect the type of geometry columns. We ignore this warning.
 warnings.filterwarnings('ignore', message="Did not recognize type 'geometry' of column 'the_geom'")
 
@@ -117,8 +120,7 @@ def get_table_from_layer_definition(layer):
 def get_time_column_from_layer_definition(layer):
     '''Extract the name of the "time column" from the layer definition.'''
     metadata = layer['metadata']
-    possible_keys = ('ows_timeitem', '"ows_timeitem"', 'wms_timeitem', '"wms_timeitem"')
-    for key in possible_keys:
+    for key in POSSIBLE_TIMEITEM_KEYS:
         time_column = metadata.get(key, None)
         if time_column is not None:
             # The parsed name of the column may contain additionnal quotes. We remove them.
