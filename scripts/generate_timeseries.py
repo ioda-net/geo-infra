@@ -25,6 +25,7 @@
 
 import logging
 import mappyfile
+import re
 import warnings
 
 from sqlalchemy import create_engine, MetaData, Table
@@ -97,9 +98,9 @@ def get_pkey_column_from_layer_definition(layer):
     # The data string is formated like:
     # "the_geom from (SELECT the_geom, gid, couleur, periode_time FROM sigma_1927) as foo using unique gid"
     # and we need to extract gid.
-    _, gid = data.split('unique ')
-    # gid is likely to end with a quote. We remove it.
-    return gid.replace('"', '')
+    results = re.search(r'UNIQUE\s+(?P<pkey>\w+)', data, re.IGNORECASE)
+    if results:
+        return results.group('pkey')
 
 
 def get_table_from_layer_definition(layer):
@@ -108,9 +109,9 @@ def get_table_from_layer_definition(layer):
     # The data string is formated like:
     # "the_geom from (SELECT the_geom, gid, couleur, periode_time FROM sigma_1927) as foo using unique gid"
     # and we need to extract sigma_1927.
-    _, after_from = data.split('FROM ')
-    table_name, _ = after_from.split(')')
-    return table_name
+    results = re.search(r'FROM\s+(?P<table_name>\w+)', data, re.IGNORECASE)
+    if results:
+        return results.group('table_name')
 
 
 def get_time_column_from_layer_definition(layer):
