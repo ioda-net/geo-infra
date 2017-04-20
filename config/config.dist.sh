@@ -125,7 +125,10 @@ set-array DOC_LANGUAGES 'fr'
 
 
 # Translations
+set-var SWISSTOPO_TRANSLATIONS_SOURCE "https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0"
 set-var SWISSTOPO_TRANSLATIONS "translations/swisstopo.csv"
+set-var SWISSTOPO_EMPTY_JSON_SOURCE "https://raw.githubusercontent.com/geoadmin/mf-geoadmin3/master/src/locales/empty.json"
+set-var SWISSTOPO_EMPTY_JSON "translations/empty.json"
 
 
 # Infra

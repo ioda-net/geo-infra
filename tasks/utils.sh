@@ -655,7 +655,10 @@ Update translations/swisstopo.csv from Swisstopo's google doc."
 function update-translations-swisstopo {
     curl --silent \
         --output "${SWISSTOPO_TRANSLATIONS}" \
-        https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0
+        "${SWISSTOPO_TRANSLATIONS_SOURCE}"
+    curl --silent \
+        --output "${SWISSTOPO_EMPTY_JSON}" \
+        "${SWISSTOPO_EMPTY_JSON_SOURCE}"
 }
 
 

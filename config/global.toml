@@ -81,6 +81,7 @@ search_portal_locations = "{infra_dir}/search/portal-locations.in.conf"
 search_tsv_files = "{infra_dir}/{type}/{portal}/search/*.tsv"
 topics = "{infra_dir}/json/{portal}/topics/*.json"
 translate_catalog = "{infra_dir}/translations/catalog.csv"
+translate_empty_file = "translations/empty.json"
 translation_files = [
     "translations/swisstopo.csv",
     "translations/common.csv",

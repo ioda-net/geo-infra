@@ -21,6 +21,7 @@
 ###############################################################################
 
 import csv
+import json
 import logging
 
 from io import StringIO
@@ -39,8 +40,9 @@ NON_LANGUAGE_KEYS = (
 class Translator(Generate):
     '''Build the translation dictionnary used to translate the frontend.
     '''
-    def __init__(self, files, verbose):
+    def __init__(self, files, empty_file, verbose):
         self.files = files
+        self.empty_file = empty_file
         self.verbose = verbose
 
     def get_translations(
@@ -62,6 +64,7 @@ class Translator(Generate):
             delimiter=delimiter,
             quotechar=quotechar)
         self._process_files(delimiter=delimiter, quotechar=quotechar)
+        self._append_translations_for_ngeo()
         if output_folder:
             self.save_translations(
                 output_folder,
@@ -138,6 +141,27 @@ class Translator(Generate):
 
     def _init_translations(self, fieldnames):
         return {lang.lower(): {} for lang in fieldnames if self._is_language_key(lang)}
+
+    def _append_translations_for_ngeo(self):
+        '''Translations for ngeo are stored in the "normal" CSV under a "normal" key. However, to
+        work, ngeo requires the keys to be different. Swisstopo relies on empty.json to convert
+        from one key to the other. We do the same here.
+
+        See: https://github.com/geoadmin/mf-geoadmin3/blob/master/scripts/translation2json.py#L111
+        '''
+        with open(self.empty_file, 'r') as empty_file:
+            translation_keys_ngeo = json.load(empty_file)
+
+        for swisstopo_key, ngeo_key in translation_keys_ngeo.items():
+            # This is used by swisstopo to ignore the translation. Translations for ngeo have the
+            # key for ngeo as value.
+            if ngeo_key == '':
+                continue
+
+            for lang in self.translations:
+                ngeo_translation = self.translations[lang][swisstopo_key]
+                self.translations[lang][ngeo_key] = ngeo_translation
+                del self.translations[lang][swisstopo_key]
 
     def _close_csv_file(self, csv_file, is_url):
         if not is_url:
