@@ -227,8 +227,10 @@ function watch {
 
 HELP['launch-tests']="manuel launch-tests
 
-Launch the unit tests against the development code. This is equivalent to 'manuel front test'"
+Launch the unit tests against the development code. This is equivalent to
+'manuel generate-tests-conf && manuel front test'"
 function launch-tests {
+    generate-tests-conf
     front test
 }
 
