@@ -248,6 +248,7 @@ function _front-prod {
         _build-app-css-clean "${css_file}"
         _copy-files-prod "${output}" "${style_output}" "${lib_output}"
         _annotate "${tmp}"
+        _remove-ol-requires "$(find "${tmp}/src/ngeo" -name *.js)"
         _compile-closure "${tmp}" "${build_closure}"
         _uglify-libs "${build_js}"
         cat "${build_closure}" >> "${build_js}"

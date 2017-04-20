@@ -53,6 +53,7 @@ function set-array {
 
 # Commands used to build geo-front3. They must be either absolute (or in the PATH) or relative to
 # the geo-front3 directory. Normally, this shouldn't be changed.
+set-var BABEL_CMD "./node_modules/.bin/babel"
 set-var KARMA_CMD "./node_modules/karma/bin/karma"
 set-var PROTRACTOR_CMD 'protractor'
 set-var ISTANBUL_CMD "./node_modules/istanbul/lib/cli.js"
@@ -89,6 +90,10 @@ elif [[ -z "${CP_CMD:-}" ]]; then
     echo "Cannot find cp on your system. Set CP_CMD to the correct path in your environnement" >&2
     exit 1
 fi
+
+
+## ngeo
+set-var NGEO_MODULE "src/ngeo/src/modules/import"
 
 
 # Pathes

@@ -37,6 +37,12 @@ function _annotate {
     for file in $(find src/js -name '*.js'); do
         _annotate-file "${file}" "${tmp}"
     done
+
+    # We don't have to create directories for ngeo: the file are already copied and processed.
+    for file in $(find "${NGEO_MODULE}" -name '*.js'); do
+        _mkdir "${tmp}/${file%/*}"
+        _transpile-annotate-file "${file}" "${tmp}"
+    done
 }
 
 
@@ -45,6 +51,14 @@ function _annotate-file {
     local output="$1"; shift;
 
     "${ANNOTATE_CMD}" -a "${file}" > "${output}/${file}"
+}
+
+
+function _transpile-annotate-file {
+    local file="$1"; shift;
+    local output="$1"; shift;
+
+    "${BABEL_CMD}" "${file}" | "${ANNOTATE_CMD}" -a - > "${output}/${file}"
 }
 
 
