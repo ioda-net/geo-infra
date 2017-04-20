@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"POT-Creation-Date: 2017-04-20 15:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,20 @@ msgstr ""
 
 #: generate_utils.Generate:1 of
 msgid "Utilitary class for all generate type classes."
+msgstr ""
+
+#: generate_config.ConfigErrors generate_config.ConfigFileErrors
+#: generate_config.ConfigSectionErrors generate_config.GenerateConfig
+#: generate_config.GenerateConfig._check_config
+#: generate_config.GenerateConfig._check_value_type
+#: generate_config.GenerateConfig._get_config_path
+#: generate_config.GenerateConfig._load_config_from_file
+#: generate_config.GenerateConfig._update_config
+#: generate_translations.CatalogTranslator generate_utils.Generate
+#: generate_utils.Generate.copy generate_utils.Generate.render
+#: generate_utils.Generate.report_errors generate_utils.path
+#: generate_utils.save_json of render.render
+msgid "Parameters"
 msgstr ""
 
 #: generate_utils.Generate:3 of
@@ -785,6 +799,20 @@ msgstr ""
 
 #: generate_translations.Translator:1 of
 msgid "Build the translation dictionnary used to translate the frontend."
+msgstr ""
+
+#: generate_translations.Translator._append_translations_for_ngeo:1 of
+msgid ""
+"Translations for ngeo are stored in the \"normal\" CSV under a \"normal\""
+" key. However, to work, ngeo requires the keys to be different. Swisstopo"
+" relies on empty.json to convert from one key to the other. We do the "
+"same here."
+msgstr ""
+
+#: generate_translations.Translator._append_translations_for_ngeo:5 of
+msgid ""
+"See: https://github.com/geoadmin/mf-"
+"geoadmin3/blob/master/scripts/translation2json.py#L111"
 msgstr ""
 
 #: generate_translations.Translator.get_translations:1 of

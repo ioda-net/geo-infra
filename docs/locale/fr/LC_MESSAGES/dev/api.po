@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-16 15:00+0200\n"
+"POT-Creation-Date: 2017-04-13 14:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,10 +27,6 @@ msgstr ""
 msgid ""
 "The API is written in `Python 3 <https://python.org>`__ with the `Pyramid"
 " web framework <http://www.pylonsproject.org/>`__."
-msgstr ""
-
-#: ../../dev/api.rst
-msgid "Contents"
 msgstr ""
 
 #: ../../dev/api.rst:10
@@ -307,4 +303,7 @@ msgid ""
 "Your ``production.ini`` and ``uwsgi.ini`` must be owned by the user "
 "``uwsgi`` and by the group ``uwsgi``."
 msgstr ""
+
+#~ msgid "Contents"
+#~ msgstr ""
 

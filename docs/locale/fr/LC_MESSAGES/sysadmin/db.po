@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"POT-Creation-Date: 2017-04-13 14:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,10 +21,6 @@ msgstr ""
 
 #: ../../sysadmin/db.rst:2
 msgid "Database"
-msgstr ""
-
-#: ../../sysadmin/db.rst
-msgid "Contents"
 msgstr ""
 
 #: ../../sysadmin/db.rst:7
@@ -317,4 +313,7 @@ msgid ""
 "some columns. See :ref:`the page about features <ref_user_cfg-"
 "portal_identify-features>` from the user manual to learn more about this."
 msgstr ""
+
+#~ msgid "Contents"
+#~ msgstr ""
 

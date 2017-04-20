@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-16 16:14+0200\n"
+"POT-Creation-Date: 2017-04-13 14:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,10 +29,6 @@ msgstr ""
 
 #: ../../sysadmin/server-setup.rst:10
 msgid "Replace ``customer-infra`` by the true name of your infrastructure."
-msgstr ""
-
-#: ../../sysadmin/server-setup.rst
-msgid "Contents"
 msgstr ""
 
 #: ../../sysadmin/server-setup.rst:17
@@ -244,46 +240,46 @@ msgid ""
 "``$PROD_USER``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:111
+#: ../../sysadmin/server-setup.rst:113
 msgid "Production scripts"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:113
+#: ../../sysadmin/server-setup.rst:115
 msgid ""
 "In order to be sure that tomcat, apache, search can restart and that a "
 "reindex can be triggered, we invite you to create scripts available in "
 "the PATH of the user that will do the deployment. These scripts are:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:115
+#: ../../sysadmin/server-setup.rst:117
 msgid "``sudo_tomcat_restart``. It may contain:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:121
+#: ../../sysadmin/server-setup.rst:123
 msgid "``sudo_apache_restart``. It may contain:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:127
+#: ../../sysadmin/server-setup.rst:129
 msgid "``sudo_apache_reload``. It may contain:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:133
+#: ../../sysadmin/server-setup.rst:135
 msgid "``sudo_search_restart``. It may contain:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:139
+#: ../../sysadmin/server-setup.rst:141
 msgid "``sudo_search_reindex``. It may contain:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:145
+#: ../../sysadmin/server-setup.rst:166
 msgid "``sudo_tomcat_copyconf``. It may contain:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:159
+#: ../../sysadmin/server-setup.rst:180
 msgid "vhosts"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:161
+#: ../../sysadmin/server-setup.rst:182
 msgid ""
 "Include all files in ``$PROD_GIT_REPOS_LOCATION/vhosts.d`` in your apache"
 " configuration. This can be done be editing "
@@ -294,18 +290,18 @@ msgid ""
 " about ``$PROD_GIT_REPOS_LOCATION``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:164
+#: ../../sysadmin/server-setup.rst:185
 msgid "Print"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:168
+#: ../../sysadmin/server-setup.rst:189
 msgid ""
 "Printing a map relies on `MapFish Print <https://github.com/mapfish"
 "/mapfish-print>`__ a Java servlet developed by `Camptocamp SA "
 "<http://www.camptocamp.com/en/>`__."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:170
+#: ../../sysadmin/server-setup.rst:191
 msgid ""
 "You can either build it from scratch from `the source "
 "<https://github.com/mapfish/mapfish-print>`__ or use our `last build "
@@ -313,7 +309,7 @@ msgid ""
 "following actions as root:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:172
+#: ../../sysadmin/server-setup.rst:193
 msgid ""
 "Copy the WAR in your tomcat webapps folder (eg "
 "``/usr/share/tomcat/webapps``, ``/srv/tomcat/webapps/`` or "
@@ -321,40 +317,40 @@ msgid ""
 "infra.war``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:173
+#: ../../sysadmin/server-setup.rst:194
 msgid "Start tomcat: ``systemctl start tomcat``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:177
+#: ../../sysadmin/server-setup.rst:198
 msgid "On Debian based systems, the target is named ``tomcat8``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:179
+#: ../../sysadmin/server-setup.rst:200
 msgid "Go to the tomcat webapps folder."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:180
+#: ../../sysadmin/server-setup.rst:201
 msgid "Check that ``print-customer-infra.war`` is correctly deployed."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:181
+#: ../../sysadmin/server-setup.rst:202
 msgid ""
 "Create the ``print-customer-infra/print-apps`` directory and make it "
 "owned by tomcat: ``mkdir print-customer-infra/print-apps && chown "
 "tomcat:tomcat print-customer-infra/print-apps``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:185
+#: ../../sysadmin/server-setup.rst:206
 msgid "On Debian based systems, the correct user is ``tomcat8``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:187
+#: ../../sysadmin/server-setup.rst:208
 msgid ""
 "Check and correct permissions on ``<tomcat-webapps>/print-customer-infra"
 "/print-apps``:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:189
+#: ../../sysadmin/server-setup.rst:210
 msgid ""
 "Check that with the user defined by ``$PROD_USER`` you can access this "
 "directory. If ``ls <tomcat-webapps>/print-customer-infra/print-apps`` "
@@ -363,39 +359,39 @@ msgid ""
 "folders on the path."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:190
+#: ../../sysadmin/server-setup.rst:211
 msgid ""
 "Setup ACL to give the user write permissions to the directory (**don't "
 "use standard unix permissions, it breaks tomcat's expectations**): "
 "``setfacl -m u:<user>:rwx print-customer-infra/print-apps``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:192
+#: ../../sysadmin/server-setup.rst:213
 msgid ""
 "Check that tomcat has an AJP connector defined on port 8009 in "
 "``/etc/tomcat/server.xml``. If not, add the line below in the ``<Service "
 "name=\"Catalina\">`` section:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:198
+#: ../../sysadmin/server-setup.rst:219
 msgid "Restart tomcat ``systemctl resart tomcat``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:199
+#: ../../sysadmin/server-setup.rst:220
 msgid "Enable tomcat ``systemctl enable tomcat``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:203
+#: ../../sysadmin/server-setup.rst:224
 msgid "Search"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:207
+#: ../../sysadmin/server-setup.rst:228
 msgid ""
 "On `sphinx search <http://sphinxsearch.com/>`__ is correctly installed on"
 " your system, do the following actons as root to configure it:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:209
+#: ../../sysadmin/server-setup.rst:230
 msgid ""
 "Add a symlink to the global sphinx configuration. Depending when you set "
 "it up, this file may not exist yet. It will be in "
@@ -404,124 +400,124 @@ msgid ""
 "``$PROD_GIT_REPOS_LOCATION``."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:217
+#: ../../sysadmin/server-setup.rst:238
 msgid ""
 "On Debian based systems, before creating the symlink, you must (*as "
 "root*):"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:219
+#: ../../sysadmin/server-setup.rst:240
 msgid "Create the ``/etc/sphinx/`` directory: ``mkdir /etc/sphinx/``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:220
+#: ../../sysadmin/server-setup.rst:241
 msgid ""
 "Change its owner to ``sphinxsearch``: ``chown -R "
 "sphinxsearch:sphinxsearch /etc/sphinx``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:222
+#: ../../sysadmin/server-setup.rst:243
 msgid "Create sphinx infrastructure specific directories:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:224
+#: ../../sysadmin/server-setup.rst:245
 msgid "Create: ``mkdir -p /var/lib/sphinx/customer-infra/{binlog,index}``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:225
+#: ../../sysadmin/server-setup.rst:246
 msgid ""
 "Set proper owner: ``chown -R sphinx:sphinx /var/lib/sphinx/customer-"
 "infra``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:226
+#: ../../sysadmin/server-setup.rst:247
 msgid "Create log dir: ``mkdir -p /var/log/sphinx``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:227
+#: ../../sysadmin/server-setup.rst:248
 msgid "Set proper owner: ``chown -R sphinx:sphinx /var/log/sphinx``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:228
+#: ../../sysadmin/server-setup.rst:249
 msgid "Create run dir for PID: ``mkdir -p /var/run/sphinx``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:229
+#: ../../sysadmin/server-setup.rst:250
 msgid "Set proper owner: ``chown -R sphinx:sphinx /var/run/sphinx``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:233
+#: ../../sysadmin/server-setup.rst:254
 msgid "On Debian based system:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:235
+#: ../../sysadmin/server-setup.rst:256
 msgid "The correct user is ``sphinxsearch``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:236
+#: ../../sysadmin/server-setup.rst:257
 msgid ""
 "Don't attempt to create the directories above in "
 "``/var/lib/sphinxsearch`` the process will be configured to look in "
 "``/var/lib/sphinx``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:238
+#: ../../sysadmin/server-setup.rst:259
 msgid "Deploy the unit files for this infrastructure:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:240
+#: ../../sysadmin/server-setup.rst:261
 msgid ""
 "Copy the ``searchd@.service`` service file from ``geo-infra`` to "
 "``/etc/systemd/system/``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:244
+#: ../../sysadmin/server-setup.rst:265
 msgid ""
 "On Debian based systems, you must correct the user to ``sphinxsearch`` in"
 " the unit file."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:246
+#: ../../sysadmin/server-setup.rst:267
 msgid "Reload systemd daemons: ``systemctl daemon-reload``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:248
+#: ../../sysadmin/server-setup.rst:269
 msgid ""
 "Enable the sphinx daemon: ``systemctl enable searchd@customer-"
 "infra.service``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:254
+#: ../../sysadmin/server-setup.rst:275
 msgid "API"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:256
+#: ../../sysadmin/server-setup.rst:277
 msgid "On the production server, either:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:258
+#: ../../sysadmin/server-setup.rst:279
 msgid ""
 "Clone the api for the first deploy: ``git clone https://github.com/ioda-"
 "net/geo-api3.git``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:259
+#: ../../sysadmin/server-setup.rst:280
 msgid "Update the API: ``git pull``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:263
+#: ../../sysadmin/server-setup.rst:284
 msgid "Depending on who you are, you may:"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:265
+#: ../../sysadmin/server-setup.rst:286
 msgid "get the code of the API from another location"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:266
+#: ../../sysadmin/server-setup.rst:287
 msgid "need to switch to a custom branch."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:268
+#: ../../sysadmin/server-setup.rst:289
 msgid ""
 "Update the configuration of the API for this deployment. To do this, "
 "create a file named ``geo-api3/config/config.<branchname>.toml`` and "
@@ -529,19 +525,19 @@ msgid ""
 "api3/config/config.dist.toml`` config file."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:269
+#: ../../sysadmin/server-setup.rst:290
 msgid ""
 "Override any commands necessary in ``geo-api3/config/config.dist.sh`` by "
 "creating a ``geo-api3/config/config.sh`` file."
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:270
+#: ../../sysadmin/server-setup.rst:291
 msgid ""
 "Deploy the API: on the production server, in the ``geo-api3`` folder, "
 "launch: ``./manuel deploy``"
 msgstr ""
 
-#: ../../sysadmin/server-setup.rst:271
+#: ../../sysadmin/server-setup.rst:292
 msgid ""
 "Add a new vhost for the API. It should look like the vhost below. Adapt "
 "the user names and file paths to match those defined in the ``geo-"
@@ -551,11 +547,6 @@ msgstr ""
 #~ msgid ""
 #~ msgstr ""
 
-#~ msgid ""
-#~ "Check that tomcat has an AJP "
-#~ "connector defined on port 8009 in "
-#~ "``/etc/server.xml``. If not, add the "
-#~ "line below in the ``<Service "
-#~ "name=\"Catalina\">`` section:"
+#~ msgid "Contents"
 #~ msgstr ""
 

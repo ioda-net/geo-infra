@@ -101,15 +101,18 @@ Time selector
 - **Results:** the time must change automatically and the map must be updated accordingly.
 
 
-WMS import
-----------
+import
+------
+
+WMS Import
+~~~~~~~~~~
 
 from the list
-~~~~~~~~~~~~~
++++++++++++++
 
 - Open the *Advanced tools* panel.
-- Click on *WMS import*.
-- **Results:** the WMS import popup must appear.
+- Click on *import*.
+- **Results:** the import popup must appear.
 - In the URL list, select a WMS, for instance: *https://wms.geo.admin.ch/* or *http://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_basiswms_d_fk/MapServer/WMSServer?*.
 - **Results:** The GetCapalities response is correctly parsed and you see the list of the available layers.
 - Pass your mouse over *2km2 sub catchment areas* or *UP5*.
@@ -121,7 +124,7 @@ from the list
 - **Results:** the popup is successfully closed.
 
 Other WMS
-~~~~~~~~~
++++++++++
 
 - Open the *Advanced tools* panel.
 - Click on *WMS import*.
@@ -135,6 +138,21 @@ Other WMS
 - **Results:** you should see a list of WMS layers including Aeroways and Roads
 - Select Roads
 - **Results:** the selected layer is added to the map, the layer selector and the permalink.
+- Close the popup.
+- **Results:** the popup is successfully closed.
+
+KML
+~~~
+
+- Open the *Advanced tools* panel.
+- Click on *import*.
+- **Results:** The import popup appears.
+- Load a KML for your disk
+- **Results:** the KML is correctly added to the map.
+- Load a KML from a URL, eg for Switzerland `this one </data/functionnal-tests/switzerland.kml>`__.
+- **Results:** the KML is correctly added to the map and the view is centered on the KML.
+- Load a KML that is outside the portal extent (for instance `the New York KML </data/functionnal-tests/new-york.kml>`__)
+- **Results:** Nothing must happen.
 - Close the popup.
 - **Results:** the popup is successfully closed.
 
@@ -163,22 +181,6 @@ WMTS import with time series
 
 - Import a WMTS layer that support time series, for instance *Journey through time - Maps*.
 - Do the test case for `Time selector`_
-
-
-KML import
-----------
-
-- Open the *Advanced tools* panel.
-- Click on *KML import*.
-- **Results:** The KML import popup appears.
-- Load a KML for your disk
-- **Results:** the KML is correctly added to the map.
-- Load a KML from a URL, eg for Switzerland `this one </data/functionnal-tests/switzerland.kml>`__.
-- **Results:** the KML is correctly added to the map and the view is centered on the KML.
-- Load a KML that is outside the portal extent (for instance `the New York KML </data/functionnal-tests/new-york.kml>`__)
-- **Results:** Nothing must happen.
-- Close the popup.
-- **Results:** the popup is successfully closed.
 
 
 Features highlight

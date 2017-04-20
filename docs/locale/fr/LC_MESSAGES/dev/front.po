@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 10:42+0100\n"
+"POT-Creation-Date: 2017-04-13 14:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,10 +37,6 @@ msgid ""
 "the directory in which you cloned ``geo-front3`` in order to download all"
 " the dependencies. This is required to have some commands in "
 "``node_modules/.bin`` that are needed to build the project."
-msgstr ""
-
-#: ../../dev/front.rst
-msgid "Contents"
 msgstr ""
 
 #: ../../dev/front.rst:12
@@ -80,7 +76,7 @@ msgid ""
 msgstr ""
 
 #: ../../dev/front.rst:23
-msgid "Update Open Layers. See `How to update Open Layer`_ for the procedure."
+msgid "Update the dependencies: launch from ``geo-infra``: ``manuel update``."
 msgstr ""
 
 #: ../../dev/front.rst:24
@@ -190,4 +186,10 @@ msgid ""
 " Swisstopo, check whether it impacts how OpenLayers is updated. If so, "
 "update the script accordingly before launching it."
 msgstr ""
+
+#~ msgid "Contents"
+#~ msgstr ""
+
+#~ msgid "Update Open Layers. See `How to update Open Layer`_ for the procedure."
+#~ msgstr ""
 
