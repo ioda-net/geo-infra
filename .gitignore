@@ -23,6 +23,8 @@ pids
 /*data
 /*in
 /*infra
+/dev
+/prod
 
 # Misc
 *.map
