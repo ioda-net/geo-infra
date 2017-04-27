@@ -685,12 +685,14 @@ function update-ngeo {
     local ngeo_patches_dir="$(realpath ${FRONT_DIR}/scripts/ngeo-patches)"
 
     pushd "${FRONT_DIR}"
-        pushd src/ngeo
-            # Unapply all patches.
-            git reset --hard
-            git clean -fd
-            rm -rf node_modules
-        popd
+        if [[ -d src/ngeo ]]; then
+            pushd src/ngeo
+                # Unapply all patches.
+                git reset --hard
+                git clean -fd
+                rm -rf node_modules
+            popd
+        fi
         local ngeo_version=$(grep 'NGEO_VERSION ?=' Makefile | cut -f 3 -d ' ')
         git submodule update --init
         pushd src/ngeo
