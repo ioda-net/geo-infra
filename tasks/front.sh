@@ -160,7 +160,7 @@ DEFAULT_PORTAL to an existing portal." >&2
 
         # ngeo uses goog.require('ol.*') at multiple place. We remove that: we don't need it and
         # it break the closure compiler.
-        _remove-ol-requires "$(find "${tmp}/src/ngeo" -name *.js)"
+        _remove-ol-requires "$(find "${tmp}/src/ngeo" -name *.js -type f)"
 
         "${CLOSUREBUILDER_CMD}" \
                 --root="${tmp}" \
@@ -191,7 +191,7 @@ function _remove-ol-requires {
 
 
 function _find-proper-ngeo-files {
-    find src/ngeo -name *.js -not -iwholename '*/examples/*' -not -iwholename '*.mako.js'
+    find src/ngeo -name *.js -type f -not -iwholename '*/examples/*' -not -iwholename '*.mako.js' -not -iwholename '*/node_modules/*'
 }
 
 
@@ -248,7 +248,7 @@ function _front-prod {
         _build-app-css-clean "${css_file}"
         _copy-files-prod "${output}" "${style_output}" "${lib_output}"
         _annotate "${tmp}"
-        _remove-ol-requires "$(find "${tmp}/src/ngeo" -name *.js)"
+        _remove-ol-requires "$(find "${tmp}/src/ngeo" -name *.js -type f)"
         _compile-closure "${tmp}" "${build_closure}"
         _uglify-libs "${build_js}"
         cat "${build_closure}" >> "${build_js}"
