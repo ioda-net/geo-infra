@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-20 15:42+0200\n"
+"POT-Creation-Date: 2017-04-27 15:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,7 +79,7 @@ msgstr ""
 #: ../../manuel.md:32 ../../manuel.md:64 ../../manuel.md:86 ../../manuel.md:101
 #: ../../manuel.md:114 ../../manuel.md:124 ../../manuel.md:136
 #: ../../manuel.md:150 ../../manuel.md:235 ../../manuel.md:259
-#: ../../manuel.md:385
+#: ../../manuel.md:386
 msgid "Default values"
 msgstr ""
 
@@ -104,7 +104,7 @@ msgid "Default Values"
 msgstr ""
 
 #: ../../manuel.md:45 ../../manuel.md:66 ../../manuel.md:237
-#: ../../manuel.md:261 ../../manuel.md:387
+#: ../../manuel.md:261 ../../manuel.md:388
 msgid "type dev"
 msgstr ""
 
@@ -448,208 +448,218 @@ msgstr ""
 #: ../../manuel.md:288
 msgid ""
 "Launch the unit tests against the development code. This is equivalent to"
-" 'manuel front test'"
+" 'manuel generate-tests-conf && manuel front test'"
 msgstr ""
 
-#: ../../manuel.md:292
+#: ../../manuel.md:293
 msgid "manuel lint [INFRA_DIR]"
 msgstr ""
 
-#: ../../manuel.md:294
+#: ../../manuel.md:295
 msgid ""
 "Launch lint for all json and csv files and report errors. If portal is "
 "given, only the files in the portal infra dir will be linted. Otherwise, "
 "all files in INFRA_DIR are linted."
 msgstr ""
 
-#: ../../manuel.md:300
+#: ../../manuel.md:301
 msgid "manuel lint-code"
 msgstr ""
 
-#: ../../manuel.md:302
+#: ../../manuel.md:303
 msgid ""
 "Launch gslint on the javascript code. This is equivalent to 'manuel front"
 " lint'"
 msgstr ""
 
-#: ../../manuel.md:306
+#: ../../manuel.md:307
 msgid "Silent version of builtin popd"
 msgstr ""
 
-#: ../../manuel.md:310
+#: ../../manuel.md:311
 msgid "manuel prod PORTAL1 [PORTAL2 [PORTAL3] …]"
 msgstr ""
 
-#: ../../manuel.md:312
+#: ../../manuel.md:313
 msgid ""
 "Generate a production version of the targeted portals. To generate even "
 "with uncommitted changes or without changing branch, add the --force "
 "option as first parameter."
 msgstr ""
 
-#: ../../manuel.md:315
+#: ../../manuel.md:316
 msgid ""
 "This task can be launch with portals from different infrastructures if "
 "--force is given."
 msgstr ""
 
-#: ../../manuel.md:319
+#: ../../manuel.md:320
 msgid "Silent version of builtin pushd"
 msgstr ""
 
-#: ../../manuel.md:323
+#: ../../manuel.md:324
 msgid "manuel reindex [-i INFRA_DIR] [-p PORTALS]"
 msgstr ""
 
-#: ../../manuel.md:325
+#: ../../manuel.md:326
 msgid "Launch a reindexation of sphinx. Use one and only one of these options:"
 msgstr ""
 
-#: ../../manuel.md:327
+#: ../../manuel.md:328
 msgid "-i INFRA_DIR to reindex everything for the specified infrastructure."
 msgstr ""
 
-#: ../../manuel.md:328
+#: ../../manuel.md:329
 msgid ""
 "-p PORTALS to reindex only these portals. The infrastructure directory "
 "will be determined automatically."
 msgstr ""
 
-#: ../../manuel.md:331
+#: ../../manuel.md:332
 msgid "If launched without parameters, it will reindex everything."
 msgstr ""
 
-#: ../../manuel.md:335
+#: ../../manuel.md:336
 msgid "manuel reload-apache"
 msgstr ""
 
-#: ../../manuel.md:341
+#: ../../manuel.md:342
 msgid "manuel reload-features"
 msgstr ""
 
-#: ../../manuel.md:343
+#: ../../manuel.md:344
 msgid "Ask the API to reload the features."
 msgstr ""
 
-#: ../../manuel.md:347
+#: ../../manuel.md:348
 msgid "manuel render OPTIONS"
 msgstr ""
 
-#: ../../manuel.md:349
+#: ../../manuel.md:350
 msgid ""
 "Wrapper around scripts/render.py --front-dir $FRONT_DIR. All the options "
 "are passed to the script. Use --help for more details."
 msgstr ""
 
-#: ../../manuel.md:354
+#: ../../manuel.md:355
 msgid "manuel restart-service SERVICE [INFRAS]"
 msgstr ""
 
-#: ../../manuel.md:356
+#: ../../manuel.md:357
 msgid "Restart the specified service."
 msgstr ""
 
-#: ../../manuel.md:358
+#: ../../manuel.md:359
 msgid ""
 "If the service is infrastructure specific, you can pass the list of "
 "infras for which it must be restarted."
 msgstr ""
 
-#: ../../manuel.md:362
+#: ../../manuel.md:363
 msgid "manuel revert PORTAL"
 msgstr ""
 
-#: ../../manuel.md:364
+#: ../../manuel.md:365
 msgid "Revert the given portal to the previous release on production."
 msgstr ""
 
-#: ../../manuel.md:368
+#: ../../manuel.md:369
 msgid "manuel sync-data"
 msgstr ""
 
-#: ../../manuel.md:370
+#: ../../manuel.md:371
 msgid "Synchronise the data."
 msgstr ""
 
-#: ../../manuel.md:374
+#: ../../manuel.md:375
 msgid "manuel test-config-generation"
 msgstr ""
 
-#: ../../manuel.md:376
+#: ../../manuel.md:377
 msgid ""
 "Check that the configuration are correctly generated. It relies on the "
 "demo portal from customer-infra (https://github.com/ioda-net/customer-"
 "infra)."
 msgstr ""
 
-#: ../../manuel.md:381
+#: ../../manuel.md:382
 msgid "manuel test-map-files [TYPE] PORTAL"
 msgstr ""
 
-#: ../../manuel.md:383
+#: ../../manuel.md:384
 msgid "Test the map files of given type for the specified portal."
 msgstr ""
 
-#: ../../manuel.md:391
+#: ../../manuel.md:392
 msgid "manuel tomcat-copy-conf TYPE PORTAL"
 msgstr ""
 
-#: ../../manuel.md:393
+#: ../../manuel.md:394
 msgid ""
 "Copy the generated MFP configuration files into tomcat's MFP directory. "
 "Use the files from TYPE and PORTAL."
 msgstr ""
 
-#: ../../manuel.md:398
+#: ../../manuel.md:399
 msgid "manuel update"
 msgstr ""
 
-#: ../../manuel.md:400
+#: ../../manuel.md:401
 msgid ""
 "Update the dependencies of the project (OpenLayers, node modules, ngeo, "
 "translations). This must be launched after each merge from upstream and "
 "on first clone."
 msgstr ""
 
-#: ../../manuel.md:405
+#: ../../manuel.md:406
 msgid "manuel update-doc-translations"
 msgstr ""
 
-#: ../../manuel.md:407
+#: ../../manuel.md:408
 msgid ""
 "Update the po files based on text from English documents. This will not "
 "build the documentation."
 msgstr ""
 
-#: ../../manuel.md:411
-msgid "manuel update-translations-swisstopo"
+#: ../../manuel.md:412
+msgid "manuel update-ngeo"
 msgstr ""
 
-#: ../../manuel.md:413
-msgid "Update translations/swisstopo.csv from Swisstopo's google doc."
-msgstr ""
-
-#: ../../manuel.md:417
-msgid "manuel verify-sphinx-conf"
+#: ../../manuel.md:414
+msgid ""
+"Update ngeo to the correct version. The commit to update to is read from "
+"the Makefile of the frontend."
 msgstr ""
 
 #: ../../manuel.md:419
-msgid "Check the configuration of sphinx."
+msgid "manuel update-translations-swisstopo"
 msgstr ""
 
-#: ../../manuel.md:423
-msgid "manuel vhost [TYPE] PORTAL..."
+#: ../../manuel.md:421
+msgid "Update translations/swisstopo.csv from Swisstopo's google doc."
 msgstr ""
 
 #: ../../manuel.md:425
+msgid "manuel verify-sphinx-conf"
+msgstr ""
+
+#: ../../manuel.md:427
+msgid "Check the configuration of sphinx."
+msgstr ""
+
+#: ../../manuel.md:431
+msgid "manuel vhost [TYPE] PORTAL..."
+msgstr ""
+
+#: ../../manuel.md:433
 msgid "Create the vhost files for the given portals."
 msgstr ""
 
-#: ../../manuel.md:430
+#: ../../manuel.md:438
 msgid "manuel watch PORTAL"
 msgstr ""
 
-#: ../../manuel.md:432
+#: ../../manuel.md:440
 msgid ""
 "Watch and rebuild a portal on change. This is equivalent to 'manuel front"
 " watch PORTAL'"
@@ -815,5 +825,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "watch"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Launch the unit tests against the "
+#~ "development code. This is equivalent to"
+#~ " 'manuel front test'"
 #~ msgstr ""
 

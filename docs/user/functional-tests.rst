@@ -161,8 +161,8 @@ WMTS import
 -----------
 
 - Open the *Advanced tools* panel.
-- Click on *WMTS import*.
-- **Results:** the WMTS import popup must appear.
+- Click on *import*.
+- **Results:** the import popup must appear.
 - In the URL list, select
   *https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml*.
 - **Results:** the WMTS capabilities.xml must be correctly parsed and the list

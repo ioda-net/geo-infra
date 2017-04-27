@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-20 15:42+0200\n"
+"POT-Creation-Date: 2017-04-27 15:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -301,10 +301,11 @@ msgid "Open the *Advanced tools* panel."
 msgstr ""
 
 #: ../../user/functional-tests.rst:114 ../../user/functional-tests.rst:148
+#: ../../user/functional-tests.rst:164
 msgid "Click on *import*."
 msgstr ""
 
-#: ../../user/functional-tests.rst:115
+#: ../../user/functional-tests.rst:115 ../../user/functional-tests.rst:165
 msgid "**Results:** the import popup must appear."
 msgstr ""
 
@@ -433,14 +434,6 @@ msgstr ""
 
 #: ../../user/functional-tests.rst:161
 msgid "WMTS import"
-msgstr ""
-
-#: ../../user/functional-tests.rst:164
-msgid "Click on *WMTS import*."
-msgstr ""
-
-#: ../../user/functional-tests.rst:165
-msgid "**Results:** the WMTS import popup must appear."
 msgstr ""
 
 #: ../../user/functional-tests.rst:166
@@ -940,5 +933,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "**Results:** The KML import popup appears."
+#~ msgstr ""
+
+#~ msgid "Click on *WMTS import*."
+#~ msgstr ""
+
+#~ msgid "**Results:** the WMTS import popup must appear."
 #~ msgstr ""
 
