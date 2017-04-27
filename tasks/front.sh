@@ -158,10 +158,6 @@ DEFAULT_PORTAL to an existing portal." >&2
            $(_find-proper-ngeo-files) \
            src/TemplateCacheModule.js "${tmp}/"
 
-        # ngeo uses goog.require('ol.*') at multiple place. We remove that: we don't need it and
-        # it break the closure compiler.
-        _remove-ol-requires "$(find "${tmp}/src/ngeo" -name *.js -type f)"
-
         "${CLOSUREBUILDER_CMD}" \
                 --root="${tmp}" \
                 --root=node_modules/google-closure-library \
@@ -182,11 +178,6 @@ DEFAULT_PORTAL to an existing portal." >&2
     render --type 'prod' --infra-dir "${infra_dir}" --test
 
     rm -rf "${tmp}"
-}
-
-
-function _remove-ol-requires {
-    sed -i "/goog\.require('ol.*/d" $1
 }
 
 
@@ -248,7 +239,6 @@ function _front-prod {
         _build-app-css-clean "${css_file}"
         _copy-files-prod "${output}" "${style_output}" "${lib_output}"
         _annotate "${tmp}"
-        _remove-ol-requires "$(find "${tmp}/src/ngeo" -name *.js -type f)"
         _compile-closure "${tmp}" "${build_closure}"
         _uglify-libs "${build_js}"
         cat "${build_closure}" >> "${build_js}"

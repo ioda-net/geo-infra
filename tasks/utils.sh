@@ -689,6 +689,7 @@ function update-ngeo {
             # Unapply all patches.
             git reset --hard
             git clean -fd
+            rm -rf node_modules
         popd
         local ngeo_version=$(grep 'NGEO_VERSION ?=' Makefile | cut -f 3 -d ' ')
         git submodule update --init
@@ -700,6 +701,11 @@ function update-ngeo {
                     patch -p1 < "${patchfile}"
                 done
             fi
+            # ngeo uses goog.require('ol.*') at multiple place. We remove that: we don't need it and
+            # it break the closure compiler.
+            local ngeo_files="$(find . -name '*.js' -type f -not -iwholename '*/examples/*' -not -iwholename '*.mako.js' -not -iwholename '*/node_modules/*')"
+            # Don't quote the variable: if we do, sed will search for one file!
+            sed -i "/goog\.require('ol.*/d" ${ngeo_files}
         popd
     popd
 }
