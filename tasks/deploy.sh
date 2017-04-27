@@ -191,7 +191,7 @@ function _update-prod-repos {
 
 
 function _work-tree-clean {
-    local git_status_output=$(git status --porcelain)
+    local git_status_output=$(git status --porcelain --ignore-submodule)
     if [ -z "${git_status_output}" ] ; then
         return 0
     else
