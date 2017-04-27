@@ -21,6 +21,7 @@ Update from map.geo.admin.ch
 #. Merge ``master`` into ``devel``: ``git merge master``
 #. Solve the merge conflicts. See `Some tips to resolve merge conflicts`_ for help.
 #. Update the dependencies: launch from ``geo-infra``: ``manuel update``.
+#. Update OpenLayers: ``./scripts/update-open-layers.sh``
 #. Commit the result.
 #. Push the result. **If the push fails because you have unpulled changes, do not try a rebase**: a rebase will cancel your merge commit (and will loose your merge work, unless you do a ``git rebase --abort``) and you will have to handle conflict for each commit from swisstopo you are merging into the current branch. So if that happens, do:
 
@@ -28,7 +29,10 @@ Update from map.geo.admin.ch
    #. ``git merge origin/devel`` to merge them with a merge commit into your local branch.
    #. ``git push`` to push the result.
 
-#. Update the translations from swisstopo with (in geo-infra) ``manuel update-translations-swisstopo``.
+.. warning::
+
+    Don't forget to do a ``git pull`` and run ``manuel update`` on all the server that'll build the frontend.
+
 
 Some tips to resolve merge conflicts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

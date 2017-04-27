@@ -664,7 +664,7 @@ function update-translations-swisstopo {
 
 HELP['update']="manuel update
 
-Update the dependencies of the project (OpenLayers, node modules, ngeo, translations). This must
+Update the dependencies of the project (node modules, ngeo, translations). This must
 be launched after each merge from upstream and on first clone."
 function update {
     update-translations-swisstopo
@@ -672,7 +672,6 @@ function update {
 
     pushd "${FRONT_DIR}"
         npm install
-        ./scripts/update-open-layers.sh
     popd
 }
 

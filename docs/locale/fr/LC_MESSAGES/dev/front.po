@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-13 14:51+0200\n"
+"POT-Creation-Date: 2017-04-27 16:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,10 +80,14 @@ msgid "Update the dependencies: launch from ``geo-infra``: ``manuel update``."
 msgstr ""
 
 #: ../../dev/front.rst:24
-msgid "Commit the result."
+msgid "Update OpenLayers: ``./scripts/update-open-layers.sh``"
 msgstr ""
 
 #: ../../dev/front.rst:25
+msgid "Commit the result."
+msgstr ""
+
+#: ../../dev/front.rst:26
 msgid ""
 "Push the result. **If the push fails because you have unpulled changes, "
 "do not try a rebase**: a rebase will cancel your merge commit (and will "
@@ -92,87 +96,87 @@ msgid ""
 "merging into the current branch. So if that happens, do:"
 msgstr ""
 
-#: ../../dev/front.rst:27
+#: ../../dev/front.rst:28
 msgid "``git fetch origin devel`` to get the changes."
 msgstr ""
 
-#: ../../dev/front.rst:28
+#: ../../dev/front.rst:29
 msgid ""
 "``git merge origin/devel`` to merge them with a merge commit into your "
 "local branch."
 msgstr ""
 
-#: ../../dev/front.rst:29
+#: ../../dev/front.rst:30
 msgid "``git push`` to push the result."
 msgstr ""
 
-#: ../../dev/front.rst:31
+#: ../../dev/front.rst:34
 msgid ""
-"Update the translations from swisstopo with (in geo-infra) ``manuel "
-"update-translations-swisstopo``."
+"Don't forget to do a ``git pull`` and run ``manuel update`` on all the "
+"server that'll build the frontend."
 msgstr ""
 
-#: ../../dev/front.rst:34
+#: ../../dev/front.rst:38
 msgid "Some tips to resolve merge conflicts"
 msgstr ""
 
-#: ../../dev/front.rst:37
+#: ../../dev/front.rst:41
 msgid "Components removed"
 msgstr ""
 
-#: ../../dev/front.rst:39
+#: ../../dev/front.rst:43
 msgid "You can safely remove any files related to these components:"
 msgstr ""
 
-#: ../../dev/front.rst:41
+#: ../../dev/front.rst:45
 msgid "tooltip"
 msgstr ""
 
-#: ../../dev/front.rst:42
+#: ../../dev/front.rst:46
 msgid "query"
 msgstr ""
 
-#: ../../dev/front.rst:45
+#: ../../dev/front.rst:49
 msgid "Components rewritten"
 msgstr ""
 
-#: ../../dev/front.rst:47
+#: ../../dev/front.rst:51
 msgid "You can safely checkout any files that belong to these components:"
 msgstr ""
 
-#: ../../dev/front.rst:49
+#: ../../dev/front.rst:53
 msgid "print"
 msgstr ""
 
-#: ../../dev/front.rst:50
+#: ../../dev/front.rst:54
 msgid "wmsimport (rewritten into owsimport)"
 msgstr ""
 
-#: ../../dev/front.rst:53
+#: ../../dev/front.rst:57
 msgid "New components"
 msgstr ""
 
-#: ../../dev/front.rst:55
+#: ../../dev/front.rst:59
 msgid "Normally, they should be in the merge conflicts:"
 msgstr ""
 
-#: ../../dev/front.rst:57
+#: ../../dev/front.rst:61
 msgid "features"
 msgstr ""
 
-#: ../../dev/front.rst:58
+#: ../../dev/front.rst:62
 msgid "importows"
 msgstr ""
 
-#: ../../dev/front.rst:59
+#: ../../dev/front.rst:63
 msgid "webdav"
 msgstr ""
 
-#: ../../dev/front.rst:63
+#: ../../dev/front.rst:67
 msgid "How to update Open Layer"
 msgstr ""
 
-#: ../../dev/front.rst:65
+#: ../../dev/front.rst:69
 msgid ""
 "We need to build our own version of ``ol.js`` since we need some exports "
 "that Swisstopo doesn't. In order to do this, we have a scrip called "
@@ -180,7 +184,7 @@ msgid ""
 "launch it (you must be in the root folder of geo-front3):"
 msgstr ""
 
-#: ../../dev/front.rst:71
+#: ../../dev/front.rst:75
 msgid ""
 "The script will do everything for you. If the ``Makefile`` was updated by"
 " Swisstopo, check whether it impacts how OpenLayers is updated. If so, "
@@ -191,5 +195,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Update Open Layers. See `How to update Open Layer`_ for the procedure."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Update the translations from swisstopo "
+#~ "with (in geo-infra) ``manuel update-"
+#~ "translations-swisstopo``."
 #~ msgstr ""
 
