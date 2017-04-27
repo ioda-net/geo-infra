@@ -53,6 +53,7 @@ function set-array {
 
 # Commands used to build geo-front3. They must be either absolute (or in the PATH) or relative to
 # the geo-front3 directory. Normally, this shouldn't be changed.
+set-var BABEL_CMD "./node_modules/.bin/babel"
 set-var KARMA_CMD "./node_modules/karma/bin/karma"
 set-var PROTRACTOR_CMD 'protractor'
 set-var ISTANBUL_CMD "./node_modules/istanbul/lib/cli.js"
@@ -91,6 +92,10 @@ elif [[ -z "${CP_CMD:-}" ]]; then
 fi
 
 
+## ngeo
+set-var NGEO_MODULE "src/ngeo/src/modules/import"
+
+
 # Pathes
 ## Keep in sync with global.toml#dest.vhost This is used to know where are the vhosts we have to
 ## deploy on the production server.
@@ -125,7 +130,10 @@ set-array DOC_LANGUAGES 'fr'
 
 
 # Translations
+set-var SWISSTOPO_TRANSLATIONS_SOURCE "https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0"
 set-var SWISSTOPO_TRANSLATIONS "translations/swisstopo.csv"
+set-var SWISSTOPO_EMPTY_JSON_SOURCE "https://raw.githubusercontent.com/geoadmin/mf-geoadmin3/master/src/locales/empty.json"
+set-var SWISSTOPO_EMPTY_JSON "translations/empty.json"
 
 
 # Infra

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-14 11:12+0200\n"
+"POT-Creation-Date: 2017-04-13 14:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,90 +19,209 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: ../../swisstopo/api-structure.md
-msgid "Structure de l'API (mf-chsdi3)"
-msgstr ""
-
 #: ../../swisstopo/api-structure.md:3
 msgid "L'API est responsable de :"
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "Lien API/Frontend"
+#: ../../swisstopo/api-structure.md:4
+msgid "donner au frontend les configurations des couches"
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "Entrée dans l'API"
+#: ../../swisstopo/api-structure.md:5
+msgid "donner les services possibles (langues, sujets, …)"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:6
+msgid "imprimer la carte visionnée par l'utilisateur (via mapfish-print)"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:7
+msgid ""
+"donner le catalogue, ie la liste des couches correctement classées avec "
+"leur nom compréhensible"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:13
+msgid ""
+"On configure l'interface (dans mf-geoadmin3) pour qu'elle renvoie un "
+"fichier index avec qui donne la configuration pour se connecter à l'API."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:15
+msgid ""
+"On récupère le json de traduction (par exemple ) du frontend. Ce fichier "
+"est donné par le frontend. Il est de la forme  (fichier donné par le "
+"frontend)."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:18
+msgid ""
+"Récupération du JSON qui définit les topics (fichier ). Il permet de "
+"connaître les couches de fonds disponibles, les langues possibles, les "
+"couches sélectionnées dès le choix du topic, son identifiant et s'il faut"
+" montrer ou non le catalogue."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:22
+msgid ""
+"Récupération du JSON qui contient la liste des couches. C'est un objet "
+"avec pour clés le nom de la couche et ses paramètres."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:24
+msgid ""
+"Récupération de  qui contient des informations pour l'impression (formats"
+" de page possibles, dbi, échelle)."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:26
+msgid ""
+"Récupération du catalogue, ie liste des couches avec leur hiérarchie et "
+"leur label."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:28
+msgid "Le front traite ensuite ces JSON pour mettre à jour son affichage."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:29
+msgid ""
+"Fait les requêtes aux serveurs WMS ou WMTS pour récupérer les images de "
+"la carte."
 msgstr ""
 
 #: ../../swisstopo/api-structure.md:35
-msgid "Tout ce passe dans le module chsdi."
-msgstr ""
-
-#: ../../swisstopo/api-structure.md
-msgid "init.py"
+msgid "Tout ce passe dans le module ."
 msgstr ""
 
 #: ../../swisstopo/api-structure.md:39
 msgid "Contient la liste des routes et la vue associée. Points intéressants :"
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "Fonctions utiles"
+#: ../../swisstopo/api-structure.md:40
+msgid "wmtscapabilities : donne ce que peut faire le serveur, notamment :"
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "layersConfig"
+#: ../../swisstopo/api-structure.md:41
+msgid "Liste des couches"
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "topics"
+#: ../../swisstopo/api-structure.md:42
+msgid "Liste des thèmes"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:43
+msgid "layersConfig : donne la liste des couches possibles."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:44
+msgid "mapservice : donne les métadonnées pour chaque couche."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:48
+msgid ""
+"sert à différencier les données pour la production (prod), le "
+"développement (dev) ou l'intégration (int)."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:53
+msgid ""
+"On récupère les paramètres  des couches depuis l'objet . Cette objet se "
+"construit à partir de la requête et permet d'accéder facilement à "
+"certains paramètres comme le nom de la carte, la langue, le texte de la "
+"recherche (s'il y a lieu), … et la requête en elle même."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:58
+msgid ""
+"On initialise la requête de base de données . C'est un objet qui vient de"
+" SQLAlchemy. Il est construit à partir du modèle  qui contient notamment "
+"l'identifiant de la couche, son opacité, ses résolutions minimale et "
+"maximales. C'est à partir de cet objet, via sa méthode  que l'on ne va "
+"récupérer que les couches qui nous intéresse."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:63
+msgid ""
+"On boucle sur un itérateur qui filtre les couches à partir , du modèle  "
+"et de . La fonction  filtre la table  puis pour chaque couche restantes "
+"\"yield\" sa cofiguration. Dans , les deux fonctions utilisées ( et ) ont"
+" un fonctionnement similaire à savoir trouver une ou des clauses de "
+"filtrage et les passer à  éventuellement via  qui fait un  logique entre "
+"ces clauses."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:71
+msgid ""
+"Les couches renvoyées par l'itérateur sont ajoutées à l'objet renvoyé par"
+" la fonction."
 msgstr ""
 
 #: ../../swisstopo/api-structure.md:77
-msgid "Via l'URL /rest/services."
+msgid "Via l'URL ."
 msgstr ""
 
 #: ../../swisstopo/api-structure.md:79
 msgid ""
-"Lié à la table Topics. On ne prend que les topics pour lesquels on montre"
-" le catalogue et on les trie dans un ordre défini dans une colonne de la "
-"table. Ensuite, on les filtre avec filter_by_geodata_staging. Les "
-"résultats sont enfin mis en forme dans un tableau de dictionnaires."
+"Lié à la table . On ne prend que les topics pour lesquels on montre le "
+"catalogue et on les trie dans un ordre défini dans une colonne de la "
+"table. Ensuite, on les filtre avec . Les résultats sont enfin mis en "
+"forme dans un tableau de dictionnaires."
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "La table Topics"
+#: ../../swisstopo/api-structure.md:86
+msgid "id : Text"
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "mapservice"
+#: ../../swisstopo/api-structure.md:87
+msgid "orderKey : Integer"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:88
+msgid "availableLangs : Text"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:89
+msgid "selectedLayers : postgresql.ARRAY(Text)"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:90
+msgid "backgroundLayers : postgresql.ARRAY(Text)"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:91
+msgid "showCatalog : Boolean"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:92
+msgid "staging : Text"
 msgstr ""
 
 #: ../../swisstopo/api-structure.md:96
-msgid ""
-"Fonctionnement analogue à layersConfig mais permet de faire des "
-"recherches textuelles."
+msgid "Fonctionnement analogue à  mais permet de faire des recherches textuelles."
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "wmtscapabilities"
+#: ../../swisstopo/api-structure.md:101
+msgid "Utilise la table  pour faire sa requête."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:102
+msgid "Filtre avec  et éventuellement par nom de carte."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:103
+msgid "Renvoie le résultat au format JSON."
 msgstr ""
 
 #: ../../swisstopo/api-structure.md:108
 msgid ""
-"Donne la configuration des couches au frontend. Stocké dans une table "
-"LayersConfig. Actuellement, on utilise un script (initializedb.py) pour "
-"générer cette table automatiquement. Celle-ci est remplie à la main par "
-"swisstopo."
+"Donne la configuration des couches au frontend. Stocké dans une table . "
+"Actuellement, on utilise un script () pour générer cette table "
+"automatiquement. Celle-ci est remplie à la main par swisstopo."
 msgstr ""
 
-#: ../../swisstopo/api-structure.md:113
-msgid "Les couches sont décrites dans le tag Layer du XML."
-msgstr ""
-
-#: ../../swisstopo/api-structure.md
-msgid "Attributs récupérables via GetCapapilities"
+#: ../../swisstopo/api-structure.md:113 ../../swisstopo/api-structure.md:149
+msgid "Les couches sont décrites dans le tag  du XML."
 msgstr ""
 
 #: ../../swisstopo/api-structure.md:117
@@ -124,62 +243,237 @@ msgid ""
 "plupart, rarement JPEG |"
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "Autres attributs"
+#: ../../swisstopo/api-structure.md:130
+msgid ""
+"opacity : beaucoup à 0.75, remplissage automatique avec liste d'exception"
+" ?"
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "Nos attributs GetCapabilities"
+#: ../../swisstopo/api-structure.md:131
+msgid "gutter : vient de  en base."
 msgstr ""
 
-#: ../../swisstopo/api-structure.md:149
-msgid "Les couches sont décrites dans le tag FeatureType du XML."
+#: ../../swisstopo/api-structure.md:132
+msgid "attribution : \"prevonance\", swisstopo, FOAG, FOEN"
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "Minimun requis pour mocker les topics"
+#: ../../swisstopo/api-structure.md:133
+msgid "background : tout me semble à"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:134
+msgid "searchable : la plupart à"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:135
+msgid "selectByRectangle : boolean"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:136
+msgid "attributionUrl : bureau en charge de la couche"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:137
+msgid "timeBehaviour :"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:138
+msgid "singleTide"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:139
+msgid "hilightable"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:140
+msgid "chargeable : plupart à"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:141
+msgid "hasLegend :"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:142
+msgid "type :  ou  ou"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:143
+msgid "timeEnabled : tout me semble à"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:144
+msgid "wmsurl : tout me semble à"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:151
+msgid "<Name> : Name"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:152
+msgid "<Format> (fils de <OutputFormat>) : format"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:153
+msgid "topics : depuis ows:Keywords (identique pour chaque couche) ?"
 msgstr ""
 
 #: ../../swisstopo/api-structure.md:157
 msgid "Voir ci-dessous pour les justifications."
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "ol.layer.Tile"
+#: ../../swisstopo/api-structure.md:171
+msgid "Le label est utilisé pour l'affichage dans l'interface."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:172
+msgid "Le type est nécessaire à la création de la couche OpenLayer"
 msgstr ""
 
 #: ../../swisstopo/api-structure.md:176
 msgid "Voir : http://openlayers.org/en/master/apidoc/ol.layer.Tile.html"
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "ol.layer.Image"
+#: ../../swisstopo/api-structure.md:178
+msgid "source : de type . Se construit avec :"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:179
+msgid "url: layer.wmsUrl (l'URL de GetCapabilities)"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:180
+msgid "params: wmsParams. Se construit à partir de :"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:181
+msgid "(nom de la couche)."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:182
+msgid "le format d'image (ajouté à 'images/')."
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:183
+msgid "attributions: attributions. Se construit avec :"
+msgstr ""
+
+#: ../../swisstopo/api-structure.md:186
+msgid "crossOrigin: crossOrigin. Fixé à ."
 msgstr ""
 
 #: ../../swisstopo/api-structure.md:190
 msgid "Voir : http://openlayers.org/en/master/apidoc/ol.layer.Image.html"
 msgstr ""
 
-#: ../../swisstopo/api-structure.md
-msgid "Autres"
-msgstr ""
-
-#: ../../swisstopo/api-structure.md
-msgid "Déploiement avec mod_wsgi"
-msgstr ""
-
 #: ../../swisstopo/api-structure.md:197
 msgid ""
-"En cas d'erreur d'import d'un module ou d'extraction ExtractionError: "
-"Can't extract file(s) to egg cache, ajouter au fichier wsgi de "
-"l'application :"
-msgstr ""
-
-#: ../../swisstopo/api-structure.md
-msgid "Renderers"
+"En cas d'erreur d'import d'un module ou d'extraction , ajouter au fichier"
+" wsgi de l'application :"
 msgstr ""
 
 #: ../../swisstopo/api-structure.md:205
 msgid "Vers EsriJSON et CSV."
 msgstr ""
+
+#~ msgid "Structure de l'API (mf-chsdi3)"
+#~ msgstr ""
+
+#~ msgid "Lien API/Frontend"
+#~ msgstr ""
+
+#~ msgid "Entrée dans l'API"
+#~ msgstr ""
+
+#~ msgid "Tout ce passe dans le module chsdi."
+#~ msgstr ""
+
+#~ msgid "init.py"
+#~ msgstr ""
+
+#~ msgid "Fonctions utiles"
+#~ msgstr ""
+
+#~ msgid "layersConfig"
+#~ msgstr ""
+
+#~ msgid "topics"
+#~ msgstr ""
+
+#~ msgid "Via l'URL /rest/services."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Lié à la table Topics. On ne "
+#~ "prend que les topics pour lesquels "
+#~ "on montre le catalogue et on les"
+#~ " trie dans un ordre défini dans "
+#~ "une colonne de la table. Ensuite, "
+#~ "on les filtre avec filter_by_geodata_staging."
+#~ " Les résultats sont enfin mis en "
+#~ "forme dans un tableau de dictionnaires."
+#~ msgstr ""
+
+#~ msgid "La table Topics"
+#~ msgstr ""
+
+#~ msgid "mapservice"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fonctionnement analogue à layersConfig mais"
+#~ " permet de faire des recherches "
+#~ "textuelles."
+#~ msgstr ""
+
+#~ msgid "wmtscapabilities"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Donne la configuration des couches au"
+#~ " frontend. Stocké dans une table "
+#~ "LayersConfig. Actuellement, on utilise un "
+#~ "script (initializedb.py) pour générer cette"
+#~ " table automatiquement. Celle-ci est "
+#~ "remplie à la main par swisstopo."
+#~ msgstr ""
+
+#~ msgid "Les couches sont décrites dans le tag Layer du XML."
+#~ msgstr ""
+
+#~ msgid "Attributs récupérables via GetCapapilities"
+#~ msgstr ""
+
+#~ msgid "Autres attributs"
+#~ msgstr ""
+
+#~ msgid "Nos attributs GetCapabilities"
+#~ msgstr ""
+
+#~ msgid "Les couches sont décrites dans le tag FeatureType du XML."
+#~ msgstr ""
+
+#~ msgid "Minimun requis pour mocker les topics"
+#~ msgstr ""
+
+#~ msgid "ol.layer.Tile"
+#~ msgstr ""
+
+#~ msgid "ol.layer.Image"
+#~ msgstr ""
+
+#~ msgid "Autres"
+#~ msgstr ""
+
+#~ msgid "Déploiement avec mod_wsgi"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "En cas d'erreur d'import d'un module "
+#~ "ou d'extraction ExtractionError: Can't extract"
+#~ " file(s) to egg cache, ajouter au "
+#~ "fichier wsgi de l'application :"
+#~ msgstr ""
+
+#~ msgid "Renderers"
+#~ msgstr ""
 

@@ -655,5 +655,58 @@ Update translations/swisstopo.csv from Swisstopo's google doc."
 function update-translations-swisstopo {
     curl --silent \
         --output "${SWISSTOPO_TRANSLATIONS}" \
-        https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7jd79sapy3B7TXhQcYM7SEaccOA0/export?format=csv&gid=0
+        "${SWISSTOPO_TRANSLATIONS_SOURCE}"
+    curl --silent \
+        --output "${SWISSTOPO_EMPTY_JSON}" \
+        "${SWISSTOPO_EMPTY_JSON_SOURCE}"
 }
+
+
+HELP['update']="manuel update
+
+Update the dependencies of the project (OpenLayers, node modules, ngeo, translations). This must
+be launched after each merge from upstream and on first clone."
+function update {
+    update-translations-swisstopo
+    update-ngeo
+
+    pushd "${FRONT_DIR}"
+        npm install
+        ./scripts/update-open-layers.sh
+    popd
+}
+
+
+HELP['update-ngeo']="manuel update-ngeo
+
+Update ngeo to the correct version. The commit to update to is read from the Makefile of the
+frontend."
+function update-ngeo {
+    local ngeo_patches_dir="$(realpath ${FRONT_DIR}/scripts/ngeo-patches)"
+
+    pushd "${FRONT_DIR}"
+        pushd src/ngeo
+            # Unapply all patches.
+            git reset --hard
+            git clean -fd
+            rm -rf node_modules
+        popd
+        local ngeo_version=$(grep 'NGEO_VERSION ?=' Makefile | cut -f 3 -d ' ')
+        git submodule update --init
+        pushd src/ngeo
+            git checkout "${ngeo_version}"
+            # Apply patches
+            if [[ -d ${ngeo_patches_dir} && -n "$(ls -A ${ngeo_patches_dir})" ]]; then
+                for patchfile in ${ngeo_patches_dir}/*.patch; do
+                    patch -p1 < "${patchfile}"
+                done
+            fi
+            # ngeo uses goog.require('ol.*') at multiple place. We remove that: we don't need it and
+            # it break the closure compiler.
+            local ngeo_files="$(find . -name '*.js' -type f -not -iwholename '*/examples/*' -not -iwholename '*.mako.js' -not -iwholename '*/node_modules/*')"
+            # Don't quote the variable: if we do, sed will search for one file!
+            sed -i "/goog\.require('ol.*/d" ${ngeo_files}
+        popd
+    popd
+}
+

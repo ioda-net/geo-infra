@@ -52,7 +52,7 @@ class GenerateJsonConfig(Generate):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self._start_cgi_server()
-        translator = Translator(self.src['translation_files'], self.verbose)
+        translator = Translator(self.src['translation_files'], self.src['translate_empty_file'], self.verbose)
         self.catalog_translator = CatalogTranslator(self.src['translate_catalog'])
         # This will both get and save the translations if output_folder is not None
         translator.get_translations(

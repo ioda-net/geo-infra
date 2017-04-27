@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Documentation for geo-front3, geo-api3 and geo-infra "
 "1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-16 15:00+0200\n"
+"POT-Creation-Date: 2017-04-13 14:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,10 +25,6 @@ msgstr ""
 
 #: ../../debug.rst:6
 msgid "Some information on how to debug some scripts or tools."
-msgstr ""
-
-#: ../../debug.rst
-msgid "Contents"
 msgstr ""
 
 #: ../../debug.rst:14
@@ -160,4 +156,7 @@ msgstr ""
 #: ../../debug.rst:100
 msgid "Install it: ``python setup.py install -O1 --skip-build``"
 msgstr ""
+
+#~ msgid "Contents"
+#~ msgstr ""
 

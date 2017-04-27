@@ -20,7 +20,6 @@ vhost = '{infra_dir}/{type}/vhosts.d/{portal}.conf'
 
 [dest.geo_front3]
 appcache = '{infra_dir}/prod/{portal}/geoadmin.appcache'
-deps = 'test/deps'
 karma_conf = 'test/karma-conf.{type}.js'
 plugins_file = 'src/js/Gf3Plugins.js'
 protractor_conf = 'test/protractor-conf.{type}.js'
@@ -82,6 +81,7 @@ search_portal_locations = "{infra_dir}/search/portal-locations.in.conf"
 search_tsv_files = "{infra_dir}/{type}/{portal}/search/*.tsv"
 topics = "{infra_dir}/json/{portal}/topics/*.json"
 translate_catalog = "{infra_dir}/translations/catalog.csv"
+translate_empty_file = "translations/empty.json"
 translation_files = [
     "translations/swisstopo.csv",
     "translations/common.csv",
@@ -95,7 +95,10 @@ vhost = 'apache/vhost.jinja2.conf'
 appcache = 'src/geoadmin.nunjucks.appcache'
 index = 'src/index.nunjucks.html'
 karma_conf_template = 'test/karma-conf.nunjucks.js'
-partials = 'src/components/**/partials/**/*.html'
+partials = [
+    'src/components/**/partials/**/*.html',
+    'src/ngeo/src/modules/import/partials/**/*.html'
+]
 plugins = 'src/plugins/*.js'
 plugins_template = 'src/Gf3Plugins.nunjucks.js'
 protractor_conf_template = 'test/protractor-conf.nunjucks.js'

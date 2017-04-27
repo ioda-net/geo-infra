@@ -37,6 +37,12 @@ function _annotate {
     for file in $(find src/js -name '*.js'); do
         _annotate-file "${file}" "${tmp}"
     done
+
+    # We don't have to create directories for ngeo: the file are already copied and processed.
+    for file in $(find "${NGEO_MODULE}" -name '*.js'); do
+        _mkdir "${tmp}/${file%/*}"
+        _transpile-annotate-file "${file}" "${tmp}"
+    done
 }
 
 
@@ -45,6 +51,14 @@ function _annotate-file {
     local output="$1"; shift;
 
     "${ANNOTATE_CMD}" -a "${file}" > "${output}/${file}"
+}
+
+
+function _transpile-annotate-file {
+    local file="$1"; shift;
+    local output="$1"; shift;
+
+    "${BABEL_CMD}" "${file}" | "${ANNOTATE_CMD}" -a - > "${output}/${file}"
 }
 
 
@@ -81,6 +95,7 @@ function _build-deps-js {
 
     "${DEPSWRITER_CMD}" \
            --root_with_prefix="src/components components" \
+           --root_with_prefix="src/ngeo ngeo" \
            --root_with_prefix="src/js js" > "${output_file}"
 }
 
@@ -188,7 +203,7 @@ function _uglify-libs {
     local libs=( 'src/lib/jquery.js'
                  'src/lib/bootstrap.js'
                  'src/lib/moment-with-customlocales.js'
-                 'src/lib/typeahead-0.9.3.js'
+                 'src/lib/typeahead.jquery.min.js'
                  'src/lib/angular.js'
                  'src/lib/proj4js-compressed.js'
                  'src/lib/EPSG21781.js'

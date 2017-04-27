@@ -285,7 +285,8 @@ Otherwise, all files in INFRA_DIR are linted.
 ## launch-tests
 manuel launch-tests
 
-Launch the unit tests against the development code. This is equivalent to 'manuel front test'
+Launch the unit tests against the development code. This is equivalent to
+'manuel generate-tests-conf && manuel front test'
 
 
 ## lint
@@ -394,10 +395,30 @@ Copy the generated MFP configuration files into tomcat's MFP directory. Use the
 files from TYPE and PORTAL.
 
 
+## update
+manuel update
+
+Update the dependencies of the project (OpenLayers, node modules, ngeo, translations). This must
+be launched after each merge from upstream and on first clone.
+
+
 ## update-doc-translations
 manuel update-doc-translations
 
 Update the po files based on text from English documents. This will not build the documentation.
+
+
+## update-ngeo
+manuel update-ngeo
+
+Update ngeo to the correct version. The commit to update to is read from the Makefile of the
+frontend.
+
+
+## update-translations-swisstopo
+manuel update-translations-swisstopo
+
+Update translations/swisstopo.csv from Swisstopo's google doc.
 
 
 ## verify-sphinx-conf
