@@ -682,11 +682,24 @@ HELP['update-ngeo']="manuel update-ngeo
 Update ngeo to the correct version. The commit to update to is read from the Makefile of the
 frontend."
 function update-ngeo {
+    local ngeo_patches_dir="$(realpath ${FRONT_DIR}/scripts/ngeo-patches)"
+
     pushd "${FRONT_DIR}"
+        pushd src/ngeo
+            # Unapply all patches.
+            git reset --hard
+            git clean -fd
+        popd
         local ngeo_version=$(grep 'NGEO_VERSION ?=' Makefile | cut -f 3 -d ' ')
         git submodule update --init
         pushd src/ngeo
             git checkout "${ngeo_version}"
+            # Apply patches
+            if [[ -d ${ngeo_patches_dir} && -n "$(ls -A ${ngeo_patches_dir})" ]]; then
+                for patchfile in ${ngeo_patches_dir}/*.patch; do
+                    patch -p1 < "${patchfile}"
+                done
+            fi
         popd
     popd
 }
