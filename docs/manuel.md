@@ -398,7 +398,7 @@ files from TYPE and PORTAL.
 ## update
 manuel update
 
-Update the dependencies of the project (node modules, ngeo, translations). This must
+Update the dependencies of the project (node modules, ngeo). This must
 be launched after each merge from upstream and on first clone.
 
 
