@@ -3,7 +3,7 @@ Front
 
 The front is written is JavaScript with the `AngularJS <https://angularjs.org/>`__ framework and rely on the `Google Closure Compiler <https://developers.google.com/closure/compiler/>`__ to work.
 
-The build process relies on `geo-infra <https://github.com/ioda-net/geo-infra>`__. Before building the project, you must run ``npm install`` in the directory in which you cloned ``geo-front3`` in order to download all the dependencies. This is required to have some commands in ``node_modules/.bin`` that are needed to build the project.
+The build process relies on `geo-infra <https://github.com/ioda-net/geo-infra>`__. Before building the project, you must run ``manuel update`` in ``geo-infra`` in order to download all the dependencies (npm modules, `ngeo <https://github.com/camptocamp/ngeo>`__).
 
 .. contents::
 
@@ -11,7 +11,31 @@ The build process relies on `geo-infra <https://github.com/ioda-net/geo-infra>`_
 Update from map.geo.admin.ch
 ----------------------------
 
+Update our mf-geoadmin3 fork
+++++++++++++++++++++++++++++
+
+#. Go where you cloned `our fork of mf-geoadmin3 <https://github.com/ioda-net/mf-geoadmin3>`__
+#. Fetch the modifications made by Swisstopo. Typically this is done by:
+
+    .. note::
+
+       The you must add an upstream remote pointing to https://github.com/geoadmin/mf-geoadmin3. You can add it with ``git remote add upstream https://github.com/geoadmin/mf-geoadmin3.git``.
+
+   #. ``git checkout master``
+   #. ``git fetch upstream master``
+   #. ``git rebase upstream/master``
+   #. ``git push``
+
+
+Update geo-front3
+++++++++++++++++++
+
+#. Go where you clone `geo-front3 <https://github.com/ioda-net/geo-front3>`__.
 #. Go the the `master` branch and update it with the code of swisstopo. Typically this is done by:
+
+    .. note::
+
+       The you must add an upstream remote pointing to https://github.com/ioda-net/mf-geoadmin3. You can add it with ``git remote add upstream https://github.com/ioda-net/mf-geoadmin3.git``.
 
    #. ``git checkout master``
    #. ``git fetch upstream master``
@@ -20,9 +44,12 @@ Update from map.geo.admin.ch
 #. Go to the branch ``devel``: ``git checkout devel``
 #. Merge ``master`` into ``devel``: ``git merge master``
 #. Solve the merge conflicts. See `Some tips to resolve merge conflicts`_ for help.
+#. Check that the patches applied to ngeo are still relevant and remove them if necessary. To do that, check the changelog for the version of ngeo you use. The patches are located in ``geo-front3/scripts/ngeo-patches`` if there are patches to apply.
 #. Update the dependencies: launch from ``geo-infra``: ``manuel update``.
+#. Check that the patches applied to OpenLayers are still relevant and remove them if necessary. To do that, check the changelog for the version of OpenLayers you use. The patches are located in ``scripts/ol3-patches``.
 #. Update OpenLayers: ``./scripts/update-open-layers.sh``
-#. Update the translations: ``manuel update-translations-swisstopo``
+#. Update the translations: launch from ``geo-infra`` ``manuel update-translations-swisstopo``
+#. Run the tests: launch from ``geo-infra``: ``manuel launch-tests``
 #. Commit the result.
 #. Push the result. **If the push fails because you have unpulled changes, do not try a rebase**: a rebase will cancel your merge commit (and will loose your merge work, unless you do a ``git rebase --abort``) and you will have to handle conflict for each commit from swisstopo you are merging into the current branch. So if that happens, do:
 
@@ -52,15 +79,13 @@ Components rewritten
 You can safely checkout any files that belong to these components:
 
 - print
-- wmsimport (rewritten into owsimport)
 
 New components
 ++++++++++++++
 
-Normally, they should be in the merge conflicts:
+Normally, they should not be in the merge conflicts:
 
 - features
-- importows
 - webdav
 
 
