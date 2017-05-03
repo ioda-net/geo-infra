@@ -15,7 +15,7 @@ Setup geo-infra
 Setup a customer infrastructure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Include all files in ``customer-infra/dev/vhosts.d`` in your apache configuration. This can be done be editing ``/etc/httpd/conf/httpd.conf`` or ``/etc/apache2/apache2.conf`` depending on your system and appending this line at the end of the file: ``IncludeOptional /path/to/infra/dir/customer-infra/dev/vhosts.d/*.conf``.
+- Include all files in ``customer-infra/dev/vhosts.d`` in your apache configuration. This can be done by editing ``/etc/httpd/conf/httpd.conf`` or ``/etc/apache2/apache2.conf`` depending on your system and appending this line at the end of the file: ``IncludeOptional /path/to/infra/dir/customer-infra/dev/vhosts.d/*.conf``.
 - Review the TOML and shell configurations and override any value necessary for your need.
 
 
@@ -163,14 +163,14 @@ If you want to insert curly braces in your string, you need to escape them like 
 
 Once the configuration is parsed, ``key_with_curly_brace`` will hold this value: ``'{toto}'``.
 
-The configuration system is design to allow easy deployment on production while being able to override any value for development or tests purposes. In order to easy maintenance, everything that can be in a ``config/_common.<type>.toml`` file must be in it. Any value in the ``config/_common.<type>.toml`` files can be overridden in a portal specific file.
+The configuration system is designed to allow easy deployment on production while being able to override any value for development or tests purposes. In order to ease maintenance, everything that can be in a ``config/_common.<type>.toml`` file must be in it. Any value in the ``config/_common.<type>.toml`` files can be overridden in a portal specific file.
 
 The configuration is loaded like this (**all these files are mandatory, if they don't exist, the task will fail**):
 
 1. ``geo-infra/config/global.toml`` This is the only TOML configuration file from ``geo-infra``. It contains general configuration values and paths. Normally, you shouldn't change keys present in it.
 2. ``customer-infra/config/dist/_common.dist.toml``
 3. ``customer-infra/config/dist/<portal>.dist.toml`` (unless you are doing a non portal specific task like building the global sphinx configuration).
-4. ``customer-infra/config/_template.dist.toml``: this is not a configuration file per see but the values that are allowed in portal specific configuration files. If a key or section is present in a portal file but not in the template, it will be reported as warning.
+4. ``customer-infra/config/_template.dist.toml``: this is not a configuration file per see but the values that are allowed in portal specific configuration files. If a key or section is present in a portal file but not in the template, it will be reported as a warning.
 
 If you are building the portal for production, the files below are loaded if they exists after the files listed above:
 
@@ -187,7 +187,7 @@ If you are building the portal for development, the files below are loaded if th
   You should be aware that:
 
     - All files ends by ``.<type>.toml`` to ease recognition when many of them are opened in a text editor.
-    - Only the files in ``customer-infra/config/dist`` should be tracked by git to allow developers to override values for testing purposes. This means that the values contained in these files, should match those of production to easy deployment: no need to update the production configuration, a ``git pull`` is enough.
+    - Only the files in ``customer-infra/config/dist`` should be tracked by git to allow developers to override values for testing purposes. This means that the values contained in these files, should match those of production to ease deployment: no need to update the production configuration, a ``git pull`` is enough.
 
 To debug the configuration, see the :ref:`configuration section <ref_debug_configuration>` section of the :ref:`ref_debug` page.
 
@@ -311,7 +311,7 @@ Recommendations
 ```````````````
 
 - Use of MapServer include instruction whenever you can, it will ease maintenance.
-- Use convention, eg: *The file has to be started with: ``mapserver.FUNCTION.map.in``*.
+- Use convention, eg: *The file has to start with: ``mapserver.FUNCTION.map.in``*.
 
 Layout for output
 +++++++++++++++++
@@ -322,6 +322,6 @@ The output is located in the ``customer-infra`` directory. You don't want these 
 
   - ``dev/<portal>/``: contains the generated files for one portal. The content of each subfolder should be obvious given the name of the subfolder. This is the document root for the vhost of the current portal.
   - ``dev/vhosts.d/``: contains the generated vhosts.
-  - ``dev/search/`` contains the generated global search configuration for this infrastructure.
+  - ``dev/search/``: contains the generated global search configuration for this infrastructure.
 
 - ``prod/``: same as ``dev``. It also contains the generated content for production. Each subfolder should be an autonomous git repository to ease deployment to production and rollback if necessary.

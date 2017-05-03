@@ -46,7 +46,7 @@ If the vhosts require an update:
 API
 ---
 
-If the API need to be updated on production, ask your system administrator to do it. You can send the link :ref:`the relevant section of the documentation <ref_sysadmin_server-setup_api>`.
+If the API need to be updated on production, ask your system administrator to do it. You can send the link :ref:`to the relevant section of the documentation <ref_sysadmin_server-setup_api>`.
 
 
 Revert

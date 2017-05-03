@@ -179,7 +179,7 @@ In order to be sure that tomcat, apache, search can restart and that a reindex c
 vhosts
 ------
 
-Include all files in ``$PROD_GIT_REPOS_LOCATION/vhosts.d`` in your apache configuration. This can be done be editing ``/etc/httpd/conf/httpd.conf`` or ``/etc/apache2/apache2.conf`` depending on your system and appending this line at the end of the file: ``IncludeOptional $PROD_GIT_REPOS_LOCATION/vhosts.d/*.conf``. See the section about `Production configurations`_ of this document to learn more about ``$PROD_GIT_REPOS_LOCATION``.
+Include all files in ``$PROD_GIT_REPOS_LOCATION/vhosts.d`` in your apache configuration. This can be done by editing ``/etc/httpd/conf/httpd.conf`` or ``/etc/apache2/apache2.conf`` depending on your system and appending this line at the end of the file: ``IncludeOptional $PROD_GIT_REPOS_LOCATION/vhosts.d/*.conf``. See the section about `Production configurations`_ of this document to learn more about ``$PROD_GIT_REPOS_LOCATION``.
 
 Print
 -----
@@ -188,7 +188,7 @@ Print
 
 Printing a map relies on `MapFish Print <https://github.com/mapfish/mapfish-print>`__ a Java servlet developed by `Camptocamp SA <http://www.camptocamp.com/en/>`__.
 
-You can either build it from scratch from `the source <https://github.com/mapfish/mapfish-print>`__ or use our `last build </data/getting-started/print.war>`__. Once you have the WAR, do the following actions as root:
+You can either build it from scratch from `source <https://github.com/mapfish/mapfish-print>`__ or use our `last build </data/getting-started/print.war>`__. Once you have the WAR, do the following actions as root:
 
   - Copy the WAR in your tomcat webapps folder (eg ``/usr/share/tomcat/webapps``, ``/srv/tomcat/webapps/`` or ``/var/lib/tomcat8/webapps``) under the name ``print-customer-infra.war``.
   - Start tomcat: ``systemctl start tomcat``

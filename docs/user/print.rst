@@ -7,7 +7,7 @@ Print
 
 This page explains how to configure MapFish Print for the impression feature of the portal.
 
-You can find a WAR `here </data/getting-started/print.war>`__ or you can build `from the source <https://github.com/mapfish/mapfish-print/>`__.
+You can find a WAR `here </data/getting-started/print.war>`__ or you can build `from source <https://github.com/mapfish/mapfish-print/>`__.
 
 You can view examples of print templates `here <https://github.com/ioda-net/customer-infra/tree/master/print>`__. You can create your print templates with `Jasper Studio <http://community.jaspersoft.com/project/jaspersoft-studio>`__ or directly by editing the jrxml files with a text editor.
 

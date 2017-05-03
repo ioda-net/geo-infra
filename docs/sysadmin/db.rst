@@ -78,7 +78,7 @@ It can contain all tables/views used by sphinx to create its indexes. Instead of
 - ``id``
 - ``search_label``: this will be displayed to the user in the frontend. It can be the union of multiple columns from the table.
 - ``search_string``: this will be parsed by sphinx. It can be the union of multiple columns from the table.
-- ``geom_st_box2d``: this will be used by the frontend to center the user on the returned geometry. **This must be in the main EPSG of the portal.**. It can be defined as ``box2d(the_geom) AS geom_st_box2d``.
+- ``geom_st_box2d``: this will be used by the frontend to center the user on the returned geometry. **This must be in the main EPSG of the portal.** It can be defined as ``box2d(the_geom) AS geom_st_box2d``.
 - ``y``: this will be used by the frontend to put a marker on the searched location. **This must be in the main EPSG of the portal.** It can be defined as ``st_x(the_geom) AS y``.
 - ``x``: this will be used by the frontend to put a marker on the searched location.  **This must be in the main EPSG of the portal.** It can be defined as ``st_y(the_geom) AS x``.
 - ``lat``: the latitude of the searched location. It can be defined as ``st_y(st_transform(the_geom, 4326)) AS lat``.

@@ -198,14 +198,14 @@ You can also use the optional keys below:
 Search
 ------
 
-Searches are performed by the API and `Sphinx search <http://sphinxsearch.com/>`__ a full text search engine.
+Searches are performed by the API and `Sphinx search <http://sphinxsearch.com/>`__, a full text search engine.
 
 The configuration for sphinx is divided in two parts:
 
 - global configuration for an infrastructure: it configures the configuration of the sphinx daemon. It can be updated with ``manuel generate-search-conf``. The templates used to generate this configuration are located in ``geo-infra/search``.
 - portal configuration: it configures the layer and locations searches:
 
-  - locations searches: the configuration is created by a template located in ``customer-infra/search/portal-locations.in.conf``. To help you write this template, you can also create dedicated views in the database. See the :ref:`schema section in the database page <ref_sysadmin_db_schemas-functions_schemas_optional-schemas_schema-search>` of the system administrator manuel for more information on this. This template can look like:
+  - locations searches: the configuration is created by a template located in ``customer-infra/search/portal-locations.in.conf``. To help you write this template, you can also create dedicated views in the database. See the :ref:`schema section in the database page <ref_sysadmin_db_schemas-functions_schemas_optional-schemas_schema-search>` of the system administrator manual for more information on this. This template can look like:
 
   .. literalinclude:: /_static/search/portal-locations.in.conf
 
@@ -393,7 +393,7 @@ Print
 
 Printing a map relies on `MapFish Print <https://github.com/mapfish/mapfish-print>`__ a Java servlet developed by `Camptocamp SA <http://www.camptocamp.com/en/>`__.
 
-You can either build it from scratch from `the source <https://github.com/mapfish/mapfish-print>`__ or use our `last build </data/getting-started/print.war>`__.
+You can either build it from scratch from `source <https://github.com/mapfish/mapfish-print>`__ or use our `last build </data/getting-started/print.war>`__.
 
 You can view examples of print templates `here <https://github.com/ioda-net/customer-infra/tree/master/print>`__. You can create your print templates with `Jasper Studio <http://community.jaspersoft.com/project/jaspersoft-studio>`__ or directly by editing the jrxml files with a text editor.
 

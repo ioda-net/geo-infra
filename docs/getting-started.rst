@@ -121,7 +121,7 @@ Setup the portal
     - Install ``glob2`` if needed: ``pip install glob2``
 
   - Update all dependencies with ``manuel update`` (this may take some time)
-  - Include all files in ``customer-infra/dev/vhosts.d`` in your apache configuration. This can be done be editing ``/etc/httpd/conf/httpd.conf`` or ``/etc/apache2/apache2.conf`` depending on your system and appending this line at the end of the file: ``IncludeOptional /path/to/infra/dir/customer-infra/dev/vhosts.d/*.conf``.
+  - Include all files in ``customer-infra/dev/vhosts.d`` in your apache configuration. This can be done by editing ``/etc/httpd/conf/httpd.conf`` or ``/etc/apache2/apache2.conf`` depending on your system and appending this line at the end of the file: ``IncludeOptional /path/to/infra/dir/customer-infra/dev/vhosts.d/*.conf``.
   - Create the vhost: ``./manuel vhost demo``.
   - Create a symlink named ``mapserv`` to your MapServer executable in ``cgi-bin``. Eg: ``ln -s /usr/bin/mapserv cgi-bin/mapserv``.
   - Generate the utility files: ``./manuel dev demo``.
