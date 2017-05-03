@@ -55,7 +55,7 @@ Create the venv
 Serve
 -----
 
-To launch ``pserve`` with the development configuration: ``manuel serve``
+To launch ``pserve`` with the development configuration: ``manuel serve``. To launch ``pserve`` on a specific branch, use ``manuel serve BRANCH``.
 
 .. warning::
 
