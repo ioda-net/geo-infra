@@ -146,7 +146,7 @@ Features
 
 The point of the ``features.map_layers_features`` table is to map the name of each feature view to the portal for which it is active and the layers for which it should be interrogated. Thanks to this mapping, the API can then auto-load all the feature views and create the appropriate Python classes for interrogation automatically. This allows us not to explicitly declare them in a Python file. This means, you can modify these views as you like (adding and removing columns) without needing to bother about the code of API.
 
-.. attention::
+.. warning::
 
   After you add or remove columns, you must ask the API to reload the views by doing in ``geo-infra``:
 

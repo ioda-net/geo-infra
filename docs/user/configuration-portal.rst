@@ -101,13 +101,13 @@ Translations for a portal are located in the four files listed below. All these 
 #. ``customer-infra/translations/<portal-name>.csv``: everything else (*note:* the translation for the topic titles and the topic tooltip – *topic_<topic_name>_tooltip* – go here).
 #. ``customer-infra/translations/common.csv`` (optional): if you find redundancies between the translations for different portals, you can put them in this file. It will be loaded before the file for the portal, which means, you can override a translation from this file in a portal file.
 
-.. attention::
+.. warning::
 
   **At least one of the files above must contain a translation line.** Otherwise, no layers config will be created. Which means your portal won't work.
 
 Translation from Swisstopo are overridden by translations in ``common.csv`` and translation from both Swisstopo and ``common.csv`` are overridden by translations from ``<portal>.csv``. To ignore a translation from Swisstopo, put its id in the ``customer-infra/translations/ignore.csv`` file. This file must just contain the translation ids (one per line). You can view an example `here <https://github.com/ioda-net/customer-infra/blob/master/translations/ignore.csv>`__.
 
-.. attention::
+.. warning::
 
   ids present in ``ignore.csv`` will never get into a translation file.
 

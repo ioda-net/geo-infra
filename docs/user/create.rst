@@ -15,7 +15,7 @@ Create a new portal
    - ``customer-infra/translations/<portal-name>.csv``: everything else (*note:* the translation for the topic titles and the topic tooltip – *topic_<topic_name>_tooltip* – go here).
    - ``customer-infra/translations/common.csv`` (optional): if you find redundancies between the translations for different portals, you can put them in this file. It will be loaded before the file for the portal, which means, you can override a translation from this file in a portal file.
 
-   .. attention::
+   .. warning::
 
     **At least one of the files above must contain a translation line.** Otherwise, no layers config will be created. Which means your portal won't work.
 

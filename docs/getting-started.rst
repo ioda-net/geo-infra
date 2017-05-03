@@ -183,7 +183,7 @@ Switch to ``geo-api3``:
   - Update the ini files used by Pyramid: ``./manuel ini-files``.
   - Launch the API: ``./manuel serve``.
 
-  .. attention::
+  .. warning::
 
     If the command fails due to ``ImportError: No module named 'osgeo'``, check that the osgeo module from system install is available in the ``PYTHONPATH`` specificied in ``config/config.dist.sh``. If not, create a ``config/config.sh`` with the correct value for ``PYTHONPATH``. Eg for Debian, put this value:
 
@@ -198,7 +198,7 @@ Switch to ``geo-api3``:
 
     Portal page with QR code and short link
 
-.. attention::
+.. warning::
 
   If you test the get features capability, you will only get a very basic presentation: it is what MapServer returns to the GetFeatures request. You improve this if you with access to the database. See :ref:`the relevant section of the documentation <ref_sysadmin_db_features>`.
 
@@ -221,7 +221,7 @@ Switch to ``geo-infra``:
 
      ln -s <infra-dir>/customer-infra/dev/search/sphinx.conf /etc/sphinx/customer-infra.conf
 
-  .. attention::
+  .. warning::
 
     On Debian based systems, before creating the symlink, you must (*as root*):
 
@@ -237,7 +237,7 @@ Switch to ``geo-infra``:
   - Create run dir for PID: ``mkdir -p /var/run/sphinx``
   - Set proper owner: ``chown -R sphinx:sphinx /var/run/sphinx``
 
-    .. attention::
+    .. warning::
 
       On Debian based system:
 
@@ -248,7 +248,7 @@ Switch to ``geo-infra``:
 
   - Copy the service files: ``cp /path/to/geo-infra/searchd@.service /etc/systemd/system/``
 
-    .. attention::
+    .. warning::
 
       On Debian based systems, you must correct the user to ``sphinxsearch`` in the unit file.
 
@@ -304,7 +304,7 @@ Switch to ``geo-infra``:
   - Copy the WAR in your tomcat webapps folder (eg ``/usr/share/tomcat/webapps``, ``/srv/tomcat/webapps/`` or ``/var/lib/tomcat8/webapps``) under the name ``print-customer-infra.war``.
   - Start tomcat: ``systemctl start tomcat``
 
-    .. attention::
+    .. warning::
 
       On Debian based systems, the target is named ``tomcat8``
 
@@ -315,7 +315,7 @@ Switch to ``geo-infra``:
     - ``mkdir print-customer-infra/print-apps``
     - ``chown tomcat:tomcat print-customer-infra/print-apps``
 
-    .. attention::
+    .. warning::
 
       On Debian based systems, the correct user is ``tomcat8``.
 

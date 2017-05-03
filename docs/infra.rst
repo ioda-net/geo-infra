@@ -83,7 +83,7 @@ Testing generated .map files
 
 You can test the generated Map files with ``./manuel test-map-files dev PORTAL_NAME``
 
-.. attention::
+.. warning::
 
   - Only visible layers will be completely tested, but the syntax of the files will be checked not matter what.
   - Syntax checking is done automatically in the ``prod``, ``deploy`` and ``dev-full`` tasks.
@@ -182,7 +182,7 @@ If you are building the portal for development, the files below are loaded if th
 1. ``customer-infra/config/dev/_common.dev.toml``
 2. ``customer-infra/config/dev/<portal>.dev.toml``
 
-.. attention::
+.. warning::
 
   You should be aware that:
 

@@ -193,7 +193,7 @@ You can either build it from scratch from `the source <https://github.com/mapfis
   - Copy the WAR in your tomcat webapps folder (eg ``/usr/share/tomcat/webapps``, ``/srv/tomcat/webapps/`` or ``/var/lib/tomcat8/webapps``) under the name ``print-customer-infra.war``.
   - Start tomcat: ``systemctl start tomcat``
 
-    .. attention::
+    .. warning::
 
       On Debian based systems, the target is named ``tomcat8``
 
@@ -201,7 +201,7 @@ You can either build it from scratch from `the source <https://github.com/mapfis
   - Check that ``print-customer-infra.war`` is correctly deployed.
   - Create the ``print-customer-infra/print-apps`` directory and make it owned by tomcat: ``mkdir print-customer-infra/print-apps && chown tomcat:tomcat print-customer-infra/print-apps``.
 
-    .. attention::
+    .. warning::
 
       On Debian based systems, the correct user is ``tomcat8``.
 
@@ -233,7 +233,7 @@ On `sphinx search <http://sphinxsearch.com/>`__ is correctly installed on your s
 
      ln -s <PROD_GIT_REPOS_LOCATION>/search/sphinx.conf /etc/sphinx/customer-infra.conf
 
-  .. attention::
+  .. warning::
 
     On Debian based systems, before creating the symlink, you must (*as root*):
 
@@ -249,7 +249,7 @@ On `sphinx search <http://sphinxsearch.com/>`__ is correctly installed on your s
   - Create run dir for PID: ``mkdir -p /var/run/sphinx``
   - Set proper owner: ``chown -R sphinx:sphinx /var/run/sphinx``
 
-    .. attention::
+    .. warning::
 
       On Debian based system:
 
@@ -260,7 +260,7 @@ On `sphinx search <http://sphinxsearch.com/>`__ is correctly installed on your s
 
   - Copy the ``searchd@.service`` service file from ``geo-infra`` to ``/etc/systemd/system/``
 
-    .. attention::
+    .. warning::
 
       On Debian based systems, you must correct the user to ``sphinxsearch`` in the unit file.
 

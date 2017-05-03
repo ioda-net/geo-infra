@@ -57,7 +57,7 @@ Serve
 
 To launch ``pserve`` with the development configuration: ``manuel serve``
 
-.. attention::
+.. warning::
 
     If the command fails due to ``ImportError: No module named 'osgeo'``, check that the osgeo module from system install is available in the ``PYTHONPATH`` specificied in ``config/config.dist.sh``. If not, create a ``config/config.sh`` with the correct value for ``PYTHONPATH``. Eg for Debian, put this value:
 
