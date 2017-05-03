@@ -109,6 +109,51 @@ Tests
     manuel test chsdi/tests/integration/test_file_storage.py
 
 
+Update from mf-chsdi3
+---------------------
+
+Update our mf-chsdi fork
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Go where you cloned `our fork of mf-chsdi <https://github.com/ioda-net/mf-chsdi3>`__
+#. Fetch the modifications made by Swisstopo. Typically this is done by:
+
+   .. note::
+
+       The you must add an upstream remote pointing to https://github.com/geoadmin/mf-chsdi3. You can add it with ``git remote add upstream https://github.com/geoadmin/mf-chsdi3.git``.
+
+   #. ``git checkout master``
+   #. ``git fetch upstream master``
+   #. ``git rebase upstream/master``
+   #. ``git push``
+
+
+Update geo-api3
+~~~~~~~~~~~~~~~
+
+#. Go where you clone `geo-front3 <https://github.com/ioda-net/geo-front3>`__.
+#. Go the the `master` branch and update it with the code of swisstopo. Typically this is done by:
+
+   .. note::
+
+       The you must add an upstream remote pointing to https://github.com/ioda-net/mf-chsdi3. You can add it with ``git remote add upstream https://github.com/ioda-net/mf-chsdi3.git``.
+
+   #. ``git checkout master``
+   #. ``git fetch upstream master``
+   #. ``git rebase upstream/master``
+
+#. Identify the commits you want to cherry pick by their hash.
+#. Go to the branch ``devel``: ``git checkout devel``
+#. Cherry pick the commits with ``git cherry-pick HASH``
+#. Solve the merge conflicts if any.
+#. Run the tests: ``manuel test``
+#. Push the result. **If the push fails because you have unpulled changes, do not try a rebase**: a rebase will cancel your merge commit (and will loose your merge work, unless you do a ``git rebase --abort``) and you will have to handle conflict for each commit from swisstopo you are merging into the current branch. So if that happens, do:
+
+   #. ``git fetch origin devel`` to get the changes.
+   #. ``git merge origin/devel`` to merge them with a merge commit into your local branch.
+   #. ``git push`` to push the result.
+
+
 Lint
 ----
 
