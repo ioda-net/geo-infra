@@ -66,6 +66,9 @@ Update geo-front3
 Some tips to resolve merge conflicts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+- Remove all scrips or config files that are related to Swisstopo.
+- Remove all translations files.
+
 Components removed
 ++++++++++++++++++
 
