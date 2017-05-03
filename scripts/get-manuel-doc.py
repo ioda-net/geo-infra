@@ -6,7 +6,6 @@ from glob import glob
 
 
 def find_doc(task_file, commands, commands_to_doc):
-    manuel_doc = ''
     for task, doc in finder.findall(task_file.read()):
         commands.append(task)
         commands_to_doc[task] = doc
@@ -15,7 +14,7 @@ def find_doc(task_file, commands, commands_to_doc):
 if __name__ == '__main__':
     finder = re.compile(r'''^HELP\['([a-zA-Z-_]+)'\]="([^"]+)"''', re.DOTALL|re.MULTILINE)
     manuel_doc = '# Manuel\n'
-    manuel_doc += 'To generate this file, use `python3 scripts/get-manuel-doc.py > docs/manuel.md`\n\n'
+    manuel_doc += 'To generate this file, use *python3 scripts/get-manuel-doc.py > docs/manuel.md*\n\n'
     commands_to_doc = {}
     commands = []
 
