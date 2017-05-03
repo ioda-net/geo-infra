@@ -50,6 +50,7 @@ Update geo-front3
 #. Update OpenLayers: ``./scripts/update-open-layers.sh``
 #. Update the translations: launch from ``geo-infra`` ``manuel update-translations-swisstopo``
 #. Run the tests: launch from ``geo-infra``: ``manuel launch-tests``
+#. If ``src/index.mako.html`` changed, port the modifications to ``src/index.nunjucks.html``
 #. Commit the result.
 #. Push the result. **If the push fails because you have unpulled changes, do not try a rebase**: a rebase will cancel your merge commit (and will loose your merge work, unless you do a ``git rebase --abort``) and you will have to handle conflict for each commit from swisstopo you are merging into the current branch. So if that happens, do:
 
