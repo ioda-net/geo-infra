@@ -56,7 +56,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Documentation for geo-front3, geo-api3 and geo-infra'
-copyright = '2015, Julien Enselme, Bruno Friedmann, Véronique Herzl'
+copyright = '2015–2017, Julien Enselme, Bruno Friedmann, Véronique Herzl'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
