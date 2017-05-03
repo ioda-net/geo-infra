@@ -1,5 +1,5 @@
 # Manuel
-To generate this file, use `python3 scripts/get-manuel-doc.py > docs/manuel.md`
+To generate this file, use *python3 scripts/get-manuel-doc.py > docs/manuel.md*
 
 ## build-doc
 manuel build-doc
@@ -313,7 +313,7 @@ manuel prod PORTAL1 [PORTAL2 [PORTAL3] …]
 Generate a production version of the targeted portals. To generate even
 with uncommitted changes or without changing branch, add the --force option as first parameter.
 
-This task can be launch with portals from different infrastructures if --force is given.
+This task can be launched with portals from different infrastructures if --force is given.
 
 
 ## pushd
