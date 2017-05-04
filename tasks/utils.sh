@@ -683,7 +683,7 @@ function update-ngeo {
     local ngeo_patches_dir="$(realpath ${FRONT_DIR}/scripts/ngeo-patches)"
 
     pushd "${FRONT_DIR}"
-        if [[ -d src/ngeo ]]; then
+        if [[ -d src/ngeo && -f src/ngeo/.git ]]; then
             pushd src/ngeo
                 # Unapply all patches.
                 git reset --hard
