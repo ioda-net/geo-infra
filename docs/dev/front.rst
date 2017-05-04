@@ -46,7 +46,7 @@ Update geo-front3
 #. Solve the merge conflicts. See `Some tips to resolve merge conflicts`_ for help.
 #. Check that the patches applied to ngeo are still relevant and remove them if necessary. To do that, check the changelog for the version of ngeo you use. The patches are located in ``geo-front3/scripts/ngeo-patches`` if there are patches to apply.
 #. Update the dependencies: launch from ``geo-infra``: ``manuel update``.
-#. Check that the patches applied to OpenLayers are still relevant and remove them if necessary. To do that, check the changelog for the version of OpenLayers you use. The patches are located in ``scripts/ol3-patches``.
+#. Check that the patches applied to OpenLayers are still relevant and remove them if necessary. To do that, check the changelog for the version of OpenLayers you use. The patches are located in ``scripts/ol-patches``.
 #. Update OpenLayers: ``./scripts/update-open-layers.sh``
 #. Update the translations: launch from ``geo-infra`` ``manuel update-translations-swisstopo``
 #. Run the tests: launch from ``geo-infra``: ``manuel launch-tests``

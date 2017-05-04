@@ -189,7 +189,7 @@ function _compile-closure {
          --jscomp_error checkVars \
          --compilation_level SIMPLE \
          --externs externs/ol.js \
-         --externs externs/ol3-cesium.js \
+         --externs externs/ol-cesium.js \
          --externs externs/Cesium.externs.js \
          --externs externs/angular.js \
          --externs externs/jquery.js \
@@ -210,7 +210,7 @@ function _uglify-libs {
                  'src/lib/EPSG2056.js'
                  'src/lib/EPSG32631.js'
                  'src/lib/EPSG32632.js'
-                 'src/lib/ol3.js'
+                 'src/lib/ol.js'
                  'src/lib/spin.js'
                  'src/lib/slip.js'
                  'src/lib/polyfill.js'

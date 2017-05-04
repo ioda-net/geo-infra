@@ -143,6 +143,7 @@ Update geo-api3
    #. ``git rebase upstream/master``
 
 #. Identify the commits you want to cherry pick by their hash.
+    Use github history, mail 
 #. Go to the branch ``devel``: ``git checkout devel``
 #. Cherry pick the commits with ``git cherry-pick HASH``
 #. Solve the merge conflicts if any.
