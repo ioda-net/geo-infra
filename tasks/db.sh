@@ -117,6 +117,12 @@ function db-update {
     local superuser="${4:-${DEFAULT_DB_SUPER_USER}}"
     local owner="${5:-${DEFAULT_DB_OWNER}}"
 
+	if [[ ! -f ${backup_file} ]];then
+		echo "Your dump file (${backup_file}) is not found"
+		echo "Fatal we stopped before clearing the database"
+		exit 1
+	fi
+
     _db-drop "${superuser}"
 
     _db-create "${superuser}" "${owner}"
