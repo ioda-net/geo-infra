@@ -1,3 +1,5 @@
+.. _ref_user_functional-tests:
+
 Functional tests
 ================
 

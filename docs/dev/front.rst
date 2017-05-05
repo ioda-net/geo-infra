@@ -50,8 +50,10 @@ Update geo-front3
 #. Update OpenLayers: ``./scripts/update-open-layers.sh``
 #. Update the translations: launch from ``geo-infra`` ``manuel update-translations-swisstopo``
 #. Run the tests: launch from ``geo-infra``: ``manuel launch-tests``
-#. If ``src/index.mako.html`` changed, port the modifications to ``src/index.nunjucks.html``
+#. If ``src/index.mako.html`` changed, port the modifications to ``src/index.nunjucks.html``. To view the modifications you need to port, you can use ``git diff --cached index.mako.html``
 #. Commit the result.
+#. Run a ``manuel dev-full PORTAL`` in ``geo-infra`` and check that the portal behaves as expected. You can rely on the :ref:`functional tests <ref_user_functional-tests>` for that.
+#. Run a ``manuel prod PORTAL`` in ``geo-infra`` and check that the build succeeds and that the portal behaves as expected. You can rely on the :ref:`functional tests <ref_user_functional-tests>` for that.
 #. Push the result. **If the push fails because you have unpulled changes, do not try a rebase**: a rebase will cancel your merge commit (and will loose your merge work, unless you do a ``git rebase --abort``) and you will have to handle conflict for each commit from swisstopo you are merging into the current branch. So if that happens, do:
 
    #. ``git fetch origin devel`` to get the changes.
@@ -66,8 +68,18 @@ Update geo-front3
 Some tips to resolve merge conflicts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Remove all scrips or config files that are related to Swisstopo.
-- Remove all translations files.
+- Remove all scrips or config files that are related to Swisstopo: ``git rm rc_*``
+- Remove all translations files: ``git rm -r src/locales``
+- View the diff for a file in the index: ``git diff --cached FILE``
+- Take our version of a file and discard all the modifications and merge errors:
+
+   #. ``git reset FILE``
+   #. ``git checkout --ours FILE``
+
+- Take Swisstopo's version of a file and discard all the modifications and merge errors:
+
+   #. ``git reset FILE``
+   #. ``git checkout --theirs FILE``
 
 Components removed
 ++++++++++++++++++
@@ -91,6 +103,15 @@ Normally, they should not be in the merge conflicts:
 
 - features
 - webdav
+
+package.json
+++++++++++++
+
+This file defines the dependencies. If Swisstopo updated a dependency, we should update it too. If we already have a newer version, we shouldn't downgrade the library. If some of the tests libraries were updated (``angular-mocks.js``, ``expect.js``, ``sinon.js``), run ``npm install`` to fetch them and then copy them from ``node_modules`` into ``test/lib``.
+
+.. note::
+
+    ``jscomp.js`` is special. To recreate it **if needed**, change WHITESPACE_ONLY by SIMPLE in ``_launch-task-in-front-dir`` (in ``geo-infra``) and copy the ``$jscomp`` related lines at the top of ``test/app-whitespace.js``.
 
 
 How to update Open Layer
