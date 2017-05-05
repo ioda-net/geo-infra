@@ -103,3 +103,5 @@ We need to build our own version of ``olcesium.js`` since we need some exports t
     ./scripts/update-open-layers.sh
 
 The script will do everything for you. If the ``Makefile`` was updated by Swisstopo, check whether it impacts how OpenLayers is updated. If so, update the script accordingly before launching it.
+
+If some function of OpenLayers are missing in our build, update ``geo-front3/scripts/olcesium-geoadmin.json`` to add them to the build: in the ``exports`` section of the JSON, add the "path" to the function or namespace you need. To import all function of a namespace, add a pound sign and a star to it, like this: ``ol.source.ImageWMS#*``
