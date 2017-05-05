@@ -126,3 +126,16 @@ We need to build our own version of ``olcesium.js`` since we need some exports t
 The script will do everything for you. If the ``Makefile`` was updated by Swisstopo, check whether it impacts how OpenLayers is updated. If so, update the script accordingly before launching it.
 
 If some function of OpenLayers are missing in our build, update ``geo-front3/scripts/olcesium-geoadmin.json`` to add them to the build: in the ``exports`` section of the JSON, add the "path" to the function or namespace you need. To import all function of a namespace, add a pound sign and a star to it, like this: ``ol.source.ImageWMS#*``
+
+
+How to create a PR for Swisstopo
+--------------------------------
+
+In geo-front3:
+
+#. Identify the commits you want in the PR by their hashes.
+#. Go to the ``master`` branch: ``git checkout master``
+#. Create a branch for the pull request: ``git checkout -b MY-PR``
+#. Cherry-pick all the commits: ``git cherry-pick HASH`` You may encounter conflicts while cherry-picking. You will have to solve them, then do, on the files with conflicts: ``git add FILE`` You can then complete the cherry-pick with ``git cherry-pick --continue``. You can abort it with ``git cherry-pick --abort`` You may also have to correct some commits so they work correctly with the code from Swisstopo.
+#. Push the branch on our ``mf-geoadmin3`` fork: ``git push upstream MY-PR``
+#. Open the pull request `in GitHub <https://github.com/geoadmin/mf-geoadmin3>`__.
