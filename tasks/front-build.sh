@@ -80,6 +80,7 @@ function _copy-files-prod {
     cp -au src/checker "${output}"
     cp -au src/lib/IE "${lib_output}"
     cp -au src/lib/d3.min.js "${lib_output}"
+    cp -au src/lib/Cesium.min.js "${lib_output}"
 }
 
 
@@ -210,7 +211,7 @@ function _uglify-libs {
                  'src/lib/EPSG2056.js'
                  'src/lib/EPSG32631.js'
                  'src/lib/EPSG32632.js'
-                 'src/lib/ol.js'
+                 'src/lib/olcesium.js'
                  'src/lib/spin.js'
                  'src/lib/slip.js'
                  'src/lib/polyfill.js'

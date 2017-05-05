@@ -96,7 +96,7 @@ Normally, they should not be in the merge conflicts:
 How to update Open Layer
 ------------------------
 
-We need to build our own version of ``ol.js`` since we need some exports that Swisstopo doesn't. In order to do this, we have a scrip called ``update-open-layers.sh``. Before committing the merge result, please launch it (you must be in the root folder of geo-front3):
+We need to build our own version of ``olcesium.js`` since we need some exports that Swisstopo doesn't. In order to do this, we have a scrip called ``update-open-layers.sh``. Before committing the merge result, please launch it (you must be in the root folder of geo-front3):
 
 .. code:: bash
 
