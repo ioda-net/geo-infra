@@ -110,7 +110,7 @@ set-var FRONT_DIR '../geo-front3/'
 
 # MapFish Print configuration
 ## Where to look for the sources of MapFish Print. Used in 'manuel build-mfp' if no argument is given.
-set-var MFP_SOURCE_PATH "../forks/mapfish-print"
+set-var MFP_SOURCE_PATH "../mapfish-print"
 ## The branch to use to build MapFish Print
 set-var MFP_BUILD_BRANCH master
 

@@ -1,13 +1,13 @@
 diff --git i/core/src/main/webapp/WEB-INF/web.xml w/core/src/main/webapp/WEB-INF/web.xml
-index 5fd1483..3e11fa4 100644
+index a97569d8..80bef753 100644
 --- i/core/src/main/webapp/WEB-INF/web.xml
 +++ w/core/src/main/webapp/WEB-INF/web.xml
-@@ -28,9 +28,9 @@
+@@ -31,9 +31,9 @@
          <filter-name>requestSizeFilter</filter-name>
          <filter-class>org.mapfish.print.servlet.RequestSizeFilter</filter-class>
          <init-param>
--        	<!-- The maximum request size in bytes (default: 1 MB). -->
-+        	<!-- The maximum request size in bytes (default: 16 MB). -->
+-            <!-- The maximum request size in bytes (default: 1 MB). -->
++            <!-- The maximum request size in bytes (default: 16 MB). -->
              <param-name>maxContentLength</param-name>
 -            <param-value>1048576</param-value>
 +            <param-value>16777216</param-value>
