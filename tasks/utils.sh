@@ -710,3 +710,16 @@ function update-ngeo {
     popd
 }
 
+
+HELP['jscomp']="manuel jscomp
+
+Update the jscomp runtime"
+function jscomp {
+    pushd "${FRONT_DIR}"
+        # Create and compile an empty file to get the $jscomp runtime that is required to run some tests.
+        local empty_js=$(mktemp --suffix=.js)
+        eval "${CLOSURE_CMD}" --force_inject_library=es6_runtime \
+            --compilation_level SIMPLE \
+            --js "${empty_js}" > test/lib/jscomp.js
+    popd
+}
