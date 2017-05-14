@@ -142,7 +142,7 @@
         "PORTAL_ALLOWED_IP": "0.0.0.0/0 ::/0",
         "PORTAL_BASE_OWS": "http://demo.geoportal.local/ows/demo?",
         "PORTAL_DB_HOST": "localhost",
-        "PORTAL_DB_NAME": "geoportal_demo",
+        "PORTAL_DB_NAME": "geoportal_xyz",
         "PORTAL_DB_PASSWORD": "azerty",
         "PORTAL_DB_PORT": 5432,
         "PORTAL_DB_USER": "geo_mapserver",
