@@ -1,21 +1,22 @@
 id,sort,title,content,legend,image
-1,1,PAGE D'ACCUEIL,"<b>AIDE CARTE: FONCTIONS ET APPLICATIONS PRATIQUES</b>
+1,1,PAGE D'ACCUEIL,"<b>AIDE CARTE : FONCTIONS ET APPLICATIONS PRATIQUES</b>
 
-<b>La carte de geo.admin.ch est une application intuitive qui permet la recherche, l'affichage et l'utilisation d'informations géographiques. Elle présente des cartes et des données géographiques métiers de manière interactive en employant un navigateur Web standard.</b>
- 
+<b>La carte de geo.admin.ch est une application intuitive qui permet la recherche, l'affichage et l'utilisation d'informations géographiques. 
+Elle présente des cartes et des données géographiques métiers de manière interactive en employant un navigateur Web standard.</b>
+
 L'utilisateur peut personnaliser de nombreux paramètres de la carte: par exemple la zone affichée et la taille de l'image ou encore les Informations affichées et les arrière-plans.
 
-L'application permet non seulement un affichage à l'écran, mais aussi des impressions papier de qualité. Il est aussi possible, selon l'installation, d'accéder à des informations complémentaires à propos des objets géographiques affichés. 
+L'application permet non seulement un affichage à l'écran, mais aussi des impressions papier de qualité. Il est aussi possible, selon l'installation, d'accéder à des informations complémentaires à propos des objets géographiques affichés.
 ",,/help/img/00f.png
 10,2,FENÊTRE,#,,
-11,3,Changer de langue,"L'application détecte la langue par défaut du navigateur. Si cette langue ne vous convient pas, vous pouvez la changer en utilisant le menu déroulant en haut à droite.",,/help/img//11f.png
+11,3,Changer de langue,"L'application détecte la langue par défaut du navigateur. Si cette langue ne vous convient pas, vous pouvez la changer en utilisant le menu déroulant en haut à droite.",,/help/img/11f.png
 12,4,Indication des coordonnées,"Lorsque le curseur de la souris est sur la carte, les coordonnées correspondant à son emplacement (dans le format choisi) sont visibles au dessous de celle-ci. Au moyen d'un clic-droit de la souris sur un point de la carte, des informations complémentaires (comme l'altitude) sont affichées dans une nouvelle fenêtre.
 <br><img src=""/help/img/12f.png"">",,/help/img/12-2f.png
 20,5,NAVIGATION & ORIENTATION,#,,
 21,6,Changer l'échelle de la carte,"Il suffit de cliquer sur les boutons ""plus"" et ""moins"" pour modifier l'échelle de la carte",,/help/img/21f.png
 22,7,Zoom sur une zone,"En maintenant la touche Shift appuyée et en effectuant un cliquer-glisser, on peut définir une zone rectangulaire sur laquelle un zoom s'effectue lorsqu' on relâche le bouton de la souris.",,/help/img/22f.png
 23,8,Déplacer (pan),On peut se déplacer en effectuant un cliquer-glisser sur la carte. ,,/help/img/23f.png
-24,9,Recentrer sur des coordonnées,"Lorsque l'on connaît les coordonnées d'un endroit intéressant, on peut les entrer dans le champ de saisie de recherche géographique afin de centrer la carte sur cette zone. – En coordonnées nationales: par exemple ""782543 186049"" – En Latitude / Longitude: par exemple ""46.8 9.83""",,/help/img/24f.png
+24,9,Recentrer sur des coordonnées,"Lorsque l'on connaît les coordonnées d'un endroit intéressant, on peut les entrer dans le champ de saisie de recherche géographique afin de centrer la carte sur cette zone. – En coordonnées nationales: par exemple ""2600000 1200000"" -""782543 186049"" – En Latitude / Longitude: par exemple ""46.8 9.83""",,/help/img/24f.png
 25,10,"Recentrer selon localité, npa, lieu-dit ","Le champ de saisie de recherche géographique permet d'atteindre les communes, cantons, lieux-dits et autres dénominations géographiques (sommets, vallées, régions, cours d'eaux et lacs). Après avoir saisi au moins 4 caractères des suggestions de lieux commençant par ceux-ci apparaissent, et il suffit de cliquer sur celle qui convient.",,/help/img/25f.png
 26,11,Retour au cadrage Initial - reset,"Cliquer sur le logo de la confédération suisse, en haut à gauche, permet de revenir au cadrage initial de la carte, c'est-à-dire à une vue d'ensemble de la suisse.
 Le visualiseur est également réinitialisé.",,/help/img/26f.png
@@ -29,13 +30,15 @@ La flèche, représentée par l'icône, indique la direction dans laquelle vous 
 Si vous cliquez de nouveau sur le bouton de ""géolocalisation"", la carte s'oriente en fonction de la direction de l'appareil. Le Nord est indiqué par l'icône en haut à droite de l'écran. Pour sortir du mode ""géolocalisation"" cliquez de nouveau sur le même bouton.  
 
 <img src=""/help/img/27b_f.png"">",,
-28,12,2.5D / (3D ALPHA),"Le visualisateur de cartes peut aussi être activé en 2.5D/3D Alpha. Il est alors possible de superposer au modèle de terrain toutes les données 2D (Il est possible que certaines zones comportent des distorsions). Pour accéder à cette visualisation il faut cliquer sur le bouton 2.5D, ainsi le mode s'active. Il ne vous reste plus qu'à naviguer sur la carte et ajouter des données depuis le catalogue ou la recherche.<br><br>
-<b>IMPORTANT</b>: Cette fonctionnalité est disponible en version ALPHA, qui est dans un premier stade de développement. La disponibilité de la version l'ALPHA ne peut pas être garantie – elle peut être désactivée sous des circonstances.<br><br>
+28,12,3D BETA,"Le visualisateur de cartes peut aussi être activé en 3D BETA. Il est alors possible de superposer au modèle de terrain toutes les données 2D (Il est possible que certaines zones comportent des distorsions). Pour accéder à cette visualisation il faut cliquer sur le bouton 3D, ainsi le mode s'active. Il ne vous reste plus qu'à naviguer sur la carte et ajouter des données depuis le catalogue ou la recherche.<br>
+<b>IMPORTANT</b>: Cette fonctionnalité est disponible en version BETA, qui est dans un premier stade de développement. La disponibilité de la version l'BETA ne peut pas être garantie – elle peut être désactivée sous des circonstances.<br>
+Fichier exemple<a href=""http://cms.geo.admin.ch/www.geo.admin.ch/kml/sample3D.kml"">3D KML </a> pour visualiser vos données <a href=""https://s.geo.admin.ch/712b01e222"">en 3D</a>.
 
 <img src=""/help/img/28_f.png""><br>
 
 <b>Redresser/Incliner</b><br>
 PC + Mac: Maj ou CTRL ou ALT +  bouton gauche de la souris +  déplacement vers le bas / haut<br>
+PC + Mac: Maj +  touche avant / arrière<br>
 Touch:
 <img style=""border:none !important;"" src=""/help/img/TouchTilt.png""><br>
 <i>Incline la visionneuse vers une vue latérale/plongeante.</i><br><br>
@@ -59,7 +62,10 @@ Touch: Glisser avec un doigt vers la gauche / droite<br><br>
 
 <b>Déplacement en avant/arrière</b><br>
 PC + Mac: Touche avant / arrière ou bouton gauche de la souris + déplacement en avant / arrière<br>
-Touch: Glisser avec un doigt en avant / arrière<br><br>",,/help/img/blank.png
+Touch: Glisser avec un doigt en avant / arrière<br><br>
+
+<b>Rotation dans le sens des aiguilles d'une montre / dans le sens inverse</b><br>
+PC + Mac: Maj + Touche Gauche / Droite<br>",,/help/img/blank.png
 30,13,SELECTION & VISUALISATION DE DONNÉES,#,,
 31,14,Recherche de données (plein texte),"""Recherche"" est un champ de saisie qui permet de rechercher des mots clefs (par exemple: ""marais"", ""route"", ""commune"", etc.) dans la description de géodonnées disponibles. Lorsque vous sélectionnez un des résultats proposés, celui-ci est directement affiché en tant que jeux de données.",,/help/img/31f.png
 32,15,Recherche de données (catalogue),"Sous ""Changer thème"" vous trouverez l'ensemble des géodonnées disponibles classées par thèmes. Lorsque vous sélectionnez un jeu de données (en cliquant sur le cercle à droite), celui-ci est directement affiché.",,/help/img/32f.png
@@ -93,9 +99,10 @@ Vous trouverez des informations générales sur les images aériennes de swissto
 Vous trouverez dans le document ci-dessous des instructions détaillées :
 
 <iframe src=""https://docs.google.com/presentation/d/1cwtwJN1zzxs5js6jWfH2hlPn8Gx9YROYtRwf4NniuV4/embed?start=false&loop=false&delayms=5000"" frameborder=""0"" width=""570"" height=""456"" allowfullscreen=""true"" mozallowfullscreen=""true"" webkitallowfullscreen=""true""></iframe>",,/help/img/blank.png
-45,24,Aviation,"Dans le cadre de la préparation de leur vol, les pilotes ont la possibilité de s‘informer via  l’application en ligne WeGOM (Web-GIS Obstacle Map) de la présence sur leur itinéraire d‘obstacles à la navigation aérienne au sens de l’art. 63, let. a et b de l’ordonnance sur l’infrastructure aéronautique (OSIA). <br><br>L’application consiste en une carte interactive des obstacles à la navigation aérienne qui est actualisée chaque semaine. D’autres informations aéronautiques comme les zones protégées définies à l’art. 19 de l’ordonnance sur les atterrissages en campagne (OSAC) ou les cartes aéronautiques peuvent également être consultées au moyen de l‘application.<br><br><iframe src=""https://docs.google.com/presentation/d/15ZBcDLeKQazKmigtK9sNwqlLGJ1aMoRm8drO2ppwLGk/embed?start=false&loop=false&delayms=5000"" frameborder=""0"" width=""570"" height=""456"" allowfullscreen=""true"" mozallowfullscreen=""true"" webkitallowfullscreen=""true""></iframe>",,/help/img/blank.png
+45,24,Aviation,"Dans le cadre de la préparation de leur vol, les pilotes ont la possibilité de s‘informer via  l’application en ligne WeGOM (Web-GIS Obstacle Map) de la présence sur leur itinéraire d‘obstacles à la navigation aérienne au sens de l’art. 63, let. a et b de l’ordonnance sur l’infrastructure aéronautique (OSIA). <br><br>L’application consiste en une carte interactive des obstacles à la navigation aérienne qui est actualisée chaque semaine. D’autres informations aéronautiques comme les zones protégées définies à l’art. 19 de l’ordonnance sur les atterrissages en campagne (OSAC) ou les cartes aéronautiques peuvent également être consultées au moyen de l‘application.<br><br><iframe src=""https://docs.google.com/presentation/d/1K48Eds66RkwlgG_AzUCf_MLCLPqW22cThr49x4i4aTA/embed?start=false&loop=false&delayms=3000"" frameborder=""0"" width=""570"" height=""456"" allowfullscreen=""true"" mozallowfullscreen=""true"" webkitallowfullscreen=""true""></iframe>",,/help/img/blank.png
 41,25,Imprimer,"L'application permet de produire des fichiers PDF à partir de la carte (munie de quelques informations utiles, telle que l'échelle). Ces fichiers peuvent être enregistrés et imprimés. En appuyant sur le bouton ""imprimer"", la fenêtre de dialogue dans laquelle on peut paramétrer l'échelle désirée et l'orientation du document PDF A4/A3 s'ouvre. La zone qui apparaîtra sur le document est en surbrillance sur la carte et peut être déplacée avec la souris. Les légendes des jeux de données peuvent être imprimées à partir des fenêtres d'information en appuyant sur le bouton ""Imprimer"". Attention, les fichiers PDF peuvent faire plusieurs mégaoctets. Leur transmission, notamment par le biais de lignes à faible puissance, peut prendre un certain temps.","<b>Légende:</b> Les légendes de tous les jeux de données sont imprimées sur une seconde page.
 <b>Réseau de coordonnées:</b> Superposition d'un réseau de coordonnées suisse WGS84.
+<b>Rotation:</b> SHIFT+ALT+ + bouton gauche de la souris + déplacement vers le bas / haut.
 <b><i>Optionnel</i> Série temporelle:</b> Pour les jeux de données avec plusieurs représentations temporelles disponibles: un nouveau PDF est généré pour chaque représentation temporelle du point milieu de la carte.",/help/img/41f.png
 42,26,Curseur de temps,"Certaines géodonnées peuvent être visualisées dans le temps. Ces jeux de données sont reconnaissables par l'icône ""temps"" qui apparait sur le visualiseur à droite.<br>
 <img src=""/help/img/42f.png""><br>
@@ -246,7 +253,17 @@ Cas spécial WMS:  YYYY vide signifie que les données de toute les années s’
 </tr>
 </table>
 ",,/help/img/54f.png
-55,33,Mode offline pour mobile,"Offline pour une zone d’intérêt de 10x10km, carte à l'échelle 1:25'000 sans tooltip. <br><u>Actuellement disponible uniquement sur appareils mobiles.</u>
+55,33,Mobile,"<h2>Visualiseur de cartes en plein air</h2>
+<b>Go Mobile</b> - Utiliser map.geo.admin.ch avec votre smartphone iOS et ajouter map.geo.admin.ch comme une app sur votre écran d'accueil :
+
+
+<img src=""/help/img/gomobile.png"">
+
+<b>Android</b>: utiliser le menu de votre navigateur pour ajouter map.geo.admin.ch comme une app sur votre écran d'accueil.
+
+
+<h2>Mode Offline</h2>
+Offline pour une zone d’intérêt de 10x10km, carte à l'échelle 1:25'000 sans tooltip. <br><u>Actuellement disponible uniquement sur appareils mobiles.</u>
 
 1. S’assurer d’avoir une connexion Internet stable, validez le téléchargement avec ""ok"".
 Ne fermez pas le navigateur. Ne verrouillez pas votre appareil . Si aucune progression n’est visible, ou des problèmes sont rencontrés, veuillez effacer le cache du navigateur de votre appareil. Désactivez le mode «privé». Attendre la fin du téléchargement, validez avec ""ok"".
@@ -322,36 +339,64 @@ On peut modifier tout élément en cliquant dessus. On peut sélectionner plusie
 
 - <b>Share Link</b>: partagés avec d’autres utilisateurs (1).
 - <b>Admin Link</b> : être à nouveau édités ultérieurement. Ce lien doit être sauvegardé, dans le cas où vous désirez modifier/supprimer vos éléments de dessin (2).
-- <b>Télécharger</b> vos éléments de dessin sous la forme d’un jeu de données au format KML, en utilisant l’option du menu déroulant « Plus… » (3).","Votre dessin est automatiquement stocké pour une année, vous acceptez ainsi les conditions d’utilisation.",/help/img/95f.png
+- <b>Exporter</b> vos éléments de dessin sous la forme d’un jeu de données au format KML (3).","Votre dessin est automatiquement stocké pour une année, vous acceptez ainsi les conditions d’utilisation.",/help/img/95f.png
 60,41,FONCTIONS COMPLEMENTAIRES,#,,
-62,42,WMS Import,"Seuls des services WMS qui supportent la ""Projection Suisse EPSG 21781"" et qui respectent le standard <a href=""http://www.opengeospatial.org/standards/wms"">WMS OGC</a> peuvent être représentés. Un outil de test simple est à disposition sur le site suivant: <a href=""//www.geo.admin.ch/internet/geoportal/fr/home/services/geoservices/ech0056.html"">Checkservice</a>
+62,42,Importer,"Pour importer un WMS ou un KML, entrez l’URL dans le champ et cliquez sur « Connecter ». Vous pouvez également sélectionner un URL dans la liste des WMS disponibles en cliquant sur l’icône &#9660; (à gauche du champ). Si le KML est enregistré localement, sélectionnez l’onglet « Local » et donnez le chemin du fichier au moyen de « Parcourir ». Ensuite, cliquez sur « Charger ».<br><br>
+<img src=""/help/img/62f_new.png""><br /><br />
+<h2>WMS Import</h2>
+Seuls des services WMS qui supportent la ""Projection Suisse EPSG 21781"" et qui respectent le standard <a href=""http://www.opengeospatial.org/standards/wms"">WMS OGC</a> peuvent être représentés. Un outil de test simple est à disposition sur le site suivant: <a href=""//www.geo.admin.ch/internet/geoportal/fr/home/services/geoservices/ech0056.html"">Checkservice</a>
 Les jeux de données WMS sont généralement visible à une échelle déterminée, de ce fait, il faut être centré dans la portion de carte correspondante et également choisir l'échelle appropriée.
 La rapidité de représentation des jeux de données WMS, de même que leur disponibilité, sont dépendantes des responsables de ces jeux de données.
 Les jeux de données peuvent être sauvegardés au format PDF en utilisant la fonction ""Impression"".
 De même, un jeux de données peut être transmis par email au moyen de la fonction Permalink ""Lien"".
-Veuillez vous conformer aux conditions d'utilisation des jeux de données du fournisseur.",,/help/img/62f.png
-63,43,KML Import,"<p>Il est désormais possible de visualiser des fichers KML enregistré online (via URL) ou localement (cette fonctionalité n’est pas disponible avec IE).</p><p>Seuls les fichiers KML ne contenant aucune erreur et qui respectent le   
-<a href =""http://opengeospatial.org/standards/kml""><b>standard KML OGC</b></a></b> peuvent être représentés.</p><p>Un outil de test simple à disposition: <a href=""http://kmlvalidator.com/home.htm""><b>Lien</b></a></p>
-<img src=""/help/img/64f.png""><br /><br /><h2>Generation de KML et mise en ligne</h2><p><b>Comment créer un fichier .kml</b></p><p><a href=""https://www.swisstopo.admin.ch/fr/cartes-donnees-en-ligne/calculation-services/kml.html"">Générateur de fichier KML en ligne</a><br>
-<a href=""/help/?id=66&lang=fr"">Dessin</a></p>
-</p><p><b>Comment publier un fichier .kml en ligne</b><br />Afin de distribuer vos propres fichiers KML au moyen d’un URL stable sans avoir votre propre serveur, vous pouvez utiliser les services libres suivants:</p><p><b>1. <u>Publier avec Google Docs</u></b></p>
-<ul><li>Créer un acompte: <a href=""https://docs.google.com"">https://docs.google.com</a></li>
-<li>Téléverser (Uploader) votre fichier: cliquer sur bouton ""Upload > Files…""</li></ul>
+Veuillez vous conformer aux conditions d'utilisation des jeux de données du fournisseur.<br>
+<h2>KML Import</h2>
+<p>Il est possible de visualiser des fichers KML enregistré online (via URL) ou localement (cette fonctionalité n’est pas disponible avec IE).</p>
+<p>Seuls les fichiers KML ne contenant aucune erreur et qui respectent le   
+   <a href =""http://opengeospatial.org/standards/kml""><b>standard KML OGC</b></a></b> peuvent être représentés.
+</p>
+<p>Un outil de test simple à disposition: <a href=""http://www.feedvalidator.org""><b>Lien</b></a></p>
+<br>
+<h2>Generation de KML et mise en ligne</h2>
+<p><b>Comment créer un fichier .kml</b></p>
+<p><a href=""https://www.swisstopo.admin.ch/fr/cartes-donnees-en-ligne/calculation-services/kml.html"">Générateur de fichier KML en ligne</a><br>
+   <a href=""/help/?id=66&lang=fr"">Dessin</a>
+</p>
+</p>
+<p><b>Comment publier un fichier .kml en ligne</b><br />Afin de distribuer vos propres fichiers KML au moyen d’un URL stable sans avoir votre propre serveur, vous pouvez utiliser les services libres suivants:</p>
+<p><b>1. <u>Publier avec Google Docs</u></b></p>
+<ul>
+   <li>Créer un acompte: <a href=""https://docs.google.com"">https://docs.google.com</a></li>
+   <li>Téléverser (Uploader) votre fichier: cliquer sur bouton ""Upload > Files…""</li>
+</ul>
 <img src=""/help/img/upload.png"">
-<ul><li>Dans la fenêtre ""File Upload"" sélectionnez votre fichier KML et cliquez sur ""Open""</li> 
-<li>Dans la fenêtre ""Upload settings"" décochez ""Convert documents, presentations, spreadsheets, and drawings to the corresponding Google Docs format"" et ""Convert text from PDF and image files to Google documents"" puis cliquez sur ""Start upload""</li> 
-<li>Sélectionnez votre document en activant la case à cocher sur la gauche et cliquez sur le bouton ""Share"" puis dans la fenêtre ""Sharing settings"" appuyez sur ""Change…"". Sélectionnez ""Public on the web"" ou ""Anyone with the link"" et cliquez sur ""Save"", copiez ensuite le ""Link to share"" puis cliquez sur ""Done""</li></ul>
+<ul>
+   <li>Dans la fenêtre ""File Upload"" sélectionnez votre fichier KML et cliquez sur ""Open""</li>
+   <li>Dans la fenêtre ""Upload settings"" décochez ""Convert documents, presentations, spreadsheets, and drawings to the corresponding Google Docs format"" et ""Convert text from PDF and image files to Google documents"" puis cliquez sur ""Start upload""</li>
+   <li>Sélectionnez votre document en activant la case à cocher sur la gauche et cliquez sur le bouton ""Share"" puis dans la fenêtre ""Sharing settings"" appuyez sur ""Change…"". Sélectionnez ""Public on the web"" ou ""Anyone with the link"" et cliquez sur ""Save"", copiez ensuite le ""Link to share"" puis cliquez sur ""Done""</li>
+</ul>
 <img src=""/help/img/sharing.png"">
-<ul><li>Modifiez le lien copié en remplaçant le mot ""leaf"" par ""uc"" entre ""https://docs.google.com/"" et ""?id=…"", le lien est maintenant prêt à être utilisé dans la fonction ""KML import"" de map.geo.admin.ch</li> </ul><p>Exemple:<br /><a href=""//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||https://docs.google.com/uc?id=0B4uRuJ1hajZmZjJlZDNiMGItNmU0Zi00N2FlLWJiZDItM2UwZDA3YmQwYzk3&hl=fr&layers_opacity=1&layers_visibility=true"">//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||https://docs.google.com/uc?id=0B4uRuJ1hajZmZjJlZDNiMGItNmU0Zi00N2FlLWJiZDItM2UwZDA3YmQwYzk3&hl=fr&layers_opacity=1&layers_visibility=true</a></p><p><b>2. <u>Publier avec Dropbox</u></b></p>
-<ul><li>Créer un acompte: <a href=""http://www.dropbox.com"">http://www.dropbox.com</a> (Vous pouvez l'installer ou l'utiliser uniquement à travers l'interface du site Web)</li> 
-<li>Déplacez votre fichier KML dans le dossier publique et cliquez sur votre fichier et un menu va s'ouvrir. Choisisez ""Dropbox>Copier le lien publique"" (si Dropbox est installé sur votre ordinateur) ou ""Plus>Copier le lien publique"" (sur l'interface Web). (Plus d'information à propos des documents partagés sur Dropbox: <a href=""http://www.dropbox.com/help/16"">http://www.dropbox.com/help/16</a>
-<li>Modifiez le lien: ajoutez le mot dl=1: http://dl.dropbox.com/u/44486020/swisstopo.kml?<b>dl=1</b>. </li>
-<li>Le lien peut être utilisé dans la fonction ""KML import"" de map.geo.admin.ch</li></ul><p>Exemple:<br /><a href=""//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||http://dl.dropbox.com/u/44486020/swisstopo.kml&layers_opacity=1&layers_visibility=true"">//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||http://dl.dropbox.com/u/44486020/swisstopo.kml&layers_opacity=1&layers_visibility=true</a></p><p><b>3. <u>Publier avec Gist</u></b></p><p><a href=""https://github.com/"">Github</a> mis à disposition par <a href=""https://gist.github.com/"">Gist</a>.</p>
-<ul><li>Glissez votre fichier KML dans la fenêtre de texte de Gist (1). Le code est alors visible dans cette zone.</li>
-<li>Cliquez sur “Create Public Gist” (2)</li>
-<li>Cliquez sur “Raw” (3)</li>
-<li>Un URL avec votre fichier KML a été généré</li>
-<li>Vous pouvez maintenant importer et visualiser votre KML dans map.geo.admin.ch en utilisant cet URL (5). De plus vous pouvez créer des permaliens map.geo.admin.ch avec votre KML et le partager avec d’autres utilisateurs ou sur votre propre page web.</li></ul>
+<ul>
+   <li>L'URL copié doit être modifié comme suit pour que le fichier KML puisse être importé sur map.geo.admin.ch avec l'outil ""Importer"": le lien avant l'ID ""https://drive.google.com/file/d/"" doit être remplacé par ""https://drive.google.com/uc?export=download&id="" .<br><br><a style=""float:left"" href=""https://s.geo.admin.ch/72b1f22cc1""><b>Exemple</b></a></li>
+</ul>
+
+<p><b>2. <u>Publier avec Dropbox</u></b></p>
+<ul>
+   <li>Créer un acompte: <a href=""http://www.dropbox.com"">http://www.dropbox.com</a> (Vous pouvez l'installer ou l'utiliser uniquement à travers l'interface du site Web)</li>
+   <li>Déplacez votre fichier KML dans le dossier publique et cliquez sur votre fichier et un menu va s'ouvrir. Choisisez ""Dropbox>Copier le lien publique"" (si Dropbox est installé sur votre ordinateur) ou ""Plus>Copier le lien publique"" (sur l'interface Web). (Plus d'information à propos des documents partagés sur Dropbox: <a href=""http://www.dropbox.com/help/16"">http://www.dropbox.com/help/16</a>
+   <li>Modifiez le lien: ajoutez le mot dl=1: http://dl.dropbox.com/u/44486020/swisstopo.kml?<b>dl=1</b>. </li>
+   <li>Le lien peut être utilisé dans la fonction ""KML import"" de map.geo.admin.ch</li>
+</ul>
+<p>Exemple:<br /><a href=""//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||http://dl.dropbox.com/u/44486020/swisstopo.kml&layers_opacity=1&layers_visibility=true"">//map.geo.admin.ch/?Y=600769&X=198300.5&zoom=7&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-grau&layers=KML||http://dl.dropbox.com/u/44486020/swisstopo.kml&layers_opacity=1&layers_visibility=true</a></p>
+<p><b>3. <u>Publier avec Gist</u></b></p>
+<p><a href=""https://github.com/"">Github</a> mis à disposition par <a href=""https://gist.github.com/"">Gist</a>.</p>
+<ul>
+   <li>Glissez votre fichier KML dans la fenêtre de texte de Gist (1). Le code est alors visible dans cette zone.</li>
+   <li>Cliquez sur “Create Public Gist” (2)</li>
+   <li>Cliquez sur “Raw” (3)</li>
+   <li>Un URL avec votre fichier KML a été généré</li>
+   <li>Vous pouvez maintenant importer et visualiser votre KML dans map.geo.admin.ch en utilisant cet URL (5). De plus vous pouvez créer des permaliens map.geo.admin.ch avec votre KML et le partager avec d’autres utilisateurs ou sur votre propre page web.</li>
+</ul>
 <img src=""/help/img/64all.png"">",,/help/img/blank.png
 65,44,Comparer,"Il est possible de comparer deux jeux de données. Sélectionner ""Comparer"" dans les outils et le curseur apparait en rouge au centre de la carte: 
 
