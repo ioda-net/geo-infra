@@ -30,6 +30,11 @@ set -u
 # Declare help
 declare -A HELP
 
+# Force LANG and LANGUAGES to en_US.UTF-8
+# Fix issue #26 for tests
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
 # Load config
 source config/config.dist.sh
 source config/config.sh 2> /dev/null || :
