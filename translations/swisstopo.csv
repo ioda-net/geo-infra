@@ -168,10 +168,10 @@ gewiss,Wasser,Waters,Eaux,Acque,Aua
 gewiss_service_link_label,www.bafu.admin.ch/karten-wasser,www.bafu.admin.ch/karten-wasser,www.bafu.admin.ch/cartes-eaux,www.bafu.admin.ch/cartes-eaux,www.bafu.admin.ch/karten-wasser
 gewiss_service_link_href,http://www.bafu.admin.ch/wasser/13462/13496/15866/index.html?lang=de,http://www.bafu.admin.ch/wasser/13462/13496/15866/index.html?lang=de,http://www.bafu.admin.ch/wasser/13462/13496/15866/index.html?lang=fr,http://www.bafu.admin.ch/wasser/13462/13496/15866/index.html?lang=fr,http://www.bafu.admin.ch/wasser/13462/13496/15866/index.html?lang=de
 topic_gewiss_tooltip,Gewässerinformationen,water related issues,informations concernant les eaux,informazioni sulle acque,Infurmaziuns da las auas
-emapis,Ländliche Entwicklung,Ländliche Entwicklung,Développement rural,Sviluppo rurale,Ländliche Entwicklung
+emapis,Ländliche Entwicklung,Rural development,Développement rural,Sviluppo rurale,Svilup rural
 emapis_service_link_label,info@blw.admin.ch,info@blw.admin.ch,info@blw.admin.ch,info@blw.admin.ch,info@blw.admin.ch
 emapis_service_link_href,mailto:info@blw.admin.ch,mailto:info@blw.admin.ch,mailto:info@blw.admin.ch,mailto:info@blw.admin.ch,mailto:info@blw.admin.ch
-topic_emapis_tooltip,Strukturverbesserungen,Strukturverbesserungen,Améliorations structurelles,Miglioramenti strutturali,Meglieraziuns da structura
+topic_emapis_tooltip,Strukturverbesserungen,Structural upgrades,Améliorations structurelles,Miglioramenti strutturali,Meglieraziuns da structura
 measure,Messen,Measure,Mesurer,Misurazione,Mesirar
 measure_instruction,Erfassen Sie eine Polylinie...,Digitize a polyline...,Digitalisez une polyligne...,Digitalizzare una polilinea...,Digitalisai ina polilingia ...
 distance_label,Distanz,Distance,Distance,Distanza,Distanza
@@ -207,7 +207,7 @@ draw_layer_label,Zeichnung,Drawing,Dessin,Disegno,Dissegn
 draw_text_placeholder,kein Titel,no title,pas de titre,Nessun titolo,Betg titel
 modify_color_label,Farbe,Color,Couleur,Colore,Colur
 modify_text_label,Text,Text,Texte,Nota,Etichetta
-add_text_label,Text zu hinzufügen,Display a text,Afficher un texte,Aggiungere nota,Text zu hinzufügen
+add_text_label,Text zu hinzufügen,Display a text,Afficher un texte,Aggiungere nota,Agiuntar in text
 modify_text_color_label,Text Farbe,Text color,Couleur du texte,Colore nota,Etichetta Colur
 confirm_remove_all_features,Wollen Sie wirklich alle Objekte löschen?,Do you really want to delete all features?,Voulez-vous vraiment effacer tous les objets?,Volete veramente cancellare tutti gli oggetti?,Vulais Vus propi stizzar tut ils objects?
 confirm_remove_selected_features,Wollen Sie wirklich alle selektierten Objekte löschen?,Do you really want to delete the selected features?,Voulez-vous vraiment effacer les objets sélectionnés?,Volete veramente cancellare gli oggetti selezionati?,Stizzar tut ils objects?
@@ -376,7 +376,7 @@ modify_existing_vertex_linepolygon,Klick um Punkt zu löschen (2 Punkte im Minim
 modify_existing_vertex_measure,Klick um Punkt zu löschen (2 Punkte im Minimum).<br/> Verschieben Punkt: klick und ziehen ,Click to delete the point (2 points min.)<br/>Click then drag to move the point,Cliquer pour supprimer le point (2 points min.)<br/>Cliquer puis bouger le curseur pour déplacer le point,Cliccare per eliminare il punto (2 punti min.)<br/>Cliccare quindi trascinare per spostare il punto,Cliccar per stizzar il punct (2 puncts minimum).</br> Spustar punct :cliccar e trair
 modify_new_vertex_linepolygon,Klick um Punkt hinzuzufügen.<br/> Verschieben Punkt: klick und ziehen ,Click to add a point<br/>Click then drag to move the point,Cliquer pour ajouter un point<br/>Cliquer puis bouger le curseur pour déplacer le point,Cliccare per aggiungere un punto.<br/>Cliccare quindi trascinare per spostare il punto,Cliccar per agiuntar punct. Spustar punct :cliccar e trair
 modify_new_vertex_measure,Klick um Punkt hinzuzufügen.<br/> Verschieben Punkt: klick und ziehen ,Click to add a point<br/>Click then drag to move the point, Cliquer pour ajouter un point<br/>Cliquer puis bouger le curseur pour déplacer le point,Cliccare per aggiungere un punto.<br/>Cliccare quindi trascinare per spostare il punto,Cliccar per agiuntar punct. Spustar punct :cliccar e trair
-draw_delete_last_point,Letzter Punkt löschen: DEL Taste ,Press DEL to remove the last point drawn,Appuyer sur DEL pour effacer le dernier point,Premere DEL per rimuovere l'ultimo punto,Letzter Punkt löschen: DEL Taste 
+draw_delete_last_point,Letzter Punkt löschen: DEL Taste ,Press DEL to remove the last point drawn,Appuyer sur DEL pour effacer le dernier point,Premere DEL per rimuovere l'ultimo punto,Stizzar l'ultim punct: Tasta DEL 
 layers_displayed,Dargestellte Karten,Maps displayed,Cartes affichées,Mappe visualizzate,Chartas preschentadas
 help_search_data_link,Nach weiteren Karten suchen?,Looking for more maps?,Cherchez-vous d'autres cartes?,Cercate altre mappe?,Tschertgar ulteriuras chartas?
 help_search_data_title,Suche nach Karten,Search for maps,Recherche de cartes,Ricerca di mappe,Tschertgar charta 
@@ -391,13 +391,13 @@ no_more_information,Keine weiteren Informationen,No further information,Pas d'au
 3d_ie11_alert,"Sie verwenden InternetExplorer <= 11: Die 3D Darstellung wird nicht performant sein. Bitte nutzen Sie die neueste Version von Microsoft EDGE, Firefox oder Chrome um beste Ergebnisse zu erhalten","You are using InternetExplorer <= 11 : 3D rendering will be slow. Please use latest Version of Microsoft EDGE, Firefox or Chrome to experience maximum performance","Vous utilisez Internet Explorer ≤ 11 : la représentation 3D ne sera pas performante. Veuillez SVP utiliser la dernière version de Microsoft EDGE, Firefox ou Chrome pour obtenir un résultat optimal.","State usando InternetExplorer versione 11 o più vecchia. La visualizzazione 3D sarà lenta. Usate se possibile l’ultima versione di Microsoft EDGE, Firefox o Chrome per avere prestazioni ottimali.","Vus utilisais in InternetExplorer <= 11: La preschentaziun en 3D na vegn betg ad esser performanta. Utilisai per plaschair la versiun la pli nova da Microsoft EDGE, da Firefox u da Chrome per survegnir ils megliers resultats."
 3d_render_error,"Systemvorraussetzung für 3D Ansicht nicht erfüllt. Damit die 3D-Darstellung funktioniert, muss Ihr Gerät folgende Anforderungen erfüllen.Nutzen Sie die neueste Version von Microsoft EDGE, Firefox oder Chrome. Verwendung einer aktuellen Grafikkarte mit aktuellen Treibern. .","Requirements for 3D not met. To use the 3D mode your computer needs:Latest Version of Microsoft EDGE, Firefox or Chrome and up-to-date video card hardware and drivers.","Conditions requises pour la vue 3D ne sont pas satisfaites. Pour bénéficier de toutes les fonctionnalités 3D votre ordinateur doit respecter la configuration requise suivante :utiliser la dernière version de Microsoft EDGE, Firefox ou Chrome et une carte graphique et des pilotes à jour.","Requisiti per la vista 3D non soddisfatti. Per utilizzare la versione completa 3D il computer deve soddisfare i seguenti requisiti: Usate l’ultima versione di Microsoft EDGE, Firefox o Chrome.Hardware e driver della scheda video aggiornati. ","Il sistem n'ademplescha betg las premissas per la vista da 3D. Per che la preschentaziun en 3D funcziuneschia, sto Voss apparat ademplir las suandantas pretensiuns. Utilisai la versiun la pli nova da Microsoft EDGE, da Firefox u da Chrome. Utilisaziun d'ina charta grafica actuala cun drivers actuals."
 shop_order,Bestellen,Order,Commander,Ordinare,Empustar
-tile,Kartenblatt,Sheet,Feuille,Foglio,Kartenblatt
-mapsheet,Kartenblatt,Sheet,Feuille,Foglio,Kartenblatt
-commune,Gemeinde,City,Commune,Comune,Gemeinde
-district,Bezirk,District,District,Distretto,Bezirk
-canton,Kanton,Canton,Canton,Cantone,Kanton
-rectangle,Rechteck,Extent,Rectangle,Rettangolo,Rechteck
-whole,Ganzer Datensatz,All,Jeu de données complet,Set di dati completo,Ganzer Datensatz
+tile,Kartenblatt,Sheet,Feuille,Foglio,Fegl da la charta
+mapsheet,Kartenblatt,Sheet,Feuille,Foglio,Fegl da la charta
+commune,Gemeinde,City,Commune,Comune,Vischnanca
+district,Bezirk,District,District,Distretto,District
+canton,Kanton,Canton,Canton,Cantone,Chantun
+rectangle,Rechteck,Extent,Rectangle,Rettangolo,Rectangul
+whole,Ganzer Datensatz,All,Jeu de données complet,Set di dati completo,Entira unitad da datas
 3d_overlay_warning,"Wichtiger Hinweis: 2D-Daten in 3D.<br/>Sie betrachten jetzt Daten, die für die Darstellung in 3D nicht geeignet sind. Dies gilt insbesondere für Karten und Luftbilder. Diese werden in steilem Gelände bei der Nutzung in 3D verzerrt dargestellt
 ","Important NOTE: 2D data in 3D.<br/>You are now looking at data that are not suited for 3D viewing. This is especially true for maps and aerial photographs. In steep terrain they appear distorted when 3D is in use
 ","Note importante: les données 2D en 3D.<br/>Vous utilisez désormais des données qui ne sont pas adaptées à la visualisation en 3D. Ceci est valable pour les cartes et les photographies aériennes. Celles-ci apparaissent déformées en terrain escarpé dans l'utilisation en 3D.
@@ -413,15 +413,15 @@ geoloc_time_out,Ein timeout ihres Gerätes bei der Bestimmung der Position wurde
 geoloc_unknown,"Aufgrund eine unbekannten Fehlers war die Positionsbestimmung nicht erflogreich. Prüfen sie die Einstellungen für Lokalisierung, Privatsphäre und Firewall ihres Gerätes.","Sorry, for an unknow reason the geolocation service doesn't work. Check your device location, privacy and firewalls settings","Désolé, pour une raison inconnue la service de géolocalisation ne fonctionne pas. Vérifiez les paramètres de ce  service, du mode privé et du firewall.","Spiacente, per una ragione sconosciuta il servizio di geolocalizzazione non funziona. Controllate le impostazioni del dispositivo per la geolocalizzazione, la privacy ed il firewall.","Pervia d'in sbagl nunenconuschent n'ha la posiziun betg pudì vegnir fixada cun success. Controllai la configuraziun per la localisaziun, la sfera privata ed il firewall da Voss apparat."
 max_10_mb,max. 10 Mo,max. 10 MB,max. 10 Mo,max. 10 MB,max. 10 Mo
 max_20_mb,max. 20 Mo,max. 20 MB,max. 20 Mo,max. 20 MB,max. 20 Mo
-north,Nord,North,Nord,Nord,Nord
-south,Süd,South,Sud,Sud,Süd
-west,West,West,Ouest,Ovest,West
-east,Ost,East,Est,Est,Ost
-shop_draw_rectangle,Zeichnen Sie ein Rechteck,Draw a rectangle,Dessiner un rectangle,Disegnare un rettangolo,Zeichnen Sie ein Rechteck
+north,Nord,North,Nord,Nord,nord
+south,Süd,South,Sud,Sud,sid
+west,West,West,Ouest,Ovest,vest
+east,Ost,East,Est,Est,ost
+shop_draw_rectangle,Zeichnen Sie ein Rechteck,Draw a rectangle,Dessiner un rectangle,Disegnare un rettangolo,Dissegnai in rectangul u empleni ils champs
 shop_or_fill,oder füllen Sie die Felder aus,or fill the inputs,ou remplisser les champs,oppure riempire i campi,oder füllen Sie die Felder aus
-area,Fläche,Area,Aire,Zona,Fläche
-shop_choose,Perimeter wählen,Choose the perimeter,Choisir le périmètre,Selezionare il perimetro,Perimeter wählen
-offline_cache_obsolete,Eine aktuellere Version der gespeicherten Offline Karte steht zur Verfügung. Löschen Sie die aktuell gespeicherte Karte über den Offline Knopf. Speichern Sie dann die neuere Karte neu ab.,A newer version of your stored offline map is available. Please delete your stored map via the offline button and save the desired map extent.,Une nouvelle version des données sauvergardées pour un usage hors-ligne est disponible. Veuillez supprimer les données via le bouton offline et sauvergarder une nouvelle version.,"Una nuova versione dei dati salvati per l'uso offline è ora disponibile. Vogliate eliminare i vecchi dati grazie al mottone ""Offline"" e salvare nuovamente la zona desiderata.",Eine aktuellere Version der gespeicherten Offline Karte steht zur Verfügung. Löschen Sie die aktuell gespeicherte Karte über den Offline Knopf unten rechts. Speichern Sie dann die neuere Karte neu ab.
+area,Fläche,Area,Aire,Zona,Surfatscha
+shop_choose,Perimeter wählen,Choose the perimeter,Choisir le périmètre,Selezionare il perimetro,Tscherner il perimeter
+offline_cache_obsolete,Eine aktuellere Version der gespeicherten Offline Karte steht zur Verfügung. Löschen Sie die aktuell gespeicherte Karte über den Offline Knopf. Speichern Sie dann die neuere Karte neu ab.,A newer version of your stored offline map is available. Please delete your stored map via the offline button and save the desired map extent.,Une nouvelle version des données sauvergardées pour un usage hors-ligne est disponible. Veuillez supprimer les données via le bouton offline et sauvergarder une nouvelle version.,"Una nuova versione dei dati salvati per l'uso offline è ora disponibile. Vogliate eliminare i vecchi dati grazie al mottone ""Offline"" e salvare nuovamente la zona desiderata.",Ina versiun pli actuala da la charta offline arcunada stat a disposiziun. Stizzai la charta arcunada actualmain cun il buttun offline giudim a dretga. Arcunai alura da nov la charta pli nova.
 draw_export,Export,Export,Exporter,Export,Export
 add,Hinzufügen,Add,Ajouter,Aggiungere,Agiuntar
 add_link,Link hinzufügen,Add a link,Ajouter un lien,Aggiungere un link,Agiuntar in link
@@ -436,42 +436,42 @@ astra,ASTRA,FEDRO,OFROU,USTRA,UVIAS
 astra_service_link_href,http://www.astra.admin.ch,http://www.astra.admin.ch,http://www.ofrou.admin.ch,http://www.ustra.admin.ch,http://www.astra.admin.ch
 astra_service_link_label,Bundesamt für Strassen,Federal roads office,Office fédéral des routes,Ufficio federale delle strade,Uffizi federal da vias
 topic_astra_tooltip,Bundesamt für Strassen,Federal roads office,Office fédéral des routes,Ufficio federale delle strade,Uffizi federal da vias
-profile_elevation_difference,Höhendifferenz Start-Ende,Altitude difference start - end,Dénivellation départ-fin,Dislivello start-fine,Höhendifferenz Start-Ende
-profile_elevation_up,Aufstieg,Ascent,Montée,Salita,Aufstieg
-profile_elevation_down,Abstieg,Descent,Descente,Discesa,Abstieg
-profile_poi_up,Höchster Punkt,Highest point,Point culminant,Punto più alto,Höchster Punkt
-profile_poi_down,Tiefster Punkt,Lowest point,Point le plus bas,Punto più basso,Tiefster Punkt
-profile_slope_distance,Wegstrecke,Path distance,Longeur chemin ,Lunghezza strada ,Wegstrecke
-profile_distance,Luftlinie,Linear distance,Distance à vol d'oiseau,Lingia directa,Luftlinie
-profile_hike_time,Marschzeit,Walking time,Temps de marche à pied,Tempo di percorrenza,Marschzeit
+profile_elevation_difference,Höhendifferenz Start-Ende,Altitude difference start - end,Dénivellation départ-fin,Dislivello start-fine,Differenza d'autezza cumenzament-fin
+profile_elevation_up,Aufstieg,Ascent,Montée,Salita,Ascensiun
+profile_elevation_down,Abstieg,Descent,Descente,Discesa,Descensiun
+profile_poi_up,Höchster Punkt,Highest point,Point culminant,Punto più alto,Punct il pli aut
+profile_poi_down,Tiefster Punkt,Lowest point,Point le plus bas,Punto più basso,Punct il pli bass
+profile_slope_distance,Wegstrecke,Path distance,Longeur chemin ,Lunghezza strada ,Traject
+profile_distance,Luftlinie,Linear distance,Distance à vol d'oiseau,Lingia directa,Lingia directa
+profile_hike_time,Marschzeit,Walking time,Temps de marche à pied,Tempo di percorrenza,Temp da viandar
 geolocation,Geolocation,Geolocation,Géolocalisation,Geolocalizzazione,Geolocation
 contextpopup_lv03_url,//www.swisstopo.admin.ch/de/wissen-fakten/geodaesie-vermessung/bezugsrahmen/lokal/lv03.html,//www.swisstopo.admin.ch/en/knowledge-facts/surveying-geodesy/reference-frames/local/lv03.html,//www.swisstopo.admin.ch/fr/connaissances-faits/mensuration-geodesie/cadres-de-reference/local/mn03.html,//www.swisstopo.admin.ch/it/conoscenze-fatti/misurazione-geodesia/quadri-di-riferimento/locale/mn03.html,//www.swisstopo.admin.ch/de/wissen-fakten/geodaesie-vermessung/bezugsrahmen/lokal/lv03.html
 contextpopup_lv95_url,//www.swisstopo.admin.ch/de/wissen-fakten/geodaesie-vermessung/bezugsrahmen/lokal/lv95.html,//www.swisstopo.admin.ch/en/knowledge-facts/surveying-geodesy/reference-frames/local/lv95.html,//www.swisstopo.admin.ch/fr/connaissances-faits/mensuration-geodesie/cadres-de-reference/local/mn95.html,//www.swisstopo.admin.ch/it/conoscenze-fatti/misurazione-geodesia/quadri-di-riferimento/locale/mn95.html,//www.swisstopo.admin.ch/de/wissen-fakten/geodaesie-vermessung/bezugsrahmen/lokal/lv95.html
-test_host_warning,TESTSEITE – NICHT TEILEN -  NICHT FÜR PRODUKTIVEN GEBRAUCH<br/>Diese Seites ist für nur für Testzweck und sollte nicht in produktivem Umfeld eingesetzt werden. Es existiert absolut keine Garantie für den Gebrauch.,TESTSITE – DO NOT-SHARE -  NOT FOR OPERATIONAL USE<br/>This site is for testing purposes only. It's not meant for operational use and there's no guarantee whatsoever.,TESTSITE – DO NOT-SHARE -  NOT FOR OPERATIONAL USE<br/>This site is for testing purposes only. It's not meant for operational use and there's no guarantee whatsoever.,TESTSITE – DO NOT-SHARE -  NOT FOR OPERATIONAL USE<br/>This site is for testing purposes only. It's not meant for operational use and there's no guarantee whatsoever.,TESTSEITE – NICHT TEILEN -  NICHT FÜR PRODUKTIVEN GEBRAUCH<br/>Diese Seites ist für nur für Testzweck und sollte nicht in produktivem Umfeld eingesetzt werden. Es existiert absolut keine Garantie für den Gebrauch.
+test_host_warning,TESTSEITE – NICHT TEILEN -  NICHT FÜR PRODUKTIVEN GEBRAUCH<br/>Diese Seites ist für nur für Testzweck und sollte nicht in produktivem Umfeld eingesetzt werden. Es existiert absolut keine Garantie für den Gebrauch.,TESTSITE – DO NOT-SHARE -  NOT FOR OPERATIONAL USE<br/>This site is for testing purposes only. It's not meant for operational use and there's no guarantee whatsoever.,TESTSITE – DO NOT-SHARE -  NOT FOR OPERATIONAL USE<br/>This site is for testing purposes only. It's not meant for operational use and there's no guarantee whatsoever.,TESTSITE – DO NOT-SHARE -  NOT FOR OPERATIONAL USE<br/>This site is for testing purposes only. It's not meant for operational use and there's no guarantee whatsoever.,PAGINA DA TEST ? BETG PARTER – BETG PER IL DIEVER PRODUCTIV<br/>Questa pagina è fatga mo per intents da test e na duess betg vegnir duvrada en conturns productivs. I na dat absolutamain nagina garanzia per il diever.
 drop_invalid_url,URL ist ungültig.,URL is not valid.,URL non valide.,URL non valido,URL è nunvalid
 approx_abbr,ca.,approx.,env.,ca.,ca.
 shop_msg_title,swisstopo Onlineshop,swisstopo onlineshop,Shop en ligne swisstopo,swisstopo online shop,swisstopo Onlineshop
-shop_msg_body,"Klicken Sie auf die Karte, um den gewünschten Perimeter auszuwählen.",Click on the map to select the perimeter to order.,Veuillez cliquer sur la carte pour sélectionner le périmètre de commande.,Cliccare sulla carta per selezionare il perimetro della comanda.,"Klicken Sie auf die Karte, um den gewünschten Perimeter auszuwählen"
-never_show_again,Diese Meldung nicht mehr anzeigen.,Don't show this message again.,Ne plus afficher ce message.,Non mostrare più questo messaggio.,Diese Meldung nicht mehr anzeigen.
-tilt3d_disabled,Dieser Hintergrund kann nicht in 3D verwendet werden,"Sorry, you can't use 3d with this background",Vous ne pouvez pas utiliser ce fond de plan en 3d,Non potete usare la funzione 3d con questo sfondo,Dieser Hintergrund kann nciht in 3D verwendet werden
+shop_msg_body,"Klicken Sie auf die Karte, um den gewünschten Perimeter auszuwählen.",Click on the map to select the perimeter to order.,Veuillez cliquer sur la carte pour sélectionner le périmètre de commande.,Cliccare sulla carta per selezionare il perimetro della comanda.,Cliccai sin la charta per tscherner il perimeter giavischà.
+never_show_again,Diese Meldung nicht mehr anzeigen.,Don't show this message again.,Ne plus afficher ce message.,Non mostrare più questo messaggio.,Betg pli mussar questa infurmaziun.
+tilt3d_disabled,Dieser Hintergrund kann nicht in 3D verwendet werden,"Sorry, you can't use 3d with this background",Vous ne pouvez pas utiliser ce fond de plan en 3d,Non potete usare la funzione 3d con questo sfondo,Quest fund na po betg vegnir utilisà en 3D.
 tilt3d_active,Wechsle zu 2D Darstellung,Switch to 2d,Passer en 2d,"Passa a 2d
-",Wechsle zu 2D Darstellung
-tilt3d_inactive,Wechsle zu 3D Darstellung,Switch to 3d,Passer en 3d,Passa a 3d,Wechsle zu 3D Darstellung
-geoloc_start_tracking_heading,Zeige Position und Richtung an,Start tracking your position and your heading,Démarrer le suivi de votre position et de votre direction,Inizia a registrare la posizione e la direzione,Zeige Position und Richtung an
-geoloc_stop_tracking,Schalte Positionierung aus,Stop tracking your position,Arréter le suivi de votre position,Interrompi la registrazione della posizione,Schalte Positionierung aus
-geoloc_start_tracking,Schalte Positionierung ein,Start tracking your position,Démarrer le suivi de votre position,Inizia a registrare la posizione,Schalte Positionierung ein
-zoom_in,Vergrössere Kartenausschnitt,Zoom in,Zoomer plus,Zoom in avanti,Vergrössere Kartenausschnitt
-zoom_out,Verkleinere Kartenausschnitt,Zoom out,Zoomer moins,Zoom indietro,Verkleinere Kartenausschnitt
-bg_toggle,Zeige Hintergrundauswahl an,Toggle the list of backgrounds,Afficher/masquer la liste des fonds de plan,Attiva la lista degli sfondi,Zeige Hintergrundauswahl an
-rotate_reset,Setze Ausrichtung Karte zurück auf Norden,Reset rotation to north,Réinitialiser l'orientation de la carte au nord,Resetta l'orientamento verso Nord,Setze Ausrichtung Karte zurück auf Norden
-rotate_right,Drehe nach rechts,Rotate right,Rotation à droite,Ruota a destra,Drehe nach rechts
-rotate_left,Drehe nach links,Rotate left,Rotation à gauche,Ruota a sinistra,Drehe nach links
-tilt_reset,Setze Schrägdarstellung zurück,Reset tilt,Réinitilaiser l'inclinaison,Resetta l'inclinazione,Setze Schrägdarstellung zurück
-tilt_up,Neige Darstellung nach oben,Tilt up,Incliner vers le haut,Inclina verso l'alto,Neige Darstellung nach oben
-tilt_down,Neige Darstellung nach unten,Tilt down,Incliner vers le bas,Inclina verso il basso,Neige Darstellung nach unten
-tilt_up_disabled,Es kann nicht weiter nach oben geneigt werden,You can't tilt more,Vous ne pouvez incliner plus,Non è possibile inclinare di più,Es kann nicht weiter nach oben geneigt werden
-tilt_down_disabled,Es kann nicht weiter nach unten geneigt werden,You can't tilt less,Vous ne pouvez incliner moins,Non è possibile inclinare di meno,Es kann nicht weiter nach unten geneigt werden
-offline_show,Zeige Offline Menu,Show offline menu,Afficher le menu hors-ligne,Mostra il menu offline,Zeige Offline Menu
+",Midar a la preschentaziun en 2D
+tilt3d_inactive,Wechsle zu 3D Darstellung,Switch to 3d,Passer en 3d,Passa a 3d,Midar a la preschentaziun en 3D
+geoloc_start_tracking_heading,Zeige Position und Richtung an,Start tracking your position and your heading,Démarrer le suivi de votre position et de votre direction,Inizia a registrare la posizione e la direzione,Mussar la posiziun e la direcziun
+geoloc_stop_tracking,Schalte Positionierung aus,Stop tracking your position,Arréter le suivi de votre position,Interrompi la registrazione della posizione,Deactivar il posiziunament
+geoloc_start_tracking,Schalte Positionierung ein,Start tracking your position,Démarrer le suivi de votre position,Inizia a registrare la posizione,Activar il posiziunament
+zoom_in,Vergrössere Kartenausschnitt,Zoom in,Zoomer plus,Zoom in avanti,Engrondir l'extract da la charta
+zoom_out,Verkleinere Kartenausschnitt,Zoom out,Zoomer moins,Zoom indietro,Empitschnir l'extract da la charta
+bg_toggle,Zeige Hintergrundauswahl an,Toggle the list of backgrounds,Afficher/masquer la liste des fonds de plan,Attiva la lista degli sfondi,Mussar il fund tschernì
+rotate_reset,Setze Ausrichtung Karte zurück auf Norden,Reset rotation to north,Réinitialiser l'orientation de la carte au nord,Resetta l'orientamento verso Nord,Reinizialisar l'orientaziun da la charta vers nord
+rotate_right,Drehe nach rechts,Rotate right,Rotation à droite,Ruota a destra,Volver a dretga
+rotate_left,Drehe nach links,Rotate left,Rotation à gauche,Ruota a sinistra,Volver a sanestra
+tilt_reset,Setze Schrägdarstellung zurück,Reset tilt,Réinitilaiser l'inclinaison,Resetta l'inclinazione,Reinizialisar la preschentaziun inclinada
+tilt_up,Neige Darstellung nach oben,Tilt up,Incliner vers le haut,Inclina verso l'alto,Inclinar la preschentaziun vers ensi
+tilt_down,Neige Darstellung nach unten,Tilt down,Incliner vers le bas,Inclina verso il basso,Inclinar la preschentaziun vers engiu
+tilt_up_disabled,Es kann nicht weiter nach oben geneigt werden,You can't tilt more,Vous ne pouvez incliner plus,Non è possibile inclinare di più,Ins na po betg inclinar pli ferm vers ensi
+tilt_down_disabled,Es kann nicht weiter nach unten geneigt werden,You can't tilt less,Vous ne pouvez incliner moins,Non è possibile inclinare di meno,Ins na po betg inclinar pli ferm vers engiu
+offline_show,Zeige Offline Menu,Show offline menu,Afficher le menu hors-ligne,Mostra il menu offline,Mussar il menu offline
 geodesy,Geodäsie,Geodesy,Géodesie,Geodesia,Geodäsie
 geodesy_service_link_href,https://www.swisstopo.admin.ch/de/wissen-fakten/geodaesie-vermessung.html,https://www.swisstopo.admin.ch/en/knowledge-facts/surveying-geodesy.html,https://www.swisstopo.admin.ch/fr/connaissances-faits/mensuration-geodesie.html,https://www.swisstopo.admin.ch/it/conoscenze-fatti/misurazione-geodesia.html,https://www.swisstopo.admin.ch/de/wissen-fakten/geodaesie-vermessung.html
 geodesy_service_link_label,Geodäsie,Geodesy,Géodesie,Geodesia,Geodäsie
