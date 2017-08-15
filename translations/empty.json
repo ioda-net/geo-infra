@@ -84,7 +84,7 @@
   "wms_max_size_allowed": "Maximum WMS size allowed",
   "description": "Description",
   "description_instructions": "description instructions",
-  "title": "Layer",
+  "title": "",
   "copyright_label": "",
   "metadata_window_title": "",
   "contact_us": "",
