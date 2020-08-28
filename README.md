@@ -1,5 +1,15 @@
 # geo-infra
 
+## Read-Only project
+
+After serving well its purpose, this project is now considered as deprecated, and this repository is made only read-only
+before being deleted on December 31 2020.
+
+If you want to take over the project please contact us : contact (at) ioda-net (dot) ch
+
+
+## History
+
 This repository contains all scripts and template used to manage [geo-front3](https://github.com/ioda-net/geo-front3) and [geo-api3](https://github.com/ioda-net/geo-api3).
 
 It relies on a collection of Bash and Python 3 scripts. Tasks are launched with [manuel](https://github.com/ShaneKilkelly/manuel) a task runner for Bash.

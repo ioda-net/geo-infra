@@ -27,7 +27,7 @@ HELP['sync-data']="manuel sync-data
 Synchronise the data."
 function sync-data {
     if [[ -d "${DATA_SRC}" ]] && [[ -n "${DATA_DEST}" ]]; then
-        rsync --stats -avh -P --no-o --no-g --delete --bwlimit="${BWL}" "${DATA_SRC}" "${DATA_DEST}"
+       echo  rsync --stats -avh -P --no-o --no-g --delete --bwlimit="${BWL}" ${DATA_SRC} ${DATA_DEST}
     else
         echo "Source '${DATA_SRC}' or '${DATA_DEST}' is empty. Not synching data." >&2
         exit 1
